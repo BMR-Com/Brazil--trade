@@ -1636,154 +1636,147 @@ function buildMYAnnualBar(chartId, rows, commodity, volFn, fobFn, volLabel) {
 }
 
 
-// ── Trading Desk Summary ──────────────────────────────────────────────────────
+// ── Trading Desk Summary ─────────────────────────────────────────────────────
 function buildTradingDeskSummary(elId, commodity, rows, volFn, fobFn, volUnit) {
   const el = document.getElementById(elId);
   if (!el) return;
 
-  // ── Aggregate data ────────────────────────────────────────────────────
-  const myData  = aggByMY(rows, commodity, volFn);
-  const myFob   = aggByMY(rows, commodity, fobFn);
-  const allYrs  = [...new Set(rows.map(r=>r.year))].sort();
-  const latestY = YEARS[YEARS.length-1];
-  const prevY   = YEARS[YEARS.length-2];
+  const myData = aggByMY(rows, commodity, volFn);
+  const myFob  = aggByMY(rows, commodity, fobFn);
+  if (myData.length < 2) { el.innerHTML = '<span style="color:var(--dim)">Insufficient data.</span>'; return; }
 
-  if (myData.length < 2) { el.innerHTML = '<span style="color:var(--dim)">Insufficient data for analysis.</span>'; return; }
-
-  // Latest complete MY and prior MY
   const latestMY  = myData[myData.length-1];
   const priorMY   = myData[myData.length-2];
   const latestFOB = myFob[myFob.length-1];
   const priorFOB  = myFob[myFob.length-2];
-  const vol10avg  = myData.slice(-11,-1).reduce((s,d)=>s+d.val,0)/Math.max(myData.slice(-11,-1).length,1);
-  const fob10avg  = myFob.slice(-11,-1).reduce((s,d)=>s+d.val,0)/Math.max(myFob.slice(-11,-1).length,1);
-  const volYoY    = priorMY.val>0  ? (latestMY.val - priorMY.val) / priorMY.val * 100 : 0;
-  const fobYoY    = priorFOB.val>0 ? (latestFOB.val - priorFOB.val) / priorFOB.val * 100 : 0;
-  const vol10pct  = vol10avg>0 ? (latestMY.val - vol10avg) / vol10avg * 100 : 0;
-  const avgPPU    = latestMY.val>0 ? latestFOB.val / latestMY.val : 0;
-  const priorPPU  = priorMY.val>0  ? priorFOB.val / priorMY.val : 0;
-  const ppuChg    = priorPPU>0 ? (avgPPU - priorPPU) / priorPPU * 100 : 0;
+  const vol10     = myData.slice(-11,-1);
+  const vol10avg  = vol10.length ? vol10.reduce((s,d)=>s+d.val,0)/vol10.length : 1;
+  const fob10     = myFob.slice(-11,-1);
+  const fob10avg  = fob10.length ? fob10.reduce((s,d)=>s+d.val,0)/fob10.length : 1;
+  const volYoY    = priorMY.val>0  ? (latestMY.val-priorMY.val)/priorMY.val*100 : 0;
+  const fobYoY    = priorFOB.val>0 ? (latestFOB.val-priorFOB.val)/priorFOB.val*100 : 0;
+  const vol10pct  = vol10avg>0 ? (latestMY.val-vol10avg)/vol10avg*100 : 0;
+  const avgPPU    = latestMY.val>0 ? latestFOB.val/latestMY.val : 0;
+  const priorPPU  = priorMY.val>0  ? priorFOB.val/priorMY.val : 0;
+  const ppuChg    = priorPPU>0 ? (avgPPU-priorPPU)/priorPPU*100 : 0;
 
-  // Top destinations latest calendar year
+  const latestY   = YEARS[YEARS.length-1];
+  const prevY     = YEARS[YEARS.length-2];
   const latRows   = rows.filter(r=>r.year===latestY);
+  const prevRows  = rows.filter(r=>r.year===prevY);
   const destVol   = aggByCountry(latRows, volFn);
-  const destFob   = aggByCountry(latRows, fobFn);
+  const prevDest  = aggByCountry(prevRows, volFn);
   const top1      = destVol[0] || ['—',0];
   const top2      = destVol[1] || ['—',0];
   const top3      = destVol[2] || ['—',0];
-  const totalVol  = destVol.reduce((s,d)=>s+d[1],0) || 1;
-  const totalFob  = destFob.reduce((s,d)=>s+d[1],0) || 1;
+  const totalVol  = destVol.reduce((s,d)=>s+d[1],0)||1;
+  const top3share = Math.round(destVol.slice(0,3).reduce((s,d)=>s+d[1],0)/totalVol*100);
+  const prevTotal = prevDest.reduce((s,d)=>s+d[1],0)||1;
+  const prevTop1V = (prevDest.find(d=>d[0]===top1[0])||[,0])[1];
+  const top1delta = top1[1]/totalVol*100 - prevTop1V/prevTotal*100;
+  const bestMY    = myData.reduce((b,d)=>d.val>b.val?d:b, myData[0]);
+  const bestFOBMY = myFob.reduce((b,d)=>d.val>b.val?d:b, myFob[0]);
 
-  // Concentration — top 3 share
-  const top3share = (destVol.slice(0,3).reduce((s,d)=>s+d[1],0)/totalVol*100).toFixed(0);
+  // helpers — no template literals inside these
+  function arr(v)  { return v>=0 ? '▲' : '▼'; }
+  function clr(v)  { return v>=0 ? '#3fc87a' : '#e85a5a'; }
+  function pspan(v,t) { return '<span style="color:'+clr(v)+'">'+arr(v)+' '+t+'</span>'; }
+  function bold(t,c)  { return '<strong style="color:'+(c||'var(--text)')+'">'+t+'</strong>'; }
 
-  // Check if top buyer gained or lost share vs prior year
-  const prevLatRows = rows.filter(r=>r.year===prevY);
-  const prevDest    = aggByCountry(prevLatRows, volFn);
-  const prevTop1Vol = prevDest.find(d=>d[0]===top1[0])?.[1] || 0;
-  const prevTotal   = prevDest.reduce((s,d)=>s+d[1],0) || 1;
-  const top1shareCur  = top1[1]/totalVol*100;
-  const top1sharePrev = prevTop1Vol/prevTotal*100;
-  const top1shareDelta= top1shareCur - top1sharePrev;
-
-  // Best MY in history
-  const bestMY = myData.reduce((best,d)=>d.val>best.val?d:best, myData[0]);
-  const bestFOBMY = myFob.reduce((best,d)=>d.val>best.val?d:best, myFob[0]);
-
-  // ── Colour helpers ────────────────────────────────────────────────────
-  const up   = v => v >= 0;
-  const arr  = v => v >= 0 ? '▲' : '▼';
-  const clr  = v => v >= 0 ? '#3fc87a' : '#e85a5a';
-  const fmt  = v => fmtShort(Math.abs(v));
-  const pct  = v => `${arr(v)} ${Math.abs(v).toFixed(1)}%`;
-  const bold = (t,c='') => `<strong style="color:${c||'var(--text)'}">${t}</strong>`;
-  const tag  = (t,c) => `<span style="display:inline-block;padding:1px 7px;border-radius:4px;background:${c}22;color:${c};font-size:11px;font-weight:700">${t}</span>`;
-
-  // ── Commodity-specific context ────────────────────────────────────────
-  const ctx = {
+  // commodity context strings — plain strings, no template literals
+  const CTX = {
     coffee: {
-      unit:'60kg bags', season:'July–June marketing year',
-      note: avgPPU > 350 ? 'Prices are at historically elevated levels — tight supply and strong demand driving premiums.' :
-            avgPPU > 250 ? 'Prices above long-run average — Brazil low stocks and Vietnamese competition keeping market tight.' :
-                           'Prices at moderate levels relative to history.',
-      vol_note: volYoY < -10 ? 'Volume decline reflects Brazil's post-record-year stock drawdown and logistics bottlenecks at Santos port.' :
-                volYoY > 10  ? 'Strong volume growth — Brazil filling demand gaps left by other origins.' :
-                               'Shipment pace broadly in line with prior year.',
+      note: avgPPU>350 ? 'Prices at historically elevated levels. Tight supply and strong demand driving premiums across all origins.' :
+            avgPPU>250 ? 'Prices above long-run average. Brazil low stocks and supply concerns keeping the market firm.' :
+                         'Prices at moderate levels relative to history.',
+      vol: volYoY<-10 ? 'Volume decline reflects post-record stock drawdown and ongoing logistics pressure at Santos port.' :
+           volYoY>10  ? 'Strong shipment growth. Brazil filling demand gaps left by other origins at competitive FOB basis.' :
+                        'Shipment pace broadly in line with prior year.',
     },
     cotton: {
-      unit:'MT', season:'August–July marketing year',
-      note: 'Brazil surpassed the US to become the world's largest cotton exporter in MY 2024/25. Mato Grosso accounts for ~71% of production, with harvest concentrated May–Aug.',
-      vol_note: volYoY < -10 ? 'Cotton export pace slowing — monitor Mato Grosso gin throughput and vessel availability at Santos.' :
-                volYoY > 10  ? 'Strong cotton shipments — Brazil capitalising on competitive FOB basis vs US and Australia.' :
-                               'Cotton flow broadly steady year-on-year.',
+      note: 'Brazil surpassed the US to become the world largest cotton exporter in MY 2024/25. Mato Grosso accounts for ~71% of production, harvest peaks May-Aug.',
+      vol: volYoY<-10 ? 'Export pace slowing. Monitor Mato Grosso gin throughput and Santos/Paranagua vessel queues.' :
+           volYoY>10  ? 'Strong cotton flow. Brazil capitalising on competitive basis vs US and Australia.' :
+                        'Cotton shipments broadly steady year-on-year.',
     },
     sugar: {
-      unit:'MT', season:'April–March marketing year',
-      note: 'Brazil is the world's largest sugar exporter. Center-South mills begin crushing in April — export pace from June onward is key indicator for global supply.',
-      vol_note: volYoY < -10 ? 'Crush-season pace below prior year — monitor UNICA weekly data for cane availability.' :
-                volYoY > 10  ? 'Record-pace crushing driving strong exports — global supply pressure likely ahead.' :
-                               'Crushing season broadly on track.',
+      note: 'Brazil is the world largest sugar exporter. Center-South mills begin crushing in April. Export pace from June onward is the key indicator for global supply.',
+      vol: volYoY<-10 ? 'Crush-season pace below prior year. Monitor UNICA weekly data for cane availability and ethanol vs sugar mix.' :
+           volYoY>10  ? 'Record-pace crushing driving strong exports. Global supply pressure likely through Q3.' :
+                        'Crushing season broadly on track with prior year.',
     },
     soybeans: {
-      unit:'MT', season:'February–January marketing year',
-      note: 'Brazil exports ~70-80% of soy to China. The Feb–May harvest window drives the bulk of annual shipments through Santos, Paranaguá and northern arc ports.',
-      vol_note: volYoY < -10 ? 'Slow harvest pace or logistical congestion damping flows — watch Mato Grosso basis and vessel queues.' :
-                volYoY > 10  ? 'Strong soybean pace — likely driven by competitive basis vs US origin and strong Chinese buying.' :
-                               'Soybean shipments running in line with prior season.',
+      note: 'Brazil exports 70-80% of soy to China. The Feb-May harvest window drives the bulk of annual shipments through Santos, Paranagua and northern arc ports.',
+      vol: volYoY<-10 ? 'Slow harvest pace or logistical congestion damping flows. Watch Mato Grosso basis and Santos vessel queues.' :
+           volYoY>10  ? 'Strong soybean pace driven by competitive basis vs US origin and heavy Chinese buying.' :
+                        'Soybean shipments running in line with prior season.',
     },
     corn: {
-      unit:'MT', season:'March–February marketing year',
-      note: 'Safrinha (second crop) corn accounts for ~75% of Brazil's output, harvested June–August. Exports peak August–October, primarily through Paranaguá and Barcarena.',
-      vol_note: volYoY < -10 ? 'Slower corn exports — safrinha planting delays or competition from US/Ukraine weighing on Brazilian FOB basis.' :
-                volYoY > 10  ? 'Surging corn exports — Brazil displacing US in Asian markets as safrinha harvest exceeds expectations.' :
-                               'Corn export run-rate in line with historical pattern.',
+      note: 'Safrinha (second crop) corn accounts for ~75% of output, harvested Jun-Aug. Exports peak Aug-Oct through Paranagua and Barcarena.',
+      vol: volYoY<-10 ? 'Slower corn exports. Safrinha planting delays or competition from US/Ukraine weighing on Brazilian FOB basis.' :
+           volYoY>10  ? 'Surging corn exports. Brazil displacing competition in Asian markets as safrinha exceeds expectations.' :
+                        'Corn export run-rate in line with historical seasonal pattern.',
     },
-  }[commodity] || {unit:volUnit, season:'', note:'', vol_note:''};
+  };
+  const ctx = CTX[commodity] || {note:'', vol:''};
 
-  // ── Build HTML ────────────────────────────────────────────────────────
-  const isPartial = rows.filter(r=>r.year===latestY).length > 0 &&
-                    [...new Set(rows.filter(r=>r.year===latestY).map(r=>r.month))].length < 12;
-  const partialNote = isPartial ? ` <span style="color:var(--dim);font-size:11px;">(partial year — ${[...new Set(rows.filter(r=>r.year===latestY).map(r=>r.month))].length} months)</span>` : '';
+  const partial = [...new Set(rows.filter(r=>r.year===latestY).map(r=>r.month))].length < 12;
 
-  el.innerHTML = `
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:18px;">
-  <div>
-    <div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Latest MY Volume${partialNote}</div>
-    <div style="font-size:24px;font-weight:700;color:var(--text)">${fmtShort(latestMY.val)} <span style="font-size:12px;color:var(--dim)">${ctx.unit}</span></div>
-    <div style="font-size:12px;color:${clr(volYoY)};margin-top:3px;">${arr(volYoY)} ${Math.abs(volYoY).toFixed(1)}% vs ${priorMY.label}</div>
-    <div style="font-size:11px;color:var(--dim2);margin-top:2px;">${vol10pct>=0?'▲':'▼'} ${Math.abs(vol10pct).toFixed(0)}% vs 10yr avg</div>
-  </div>
-  <div>
-    <div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Latest MY FOB Revenue</div>
-    <div style="font-size:24px;font-weight:700;color:var(--text)">${fmtB(latestFOB.val)}</div>
-    <div style="font-size:12px;color:${clr(fobYoY)};margin-top:3px;">${arr(fobYoY)} ${Math.abs(fobYoY).toFixed(1)}% vs ${priorFOB.label}</div>
-    <div style="font-size:11px;color:var(--dim2);margin-top:2px;">Avg ${fmtShort(avgPPU)}/${ctx.unit} · ${arr(ppuChg)} ${Math.abs(ppuChg).toFixed(0)}% price YoY</div>
-  </div>
-  <div>
-    <div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Record MY</div>
-    <div style="font-size:24px;font-weight:700;color:var(--text)">${bestMY.label}</div>
-    <div style="font-size:12px;color:var(--dim);margin-top:3px;">${fmtShort(bestMY.val)} ${ctx.unit}</div>
-    <div style="font-size:11px;color:var(--dim2);margin-top:2px;">Best revenue: ${bestFOBMY.label} · ${fmtB(bestFOBMY.val)}</div>
-  </div>
-</div>
-<div style="height:1px;background:var(--border);margin:14px 0"></div>
-<div style="margin-bottom:14px;line-height:1.8;">
-  <span style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim)">Destination Concentration · ${latestY}</span><br>
-  ${bold(top1[0])} is the ${latestY} top buyer with ${bold(fmtShort(top1[1]))} ${ctx.unit}
-  (${(top1[1]/totalVol*100).toFixed(0)}% of total) — share ${top1shareDelta>=0?'<span style="color:#3fc87a">▲ gaining</span>':'<span style="color:#e85a5a">▼ losing</span>'} ${Math.abs(top1shareDelta).toFixed(1)}pp vs ${prevY}.
-  ${bold(top2[0])} ranks 2nd at ${(top2[1]/totalVol*100).toFixed(0)}% and ${bold(top3[0])} 3rd at ${(top3[1]/totalVol*100).toFixed(0)}%.
-  Top 3 buyers account for ${bold(top3share+'%')} of all exports — ${+top3share>70?'<span style="color:#e85a5a">high concentration risk</span>':'<span style="color:#3fc87a">well diversified</span>'}.
-</div>
-<div style="margin-bottom:14px;line-height:1.8;">
-  <span style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim)">Volume Trend</span><br>
-  ${ctx.vol_note} The 10-year average is ${bold(fmtShort(vol10avg))} ${ctx.unit}/MY.
-  Current MY is running ${bold(Math.abs(vol10pct).toFixed(0)+'%')} ${vol10pct>=0?'<span style="color:#3fc87a">above</span>':'<span style="color:#e85a5a">below</span>'} that baseline.
-  ${latestMY.label === bestMY.label ? `<span style="color:#f5c890">⭐ This is the highest-volume marketing year on record.</span>` : `Best ever was ${bold(bestMY.label)} at ${bold(fmtShort(bestMY.val))} ${ctx.unit}.`}
-</div>
-<div style="line-height:1.8;">
-  <span style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim)">Market Context</span><br>
-  ${ctx.note}
-</div>`;
+  const html = [
+    '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:18px;">',
+
+    // KPI 1 — Volume
+    '<div>',
+    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Latest MY Volume'+(partial?' <span style="color:var(--dim2);font-size:10px;">(partial)</span>':'')+'</div>',
+    '<div style="font-size:26px;font-weight:700;">'+fmtShort(latestMY.val)+' <span style="font-size:12px;color:var(--dim)">'+volUnit+'</span></div>',
+    '<div style="font-size:12px;margin-top:3px;">'+pspan(volYoY, Math.abs(volYoY).toFixed(1)+'% vs '+priorMY.label)+'</div>',
+    '<div style="font-size:11px;color:var(--dim2);margin-top:2px;">'+pspan(vol10pct, Math.abs(vol10pct).toFixed(0)+'% vs 10yr avg')+'</div>',
+    '</div>',
+
+    // KPI 2 — FOB
+    '<div>',
+    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Latest MY FOB Revenue</div>',
+    '<div style="font-size:26px;font-weight:700;">'+fmtB(latestFOB.val)+'</div>',
+    '<div style="font-size:12px;margin-top:3px;">'+pspan(fobYoY, Math.abs(fobYoY).toFixed(1)+'% vs '+priorFOB.label)+'</div>',
+    '<div style="font-size:11px;color:var(--dim2);margin-top:2px;">Avg '+fmtShort(avgPPU)+'/'+volUnit+' · '+pspan(ppuChg, Math.abs(ppuChg).toFixed(0)+'% price YoY')+'</div>',
+    '</div>',
+
+    // KPI 3 — Record
+    '<div>',
+    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">All-Time Record MY</div>',
+    '<div style="font-size:26px;font-weight:700;">'+bestMY.label+'</div>',
+    '<div style="font-size:12px;color:var(--dim);margin-top:3px;">'+fmtShort(bestMY.val)+' '+volUnit+'</div>',
+    '<div style="font-size:11px;color:var(--dim2);margin-top:2px;">Best revenue: '+bestFOBMY.label+' · '+fmtB(bestFOBMY.val)+'</div>',
+    '</div>',
+
+    '</div>',
+    '<div style="height:1px;background:var(--border);margin:14px 0"></div>',
+
+    // Destinations
+    '<div style="margin-bottom:14px;line-height:1.8;">',
+    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Destination Concentration · '+latestY+'</div>',
+    bold(top1[0])+' leads with '+bold(fmtShort(top1[1]))+' '+volUnit+' ('+Math.round(top1[1]/totalVol*100)+'% share) — share is '+
+      (top1delta>=0 ? '<span style="color:#3fc87a">gaining +'+Math.abs(top1delta).toFixed(1)+'pp</span>' : '<span style="color:#e85a5a">losing '+Math.abs(top1delta).toFixed(1)+'pp</span>')+
+      ' vs '+prevY+'. '+bold(top2[0])+' ranks 2nd at '+Math.round(top2[1]/totalVol*100)+'%, '+
+      bold(top3[0])+' 3rd at '+Math.round(top3[1]/totalVol*100)+'%. '+
+      'Top 3 hold '+bold(top3share+'%')+' of total exports — '+
+      (top3share>70 ? '<span style="color:#e85a5a">high concentration</span>' : '<span style="color:#3fc87a">well diversified</span>.')+'</div>',
+
+    // Volume trend
+    '<div style="margin-bottom:14px;line-height:1.8;">',
+    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Volume Trend</div>',
+    ctx.vol+' 10-year average is '+bold(fmtShort(vol10avg))+' '+volUnit+'/MY. Current MY is '+
+      pspan(vol10pct, Math.abs(vol10pct).toFixed(0)+'% '+(vol10pct>=0?'above':'below')+' that baseline.')+
+      (latestMY.label===bestMY.label ? ' <span style="color:#f5c890">⭐ This is the highest-volume marketing year on record.</span>' :
+       ' Best ever: '+bold(bestMY.label)+' at '+bold(fmtShort(bestMY.val))+' '+volUnit+'.')+'</div>',
+
+    // Market context
+    '<div style="line-height:1.8;">',
+    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Market Context</div>',
+    ctx.note+'</div>',
+  ].join('');
+
+  el.innerHTML = html;
 }
 
 
