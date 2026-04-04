@@ -2024,7 +2024,7 @@ function renderCoffee() {
   renderCoffeeSeason();
   // ── Marketing Year charts — deferred so page paints first ──────────────
   setTimeout(() => {
-    const _cofMYRows = filterRows({commodity:'coffee'});
+    const _cofMYRows = filterRows({commodity:'coffee',yearFrom:yf,yearTo:yt});
     buildMYAnnualBar('cofMYAnn', _cofMYRows, 'coffee', r=>r.bags, r=>r.fob_usd, '60kg bags');
     buildMYCumulativeChart('cofMYCumVol', _cofMYRows, 'coffee', r=>r.bags, 'cofMYCumLeg');
     buildMYMonthlyChart('cofMYMonVol', _cofMYRows, 'coffee', COM_COLORS['coffee'], r=>r.bags, 'cofMYMonLeg');
@@ -2136,7 +2136,7 @@ function renderCotton() {
 
   // ── Marketing Year charts — deferred so page paints first ──────────────
   setTimeout(() => {
-    const _cotMYRows = filterRows({commodity:'cotton'});
+    const _cotMYRows = filterRows({commodity:'cotton',yearFrom:yf,yearTo:yt});
     buildMYAnnualBar('cotMYAnn', _cotMYRows, 'cotton', r=>r.mt, r=>r.fob_usd, 'MT');
     buildMYCumulativeChart('cotMYCumVol', _cotMYRows, 'cotton', r=>r.mt, 'cotMYCumLeg');
     buildMYMonthlyChart('cotMYMonVol', _cotMYRows, 'cotton', COM_COLORS['cotton'], r=>r.mt, 'cotMYMonLeg');
@@ -2202,7 +2202,7 @@ function renderSugar() {
 
   // ── Marketing Year charts — deferred so page paints first ──────────────
   setTimeout(() => {
-    const _sugMYRows = filterRows({commodity:'sugar'});
+    const _sugMYRows = filterRows({commodity:'sugar',yearFrom:yf,yearTo:yt});
     buildMYAnnualBar('sugMYAnn', _sugMYRows, 'sugar', r=>r.mt, r=>r.fob_usd, 'MT');
     buildMYCumulativeChart('sugMYCumVol', _sugMYRows, 'sugar', r=>r.mt, 'sugMYCumLeg');
     buildMYMonthlyChart('sugMYMonVol', _sugMYRows, 'sugar', COM_COLORS['sugar'], r=>r.mt, 'sugMYMonLeg');
@@ -2274,7 +2274,7 @@ function renderSoy() {
 
   // ── Marketing Year charts — deferred so page paints first ──────────────
   setTimeout(() => {
-    const _soyMYRows = filterRows({commodity:'soybeans'});
+    const _soyMYRows = filterRows({commodity:'soybeans',yearFrom:yf,yearTo:yt});
     buildMYAnnualBar('soyMYAnn', _soyMYRows, 'soybeans', r=>r.mt, r=>r.fob_usd, 'MT');
     buildMYCumulativeChart('soyMYCumVol', _soyMYRows, 'soybeans', r=>r.mt, 'soyMYCumLeg');
     buildMYMonthlyChart('soyMYMonVol', _soyMYRows, 'soybeans', COM_COLORS['soybeans'], r=>r.mt, 'soyMYMonLeg');
@@ -2340,7 +2340,7 @@ function renderCorn() {
 
   // ── Marketing Year charts — deferred so page paints first ──────────────
   setTimeout(() => {
-    const _corMYRows = filterRows({commodity:'corn'});
+    const _corMYRows = filterRows({commodity:'corn',yearFrom:yf,yearTo:yt});
     buildMYAnnualBar('corMYAnn', _corMYRows, 'corn', r=>r.mt, r=>r.fob_usd, 'MT');
     buildMYCumulativeChart('corMYCumVol', _corMYRows, 'corn', r=>r.mt, 'corMYCumLeg');
     buildMYMonthlyChart('corMYMonVol', _corMYRows, 'corn', COM_COLORS['corn'], r=>r.mt, 'corMYMonLeg');
