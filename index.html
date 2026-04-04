@@ -277,7 +277,7 @@ select:hover{border-color:var(--border2);}
 <div class="page" id="page-coffee">
   <div class="sec mb16"><span class="sec-title">☕ Coffee — Export Analytics</span><div class="sec-line"></div></div>
 
-  <div class="g4 mb24" id="coffee-kpis"></div>
+  <div class="g3 mb24" id="coffee-kpis"></div>
 
   <!-- Annual charts: total + 3 subtypes -->
   <div class="sec mb16"><span class="sec-title">Annual Volume (60kg bags) &amp; Value (FOB USD)</span><div class="sec-line"></div></div>
@@ -289,11 +289,10 @@ select:hover{border-color:var(--border2);}
     </div>
     <div class="chart-card">
       <div class="chart-title">Coffee Subtypes — Annual Volume</div>
-      <div class="chart-sub">Arabica green · Conillon/Robusta · Soluble</div>
+      <div class="chart-sub">Arabica green · Soluble/Instant</div>
       <div class="chart-wrap h300"><canvas id="coffeeAnnualSub"></canvas></div>
       <div class="legend">
         <div class="leg-item"><div class="leg-dot" style="background:#c8773a"></div>Arabica green</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#e89a5a"></div>Conillon/Robusta</div>
         <div class="leg-item"><div class="leg-dot" style="background:#f5c890"></div>Soluble/Instant</div>
       </div>
     </div>
@@ -302,10 +301,14 @@ select:hover{border-color:var(--border2);}
   <!-- Analyst seasonality charts -->
   <div class="sec mb16"><span class="sec-title">Seasonality &amp; Country Flow</span><div class="sec-line"></div></div>
   <div class="ctrl-row">
-    <span class="ctrl-label">Years:</span>
+    <span class="ctrl-label">Year range:</span>
     <select id="coffee-year-from" onchange="renderCoffeeSeason()"></select>
     <span style="color:var(--dim)">–</span>
     <select id="coffee-year-to" onchange="renderCoffeeSeason()"></select>
+  </div>
+  <div class="ctrl-row mb16">
+    <span class="ctrl-label">Toggle years:</span>
+    <div class="toggle-group" id="coffee-yr-toggles"></div>
   </div>
   <!-- Analyst seasonality charts -->
   <div class="g2 mb16">
@@ -348,6 +351,19 @@ select:hover{border-color:var(--border2);}
       <div class="chart-wrap h320"><canvas id="cofCtryFob"></canvas></div>
     </div>
   </div>
+  <!-- Seasonal index + Subtype breakdown -->
+  <div class="g2 mb24">
+    <div class="chart-card light">
+      <div class="chart-title">Coffee Seasonal Index (avg = 100)</div>
+      <div class="chart-sub">Monthly export strength relative to annual average</div>
+      <div class="chart-wrap h260"><canvas id="cofSeasonIdx"></canvas></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Arabica vs Soluble/Instant — Annual Volume</div>
+      <div class="chart-sub">Volume comparison by subtype · 60kg bags</div>
+      <div class="chart-wrap h260"><canvas id="cofSubtypeAnn"></canvas></div>
+    </div>
+  </div>
 
   <!-- Top destinations -->
   <div class="sec mb16"><span class="sec-title">Top Destination Countries</span><div class="sec-line"></div></div>
@@ -385,6 +401,10 @@ select:hover{border-color:var(--border2);}
     <select id="cotton-year-from" onchange="renderCotton()"></select>
     <span style="color:var(--dim)">–</span>
     <select id="cotton-year-to" onchange="renderCotton()"></select>
+  </div>
+  <div class="ctrl-row mb16">
+    <span class="ctrl-label">Toggle years:</span>
+    <div class="toggle-group" id="cotton-yr-toggles"></div>
   </div>
 
   <div class="g2 mb16">
@@ -470,6 +490,10 @@ select:hover{border-color:var(--border2);}
     <select id="sugar-year-from" onchange="renderSugar()"></select>
     <span style="color:var(--dim)">–</span>
     <select id="sugar-year-to" onchange="renderSugar()"></select>
+  </div>
+  <div class="ctrl-row mb16">
+    <span class="ctrl-label">Toggle years:</span>
+    <div class="toggle-group" id="sugar-yr-toggles"></div>
   </div>
 
   <div class="g2 mb16">
@@ -561,6 +585,10 @@ select:hover{border-color:var(--border2);}
     <span style="color:var(--dim)">–</span>
     <select id="soy-year-to" onchange="renderSoy()"></select>
   </div>
+  <div class="ctrl-row mb16">
+    <span class="ctrl-label">Toggle years:</span>
+    <div class="toggle-group" id="soy-yr-toggles"></div>
+  </div>
 
   <div class="g2 mb16">
     <div class="chart-card">
@@ -651,6 +679,10 @@ select:hover{border-color:var(--border2);}
     <span style="color:var(--dim)">–</span>
     <select id="corn-year-to" onchange="renderCorn()"></select>
   </div>
+  <div class="ctrl-row mb16">
+    <span class="ctrl-label">Toggle years:</span>
+    <div class="toggle-group" id="corn-yr-toggles"></div>
+  </div>
 
   <div class="g2 mb16">
     <div class="chart-card">
@@ -729,8 +761,7 @@ select:hover{border-color:var(--border2);}
     <select id="s-commodity" onchange="renderSeasonality()">
       <option value="coffee">Coffee (total)</option>
       <option value="coffee_arabica_green">Coffee — Arabica</option>
-      <option value="coffee_conillon_robusta">Coffee — Conillon/Robusta</option>
-      <option value="coffee_soluble">Coffee — Soluble</option>
+      <option value="coffee_soluble">Coffee — Soluble/Instant</option>
       <option value="cotton">Cotton</option>
       <option value="sugar">Sugar</option>
       <option value="soybeans_raw_soybeans">Soybeans — Raw</option>
@@ -1028,6 +1059,8 @@ function getFOB(row) { return row.fob_usd; }
 
 // ── Populate year selects ──────────────────────────────────────────────────────
 function populateYearSelects(ids, defaultFrom, defaultTo) {
+  const defF = defaultFrom || YEARS[Math.max(0, YEARS.length-10)];
+  const defT = defaultTo   || YEARS[YEARS.length-1];
   ids.forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -1199,20 +1232,24 @@ function lightLineOpts(extra={}) {
 }
 
 function buildSeasonChart(chartId, rows, color, valFn, legendId, noLegend=false) {
+  if (!rows || rows.length === 0) { mkChart(chartId,{type:'line',data:{labels:MONTHS,datasets:[]},options:lightLineOpts()}); return; }
   const byYM = aggByMonth(rows, valFn);
   const ys   = Object.keys(byYM).map(Number).sort();
   const avg  = Array(12).fill(0).map((_,m) => {
     const v = ys.map(y=>byYM[y][m]).filter(v=>v>0);
     return v.length ? v.reduce((a,b)=>a+b)/v.length : 0;
   });
-  const datasets = ys.map((y,i) => ({
-    label:String(y), data:byYM[y],
-    borderColor:yearColor(i), backgroundColor:'transparent',
-    borderWidth:2.2, tension:.35,
-    pointRadius:4, pointHoverRadius:6,
-    pointBackgroundColor:yearColor(i),
-    pointBorderColor:'#fff', pointBorderWidth:1.5
-  }));
+  const datasets = ys.map((y) => {
+    const ci = YEARS.indexOf(y); // stable color index regardless of which years are active
+    return {
+      label:String(y), data:byYM[y],
+      borderColor:yearColor(ci), backgroundColor:'transparent',
+      borderWidth:2.2, tension:.35,
+      pointRadius:4, pointHoverRadius:6,
+      pointBackgroundColor:yearColor(ci),
+      pointBorderColor:'#fff', pointBorderWidth:1.5
+    };
+  });
   // Average line — dark dashed on light bg
   datasets.push({label:'Avg',data:avg,borderColor:'#9ca3af',borderDash:[7,4],
     borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:0});
@@ -1220,7 +1257,7 @@ function buildSeasonChart(chartId, rows, color, valFn, legendId, noLegend=false)
     options:lightLineOpts()});
   if (legendId && !noLegend) {
     document.getElementById(legendId).innerHTML =
-      [...ys.map((y,i)=>({y,c:yearColor(i)})), {y:'Avg',c:'#9ca3af'}]
+      [...ys.map((y)=>({y,c:yearColor(YEARS.indexOf(y))})), {y:'Avg',c:'#9ca3af'}]
         .map(({y,c})=>`<div class="leg-item"><div class="leg-dot" style="background:${c};border-radius:50%"></div>${y}</div>`)
         .join('');
   }
@@ -1228,31 +1265,34 @@ function buildSeasonChart(chartId, rows, color, valFn, legendId, noLegend=false)
 
 // ── Cumulative seasonality chart (like sample image 1) ─────────────────────
 function buildCumulativeSeasonChart(chartId, rows, valFn, legendId) {
+  if (!rows || rows.length === 0) { mkChart(chartId,{type:'line',data:{labels:MONTHS,datasets:[]},options:lightLineOpts()}); return; }
   const byYM = aggByMonth(rows, valFn);
   const ys   = Object.keys(byYM).map(Number).sort();
-  const datasets = ys.map((y,i) => {
+  const datasets = ys.map((y) => {
+    const ci = YEARS.indexOf(y);
     let cum = 0;
     const cumData = byYM[y].map(v => { cum += (v||0); return cum; });
     return {
       label:String(y), data:cumData,
-      borderColor:yearColor(i), backgroundColor:'transparent',
+      borderColor:yearColor(ci), backgroundColor:'transparent',
       borderWidth:2.5, tension:.35,
       pointRadius:4, pointHoverRadius:6,
-      pointBackgroundColor:yearColor(i),
+      pointBackgroundColor:yearColor(ci),
       pointBorderColor:'#fff', pointBorderWidth:1.5
     };
   });
   mkChart(chartId, {type:'line', data:{labels:MONTHS,datasets},
     options:lightLineOpts()});
   if (legendId) {
-    document.getElementById(legendId).innerHTML = ys.map((y,i)=>
-      `<div class="leg-item"><div class="leg-dot" style="background:${yearColor(i)};border-radius:50%"></div>${y}</div>`
+    document.getElementById(legendId).innerHTML = ys.map((y)=>
+      `<div class="leg-item"><div class="leg-dot" style="background:${yearColor(YEARS.indexOf(y))};border-radius:50%"></div>${y}</div>`
     ).join('');
   }
 }
 
 // ── Stacked country bar chart by year (like sample image 3) ────────────────
 function buildCountryStackedBar(chartId, rows, valFn, color, topN=10) {
+  if (!rows || rows.length === 0) return;
   const ys = [...new Set(rows.map(r=>r.year))].sort();
   // Get top N countries by total across all years
   const totByC = {};
@@ -1284,6 +1324,46 @@ function buildCountryStackedBar(chartId, rows, valFn, color, topN=10) {
       }}});
 }
 
+// ── Year toggle builder — default last 10 years ────────────────────────────────
+function buildYearToggles(toggleId, onChangeFn, comColor) {
+  const el = document.getElementById(toggleId);
+  if (!el) return;
+  // Always rebuild so colors stay in sync with yearColor(i)
+  const last10 = new Set(YEARS.slice(-10));
+  el.innerHTML = YEARS.map((y,i) => {
+    const on = last10.has(y);
+    const c  = yearColor(i);
+    return `<button class="toggle ${on?'on':''}" data-year="${y}" data-color="${c}"
+      style="${on ? `border-color:${c};color:${c};background:${c}18` : ''}"
+      onclick="toggleComYear(this,'${onChangeFn}')">${y}</button>`;
+  }).join('');
+}
+
+function toggleComYear(btn, fn) {
+  const on = btn.classList.toggle('on');
+  const c  = btn.dataset.color;
+  btn.style.borderColor = on ? c : '';
+  btn.style.color       = on ? c : '';
+  btn.style.background  = on ? c+'18' : '';
+  const fnMap = {
+    'renderCoffeeSeason()': renderCoffeeSeason,
+    'renderCotton()':       renderCotton,
+    'renderSugar()':        renderSugar,
+    'renderSoy()':          renderSoy,
+    'renderCorn()':         renderCorn,
+    'renderSeasonality()':  renderSeasonality,
+  };
+  if (fnMap[fn]) fnMap[fn]();
+}
+
+function getActiveYears(toggleId) {
+  const el = document.getElementById(toggleId);
+  if (!el || el.children.length === 0) return YEARS.slice(-10);
+  const active = [...el.querySelectorAll('.toggle.on')].map(b=>parseInt(b.dataset.year));
+  return active.length > 0 ? active : YEARS.slice(-10);
+}
+
+
 // ── Coffee page ───────────────────────────────────────────────────────────────
 function renderCoffee() {
   populateYearSelects(['coffee-year-from','coffee-year-to'], YEARS[0], YEARS[YEARS.length-1]);
@@ -1294,8 +1374,7 @@ function renderCoffee() {
   const kpiDefs = [
     {label:'Total Coffee',subtype:null,unit:'60kg bags'},
     {label:'Arabica Green',subtype:'arabica_green',unit:'60kg bags'},
-    {label:'Conillon/Robusta',subtype:'conillon_robusta',unit:'60kg bags'},
-    {label:'Soluble',subtype:'soluble',unit:'60kg bags'},
+    {label:'Soluble / Instant',subtype:'soluble',unit:'60kg bags'},
   ];
   const kpiEl = document.getElementById('coffee-kpis');
   kpiEl.innerHTML = '';
@@ -1333,8 +1412,8 @@ function renderCoffee() {
   });
 
   // Annual subtypes stacked
-  const subtypes = [{k:'arabica_green',c:'#c8773a'},{k:'conillon_robusta',c:'#e89a5a'},{k:'soluble',c:'#f5c890'}];
-  const subLabels = {arabica_green:'Arabica green',conillon_robusta:'Conillon/Robusta',soluble:'Soluble'};
+  const subtypes = [{k:'arabica_green',c:'#c8773a'},{k:'soluble',c:'#f5c890'}];
+  const subLabels = {arabica_green:'Arabica green',soluble:'Soluble/Instant'};
   mkChart('coffeeAnnualSub',{
     type:'bar',
     data:{labels:YEARS, datasets:subtypes.map(st=>({
@@ -1347,26 +1426,35 @@ function renderCoffee() {
       scales:{x:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}
   });
 
+  buildYearToggles('coffee-yr-toggles','renderCoffeeSeason()','#c8773a');
   renderCoffeeSeason();
   renderCoffeeDestTable();
 }
 
 function renderCoffeeSeason() {
-  const metric = document.getElementById('coffee-metric').value;
   const yf = parseInt(document.getElementById('coffee-year-from').value)||YEARS[0];
   const yt = parseInt(document.getElementById('coffee-year-to').value)||YEARS[YEARS.length-1];
-  const volFn = r=>r.bags;
-  const fobFn = r=>r.fob_usd;
-  const valFn = metric==='vol' ? volFn : fobFn;
-  const clr = '#c8773a';
 
-  // Cumulative charts
-  buildCumulativeSeasonChart('coffeeSeasonTotal',    filterRows({commodity:'coffee',yearFrom:yf,yearTo:yt}), valFn);
-  buildCumulativeSeasonChart('coffeeSeasonArabica',  filterRows({commodity:'coffee',subtype:'arabica_green',yearFrom:yf,yearTo:yt}), valFn);
-  buildCumulativeSeasonChart('coffeeSeasonConillon', filterRows({commodity:'coffee',subtype:'conillon_robusta',yearFrom:yf,yearTo:yt}), valFn);
-  buildCumulativeSeasonChart('coffeeSeasonSoluble',  filterRows({commodity:'coffee',subtype:'soluble',yearFrom:yf,yearTo:yt}), valFn);
+  // ── Analyst seasonality charts ──────────────────────────────────────
+  const _cofActiveYrs = getActiveYears('coffee-yr-toggles');
+  const _cofRows = filterRows({commodity:'coffee',yearFrom:yf,yearTo:yt})
+                    .filter(r => _cofActiveYrs.includes(r.year));
+  buildCumulativeSeasonChart('cofCumVol',   _cofRows, r=>r.bags, 'cofCumLeg');
+  buildCumulativeSeasonChart('cofCumFob',   _cofRows, r=>r.fob_usd, 'cofCumFobLeg');
+  buildSeasonChart('cofMonVol', _cofRows, '#c8773a', r=>r.bags, 'cofMonLeg');
+  buildSeasonChart('cofMonFob', _cofRows, '#c8773a', r=>r.fob_usd, 'cofMonFobLeg');
+  buildCountryStackedBar('cofCtryVol', _cofRows, r=>r.bags, '#c8773a');
+  buildCountryStackedBar('cofCtryFob', _cofRows, r=>r.fob_usd, '#c8773a');
+  // Seasonal index
+  (()=>{ const byYM=aggByMonth(_cofRows,r=>r.bags); const ys=Object.keys(byYM).map(Number).sort();
+    const avg=Array(12).fill(0).map((_,m)=>{ const v=ys.map(y=>byYM[y][m]).filter(v=>v>0); return v.length?v.reduce((a,b)=>a+b)/v.length:0; });
+    const grand=avg.reduce((a,b)=>a+b,0)/12||1;
+    mkChart('cofSeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:avg.map(v=>+((v/grand)*100).toFixed(1)),borderColor:'#c8773a',backgroundColor:'#c8773a28',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#c8773a',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
+  })();
+  // Subtype annual bars
+  const _cofSts=[{k:'arabica_green',c:'#c8773a',l:'Arabica'},{k:'soluble',c:'#f5c890',l:'Soluble/Instant'}];
+  mkChart('cofSubtypeAnn',{type:'bar',data:{labels:YEARS.filter(y=>y>=yf&&y<=yt),datasets:_cofSts.map(st=>({label:st.l,data:aggByYear(filterRows({commodity:'coffee',subtype:st.k,yearFrom:yf,yearTo:yt}),r=>r.bags).map(d=>d.val),backgroundColor:st.c+'66',borderColor:st.c,borderWidth:1.5,borderRadius:3,stack:'s'}))},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:true,position:'top',labels:{color:TC,boxWidth:10,padding:10,font:{size:10}}}},scales:{x:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}});
 }
-
 function renderCoffeeDestTable() {
   const latestYear = YEARS[YEARS.length-1];
   document.getElementById('coffee-dest-period').textContent = latestYear;
@@ -1422,7 +1510,24 @@ function renderCotton() {
     {type:'line',label:'FOB',data:annFOB.filter(d=>d.year>=yf&&d.year<=yt).map(d=>d.val/1e9),borderColor:'#a0e0f8',borderWidth:2,tension:.35,pointRadius:2,yAxisID:'y2'},
   ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}},y2:{position:'right',grid:{display:false},ticks:{color:TC,font:{size:10},callback:v=>v+'B'}}}}});
 
-  buildSeasonChart('cottonSeason', filterRows({commodity:'cotton',yearFrom:yf,yearTo:yt}), '#4ab8d8', valFn);
+
+  // ── Analyst seasonality charts ──────────────────────────────────────
+  buildYearToggles('cotton-yr-toggles','renderCotton()','#4ab8d8');
+  const _cotActiveYrs = getActiveYears('cotton-yr-toggles');
+  const _cotRows  = filterRows({commodity:'cotton',yearFrom:yf,yearTo:yt})
+                     .filter(r => _cotActiveYrs.includes(r.year));
+  buildCumulativeSeasonChart('cotCumVol',   _cotRows, r=>(unit==='bales'?r.bales_480lb:r.mt), 'cotCumLeg');
+  buildCumulativeSeasonChart('cotCumFob',   _cotRows, r=>r.fob_usd, 'cotCumFobLeg');
+  buildSeasonChart('cotMonVol', _cotRows, '#4ab8d8', r=>(unit==='bales'?r.bales_480lb:r.mt), 'cotMonLeg');
+  buildSeasonChart('cotMonFob', _cotRows, '#4ab8d8', r=>r.fob_usd, 'cotMonFobLeg');
+  buildCountryStackedBar('cotCtryVol', _cotRows, r=>(unit==='bales'?r.bales_480lb:r.mt), '#4ab8d8');
+  buildCountryStackedBar('cotCtryFob', _cotRows, r=>r.fob_usd, '#4ab8d8');
+  // Seasonal index
+  (()=>{ const byYM=aggByMonth(_cotRows,r=>(unit==='bales'?r.bales_480lb:r.mt)); const ys=Object.keys(byYM).map(Number).sort();
+    const avg=Array(12).fill(0).map((_,m)=>{ const v=ys.map(y=>byYM[y][m]).filter(v=>v>0); return v.length?v.reduce((a,b)=>a+b)/v.length:0; });
+    const grand=avg.reduce((a,b)=>a+b,0)/12||1;
+    mkChart('cottonSeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:avg.map(v=>+((v/grand)*100).toFixed(1)),borderColor:'#4ab8d8',backgroundColor:'#4ab8d828',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#4ab8d8',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
+  })();
   renderDestTable('cotton-tbl-vol', aggByCountry(filterRows({commodity:'cotton',yearFrom:latestYear,yearTo:latestYear}),volFn), unitLabel, '#4ab8d8');
   renderDestTable('cotton-tbl-fob', aggByCountry(filterRows({commodity:'cotton',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd), 'FOB USD', '#4ab8d8');
 }
@@ -1460,7 +1565,24 @@ function renderSugar() {
     backgroundColor:st.c+'88',borderColor:st.c,borderWidth:1.5,borderRadius:3,stack:'s'
   }))},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}});
 
-  buildSeasonChart('sugarSeason', filterRows({commodity:'sugar',yearFrom:yf,yearTo:yt}), '#e8c84a', valFn);
+
+  // ── Analyst seasonality charts ──────────────────────────────────────
+  buildYearToggles('sugar-yr-toggles','renderSugar()','#e8c84a');
+  const _sugActiveYrs = getActiveYears('sugar-yr-toggles');
+  const _sugRows  = filterRows({commodity:'sugar',yearFrom:yf,yearTo:yt})
+                     .filter(r => _sugActiveYrs.includes(r.year));
+  buildCumulativeSeasonChart('sugCumVol',   _sugRows, r=>r.mt, 'sugCumLeg');
+  buildCumulativeSeasonChart('sugCumFob',   _sugRows, r=>r.fob_usd, 'sugCumFobLeg');
+  buildSeasonChart('sugMonVol', _sugRows, '#e8c84a', r=>r.mt, 'sugMonLeg');
+  buildSeasonChart('sugMonFob', _sugRows, '#e8c84a', r=>r.fob_usd, 'sugMonFobLeg');
+  buildCountryStackedBar('sugCtryVol', _sugRows, r=>r.mt, '#e8c84a');
+  buildCountryStackedBar('sugCtryFob', _sugRows, r=>r.fob_usd, '#e8c84a');
+  // Seasonal index
+  (()=>{ const byYM=aggByMonth(_sugRows,r=>r.mt); const ys=Object.keys(byYM).map(Number).sort();
+    const avg=Array(12).fill(0).map((_,m)=>{ const v=ys.map(y=>byYM[y][m]).filter(v=>v>0); return v.length?v.reduce((a,b)=>a+b)/v.length:0; });
+    const grand=avg.reduce((a,b)=>a+b,0)/12||1;
+    mkChart('sugarSeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:avg.map(v=>+((v/grand)*100).toFixed(1)),borderColor:'#e8c84a',backgroundColor:'#e8c84a28',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#e8c84a',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
+  })();
   renderDestTable('sugar-tbl-vol', aggByCountry(filterRows({commodity:'sugar',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt), 'MT', '#e8c84a');
   renderDestTable('sugar-tbl-fob', aggByCountry(filterRows({commodity:'sugar',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd), 'FOB USD', '#e8c84a');
 }
@@ -1498,7 +1620,10 @@ function renderSoy() {
 
 
   // Analyst seasonality charts
-  const _soyRows  = filterRows({commodity:'soybeans',yearFrom:yf,yearTo:yt});
+  buildYearToggles('soy-yr-toggles','renderSoy()','#6ec86a');
+  const _soyActiveYrs = getActiveYears('soy-yr-toggles');
+  const _soyRows  = filterRows({commodity:'soybeans',yearFrom:yf,yearTo:yt})
+                     .filter(r => _soyActiveYrs.includes(r.year));
   const _soyVolFn = r=>r.mt;
   const _soyFobFn = r=>r.fob_usd;
   buildCumulativeSeasonChart('soyCumVol',   _soyRows, _soyVolFn, 'soyCumLeg');
@@ -1550,7 +1675,10 @@ function renderCorn() {
 
 
   // Analyst seasonality charts
-  const _corRows  = filterRows({commodity:'corn',yearFrom:yf,yearTo:yt});
+  buildYearToggles('corn-yr-toggles','renderCorn()','#e8a84a');
+  const _corActiveYrs = getActiveYears('corn-yr-toggles');
+  const _corRows  = filterRows({commodity:'corn',yearFrom:yf,yearTo:yt})
+                     .filter(r => _corActiveYrs.includes(r.year));
   const _corVolFn = r=>r.mt;
   const _corFobFn = r=>r.fob_usd;
   buildCumulativeSeasonChart('corCumVol',   _corRows, _corVolFn, 'corCumLeg');
