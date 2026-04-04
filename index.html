@@ -1319,7 +1319,7 @@ function renderOverview() {
       <div class="kpi-label">${labels[com]}</div>
       <div class="kpi-val">${fmtB(curFOB)}</div>
       <div class="kpi-unit">FOB USD ${latestYear}</div>
-      ${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}
+      ${pct!==null?'<div class="kpi-delta '+(up?'up':'dn')+'">'+( up?'▲':'▼')+' '+Math.abs(pct)+'% vs '+prevYear+'</div>':''}
     `;
     kpiRow.appendChild(div);
   });
@@ -1962,7 +1962,7 @@ function renderCoffee() {
     const up = pct>=0;
     const d=document.createElement('div');
     d.className='kpi coffee';
-    d.innerHTML=`<div class="kpi-label">${def.label}</div><div class="kpi-val">${fmtShort(curV)}</div><div class="kpi-unit">${def.unit} · ${latestYear}</div><div class="kpi-sub">FOB ${fmtB(curF)}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    d.innerHTML=`<div class="kpi-label">${def.label}</div><div class="kpi-val">${fmtShort(curV)}</div><div class="kpi-unit">${def.unit} · ${latestYear}</div><div class="kpi-sub">FOB ${fmtB(curF)}</div>${pct!==null?'<div class="kpi-delta '+(up?'up':'dn')+'">'+( up?'▲':'▼')+' '+Math.abs(pct)+'% vs '+prevYear+'</div>':''}`;
     kpiEl.appendChild(d);
   });
 
@@ -2079,7 +2079,7 @@ function renderCotton() {
   const pctF = prevFOB>0?((curFOB-prevFOB)/prevFOB*100).toFixed(1):null;
   [[`${fmtShort(curVol)}`,unitLabel,pctV],[`${fmtB(curFOB)}`,'FOB USD',pctF],[topC[0],`${(topC[1]/curFOB*100).toFixed(0)}% share`,null],[`$${(curFOB/Math.max(curVol,1)).toFixed(2)}`,`per ${unit==='bales'?'bale':'MT'}`,null]].forEach(([v,u,pct])=>{
     const up=pct>=0; const d=document.createElement('div'); d.className='kpi cotton';
-    d.innerHTML=`<div class="kpi-label">Cotton ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    d.innerHTML=`<div class="kpi-label">Cotton ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?'<div class="kpi-delta '+(up?'up':'dn')+'">'+( up?'▲':'▼')+' '+Math.abs(pct)+'% vs '+prevYear+'</div>':''}`;
     kpiEl.appendChild(d);
   });
 
@@ -2145,7 +2145,7 @@ function renderSugar() {
   const pV=prevVol>0?((curVol-prevVol)/prevVol*100).toFixed(1):null, pF=prevFOB>0?((curFOB-prevFOB)/prevFOB*100).toFixed(1):null;
   [[fmtShort(curVol),'MT',pV],[fmtB(curFOB),'FOB USD',pF],[topC[0],`${(topC[1]/curFOB*100).toFixed(0)}% share`,null],['#1','World exporter rank',null]].forEach(([v,u,pct])=>{
     const up=pct>=0; const d=document.createElement('div'); d.className='kpi sugar';
-    d.innerHTML=`<div class="kpi-label">Sugar ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    d.innerHTML=`<div class="kpi-label">Sugar ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?'<div class="kpi-delta '+(up?'up':'dn')+'">'+( up?'▲':'▼')+' '+Math.abs(pct)+'% vs '+prevYear+'</div>':''}`;
     kpiEl.appendChild(d);
   });
 
@@ -2213,7 +2213,7 @@ function renderSoy() {
     const curF=curR.reduce((s,r)=>s+r.fob_usd,0), prevF=prevR.reduce((s,r)=>s+r.fob_usd,0);
     const pct=prevF>0?((curF-prevF)/prevF*100).toFixed(1):null; const up=pct>=0;
     const d=document.createElement('div'); d.className='kpi soy';
-    d.innerHTML=`<div class="kpi-label">${def.label}</div><div class="kpi-val">${fmtB(curF)}</div><div class="kpi-unit">FOB USD ${latestYear}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    d.innerHTML=`<div class="kpi-label">${def.label}</div><div class="kpi-val">${fmtB(curF)}</div><div class="kpi-unit">FOB USD ${latestYear}</div>${pct!==null?'<div class="kpi-delta '+(up?'up':'dn')+'">'+( up?'▲':'▼')+' '+Math.abs(pct)+'% vs '+prevYear+'</div>':''}`;
     kpiEl.appendChild(d);
   });
 
@@ -2282,7 +2282,7 @@ function renderCorn() {
   const pV=prevV>0?((curV-prevV)/prevV*100).toFixed(1):null, pF=prevF>0?((curF-prevF)/prevF*100).toFixed(1):null;
   [[fmtShort(curV),'MT',pV],[fmtB(curF),'FOB USD',pF],[topCC[0],`${(topCC[1]/curF*100).toFixed(0)}% share`,null],[pF!==null?`${pF>0?'+':''}${pF}%`:'—','FOB vs prior year',null]].forEach(([v,u,pct])=>{
     const up=pct>=0; const d=document.createElement('div'); d.className='kpi corn';
-    d.innerHTML=`<div class="kpi-label">Corn ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    d.innerHTML=`<div class="kpi-label">Corn ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?'<div class="kpi-delta '+(up?'up':'dn')+'">'+( up?'▲':'▼')+' '+Math.abs(pct)+'% vs '+prevYear+'</div>':''}`;
     kpiEl.appendChild(d);
   });
 
@@ -2384,7 +2384,7 @@ function renderSeasonality() {
   tglEl.innerHTML = filtYears.map((y,i)=> {
     const on = seasonYearEnabled[y];
     const c  = yearColor(i);
-    return `<button class="toggle ${on?'on':''}" style="${on?`border-color:${c};color:${c};background:${c}18`:''}"
+    return `<button class="toggle ${on?'on':''}" style="${on?'border-color:'+c+';color:'+c+';background:'+c+'18':''}"
       onclick="toggleSeasonYear(${y},this,'${c}')">${y}</button>`;
   }).join('');
 
