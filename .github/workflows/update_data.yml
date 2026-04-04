@@ -1,0 +1,95 @@
+name: Brazil Trade — Monthly Data Update
+
+on:
+  # Every Monday 08:00 UTC — MDIC typically releases the previous
+  # month's data around the 20th, so by Monday we're safe.
+  schedule:
+    - cron: "0 8 * * 1"
+
+  # Manual trigger from the Actions tab (useful for testing)
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force update even if CSV appears current"
+        required: false
+        default: "false"
+        type: choice
+        options: ["true", "false"]
+      years:
+        description: "Specific years to re-fetch (space-separated, e.g. '2025 2026'). Leave blank for auto."
+        required: false
+        default: ""
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30      # each year takes ~2 min; we fetch at most 2 years
+
+    permissions:
+      contents: write        # needed to commit the updated CSV back
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests pandas urllib3
+
+      - name: Run update
+        run: |
+          if [ -n "${{ github.event.inputs.years }}" ]; then
+            # Specific years supplied via manual trigger
+            echo "Fetching specific years: ${{ github.event.inputs.years }}"
+            python scraper.py --years ${{ github.event.inputs.years }}
+          elif [ "${{ github.event.inputs.force }}" = "true" ]; then
+            # Force via manual trigger
+            echo "Force update requested"
+            python scheduler.py --force
+          else
+            # Normal scheduled run
+            python scheduler.py --force
+          fi
+          # Note: --force in scheduler just bypasses the Monday-check,
+          # the "already up to date" check still runs and exits cleanly
+          # if no new MDIC data is available.
+
+      - name: Check if data changed
+        id: diff
+        run: |
+          git diff --quiet data/ && echo "changed=false" >> $GITHUB_OUTPUT \
+                                 || echo "changed=true"  >> $GITHUB_OUTPUT
+
+      - name: Commit updated CSV
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Derive the data period from the CSV itself
+          PERIOD=$(python - <<'PYEOF'
+          import pandas as pd
+          from pathlib import Path
+          csv = Path("data/exports.csv")
+          if csv.exists():
+              df = pd.read_csv(csv, usecols=["year","month"])
+              if not df.empty:
+                  idx = df["year"]*100 + df["month"]
+                  row = df.loc[idx.idxmax()]
+                  months = ["Jan","Feb","Mar","Apr","May","Jun",
+                            "Jul","Aug","Sep","Oct","Nov","Dec"]
+                  print(f"{months[int(row['month'])-1]} {int(row['year'])}")
+          PYEOF
+          )
+
+          git add data/exports.csv data/countries.csv
+          git commit -m "data: update through ${PERIOD:-$(date +%Y-%m)} [bot]"
+          git push
+
+      - name: No changes
+        if: steps.diff.outputs.changed == 'false'
+        run: echo "CSV unchanged — MDIC has not released new data yet."
