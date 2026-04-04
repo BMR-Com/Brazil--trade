@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.DS_Store
+*.log
+data/EXP_*.csv
+data/IMP_*.csv
+!data/exports.csv
+!data/countries.csv
