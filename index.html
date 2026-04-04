@@ -162,6 +162,15 @@ select:hover{border-color:var(--border2);}
 .com-pill.active.soy   {border-color:var(--soy);   color:var(--soy);   background:var(--soy-bg);}
 .com-pill.active.corn  {border-color:var(--corn);  color:var(--corn);  background:var(--corn-bg);}
 
+/* ── Light-theme chart cards (seasonality) ───────────────────── */
+.chart-card.light {
+  background: #ffffff;
+  border: 1px solid #e2e6f0;
+}
+.chart-card.light .chart-title { color: #1a1f36; }
+.chart-card.light .chart-sub   { color: #6b7280; }
+.chart-card.light .leg-item    { color: #374151; }
+
 /* ── Source footer ───────────────────────────────────────────── */
 .source-bar{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:11px 18px;font-size:10px;color:var(--dim2);display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:24px;}
 .src-tag{padding:2px 9px;background:var(--bg3);border:1px solid var(--border);border-radius:100px;font-size:10px;color:var(--dim);}
@@ -534,13 +543,13 @@ select:hover{border-color:var(--border2);}
      SEASONALITY PAGE (interactive)
 ═══════════════════════════════════════════════════════════════════════════ -->
 <div class="page" id="page-seasonality">
-  <div class="sec mb16"><span class="sec-title">📈 Seasonality Explorer</span><div class="sec-line"></div></div>
+  <div class="sec mb16"><span class="sec-title">📈 Seasonality &amp; Country Flow Explorer</span><div class="sec-line"></div></div>
 
   <div class="ctrl-row mb16">
     <span class="ctrl-label">Commodity:</span>
     <select id="s-commodity" onchange="renderSeasonality()">
       <option value="coffee">Coffee (total)</option>
-      <option value="coffee_arabica_green">Coffee — Arabica green</option>
+      <option value="coffee_arabica_green">Coffee — Arabica</option>
       <option value="coffee_conillon_robusta">Coffee — Conillon/Robusta</option>
       <option value="coffee_soluble">Coffee — Soluble</option>
       <option value="cotton">Cotton</option>
@@ -549,11 +558,6 @@ select:hover{border-color:var(--border2);}
       <option value="soybeans_soybean_meal">Soybeans — Meal</option>
       <option value="soybeans_soybean_oil">Soybeans — Oil</option>
       <option value="corn">Corn</option>
-    </select>
-    <span class="ctrl-label" style="margin-left:8px;">Metric:</span>
-    <select id="s-metric" onchange="renderSeasonality()">
-      <option value="vol">Volume</option>
-      <option value="fob">FOB Value (USD)</option>
     </select>
     <span class="ctrl-label" style="margin-left:8px;">Unit (cotton):</span>
     <select id="s-cotton-unit" onchange="renderSeasonality()">
@@ -564,30 +568,76 @@ select:hover{border-color:var(--border2);}
     <select id="s-year-from" onchange="renderSeasonality()"></select>
     <span style="color:var(--dim)">–</span>
     <select id="s-year-to" onchange="renderSeasonality()"></select>
+    <span class="ctrl-label" style="margin-left:8px;">Top countries:</span>
+    <select id="s-top-n" onchange="renderSeasonality()">
+      <option value="8">8</option>
+      <option value="10" selected>10</option>
+      <option value="15">15</option>
+    </select>
   </div>
 
   <div class="ctrl-row mb16">
-    <span class="ctrl-label">Enable/disable years:</span>
+    <span class="ctrl-label">Toggle years:</span>
     <div class="toggle-group" id="s-year-toggles"></div>
   </div>
 
-  <div class="chart-card mb24">
-    <div class="chart-title" id="s-chart-title">Monthly Seasonality — Year-over-Year</div>
-    <div class="chart-sub">Each line = one year · White dashed = historical average</div>
-    <div class="chart-wrap h340"><canvas id="seasonMainChart"></canvas></div>
-    <div class="legend" id="s-legend"></div>
+  <!-- ROW 1: Cumulative volume + Cumulative value -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title" id="s-cum-vol-title">Cumulative Export Volume — Year-over-Year</div>
+      <div class="chart-sub">Running total by month · each line = one year</div>
+      <div class="chart-wrap h300"><canvas id="seasonCumVolChart"></canvas></div>
+      <div class="legend" id="s-cum-legend"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title" id="s-cum-fob-title">Cumulative Export Value (FOB USD) — Year-over-Year</div>
+      <div class="chart-sub">Running FOB USD total by month · each line = one year</div>
+      <div class="chart-wrap h300"><canvas id="seasonCumFobChart"></canvas></div>
+      <div class="legend" id="s-cum-fob-legend"></div>
+    </div>
   </div>
 
-  <div class="g2 mb24">
-    <div class="chart-card">
-      <div class="chart-title">Seasonal Index (avg = 100)</div>
-      <div class="chart-sub">Monthly strength relative to annual average · &gt;100 = above average</div>
+  <!-- ROW 2: Monthly volume + Monthly value -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title" id="s-mon-vol-title">Monthly Export Volume — Seasonality</div>
+      <div class="chart-sub">Each line = one year · white dashed = historical average</div>
+      <div class="chart-wrap h300"><canvas id="seasonMonVolChart"></canvas></div>
+      <div class="legend" id="s-mon-legend"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title" id="s-mon-fob-title">Monthly Export Value (FOB USD) — Seasonality</div>
+      <div class="chart-sub">Each line = one year · white dashed = historical average</div>
+      <div class="chart-wrap h300"><canvas id="seasonMonFobChart"></canvas></div>
+      <div class="legend" id="s-mon-fob-legend"></div>
+    </div>
+  </div>
+
+  <!-- ROW 3: Seasonal index + Annual totals -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Seasonal Index — Volume (avg = 100)</div>
+      <div class="chart-sub">Monthly export strength relative to annual average · &gt;100 = peak season</div>
       <div class="chart-wrap h260"><canvas id="seasonIndexChart"></canvas></div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">Year-on-Year Annual Totals</div>
-      <div class="chart-sub">Annual totals for selected commodity + metric</div>
+    <div class="chart-card light">
+      <div class="chart-title">Annual Totals — Volume vs Value</div>
+      <div class="chart-sub">Full year totals · bars = volume · line = FOB USD</div>
       <div class="chart-wrap h260"><canvas id="seasonAnnualChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ROW 4: Country stacked bar — Volume + Value -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title" id="s-ctry-vol-title">Annual Export Volume by Destination Country</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers · others grouped</div>
+      <div class="chart-wrap h340"><canvas id="seasonCtryVolChart"></canvas></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title" id="s-ctry-fob-title">Annual Export Value (FOB USD) by Destination Country</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers by value · others grouped</div>
+      <div class="chart-wrap h340"><canvas id="seasonCtryFobChart"></canvas></div>
     </div>
   </div>
 </div>
@@ -656,8 +706,10 @@ select:hover{border-color:var(--border2);}
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const BALE_KG = 217.724;
 const BAG_KG  = 60;          // kg per 60kg coffee bag
-const GC = 'rgba(255,255,255,0.06)';
-const TC = '#5a5d6e';
+const GC  = 'rgba(255,255,255,0.06)';  // dark theme grid
+const TC  = '#5a5d6e';                  // dark theme ticks
+const GCL = 'rgba(0,0,0,0.07)';        // light theme grid
+const TCL = '#374151';                  // light theme ticks
 
 const COM_COLORS = {
   coffee:'#c8773a', cotton:'#4ab8d8', sugar:'#e8c84a',
@@ -669,6 +721,28 @@ const PALETTE = [
   '#f0a050','#50c8d8','#d8c850','#88c850','#c8a850',
   '#e87878','#78c8e8','#f0d878','#a8e878','#f0b878',
 ];
+
+
+// Distinct color palette for year lines (like the sample charts)
+// Colors match the sample analyst charts (distinct, colorblind-friendly)
+const YEAR_PALETTE = [
+  '#e05252',  // red-pink    2017
+  '#f07830',  // orange      2018
+  '#c8a428',  // olive       2019
+  '#2a8a2a',  // dark green  2020
+  '#1a9e6a',  // teal green  2021
+  '#1e88c8',  // steel blue  2022
+  '#3a5fd8',  // royal blue  2023
+  '#8855cc',  // purple      2024
+  '#d0548c',  // magenta     2025
+  '#94b820',  // yellow-grn  2026
+  '#00b8cc',  // cyan        extra
+  '#e87820',  // burnt org   extra
+  '#5aa832',  // mid green   extra
+  '#cc4444',  // crimson     extra
+  '#7070e0',  // lavender    extra
+];
+function yearColor(i) { return YEAR_PALETTE[i % YEAR_PALETTE.length]; }
 
 const CHART_DEFAULTS = {
   responsive: true,
@@ -924,41 +998,111 @@ function toggleOverviewLine(com, btn) {
   renderOverviewMonthly();
 }
 
-// ── Seasonality chart builder (shared) ────────────────────────────────────────
+// ── Seasonality chart builder — monthly non-cumulative (like sample image 2) ─
+function lightLineOpts(extra={}) {
+  return {
+    responsive:true, maintainAspectRatio:false,
+    animation:{duration:300},
+    interaction:{mode:'index',intersect:false},
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${fmtFull(c.raw)}`}},
+      ...extra.plugins
+    },
+    scales:{
+      x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11,weight:'500'}},
+         border:{color:'#d1d5db'}},
+      y:{grid:{color:GCL,drawBorder:false},ticks:{color:TCL,font:{size:11},callback:v=>fmtShort(v)},
+         border:{color:'#d1d5db'}},
+      ...extra.scales
+    }
+  };
+}
+
 function buildSeasonChart(chartId, rows, color, valFn, legendId, noLegend=false) {
   const byYM = aggByMonth(rows, valFn);
-  const ys = Object.keys(byYM).map(Number).sort();
-  const pal = palFade(color, ys.length);
-
-  // Average
-  const avg = Array(12).fill(0).map((_,m) => {
-    const vals = ys.map(y => byYM[y][m]).filter(v=>v>0);
-    return vals.length ? vals.reduce((a,b)=>a+b)/vals.length : 0;
+  const ys   = Object.keys(byYM).map(Number).sort();
+  const avg  = Array(12).fill(0).map((_,m) => {
+    const v = ys.map(y=>byYM[y][m]).filter(v=>v>0);
+    return v.length ? v.reduce((a,b)=>a+b)/v.length : 0;
   });
-
   const datasets = ys.map((y,i) => ({
-    label: String(y),
-    data: byYM[y],
-    borderColor: pal[i],
-    backgroundColor: 'transparent',
-    borderWidth: 1.3,
-    tension: .4,
-    pointRadius: 0
+    label:String(y), data:byYM[y],
+    borderColor:yearColor(i), backgroundColor:'transparent',
+    borderWidth:2.2, tension:.35,
+    pointRadius:4, pointHoverRadius:6,
+    pointBackgroundColor:yearColor(i),
+    pointBorderColor:'#fff', pointBorderWidth:1.5
   }));
-  datasets.push({ label:'Avg', data:avg, borderColor:'rgba(255,255,255,.55)', borderDash:[5,3], borderWidth:1.5, tension:.4, pointRadius:0 });
-
-  mkChart(chartId, {
-    type:'line',
-    data:{ labels:MONTHS, datasets },
-    options:{ ...baseLineOpts(), plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:c=>` ${c.dataset.label}: ${fmtFull(c.raw)}`, filter:i=>i.raw!==null } } } }
-  });
-
+  // Average line — dark dashed on light bg
+  datasets.push({label:'Avg',data:avg,borderColor:'#9ca3af',borderDash:[7,4],
+    borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:0});
+  mkChart(chartId, {type:'line', data:{labels:MONTHS,datasets},
+    options:lightLineOpts()});
   if (legendId && !noLegend) {
-    document.getElementById(legendId).innerHTML = [...ys,'Avg'].map((y,i)=>{
-      const c = i<ys.length ? pal[i] : 'rgba(255,255,255,.55)';
-      return `<div class="leg-item"><div class="leg-dot" style="background:${c}"></div>${y}</div>`;
-    }).join('');
+    document.getElementById(legendId).innerHTML =
+      [...ys.map((y,i)=>({y,c:yearColor(i)})), {y:'Avg',c:'#9ca3af'}]
+        .map(({y,c})=>`<div class="leg-item"><div class="leg-dot" style="background:${c};border-radius:50%"></div>${y}</div>`)
+        .join('');
   }
+}
+
+// ── Cumulative seasonality chart (like sample image 1) ─────────────────────
+function buildCumulativeSeasonChart(chartId, rows, valFn, legendId) {
+  const byYM = aggByMonth(rows, valFn);
+  const ys   = Object.keys(byYM).map(Number).sort();
+  const datasets = ys.map((y,i) => {
+    let cum = 0;
+    const cumData = byYM[y].map(v => { cum += (v||0); return cum; });
+    return {
+      label:String(y), data:cumData,
+      borderColor:yearColor(i), backgroundColor:'transparent',
+      borderWidth:2.5, tension:.35,
+      pointRadius:4, pointHoverRadius:6,
+      pointBackgroundColor:yearColor(i),
+      pointBorderColor:'#fff', pointBorderWidth:1.5
+    };
+  });
+  mkChart(chartId, {type:'line', data:{labels:MONTHS,datasets},
+    options:lightLineOpts()});
+  if (legendId) {
+    document.getElementById(legendId).innerHTML = ys.map((y,i)=>
+      `<div class="leg-item"><div class="leg-dot" style="background:${yearColor(i)};border-radius:50%"></div>${y}</div>`
+    ).join('');
+  }
+}
+
+// ── Stacked country bar chart by year (like sample image 3) ────────────────
+function buildCountryStackedBar(chartId, rows, valFn, color, topN=10) {
+  const ys = [...new Set(rows.map(r=>r.year))].sort();
+  // Get top N countries by total across all years
+  const totByC = {};
+  rows.forEach(r => { totByC[r.country_name]=(totByC[r.country_name]||0)+valFn(r); });
+  const topC = Object.entries(totByC).sort((a,b)=>b[1]-a[1]).slice(0,topN).map(e=>e[0]);
+  // Build per-year per-country matrix
+  const byYC = {};
+  rows.forEach(r => {
+    if (!byYC[r.year]) byYC[r.year]={};
+    const c = topC.includes(r.country_name) ? r.country_name : 'Others';
+    byYC[r.year][c] = (byYC[r.year][c]||0) + valFn(r);
+  });
+  const allLabels = [...topC, 'Others'];
+  const datasets = allLabels.map((c,i) => ({
+    label:c,
+    data:ys.map(y=>(byYC[y]?.[c]||0)),
+    backgroundColor: i<topN ? yearColor(i)+'cc' : '#aaaaaa66',
+    borderColor:     i<topN ? yearColor(i) : '#aaaaaa',
+    borderWidth:0.5, stack:'s', borderRadius:2
+  }));
+  mkChart(chartId, {type:'bar', data:{labels:ys,datasets},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},
+      interaction:{mode:'index',intersect:false},
+      plugins:{legend:{display:true,position:'right',
+        labels:{color:TCL,boxWidth:11,padding:10,font:{size:11}}}},
+      scales:{
+        x:{grid:{color:GCL},stacked:true,ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},
+        y:{grid:{color:GCL},stacked:true,ticks:{color:TCL,font:{size:11},callback:v=>fmtShort(v)},border:{color:'#d1d5db'}}
+      }}});
 }
 
 // ── Coffee page ───────────────────────────────────────────────────────────────
@@ -1032,13 +1176,16 @@ function renderCoffeeSeason() {
   const metric = document.getElementById('coffee-metric').value;
   const yf = parseInt(document.getElementById('coffee-year-from').value)||YEARS[0];
   const yt = parseInt(document.getElementById('coffee-year-to').value)||YEARS[YEARS.length-1];
-  const valFn = metric==='vol' ? r=>r.qt_estat : r=>r.fob_usd;
+  const volFn = r=>r.qt_estat;
+  const fobFn = r=>r.fob_usd;
+  const valFn = metric==='vol' ? volFn : fobFn;
   const clr = '#c8773a';
 
-  buildSeasonChart('coffeeSeasonTotal',    filterRows({commodity:'coffee',yearFrom:yf,yearTo:yt}), clr, valFn);
-  buildSeasonChart('coffeeSeasonArabica',  filterRows({commodity:'coffee',subtype:'arabica_green',yearFrom:yf,yearTo:yt}), clr, valFn);
-  buildSeasonChart('coffeeSeasonConillon', filterRows({commodity:'coffee',subtype:'conillon_robusta',yearFrom:yf,yearTo:yt}), '#e89a5a', valFn);
-  buildSeasonChart('coffeeSeasonSoluble',  filterRows({commodity:'coffee',subtype:'soluble',yearFrom:yf,yearTo:yt}), '#f5c890', valFn);
+  // Cumulative charts
+  buildCumulativeSeasonChart('coffeeSeasonTotal',    filterRows({commodity:'coffee',yearFrom:yf,yearTo:yt}), valFn);
+  buildCumulativeSeasonChart('coffeeSeasonArabica',  filterRows({commodity:'coffee',subtype:'arabica_green',yearFrom:yf,yearTo:yt}), valFn);
+  buildCumulativeSeasonChart('coffeeSeasonConillon', filterRows({commodity:'coffee',subtype:'conillon_robusta',yearFrom:yf,yearTo:yt}), valFn);
+  buildCumulativeSeasonChart('coffeeSeasonSoluble',  filterRows({commodity:'coffee',subtype:'soluble',yearFrom:yf,yearTo:yt}), valFn);
 }
 
 function renderCoffeeDestTable() {
@@ -1224,73 +1371,127 @@ function renderDestTable(tableId, sorted, unitLabel, clr) {
   document.getElementById(tableId).innerHTML=h;
 }
 
-// ── Seasonality Explorer ───────────────────────────────────────────────────────
+// ── Seasonality Explorer ─────────────────────────────────────────────────────
 function renderSeasonality() {
   populateYearSelects(['s-year-from','s-year-to']);
-  const sel  = document.getElementById('s-commodity').value;
-  const metric = document.getElementById('s-metric').value;
+  const sel        = document.getElementById('s-commodity').value;
   const cottonUnit = document.getElementById('s-cotton-unit').value;
-  const yf = parseInt(document.getElementById('s-year-from').value)||YEARS[0];
-  const yt = parseInt(document.getElementById('s-year-to').value)||YEARS[YEARS.length-1];
+  const yf         = parseInt(document.getElementById('s-year-from').value)||YEARS[0];
+  const yt         = parseInt(document.getElementById('s-year-to').value)||YEARS[YEARS.length-1];
+  const topN       = parseInt(document.getElementById('s-top-n').value)||10;
 
-  // Parse commodity/subtype
+  // Parse commodity / subtype from select value
   let com, st;
-  if (sel.includes('_')) { const p=sel.split('_'); com=p[0]; st=p.slice(1).join('_'); }
-  else { com=sel; st=null; }
-  // Special case coffee_arabica_green etc
-  if (com==='coffee' && st) { st=st; }
-  if (com==='soybeans' && st) { /* keep */ }
+  if (sel.startsWith('coffee_') && sel!=='coffee') {
+    com = 'coffee'; st = sel.slice(7);           // coffee_arabica_green → arabica_green
+  } else if (sel.startsWith('soybeans_')) {
+    com = 'soybeans'; st = sel.slice(9);         // soybeans_raw_soybeans → raw_soybeans
+  } else {
+    com = sel; st = null;
+  }
 
   const rows = filterRows({commodity:com, subtype:st||undefined, yearFrom:yf, yearTo:yt});
-  const clr = COM_COLORS[com]||'#888';
-  const volFn = com==='coffee' ? r=>r.qt_estat : com==='cotton' ? (cottonUnit==='bales'?r=>r.bales_480lb:r=>r.mt) : r=>r.mt;
-  const valFn = metric==='vol' ? volFn : r=>r.fob_usd;
+  const clr  = COM_COLORS[com]||'#888';
 
-  // Year toggles
+  // Volume function — coffee = 60kg bags (qt_estat), cotton = bales or MT, else MT
+  const volFn = com==='coffee'  ? r=>r.qt_estat
+              : com==='cotton'  ? (cottonUnit==='bales' ? r=>r.bales_480lb : r=>r.mt)
+              : r=>r.mt;
+  const fobFn = r=>r.fob_usd;
+
+  // Unit label for axis
+  const volUnit = com==='coffee'  ? '60kg bags'
+                : com==='cotton'  ? (cottonUnit==='bales'?'480lb bales':'MT')
+                : 'MT';
+
+  // ── Year toggles ───────────────────────────────────────────────────────────
   const filtYears = [...new Set(rows.map(r=>r.year))].sort();
-  if (Object.keys(seasonYearEnabled).length===0 || JSON.stringify(Object.keys(seasonYearEnabled).map(Number).sort()) !== JSON.stringify(filtYears)) {
+  if (Object.keys(seasonYearEnabled).length===0 ||
+      JSON.stringify(Object.keys(seasonYearEnabled).map(Number).sort()) !== JSON.stringify(filtYears)) {
     seasonYearEnabled = {};
     filtYears.forEach(y=>seasonYearEnabled[y]=true);
   }
   const tglEl = document.getElementById('s-year-toggles');
-  tglEl.innerHTML = filtYears.map(y=>
-    `<button class="toggle ${seasonYearEnabled[y]?'on':''}" style="${seasonYearEnabled[y]?`border-color:${clr};color:${clr};background:${clr}18`:''}" onclick="toggleSeasonYear(${y},this,'${clr}')">${y}</button>`
-  ).join('');
-
-  // Filter to enabled years
-  const enabledYrs = filtYears.filter(y=>seasonYearEnabled[y]);
-  const filtRows = rows.filter(r=>enabledYrs.includes(r.year));
-
-  // Main seasonality chart
-  const byYM = aggByMonth(filtRows, valFn);
-  const ys = Object.keys(byYM).map(Number).sort();
-  const pal = palFade(clr, ys.length);
-  const avg = Array(12).fill(0).map((_,m)=>{ const v=ys.map(y=>byYM[y][m]).filter(v=>v>0); return v.length?v.reduce((a,b)=>a+b)/v.length:0; });
-  const mainDS = ys.map((y,i)=>({ label:String(y), data:byYM[y], borderColor:pal[i], backgroundColor:'transparent', borderWidth:ys.length>8?1:1.5, tension:.4, pointRadius:0 }));
-  mainDS.push({ label:'Avg', data:avg, borderColor:'rgba(255,255,255,.55)', borderDash:[5,3], borderWidth:1.8, tension:.4, pointRadius:0 });
-
-  mkChart('seasonMainChart',{type:'line',data:{labels:MONTHS,datasets:mainDS},options:{...baseLineOpts(),plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${fmtFull(c.raw)}`}}}}});
-
-  // Legend
-  document.getElementById('s-legend').innerHTML = [...ys,'Avg'].map((y,i)=>{
-    const c=i<ys.length?pal[i]:'rgba(255,255,255,.55)';
-    return `<div class="leg-item"><div class="leg-dot" style="background:${c}"></div>${y}</div>`;
+  tglEl.innerHTML = filtYears.map((y,i)=> {
+    const on = seasonYearEnabled[y];
+    const c  = yearColor(i);
+    return `<button class="toggle ${on?'on':''}" style="${on?`border-color:${c};color:${c};background:${c}18`:''}"
+      onclick="toggleSeasonYear(${y},this,'${c}')">${y}</button>`;
   }).join('');
 
-  // Index chart
-  const grand=avg.reduce((a,b)=>a+b)/12||1;
-  const idxData=avg.map(v=>+((v/grand)*100).toFixed(1));
-  mkChart('seasonIndexChart',{type:'line',data:{labels:MONTHS,datasets:[{label:'Seasonal index',data:idxData,borderColor:clr,backgroundColor:clr+'22',fill:true,borderWidth:2,tension:.4,pointRadius:4,pointBackgroundColor:clr}]},
-    options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10}},title:{display:true,text:'Index (avg=100)',color:TC,font:{size:10}}}}}});
+  const enabledYrs = filtYears.filter(y=>seasonYearEnabled[y]);
+  const activeRows = rows.filter(r=>enabledYrs.includes(r.year));
 
-  // Annual totals chart
-  const annTot = YEARS.filter(y=>y>=yf&&y<=yt).map(y=>{ const r=rows.filter(row=>row.year===y); return {year:y, val:r.reduce((s,row)=>s+valFn(row),0)}; });
-  mkChart('seasonAnnualChart',{type:'bar',data:{labels:annTot.map(d=>d.year),datasets:[{label:'Annual',data:annTot.map(d=>d.val),backgroundColor:clr+'44',borderColor:clr,borderWidth:1.5,borderRadius:4}]},
-    options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}});
+  // Titles
+  const comLabel = sel.replace(/_/g,' ').replace(/\w/g,c=>c.toUpperCase());
+  document.getElementById('s-cum-vol-title').textContent  = `Cumulative ${comLabel} Export Volume (${volUnit})`;
+  document.getElementById('s-cum-fob-title').textContent  = `Cumulative ${comLabel} Export Value (FOB USD)`;
+  document.getElementById('s-mon-vol-title').textContent  = `Monthly ${comLabel} Seasonality — Volume (${volUnit})`;
+  document.getElementById('s-mon-fob-title').textContent  = `Monthly ${comLabel} Seasonality — Value (FOB USD)`;
+  document.getElementById('s-ctry-vol-title').textContent = `${comLabel} Annual Volume by Destination (${volUnit})`;
+  document.getElementById('s-ctry-fob-title').textContent = `${comLabel} Annual Value by Destination (FOB USD)`;
 
-  document.getElementById('s-chart-title').textContent = `Monthly Seasonality — ${sel.replace(/_/g,' ')} (${metric==='vol'?'Volume':'FOB USD'})`;
+  // ── ROW 1: Cumulative charts ───────────────────────────────────────────────
+  buildCumulativeSeasonChart('seasonCumVolChart', activeRows, volFn, 's-cum-legend');
+  buildCumulativeSeasonChart('seasonCumFobChart', activeRows, fobFn, 's-cum-fob-legend');
+
+  // ── ROW 2: Monthly seasonality ─────────────────────────────────────────────
+  buildSeasonChart('seasonMonVolChart', activeRows, clr, volFn, 's-mon-legend');
+  buildSeasonChart('seasonMonFobChart', activeRows, clr, fobFn, 's-mon-fob-legend');
+
+  // ── ROW 3a: Seasonal index (volume) ───────────────────────────────────────
+  const byYMvol = aggByMonth(activeRows, volFn);
+  const ysAll   = Object.keys(byYMvol).map(Number).sort();
+  const avgVol  = Array(12).fill(0).map((_,m)=>{
+    const v=ysAll.map(y=>byYMvol[y][m]).filter(v=>v>0);
+    return v.length?v.reduce((a,b)=>a+b)/v.length:0;
+  });
+  const grand = avgVol.reduce((a,b)=>a+b,0)/12||1;
+  const idxData = avgVol.map(v=>+((v/grand)*100).toFixed(1));
+  mkChart('seasonIndexChart',{type:'line',
+    data:{labels:MONTHS,datasets:[{label:'Index',data:idxData,
+      borderColor:clr,backgroundColor:clr+'28',fill:true,borderWidth:2.5,
+      tension:.35,pointRadius:5,pointBackgroundColor:clr,
+      pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},
+    options:{...lightLineOpts({
+      scales:{
+        x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},
+        y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},
+          title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}
+      },
+      plugins:{tooltip:{callbacks:{label:c=>`Index: ${c.raw}`,title:t=>`Month: ${t[0].label}`}}}
+    })}});
+
+  // ── ROW 3b: Annual totals dual axis ───────────────────────────────────────
+  const annYrs = YEARS.filter(y=>y>=yf&&y<=yt&&enabledYrs.includes(y));
+  const annVol = annYrs.map(y=>{const r=rows.filter(row=>row.year===y);return r.reduce((s,row)=>s+volFn(row),0);});
+  const annFob = annYrs.map(y=>{const r=rows.filter(row=>row.year===y);return r.reduce((s,row)=>s+fobFn(row),0)/1e9;});
+  mkChart('seasonAnnualChart',{type:'bar',
+    data:{labels:annYrs,datasets:[
+      {type:'bar', label:`Volume (${volUnit})`,data:annVol,
+        backgroundColor:clr+'55',borderColor:clr,borderWidth:1,borderRadius:4,yAxisID:'y'},
+      {type:'line',label:'FOB ($B)',data:annFob,
+        borderColor:'#e07820',borderWidth:2.5,tension:.3,pointRadius:5,
+        pointBackgroundColor:'#e07820',pointBorderColor:'#fff',pointBorderWidth:1.5,yAxisID:'y2'},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},
+      interaction:{mode:'index',intersect:false},
+      plugins:{legend:{display:true,position:'top',
+        labels:{color:TCL,boxWidth:11,padding:12,font:{size:11}}}},
+      scales:{
+        x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},
+        y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11},callback:v=>fmtShort(v)},
+          title:{display:true,text:volUnit,color:TCL,font:{size:11}},border:{color:'#d1d5db'}},
+        y2:{position:'right',grid:{display:false},
+          ticks:{color:TCL,font:{size:11},callback:v=>v.toFixed(1)+'B'},
+          title:{display:true,text:'FOB $B',color:TCL,font:{size:11}}}
+      }}});
+
+  // ── ROW 4: Country stacked bars ───────────────────────────────────────────
+  const allRows = filterRows({commodity:com, subtype:st||undefined, yearFrom:yf, yearTo:yt});
+  buildCountryStackedBar('seasonCtryVolChart', allRows, volFn, clr, topN);
+  buildCountryStackedBar('seasonCtryFobChart', allRows, fobFn, clr, topN);
 }
-
 function toggleSeasonYear(y, btn, clr) {
   seasonYearEnabled[y] = !seasonYearEnabled[y];
   btn.classList.toggle('on');
@@ -1367,23 +1568,24 @@ function setProgress(pct, msg) {
 }
 
 function parseRows(rows) {
-  // Convert raw CSV strings to typed objects.
-  // mt and bales_480lb are computed from kg_net — not stored in the CSV.
-  return rows.map(r => ({
-    year:         parseInt(r.year),
-    month:        parseInt(r.month),
-    ncm:          r.ncm,
-    commodity:    r.commodity,
-    subtype:      r.subtype,
-    description:  r.description,
-    country_code: r.country_code,
-    country_name: r.country_name || 'Unknown',
-    qt_estat:     parseFloat(r.qt_estat)||0,
-    kg_net:       parseFloat(r.kg_net)||0,
-    get mt()          { return this.kg_net / 1000; },
-    get bales_480lb() { return this.kg_net / 217.724; },
-    fob_usd:      parseFloat(r.fob_usd)||0,
-  })).filter(r => r.year>0 && r.month>0 && r.commodity);
+  return rows.map(r => {
+    const kg = parseFloat(r.kg_net)||0;
+    return {
+      year:         parseInt(r.year),
+      month:        parseInt(r.month),
+      ncm:          r.ncm,
+      commodity:    r.commodity,
+      subtype:      r.subtype,
+      description:  r.description,
+      country_code: r.country_code,
+      country_name: r.country_name || 'Unknown',
+      qt_estat:     parseFloat(r.qt_estat)||0,
+      kg_net:       kg,
+      mt:           kg / 1000,
+      bales_480lb:  kg / 217.724,
+      fob_usd:      parseFloat(r.fob_usd)||0,
+    };
+  }).filter(r => r.year>0 && r.month>0 && r.commodity);
 }
 
 function finaliseData() {
