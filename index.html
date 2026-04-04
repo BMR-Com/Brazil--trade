@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Brazil Agricultural Trade Analytics</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0c0e15;--bg2:#12151f;--bg3:#181c2a;--bg4:#1e2334;
+  --border:#232840;--border2:#2d3355;
+  --text:#e8e6df;--dim:#8a8d9e;--dim2:#5a5d6e;
+  --coffee:#c8773a;--coffee2:#e89a5a;--coffee-bg:rgba(200,119,58,.12);
+  --cotton:#4ab8d8;--cotton2:#72d4f0;--cotton-bg:rgba(74,184,216,.12);
+  --sugar:#e8c84a;--sugar2:#f5dd78;--sugar-bg:rgba(232,200,74,.12);
+  --soy:#6ec86a;--soy2:#92e88e;--soy-bg:rgba(110,200,106,.12);
+  --corn:#e8a84a;--corn2:#f5c472;--corn-bg:rgba(232,168,74,.12);
+  --accent:#e84a2e;--green:#3fc87a;--red:#e85a5a;
+  --r:10px;--r2:6px;
+  --shadow:0 4px 24px rgba(0,0,0,.4);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:14px;line-height:1.55;}
+
+/* ── Header ───────────────────────────────────────────────────── */
+header{
+  background:linear-gradient(135deg,#0c0e15 0%,#14182a 100%);
+  border-bottom:1px solid var(--border);
+  padding:0 32px;
+  position:sticky;top:0;z-index:100;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-flag{font-size:24px;}
+.brand-title{font-size:18px;font-weight:700;letter-spacing:.5px;}
+.brand-sub{font-size:10px;color:var(--dim);letter-spacing:2px;text-transform:uppercase;margin-top:1px;}
+.header-meta{display:flex;align-items:center;gap:16px;}
+.live-badge{display:flex;align-items:center;gap:7px;padding:5px 13px;background:var(--bg3);border:1px solid var(--border);border-radius:100px;font-size:11px;color:var(--dim);}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+#data-period{font-weight:600;color:var(--text);}
+
+/* ── Nav ──────────────────────────────────────────────────────── */
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 32px;display:flex;gap:0;overflow-x:auto;}
+.nav-btn{padding:13px 18px;font-size:12px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--dim);border:none;border-bottom:2px solid transparent;cursor:pointer;background:none;white-space:nowrap;transition:all .2s;}
+.nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+.nav-btn:hover:not(.active){color:var(--text);}
+
+/* ── Layout ───────────────────────────────────────────────────── */
+.page{display:none;padding:28px 32px;max-width:1600px;margin:0 auto;}
+.page.active{display:block;}
+
+/* ── Section heading ─────────────────────────────────────────── */
+.sec{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);}
+.sec-line{flex:1;height:1px;background:var(--border);}
+
+/* ── Grid helpers ────────────────────────────────────────────── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.full{grid-column:1/-1;}
+.mb16{margin-bottom:16px;}
+.mb24{margin-bottom:24px;}
+
+/* ── KPI Cards ───────────────────────────────────────────────── */
+.kpi{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;position:relative;overflow:hidden;}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.kpi.coffee::before{background:var(--coffee);}
+.kpi.cotton::before{background:var(--cotton);}
+.kpi.sugar::before{background:var(--sugar);}
+.kpi.soy::before{background:var(--soy);}
+.kpi.corn::before{background:var(--corn);}
+.kpi.total::before{background:linear-gradient(90deg,var(--coffee),var(--cotton),var(--sugar),var(--soy),var(--corn));}
+.kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:8px;font-weight:700;}
+.kpi.coffee .kpi-label{color:var(--coffee);}
+.kpi.cotton .kpi-label{color:var(--cotton);}
+.kpi.sugar  .kpi-label{color:var(--sugar);}
+.kpi.soy    .kpi-label{color:var(--soy);}
+.kpi.corn   .kpi-label{color:var(--corn);}
+.kpi.total  .kpi-label{color:var(--dim);}
+.kpi-val{font-size:32px;font-weight:700;letter-spacing:-.5px;line-height:1;margin-bottom:3px;}
+.kpi-unit{font-size:11px;color:var(--dim);}
+.kpi-delta{margin-top:10px;font-size:12px;font-weight:600;}
+.kpi-delta.up{color:var(--green);}
+.kpi-delta.dn{color:var(--red);}
+.kpi-sub{font-size:11px;color:var(--dim2);margin-top:4px;}
+
+/* ── Chart cards ─────────────────────────────────────────────── */
+.chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px;}
+.chart-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.chart-sub{font-size:11px;color:var(--dim);margin-bottom:14px;}
+.chart-wrap{position:relative;}
+.chart-wrap.h200{height:200px;}
+.chart-wrap.h260{height:260px;}
+.chart-wrap.h300{height:300px;}
+.chart-wrap.h340{height:340px;}
+
+/* ── Legend ──────────────────────────────────────────────────── */
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;}
+.leg-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--dim);}
+.leg-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+
+/* ── Insight box ─────────────────────────────────────────────── */
+.insight-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:16px 20px;}
+.ins-head{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;color:var(--accent);margin-bottom:12px;font-weight:700;}
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.ins-item{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.5;}
+.ins-icon{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+
+/* ── Table ────────────────────────────────────────────────────── */
+.tcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.tcard-head{padding:13px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+thead tr{background:var(--bg3);}
+th{padding:9px 14px;font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--dim);font-weight:600;text-align:left;border-bottom:1px solid var(--border);}
+th.r{text-align:right;}
+td{padding:9px 14px;border-bottom:1px solid rgba(35,40,64,.5);}
+td.r{text-align:right;font-family:'Courier New',monospace;font-size:11.5px;}
+td.bold{font-weight:600;}
+tbody tr:hover{background:rgba(255,255,255,.025);}
+tbody tr:last-child td{border-bottom:none;}
+.bar-inline{display:flex;align-items:center;gap:6px;}
+.bar-bg2{flex:1;height:3px;background:var(--border);border-radius:2px;min-width:40px;}
+.bar-fill2{height:3px;border-radius:2px;}
+.rank-num{color:var(--dim2);font-size:11px;}
+
+/* ── Controls ────────────────────────────────────────────────── */
+.ctrl-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;align-items:center;}
+.ctrl-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);white-space:nowrap;}
+select{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);padding:6px 10px;font-size:12px;font-family:inherit;cursor:pointer;outline:none;}
+select:hover{border-color:var(--border2);}
+.toggle-group{display:flex;gap:6px;flex-wrap:wrap;}
+.toggle{padding:5px 13px;border-radius:100px;border:1.5px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:11px;font-weight:700;font-family:inherit;transition:all .15s;}
+.toggle.on.coffee{border-color:var(--coffee);color:var(--coffee);background:var(--coffee-bg);}
+.toggle.on.cotton{border-color:var(--cotton);color:var(--cotton);background:var(--cotton-bg);}
+.toggle.on.sugar {border-color:var(--sugar); color:var(--sugar); background:var(--sugar-bg);}
+.toggle.on.soy   {border-color:var(--soy);   color:var(--soy);   background:var(--soy-bg);}
+.toggle.on.corn  {border-color:var(--corn);  color:var(--corn);  background:var(--corn-bg);}
+
+/* ── Loading screen ──────────────────────────────────────────── */
+#loading{
+  position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:16px;z-index:999;
+}
+.spinner{width:48px;height:48px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.load-msg{color:var(--dim);font-size:13px;}
+.load-progress{width:280px;height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
+.load-bar{height:100%;background:var(--accent);border-radius:2px;width:0%;transition:width .3s;}
+
+/* ── Commodity nav pill ──────────────────────────────────────── */
+.com-nav{display:flex;gap:6px;margin-bottom:20px;}
+.com-pill{padding:7px 16px;border-radius:100px;border:1.5px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:12px;font-weight:700;font-family:inherit;transition:all .15s;}
+.com-pill.active.coffee{border-color:var(--coffee);color:var(--coffee);background:var(--coffee-bg);}
+.com-pill.active.cotton{border-color:var(--cotton);color:var(--cotton);background:var(--cotton-bg);}
+.com-pill.active.sugar {border-color:var(--sugar); color:var(--sugar); background:var(--sugar-bg);}
+.com-pill.active.soy   {border-color:var(--soy);   color:var(--soy);   background:var(--soy-bg);}
+.com-pill.active.corn  {border-color:var(--corn);  color:var(--corn);  background:var(--corn-bg);}
+
+/* ── Source footer ───────────────────────────────────────────── */
+.source-bar{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:11px 18px;font-size:10px;color:var(--dim2);display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:24px;}
+.src-tag{padding:2px 9px;background:var(--bg3);border:1px solid var(--border);border-radius:100px;font-size:10px;color:var(--dim);}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media(max-width:1100px){.g5{grid-template-columns:repeat(3,1fr);}.ins-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:900px){.g4,.g3{grid-template-columns:1fr 1fr;}.g2{grid-template-columns:1fr;}.page{padding:16px;}.ins-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.g4,.g3,.g5{grid-template-columns:1fr;}header{padding:0 16px;}nav{padding:0 16px;}}
+::-webkit-scrollbar{width:5px;height:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+</style>
+</head>
+<body>
+
+<!-- ── Loading ───────────────────────────────────────────────────────────── -->
+<div id="loading">
+  <div class="spinner"></div>
+  <div class="load-msg" id="load-msg">Loading trade data…</div>
+  <div class="load-progress"><div class="load-bar" id="load-bar"></div></div>
+</div>
+
+<!-- ── Header ────────────────────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-flag">🇧🇷</span>
+      <div>
+        <div class="brand-title">Brazil Agricultural Trade Analytics</div>
+        <div class="brand-sub">MDIC · SECEX · Dados Abertos · 1997–present</div>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="live-badge">
+        <div class="live-dot"></div>
+        <span>Data through</span>
+        <span id="data-period">loading…</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Navigation ────────────────────────────────────────────────────────── -->
+<nav>
+  <button class="nav-btn active" onclick="showPage('overview')">Overview</button>
+  <button class="nav-btn" onclick="showPage('coffee')">☕ Coffee</button>
+  <button class="nav-btn" onclick="showPage('cotton')">🌾 Cotton</button>
+  <button class="nav-btn" onclick="showPage('sugar')">🍬 Sugar</button>
+  <button class="nav-btn" onclick="showPage('soy')">🫘 Soybeans</button>
+  <button class="nav-btn" onclick="showPage('corn')">🌽 Corn</button>
+  <button class="nav-btn" onclick="showPage('seasonality')">📈 Seasonality</button>
+  <button class="nav-btn" onclick="showPage('destinations')">🌍 Destinations</button>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     OVERVIEW PAGE
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="page active" id="page-overview">
+
+  <div class="sec mb16"><span class="sec-title">Latest Year KPIs</span><div class="sec-line"></div></div>
+  <div class="g5 mb24" id="kpi-row"></div>
+
+  <div class="insight-box mb24">
+    <div class="ins-head">⚡ Key Insights</div>
+    <div class="ins-grid" id="insight-grid"></div>
+  </div>
+
+  <div class="sec mb16"><span class="sec-title">Annual Export Volume</span><div class="sec-line"></div></div>
+  <div class="g2 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Annual Volume — All Commodities (indexed)</div>
+      <div class="chart-sub">Each commodity normalized to 2010=100 for comparability</div>
+      <div class="chart-wrap h300"><canvas id="overviewIndexChart"></canvas></div>
+      <div class="legend" id="overviewIndexLegend"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">2024 Export Value Share by Commodity</div>
+      <div class="chart-sub">FOB USD — share of combined five-commodity total</div>
+      <div class="chart-wrap h300"><canvas id="overviewPieChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="sec mb16"><span class="sec-title">Monthly Trend (all years)</span><div class="sec-line"></div></div>
+  <div class="chart-card mb24">
+    <div class="chart-title">Monthly Export FOB Value 1997–present</div>
+    <div class="chart-sub">USD millions · toggle commodities</div>
+    <div class="ctrl-row">
+      <div class="toggle-group" id="overview-toggles"></div>
+    </div>
+    <div class="chart-wrap h260"><canvas id="overviewMonthlyChart"></canvas></div>
+  </div>
+
+  <div class="source-bar">
+    <span>Source:</span>
+    <span class="src-tag">MDIC/SECEX Brazil</span>
+    <span class="src-tag">balanca.economia.gov.br</span>
+    <span class="src-tag">Auto-updated every Monday via GitHub Actions</span>
+    <span class="src-tag">data/exports.csv</span>
+    <span style="margin-left:auto;">Coffee=60kg bags · Cotton=480lb bales or MT · Sugar/Soy/Corn=MT</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     COFFEE PAGE
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-coffee">
+  <div class="sec mb16"><span class="sec-title">☕ Coffee — Export Analytics</span><div class="sec-line"></div></div>
+
+  <div class="g4 mb24" id="coffee-kpis"></div>
+
+  <!-- Annual charts: total + 3 subtypes -->
+  <div class="sec mb16"><span class="sec-title">Annual Volume (60kg bags) &amp; Value (FOB USD)</span><div class="sec-line"></div></div>
+  <div class="g2 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Total Coffee Exports — Annual</div>
+      <div class="chart-sub">All subtypes combined · bars=volume · line=FOB value</div>
+      <div class="chart-wrap h300"><canvas id="coffeeAnnualTotal"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Coffee Subtypes — Annual Volume</div>
+      <div class="chart-sub">Arabica green · Conillon/Robusta · Soluble</div>
+      <div class="chart-wrap h300"><canvas id="coffeeAnnualSub"></canvas></div>
+      <div class="legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#c8773a"></div>Arabica green</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#e89a5a"></div>Conillon/Robusta</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#f5c890"></div>Soluble/Instant</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monthly seasonality — 4 charts -->
+  <div class="sec mb16"><span class="sec-title">Monthly Seasonality</span><div class="sec-line"></div></div>
+  <div class="ctrl-row">
+    <span class="ctrl-label">Metric:</span>
+    <select id="coffee-metric" onchange="renderCoffeeSeason()">
+      <option value="vol">Volume (60kg bags)</option>
+      <option value="fob">Value (FOB USD)</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Years:</span>
+    <select id="coffee-year-from" onchange="renderCoffeeSeason()"></select>
+    <span style="color:var(--dim)">–</span>
+    <select id="coffee-year-to" onchange="renderCoffeeSeason()"></select>
+  </div>
+  <div class="g2 mb24">
+    <div class="chart-card full">
+      <div class="chart-title">Total Coffee — Monthly Seasonality</div>
+      <div class="chart-sub">Each line = one year · dashed white = average</div>
+      <div class="chart-wrap h260"><canvas id="coffeeSeasonTotal"></canvas></div>
+    </div>
+  </div>
+  <div class="g3 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Arabica Green — Seasonality</div>
+      <div class="chart-wrap h200"><canvas id="coffeeSeasonArabica"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Conillon / Robusta — Seasonality</div>
+      <div class="chart-wrap h200"><canvas id="coffeeSeasonConillon"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Soluble / Instant — Seasonality</div>
+      <div class="chart-wrap h200"><canvas id="coffeeSeasonSoluble"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Top destinations -->
+  <div class="sec mb16"><span class="sec-title">Top Destination Countries</span><div class="sec-line"></div></div>
+  <div class="g2 mb16">
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 by Volume</span><span id="coffee-dest-period" style="font-size:11px;color:var(--dim)"></span></div>
+      <div style="overflow-x:auto"><table id="coffee-tbl-vol"></table></div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 by FOB Value</span></div>
+      <div style="overflow-x:auto"><table id="coffee-tbl-fob"></table></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     COTTON PAGE
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-cotton">
+  <div class="sec mb16"><span class="sec-title">🌾 Cotton — Export Analytics</span><div class="sec-line"></div></div>
+  <div class="g4 mb24" id="cotton-kpis"></div>
+
+  <div class="ctrl-row">
+    <span class="ctrl-label">Unit:</span>
+    <select id="cotton-unit" onchange="renderCotton()">
+      <option value="bales">480 lb bales</option>
+      <option value="mt">Metric tonnes</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Metric:</span>
+    <select id="cotton-metric" onchange="renderCotton()">
+      <option value="vol">Volume</option>
+      <option value="fob">FOB USD</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Years:</span>
+    <select id="cotton-year-from" onchange="renderCotton()"></select>
+    <span style="color:var(--dim)">–</span>
+    <select id="cotton-year-to" onchange="renderCotton()"></select>
+  </div>
+
+  <div class="g2 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Annual Cotton Exports</div>
+      <div class="chart-sub">Volume (bars) + FOB value (line)</div>
+      <div class="chart-wrap h300"><canvas id="cottonAnnual"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Cotton — Monthly Seasonality</div>
+      <div class="chart-sub">Each line = one year</div>
+      <div class="chart-wrap h300"><canvas id="cottonSeason"></canvas></div>
+    </div>
+  </div>
+
+  <div class="g2 mb16">
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 Buyers by Volume</span></div>
+      <div style="overflow-x:auto"><table id="cotton-tbl-vol"></table></div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 Buyers by FOB</span></div>
+      <div style="overflow-x:auto"><table id="cotton-tbl-fob"></table></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     SUGAR PAGE
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-sugar">
+  <div class="sec mb16"><span class="sec-title">🍬 Sugar — Export Analytics</span><div class="sec-line"></div></div>
+  <div class="g4 mb24" id="sugar-kpis"></div>
+
+  <div class="ctrl-row">
+    <span class="ctrl-label">Metric:</span>
+    <select id="sugar-metric" onchange="renderSugar()">
+      <option value="vol">Volume (MT)</option>
+      <option value="fob">FOB USD</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Years:</span>
+    <select id="sugar-year-from" onchange="renderSugar()"></select>
+    <span style="color:var(--dim)">–</span>
+    <select id="sugar-year-to" onchange="renderSugar()"></select>
+  </div>
+
+  <div class="g2 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Annual Sugar Exports</div>
+      <div class="chart-sub">Raw cane · Raw beet · Refined white (stacked)</div>
+      <div class="chart-wrap h300"><canvas id="sugarAnnual"></canvas></div>
+      <div class="legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#e8c84a"></div>Raw cane</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#f5dd78"></div>Raw beet</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#faeeb8"></div>Refined white</div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Sugar — Monthly Seasonality</div>
+      <div class="chart-sub">Each line = one year (crushing season Mar–Nov)</div>
+      <div class="chart-wrap h300"><canvas id="sugarSeason"></canvas></div>
+    </div>
+  </div>
+
+  <div class="g2 mb16">
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 Buyers by Volume (MT)</span></div>
+      <div style="overflow-x:auto"><table id="sugar-tbl-vol"></table></div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 Buyers by FOB</span></div>
+      <div style="overflow-x:auto"><table id="sugar-tbl-fob"></table></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     SOYBEANS PAGE
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-soy">
+  <div class="sec mb16"><span class="sec-title">🫘 Soybeans — Export Analytics</span><div class="sec-line"></div></div>
+  <div class="g4 mb24" id="soy-kpis"></div>
+
+  <div class="ctrl-row">
+    <span class="ctrl-label">Metric:</span>
+    <select id="soy-metric" onchange="renderSoy()">
+      <option value="vol">Volume (MT)</option>
+      <option value="fob">FOB USD</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Years:</span>
+    <select id="soy-year-from" onchange="renderSoy()"></select>
+    <span style="color:var(--dim)">–</span>
+    <select id="soy-year-to" onchange="renderSoy()"></select>
+  </div>
+
+  <div class="g2 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Annual Soybean Exports by Sub-product</div>
+      <div class="chart-sub">Raw beans · Meal/cake · Crude oil (stacked)</div>
+      <div class="chart-wrap h300"><canvas id="soyAnnual"></canvas></div>
+      <div class="legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#6ec86a"></div>Raw soybeans</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#92e88e"></div>Soybean meal</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#c0f5be"></div>Soybean oil</div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Soybeans — Monthly Seasonality</div>
+      <div class="chart-sub">Each line = one year (harvest Jan–Apr, exports surge Apr–Aug)</div>
+      <div class="chart-wrap h300"><canvas id="soySeason"></canvas></div>
+    </div>
+  </div>
+
+  <div class="g2 mb16">
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 Buyers by Volume (MT)</span></div>
+      <div style="overflow-x:auto"><table id="soy-tbl-vol"></table></div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 Buyers by FOB</span></div>
+      <div style="overflow-x:auto"><table id="soy-tbl-fob"></table></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     CORN PAGE
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-corn">
+  <div class="sec mb16"><span class="sec-title">🌽 Corn — Export Analytics</span><div class="sec-line"></div></div>
+  <div class="g4 mb24" id="corn-kpis"></div>
+
+  <div class="ctrl-row">
+    <span class="ctrl-label">Metric:</span>
+    <select id="corn-metric" onchange="renderCorn()">
+      <option value="vol">Volume (MT)</option>
+      <option value="fob">FOB USD</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Years:</span>
+    <select id="corn-year-from" onchange="renderCorn()"></select>
+    <span style="color:var(--dim)">–</span>
+    <select id="corn-year-to" onchange="renderCorn()"></select>
+  </div>
+
+  <div class="g2 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Annual Corn Exports</div>
+      <div class="chart-sub">Volume (MT) + FOB value</div>
+      <div class="chart-wrap h300"><canvas id="cornAnnual"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Corn — Monthly Seasonality</div>
+      <div class="chart-sub">Each line = one year (safrinha harvest Jul–Sep peak)</div>
+      <div class="chart-wrap h300"><canvas id="cornSeason"></canvas></div>
+    </div>
+  </div>
+
+  <div class="g2 mb16">
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 Buyers by Volume (MT)</span></div>
+      <div style="overflow-x:auto"><table id="corn-tbl-vol"></table></div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-head"><span class="chart-title">Top 15 Buyers by FOB</span></div>
+      <div style="overflow-x:auto"><table id="corn-tbl-fob"></table></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     SEASONALITY PAGE (interactive)
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-seasonality">
+  <div class="sec mb16"><span class="sec-title">📈 Seasonality Explorer</span><div class="sec-line"></div></div>
+
+  <div class="ctrl-row mb16">
+    <span class="ctrl-label">Commodity:</span>
+    <select id="s-commodity" onchange="renderSeasonality()">
+      <option value="coffee">Coffee (total)</option>
+      <option value="coffee_arabica_green">Coffee — Arabica green</option>
+      <option value="coffee_conillon_robusta">Coffee — Conillon/Robusta</option>
+      <option value="coffee_soluble">Coffee — Soluble</option>
+      <option value="cotton">Cotton</option>
+      <option value="sugar">Sugar</option>
+      <option value="soybeans_raw_soybeans">Soybeans — Raw</option>
+      <option value="soybeans_soybean_meal">Soybeans — Meal</option>
+      <option value="soybeans_soybean_oil">Soybeans — Oil</option>
+      <option value="corn">Corn</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Metric:</span>
+    <select id="s-metric" onchange="renderSeasonality()">
+      <option value="vol">Volume</option>
+      <option value="fob">FOB Value (USD)</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Unit (cotton):</span>
+    <select id="s-cotton-unit" onchange="renderSeasonality()">
+      <option value="bales">480 lb bales</option>
+      <option value="mt">Metric tonnes</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Year range:</span>
+    <select id="s-year-from" onchange="renderSeasonality()"></select>
+    <span style="color:var(--dim)">–</span>
+    <select id="s-year-to" onchange="renderSeasonality()"></select>
+  </div>
+
+  <div class="ctrl-row mb16">
+    <span class="ctrl-label">Enable/disable years:</span>
+    <div class="toggle-group" id="s-year-toggles"></div>
+  </div>
+
+  <div class="chart-card mb24">
+    <div class="chart-title" id="s-chart-title">Monthly Seasonality — Year-over-Year</div>
+    <div class="chart-sub">Each line = one year · White dashed = historical average</div>
+    <div class="chart-wrap h340"><canvas id="seasonMainChart"></canvas></div>
+    <div class="legend" id="s-legend"></div>
+  </div>
+
+  <div class="g2 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Seasonal Index (avg = 100)</div>
+      <div class="chart-sub">Monthly strength relative to annual average · &gt;100 = above average</div>
+      <div class="chart-wrap h260"><canvas id="seasonIndexChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Year-on-Year Annual Totals</div>
+      <div class="chart-sub">Annual totals for selected commodity + metric</div>
+      <div class="chart-wrap h260"><canvas id="seasonAnnualChart"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     DESTINATIONS PAGE (interactive)
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-destinations">
+  <div class="sec mb16"><span class="sec-title">🌍 Destination Country Explorer</span><div class="sec-line"></div></div>
+
+  <div class="ctrl-row mb16">
+    <span class="ctrl-label">Commodity:</span>
+    <select id="d-commodity" onchange="renderDestinations()">
+      <option value="coffee">Coffee (total)</option>
+      <option value="cotton">Cotton</option>
+      <option value="sugar">Sugar</option>
+      <option value="soybeans">Soybeans (all)</option>
+      <option value="corn">Corn</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Metric:</span>
+    <select id="d-metric" onchange="renderDestinations()">
+      <option value="fob">FOB Value (USD)</option>
+      <option value="vol">Volume</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Year:</span>
+    <select id="d-year" onchange="renderDestinations()"></select>
+    <span class="ctrl-label" style="margin-left:8px;">Countries:</span>
+    <select id="d-country" multiple style="height:80px;min-width:200px;" onchange="renderDestinationTrend()">
+    </select>
+    <span style="font-size:10px;color:var(--dim2);">(hold Ctrl/Cmd to multi-select)</span>
+  </div>
+
+  <div class="g2 mb24">
+    <div class="chart-card">
+      <div class="chart-title">Top 20 Destinations</div>
+      <div class="chart-sub" id="d-bar-sub"></div>
+      <div class="chart-wrap h340"><canvas id="destBarChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Destination Share (Top 10)</div>
+      <div class="chart-sub">Percentage of total</div>
+      <div class="chart-wrap h340"><canvas id="destPieChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-card mb24">
+    <div class="chart-title">Selected Countries — Monthly Trend</div>
+    <div class="chart-sub">Multi-year monthly trend for selected countries (select above)</div>
+    <div class="chart-wrap h280"><canvas id="destTrendChart"></canvas></div>
+  </div>
+
+  <div class="tcard mb16">
+    <div class="tcard-head">
+      <span class="chart-title">Country Rankings</span>
+      <span id="d-tbl-period" style="font-size:11px;color:var(--dim)"></span>
+    </div>
+    <div style="overflow-x:auto"><table id="dest-tbl"></table></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════════════════════ -->
+<script>
+// ── Constants ─────────────────────────────────────────────────────────────────
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const BALE_KG = 217.724;
+const GC = 'rgba(255,255,255,0.06)';
+const TC = '#5a5d6e';
+
+const COM_COLORS = {
+  coffee:'#c8773a', cotton:'#4ab8d8', sugar:'#e8c84a',
+  soybeans:'#6ec86a', corn:'#e8a84a'
+};
+const PALETTE = [
+  '#c8773a','#4ab8d8','#e8c84a','#6ec86a','#e8a84a',
+  '#a870c8','#e85a5a','#3fc87a','#e870a0','#5a78e8',
+  '#f0a050','#50c8d8','#d8c850','#88c850','#c8a850',
+  '#e87878','#78c8e8','#f0d878','#a8e878','#f0b878',
+];
+
+const CHART_DEFAULTS = {
+  responsive: true,
+  maintainAspectRatio: false,
+  animation: { duration: 400 },
+  plugins: { legend: { display: false } },
+  scales: {
+    x: { grid: { color: GC }, ticks: { color: TC, font: { size: 10 }, maxRotation: 45 } },
+    y: { grid: { color: GC }, ticks: { color: TC, font: { size: 10 }, callback: v => fmtShort(v) } }
+  }
+};
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let RAW = [];            // all rows from exports.csv
+let YEARS = [];          // sorted unique years
+let COUNTRIES = {};      // code → name
+let CHARTS = {};         // chart instances
+let seasonYearEnabled = {}; // year → bool for seasonality toggles
+let currentPage = 'overview';
+
+// ── Formatters ────────────────────────────────────────────────────────────────
+const fmtShort = n => {
+  if (!n && n!==0) return '—';
+  const a = Math.abs(n);
+  if (a >= 1e9) return (n/1e9).toFixed(1)+'B';
+  if (a >= 1e6) return (n/1e6).toFixed(1)+'M';
+  if (a >= 1e3) return (n/1e3).toFixed(0)+'K';
+  return n.toLocaleString(undefined,{maximumFractionDigits:0});
+};
+const fmtFull = n => n ? n.toLocaleString(undefined,{maximumFractionDigits:0}) : '—';
+const fmtB = n => '$'+(n/1e9).toFixed(2)+'B';
+const fmtM2 = n => (n/1e6).toFixed(2)+'M';
+
+// ── Chart helpers ─────────────────────────────────────────────────────────────
+function mkChart(id, cfg) {
+  if (CHARTS[id]) { CHARTS[id].destroy(); }
+  const el = document.getElementById(id);
+  if (!el) return null;
+  CHARTS[id] = new Chart(el.getContext('2d'), cfg);
+  return CHARTS[id];
+}
+
+function palFade(hex, n) {
+  const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+  return Array.from({length:n}, (_,i) => `rgba(${r},${g},${b},${0.2+0.8*(i/Math.max(n-1,1))})`);
+}
+
+function baseLineOpts(extra={}) {
+  return {
+    responsive: true, maintainAspectRatio: false,
+    animation: { duration: 300 },
+    interaction: { mode:'index', intersect:false },
+    plugins: { legend:{ display:false }, tooltip:{ callbacks:{ label: c => c.raw!=null ? ` ${c.dataset.label}: ${fmtFull(c.raw)}` : null, filter: i => i.raw!=null } }, ...extra.plugins },
+    scales: { x:{ grid:{color:GC}, ticks:{color:TC,font:{size:10},maxTicksLimit:20} }, y:{ grid:{color:GC}, ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)} }, ...extra.scales }
+  };
+}
+
+// ── Data access helpers ────────────────────────────────────────────────────────
+function filterRows({ commodity, subtype, yearFrom, yearTo } = {}) {
+  return RAW.filter(r =>
+    (!commodity || r.commodity === commodity) &&
+    (!subtype   || r.subtype   === subtype) &&
+    (!yearFrom  || r.year >= yearFrom) &&
+    (!yearTo    || r.year <= yearTo)
+  );
+}
+
+function aggByYear(rows, valFn) {
+  const m = {};
+  rows.forEach(r => { m[r.year] = (m[r.year]||0) + valFn(r); });
+  return YEARS.map(y => ({ year:y, val: m[y]||0 }));
+}
+
+function aggByMonth(rows, valFn) {
+  // returns { year: [12 values] }
+  const m = {};
+  rows.forEach(r => {
+    if (!m[r.year]) m[r.year] = Array(12).fill(0);
+    m[r.year][r.month-1] += valFn(r);
+  });
+  return m;
+}
+
+function aggByCountry(rows, valFn) {
+  const m = {};
+  rows.forEach(r => {
+    const k = r.country_name || 'Unknown';
+    m[k] = (m[k]||0) + valFn(r);
+  });
+  return Object.entries(m).sort((a,b)=>b[1]-a[1]);
+}
+
+// Volume functions per commodity
+function getVol(row, cottonUnit='mt') {
+  if (row.commodity === 'coffee') return row.qt_estat;      // 60 kg bags
+  if (row.commodity === 'cotton') return cottonUnit==='bales' ? row.bales_480lb : row.mt;
+  return row.mt;  // sugar, soybeans, corn
+}
+function getFOB(row) { return row.fob_usd; }
+
+// ── Populate year selects ──────────────────────────────────────────────────────
+function populateYearSelects(ids, defaultFrom, defaultTo) {
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const old = el.value;
+    el.innerHTML = '';
+    YEARS.forEach(y => {
+      const o = document.createElement('option');
+      o.value = y; o.textContent = y;
+      el.appendChild(o);
+    });
+    el.value = old || (id.includes('from') ? (defaultFrom||YEARS[0]) : (defaultTo||YEARS[YEARS.length-1]));
+  });
+}
+
+// ── Navigation ────────────────────────────────────────────────────────────────
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  event.target.classList.add('active');
+  currentPage = id;
+  // Lazy render
+  if (id==='coffee') renderCoffee();
+  if (id==='cotton') renderCotton();
+  if (id==='sugar')  renderSugar();
+  if (id==='soy')    renderSoy();
+  if (id==='corn')   renderCorn();
+  if (id==='seasonality') renderSeasonality();
+  if (id==='destinations') renderDestinations();
+}
+
+// ── Overview ──────────────────────────────────────────────────────────────────
+function renderOverview() {
+  const latestYear = YEARS[YEARS.length-1];
+  const prevYear   = YEARS[YEARS.length-2];
+
+  // KPI row
+  const commodities = ['coffee','cotton','sugar','soybeans','corn'];
+  const kpiRow = document.getElementById('kpi-row');
+  kpiRow.innerHTML = '';
+  commodities.forEach(com => {
+    const curRows  = filterRows({commodity:com, yearFrom:latestYear, yearTo:latestYear});
+    const prevRows = filterRows({commodity:com, yearFrom:prevYear,   yearTo:prevYear});
+    const curFOB   = curRows.reduce((s,r)=>s+r.fob_usd, 0);
+    const prevFOB  = prevRows.reduce((s,r)=>s+r.fob_usd, 0);
+    const pct = prevFOB>0 ? ((curFOB-prevFOB)/prevFOB*100).toFixed(1) : null;
+    const up  = pct >= 0;
+    const labels = {coffee:'☕ Coffee',cotton:'🌾 Cotton',sugar:'🍬 Sugar',soybeans:'🫘 Soybeans',corn:'🌽 Corn'};
+    const div = document.createElement('div');
+    div.className = 'kpi '+com;
+    div.innerHTML = `
+      <div class="kpi-label">${labels[com]}</div>
+      <div class="kpi-val">${fmtB(curFOB)}</div>
+      <div class="kpi-unit">FOB USD ${latestYear}</div>
+      ${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}
+    `;
+    kpiRow.appendChild(div);
+  });
+
+  // Insights
+  const insightGrid = document.getElementById('insight-grid');
+  const insights = [];
+  commodities.forEach(com => {
+    const rows = filterRows({commodity:com, yearFrom:latestYear, yearTo:latestYear});
+    const fob  = rows.reduce((s,r)=>s+r.fob_usd, 0);
+    const byC  = aggByCountry(rows, r=>r.fob_usd);
+    if (byC.length===0) return;
+    const top = byC[0], share = (top[1]/fob*100).toFixed(0);
+    const labels = {coffee:'Coffee',cotton:'Cotton',sugar:'Sugar',soybeans:'Soybeans',corn:'Corn'};
+    insights.push({color: COM_COLORS[com], text:`<b>${labels[com]}:</b> Top buyer ${top[0]} (${share}% of FOB). Total ${fmtB(fob)} in ${latestYear}.`});
+  });
+  insightGrid.innerHTML = insights.map(i =>
+    `<div class="ins-item"><div class="ins-icon" style="background:${i.color}"></div><span>${i.text}</span></div>`
+  ).join('');
+
+  // Indexed trend chart
+  const refYear = YEARS.includes(2010) ? 2010 : YEARS[Math.floor(YEARS.length/4)];
+  const datasets = commodities.map((com, i) => {
+    const byYear = aggByYear(filterRows({commodity:com}), r=>r.fob_usd);
+    const refVal = byYear.find(d=>d.year===refYear)?.val || 1;
+    return {
+      label: com.charAt(0).toUpperCase()+com.slice(1),
+      data: byYear.map(d=>d.val/refVal*100),
+      borderColor: COM_COLORS[com],
+      backgroundColor: 'transparent',
+      borderWidth: 2, tension: .35, pointRadius: 0, pointHoverRadius: 5
+    };
+  });
+
+  mkChart('overviewIndexChart', {
+    type:'line',
+    data: { labels: YEARS, datasets },
+    options: { ...baseLineOpts(), plugins: { legend:{ display:false } }, scales: {
+      x:{ grid:{color:GC}, ticks:{color:TC,font:{size:10}} },
+      y:{ grid:{color:GC}, ticks:{color:TC,font:{size:10},callback:v=>v.toFixed(0)} }
+    }}
+  });
+
+  // Legend for index chart
+  document.getElementById('overviewIndexLegend').innerHTML = commodities.map(c=>
+    `<div class="leg-item"><div class="leg-dot" style="background:${COM_COLORS[c]}"></div>${c.charAt(0).toUpperCase()+c.slice(1)}</div>`
+  ).join('');
+
+  // Pie chart - latest year FOB by commodity
+  const pieData = commodities.map(com => filterRows({commodity:com,yearFrom:latestYear,yearTo:latestYear}).reduce((s,r)=>s+r.fob_usd,0));
+  mkChart('overviewPieChart', {
+    type:'doughnut',
+    data: { labels:['Coffee','Cotton','Sugar','Soybeans','Corn'], datasets:[{ data:pieData, backgroundColor:commodities.map(c=>COM_COLORS[c]), borderColor:'#12151f', borderWidth:2, hoverOffset:8 }] },
+    options: { responsive:true, maintainAspectRatio:false, cutout:'60%',
+      plugins: { legend:{ position:'right', labels:{ color:TC, boxWidth:10, padding:10, font:{size:11} } },
+        tooltip:{ callbacks:{ label: c => ` ${c.label}: ${fmtB(c.raw)} (${(c.raw/pieData.reduce((a,b)=>a+b)*100).toFixed(1)}%)` } } } }
+  });
+
+  // Monthly trend chart with toggles
+  const overviewToggles = document.getElementById('overview-toggles');
+  overviewToggles.innerHTML = commodities.map(com=>`
+    <button class="toggle on ${com}" onclick="toggleOverviewLine('${com}',this)">${com.charAt(0).toUpperCase()+com.slice(1)}</button>
+  `).join('');
+
+  renderOverviewMonthly();
+}
+
+function renderOverviewMonthly() {
+  const labels = [];
+  YEARS.forEach(y => MONTHS.forEach((m,i) => labels.push(`${MONTHS[i].slice(0,1)}${y.toString().slice(2)}`)));
+
+  const commodities = ['coffee','cotton','sugar','soybeans','corn'];
+  const datasets = commodities.map(com => {
+    const byYM = {};
+    filterRows({commodity:com}).forEach(r => { byYM[`${r.year}-${r.month}`] = (byYM[`${r.year}-${r.month}`]||0)+r.fob_usd; });
+    const data = [];
+    YEARS.forEach(y => { for(let m=1;m<=12;m++) data.push((byYM[`${y}-${m}`]||0)/1e6); });
+    const btn = document.querySelector(`#overview-toggles .toggle.${com}`);
+    const hidden = btn ? !btn.classList.contains('on') : false;
+    return { label:com.charAt(0).toUpperCase()+com.slice(1), data, borderColor:COM_COLORS[com], backgroundColor:'transparent', borderWidth:1.5, tension:.3, pointRadius:0, pointHoverRadius:4, hidden };
+  });
+
+  mkChart('overviewMonthlyChart', {
+    type:'line',
+    data:{ labels, datasets },
+    options:{ ...baseLineOpts(), scales:{ x:{ grid:{color:GC},ticks:{color:TC,font:{size:9},maxTicksLimit:30} }, y:{ grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>v+'M'} } } }
+  });
+}
+
+function toggleOverviewLine(com, btn) {
+  btn.classList.toggle('on');
+  renderOverviewMonthly();
+}
+
+// ── Seasonality chart builder (shared) ────────────────────────────────────────
+function buildSeasonChart(chartId, rows, color, valFn, legendId, noLegend=false) {
+  const byYM = aggByMonth(rows, valFn);
+  const ys = Object.keys(byYM).map(Number).sort();
+  const pal = palFade(color, ys.length);
+
+  // Average
+  const avg = Array(12).fill(0).map((_,m) => {
+    const vals = ys.map(y => byYM[y][m]).filter(v=>v>0);
+    return vals.length ? vals.reduce((a,b)=>a+b)/vals.length : 0;
+  });
+
+  const datasets = ys.map((y,i) => ({
+    label: String(y),
+    data: byYM[y],
+    borderColor: pal[i],
+    backgroundColor: 'transparent',
+    borderWidth: 1.3,
+    tension: .4,
+    pointRadius: 0
+  }));
+  datasets.push({ label:'Avg', data:avg, borderColor:'rgba(255,255,255,.55)', borderDash:[5,3], borderWidth:1.5, tension:.4, pointRadius:0 });
+
+  mkChart(chartId, {
+    type:'line',
+    data:{ labels:MONTHS, datasets },
+    options:{ ...baseLineOpts(), plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:c=>` ${c.dataset.label}: ${fmtFull(c.raw)}`, filter:i=>i.raw!==null } } } }
+  });
+
+  if (legendId && !noLegend) {
+    document.getElementById(legendId).innerHTML = [...ys,'Avg'].map((y,i)=>{
+      const c = i<ys.length ? pal[i] : 'rgba(255,255,255,.55)';
+      return `<div class="leg-item"><div class="leg-dot" style="background:${c}"></div>${y}</div>`;
+    }).join('');
+  }
+}
+
+// ── Coffee page ───────────────────────────────────────────────────────────────
+function renderCoffee() {
+  populateYearSelects(['coffee-year-from','coffee-year-to'], YEARS[0], YEARS[YEARS.length-1]);
+  const latestYear = YEARS[YEARS.length-1];
+  const prevYear   = YEARS[YEARS.length-2];
+
+  // KPIs
+  const kpiDefs = [
+    {label:'Total Coffee',subtype:null,unit:'60kg bags'},
+    {label:'Arabica Green',subtype:'arabica_green',unit:'60kg bags'},
+    {label:'Conillon/Robusta',subtype:'conillon_robusta',unit:'60kg bags'},
+    {label:'Soluble',subtype:'soluble',unit:'60kg bags'},
+  ];
+  const kpiEl = document.getElementById('coffee-kpis');
+  kpiEl.innerHTML = '';
+  kpiDefs.forEach(def => {
+    const cur  = filterRows({commodity:'coffee',subtype:def.subtype||undefined,yearFrom:latestYear,yearTo:latestYear});
+    const prev = filterRows({commodity:'coffee',subtype:def.subtype||undefined,yearFrom:prevYear, yearTo:prevYear});
+    const curV  = cur.reduce((s,r)=>s+r.qt_estat,0);
+    const prevV = prev.reduce((s,r)=>s+r.qt_estat,0);
+    const pct = prevV>0 ? ((curV-prevV)/prevV*100).toFixed(1) : null;
+    const curF = cur.reduce((s,r)=>s+r.fob_usd,0);
+    const up = pct>=0;
+    const d=document.createElement('div');
+    d.className='kpi coffee';
+    d.innerHTML=`<div class="kpi-label">${def.label}</div><div class="kpi-val">${fmtShort(curV)}</div><div class="kpi-unit">${def.unit} · ${latestYear}</div><div class="kpi-sub">FOB ${fmtB(curF)}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    kpiEl.appendChild(d);
+  });
+
+  // Annual total
+  const annRows = filterRows({commodity:'coffee'});
+  const annVol = aggByYear(annRows, r=>r.qt_estat);
+  const annFOB = aggByYear(annRows, r=>r.fob_usd);
+  mkChart('coffeeAnnualTotal',{
+    type:'bar',
+    data:{ labels:YEARS, datasets:[
+      {type:'bar', label:'Volume (bags)',data:annVol.map(d=>d.val),backgroundColor:'rgba(200,119,58,.3)',borderColor:'#c8773a',borderWidth:1.5,borderRadius:3,yAxisID:'y'},
+      {type:'line',label:'FOB (USD)',   data:annFOB.map(d=>d.val/1e9),borderColor:'#f5c890',borderWidth:2,tension:.35,pointRadius:2,yAxisID:'y2'},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},
+        y:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)},title:{display:true,text:'Bags',color:TC,font:{size:9}}},
+        y2:{position:'right',grid:{display:false},ticks:{color:TC,font:{size:10},callback:v=>v+'B'},title:{display:true,text:'FOB $B',color:TC,font:{size:9}}}
+      }}
+  });
+
+  // Annual subtypes stacked
+  const subtypes = [{k:'arabica_green',c:'#c8773a'},{k:'conillon_robusta',c:'#e89a5a'},{k:'soluble',c:'#f5c890'}];
+  const subLabels = {arabica_green:'Arabica green',conillon_robusta:'Conillon/Robusta',soluble:'Soluble'};
+  mkChart('coffeeAnnualSub',{
+    type:'bar',
+    data:{labels:YEARS, datasets:subtypes.map(st=>({
+      label:subLabels[st.k],
+      data:aggByYear(filterRows({commodity:'coffee',subtype:st.k}),r=>r.qt_estat).map(d=>d.val),
+      backgroundColor:st.c+'55', borderColor:st.c, borderWidth:1.5, borderRadius:3, stack:'s'
+    }))},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},
+      plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}
+  });
+
+  renderCoffeeSeason();
+  renderCoffeeDestTable();
+}
+
+function renderCoffeeSeason() {
+  const metric = document.getElementById('coffee-metric').value;
+  const yf = parseInt(document.getElementById('coffee-year-from').value)||YEARS[0];
+  const yt = parseInt(document.getElementById('coffee-year-to').value)||YEARS[YEARS.length-1];
+  const valFn = metric==='vol' ? r=>r.qt_estat : r=>r.fob_usd;
+  const clr = '#c8773a';
+
+  buildSeasonChart('coffeeSeasonTotal',    filterRows({commodity:'coffee',yearFrom:yf,yearTo:yt}), clr, valFn);
+  buildSeasonChart('coffeeSeasonArabica',  filterRows({commodity:'coffee',subtype:'arabica_green',yearFrom:yf,yearTo:yt}), clr, valFn);
+  buildSeasonChart('coffeeSeasonConillon', filterRows({commodity:'coffee',subtype:'conillon_robusta',yearFrom:yf,yearTo:yt}), '#e89a5a', valFn);
+  buildSeasonChart('coffeeSeasonSoluble',  filterRows({commodity:'coffee',subtype:'soluble',yearFrom:yf,yearTo:yt}), '#f5c890', valFn);
+}
+
+function renderCoffeeDestTable() {
+  const latestYear = YEARS[YEARS.length-1];
+  document.getElementById('coffee-dest-period').textContent = latestYear;
+  const rows = filterRows({commodity:'coffee',yearFrom:latestYear,yearTo:latestYear});
+  renderDestTable('coffee-tbl-vol', aggByCountry(rows,r=>r.qt_estat), 'Volume (60kg bags)', '#c8773a');
+  renderDestTable('coffee-tbl-fob', aggByCountry(rows,r=>r.fob_usd), 'FOB USD', '#c8773a');
+}
+
+// ── Cotton page ───────────────────────────────────────────────────────────────
+function renderCotton() {
+  populateYearSelects(['cotton-year-from','cotton-year-to']);
+  const unit   = document.getElementById('cotton-unit').value;
+  const metric = document.getElementById('cotton-metric').value;
+  const yf = parseInt(document.getElementById('cotton-year-from').value)||YEARS[0];
+  const yt = parseInt(document.getElementById('cotton-year-to').value)||YEARS[YEARS.length-1];
+  const latestYear = YEARS[YEARS.length-1];
+  const prevYear   = YEARS[YEARS.length-2];
+  const unitLabel  = unit==='bales' ? '480lb bales' : 'MT';
+  const volFn = r => unit==='bales' ? r.bales_480lb : r.mt;
+  const valFn = metric==='vol' ? volFn : r=>r.fob_usd;
+
+  // KPIs
+  const kpiEl=document.getElementById('cotton-kpis'); kpiEl.innerHTML='';
+  const curR  = filterRows({commodity:'cotton',yearFrom:latestYear,yearTo:latestYear});
+  const prevR = filterRows({commodity:'cotton',yearFrom:prevYear,yearTo:prevYear});
+  const defs=[
+    {label:'Total Volume',    vFn:volFn, unit:unitLabel},
+    {label:'FOB Value',       vFn:r=>r.fob_usd, unit:'USD'},
+    {label:'Top Buyer',       vFn:null},
+    {label:'Avg FOB/unit',    vFn:null},
+  ];
+  const curVol = curR.reduce((s,r)=>s+volFn(r),0);
+  const curFOB = curR.reduce((s,r)=>s+r.fob_usd,0);
+  const prevVol= prevR.reduce((s,r)=>s+volFn(r),0);
+  const prevFOB= prevR.reduce((s,r)=>s+r.fob_usd,0);
+  const byC = aggByCountry(curR,r=>r.fob_usd);
+  const topC= byC[0]||['—',0];
+  const pctV = prevVol>0?((curVol-prevVol)/prevVol*100).toFixed(1):null;
+  const pctF = prevFOB>0?((curFOB-prevFOB)/prevFOB*100).toFixed(1):null;
+  [[`${fmtShort(curVol)}`,unitLabel,pctV],[`${fmtB(curFOB)}`,'FOB USD',pctF],[topC[0],`${(topC[1]/curFOB*100).toFixed(0)}% share`,null],[`$${(curFOB/Math.max(curVol,1)).toFixed(2)}`,`per ${unit==='bales'?'bale':'MT'}`,null]].forEach(([v,u,pct])=>{
+    const up=pct>=0; const d=document.createElement('div'); d.className='kpi cotton';
+    d.innerHTML=`<div class="kpi-label">Cotton ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    kpiEl.appendChild(d);
+  });
+
+  // Annual
+  const annRows = filterRows({commodity:'cotton',yearFrom:yf,yearTo:yt});
+  const annVol = aggByYear(annRows, volFn);
+  const annFOB = aggByYear(filterRows({commodity:'cotton',yearFrom:yf,yearTo:yt}), r=>r.fob_usd);
+  const annYrs = YEARS.filter(y=>y>=yf&&y<=yt);
+  mkChart('cottonAnnual',{type:'bar',data:{labels:annYrs,datasets:[
+    {type:'bar',label:'Volume',data:annVol.filter(d=>d.year>=yf&&d.year<=yt).map(d=>d.val),backgroundColor:'rgba(74,184,216,.3)',borderColor:'#4ab8d8',borderWidth:1.5,borderRadius:3,yAxisID:'y'},
+    {type:'line',label:'FOB',data:annFOB.filter(d=>d.year>=yf&&d.year<=yt).map(d=>d.val/1e9),borderColor:'#a0e0f8',borderWidth:2,tension:.35,pointRadius:2,yAxisID:'y2'},
+  ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}},y2:{position:'right',grid:{display:false},ticks:{color:TC,font:{size:10},callback:v=>v+'B'}}}}});
+
+  buildSeasonChart('cottonSeason', filterRows({commodity:'cotton',yearFrom:yf,yearTo:yt}), '#4ab8d8', valFn);
+  renderDestTable('cotton-tbl-vol', aggByCountry(filterRows({commodity:'cotton',yearFrom:latestYear,yearTo:latestYear}),volFn), unitLabel, '#4ab8d8');
+  renderDestTable('cotton-tbl-fob', aggByCountry(filterRows({commodity:'cotton',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd), 'FOB USD', '#4ab8d8');
+}
+
+// ── Sugar page ────────────────────────────────────────────────────────────────
+function renderSugar() {
+  populateYearSelects(['sugar-year-from','sugar-year-to']);
+  const metric = document.getElementById('sugar-metric').value;
+  const yf = parseInt(document.getElementById('sugar-year-from').value)||YEARS[0];
+  const yt = parseInt(document.getElementById('sugar-year-to').value)||YEARS[YEARS.length-1];
+  const latestYear=YEARS[YEARS.length-1], prevYear=YEARS[YEARS.length-2];
+  const valFn = metric==='vol' ? r=>r.mt : r=>r.fob_usd;
+  const annYrs = YEARS.filter(y=>y>=yf&&y<=yt);
+
+  // KPIs
+  const kpiEl=document.getElementById('sugar-kpis'); kpiEl.innerHTML='';
+  const curR  = filterRows({commodity:'sugar',yearFrom:latestYear,yearTo:latestYear});
+  const prevR = filterRows({commodity:'sugar',yearFrom:prevYear,yearTo:prevYear});
+  const curVol=curR.reduce((s,r)=>s+r.mt,0), prevVol=prevR.reduce((s,r)=>s+r.mt,0);
+  const curFOB=curR.reduce((s,r)=>s+r.fob_usd,0), prevFOB=prevR.reduce((s,r)=>s+r.fob_usd,0);
+  const topC=aggByCountry(curR,r=>r.fob_usd)[0]||['—',0];
+  const pV=prevVol>0?((curVol-prevVol)/prevVol*100).toFixed(1):null, pF=prevFOB>0?((curFOB-prevFOB)/prevFOB*100).toFixed(1):null;
+  [[fmtShort(curVol),'MT',pV],[fmtB(curFOB),'FOB USD',pF],[topC[0],`${(topC[1]/curFOB*100).toFixed(0)}% share`,null],['#1','World exporter rank',null]].forEach(([v,u,pct])=>{
+    const up=pct>=0; const d=document.createElement('div'); d.className='kpi sugar';
+    d.innerHTML=`<div class="kpi-label">Sugar ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    kpiEl.appendChild(d);
+  });
+
+  // Stacked annual
+  const subtypes=[{k:'raw_cane',c:'#e8c84a'},{k:'raw_beet',c:'#f5dd78'},{k:'refined',c:'#faeeb8'}];
+  const sLabels={raw_cane:'Raw cane',raw_beet:'Raw beet',refined:'Refined white'};
+  mkChart('sugarAnnual',{type:'bar',data:{labels:annYrs,datasets:subtypes.map(st=>({
+    label:sLabels[st.k],
+    data:aggByYear(filterRows({commodity:'sugar',subtype:st.k,yearFrom:yf,yearTo:yt}),valFn).filter(d=>d.year>=yf&&d.year<=yt).map(d=>d.val),
+    backgroundColor:st.c+'88',borderColor:st.c,borderWidth:1.5,borderRadius:3,stack:'s'
+  }))},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}});
+
+  buildSeasonChart('sugarSeason', filterRows({commodity:'sugar',yearFrom:yf,yearTo:yt}), '#e8c84a', valFn);
+  renderDestTable('sugar-tbl-vol', aggByCountry(filterRows({commodity:'sugar',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt), 'MT', '#e8c84a');
+  renderDestTable('sugar-tbl-fob', aggByCountry(filterRows({commodity:'sugar',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd), 'FOB USD', '#e8c84a');
+}
+
+// ── Soybeans page ─────────────────────────────────────────────────────────────
+function renderSoy() {
+  populateYearSelects(['soy-year-from','soy-year-to']);
+  const metric=document.getElementById('soy-metric').value;
+  const yf=parseInt(document.getElementById('soy-year-from').value)||YEARS[0];
+  const yt=parseInt(document.getElementById('soy-year-to').value)||YEARS[YEARS.length-1];
+  const latestYear=YEARS[YEARS.length-1], prevYear=YEARS[YEARS.length-2];
+  const valFn=metric==='vol'?r=>r.mt:r=>r.fob_usd;
+  const annYrs=YEARS.filter(y=>y>=yf&&y<=yt);
+
+  // KPIs
+  const kpiEl=document.getElementById('soy-kpis'); kpiEl.innerHTML='';
+  const types=[{st:'raw_soybeans',label:'Raw Soybeans'},{st:'soybean_meal',label:'Soybean Meal'},{st:'soybean_oil',label:'Soybean Oil'},{st:null,label:'All Soy Total'}];
+  types.forEach(def=>{
+    const curR=filterRows({commodity:'soybeans',subtype:def.st||undefined,yearFrom:latestYear,yearTo:latestYear});
+    const prevR=filterRows({commodity:'soybeans',subtype:def.st||undefined,yearFrom:prevYear,yearTo:prevYear});
+    const curF=curR.reduce((s,r)=>s+r.fob_usd,0), prevF=prevR.reduce((s,r)=>s+r.fob_usd,0);
+    const pct=prevF>0?((curF-prevF)/prevF*100).toFixed(1):null; const up=pct>=0;
+    const d=document.createElement('div'); d.className='kpi soy';
+    d.innerHTML=`<div class="kpi-label">${def.label}</div><div class="kpi-val">${fmtB(curF)}</div><div class="kpi-unit">FOB USD ${latestYear}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    kpiEl.appendChild(d);
+  });
+
+  const subtypes=[{k:'raw_soybeans',c:'#6ec86a'},{k:'soybean_meal',c:'#92e88e'},{k:'soybean_oil',c:'#c0f5be'}];
+  const sLbls={raw_soybeans:'Raw soybeans',soybean_meal:'Soybean meal',soybean_oil:'Soybean oil'};
+  mkChart('soyAnnual',{type:'bar',data:{labels:annYrs,datasets:subtypes.map(st=>({
+    label:sLbls[st.k],
+    data:aggByYear(filterRows({commodity:'soybeans',subtype:st.k,yearFrom:yf,yearTo:yt}),valFn).filter(d=>d.year>=yf&&d.year<=yt).map(d=>d.val),
+    backgroundColor:st.c+'88',borderColor:st.c,borderWidth:1.5,borderRadius:3,stack:'s'
+  }))},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}});
+
+  buildSeasonChart('soySeason',filterRows({commodity:'soybeans',yearFrom:yf,yearTo:yt}),'#6ec86a',valFn);
+  renderDestTable('soy-tbl-vol',aggByCountry(filterRows({commodity:'soybeans',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt),'MT','#6ec86a');
+  renderDestTable('soy-tbl-fob',aggByCountry(filterRows({commodity:'soybeans',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd),'FOB USD','#6ec86a');
+}
+
+// ── Corn page ─────────────────────────────────────────────────────────────────
+function renderCorn() {
+  populateYearSelects(['corn-year-from','corn-year-to']);
+  const metric=document.getElementById('corn-metric').value;
+  const yf=parseInt(document.getElementById('corn-year-from').value)||YEARS[0];
+  const yt=parseInt(document.getElementById('corn-year-to').value)||YEARS[YEARS.length-1];
+  const latestYear=YEARS[YEARS.length-1], prevYear=YEARS[YEARS.length-2];
+  const valFn=metric==='vol'?r=>r.mt:r=>r.fob_usd;
+  const annYrs=YEARS.filter(y=>y>=yf&&y<=yt);
+
+  // KPIs
+  const kpiEl=document.getElementById('corn-kpis'); kpiEl.innerHTML='';
+  const defs=[{label:'Volume (MT)',fn:r=>r.mt},{label:'FOB Value',fn:r=>r.fob_usd},{label:'Top Buyer',fn:null},{label:'YoY Growth',fn:null}];
+  const curR=filterRows({commodity:'corn',yearFrom:latestYear,yearTo:latestYear});
+  const prevR=filterRows({commodity:'corn',yearFrom:prevYear,yearTo:prevYear});
+  const curV=curR.reduce((s,r)=>s+r.mt,0), prevV=prevR.reduce((s,r)=>s+r.mt,0);
+  const curF=curR.reduce((s,r)=>s+r.fob_usd,0), prevF=prevR.reduce((s,r)=>s+r.fob_usd,0);
+  const topCC=aggByCountry(curR,r=>r.fob_usd)[0]||['—',0];
+  const pV=prevV>0?((curV-prevV)/prevV*100).toFixed(1):null, pF=prevF>0?((curF-prevF)/prevF*100).toFixed(1):null;
+  [[fmtShort(curV),'MT',pV],[fmtB(curF),'FOB USD',pF],[topCC[0],`${(topCC[1]/curF*100).toFixed(0)}% share`,null],[pF!==null?`${pF>0?'+':''}${pF}%`:'—','FOB vs prior year',null]].forEach(([v,u,pct])=>{
+    const up=pct>=0; const d=document.createElement('div'); d.className='kpi corn';
+    d.innerHTML=`<div class="kpi-label">Corn ${latestYear}</div><div class="kpi-val">${v}</div><div class="kpi-unit">${u}</div>${pct!==null?`<div class="kpi-delta ${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(pct)}% vs ${prevYear}</div>`:''}`;
+    kpiEl.appendChild(d);
+  });
+
+  mkChart('cornAnnual',{type:'bar',data:{labels:annYrs,datasets:[
+    {type:'bar',label:'Volume MT',data:aggByYear(filterRows({commodity:'corn',yearFrom:yf,yearTo:yt}),r=>r.mt).filter(d=>d.year>=yf&&d.year<=yt).map(d=>d.val),backgroundColor:'rgba(232,168,74,.3)',borderColor:'#e8a84a',borderWidth:1.5,borderRadius:3,yAxisID:'y'},
+    {type:'line',label:'FOB $B',data:aggByYear(filterRows({commodity:'corn',yearFrom:yf,yearTo:yt}),r=>r.fob_usd).filter(d=>d.year>=yf&&d.year<=yt).map(d=>d.val/1e9),borderColor:'#f5c472',borderWidth:2,tension:.35,pointRadius:2,yAxisID:'y2'},
+  ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}},y2:{position:'right',grid:{display:false},ticks:{color:TC,font:{size:10},callback:v=>v+'B'}}}}});
+
+  buildSeasonChart('cornSeason',filterRows({commodity:'corn',yearFrom:yf,yearTo:yt}),'#e8a84a',valFn);
+  renderDestTable('corn-tbl-vol',aggByCountry(filterRows({commodity:'corn',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt),'MT','#e8a84a');
+  renderDestTable('corn-tbl-fob',aggByCountry(filterRows({commodity:'corn',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd),'FOB USD','#e8a84a');
+}
+
+// ── Shared destination table ───────────────────────────────────────────────────
+function renderDestTable(tableId, sorted, unitLabel, clr) {
+  const top = sorted.slice(0,15);
+  const tot = sorted.reduce((s,x)=>s+x[1],0);
+  const max = top[0]?.[1]||1;
+  let h=`<thead><tr><th>#</th><th>Country</th><th class="r">${unitLabel}</th><th>Share</th></tr></thead><tbody>`;
+  top.forEach(([n,v],i)=>{
+    const pct=(v/tot*100).toFixed(1), w=(v/max*100).toFixed(1);
+    h+=`<tr><td class="rank-num">${i+1}</td><td>${n}</td><td class="r">${fmtFull(v)}</td><td><div class="bar-inline"><div class="bar-bg2"><div class="bar-fill2" style="width:${w}%;background:${clr}"></div></div><span style="font-size:10px;color:var(--dim2);min-width:32px">${pct}%</span></div></td></tr>`;
+  });
+  h+='</tbody>';
+  document.getElementById(tableId).innerHTML=h;
+}
+
+// ── Seasonality Explorer ───────────────────────────────────────────────────────
+function renderSeasonality() {
+  populateYearSelects(['s-year-from','s-year-to']);
+  const sel  = document.getElementById('s-commodity').value;
+  const metric = document.getElementById('s-metric').value;
+  const cottonUnit = document.getElementById('s-cotton-unit').value;
+  const yf = parseInt(document.getElementById('s-year-from').value)||YEARS[0];
+  const yt = parseInt(document.getElementById('s-year-to').value)||YEARS[YEARS.length-1];
+
+  // Parse commodity/subtype
+  let com, st;
+  if (sel.includes('_')) { const p=sel.split('_'); com=p[0]; st=p.slice(1).join('_'); }
+  else { com=sel; st=null; }
+  // Special case coffee_arabica_green etc
+  if (com==='coffee' && st) { st=st; }
+  if (com==='soybeans' && st) { /* keep */ }
+
+  const rows = filterRows({commodity:com, subtype:st||undefined, yearFrom:yf, yearTo:yt});
+  const clr = COM_COLORS[com]||'#888';
+  const volFn = com==='coffee' ? r=>r.qt_estat : com==='cotton' ? (cottonUnit==='bales'?r=>r.bales_480lb:r=>r.mt) : r=>r.mt;
+  const valFn = metric==='vol' ? volFn : r=>r.fob_usd;
+
+  // Year toggles
+  const filtYears = [...new Set(rows.map(r=>r.year))].sort();
+  if (Object.keys(seasonYearEnabled).length===0 || JSON.stringify(Object.keys(seasonYearEnabled).map(Number).sort()) !== JSON.stringify(filtYears)) {
+    seasonYearEnabled = {};
+    filtYears.forEach(y=>seasonYearEnabled[y]=true);
+  }
+  const tglEl = document.getElementById('s-year-toggles');
+  tglEl.innerHTML = filtYears.map(y=>
+    `<button class="toggle ${seasonYearEnabled[y]?'on':''}" style="${seasonYearEnabled[y]?`border-color:${clr};color:${clr};background:${clr}18`:''}" onclick="toggleSeasonYear(${y},this,'${clr}')">${y}</button>`
+  ).join('');
+
+  // Filter to enabled years
+  const enabledYrs = filtYears.filter(y=>seasonYearEnabled[y]);
+  const filtRows = rows.filter(r=>enabledYrs.includes(r.year));
+
+  // Main seasonality chart
+  const byYM = aggByMonth(filtRows, valFn);
+  const ys = Object.keys(byYM).map(Number).sort();
+  const pal = palFade(clr, ys.length);
+  const avg = Array(12).fill(0).map((_,m)=>{ const v=ys.map(y=>byYM[y][m]).filter(v=>v>0); return v.length?v.reduce((a,b)=>a+b)/v.length:0; });
+  const mainDS = ys.map((y,i)=>({ label:String(y), data:byYM[y], borderColor:pal[i], backgroundColor:'transparent', borderWidth:ys.length>8?1:1.5, tension:.4, pointRadius:0 }));
+  mainDS.push({ label:'Avg', data:avg, borderColor:'rgba(255,255,255,.55)', borderDash:[5,3], borderWidth:1.8, tension:.4, pointRadius:0 });
+
+  mkChart('seasonMainChart',{type:'line',data:{labels:MONTHS,datasets:mainDS},options:{...baseLineOpts(),plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${fmtFull(c.raw)}`}}}}});
+
+  // Legend
+  document.getElementById('s-legend').innerHTML = [...ys,'Avg'].map((y,i)=>{
+    const c=i<ys.length?pal[i]:'rgba(255,255,255,.55)';
+    return `<div class="leg-item"><div class="leg-dot" style="background:${c}"></div>${y}</div>`;
+  }).join('');
+
+  // Index chart
+  const grand=avg.reduce((a,b)=>a+b)/12||1;
+  const idxData=avg.map(v=>+((v/grand)*100).toFixed(1));
+  mkChart('seasonIndexChart',{type:'line',data:{labels:MONTHS,datasets:[{label:'Seasonal index',data:idxData,borderColor:clr,backgroundColor:clr+'22',fill:true,borderWidth:2,tension:.4,pointRadius:4,pointBackgroundColor:clr}]},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10}},title:{display:true,text:'Index (avg=100)',color:TC,font:{size:10}}}}}});
+
+  // Annual totals chart
+  const annTot = YEARS.filter(y=>y>=yf&&y<=yt).map(y=>{ const r=rows.filter(row=>row.year===y); return {year:y, val:r.reduce((s,row)=>s+valFn(row),0)}; });
+  mkChart('seasonAnnualChart',{type:'bar',data:{labels:annTot.map(d=>d.year),datasets:[{label:'Annual',data:annTot.map(d=>d.val),backgroundColor:clr+'44',borderColor:clr,borderWidth:1.5,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}});
+
+  document.getElementById('s-chart-title').textContent = `Monthly Seasonality — ${sel.replace(/_/g,' ')} (${metric==='vol'?'Volume':'FOB USD'})`;
+}
+
+function toggleSeasonYear(y, btn, clr) {
+  seasonYearEnabled[y] = !seasonYearEnabled[y];
+  btn.classList.toggle('on');
+  if (seasonYearEnabled[y]) { btn.style.borderColor=clr; btn.style.color=clr; btn.style.background=clr+'18'; }
+  else { btn.style.borderColor=''; btn.style.color=''; btn.style.background=''; }
+  renderSeasonality();
+}
+
+// ── Destinations Explorer ──────────────────────────────────────────────────────
+function renderDestinations() {
+  const com    = document.getElementById('d-commodity').value;
+  const metric = document.getElementById('d-metric').value;
+  const year   = parseInt(document.getElementById('d-year').value)||YEARS[YEARS.length-1];
+
+  const rows = filterRows({commodity:com, yearFrom:year, yearTo:year});
+  const valFn = metric==='vol' ? (com==='cotton'?r=>r.mt:com==='coffee'?r=>r.qt_estat:r=>r.mt) : r=>r.fob_usd;
+  const label = metric==='vol'?(com==='coffee'?'60kg bags':com==='cotton'?'MT':'MT'):'FOB USD';
+
+  const byC  = aggByCountry(rows, valFn);
+  const top20 = byC.slice(0,20);
+  const top10 = byC.slice(0,10);
+  const tot   = byC.reduce((s,x)=>s+x[1],0);
+
+  document.getElementById('d-bar-sub').textContent = `${com} exports ${year} · ${label}`;
+  document.getElementById('d-tbl-period').textContent = `${com} · ${year} · ${label}`;
+
+  // Bar chart
+  mkChart('destBarChart',{type:'bar',data:{labels:top20.map(x=>x[0]),datasets:[{label:label,data:top20.map(x=>x[1]),backgroundColor:COM_COLORS[com]+'55',borderColor:COM_COLORS[com],borderWidth:1.5,borderRadius:3}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:{duration:300},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}},y:{grid:{display:false},ticks:{color:TC,font:{size:10}}}}}});
+
+  // Pie
+  mkChart('destPieChart',{type:'doughnut',data:{labels:top10.map(x=>x[0]),datasets:[{data:top10.map(x=>x[1]),backgroundColor:PALETTE.slice(0,10),borderColor:'#12151f',borderWidth:2,hoverOffset:6}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'right',labels:{color:TC,boxWidth:9,padding:8,font:{size:10}}},tooltip:{callbacks:{label:c=>` ${c.label}: ${fmtFull(c.raw)} (${(c.raw/tot*100).toFixed(1)}%)`}}}}});
+
+  // Populate country multi-select
+  const cSel = document.getElementById('d-country');
+  const prev = Array.from(cSel.selectedOptions).map(o=>o.value);
+  cSel.innerHTML = byC.slice(0,50).map(([n])=>`<option value="${n}" ${prev.includes(n)?'selected':''}>${n}</option>`).join('');
+  if (!prev.length && byC.length>=3) { cSel.options[0].selected=true; cSel.options[1].selected=true; cSel.options[2].selected=true; }
+
+  // Table
+  renderDestTable('dest-tbl', byC, label, COM_COLORS[com]);
+
+  renderDestinationTrend();
+}
+
+function renderDestinationTrend() {
+  const com    = document.getElementById('d-commodity').value;
+  const metric = document.getElementById('d-metric').value;
+  const valFn  = metric==='vol'?(com==='coffee'?r=>r.qt_estat:r=>r.mt):r=>r.fob_usd;
+  const selected = Array.from(document.getElementById('d-country').selectedOptions).map(o=>o.value);
+  if (!selected.length) return;
+
+  const allRows = filterRows({commodity:com});
+  const labels=[];
+  YEARS.forEach(y=>MONTHS.forEach((m,i)=>labels.push(`${MONTHS[i].slice(0,1)}${y.toString().slice(2)}`)));
+
+  const datasets = selected.map((country,ci)=>{
+    const cRows = allRows.filter(r=>r.country_name===country);
+    const byYM={};
+    cRows.forEach(r=>{ const k=`${r.year}-${r.month}`; byYM[k]=(byYM[k]||0)+valFn(r); });
+    const data=[];
+    YEARS.forEach(y=>{for(let m=1;m<=12;m++) data.push(byYM[`${y}-${m}`]||0);});
+    return {label:country,data,borderColor:PALETTE[ci%PALETTE.length],backgroundColor:'transparent',borderWidth:1.8,tension:.3,pointRadius:0,pointHoverRadius:5};
+  });
+
+  mkChart('destTrendChart',{type:'line',data:{labels,datasets},options:{...baseLineOpts(),scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:9},maxTicksLimit:28}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}},plugins:{legend:{display:true,labels:{color:TC,boxWidth:10,padding:12,font:{size:11}}},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${fmtFull(c.raw)}`}}}}});
+}
+
+// ── CSV Loader ────────────────────────────────────────────────────────────────
+function setProgress(pct, msg) {
+  document.getElementById('load-bar').style.width = pct+'%';
+  if (msg) document.getElementById('load-msg').textContent = msg;
+}
+
+function loadCSV() {
+  setProgress(5, 'Fetching exports.csv…');
+
+  Papa.parse('./data/exports.csv', {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    dynamicTyping: false,
+    worker: false,
+    step: null,
+    complete(results) {
+      setProgress(60, 'Processing data…');
+      const raw = results.data;
+
+      // Parse types
+      RAW = raw.map(r => ({
+        year:     parseInt(r.year),
+        month:    parseInt(r.month),
+        ncm:      r.ncm,
+        commodity:r.commodity,
+        subtype:  r.subtype,
+        description: r.description,
+        country_code: r.country_code,
+        country_name: r.country_name || 'Unknown',
+        qt_estat: parseFloat(r.qt_estat)||0,
+        kg_net:   parseFloat(r.kg_net)||0,
+        mt:       parseFloat(r.mt)||0,
+        bales_480lb: parseFloat(r.bales_480lb)||0,
+        fob_usd:  parseFloat(r.fob_usd)||0,
+      })).filter(r => r.year>0 && r.month>0 && r.commodity);
+
+      setProgress(80, 'Building index…');
+
+      YEARS = [...new Set(RAW.map(r=>r.year))].sort((a,b)=>a-b);
+
+      // Update header period
+      const maxY=YEARS[YEARS.length-1];
+      const maxM=Math.max(...RAW.filter(r=>r.year===maxY).map(r=>r.month));
+      document.getElementById('data-period').textContent = `${MONTHS[maxM-1]} ${maxY}`;
+
+      setProgress(90, 'Populating controls…');
+      // Populate all year selects
+      populateYearSelects(['coffee-year-from','coffee-year-to']);
+      populateYearSelects(['cotton-year-from','cotton-year-to']);
+      populateYearSelects(['sugar-year-from','sugar-year-to']);
+      populateYearSelects(['soy-year-from','soy-year-to']);
+      populateYearSelects(['corn-year-from','corn-year-to']);
+      populateYearSelects(['s-year-from','s-year-to']);
+      // Destination year select
+      const dYear=document.getElementById('d-year');
+      dYear.innerHTML=YEARS.map(y=>`<option value="${y}" ${y===maxY?'selected':''}>${y}</option>`).join('');
+
+      setProgress(100, 'Done');
+      setTimeout(()=>{
+        document.getElementById('loading').style.display='none';
+        renderOverview();
+      }, 200);
+    },
+    error(err) {
+      document.getElementById('load-msg').textContent = 'Error loading data: '+err.message;
+    }
+  });
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', loadCSV);
+</script>
+</body>
+</html>
