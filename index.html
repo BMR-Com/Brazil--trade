@@ -695,7 +695,20 @@ select:hover{border-color:var(--border2);}
   <div class="g4 mb24" id="soy-kpis"></div>
 
   <div class="ctrl-row">
-    <span class="ctrl-label">Metric:</span>
+    <select id="soy-subtype" onchange="renderSoy()" style="display:none">
+      <option value="all" selected>All</option>
+      <option value="raw_soybeans">Raw Soybeans</option>
+      <option value="soybean_meal">Soybean Meal</option>
+      <option value="soybean_oil">Soybean Oil</option>
+    </select>
+    <span class="ctrl-label">Sub-product:</span>
+    <select id="soy-subtype-vis" onchange="document.getElementById('soy-subtype').value=this.value;renderSoy()">
+      <option value="all" selected>All (Raw + Meal + Oil)</option>
+      <option value="raw_soybeans">Raw Soybeans</option>
+      <option value="soybean_meal">Soybean Meal</option>
+      <option value="soybean_oil">Soybean Oil</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:8px;">Metric:</span>
     <select id="soy-metric" onchange="renderSoy()">
       <option value="vol">Volume (MT)</option>
       <option value="fob">FOB USD</option>
@@ -1116,6 +1129,13 @@ select:hover{border-color:var(--border2);}
      JAVASCRIPT
 ═══════════════════════════════════════════════════════════════════════════ -->
 <script>
+window.onerror = function(msg, src, line, col, err) {
+  const el = document.getElementById('load-msg');
+  if (el) el.textContent = 'JS ERROR: ' + msg + ' (line ' + line + ')';
+  console.error('Global error:', msg, 'line:', line, err);
+  return false;
+};
+
 // ── Constants ─────────────────────────────────────────────────────────────────
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const BALE_KG = 217.724;
@@ -1267,7 +1287,7 @@ function populateYearSelects(ids, defaultFrom, defaultTo) {
   const defT = defaultTo   || YEARS[YEARS.length-1];
   ids.forEach(id => {
     const el = document.getElementById(id);
-    if (!el) return;
+    if (!el) return;  // silently skip missing selects
     const old = el.value;
     el.innerHTML = '';
     YEARS.forEach(y => {
@@ -1908,7 +1928,7 @@ function buildYearToggles(toggleId, onChangeFn, comColor) {
     const on=activeSet.has(y); const c=yearColor(i);
     return '<button class="toggle '+(on?'on':'')+'" data-year="'+y+'" data-color="'+c+'"'
       +' style="'+(on?'border-color:'+c+';color:'+c+';background:'+c+'18':'')+'"'
-      +' onclick="toggleComYear(this,''+onChangeFn+'')">'+y+'</button>';
+      +' onclick=\'toggleComYear(this,\'" +onChangeFn+ "\')\'>'+y+'</button>';
   }).join('');
 }
 
@@ -2015,8 +2035,9 @@ function renderCoffee() {
 }
 
 function renderCoffeeSeason() {
-  const yf = parseInt(document.getElementById('coffee-year-from').value)||YEARS[0];
-  const yt = parseInt(document.getElementById('coffee-year-to').value)||YEARS[YEARS.length-1];
+  const _cofActiveAll = getActiveYears('coffee-yr-toggles');
+  const yf = _cofActiveAll.length ? Math.min(..._cofActiveAll) : YEARS[0];
+  const yt = _cofActiveAll.length ? Math.max(..._cofActiveAll) : YEARS[YEARS.length-1];
 
   // ── Analyst seasonality charts ──────────────────────────────────────
   const _cofActiveYrs = getActiveYears('coffee-yr-toggles');
@@ -2051,8 +2072,9 @@ function renderCotton() {
   populateYearSelects(['cotton-year-from','cotton-year-to']);
   const unit   = document.getElementById('cotton-unit').value;
   const metric = document.getElementById('cotton-metric').value;
-  const yf = parseInt(document.getElementById('cotton-year-from').value)||YEARS[0];
-  const yt = parseInt(document.getElementById('cotton-year-to').value)||YEARS[YEARS.length-1];
+  const _cotActiveAll = getActiveYears('cotton-yr-toggles');
+  const yf = _cotActiveAll.length ? Math.min(..._cotActiveAll) : YEARS[0];
+  const yt = _cotActiveAll.length ? Math.max(..._cotActiveAll) : YEARS[YEARS.length-1];
   const latestYear = YEARS[YEARS.length-1];
   const prevYear   = YEARS[YEARS.length-2];
   const unitLabel  = unit==='bales' ? '480lb bales' : 'MT';
@@ -2129,8 +2151,9 @@ function renderCotton() {
 function renderSugar() {
   populateYearSelects(['sugar-year-from','sugar-year-to']);
   const metric = document.getElementById('sugar-metric').value;
-  const yf = parseInt(document.getElementById('sugar-year-from').value)||YEARS[0];
-  const yt = parseInt(document.getElementById('sugar-year-to').value)||YEARS[YEARS.length-1];
+  const _sugActiveAll = getActiveYears('sugar-yr-toggles');
+  const yf = _sugActiveAll.length ? Math.min(..._sugActiveAll) : YEARS[0];
+  const yt = _sugActiveAll.length ? Math.max(..._sugActiveAll) : YEARS[YEARS.length-1];
   const latestYear=YEARS[YEARS.length-1], prevYear=YEARS[YEARS.length-2];
   const valFn = metric==='vol' ? r=>r.mt : r=>r.fob_usd;
   const annYrs = YEARS.filter(y=>y>=yf&&y<=yt);
@@ -2196,8 +2219,9 @@ function renderSoy() {
   const subSel  = document.getElementById('soy-subtype') ? document.getElementById('soy-subtype').value : 'all';
   const subtype = subSel === 'all' ? undefined : subSel;
   const metric  = document.getElementById('soy-metric').value;
-  const yf=parseInt(document.getElementById('soy-year-from').value)||YEARS[0];
-  const yt=parseInt(document.getElementById('soy-year-to').value)||YEARS[YEARS.length-1];
+  const _soyActiveAll = getActiveYears('soy-yr-toggles');
+  const yf=_soyActiveAll.length?Math.min(..._soyActiveAll):YEARS[0];
+  const yt=_soyActiveAll.length?Math.max(..._soyActiveAll):YEARS[YEARS.length-1];
   const latestYear=YEARS[YEARS.length-1], prevYear=YEARS[YEARS.length-2];
   const valFn=metric==='vol'?r=>r.mt:r=>r.fob_usd;
   const annYrs=YEARS.filter(y=>y>=yf&&y<=yt);
@@ -2265,8 +2289,9 @@ function renderSoy() {
 function renderCorn() {
   populateYearSelects(['corn-year-from','corn-year-to']);
   const metric=document.getElementById('corn-metric').value;
-  const yf=parseInt(document.getElementById('corn-year-from').value)||YEARS[0];
-  const yt=parseInt(document.getElementById('corn-year-to').value)||YEARS[YEARS.length-1];
+  const _corActiveAll = getActiveYears('corn-yr-toggles');
+  const yf=_corActiveAll.length?Math.min(..._corActiveAll):YEARS[0];
+  const yt=_corActiveAll.length?Math.max(..._corActiveAll):YEARS[YEARS.length-1];
   const latestYear=YEARS[YEARS.length-1], prevYear=YEARS[YEARS.length-2];
   const valFn=metric==='vol'?r=>r.mt:r=>r.fob_usd;
   const annYrs=YEARS.filter(y=>y>=yf&&y<=yt);
@@ -2585,8 +2610,13 @@ function finaliseData() {
 
   setProgress(100, 'Done');
   setTimeout(()=>{
-    document.getElementById('loading').style.display='none';
-    renderOverview();
+    try {
+      document.getElementById('loading').style.display='none';
+      renderOverview();
+    } catch(e) {
+      document.getElementById('load-msg').textContent = 'ERROR: '+e.message+' | '+e.stack.split('\n')[1];
+      console.error(e);
+    }
   }, 200);
 }
 
@@ -2609,8 +2639,13 @@ function loadCSV() {
           setProgress(60, 'Processing data…');
           setProgress(65, 'Parsing rows…');
           setTimeout(() => {
-            RAW = parseRows([...res1.data, ...res2.data]);
-            finaliseData();
+            try {
+              RAW = parseRows([...res1.data, ...res2.data]);
+              finaliseData();
+            } catch(e) {
+              document.getElementById('load-msg').textContent = 'PARSE ERROR: '+e.message;
+              console.error(e);
+            }
           }, 0);
         },
         error(err) {
