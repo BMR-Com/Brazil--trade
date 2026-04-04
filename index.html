@@ -299,38 +299,53 @@ select:hover{border-color:var(--border2);}
     </div>
   </div>
 
-  <!-- Monthly seasonality — 4 charts -->
-  <div class="sec mb16"><span class="sec-title">Monthly Seasonality</span><div class="sec-line"></div></div>
+  <!-- Analyst seasonality charts -->
+  <div class="sec mb16"><span class="sec-title">Seasonality &amp; Country Flow</span><div class="sec-line"></div></div>
   <div class="ctrl-row">
-    <span class="ctrl-label">Metric:</span>
-    <select id="coffee-metric" onchange="renderCoffeeSeason()">
-      <option value="vol">Volume (60kg bags)</option>
-      <option value="fob">Value (FOB USD)</option>
-    </select>
-    <span class="ctrl-label" style="margin-left:8px;">Years:</span>
+    <span class="ctrl-label">Years:</span>
     <select id="coffee-year-from" onchange="renderCoffeeSeason()"></select>
     <span style="color:var(--dim)">–</span>
     <select id="coffee-year-to" onchange="renderCoffeeSeason()"></select>
   </div>
-  <div class="g2 mb24">
-    <div class="chart-card full">
-      <div class="chart-title">Total Coffee — Monthly Seasonality</div>
-      <div class="chart-sub">Each line = one year · dashed white = average</div>
-      <div class="chart-wrap h260"><canvas id="coffeeSeasonTotal"></canvas></div>
+  <!-- Analyst seasonality charts -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Volume — Coffee (60kg bags)</div>
+      <div class="chart-sub">Running total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="cofCumVol"></canvas></div>
+      <div class="legend" id="cofCumLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Value (FOB USD) — Coffee (60kg bags)</div>
+      <div class="chart-sub">Running FOB total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="cofCumFob"></canvas></div>
+      <div class="legend" id="cofCumFobLeg"></div>
     </div>
   </div>
-  <div class="g3 mb24">
-    <div class="chart-card">
-      <div class="chart-title">Arabica Green — Seasonality</div>
-      <div class="chart-wrap h200"><canvas id="coffeeSeasonArabica"></canvas></div>
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Volume — Coffee (60kg bags)</div>
+      <div class="chart-sub">Actual monthly value per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="cofMonVol"></canvas></div>
+      <div class="legend" id="cofMonLeg"></div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">Conillon / Robusta — Seasonality</div>
-      <div class="chart-wrap h200"><canvas id="coffeeSeasonConillon"></canvas></div>
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Value (FOB USD) — Coffee (60kg bags)</div>
+      <div class="chart-sub">Actual monthly FOB per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="cofMonFob"></canvas></div>
+      <div class="legend" id="cofMonFobLeg"></div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">Soluble / Instant — Seasonality</div>
-      <div class="chart-wrap h200"><canvas id="coffeeSeasonSoluble"></canvas></div>
+  </div>
+  <div class="g2 mb24">
+    <div class="chart-card light">
+      <div class="chart-title">Annual Volume by Destination Country — Coffee (60kg bags)</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="cofCtryVol"></canvas></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Annual Value (FOB USD) by Destination Country — Coffee (60kg bags)</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers by value · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="cofCtryFob"></canvas></div>
     </div>
   </div>
 
@@ -372,16 +387,57 @@ select:hover{border-color:var(--border2);}
     <select id="cotton-year-to" onchange="renderCotton()"></select>
   </div>
 
-  <div class="g2 mb24">
+  <div class="g2 mb16">
     <div class="chart-card">
       <div class="chart-title">Annual Cotton Exports</div>
       <div class="chart-sub">Volume (bars) + FOB value (line)</div>
       <div class="chart-wrap h300"><canvas id="cottonAnnual"></canvas></div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">Cotton — Monthly Seasonality</div>
-      <div class="chart-sub">Each line = one year</div>
-      <div class="chart-wrap h300"><canvas id="cottonSeason"></canvas></div>
+    <div class="chart-card light">
+      <div class="chart-title">Seasonal Index (avg = 100)</div>
+      <div class="chart-sub">Monthly export strength · &gt;100 = peak season (Jul–Nov)</div>
+      <div class="chart-wrap h300"><canvas id="cottonSeasonIdx"></canvas></div>
+    </div>
+  </div>
+  <!-- Analyst seasonality charts -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Volume — Cotton</div>
+      <div class="chart-sub">Running total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="cotCumVol"></canvas></div>
+      <div class="legend" id="cotCumLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Value (FOB USD) — Cotton</div>
+      <div class="chart-sub">Running FOB total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="cotCumFob"></canvas></div>
+      <div class="legend" id="cotCumFobLeg"></div>
+    </div>
+  </div>
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Volume — Cotton</div>
+      <div class="chart-sub">Actual monthly value per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="cotMonVol"></canvas></div>
+      <div class="legend" id="cotMonLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Value (FOB USD) — Cotton</div>
+      <div class="chart-sub">Actual monthly FOB per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="cotMonFob"></canvas></div>
+      <div class="legend" id="cotMonFobLeg"></div>
+    </div>
+  </div>
+  <div class="g2 mb24">
+    <div class="chart-card light">
+      <div class="chart-title">Annual Volume by Destination Country — Cotton</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="cotCtryVol"></canvas></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Annual Value (FOB USD) by Destination Country — Cotton</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers by value · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="cotCtryFob"></canvas></div>
     </div>
   </div>
 
@@ -416,7 +472,7 @@ select:hover{border-color:var(--border2);}
     <select id="sugar-year-to" onchange="renderSugar()"></select>
   </div>
 
-  <div class="g2 mb24">
+  <div class="g2 mb16">
     <div class="chart-card">
       <div class="chart-title">Annual Sugar Exports</div>
       <div class="chart-sub">Raw cane · Raw beet · Refined white (stacked)</div>
@@ -427,10 +483,51 @@ select:hover{border-color:var(--border2);}
         <div class="leg-item"><div class="leg-dot" style="background:#faeeb8"></div>Refined white</div>
       </div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">Sugar — Monthly Seasonality</div>
-      <div class="chart-sub">Each line = one year (crushing season Mar–Nov)</div>
-      <div class="chart-wrap h300"><canvas id="sugarSeason"></canvas></div>
+    <div class="chart-card light">
+      <div class="chart-title">Seasonal Index (avg = 100)</div>
+      <div class="chart-sub">Monthly crushing season pattern · peak Sep–Nov</div>
+      <div class="chart-wrap h300"><canvas id="sugarSeasonIdx"></canvas></div>
+    </div>
+  </div>
+  <!-- Analyst seasonality charts -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Volume — Sugar (MT)</div>
+      <div class="chart-sub">Running total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="sugCumVol"></canvas></div>
+      <div class="legend" id="sugCumLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Value (FOB USD) — Sugar (MT)</div>
+      <div class="chart-sub">Running FOB total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="sugCumFob"></canvas></div>
+      <div class="legend" id="sugCumFobLeg"></div>
+    </div>
+  </div>
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Volume — Sugar (MT)</div>
+      <div class="chart-sub">Actual monthly value per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="sugMonVol"></canvas></div>
+      <div class="legend" id="sugMonLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Value (FOB USD) — Sugar (MT)</div>
+      <div class="chart-sub">Actual monthly FOB per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="sugMonFob"></canvas></div>
+      <div class="legend" id="sugMonFobLeg"></div>
+    </div>
+  </div>
+  <div class="g2 mb24">
+    <div class="chart-card light">
+      <div class="chart-title">Annual Volume by Destination Country — Sugar (MT)</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="sugCtryVol"></canvas></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Annual Value (FOB USD) by Destination Country — Sugar (MT)</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers by value · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="sugCtryFob"></canvas></div>
     </div>
   </div>
 
@@ -465,7 +562,7 @@ select:hover{border-color:var(--border2);}
     <select id="soy-year-to" onchange="renderSoy()"></select>
   </div>
 
-  <div class="g2 mb24">
+  <div class="g2 mb16">
     <div class="chart-card">
       <div class="chart-title">Annual Soybean Exports by Sub-product</div>
       <div class="chart-sub">Raw beans · Meal/cake · Crude oil (stacked)</div>
@@ -476,10 +573,51 @@ select:hover{border-color:var(--border2);}
         <div class="leg-item"><div class="leg-dot" style="background:#c0f5be"></div>Soybean oil</div>
       </div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">Soybeans — Monthly Seasonality</div>
-      <div class="chart-sub">Each line = one year (harvest Jan–Apr, exports surge Apr–Aug)</div>
-      <div class="chart-wrap h300"><canvas id="soySeason"></canvas></div>
+    <div class="chart-card light">
+      <div class="chart-title">Seasonal Index (avg = 100)</div>
+      <div class="chart-sub">Harvest Jan–Apr · export surge Apr–Aug</div>
+      <div class="chart-wrap h300"><canvas id="soySeasonIdx"></canvas></div>
+    </div>
+  </div>
+  <!-- Analyst seasonality charts -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Volume — Soybeans (MT)</div>
+      <div class="chart-sub">Running total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="soyCumVol"></canvas></div>
+      <div class="legend" id="soyCumLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Value (FOB USD) — Soybeans (MT)</div>
+      <div class="chart-sub">Running FOB total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="soyCumFob"></canvas></div>
+      <div class="legend" id="soyCumFobLeg"></div>
+    </div>
+  </div>
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Volume — Soybeans (MT)</div>
+      <div class="chart-sub">Actual monthly value per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="soyMonVol"></canvas></div>
+      <div class="legend" id="soyMonLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Value (FOB USD) — Soybeans (MT)</div>
+      <div class="chart-sub">Actual monthly FOB per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="soyMonFob"></canvas></div>
+      <div class="legend" id="soyMonFobLeg"></div>
+    </div>
+  </div>
+  <div class="g2 mb24">
+    <div class="chart-card light">
+      <div class="chart-title">Annual Volume by Destination Country — Soybeans (MT)</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="soyCtryVol"></canvas></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Annual Value (FOB USD) by Destination Country — Soybeans (MT)</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers by value · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="soyCtryFob"></canvas></div>
     </div>
   </div>
 
@@ -514,16 +652,57 @@ select:hover{border-color:var(--border2);}
     <select id="corn-year-to" onchange="renderCorn()"></select>
   </div>
 
-  <div class="g2 mb24">
+  <div class="g2 mb16">
     <div class="chart-card">
       <div class="chart-title">Annual Corn Exports</div>
       <div class="chart-sub">Volume (MT) + FOB value</div>
       <div class="chart-wrap h300"><canvas id="cornAnnual"></canvas></div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">Corn — Monthly Seasonality</div>
-      <div class="chart-sub">Each line = one year (safrinha harvest Jul–Sep peak)</div>
-      <div class="chart-wrap h300"><canvas id="cornSeason"></canvas></div>
+    <div class="chart-card light">
+      <div class="chart-title">Seasonal Index (avg = 100)</div>
+      <div class="chart-sub">Safrinha harvest Jul–Sep · export surge Aug–Oct</div>
+      <div class="chart-wrap h300"><canvas id="cornSeasonIdx"></canvas></div>
+    </div>
+  </div>
+  <!-- Analyst seasonality charts -->
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Volume — Corn (MT)</div>
+      <div class="chart-sub">Running total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="corCumVol"></canvas></div>
+      <div class="legend" id="corCumLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Cumulative Export Value (FOB USD) — Corn (MT)</div>
+      <div class="chart-sub">Running FOB total by month · each line = one year</div>
+      <div class="chart-wrap h280"><canvas id="corCumFob"></canvas></div>
+      <div class="legend" id="corCumFobLeg"></div>
+    </div>
+  </div>
+  <div class="g2 mb16">
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Volume — Corn (MT)</div>
+      <div class="chart-sub">Actual monthly value per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="corMonVol"></canvas></div>
+      <div class="legend" id="corMonLeg"></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Monthly Seasonality — Value (FOB USD) — Corn (MT)</div>
+      <div class="chart-sub">Actual monthly FOB per year · dashed = historical average</div>
+      <div class="chart-wrap h280"><canvas id="corMonFob"></canvas></div>
+      <div class="legend" id="corMonFobLeg"></div>
+    </div>
+  </div>
+  <div class="g2 mb24">
+    <div class="chart-card light">
+      <div class="chart-title">Annual Volume by Destination Country — Corn (MT)</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="corCtryVol"></canvas></div>
+    </div>
+    <div class="chart-card light">
+      <div class="chart-title">Annual Value (FOB USD) by Destination Country — Corn (MT)</div>
+      <div class="chart-sub">Stacked bars · top 10 buyers by value · others grouped</div>
+      <div class="chart-wrap h320"><canvas id="corCtryFob"></canvas></div>
     </div>
   </div>
 
@@ -1123,8 +1302,8 @@ function renderCoffee() {
   kpiDefs.forEach(def => {
     const cur  = filterRows({commodity:'coffee',subtype:def.subtype||undefined,yearFrom:latestYear,yearTo:latestYear});
     const prev = filterRows({commodity:'coffee',subtype:def.subtype||undefined,yearFrom:prevYear, yearTo:prevYear});
-    const curV  = cur.reduce((s,r)=>s+r.qt_estat,0);
-    const prevV = prev.reduce((s,r)=>s+r.qt_estat,0);
+    const curV  = cur.reduce((s,r)=>s+r.bags,0);
+    const prevV = prev.reduce((s,r)=>s+r.bags,0);
     const pct = prevV>0 ? ((curV-prevV)/prevV*100).toFixed(1) : null;
     const curF = cur.reduce((s,r)=>s+r.fob_usd,0);
     const up = pct>=0;
@@ -1136,7 +1315,7 @@ function renderCoffee() {
 
   // Annual total
   const annRows = filterRows({commodity:'coffee'});
-  const annVol = aggByYear(annRows, r=>r.qt_estat);
+  const annVol = aggByYear(annRows, r=>r.bags);
   const annFOB = aggByYear(annRows, r=>r.fob_usd);
   mkChart('coffeeAnnualTotal',{
     type:'bar',
@@ -1160,7 +1339,7 @@ function renderCoffee() {
     type:'bar',
     data:{labels:YEARS, datasets:subtypes.map(st=>({
       label:subLabels[st.k],
-      data:aggByYear(filterRows({commodity:'coffee',subtype:st.k}),r=>r.qt_estat).map(d=>d.val),
+      data:aggByYear(filterRows({commodity:'coffee',subtype:st.k}),r=>r.bags).map(d=>d.val),
       backgroundColor:st.c+'55', borderColor:st.c, borderWidth:1.5, borderRadius:3, stack:'s'
     }))},
     options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},
@@ -1176,7 +1355,7 @@ function renderCoffeeSeason() {
   const metric = document.getElementById('coffee-metric').value;
   const yf = parseInt(document.getElementById('coffee-year-from').value)||YEARS[0];
   const yt = parseInt(document.getElementById('coffee-year-to').value)||YEARS[YEARS.length-1];
-  const volFn = r=>r.qt_estat;
+  const volFn = r=>r.bags;
   const fobFn = r=>r.fob_usd;
   const valFn = metric==='vol' ? volFn : fobFn;
   const clr = '#c8773a';
@@ -1192,7 +1371,7 @@ function renderCoffeeDestTable() {
   const latestYear = YEARS[YEARS.length-1];
   document.getElementById('coffee-dest-period').textContent = latestYear;
   const rows = filterRows({commodity:'coffee',yearFrom:latestYear,yearTo:latestYear});
-  renderDestTable('coffee-tbl-vol', aggByCountry(rows,r=>r.qt_estat), 'Volume (60kg bags)', '#c8773a');
+  renderDestTable('coffee-tbl-vol', aggByCountry(rows,r=>r.bags), 'Volume (60kg bags)', '#c8773a');
   renderDestTable('coffee-tbl-fob', aggByCountry(rows,r=>r.fob_usd), 'FOB USD', '#c8773a');
 }
 
@@ -1317,7 +1496,24 @@ function renderSoy() {
     backgroundColor:st.c+'88',borderColor:st.c,borderWidth:1.5,borderRadius:3,stack:'s'
   }))},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},stacked:true,ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}}}}});
 
-  buildSeasonChart('soySeason',filterRows({commodity:'soybeans',yearFrom:yf,yearTo:yt}),'#6ec86a',valFn);
+
+  // Analyst seasonality charts
+  const _soyRows  = filterRows({commodity:'soybeans',yearFrom:yf,yearTo:yt});
+  const _soyVolFn = r=>r.mt;
+  const _soyFobFn = r=>r.fob_usd;
+  buildCumulativeSeasonChart('soyCumVol',   _soyRows, _soyVolFn, 'soyCumLeg');
+  buildCumulativeSeasonChart('soyCumFob',   _soyRows, _soyFobFn, 'soyCumFobLeg');
+  buildSeasonChart('soyMonVol', _soyRows, '#6ec86a', _soyVolFn, 'soyMonLeg');
+  buildSeasonChart('soyMonFob', _soyRows, '#6ec86a', _soyFobFn, 'soyMonFobLeg');
+  buildCountryStackedBar('soyCtryVol', _soyRows, _soyVolFn, '#6ec86a');
+  buildCountryStackedBar('soyCtryFob', _soyRows, _soyFobFn, '#6ec86a');
+  const _soyByYM  = aggByMonth(_soyRows, _soyVolFn);
+  const _soyYs    = Object.keys(_soyByYM).map(Number).sort();
+  const _soyAvg   = Array(12).fill(0).map((_,m)=>{ const v=_soyYs.map(y=>_soyByYM[y][m]).filter(v=>v>0); return v.length?v.reduce((a,b)=>a+b)/v.length:0; });
+  const _soyGrand = _soyAvg.reduce((a,b)=>a+b,0)/12||1;
+  const _soyIdx   = _soyAvg.map(v=>+((v/_soyGrand)*100).toFixed(1));
+  mkChart('soySeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:_soyIdx,borderColor:'#6ec86a',backgroundColor:'#6ec86a28',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#6ec86a',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
+
   renderDestTable('soy-tbl-vol',aggByCountry(filterRows({commodity:'soybeans',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt),'MT','#6ec86a');
   renderDestTable('soy-tbl-fob',aggByCountry(filterRows({commodity:'soybeans',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd),'FOB USD','#6ec86a');
 }
@@ -1352,7 +1548,24 @@ function renderCorn() {
     {type:'line',label:'FOB $B',data:aggByYear(filterRows({commodity:'corn',yearFrom:yf,yearTo:yt}),r=>r.fob_usd).filter(d=>d.year>=yf&&d.year<=yt).map(d=>d.val/1e9),borderColor:'#f5c472',borderWidth:2,tension:.35,pointRadius:2,yAxisID:'y2'},
   ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},interaction:{mode:'index',intersect:false},plugins:{legend:{display:false}},scales:{x:{grid:{color:GC},ticks:{color:TC,font:{size:10}}},y:{grid:{color:GC},ticks:{color:TC,font:{size:10},callback:v=>fmtShort(v)}},y2:{position:'right',grid:{display:false},ticks:{color:TC,font:{size:10},callback:v=>v+'B'}}}}});
 
-  buildSeasonChart('cornSeason',filterRows({commodity:'corn',yearFrom:yf,yearTo:yt}),'#e8a84a',valFn);
+
+  // Analyst seasonality charts
+  const _corRows  = filterRows({commodity:'corn',yearFrom:yf,yearTo:yt});
+  const _corVolFn = r=>r.mt;
+  const _corFobFn = r=>r.fob_usd;
+  buildCumulativeSeasonChart('corCumVol',   _corRows, _corVolFn, 'corCumLeg');
+  buildCumulativeSeasonChart('corCumFob',   _corRows, _corFobFn, 'corCumFobLeg');
+  buildSeasonChart('corMonVol', _corRows, '#e8a84a', _corVolFn, 'corMonLeg');
+  buildSeasonChart('corMonFob', _corRows, '#e8a84a', _corFobFn, 'corMonFobLeg');
+  buildCountryStackedBar('corCtryVol', _corRows, _corVolFn, '#e8a84a');
+  buildCountryStackedBar('corCtryFob', _corRows, _corFobFn, '#e8a84a');
+  const _corByYM  = aggByMonth(_corRows, _corVolFn);
+  const _corYs    = Object.keys(_corByYM).map(Number).sort();
+  const _corAvg   = Array(12).fill(0).map((_,m)=>{ const v=_corYs.map(y=>_corByYM[y][m]).filter(v=>v>0); return v.length?v.reduce((a,b)=>a+b)/v.length:0; });
+  const _corGrand = _corAvg.reduce((a,b)=>a+b,0)/12||1;
+  const _corIdx   = _corAvg.map(v=>+((v/_corGrand)*100).toFixed(1));
+  mkChart('cornSeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:_corIdx,borderColor:'#e8a84a',backgroundColor:'#e8a84a28',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#e8a84a',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
+
   renderDestTable('corn-tbl-vol',aggByCountry(filterRows({commodity:'corn',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt),'MT','#e8a84a');
   renderDestTable('corn-tbl-fob',aggByCountry(filterRows({commodity:'corn',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd),'FOB USD','#e8a84a');
 }
@@ -1394,7 +1607,7 @@ function renderSeasonality() {
   const clr  = COM_COLORS[com]||'#888';
 
   // Volume function — coffee = 60kg bags (qt_estat), cotton = bales or MT, else MT
-  const volFn = com==='coffee'  ? r=>r.qt_estat
+  const volFn = com==='coffee'  ? r=>r.bags
               : com==='cotton'  ? (cottonUnit==='bales' ? r=>r.bales_480lb : r=>r.mt)
               : r=>r.mt;
   const fobFn = r=>r.fob_usd;
@@ -1570,6 +1783,7 @@ function setProgress(pct, msg) {
 function parseRows(rows) {
   return rows.map(r => {
     const kg = parseFloat(r.kg_net)||0;
+    const isCoffee = (r.commodity === 'coffee');
     return {
       year:         parseInt(r.year),
       month:        parseInt(r.month),
@@ -1581,6 +1795,8 @@ function parseRows(rows) {
       country_name: r.country_name || 'Unknown',
       qt_estat:     parseFloat(r.qt_estat)||0,
       kg_net:       kg,
+      // coffee bags always derived from kg_net/60 — qt_estat unit varies by year/NCM
+      bags:         isCoffee ? kg / 60 : 0,
       mt:           kg / 1000,
       bales_480lb:  kg / 217.724,
       fob_usd:      parseFloat(r.fob_usd)||0,
