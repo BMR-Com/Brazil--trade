@@ -23,7 +23,8 @@ log = logging.getLogger(__name__)
 
 BASE_DIR    = Path(__file__).parent
 DATA_DIR    = BASE_DIR / "data"
-EXPORT_CSV  = DATA_DIR / "exports.csv"
+# Data is split — scraper only updates the 2015+ file
+EXPORT_CSV  = DATA_DIR / "exports_2015on.csv"
 COUNTRY_CSV = DATA_DIR / "countries.csv"
 DATA_DIR.mkdir(exist_ok=True)
 
@@ -204,7 +205,7 @@ def download_year(year: int) -> pd.DataFrame | None:
 def load_existing() -> pd.DataFrame:
     if EXPORT_CSV.exists():
         df = pd.read_csv(EXPORT_CSV, dtype={"ncm":str,"country_code":str,"co_unid":str})
-        log.info("Loaded %d existing rows", len(df))
+        log.info("Loaded %d existing rows from %s", len(df), EXPORT_CSV)
         return df
     return pd.DataFrame(columns=OUT_COLS)
 
@@ -213,6 +214,8 @@ def complete_years(df: pd.DataFrame) -> set:
     cur = date.today().year
     counts = df.groupby("year")["month"].nunique()
     return {int(y) for y in counts[counts >= 12].index if int(y) < cur}
+
+PRE2015_YEARS = set(range(1997, 2015))  # handled by exports_pre2015.csv — never touch
 
 def save(df: pd.DataFrame):
     df = df.sort_values(["year","month","commodity","country_code"]).reset_index(drop=True)
@@ -227,7 +230,7 @@ def run(years_override=None):
     cur_year  = date.today().year
 
     to_fetch = years_override if years_override else [
-        y for y in range(1997, cur_year+1) if y not in done
+        y for y in range(2015, cur_year+1) if y not in done
     ]
     if not to_fetch:
         log.info("All years complete — nothing to fetch.")
