@@ -655,6 +655,7 @@ select:hover{border-color:var(--border2);}
 // ── Constants ─────────────────────────────────────────────────────────────────
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const BALE_KG = 217.724;
+const BAG_KG  = 60;          // kg per 60kg coffee bag
 const GC = 'rgba(255,255,255,0.06)';
 const TC = '#5a5d6e';
 
@@ -761,10 +762,14 @@ function aggByCountry(rows, valFn) {
 }
 
 // Volume functions per commodity
+// qt_estat = raw bags (coffee) or raw bales (cotton) from MDIC
+// kg_net   = raw kg — divide by 1000 for MT, by 217.724 for 480lb bales
 function getVol(row, cottonUnit='mt') {
-  if (row.commodity === 'coffee') return row.qt_estat;      // 60 kg bags
-  if (row.commodity === 'cotton') return cottonUnit==='bales' ? row.bales_480lb : row.mt;
-  return row.mt;  // sugar, soybeans, corn
+  if (row.commodity === 'coffee') return row.qt_estat;               // 60kg bags (raw from MDIC)
+  if (row.commodity === 'cotton') return cottonUnit==='bales'
+      ? row.kg_net / BALE_KG   // 480lb bales computed from kg
+      : row.kg_net / 1000;     // MT
+  return row.kg_net / 1000;   // MT — sugar, soybeans, corn
 }
 function getFOB(row) { return row.fob_usd; }
 
@@ -1387,8 +1392,9 @@ function loadCSV() {
         country_name: r.country_name || 'Unknown',
         qt_estat: parseFloat(r.qt_estat)||0,
         kg_net:   parseFloat(r.kg_net)||0,
-        mt:       parseFloat(r.mt)||0,
-        bales_480lb: parseFloat(r.bales_480lb)||0,
+        // mt and bales computed from kg_net — not stored in CSV
+        get mt()          { return this.kg_net / 1000; },
+        get bales_480lb() { return this.kg_net / 217.724; },
         fob_usd:  parseFloat(r.fob_usd)||0,
       })).filter(r => r.year>0 && r.month>0 && r.commodity);
 
