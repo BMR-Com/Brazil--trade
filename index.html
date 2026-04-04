@@ -1892,13 +1892,15 @@ function renderCoffee() {
 
   buildYearToggles('coffee-yr-toggles','renderCoffeeSeason()','#c8773a');
   renderCoffeeSeason();
-  // ── Marketing Year charts ──────────────────────────────────────────────
-  const _cofMYRows = filterRows({commodity:"coffee"});
-  buildMYAnnualBar('cofMYAnn', _cofMYRows, 'coffee', r=>r.bags, r=>r.fob_usd, '60kg bags');
-  buildMYCumulativeChart('cofMYCumVol', _cofMYRows, 'coffee', r=>r.bags, 'cofMYCumLeg');
-  buildMYMonthlyChart('cofMYMonVol', _cofMYRows, 'coffee', COM_COLORS['coffee'], r=>r.bags, 'cofMYMonLeg');
-  buildMYMonthlyChart('cofMYMonFob', _cofMYRows, 'coffee', COM_COLORS['coffee'], r=>r.fob_usd, 'cofMYMonFobLeg');
-  buildTradingDeskSummary('cofSummary', 'coffee', _cofMYRows, r=>r.bags, r=>r.fob_usd, '60kg bags');
+  // ── Marketing Year charts — deferred so page paints first ──────────────
+  setTimeout(() => {
+    const _cofMYRows = filterRows({commodity:'coffee'});
+    buildMYAnnualBar('cofMYAnn', _cofMYRows, 'coffee', r=>r.bags, r=>r.fob_usd, '60kg bags');
+    buildMYCumulativeChart('cofMYCumVol', _cofMYRows, 'coffee', r=>r.bags, 'cofMYCumLeg');
+    buildMYMonthlyChart('cofMYMonVol', _cofMYRows, 'coffee', COM_COLORS['coffee'], r=>r.bags, 'cofMYMonLeg');
+    buildMYMonthlyChart('cofMYMonFob', _cofMYRows, 'coffee', COM_COLORS['coffee'], r=>r.fob_usd, 'cofMYMonFobLeg');
+    buildTradingDeskSummary('cofSummary', 'coffee', _cofMYRows, r=>r.bags, r=>r.fob_usd, '60kg bags');
+  }, 50);
   renderCoffeeDestTable();
 }
 
@@ -2000,13 +2002,15 @@ function renderCotton() {
     mkChart('cottonSeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:avg.map(v=>+((v/grand)*100).toFixed(1)),borderColor:'#4ab8d8',backgroundColor:'#4ab8d828',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#4ab8d8',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
   })();
 
-  // ── Marketing Year charts ──────────────────────────────────────────────
-  const _cotMYRows = filterRows({commodity:"cotton"});
-  buildMYAnnualBar('cotMYAnn', _cotMYRows, 'cotton', r=>r.mt, r=>r.fob_usd, 'MT');
-  buildMYCumulativeChart('cotMYCumVol', _cotMYRows, 'cotton', r=>r.mt, 'cotMYCumLeg');
-  buildMYMonthlyChart('cotMYMonVol', _cotMYRows, 'cotton', COM_COLORS['cotton'], r=>r.mt, 'cotMYMonLeg');
-  buildMYMonthlyChart('cotMYMonFob', _cotMYRows, 'cotton', COM_COLORS['cotton'], r=>r.fob_usd, 'cotMYMonFobLeg');
-  buildTradingDeskSummary('cotSummary', 'cotton', _cotMYRows, r=>r.mt, r=>r.fob_usd, 'MT');
+  // ── Marketing Year charts — deferred so page paints first ──────────────
+  setTimeout(() => {
+    const _cotMYRows = filterRows({commodity:'cotton'});
+    buildMYAnnualBar('cotMYAnn', _cotMYRows, 'cotton', r=>r.mt, r=>r.fob_usd, 'MT');
+    buildMYCumulativeChart('cotMYCumVol', _cotMYRows, 'cotton', r=>r.mt, 'cotMYCumLeg');
+    buildMYMonthlyChart('cotMYMonVol', _cotMYRows, 'cotton', COM_COLORS['cotton'], r=>r.mt, 'cotMYMonLeg');
+    buildMYMonthlyChart('cotMYMonFob', _cotMYRows, 'cotton', COM_COLORS['cotton'], r=>r.fob_usd, 'cotMYMonFobLeg');
+    buildTradingDeskSummary('cotSummary', 'cotton', _cotMYRows, r=>r.mt, r=>r.fob_usd, 'MT');
+  }, 50);
   renderDestTable('cotton-tbl-vol', aggByCountry(filterRows({commodity:'cotton',yearFrom:latestYear,yearTo:latestYear}),volFn), unitLabel, '#4ab8d8');
   renderDestTable('cotton-tbl-fob', aggByCountry(filterRows({commodity:'cotton',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd), 'FOB USD', '#4ab8d8');
 }
@@ -2063,13 +2067,15 @@ function renderSugar() {
     mkChart('sugarSeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:avg.map(v=>+((v/grand)*100).toFixed(1)),borderColor:'#e8c84a',backgroundColor:'#e8c84a28',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#e8c84a',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
   })();
 
-  // ── Marketing Year charts ──────────────────────────────────────────────
-  const _sugMYRows = filterRows({commodity:"sugar"});
-  buildMYAnnualBar('sugMYAnn', _sugMYRows, 'sugar', r=>r.mt, r=>r.fob_usd, 'MT');
-  buildMYCumulativeChart('sugMYCumVol', _sugMYRows, 'sugar', r=>r.mt, 'sugMYCumLeg');
-  buildMYMonthlyChart('sugMYMonVol', _sugMYRows, 'sugar', COM_COLORS['sugar'], r=>r.mt, 'sugMYMonLeg');
-  buildMYMonthlyChart('sugMYMonFob', _sugMYRows, 'sugar', COM_COLORS['sugar'], r=>r.fob_usd, 'sugMYMonFobLeg');
-  buildTradingDeskSummary('sugSummary', 'sugar', _sugMYRows, r=>r.mt, r=>r.fob_usd, 'MT');
+  // ── Marketing Year charts — deferred so page paints first ──────────────
+  setTimeout(() => {
+    const _sugMYRows = filterRows({commodity:'sugar'});
+    buildMYAnnualBar('sugMYAnn', _sugMYRows, 'sugar', r=>r.mt, r=>r.fob_usd, 'MT');
+    buildMYCumulativeChart('sugMYCumVol', _sugMYRows, 'sugar', r=>r.mt, 'sugMYCumLeg');
+    buildMYMonthlyChart('sugMYMonVol', _sugMYRows, 'sugar', COM_COLORS['sugar'], r=>r.mt, 'sugMYMonLeg');
+    buildMYMonthlyChart('sugMYMonFob', _sugMYRows, 'sugar', COM_COLORS['sugar'], r=>r.fob_usd, 'sugMYMonFobLeg');
+    buildTradingDeskSummary('sugSummary', 'sugar', _sugMYRows, r=>r.mt, r=>r.fob_usd, 'MT');
+  }, 50);
   renderDestTable('sugar-tbl-vol', aggByCountry(filterRows({commodity:'sugar',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt), 'MT', '#e8c84a');
   renderDestTable('sugar-tbl-fob', aggByCountry(filterRows({commodity:'sugar',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd), 'FOB USD', '#e8c84a');
 }
@@ -2132,13 +2138,15 @@ function renderSoy() {
   mkChart('soySeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:_soyIdx,borderColor:'#6ec86a',backgroundColor:'#6ec86a28',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#6ec86a',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
 
 
-  // ── Marketing Year charts ──────────────────────────────────────────────
-  const _soyMYRows = filterRows({commodity:"soybeans"});
-  buildMYAnnualBar('soyMYAnn', _soyMYRows, 'soybeans', r=>r.mt, r=>r.fob_usd, 'MT');
-  buildMYCumulativeChart('soyMYCumVol', _soyMYRows, 'soybeans', r=>r.mt, 'soyMYCumLeg');
-  buildMYMonthlyChart('soyMYMonVol', _soyMYRows, 'soybeans', COM_COLORS['soybeans'], r=>r.mt, 'soyMYMonLeg');
-  buildMYMonthlyChart('soyMYMonFob', _soyMYRows, 'soybeans', COM_COLORS['soybeans'], r=>r.fob_usd, 'soyMYMonFobLeg');
-  buildTradingDeskSummary('soySummary', 'soybeans', _soyMYRows, r=>r.mt, r=>r.fob_usd, 'MT');
+  // ── Marketing Year charts — deferred so page paints first ──────────────
+  setTimeout(() => {
+    const _soyMYRows = filterRows({commodity:'soybeans'});
+    buildMYAnnualBar('soyMYAnn', _soyMYRows, 'soybeans', r=>r.mt, r=>r.fob_usd, 'MT');
+    buildMYCumulativeChart('soyMYCumVol', _soyMYRows, 'soybeans', r=>r.mt, 'soyMYCumLeg');
+    buildMYMonthlyChart('soyMYMonVol', _soyMYRows, 'soybeans', COM_COLORS['soybeans'], r=>r.mt, 'soyMYMonLeg');
+    buildMYMonthlyChart('soyMYMonFob', _soyMYRows, 'soybeans', COM_COLORS['soybeans'], r=>r.fob_usd, 'soyMYMonFobLeg');
+    buildTradingDeskSummary('soySummary', 'soybeans', _soyMYRows, r=>r.mt, r=>r.fob_usd, 'MT');
+  }, 50);
   renderDestTable('soy-tbl-vol',aggByCountry(filterRows({commodity:'soybeans',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt),'MT','#6ec86a');
   renderDestTable('soy-tbl-fob',aggByCountry(filterRows({commodity:'soybeans',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd),'FOB USD','#6ec86a');
 }
@@ -2195,13 +2203,15 @@ function renderCorn() {
   mkChart('cornSeasonIdx',{type:'line',data:{labels:MONTHS,datasets:[{label:'Index',data:_corIdx,borderColor:'#e8a84a',backgroundColor:'#e8a84a28',fill:true,borderWidth:2.5,tension:.35,pointRadius:5,pointBackgroundColor:'#e8a84a',pointBorderColor:'#fff',pointBorderWidth:2,pointHoverRadius:7}]},options:{...lightLineOpts({scales:{x:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'}},y:{grid:{color:GCL},ticks:{color:TCL,font:{size:11}},border:{color:'#d1d5db'},title:{display:true,text:'Index (avg=100)',color:TCL,font:{size:11}}}}})}});
 
 
-  // ── Marketing Year charts ──────────────────────────────────────────────
-  const _corMYRows = filterRows({commodity:"corn"});
-  buildMYAnnualBar('corMYAnn', _corMYRows, 'corn', r=>r.mt, r=>r.fob_usd, 'MT');
-  buildMYCumulativeChart('corMYCumVol', _corMYRows, 'corn', r=>r.mt, 'corMYCumLeg');
-  buildMYMonthlyChart('corMYMonVol', _corMYRows, 'corn', COM_COLORS['corn'], r=>r.mt, 'corMYMonLeg');
-  buildMYMonthlyChart('corMYMonFob', _corMYRows, 'corn', COM_COLORS['corn'], r=>r.fob_usd, 'corMYMonFobLeg');
-  buildTradingDeskSummary('corSummary', 'corn', _corMYRows, r=>r.mt, r=>r.fob_usd, 'MT');
+  // ── Marketing Year charts — deferred so page paints first ──────────────
+  setTimeout(() => {
+    const _corMYRows = filterRows({commodity:'corn'});
+    buildMYAnnualBar('corMYAnn', _corMYRows, 'corn', r=>r.mt, r=>r.fob_usd, 'MT');
+    buildMYCumulativeChart('corMYCumVol', _corMYRows, 'corn', r=>r.mt, 'corMYCumLeg');
+    buildMYMonthlyChart('corMYMonVol', _corMYRows, 'corn', COM_COLORS['corn'], r=>r.mt, 'corMYMonLeg');
+    buildMYMonthlyChart('corMYMonFob', _corMYRows, 'corn', COM_COLORS['corn'], r=>r.fob_usd, 'corMYMonFobLeg');
+    buildTradingDeskSummary('corSummary', 'corn', _corMYRows, r=>r.mt, r=>r.fob_usd, 'MT');
+  }, 50);
   renderDestTable('corn-tbl-vol',aggByCountry(filterRows({commodity:'corn',yearFrom:latestYear,yearTo:latestYear}),r=>r.mt),'MT','#e8a84a');
   renderDestTable('corn-tbl-fob',aggByCountry(filterRows({commodity:'corn',yearFrom:latestYear,yearTo:latestYear}),r=>r.fob_usd),'FOB USD','#e8a84a');
 }
@@ -2417,27 +2427,31 @@ function setProgress(pct, msg) {
 }
 
 function parseRows(rows) {
-  return rows.map(r => {
-    const kg = parseFloat(r.kg_net)||0;
-    const isCoffee = (r.commodity === 'coffee');
-    return {
-      year:         parseInt(r.year),
-      month:        parseInt(r.month),
+  // dynamicTyping in PapaParse converts numbers; use fast coercion
+  const out = [];
+  for (let i = 0; i < rows.length; i++) {
+    const r = rows[i];
+    const yr = +r.year  || 0;
+    const mo = +r.month || 0;
+    if (!yr || !mo || !r.commodity) continue;
+    const kg = +r.kg_net || 0;
+    out.push({
+      year:         yr,
+      month:        mo,
       ncm:          r.ncm,
       commodity:    r.commodity,
       subtype:      r.subtype,
-      description:  r.description,
       country_code: r.country_code,
       country_name: r.country_name || 'Unknown',
-      qt_estat:     parseFloat(r.qt_estat)||0,
+      qt_estat:     +r.qt_estat || 0,
       kg_net:       kg,
-      // coffee bags always derived from kg_net/60 — qt_estat unit varies by year/NCM
-      bags:         isCoffee ? kg / 60 : 0,
+      bags:         r.commodity === 'coffee' ? kg / 60 : 0,
       mt:           kg / 1000,
       bales_480lb:  kg / 217.724,
-      fob_usd:      parseFloat(r.fob_usd)||0,
-    };
-  }).filter(r => r.year>0 && r.month>0 && r.commodity);
+      fob_usd:      +r.fob_usd || 0,
+    });
+  }
+  return out;
 }
 
 function finaliseData() {
@@ -2473,18 +2487,21 @@ function loadCSV() {
   setProgress(5, 'Fetching historical data (1997-2014)…');
 
   Papa.parse('./data/exports_pre2015.csv', {
-    download: true, header: true, skipEmptyLines: true,
+    download: true, header: true, skipEmptyLines: true, dynamicTyping: true,
     dynamicTyping: false, worker: false,
     complete(res1) {
       setProgress(40, 'Fetching recent data (2015-present)…');
 
       Papa.parse('./data/exports_2015on.csv', {
-        download: true, header: true, skipEmptyLines: true,
+        download: true, header: true, skipEmptyLines: true, dynamicTyping: true,
         dynamicTyping: false, worker: false,
         complete(res2) {
           setProgress(60, 'Processing data…');
-          RAW = parseRows([...res1.data, ...res2.data]);
-          finaliseData();
+          setProgress(65, 'Parsing rows…');
+          setTimeout(() => {
+            RAW = parseRows([...res1.data, ...res2.data]);
+            finaliseData();
+          }, 0);
         },
         error(err) {
           document.getElementById('load-msg').textContent = 'Error loading exports_2015on.csv: '+err.message;
