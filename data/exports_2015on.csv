@@ -204986,8 +204986,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,1,21011110,21,coffee,soluble,351,Hong Kong,0,2,139
 2025,1,09012100,10,coffee,arabica_green,351,Hong Kong,0,0,2
 2025,1,21011200,21,coffee,soluble,351,Hong Kong,0,0,55
-2025,1,21013000,10,coffee,soluble,359,Unknown(359),9,9,181
-2025,1,09012100,10,coffee,arabica_green,359,Unknown(359),6,6,132
+2025,1,21013000,10,coffee,soluble,359,Unknown,9,9,181
+2025,1,09012100,10,coffee,arabica_green,359,Unknown,6,6,132
 2025,1,09011110,21,coffee,arabica_green,361,India,192,192000,819048
 2025,1,09011110,21,coffee,arabica_green,361,India,106,105600,336005
 2025,1,09011110,21,coffee,arabica_green,361,India,604,603720,2715700
@@ -206066,7 +206066,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,1,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,0,64
 2025,1,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,179,527
 2025,1,15079011,21,soybeans,soybean_oil,351,Hong Kong,91,91,165
-2025,1,15079011,21,soybeans,soybean_oil,359,Unknown(359),0,0,37
+2025,1,15079011,21,soybeans,soybean_oil,359,Unknown,0,0,37
 2025,1,15071000,21,soybeans,soybean_oil,361,India,12000,12000000,11592720
 2025,1,15071000,21,soybeans,soybean_oil,361,India,7299,7298485,7731511
 2025,1,15071000,21,soybeans,soybean_oil,361,India,2289,2289832,2483156
@@ -206524,7 +206524,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,1,17019900,21,sugar,refined,351,Hong Kong,0,40,37
 2025,1,17019100,10,sugar,refined,351,Hong Kong,2,2,6
 2025,1,17019900,21,sugar,refined,357,Yemen,15595,15595100,7948184
-2025,1,17019100,10,sugar,refined,359,Unknown(359),30,30,34
+2025,1,17019100,10,sugar,refined,359,Unknown,30,30,34
 2025,1,17011400,21,sugar,raw_beet,361,India,34074,34072126,15892741
 2025,1,17011400,21,sugar,raw_beet,361,India,30361,30360821,14514324
 2025,1,17011400,21,sugar,raw_beet,361,India,1538,1537929,636918
@@ -207192,7 +207192,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,2,09019000,10,coffee,arabica_green,351,Hong Kong,4,4,26
 2025,2,09012100,10,coffee,arabica_green,351,Hong Kong,10,10,165
 2025,2,09011190,10,coffee,arabica_green,351,Hong Kong,17,17,505
-2025,2,21011110,21,coffee,soluble,359,Unknown(359),2,2,84
+2025,2,21011110,21,coffee,soluble,359,Unknown,2,2,84
 2025,2,21012010,10,coffee,soluble,361,India,10,10,76
 2025,2,21011110,21,coffee,soluble,361,India,0,0,102
 2025,2,09012100,10,coffee,arabica_green,361,India,7,7,52
@@ -208572,7 +208572,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,2,17019900,21,sugar,refined,357,Yemen,8370,8370000,4279870
 2025,2,17019900,21,sugar,refined,357,Yemen,23460,23460000,11713644
 2025,2,17019900,21,sugar,refined,357,Yemen,10000,10000000,5384375
-2025,2,17011400,21,sugar,raw_beet,359,Unknown(359),10,10,25
+2025,2,17011400,21,sugar,raw_beet,359,Unknown,10,10,25
 2025,2,17023020,10,sugar,refined,361,India,15,15,35
 2025,2,17011400,21,sugar,raw_beet,361,India,6143,6143101,3023314
 2025,2,17011400,21,sugar,raw_beet,361,India,57528,57528000,25477123
@@ -209252,7 +209252,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,3,09012100,10,coffee,arabica_green,351,Hong Kong,19,19,201
 2025,3,09019000,10,coffee,arabica_green,351,Hong Kong,3,3,164
 2025,3,09012200,10,coffee,arabica_green,351,Hong Kong,2,2,52
-2025,3,09012100,10,coffee,arabica_green,359,Unknown(359),28,28,889
+2025,3,09012100,10,coffee,arabica_green,359,Unknown,28,28,889
 2025,3,21012010,10,coffee,soluble,361,India,3,3,140
 2025,3,09011110,21,coffee,arabica_green,361,India,132,132000,425108
 2025,3,21011190,21,coffee,soluble,365,Indonesia,0,0,12
@@ -210403,7 +210403,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,3,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,18,34
 2025,3,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,32,104
 2025,3,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,215,451
-2025,3,15079011,21,soybeans,soybean_oil,359,Unknown(359),0,150,387
+2025,3,15079011,21,soybeans,soybean_oil,359,Unknown,0,150,387
 2025,3,15071000,21,soybeans,soybean_oil,361,India,9399,9399981,9711519
 2025,3,15071000,21,soybeans,soybean_oil,361,India,5872,5872565,6170147
 2025,3,15071000,21,soybeans,soybean_oil,361,India,30000,30000000,31096500
@@ -210989,9 +210989,9 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,3,17011400,21,sugar,raw_beet,357,Yemen,1325,1325100,614236
 2025,3,17011400,21,sugar,raw_beet,357,Yemen,43741,43741448,20153662
 2025,3,17019900,21,sugar,refined,357,Yemen,2073,2073000,1027512
-2025,3,17011400,21,sugar,raw_beet,359,Unknown(359),0,20,29
-2025,3,17019900,21,sugar,refined,359,Unknown(359),0,30,57
-2025,3,17029000,10,sugar,refined,359,Unknown(359),6,6,86
+2025,3,17011400,21,sugar,raw_beet,359,Unknown,0,20,29
+2025,3,17019900,21,sugar,refined,359,Unknown,0,30,57
+2025,3,17029000,10,sugar,refined,359,Unknown,6,6,86
 2025,3,17011400,21,sugar,raw_beet,361,India,48441,48441149,23002888
 2025,3,17011400,21,sugar,raw_beet,361,India,85,85243,37407
 2025,3,17011400,21,sugar,raw_beet,361,India,2713,2713838,1357941
@@ -211742,7 +211742,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,4,21012010,10,coffee,soluble,351,Hong Kong,0,0,28
 2025,4,09012100,10,coffee,arabica_green,351,Hong Kong,10,10,99
 2025,4,21011110,21,coffee,soluble,351,Hong Kong,0,0,75
-2025,4,21012010,10,coffee,soluble,359,Unknown(359),3,3,34
+2025,4,21012010,10,coffee,soluble,359,Unknown,3,3,34
 2025,4,09011110,21,coffee,arabica_green,361,India,0,120,2647
 2025,4,09011110,21,coffee,arabica_green,361,India,450,448800,1561779
 2025,4,21011110,21,coffee,soluble,365,Indonesia,173,173400,1951260
@@ -213401,8 +213401,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,4,17019900,21,sugar,refined,351,Hong Kong,0,50,72
 2025,4,17019900,21,sugar,refined,351,Hong Kong,0,48,74
 2025,4,17019900,21,sugar,refined,357,Yemen,6399,6399000,3049284
-2025,4,17019100,10,sugar,refined,359,Unknown(359),1,1,3
-2025,4,17022000,10,sugar,refined,359,Unknown(359),50,50,57
+2025,4,17019100,10,sugar,refined,359,Unknown,1,1,3
+2025,4,17022000,10,sugar,refined,359,Unknown,50,50,57
 2025,4,17011400,21,sugar,raw_beet,361,India,8600,8600000,4419404
 2025,4,17011400,21,sugar,raw_beet,361,India,117315,117314736,52661759
 2025,4,17011400,21,sugar,raw_beet,361,India,5477,5477120,2642216
@@ -214104,9 +214104,9 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,5,21011110,21,coffee,soluble,351,Hong Kong,8,7920,135200
 2025,5,09012100,10,coffee,arabica_green,351,Hong Kong,5,5,81
 2025,5,21011190,21,coffee,soluble,355,Hungary,150,150,19106
-2025,5,09019000,10,coffee,arabica_green,359,Unknown(359),1,1,35
-2025,5,09012100,10,coffee,arabica_green,359,Unknown(359),8,8,129
-2025,5,09012100,10,coffee,arabica_green,359,Unknown(359),3,3,53
+2025,5,09019000,10,coffee,arabica_green,359,Unknown,1,1,35
+2025,5,09012100,10,coffee,arabica_green,359,Unknown,8,8,129
+2025,5,09012100,10,coffee,arabica_green,359,Unknown,3,3,53
 2025,5,09012100,10,coffee,arabica_green,361,India,3,3,73
 2025,5,09011110,21,coffee,arabica_green,361,India,1644,1641180,7042073
 2025,5,09011110,21,coffee,arabica_green,365,Indonesia,278,277740,1244829
@@ -214538,7 +214538,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,5,21012010,10,coffee,soluble,687,El Salvador,23,23,1314
 2025,5,21011110,21,coffee,soluble,687,El Salvador,20,20160,259338
 2025,5,09012100,10,coffee,arabica_green,687,El Salvador,2160,2160,19415
-2025,5,09012100,10,coffee,arabica_green,695,Unknown(695),25,25,287
+2025,5,09012100,10,coffee,arabica_green,695,Unknown,25,25,287
 2025,5,09012100,10,coffee,arabica_green,697,San Marino,12,12,189
 2025,5,21011110,21,coffee,soluble,697,San Marino,0,7,194
 2025,5,21011110,21,coffee,soluble,737,Serbia,93,92799,1380661
@@ -214694,7 +214694,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,5,10059010,10,corn,yellow_corn,351,Hong Kong,1,1,6
 2025,5,10059090,10,corn,yellow_corn,351,Hong Kong,10,10,21
 2025,5,10059090,10,corn,yellow_corn,351,Hong Kong,5,5,8
-2025,5,10059010,10,corn,yellow_corn,359,Unknown(359),8,8,14
+2025,5,10059010,10,corn,yellow_corn,359,Unknown,8,8,14
 2025,5,10059010,10,corn,yellow_corn,361,India,1027600,1027600,436959
 2025,5,10059010,10,corn,yellow_corn,372,Iran,47109,47109,12249
 2025,5,10059010,10,corn,yellow_corn,372,Iran,3193611,3193611,830727
@@ -214855,7 +214855,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,5,52010020,21,cotton,raw_cotton,485,Mauritius,968,967931,1691281
 2025,5,52010020,21,cotton,raw_cotton,485,Mauritius,22,22134,36768
 2025,5,52010020,21,cotton,raw_cotton,485,Mauritius,508,507572,745138
-2025,5,52030000,10,cotton,raw_cotton,508,Unknown(508),1,1,16
+2025,5,52030000,10,cotton,raw_cotton,508,Unknown,1,1,16
 2025,5,52010020,21,cotton,raw_cotton,576,Pakistan,4471,4469500,6633196
 2025,5,52010020,21,cotton,raw_cotton,576,Pakistan,60,59707,102282
 2025,5,52010020,21,cotton,raw_cotton,576,Pakistan,40,39884,61708
@@ -215405,7 +215405,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,5,12019000,21,soybeans,raw_soybeans,676,Russia,18546,18546770,7630711
 2025,5,12019000,21,soybeans,raw_soybeans,676,Russia,13976,13975939,5619865
 2025,5,12019000,21,soybeans,raw_soybeans,676,Russia,14757,14756679,5952402
-2025,5,15079011,21,soybeans,soybean_oil,695,Unknown(695),0,0,124
+2025,5,15079011,21,soybeans,soybean_oil,695,Unknown,0,0,124
 2025,5,15079011,21,soybeans,soybean_oil,741,Singapore,0,134,286
 2025,5,15079011,21,soybeans,soybean_oil,741,Singapore,0,234,641
 2025,5,15079019,21,soybeans,soybean_oil,741,Singapore,0,216,785
@@ -215690,7 +215690,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,5,17019900,21,sugar,refined,351,Hong Kong,0,9,24
 2025,5,17019900,21,sugar,refined,357,Yemen,945,945000,402473
 2025,5,17019900,21,sugar,refined,357,Yemen,810,810000,375929
-2025,5,17029000,10,sugar,refined,359,Unknown(359),35,35,38
+2025,5,17029000,10,sugar,refined,359,Unknown,35,35,38
 2025,5,17011400,21,sugar,raw_beet,361,India,10753,10753717,4615438
 2025,5,17011300,21,sugar,raw_cane,361,India,107,106681,42359
 2025,5,17011400,21,sugar,raw_beet,361,India,10474,10474333,4509448
@@ -216370,8 +216370,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,6,09011110,21,coffee,arabica_green,351,Hong Kong,38,38400,290987
 2025,6,21011110,21,coffee,soluble,351,Hong Kong,0,7,183
 2025,6,21011190,21,coffee,soluble,355,Hungary,150,150,19106
-2025,6,09012100,10,coffee,arabica_green,359,Unknown(359),5,5,69
-2025,6,21011110,21,coffee,soluble,359,Unknown(359),0,6,179
+2025,6,09012100,10,coffee,arabica_green,359,Unknown,5,5,69
+2025,6,21011110,21,coffee,soluble,359,Unknown,0,6,179
 2025,6,21011110,21,coffee,soluble,361,India,0,2,136
 2025,6,21011200,21,coffee,soluble,361,India,0,200,1000
 2025,6,09011110,21,coffee,arabica_green,365,Indonesia,288,287625,2356771
@@ -216839,8 +216839,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,6,21011110,21,coffee,soluble,676,Russia,275,278325,3210008
 2025,6,09011110,21,coffee,arabica_green,676,Russia,447,446800,3529316
 2025,6,21011110,21,coffee,soluble,687,El Salvador,43,43380,513835
-2025,6,21011110,21,coffee,soluble,695,Unknown(695),0,10,121
-2025,6,09012100,10,coffee,arabica_green,695,Unknown(695),50,50,266
+2025,6,21011110,21,coffee,soluble,695,Unknown,0,10,121
+2025,6,09012100,10,coffee,arabica_green,695,Unknown,50,50,266
 2025,6,21011110,21,coffee,soluble,737,Serbia,43,43292,645208
 2025,6,09012100,10,coffee,arabica_green,741,Singapore,23,23,411
 2025,6,09012100,10,coffee,arabica_green,741,Singapore,15,15,340
@@ -217379,7 +217379,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,6,15079019,21,soybeans,soybean_oil,351,Hong Kong,0,50,75
 2025,6,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,150,292
 2025,6,15079019,21,soybeans,soybean_oil,351,Hong Kong,50,50,64
-2025,6,15079011,21,soybeans,soybean_oil,359,Unknown(359),0,18,71
+2025,6,15079011,21,soybeans,soybean_oil,359,Unknown,0,18,71
 2025,6,15071000,21,soybeans,soybean_oil,361,India,1216,1215443,1262957
 2025,6,15071000,21,soybeans,soybean_oil,361,India,3268,3268527,3379458
 2025,6,15071000,21,soybeans,soybean_oil,361,India,20000,20000000,21019800
@@ -217597,7 +217597,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,6,12019000,21,soybeans,raw_soybeans,676,Russia,25616,25616309,9961670
 2025,6,15079019,21,soybeans,soybean_oil,676,Russia,0,25,9
 2025,6,12019000,21,soybeans,raw_soybeans,676,Russia,5738,5738084,2231426
-2025,6,15079011,21,soybeans,soybean_oil,695,Unknown(695),0,150,265
+2025,6,15079011,21,soybeans,soybean_oil,695,Unknown,0,150,265
 2025,6,15079011,21,soybeans,soybean_oil,728,Senegal,0,90,165
 2025,6,15079011,21,soybeans,soybean_oil,741,Singapore,0,80,154
 2025,6,15079011,21,soybeans,soybean_oil,741,Singapore,0,36,66
@@ -217926,7 +217926,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,6,17029000,10,sugar,refined,351,Hong Kong,1,1,10
 2025,6,17019900,21,sugar,refined,357,Yemen,270,270000,100538
 2025,6,17019900,21,sugar,refined,357,Yemen,8505,8505000,3752562
-2025,6,17019900,21,sugar,refined,359,Unknown(359),0,50,42
+2025,6,17019900,21,sugar,refined,359,Unknown,0,50,42
 2025,6,17011400,21,sugar,raw_beet,361,India,621,620975,263952
 2025,6,17011400,21,sugar,raw_beet,361,India,7000,7000000,3000627
 2025,6,17011400,21,sugar,raw_beet,361,India,12465,12464829,4993542
@@ -218211,7 +218211,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,6,17011400,21,sugar,raw_beet,647,Dominican Republic,4,4400,3033
 2025,6,17023020,10,sugar,refined,687,El Salvador,159600,159600,112878
 2025,6,17023020,10,sugar,refined,687,El Salvador,863880,863880,418020
-2025,6,17019900,21,sugar,refined,695,Unknown(695),0,70,73
+2025,6,17019900,21,sugar,refined,695,Unknown,0,70,73
 2025,6,17019900,21,sugar,refined,720,Sao Tome And Principe,810,810000,390895
 2025,6,17019900,21,sugar,refined,728,Senegal,1080,1080000,547980
 2025,6,17019900,21,sugar,refined,728,Senegal,2150,2150000,1006579
@@ -218721,10 +218721,10 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,7,09012100,10,coffee,arabica_green,351,Hong Kong,2,2,55
 2025,7,21011200,21,coffee,soluble,351,Hong Kong,0,3,37
 2025,7,21011190,21,coffee,soluble,355,Hungary,100,100,12737
-2025,7,09012100,10,coffee,arabica_green,359,Unknown(359),3,3,135
-2025,7,21011110,21,coffee,soluble,359,Unknown(359),0,1,147
-2025,7,21011110,21,coffee,soluble,359,Unknown(359),0,1,99
-2025,7,21011190,21,coffee,soluble,359,Unknown(359),0,8,97
+2025,7,09012100,10,coffee,arabica_green,359,Unknown,3,3,135
+2025,7,21011110,21,coffee,soluble,359,Unknown,0,1,147
+2025,7,21011110,21,coffee,soluble,359,Unknown,0,1,99
+2025,7,21011190,21,coffee,soluble,359,Unknown,0,8,97
 2025,7,09011110,21,coffee,arabica_green,361,India,447,448800,1875944
 2025,7,21012020,10,coffee,soluble,361,India,25,25,126
 2025,7,21011110,21,coffee,soluble,361,India,8,7920,135910
@@ -219315,8 +219315,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,7,09019000,10,coffee,arabica_green,776,Thailand,5,5,335
 2025,7,21011110,21,coffee,soluble,776,Thailand,1,1296,18857
 2025,7,09012100,10,coffee,arabica_green,776,Thailand,42,42,867
-2025,7,09019000,10,coffee,arabica_green,805,Unknown(805),2,2,183
-2025,7,09012100,10,coffee,arabica_green,805,Unknown(805),1,1,70
+2025,7,09019000,10,coffee,arabica_green,805,Unknown,2,2,183
+2025,7,09012100,10,coffee,arabica_green,805,Unknown,1,1,70
 2025,7,09012100,10,coffee,arabica_green,815,Trinidad And Tobago,1080,1080,9707
 2025,7,21011110,21,coffee,soluble,815,Trinidad And Tobago,6,6670,95420
 2025,7,21011110,21,coffee,soluble,815,Trinidad And Tobago,16,16524,364688
@@ -219454,7 +219454,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,7,10059090,10,corn,yellow_corn,351,Hong Kong,20,20,43
 2025,7,10059010,10,corn,yellow_corn,351,Hong Kong,10,10,14
 2025,7,10059090,10,corn,yellow_corn,351,Hong Kong,10,10,25
-2025,7,10059090,10,corn,yellow_corn,359,Unknown(359),3,3,5
+2025,7,10059090,10,corn,yellow_corn,359,Unknown,3,3,5
 2025,7,10059010,10,corn,yellow_corn,361,India,1,1,1
 2025,7,10059010,10,corn,yellow_corn,365,Indonesia,1322526,1322526,274649
 2025,7,10059010,10,corn,yellow_corn,365,Indonesia,10689209,10689209,2219828
@@ -219574,7 +219574,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,7,10059010,10,corn,yellow_corn,741,Singapore,500,500,89
 2025,7,10071000,10,corn,yellow_corn,756,South Africa,25,25,124
 2025,7,10051000,10,corn,yellow_corn,780,Tanzania,81788,81788,149201
-2025,7,10059010,10,corn,yellow_corn,805,Unknown(805),15,15,28
+2025,7,10059010,10,corn,yellow_corn,805,Unknown,15,15,28
 2025,7,10059010,10,corn,yellow_corn,820,Tunisia,1216500,1216500,236342
 2025,7,10059010,10,corn,yellow_corn,820,Tunisia,28490000,28490000,5502167
 2025,7,10059090,10,corn,yellow_corn,845,Uruguay,480,480,451
@@ -219970,7 +219970,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,7,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,0,405
 2025,7,15079019,21,soybeans,soybean_oil,351,Hong Kong,0,100,133
 2025,7,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,54,106
-2025,7,15079011,21,soybeans,soybean_oil,359,Unknown(359),0,54,153
+2025,7,15079011,21,soybeans,soybean_oil,359,Unknown,0,54,153
 2025,7,15071000,21,soybeans,soybean_oil,361,India,17354,17353718,18380321
 2025,7,15071000,21,soybeans,soybean_oil,361,India,3082,3082193,3226324
 2025,7,15071000,21,soybeans,soybean_oil,361,India,1392,1391844,1407823
@@ -220583,8 +220583,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,7,17019100,10,sugar,refined,351,Hong Kong,20,20,40
 2025,7,17019900,21,sugar,refined,357,Yemen,7500,7500000,3412500
 2025,7,17019900,21,sugar,refined,357,Yemen,8910,8910000,3570863
-2025,7,17019900,21,sugar,refined,359,Unknown(359),0,30,24
-2025,7,17019900,21,sugar,refined,359,Unknown(359),0,15,20
+2025,7,17019900,21,sugar,refined,359,Unknown,0,30,24
+2025,7,17019900,21,sugar,refined,359,Unknown,0,15,20
 2025,7,17011400,21,sugar,raw_beet,361,India,16616,16615946,6839956
 2025,7,17011400,21,sugar,raw_beet,361,India,790,789701,288855
 2025,7,17011400,21,sugar,raw_beet,361,India,227031,227033651,89475479
@@ -220906,7 +220906,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,7,17019900,21,sugar,refined,800,Togo,20978,20978250,8543643
 2025,7,17019900,21,sugar,refined,800,Togo,270,270000,115844
 2025,7,17019900,21,sugar,refined,800,Togo,10001,10000000,4287572
-2025,7,17029000,10,sugar,refined,805,Unknown(805),205,205,221
+2025,7,17029000,10,sugar,refined,805,Unknown,205,205,221
 2025,7,17023020,10,sugar,refined,815,Trinidad And Tobago,47180,47180,27339
 2025,7,17019900,21,sugar,refined,815,Trinidad And Tobago,54,54000,32860
 2025,7,17019900,21,sugar,refined,827,Turkey,0,40,42
@@ -221360,8 +221360,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,8,21011110,21,coffee,soluble,351,Hong Kong,6,5809,79103
 2025,8,21011110,21,coffee,soluble,351,Hong Kong,0,0,73
 2025,8,09012100,10,coffee,arabica_green,351,Hong Kong,6,6,65
-2025,8,21011110,21,coffee,soluble,359,Unknown(359),0,2,111
-2025,8,09012100,10,coffee,arabica_green,359,Unknown(359),3,3,42
+2025,8,21011110,21,coffee,soluble,359,Unknown,0,2,111
+2025,8,09012100,10,coffee,arabica_green,359,Unknown,3,3,42
 2025,8,09011110,21,coffee,arabica_green,361,India,554,554400,2048050
 2025,8,09011110,21,coffee,arabica_green,361,India,0,3,6
 2025,8,21011110,21,coffee,soluble,361,India,0,10,56
@@ -221849,9 +221849,9 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,8,21011110,21,coffee,soluble,687,El Salvador,39,39480,508108
 2025,8,09012100,10,coffee,arabica_green,687,El Salvador,3600,3600,41988
 2025,8,21011110,21,coffee,soluble,687,El Salvador,65,64770,771975
-2025,8,21011110,21,coffee,soluble,695,Unknown(695),0,3,160
-2025,8,09012100,10,coffee,arabica_green,695,Unknown(695),15,15,95
-2025,8,09012200,10,coffee,arabica_green,695,Unknown(695),5,5,92
+2025,8,21011110,21,coffee,soluble,695,Unknown,0,3,160
+2025,8,09012100,10,coffee,arabica_green,695,Unknown,15,15,95
+2025,8,09012200,10,coffee,arabica_green,695,Unknown,5,5,92
 2025,8,09011110,21,coffee,arabica_green,737,Serbia,26,26400,136752
 2025,8,21011110,21,coffee,soluble,737,Serbia,28,28457,386206
 2025,8,09011110,21,coffee,arabica_green,737,Serbia,1,990,9048
@@ -222620,7 +222620,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,8,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,0,390
 2025,8,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,36,76
 2025,8,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,0,3
-2025,8,15079011,21,soybeans,soybean_oil,359,Unknown(359),0,23,52
+2025,8,15079011,21,soybeans,soybean_oil,359,Unknown,0,23,52
 2025,8,15071000,21,soybeans,soybean_oil,361,India,10869,10868474,11341244
 2025,8,15071000,21,soybeans,soybean_oil,361,India,7918,7917621,8716990
 2025,8,15071000,21,soybeans,soybean_oil,361,India,3452,3452742,3545486
@@ -223184,7 +223184,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,8,17019900,21,sugar,refined,357,Yemen,1755,1755000,668847
 2025,8,17011400,21,sugar,raw_beet,357,Yemen,34259,34258454,12990755
 2025,8,17019900,21,sugar,refined,357,Yemen,10000,10000000,4561933
-2025,8,17022000,10,sugar,refined,359,Unknown(359),6,6,69
+2025,8,17022000,10,sugar,refined,359,Unknown,6,6,69
 2025,8,17011400,21,sugar,raw_beet,361,India,2100,2100000,917841
 2025,8,17011400,21,sugar,raw_beet,361,India,3000,237794,71338
 2025,8,17011400,21,sugar,raw_beet,361,India,18429,18428270,7605369
@@ -223464,8 +223464,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,8,17023020,10,sugar,refined,647,Dominican Republic,48000,48000,30816
 2025,8,17019100,10,sugar,refined,647,Dominican Republic,34,34,158
 2025,8,17023020,10,sugar,refined,687,El Salvador,159600,159600,114018
-2025,8,17019900,21,sugar,refined,695,Unknown(695),0,45,43
-2025,8,17026020,10,sugar,refined,695,Unknown(695),3,3,91
+2025,8,17019900,21,sugar,refined,695,Unknown,0,45,43
+2025,8,17026020,10,sugar,refined,695,Unknown,3,3,91
 2025,8,17019900,21,sugar,refined,728,Senegal,19500,19500000,8118947
 2025,8,17019900,21,sugar,refined,728,Senegal,4570,4570000,1955520
 2025,8,17019900,21,sugar,refined,728,Senegal,15500,15500000,7746270
@@ -224484,10 +224484,10 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,9,21011110,21,coffee,soluble,687,El Salvador,173,173520,2177186
 2025,9,09012100,10,coffee,arabica_green,687,El Salvador,2520,2520,29392
 2025,9,21011110,21,coffee,soluble,687,El Salvador,2,1575,22622
-2025,9,09012100,10,coffee,arabica_green,695,Unknown(695),25,25,136
-2025,9,21011200,21,coffee,soluble,695,Unknown(695),0,5,63
-2025,9,09012100,10,coffee,arabica_green,695,Unknown(695),30,30,261
-2025,9,21011110,21,coffee,soluble,695,Unknown(695),0,20,249
+2025,9,09012100,10,coffee,arabica_green,695,Unknown,25,25,136
+2025,9,21011200,21,coffee,soluble,695,Unknown,0,5,63
+2025,9,09012100,10,coffee,arabica_green,695,Unknown,30,30,261
+2025,9,21011110,21,coffee,soluble,695,Unknown,0,20,249
 2025,9,09012100,10,coffee,arabica_green,697,San Marino,50,50,600
 2025,9,09012200,10,coffee,arabica_green,697,San Marino,2,2,66
 2025,9,09011110,21,coffee,arabica_green,728,Senegal,26,26400,100185
@@ -226025,8 +226025,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,9,17011400,21,sugar,raw_beet,647,Dominican Republic,780,780000,337238
 2025,9,17023020,10,sugar,refined,687,El Salvador,136800,136800,99912
 2025,9,17029000,10,sugar,refined,687,El Salvador,40,40,28
-2025,9,17026020,10,sugar,refined,695,Unknown(695),5,5,94
-2025,9,17019900,21,sugar,refined,695,Unknown(695),0,100,73
+2025,9,17026020,10,sugar,refined,695,Unknown,5,5,94
+2025,9,17019900,21,sugar,refined,695,Unknown,0,100,73
 2025,9,17019100,10,sugar,refined,697,San Marino,1,1,3
 2025,9,17026020,10,sugar,refined,697,San Marino,5,5,155
 2025,9,17011400,21,sugar,raw_beet,699,Sint Maarten,52,52000,27499
@@ -226565,9 +226565,9 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,10,09011190,10,coffee,arabica_green,351,Hong Kong,16,16,457
 2025,10,09012100,10,coffee,arabica_green,351,Hong Kong,3,3,111
 2025,10,21011190,21,coffee,soluble,355,Hungary,100,100,12737
-2025,10,21011110,21,coffee,soluble,359,Unknown(359),0,4,49
-2025,10,09012100,10,coffee,arabica_green,359,Unknown(359),2,2,181
-2025,10,21012010,10,coffee,soluble,359,Unknown(359),0,0,6
+2025,10,21011110,21,coffee,soluble,359,Unknown,0,4,49
+2025,10,09012100,10,coffee,arabica_green,359,Unknown,2,2,181
+2025,10,21012010,10,coffee,soluble,359,Unknown,0,0,6
 2025,10,09011110,21,coffee,arabica_green,361,India,924,924000,2934653
 2025,10,21012010,10,coffee,soluble,361,India,5,5,116
 2025,10,21011110,21,coffee,soluble,361,India,8,7920,137542
@@ -227814,7 +227814,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,10,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,144,306
 2025,10,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,131,262
 2025,10,15079019,21,soybeans,soybean_oil,351,Hong Kong,0,0,131
-2025,10,15071000,21,soybeans,soybean_oil,359,Unknown(359),0,54,120
+2025,10,15071000,21,soybeans,soybean_oil,359,Unknown,0,54,120
 2025,10,15071000,21,soybeans,soybean_oil,361,India,6997,6996635,7788960
 2025,10,15071000,21,soybeans,soybean_oil,361,India,2,2100,2505
 2025,10,15071000,21,soybeans,soybean_oil,361,India,2495,2495000,2772871
@@ -228325,10 +228325,10 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,10,17019900,21,sugar,refined,357,Yemen,17010,17010000,7178637
 2025,10,17019900,21,sugar,refined,357,Yemen,260,260000,124970
 2025,10,17019900,21,sugar,refined,357,Yemen,540,540000,178907
-2025,10,17019100,10,sugar,refined,359,Unknown(359),25,25,26
-2025,10,17021100,10,sugar,refined,359,Unknown(359),10,10,48
-2025,10,17019100,10,sugar,refined,359,Unknown(359),20,20,24
-2025,10,17019900,21,sugar,refined,359,Unknown(359),0,2,4
+2025,10,17019100,10,sugar,refined,359,Unknown,25,25,26
+2025,10,17021100,10,sugar,refined,359,Unknown,10,10,48
+2025,10,17019100,10,sugar,refined,359,Unknown,20,20,24
+2025,10,17019900,21,sugar,refined,359,Unknown,0,2,4
 2025,10,17021100,10,sugar,refined,361,India,2,2,7
 2025,10,17011400,21,sugar,raw_beet,361,India,73034,73032087,29821393
 2025,10,17011400,21,sugar,raw_beet,361,India,14763,14763976,5910958
@@ -228593,7 +228593,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,10,17019900,21,sugar,refined,647,Dominican Republic,12,11972,9317
 2025,10,17011400,21,sugar,raw_beet,647,Dominican Republic,11,11250,6527
 2025,10,17023020,10,sugar,refined,687,El Salvador,192300,192300,82497
-2025,10,17019900,21,sugar,refined,695,Unknown(695),0,50,41
+2025,10,17019900,21,sugar,refined,695,Unknown,0,50,41
 2025,10,17019900,21,sugar,refined,728,Senegal,27500,27500000,12662268
 2025,10,17019900,21,sugar,refined,728,Senegal,780,780000,389905
 2025,10,17019900,21,sugar,refined,728,Senegal,47960,47960000,23630143
@@ -229136,13 +229136,13 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,11,09011190,10,coffee,arabica_green,351,Hong Kong,15,15,223
 2025,11,21011110,21,coffee,soluble,351,Hong Kong,116,125,983
 2025,11,21011190,21,coffee,soluble,355,Hungary,50,50,6369
-2025,11,09012100,10,coffee,arabica_green,359,Unknown(359),28,28,615
-2025,11,21012010,10,coffee,soluble,359,Unknown(359),1,1,9
-2025,11,09011190,10,coffee,arabica_green,359,Unknown(359),0,0,49
-2025,11,21012010,10,coffee,soluble,359,Unknown(359),0,0,21
-2025,11,09012100,10,coffee,arabica_green,359,Unknown(359),7,7,318
-2025,11,21011200,21,coffee,soluble,359,Unknown(359),0,7,97
-2025,11,21011110,21,coffee,soluble,359,Unknown(359),0,2,32
+2025,11,09012100,10,coffee,arabica_green,359,Unknown,28,28,615
+2025,11,21012010,10,coffee,soluble,359,Unknown,1,1,9
+2025,11,09011190,10,coffee,arabica_green,359,Unknown,0,0,49
+2025,11,21012010,10,coffee,soluble,359,Unknown,0,0,21
+2025,11,09012100,10,coffee,arabica_green,359,Unknown,7,7,318
+2025,11,21011200,21,coffee,soluble,359,Unknown,0,7,97
+2025,11,21011110,21,coffee,soluble,359,Unknown,0,2,32
 2025,11,09012100,10,coffee,arabica_green,361,India,6,6,150
 2025,11,21011110,21,coffee,soluble,361,India,0,1,18
 2025,11,09011110,21,coffee,arabica_green,365,Indonesia,211,210925,1511314
@@ -229610,7 +229610,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,11,09011110,21,coffee,arabica_green,676,Russia,40,40000,237600
 2025,11,21011110,21,coffee,soluble,676,Russia,33,32700,408750
 2025,11,21011110,21,coffee,soluble,687,El Salvador,108,108450,1386131
-2025,11,09012100,10,coffee,arabica_green,695,Unknown(695),32,32,341
+2025,11,09012100,10,coffee,arabica_green,695,Unknown,32,32,341
 2025,11,21011110,21,coffee,soluble,737,Serbia,49,48984,557756
 2025,11,21011190,21,coffee,soluble,741,Singapore,0,5,92
 2025,11,21011200,21,coffee,soluble,741,Singapore,0,0,8
@@ -230313,7 +230313,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,11,15079019,21,soybeans,soybean_oil,351,Hong Kong,0,63,303
 2025,11,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,110,197
 2025,11,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,36,63
-2025,11,15071000,21,soybeans,soybean_oil,359,Unknown(359),0,108,249
+2025,11,15071000,21,soybeans,soybean_oil,359,Unknown,0,108,249
 2025,11,15071000,21,soybeans,soybean_oil,361,India,1990,1990000,2104544
 2025,11,15071000,21,soybeans,soybean_oil,361,India,9000,9000000,10108583
 2025,11,15071000,21,soybeans,soybean_oil,361,India,7500,7500000,8128343
@@ -230743,9 +230743,9 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,11,17019100,10,sugar,refined,351,Hong Kong,26,26,77
 2025,11,17019900,21,sugar,refined,357,Yemen,13189,13189000,6262051
 2025,11,17019900,21,sugar,refined,357,Yemen,11880,11880000,4647710
-2025,11,17029000,10,sugar,refined,359,Unknown(359),20,20,21
-2025,11,17021100,10,sugar,refined,359,Unknown(359),5,5,16
-2025,11,17019100,10,sugar,refined,359,Unknown(359),20,20,20
+2025,11,17029000,10,sugar,refined,359,Unknown,20,20,21
+2025,11,17021100,10,sugar,refined,359,Unknown,5,5,16
+2025,11,17019100,10,sugar,refined,359,Unknown,20,20,20
 2025,11,17011400,21,sugar,raw_beet,361,India,7622,7621472,5728382
 2025,11,17011400,21,sugar,raw_beet,361,India,15339,15338541,5339848
 2025,11,17011400,21,sugar,raw_beet,361,India,14463,14462979,5754158
@@ -230984,8 +230984,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,11,17021100,10,sugar,refined,628,United Kingdom,5,5,27
 2025,11,17023020,10,sugar,refined,687,El Salvador,167160,167160,71712
 2025,11,17029000,10,sugar,refined,687,El Salvador,560,560,1184
-2025,11,17019100,10,sugar,refined,695,Unknown(695),4,4,9
-2025,11,17026020,10,sugar,refined,695,Unknown(695),3,3,56
+2025,11,17019100,10,sugar,refined,695,Unknown,4,4,9
+2025,11,17026020,10,sugar,refined,695,Unknown,3,3,56
 2025,11,17019900,21,sugar,refined,720,Sao Tome And Principe,270,270000,112832
 2025,11,17019900,21,sugar,refined,728,Senegal,945,945000,453729
 2025,11,17019900,21,sugar,refined,728,Senegal,3780,3780000,1485539
@@ -231528,8 +231528,8 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,12,09012100,10,coffee,arabica_green,351,Hong Kong,42,42,260
 2025,12,09011190,10,coffee,arabica_green,351,Hong Kong,15,15,317
 2025,12,21011190,21,coffee,soluble,355,Hungary,100,100,12737
-2025,12,21011110,21,coffee,soluble,359,Unknown(359),0,2,284
-2025,12,21011190,21,coffee,soluble,359,Unknown(359),0,1,18
+2025,12,21011110,21,coffee,soluble,359,Unknown,0,2,284
+2025,12,21011190,21,coffee,soluble,359,Unknown,0,1,18
 2025,12,21011110,21,coffee,soluble,361,India,8,7920,144049
 2025,12,09011110,21,coffee,arabica_green,365,Indonesia,211,210925,1604317
 2025,12,09011110,21,coffee,arabica_green,365,Indonesia,115,115075,872488
@@ -232782,7 +232782,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,12,15079019,21,soybeans,soybean_oil,351,Hong Kong,0,18,43
 2025,12,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,45,126
 2025,12,15079011,21,soybeans,soybean_oil,351,Hong Kong,0,108,290
-2025,12,15079011,21,soybeans,soybean_oil,359,Unknown(359),0,63,190
+2025,12,15079011,21,soybeans,soybean_oil,359,Unknown,0,63,190
 2025,12,15071000,21,soybeans,soybean_oil,361,India,1000,1000000,1144000
 2025,12,15071000,21,soybeans,soybean_oil,361,India,1225,1224929,1381708
 2025,12,15071000,21,soybeans,soybean_oil,361,India,733,732299,823002
@@ -233290,7 +233290,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2025,12,17019900,21,sugar,refined,357,Yemen,20817,20817000,8055482
 2025,12,17011400,21,sugar,raw_beet,357,Yemen,20315,20314751,7768579
 2025,12,17011400,21,sugar,raw_beet,357,Yemen,23615,23615053,8446529
-2025,12,17019900,21,sugar,refined,359,Unknown(359),0,45,77
+2025,12,17019900,21,sugar,refined,359,Unknown,0,45,77
 2025,12,17011400,21,sugar,raw_beet,361,India,8434,8434052,3754543
 2025,12,17011400,21,sugar,raw_beet,361,India,56740,56739339,22993633
 2025,12,17011400,21,sugar,raw_beet,361,India,7886,7885970,2983931
@@ -234012,7 +234012,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2026,1,21011110,21,coffee,soluble,351,Hong Kong,16,15840,278406
 2026,1,09012100,10,coffee,arabica_green,351,Hong Kong,7,7,23
 2026,1,21011190,21,coffee,soluble,355,Hungary,200,200,25474
-2026,1,21013000,10,coffee,soluble,359,Unknown(359),3,3,64
+2026,1,21013000,10,coffee,soluble,359,Unknown,3,3,64
 2026,1,21011110,21,coffee,soluble,361,India,0,1,88
 2026,1,09011110,21,coffee,arabica_green,365,Indonesia,96,95875,771509
 2026,1,09011110,21,coffee,arabica_green,365,Indonesia,211,210925,1604317
@@ -235501,7 +235501,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2026,1,17019900,21,sugar,refined,357,Yemen,13959,13959000,5207984
 2026,1,17011400,21,sugar,raw_beet,357,Yemen,34404,34403856,13477222
 2026,1,17019900,21,sugar,refined,357,Yemen,25000,25000000,10763553
-2026,1,17019100,10,sugar,refined,359,Unknown(359),25,25,26
+2026,1,17019100,10,sugar,refined,359,Unknown,25,25,26
 2026,1,17019900,21,sugar,refined,361,India,105,105000,269
 2026,1,17019900,21,sugar,refined,361,India,0,40,44
 2026,1,17011400,21,sugar,raw_beet,361,India,108216,108219501,39691339
@@ -235755,7 +235755,7 @@ year,month,ncm,co_unid,commodity,subtype,country_code,country_name,qt_estat,kg_n
 2026,1,17023020,10,sugar,refined,687,El Salvador,285940,285940,122668
 2026,1,17011400,21,sugar,raw_beet,697,San Marino,2,2,2
 2026,1,17019100,10,sugar,refined,697,San Marino,150,150,84
-2026,1,17011400,21,sugar,raw_beet,698,Unknown(698),52,52000,24518
+2026,1,17011400,21,sugar,raw_beet,698,Unknown,52,52000,24518
 2026,1,17019900,21,sugar,refined,728,Senegal,20000,20000000,5800000
 2026,1,17019900,21,sugar,refined,728,Senegal,1350,1350000,484242
 2026,1,17019900,21,sugar,refined,735,Sierra Leone,32500,32500000,10363843
