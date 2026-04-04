@@ -300,15 +300,16 @@ select:hover{border-color:var(--border2);}
 
   <!-- Analyst seasonality charts -->
   <div class="sec mb16"><span class="sec-title">Seasonality &amp; Country Flow</span><div class="sec-line"></div></div>
-  <div class="ctrl-row">
-    <span class="ctrl-label">Year range:</span>
-    <select id="coffee-year-from" onchange="renderCoffeeSeason()"></select>
-    <span style="color:var(--dim)">–</span>
-    <select id="coffee-year-to" onchange="renderCoffeeSeason()"></select>
-  </div>
-  <div class="ctrl-row mb16">
-    <span class="ctrl-label">Toggle years:</span>
-    <div class="toggle-group" id="coffee-yr-toggles"></div>
+  <div class="ctrl-row mb8">
+    <span class="ctrl-label">Show:</span>
+    <select id="coffee-yr-preset" onchange="applyPreset('coffee','renderCoffeeSeason()')">
+      <option value="10" selected>Last 10 years</option>
+      <option value="5">Last 5 years</option>
+      <option value="15">Last 15 years</option>
+      <option value="0">All years</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:12px;color:var(--dim2);font-size:10px;">Fine-tune →</span>
+    <div class="toggle-group" id="coffee-yr-toggles" style="margin-left:4px;"></div>
   </div>
   <!-- Analyst seasonality charts -->
   <div class="g2 mb16">
@@ -437,9 +438,16 @@ select:hover{border-color:var(--border2);}
     <span style="color:var(--dim)">–</span>
     <select id="cotton-year-to" onchange="renderCotton()"></select>
   </div>
-  <div class="ctrl-row mb16">
-    <span class="ctrl-label">Toggle years:</span>
-    <div class="toggle-group" id="cotton-yr-toggles"></div>
+  <div class="ctrl-row mb8">
+    <span class="ctrl-label">Show:</span>
+    <select id="cotton-yr-preset" onchange="applyPreset('cotton','renderCotton()')">
+      <option value="10" selected>Last 10 years</option>
+      <option value="5">Last 5 years</option>
+      <option value="15">Last 15 years</option>
+      <option value="0">All years</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:12px;color:var(--dim2);font-size:10px;">Fine-tune →</span>
+    <div class="toggle-group" id="cotton-yr-toggles" style="margin-left:4px;"></div>
   </div>
 
   <div class="g2 mb16">
@@ -561,9 +569,16 @@ select:hover{border-color:var(--border2);}
     <span style="color:var(--dim)">–</span>
     <select id="sugar-year-to" onchange="renderSugar()"></select>
   </div>
-  <div class="ctrl-row mb16">
-    <span class="ctrl-label">Toggle years:</span>
-    <div class="toggle-group" id="sugar-yr-toggles"></div>
+  <div class="ctrl-row mb8">
+    <span class="ctrl-label">Show:</span>
+    <select id="sugar-yr-preset" onchange="applyPreset('sugar','renderSugar()')">
+      <option value="10" selected>Last 10 years</option>
+      <option value="5">Last 5 years</option>
+      <option value="15">Last 15 years</option>
+      <option value="0">All years</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:12px;color:var(--dim2);font-size:10px;">Fine-tune →</span>
+    <div class="toggle-group" id="sugar-yr-toggles" style="margin-left:4px;"></div>
   </div>
 
   <div class="g2 mb16">
@@ -690,9 +705,16 @@ select:hover{border-color:var(--border2);}
     <span style="color:var(--dim)">–</span>
     <select id="soy-year-to" onchange="renderSoy()"></select>
   </div>
-  <div class="ctrl-row mb16">
-    <span class="ctrl-label">Toggle years:</span>
-    <div class="toggle-group" id="soy-yr-toggles"></div>
+  <div class="ctrl-row mb8">
+    <span class="ctrl-label">Show:</span>
+    <select id="soy-yr-preset" onchange="applyPreset('soy','renderSoy()')">
+      <option value="10" selected>Last 10 years</option>
+      <option value="5">Last 5 years</option>
+      <option value="15">Last 15 years</option>
+      <option value="0">All years</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:12px;color:var(--dim2);font-size:10px;">Fine-tune →</span>
+    <div class="toggle-group" id="soy-yr-toggles" style="margin-left:4px;"></div>
   </div>
 
   <div class="g2 mb16">
@@ -819,9 +841,16 @@ select:hover{border-color:var(--border2);}
     <span style="color:var(--dim)">–</span>
     <select id="corn-year-to" onchange="renderCorn()"></select>
   </div>
-  <div class="ctrl-row mb16">
-    <span class="ctrl-label">Toggle years:</span>
-    <div class="toggle-group" id="corn-yr-toggles"></div>
+  <div class="ctrl-row mb8">
+    <span class="ctrl-label">Show:</span>
+    <select id="corn-yr-preset" onchange="applyPreset('corn','renderCorn()')">
+      <option value="10" selected>Last 10 years</option>
+      <option value="5">Last 5 years</option>
+      <option value="15">Last 15 years</option>
+      <option value="0">All years</option>
+    </select>
+    <span class="ctrl-label" style="margin-left:12px;color:var(--dim2);font-size:10px;">Fine-tune →</span>
+    <div class="toggle-group" id="corn-yr-toggles" style="margin-left:4px;"></div>
   </div>
 
   <div class="g2 mb16">
@@ -1637,187 +1666,275 @@ function buildMYAnnualBar(chartId, rows, commodity, volFn, fobFn, volLabel) {
 
 
 // ── Trading Desk Summary ─────────────────────────────────────────────────────
+function linearRegression(xs, ys) {
+  // Returns {slope, intercept} for simple OLS regression
+  const n = xs.length;
+  if (n < 2) return {slope:0, intercept:ys[0]||0};
+  const xm = xs.reduce((a,b)=>a+b)/n;
+  const ym = ys.reduce((a,b)=>a+b)/n;
+  const num = xs.reduce((s,x,i)=>s+(x-xm)*(ys[i]-ym),0);
+  const den = xs.reduce((s,x)=>s+(x-xm)**2,0);
+  const slope = den>0 ? num/den : 0;
+  return {slope, intercept:ym-slope*xm};
+}
+
 function buildTradingDeskSummary(elId, commodity, rows, volFn, fobFn, volUnit) {
   const el = document.getElementById(elId);
   if (!el) return;
 
-  const myData = aggByMY(rows, commodity, volFn);
-  const myFob  = aggByMY(rows, commodity, fobFn);
-  if (myData.length < 2) { el.innerHTML = '<span style="color:var(--dim)">Insufficient data.</span>'; return; }
+  // ── Data setup ────────────────────────────────────────────────────────
+  const allYears  = [...new Set(rows.map(r=>r.year))].sort((a,b)=>a-b);
+  const latestY   = allYears[allYears.length-1];
+  const prevY     = allYears[allYears.length-2];
 
-  const latestMY  = myData[myData.length-1];
-  const priorMY   = myData[myData.length-2];
-  const latestFOB = myFob[myFob.length-1];
-  const priorFOB  = myFob[myFob.length-2];
-  const vol10     = myData.slice(-11,-1);
-  const vol10avg  = vol10.length ? vol10.reduce((s,d)=>s+d.val,0)/vol10.length : 1;
-  const fob10     = myFob.slice(-11,-1);
-  const fob10avg  = fob10.length ? fob10.reduce((s,d)=>s+d.val,0)/fob10.length : 1;
-  const volYoY    = priorMY.val>0  ? (latestMY.val-priorMY.val)/priorMY.val*100 : 0;
-  const fobYoY    = priorFOB.val>0 ? (latestFOB.val-priorFOB.val)/priorFOB.val*100 : 0;
-  const vol10pct  = vol10avg>0 ? (latestMY.val-vol10avg)/vol10avg*100 : 0;
-  const avgPPU    = latestMY.val>0 ? latestFOB.val/latestMY.val : 0;
-  const priorPPU  = priorMY.val>0  ? priorFOB.val/priorMY.val : 0;
-  const ppuChg    = priorPPU>0 ? (avgPPU-priorPPU)/priorPPU*100 : 0;
+  // Detect partial year: find how many months we have for the latest year
+  const latestMonths = [...new Set(rows.filter(r=>r.year===latestY).map(r=>r.month))].sort((a,b)=>a-b);
+  const isPartial    = latestMonths.length < 12;
+  const nMonths      = latestMonths.length;
 
-  const latestY   = YEARS[YEARS.length-1];
-  const prevY     = YEARS[YEARS.length-2];
-  const latRows   = rows.filter(r=>r.year===latestY);
-  const prevRows  = rows.filter(r=>r.year===prevY);
-  const destVol   = aggByCountry(latRows, volFn);
-  const prevDest  = aggByCountry(prevRows, volFn);
-  const top1      = destVol[0] || ['—',0];
-  const top2      = destVol[1] || ['—',0];
-  const top3      = destVol[2] || ['—',0];
-  const totalVol  = destVol.reduce((s,d)=>s+d[1],0)||1;
-  const top3share = Math.round(destVol.slice(0,3).reduce((s,d)=>s+d[1],0)/totalVol*100);
-  const prevTotal = prevDest.reduce((s,d)=>s+d[1],0)||1;
-  const prevTop1V = (prevDest.find(d=>d[0]===top1[0])||[,0])[1];
-  const top1delta = top1[1]/totalVol*100 - prevTop1V/prevTotal*100;
-  const bestMY    = myData.reduce((b,d)=>d.val>b.val?d:b, myData[0]);
-  const bestFOBMY = myFob.reduce((b,d)=>d.val>b.val?d:b, myFob[0]);
+  // For fair comparison use same months in prior years
+  const sameMonthRows = m => rows.filter(r=>r.month<=m);  // same period filter
 
-  // helpers — no template literals inside these
-  function arr(v)  { return v>=0 ? '▲' : '▼'; }
-  function clr(v)  { return v>=0 ? '#3fc87a' : '#e85a5a'; }
-  function pspan(v,t) { return '<span style="color:'+clr(v)+'">'+arr(v)+' '+t+'</span>'; }
-  function bold(t,c)  { return '<strong style="color:'+(c||'var(--text)')+'">'+t+'</strong>'; }
+  // ── Calendar year totals (full vs same-period) ────────────────────────
+  const latestRows   = rows.filter(r=>r.year===latestY);
+  const latestVol    = latestRows.reduce((s,r)=>s+volFn(r),0);
+  const latestFOB    = latestRows.reduce((s,r)=>s+fobFn(r),0);
 
-  // commodity context strings — plain strings, no template literals
+  // Same-period prior years (same months as latest year)
+  const maxMo = Math.max(...latestMonths, 1);
+  function samePeriod(year) {
+    return rows.filter(r=>r.year===year && latestMonths.includes(r.month));
+  }
+  const prevSPVol  = samePeriod(prevY).reduce((s,r)=>s+volFn(r),0);
+  const prevSPFOB  = samePeriod(prevY).reduce((s,r)=>s+fobFn(r),0);
+  const volYoY     = prevSPVol>0 ? (latestVol-prevSPVol)/prevSPVol*100 : 0;
+  const fobYoY     = prevSPFOB>0 ? (latestFOB-prevSPFOB)/prevSPFOB*100 : 0;
+
+  // ── Same-period comparison vs last 10 years ───────────────────────────
+  const hist10 = allYears.slice(-12,-2);  // 10 years before latest two
+  const histSP = hist10.map(y=>samePeriod(y).reduce((s,r)=>s+volFn(r),0)).filter(v=>v>0);
+  const histSPavg = histSP.length ? histSP.reduce((a,b)=>a+b)/histSP.length : 0;
+  const histSPmax = histSP.length ? Math.max(...histSP) : 0;
+  const histSPmin = histSP.length ? Math.min(...histSP) : 0;
+  const spVsPct   = histSPavg>0 ? (latestVol-histSPavg)/histSPavg*100 : 0;
+  const isRecord  = latestVol > histSPmax && histSPmax > 0;
+  const isLowest  = latestVol < histSPmin && histSPmin > 0;
+
+  // ── Linear regression projection for full year ────────────────────────
+  // Use: for each of last 10 years, what % of annual total came in months 1..nMonths?
+  // Apply that ratio to project the full year from current partial data
+  let projectedVol = null;
+  if (isPartial && nMonths >= 1) {
+    const ratios = [];
+    hist10.forEach(y=>{
+      const fullY = rows.filter(r=>r.year===y).reduce((s,r)=>s+volFn(r),0);
+      const partY = samePeriod(y).reduce((s,r)=>s+volFn(r),0);
+      if (fullY>0 && partY>0) ratios.push(fullY/partY);
+    });
+    if (ratios.length>=2) {
+      const avgRatio = ratios.reduce((a,b)=>a+b)/ratios.length;
+      projectedVol = latestVol * avgRatio;
+    }
+    // Also do linear regression on full-year totals
+    const fullYrs = hist10.map(y=>({y, v:rows.filter(r=>r.year===y).reduce((s,r)=>s+volFn(r),0)})).filter(d=>d.v>0);
+    if (fullYrs.length>=3) {
+      const {slope,intercept} = linearRegression(fullYrs.map(d=>d.y), fullYrs.map(d=>d.v));
+      const trendProj = intercept + slope*latestY;
+      // Blend: 70% pace-based, 30% trend
+      if (projectedVol!==null) projectedVol = 0.7*projectedVol + 0.3*Math.max(trendProj,0);
+    }
+  }
+
+  // ── Marketing year data ───────────────────────────────────────────────
+  const myData    = aggByMY(rows, commodity, volFn);
+  const myFob     = aggByMY(rows, commodity, fobFn);
+  const latestMY  = myData.length ? myData[myData.length-1] : {val:0,label:'—'};
+  const priorMY   = myData.length>1 ? myData[myData.length-2] : {val:0,label:'—'};
+  const latestMYF = myFob.length ? myFob[myFob.length-1] : {val:0,label:'—'};
+  const vol10MY   = myData.slice(-12,-2);
+  const vol10avg  = vol10MY.length ? vol10MY.reduce((s,d)=>s+d.val,0)/vol10MY.length : 0;
+  const myYoY     = priorMY.val>0 ? (latestMY.val-priorMY.val)/priorMY.val*100 : 0;
+  const bestMY    = myData.reduce((b,d)=>d.val>b.val?d:b, myData[0]||{val:0,label:'—'});
+  const bestFOBMY = myFob.reduce((b,d)=>d.val>b.val?d:b, myFob[0]||{val:0,label:'—'});
+
+  // ── Destinations ──────────────────────────────────────────────────────
+  const destVol   = aggByCountry(latestRows, volFn);
+  const prevDest  = aggByCountry(rows.filter(r=>r.year===prevY), volFn);
+  const top1=destVol[0]||['—',0]; const top2=destVol[1]||['—',0]; const top3=destVol[2]||['—',0];
+  const totVol    = destVol.reduce((s,d)=>s+d[1],0)||1;
+  const top3sh    = Math.round(destVol.slice(0,3).reduce((s,d)=>s+d[1],0)/totVol*100);
+  const prevTot   = prevDest.reduce((s,d)=>s+d[1],0)||1;
+  const prevT1    = (prevDest.find(d=>d[0]===top1[0])||[,0])[1];
+  const t1delta   = top1[1]/totVol*100 - prevT1/prevTot*100;
+
+  // ── Helpers ───────────────────────────────────────────────────────────
+  function arr(v)  { return v>=0?'▲':'▼'; }
+  function clr(v)  { return v>=0?'#3fc87a':'#e85a5a'; }
+  function cs(v,t) { return '<span style="color:'+clr(v)+'">'+arr(v)+' '+t+'</span>'; }
+  function b(t,c)  { return '<strong style="color:'+(c||'var(--text)')+'">'+t+'</strong>'; }
+  function pRow(label,val){ return '<tr><td style="color:var(--dim);font-size:11px;padding:2px 12px 2px 0">'+label+'</td><td style="font-weight:600">'+val+'</td></tr>'; }
+
   const CTX = {
-    coffee: {
-      note: avgPPU>350 ? 'Prices at historically elevated levels. Tight supply and strong demand driving premiums across all origins.' :
-            avgPPU>250 ? 'Prices above long-run average. Brazil low stocks and supply concerns keeping the market firm.' :
-                         'Prices at moderate levels relative to history.',
-      vol: volYoY<-10 ? 'Volume decline reflects post-record stock drawdown and ongoing logistics pressure at Santos port.' :
-           volYoY>10  ? 'Strong shipment growth. Brazil filling demand gaps left by other origins at competitive FOB basis.' :
-                        'Shipment pace broadly in line with prior year.',
+    coffee:{
+      note:'Brazil is the world’s largest coffee exporter. Santos port handles ~85% of shipments. Key watch: CECAFE weekly data, Vietnam crop, and USD/BRL exchange rate.',
+      vol:volYoY<-10?'Volume trailing prior year at same point. Watch for stock depletion effects post-record 2024 shipments and ongoing port logistics at Santos.':
+          volYoY>10?'Running ahead of prior year same period. Strong demand from Europe and Asia absorbing supply despite elevated prices.':
+                    'Pace broadly in line with prior year same period.'
     },
-    cotton: {
-      note: 'Brazil surpassed the US to become the world largest cotton exporter in MY 2024/25. Mato Grosso accounts for ~71% of production, harvest peaks May-Aug.',
-      vol: volYoY<-10 ? 'Export pace slowing. Monitor Mato Grosso gin throughput and Santos/Paranagua vessel queues.' :
-           volYoY>10  ? 'Strong cotton flow. Brazil capitalising on competitive basis vs US and Australia.' :
-                        'Cotton shipments broadly steady year-on-year.',
+    cotton:{
+      note:'Brazil became world #1 cotton exporter in MY 2024/25. ~71% from Mato Grosso. Harvest May–Aug, peak export flow Aug–Nov.',
+      vol:volYoY<-10?'Below prior year pace. Monitor Mato Grosso gin throughput, Santos container availability, and India crop competition.':
+          volYoY>10?'Strong pace vs prior year. Brazil benefiting from competitive basis and robust Chinese/Vietnamese demand.':
+                    'Flow broadly steady vs same period prior year.'
     },
-    sugar: {
-      note: 'Brazil is the world largest sugar exporter. Center-South mills begin crushing in April. Export pace from June onward is the key indicator for global supply.',
-      vol: volYoY<-10 ? 'Crush-season pace below prior year. Monitor UNICA weekly data for cane availability and ethanol vs sugar mix.' :
-           volYoY>10  ? 'Record-pace crushing driving strong exports. Global supply pressure likely through Q3.' :
-                        'Crushing season broadly on track with prior year.',
+    sugar:{
+      note:'Brazil Center-South mills begin crushing April. UNICA fortnightly releases are the key supply signal. Ethanol vs sugar split drives export availability.',
+      vol:volYoY<-10?'Below prior year same-period pace. May reflect delayed crush start or higher ethanol allocation. Watch UNICA mix data.':
+          volYoY>10?'Strong pace. Record crush and high sugar allocation driving heavy export flows.':
+                    'Crush-season flow in line with prior year same period.'
     },
-    soybeans: {
-      note: 'Brazil exports 70-80% of soy to China. The Feb-May harvest window drives the bulk of annual shipments through Santos, Paranagua and northern arc ports.',
-      vol: volYoY<-10 ? 'Slow harvest pace or logistical congestion damping flows. Watch Mato Grosso basis and Santos vessel queues.' :
-           volYoY>10  ? 'Strong soybean pace driven by competitive basis vs US origin and heavy Chinese buying.' :
-                        'Soybean shipments running in line with prior season.',
+    soybeans:{
+      note:'70–80% of Brazil soy exports go to China. Feb–May harvest window drives bulk shipments through Santos, Paranaguá, and northern arc. Basis vs US origin is key.',
+      vol:volYoY<-10?'Trailing prior year. Possible harvest delays or logistical bottlenecks. Watch Mato Grosso basis and vessel queues.':
+          volYoY>10?'Running ahead of prior year. Heavy Chinese buying and competitive basis vs US driving strong pace.':
+                    'Shipment pace tracking prior year same period.'
     },
-    corn: {
-      note: 'Safrinha (second crop) corn accounts for ~75% of output, harvested Jun-Aug. Exports peak Aug-Oct through Paranagua and Barcarena.',
-      vol: volYoY<-10 ? 'Slower corn exports. Safrinha planting delays or competition from US/Ukraine weighing on Brazilian FOB basis.' :
-           volYoY>10  ? 'Surging corn exports. Brazil displacing competition in Asian markets as safrinha exceeds expectations.' :
-                        'Corn export run-rate in line with historical seasonal pattern.',
-    },
+    corn:{
+      note:'Safrinha (2nd crop) corn ~75% of output, harvested Jun–Aug. Exports peak Aug–Oct through Paranaguá and Barcarena. Key risk: US/Ukraine competition.',
+      vol:volYoY<-10?'Lagging prior year. Safrinha planting delays or freight competition weighing on Brazilian FOB basis.':
+          volYoY>10?'Surging vs prior year. Brazil displacing competition in Asian markets on back of bumper safrinha crop.':
+                    'Running in line with prior year same period.'
+    }
   };
-  const ctx = CTX[commodity] || {note:'', vol:''};
+  const ctx=CTX[commodity]||{note:'',vol:''};
+  const periodNote = isPartial
+    ? '('+nMonths+' months Jan–'+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][maxMo-1]+' '+latestY+')'
+    : '(Full year '+latestY+')';
 
-  const partial = [...new Set(rows.filter(r=>r.year===latestY).map(r=>r.month))].length < 12;
+  // ── Build HTML ────────────────────────────────────────────────────────
+  const parts = [];
 
-  const html = [
-    '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:18px;">',
+  // Header KPI grid
+  parts.push('<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:18px">');
 
-    // KPI 1 — Volume
-    '<div>',
-    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Latest MY Volume'+(partial?' <span style="color:var(--dim2);font-size:10px;">(partial)</span>':'')+'</div>',
-    '<div style="font-size:26px;font-weight:700;">'+fmtShort(latestMY.val)+' <span style="font-size:12px;color:var(--dim)">'+volUnit+'</span></div>',
-    '<div style="font-size:12px;margin-top:3px;">'+pspan(volYoY, Math.abs(volYoY).toFixed(1)+'% vs '+priorMY.label)+'</div>',
-    '<div style="font-size:11px;color:var(--dim2);margin-top:2px;">'+pspan(vol10pct, Math.abs(vol10pct).toFixed(0)+'% vs 10yr avg')+'</div>',
-    '</div>',
+  // KPI 1 — current period
+  parts.push('<div><div style="font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--dim);margin-bottom:4px">Current Period '+periodNote+'</div>');
+  parts.push('<div style="font-size:24px;font-weight:700">'+fmtShort(latestVol)+'<span style="font-size:11px;color:var(--dim);margin-left:4px">'+volUnit+'</span></div>');
+  parts.push('<div style="font-size:12px;margin-top:3px">'+cs(volYoY,Math.abs(volYoY).toFixed(1)+'% vs same period '+prevY)+'</div>');
+  parts.push('<div style="font-size:11px;color:var(--dim2);margin-top:2px">'+cs(spVsPct,Math.abs(spVsPct).toFixed(0)+'% vs 10yr same-period avg')+'</div>');
+  if (isRecord)  parts.push('<div style="font-size:11px;color:#f5c890;margin-top:4px">⭐ Highest in 10+ years for this period</div>');
+  if (isLowest)  parts.push('<div style="font-size:11px;color:#e85a5a;margin-top:4px">⚠ Lowest in 10+ years for this period</div>');
+  parts.push('</div>');
 
-    // KPI 2 — FOB
-    '<div>',
-    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Latest MY FOB Revenue</div>',
-    '<div style="font-size:26px;font-weight:700;">'+fmtB(latestFOB.val)+'</div>',
-    '<div style="font-size:12px;margin-top:3px;">'+pspan(fobYoY, Math.abs(fobYoY).toFixed(1)+'% vs '+priorFOB.label)+'</div>',
-    '<div style="font-size:11px;color:var(--dim2);margin-top:2px;">Avg '+fmtShort(avgPPU)+'/'+volUnit+' · '+pspan(ppuChg, Math.abs(ppuChg).toFixed(0)+'% price YoY')+'</div>',
-    '</div>',
+  // KPI 2 — FOB + projection
+  parts.push('<div><div style="font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--dim);margin-bottom:4px">FOB Revenue '+periodNote+'</div>');
+  parts.push('<div style="font-size:24px;font-weight:700">'+fmtB(latestFOB)+'</div>');
+  parts.push('<div style="font-size:12px;margin-top:3px">'+cs(fobYoY,Math.abs(fobYoY).toFixed(1)+'% vs same period '+prevY)+'</div>');
+  if (projectedVol!==null) {
+    const projFOB = projectedVol*(latestFOB/latestVol||0);
+    parts.push('<div style="font-size:11px;color:var(--dim2);margin-top:6px">Full-year projection:</div>');
+    parts.push('<div style="font-size:13px;font-weight:600;color:#4ab8d8">~'+fmtShort(projectedVol)+' '+volUnit+' &middot; ~'+fmtB(projFOB)+'</div>');
+    parts.push('<div style="font-size:10px;color:var(--dim2)">Based on '+nMonths+'-month pace + 10yr seasonal ratio</div>');
+  }
+  parts.push('</div>');
 
-    // KPI 3 — Record
-    '<div>',
-    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">All-Time Record MY</div>',
-    '<div style="font-size:26px;font-weight:700;">'+bestMY.label+'</div>',
-    '<div style="font-size:12px;color:var(--dim);margin-top:3px;">'+fmtShort(bestMY.val)+' '+volUnit+'</div>',
-    '<div style="font-size:11px;color:var(--dim2);margin-top:2px;">Best revenue: '+bestFOBMY.label+' · '+fmtB(bestFOBMY.val)+'</div>',
-    '</div>',
+  // KPI 3 — MY record
+  parts.push('<div><div style="font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--dim);margin-bottom:4px">Marketing Year Record</div>');
+  parts.push('<div style="font-size:24px;font-weight:700">'+bestMY.label+'</div>');
+  parts.push('<div style="font-size:12px;color:var(--dim);margin-top:3px">'+fmtShort(bestMY.val)+' '+volUnit+'</div>');
+  parts.push('<div style="font-size:11px;color:var(--dim2);margin-top:2px">Best revenue: '+bestFOBMY.label+' &middot; '+fmtB(bestFOBMY.val)+'</div>');
+  parts.push('<div style="font-size:11px;margin-top:4px">Latest MY: '+b(latestMY.label)+' &middot; '+cs(myYoY,Math.abs(myYoY).toFixed(1)+'% YoY')+'</div>');
+  parts.push('</div>');
 
-    '</div>',
-    '<div style="height:1px;background:var(--border);margin:14px 0"></div>',
+  parts.push('</div>');
+  parts.push('<div style="height:1px;background:var(--border);margin:14px 0"></div>');
 
-    // Destinations
-    '<div style="margin-bottom:14px;line-height:1.8;">',
-    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Destination Concentration · '+latestY+'</div>',
-    bold(top1[0])+' leads with '+bold(fmtShort(top1[1]))+' '+volUnit+' ('+Math.round(top1[1]/totalVol*100)+'% share) — share is '+
-      (top1delta>=0 ? '<span style="color:#3fc87a">gaining +'+Math.abs(top1delta).toFixed(1)+'pp</span>' : '<span style="color:#e85a5a">losing '+Math.abs(top1delta).toFixed(1)+'pp</span>')+
-      ' vs '+prevY+'. '+bold(top2[0])+' ranks 2nd at '+Math.round(top2[1]/totalVol*100)+'%, '+
-      bold(top3[0])+' 3rd at '+Math.round(top3[1]/totalVol*100)+'%. '+
-      'Top 3 hold '+bold(top3share+'%')+' of total exports — '+
-      (top3share>70 ? '<span style="color:#e85a5a">high concentration</span>' : '<span style="color:#3fc87a">well diversified</span>.')+'</div>',
+  // Destination section
+  parts.push('<div style="margin-bottom:14px;line-height:1.8">');
+  parts.push('<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--dim);margin-bottom:6px">Top Destinations &middot; '+latestY+'</div>');
+  parts.push(b(top1[0])+' leads with '+b(fmtShort(top1[1]))+' '+volUnit
+    +' ('+Math.round(top1[1]/totVol*100)+'%) &mdash; share '
+    +(t1delta>=0?'<span style="color:#3fc87a">gaining +'+Math.abs(t1delta).toFixed(1)+'pp</span>'
+               :'<span style="color:#e85a5a">losing '+Math.abs(t1delta).toFixed(1)+'pp</span>')
+    +' vs '+prevY+'. '
+    +b(top2[0])+' 2nd ('+Math.round(top2[1]/totVol*100)+'%), '
+    +b(top3[0])+' 3rd ('+Math.round(top3[1]/totVol*100)+'%). '
+    +'Top 3 = '+b(top3sh+'%')+' &mdash; '
+    +(top3sh>70?'<span style="color:#e85a5a">concentrated</span>':'<span style="color:#3fc87a">diversified</span>')+'.');
+  parts.push('</div>');
 
-    // Volume trend
-    '<div style="margin-bottom:14px;line-height:1.8;">',
-    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Volume Trend</div>',
-    ctx.vol+' 10-year average is '+bold(fmtShort(vol10avg))+' '+volUnit+'/MY. Current MY is '+
-      pspan(vol10pct, Math.abs(vol10pct).toFixed(0)+'% '+(vol10pct>=0?'above':'below')+' that baseline.')+
-      (latestMY.label===bestMY.label ? ' <span style="color:#f5c890">⭐ This is the highest-volume marketing year on record.</span>' :
-       ' Best ever: '+bold(bestMY.label)+' at '+bold(fmtShort(bestMY.val))+' '+volUnit+'.')+'</div>',
+  // Volume pace
+  parts.push('<div style="margin-bottom:14px;line-height:1.8">');
+  parts.push('<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--dim);margin-bottom:4px">Pace vs History</div>');
+  parts.push(ctx.vol+' 10yr same-period average: '+b(fmtShort(histSPavg))+' '+volUnit+'.');
+  if (histSPmax>0) parts.push(' Range: '+fmtShort(histSPmin)+' – '+fmtShort(histSPmax)+'.');
+  parts.push('</div>');
 
-    // Market context
-    '<div style="line-height:1.8;">',
-    '<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:4px;">Market Context</div>',
-    ctx.note+'</div>',
-  ].join('');
+  // Market context
+  parts.push('<div style="line-height:1.8">');
+  parts.push('<div style="font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--dim);margin-bottom:4px">Market Context</div>');
+  parts.push(ctx.note);
+  parts.push('</div>');
 
-  el.innerHTML = html;
+  el.innerHTML = parts.join('');
 }
 
 
-// ── Year toggle builder — default last 10 years ────────────────────────────────
+// ── Year preset + toggle system ──────────────────────────────────────────────
+function applyPreset(comId, fnStr) {
+  const presetEl = document.getElementById(comId+'-yr-preset');
+  const n = presetEl ? parseInt(presetEl.value) : 10;
+  const activeSet = n===0 ? new Set(YEARS) : new Set(YEARS.slice(n>0?-n:0));
+  const tgl = document.getElementById(comId+'-yr-toggles');
+  if (tgl && tgl.dataset.built==='1') {
+    [...tgl.querySelectorAll('button')].forEach(btn=>{
+      const y=parseInt(btn.dataset.year); const on=activeSet.has(y); const c=btn.dataset.color;
+      btn.classList.toggle('on',on);
+      btn.style.borderColor=on?c:''; btn.style.color=on?c:''; btn.style.background=on?c+'18':'';
+    });
+  }
+  callRender(fnStr);
+}
+
 function buildYearToggles(toggleId, onChangeFn, comColor) {
   const el = document.getElementById(toggleId);
-  if (!el) return;
-  if (el.dataset.built === '1') return;  // build once — never wipe user selections
-  el.dataset.built = '1';
-  const last10 = new Set(YEARS.slice(-10));
-  el.innerHTML = YEARS.map((y,i) => {
-    const on = last10.has(y);
-    const c  = yearColor(i);
-    return `<button class="toggle ${on?'on':''}" data-year="${y}" data-color="${c}"
-      style="${on ? `border-color:${c};color:${c};background:${c}18` : ''}"
-      onclick="toggleComYear(this,'${onChangeFn}')">${y}</button>`;
+  if (!el || el.dataset.built==='1') return;
+  el.dataset.built='1';
+  const comId = toggleId.replace('-yr-toggles','');
+  const presetEl = document.getElementById(comId+'-yr-preset');
+  const n = presetEl ? parseInt(presetEl.value) : 10;
+  const activeSet = n===0 ? new Set(YEARS) : new Set(YEARS.slice(n>0?-n:0));
+  el.innerHTML = YEARS.map((y,i)=>{
+    const on=activeSet.has(y); const c=yearColor(i);
+    return '<button class="toggle '+(on?'on':'')+'" data-year="'+y+'" data-color="'+c+'"'
+      +' style="'+(on?'border-color:'+c+';color:'+c+';background:'+c+'18':'')+'"'
+      +' onclick="toggleComYear(this,''+onChangeFn+'')">'+y+'</button>';
   }).join('');
 }
 
 function toggleComYear(btn, fn) {
-  const on = btn.classList.toggle('on');
-  const c  = btn.dataset.color;
-  btn.style.borderColor = on ? c : '';
-  btn.style.color       = on ? c : '';
-  btn.style.background  = on ? c+'18' : '';
-  const fnMap = {
-    'renderCoffeeSeason()': renderCoffeeSeason,
-    'renderCotton()':       renderCotton,
-    'renderSugar()':        renderSugar,
-    'renderSoy()':          renderSoy,
-    'renderCorn()':         renderCorn,
-    'renderSeasonality()':  renderSeasonality,
-  };
-  if (fnMap[fn]) fnMap[fn]();
+  const on=btn.classList.toggle('on'); const c=btn.dataset.color;
+  btn.style.borderColor=on?c:''; btn.style.color=on?c:''; btn.style.background=on?c+'18':'';
+  callRender(fn);
+}
+
+function callRender(fn) {
+  const m={'renderCoffeeSeason()':renderCoffeeSeason,'renderCotton()':renderCotton,
+           'renderSugar()':renderSugar,'renderSoy()':renderSoy,'renderCorn()':renderCorn,
+           'renderSeasonality()':renderSeasonality};
+  if (m[fn]) m[fn]();
 }
 
 function getActiveYears(toggleId) {
-  const el = document.getElementById(toggleId);
-  if (!el || el.dataset.built !== '1') return YEARS.slice(-10);
-  const active = [...el.querySelectorAll('.toggle.on')].map(b=>parseInt(b.dataset.year));
-  return active.length > 0 ? active : YEARS.slice(-10);
+  const el=document.getElementById(toggleId);
+  if (!el||el.dataset.built!=='1') {
+    const comId=toggleId.replace('-yr-toggles','');
+    const p=document.getElementById(comId+'-yr-preset');
+    const n=p?parseInt(p.value):10;
+    return n===0?YEARS.slice():YEARS.slice(n>0?-n:0);
+  }
+  const active=[...el.querySelectorAll('.toggle.on')].map(b=>parseInt(b.dataset.year));
+  return active.length>0?active:YEARS.slice(-10);
 }
 
 
