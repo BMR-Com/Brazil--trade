@@ -1366,67 +1366,79 @@ function setProgress(pct, msg) {
   if (msg) document.getElementById('load-msg').textContent = msg;
 }
 
+function parseRows(rows) {
+  // Convert raw CSV strings to typed objects.
+  // mt and bales_480lb are computed from kg_net — not stored in the CSV.
+  return rows.map(r => ({
+    year:         parseInt(r.year),
+    month:        parseInt(r.month),
+    ncm:          r.ncm,
+    commodity:    r.commodity,
+    subtype:      r.subtype,
+    description:  r.description,
+    country_code: r.country_code,
+    country_name: r.country_name || 'Unknown',
+    qt_estat:     parseFloat(r.qt_estat)||0,
+    kg_net:       parseFloat(r.kg_net)||0,
+    get mt()          { return this.kg_net / 1000; },
+    get bales_480lb() { return this.kg_net / 217.724; },
+    fob_usd:      parseFloat(r.fob_usd)||0,
+  })).filter(r => r.year>0 && r.month>0 && r.commodity);
+}
+
+function finaliseData() {
+  // Called once both CSV files are loaded and merged into RAW.
+  setProgress(80, 'Building index…');
+  YEARS = [...new Set(RAW.map(r=>r.year))].sort((a,b)=>a-b);
+
+  const maxY=YEARS[YEARS.length-1];
+  const maxM=Math.max(...RAW.filter(r=>r.year===maxY).map(r=>r.month));
+  document.getElementById('data-period').textContent = `${MONTHS[maxM-1]} ${maxY}`;
+
+  setProgress(90, 'Populating controls…');
+  populateYearSelects(['coffee-year-from','coffee-year-to']);
+  populateYearSelects(['cotton-year-from','cotton-year-to']);
+  populateYearSelects(['sugar-year-from','sugar-year-to']);
+  populateYearSelects(['soy-year-from','soy-year-to']);
+  populateYearSelects(['corn-year-from','corn-year-to']);
+  populateYearSelects(['s-year-from','s-year-to']);
+  const dYear=document.getElementById('d-year');
+  dYear.innerHTML=YEARS.map(y=>`<option value="${y}" ${y===maxY?'selected':''}>${y}</option>`).join('');
+
+  setProgress(100, 'Done');
+  setTimeout(()=>{
+    document.getElementById('loading').style.display='none';
+    renderOverview();
+  }, 200);
+}
+
 function loadCSV() {
-  setProgress(5, 'Fetching exports.csv…');
+  // Data is split into two files to stay under GitHub's 25 MB limit:
+  //   exports_pre2015.csv  — 1997-2014  (static, never changes)
+  //   exports_2015on.csv   — 2015+      (updated weekly by GitHub Actions)
+  setProgress(5, 'Fetching historical data (1997-2014)…');
 
-  Papa.parse('./data/exports.csv', {
-    download: true,
-    header: true,
-    skipEmptyLines: true,
-    dynamicTyping: false,
-    worker: false,
-    step: null,
-    complete(results) {
-      setProgress(60, 'Processing data…');
-      const raw = results.data;
+  Papa.parse('./data/exports_pre2015.csv', {
+    download: true, header: true, skipEmptyLines: true,
+    dynamicTyping: false, worker: false,
+    complete(res1) {
+      setProgress(40, 'Fetching recent data (2015-present)…');
 
-      // Parse types
-      RAW = raw.map(r => ({
-        year:     parseInt(r.year),
-        month:    parseInt(r.month),
-        ncm:      r.ncm,
-        commodity:r.commodity,
-        subtype:  r.subtype,
-        description: r.description,
-        country_code: r.country_code,
-        country_name: r.country_name || 'Unknown',
-        qt_estat: parseFloat(r.qt_estat)||0,
-        kg_net:   parseFloat(r.kg_net)||0,
-        // mt and bales computed from kg_net — not stored in CSV
-        get mt()          { return this.kg_net / 1000; },
-        get bales_480lb() { return this.kg_net / 217.724; },
-        fob_usd:  parseFloat(r.fob_usd)||0,
-      })).filter(r => r.year>0 && r.month>0 && r.commodity);
-
-      setProgress(80, 'Building index…');
-
-      YEARS = [...new Set(RAW.map(r=>r.year))].sort((a,b)=>a-b);
-
-      // Update header period
-      const maxY=YEARS[YEARS.length-1];
-      const maxM=Math.max(...RAW.filter(r=>r.year===maxY).map(r=>r.month));
-      document.getElementById('data-period').textContent = `${MONTHS[maxM-1]} ${maxY}`;
-
-      setProgress(90, 'Populating controls…');
-      // Populate all year selects
-      populateYearSelects(['coffee-year-from','coffee-year-to']);
-      populateYearSelects(['cotton-year-from','cotton-year-to']);
-      populateYearSelects(['sugar-year-from','sugar-year-to']);
-      populateYearSelects(['soy-year-from','soy-year-to']);
-      populateYearSelects(['corn-year-from','corn-year-to']);
-      populateYearSelects(['s-year-from','s-year-to']);
-      // Destination year select
-      const dYear=document.getElementById('d-year');
-      dYear.innerHTML=YEARS.map(y=>`<option value="${y}" ${y===maxY?'selected':''}>${y}</option>`).join('');
-
-      setProgress(100, 'Done');
-      setTimeout(()=>{
-        document.getElementById('loading').style.display='none';
-        renderOverview();
-      }, 200);
+      Papa.parse('./data/exports_2015on.csv', {
+        download: true, header: true, skipEmptyLines: true,
+        dynamicTyping: false, worker: false,
+        complete(res2) {
+          setProgress(60, 'Processing data…');
+          RAW = parseRows([...res1.data, ...res2.data]);
+          finaliseData();
+        },
+        error(err) {
+          document.getElementById('load-msg').textContent = 'Error loading exports_2015on.csv: '+err.message;
+        }
+      });
     },
     error(err) {
-      document.getElementById('load-msg').textContent = 'Error loading data: '+err.message;
+      document.getElementById('load-msg').textContent = 'Error loading exports_pre2015.csv: '+err.message;
     }
   });
 }
