@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sugar Desk — Brazil Agricultural Trade Analytics</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0c0e15;--bg2:#12151f;--bg3:#181c2a;--border:#232840;--border2:#2d3355;
+  --text:#e8e6df;--dim:#8a8d9e;--dim2:#5a5d6e;
+  --sugar:#e8c84a;--accent:#e84a2e;--green:#3fc87a;--red:#e85a5a;
+  /* chart series (validated on the #12151f surface) */
+  --s1:#a8892a;--s2:#3a9cc0;--s3:#e0605a;--hist:#454a5e;
+  --r:10px;--r2:6px;
+}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:14px;line-height:1.55;}
+header{background:linear-gradient(135deg,#0c0e15 0%,#14182a 100%);border-bottom:1px solid var(--border);padding:0 32px;position:sticky;top:0;z-index:100;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-flag{font-size:24px;}
+.brand-title{font-size:18px;font-weight:700;letter-spacing:.5px;}
+.brand-sub{font-size:10px;color:var(--dim);letter-spacing:2px;text-transform:uppercase;margin-top:1px;}
+.live-badge{display:flex;align-items:center;gap:7px;padding:5px 13px;background:var(--bg3);border:1px solid var(--border);border-radius:100px;font-size:11px;color:var(--dim);white-space:nowrap;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 32px;display:flex;overflow-x:auto;}
+.nav-btn{padding:13px 18px;font-size:12px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--dim);border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none;}
+.nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+.nav-btn:hover:not(.active){color:var(--text);}
+.subnav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;}
+.subnav a{padding:6px 14px;border-radius:100px;border:1.5px solid var(--border);color:var(--dim);font-size:11px;font-weight:700;text-decoration:none;}
+.subnav a:hover{color:var(--text);border-color:var(--border2);}
+.page{padding:28px 32px;max-width:1600px;margin:0 auto;}
+.sec{display:flex;align-items:center;gap:10px;margin:8px 0 16px;scroll-margin-top:120px;}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);}
+.sec-line{flex:1;height:1px;background:var(--border);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.mb16{margin-bottom:16px;}.mb24{margin-bottom:24px;}
+.kpi{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;position:relative;overflow:hidden;}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--sugar);}
+.kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:8px;font-weight:700;color:var(--sugar);}
+.kpi-val{font-size:28px;font-weight:700;letter-spacing:-.5px;line-height:1;margin-bottom:3px;}
+.kpi-unit{font-size:11px;color:var(--dim);}
+.kpi-sub{font-size:11.5px;color:var(--dim);margin-top:8px;}
+.up{color:var(--green);}.dn{color:var(--red);}
+.chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px;}
+.chart-title{font-size:13px;font-weight:700;margin-bottom:3px;}
+.chart-sub{font-size:11px;color:var(--dim);margin-bottom:14px;}
+.chart-wrap{position:relative;height:290px;}
+.chart-wrap.tall{height:340px;}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;}
+.leg-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--dim);}
+.leg-dot{width:14px;height:3px;border-radius:2px;}
+.insight-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--sugar);border-radius:var(--r);padding:16px 20px;}
+.ins-head{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;color:var(--sugar);margin-bottom:10px;font-weight:700;}
+.ins-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.ins-list li{font-size:12.8px;line-height:1.5;list-style:none;padding-left:14px;position:relative;}
+.ins-list li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--sugar);}
+.tcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:auto;}
+.tcard-head{padding:12px 16px;border-bottom:1px solid var(--border);font-size:13px;font-weight:700;}
+.tcard-head span{display:block;font-size:11px;font-weight:400;color:var(--dim);}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+thead tr{background:var(--bg3);}
+th{padding:8px 12px;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);font-weight:600;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap;}
+th.r,td.r{text-align:right;}
+td{padding:8px 12px;border-bottom:1px solid rgba(35,40,64,.5);}
+td.r{font-family:'Courier New',monospace;font-size:11.5px;white-space:nowrap;}
+td:last-child{white-space:nowrap;}
+tr.hl td{background:rgba(232,200,74,.06);font-weight:600;}
+tbody tr:hover{background:rgba(255,255,255,.025);}
+.inputs{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px;align-items:flex-end;}
+.inputs label{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--dim);display:flex;flex-direction:column;gap:4px;}
+.inputs input{width:100px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);padding:6px 8px;font-size:12px;font-family:inherit;}
+.note{font-size:11px;color:var(--dim);margin-top:10px;line-height:1.5;}
+.note b{color:var(--text);font-weight:600;}
+.source-bar{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:12px 18px;font-size:11px;color:var(--dim);line-height:1.7;margin-top:24px;}
+.source-bar a{color:var(--dim);}
+.pill{display:inline-block;padding:1px 8px;border-radius:100px;font-size:10px;border:1px solid var(--border2);color:var(--dim);margin-left:4px;}
+#err{display:none;padding:20px;color:var(--red);}
+@media(max-width:1000px){.g3{grid-template-columns:1fr 1fr;}.g2{grid-template-columns:1fr;}.ins-list{grid-template-columns:1fr;}}
+@media(max-width:600px){.g3{grid-template-columns:1fr;}header,nav{padding:0 16px;}.page{padding:16px;}.brand-sub{display:none;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-flag">🇧🇷</span>
+      <div>
+        <div class="brand-title">Brazil Agricultural Trade Analytics</div>
+        <div class="brand-sub">Sugar desk · MAPA · UNICA · ICE · B3 · Secex · USDA</div>
+      </div>
+    </div>
+    <div class="live-badge"><span class="live-dot"></span><span>Built</span><b id="built">…</b></div>
+  </div>
+</header>
+<nav>
+  <a class="nav-btn" href="index.html">Overview</a>
+  <a class="nav-btn" href="index.html">☕ Coffee</a>
+  <a class="nav-btn" href="index.html">🌾 Cotton</a>
+  <a class="nav-btn" href="index.html">🍬 Sugar exports</a>
+  <a class="nav-btn active" href="sugar.html">🍬 Sugar desk</a>
+  <a class="nav-btn" href="index.html">🫘 Soybeans</a>
+  <a class="nav-btn" href="index.html">🌽 Corn</a>
+</nav>
+
+<div id="err">Could not load sugar/data/sugar.json.</div>
+<div class="page" id="page">
+  <div class="subnav">
+    <a href="#s-summary">Summary</a><a href="#s-crush">Centre-South crush</a><a href="#s-parity">Ethanol parity</a>
+    <a href="#s-white">White premium</a><a href="#s-exports">Brazil exports</a><a href="#s-world">India · Thailand · world</a>
+  </div>
+
+  <div class="g3 mb16" id="kpis"></div>
+  <div class="insight-box mb24" id="s-summary"><div class="ins-head">Desk read</div><ul class="ins-list" id="insights"></ul></div>
+
+  <!-- CRUSH -->
+  <div class="sec" id="s-crush"><span class="sec-title">Centre-South crush — MAPA fortnightly</span><div class="sec-line"></div></div>
+  <div class="g2 mb16">
+    <div class="chart-card"><div class="chart-title">Cumulative sugar production</div><div class="chart-sub">Million tonnes, Centre-South, by fortnight from 1 April</div>
+      <div class="chart-wrap"><canvas id="cSugarCum"></canvas></div><div class="legend" id="lSugarCum"></div></div>
+    <div class="chart-card"><div class="chart-title">Sugar per tonne of cane, each fortnight</div><div class="chart-sub">kg sugar / t cane — mix and cane quality together</div>
+      <div class="chart-wrap"><canvas id="cKgt"></canvas></div><div class="legend" id="lKgt"></div></div>
+  </div>
+  <div class="g2 mb16">
+    <div class="tcard"><div class="tcard-head">Season projection <span id="projSub"></span></div><table id="tProj"></table>
+      <div class="note" style="padding:0 16px 14px" id="projNote"></div></div>
+    <div class="tcard"><div class="tcard-head">Same date, past seasons <span id="sameSub"></span></div><table id="tSame"></table></div>
+  </div>
+  <div class="g2 mb16">
+    <div class="chart-card"><div class="chart-title">Sugar mix — UNICA official and implied fortnightly</div><div class="chart-sub" id="mixSub">% of cane ATR to sugar</div>
+      <div class="chart-wrap"><canvas id="cMix"></canvas></div><div class="legend" id="lMix"></div></div>
+    <div class="tcard"><div class="tcard-head">By state, season to date <span id="stSub"></span></div><table id="tStates"></table></div>
+  </div>
+  <div class="g2 mb24">
+    <div class="tcard"><div class="tcard-head">UNICA monthly report <span id="unSub"></span></div><table id="tUnica"></table></div>
+    <div class="chart-card"><div class="chart-title">Hydrous ethanol stocks at mills</div><div class="chart-sub">Billion litres, Centre-South (MAPA physical stocks)</div>
+      <div class="chart-wrap"><canvas id="cStock"></canvas></div><div class="legend" id="lStock"></div></div>
+  </div>
+
+  <!-- PARITY -->
+  <div class="sec" id="s-parity"><span class="sec-title">Ethanol parity vs NY No.11</span><div class="sec-line"></div></div>
+  <div class="chart-card mb16">
+    <div class="inputs">
+      <label>Logistics mill→FOB (R$/t)<input id="inLog" type="number" step="5"></label>
+      <label>Polarisation premium (%)<input id="inPol" type="number" step="0.05"></label>
+      <label>kg ATR / kg sugar<input id="inAs" type="number" step="0.0001"></label>
+      <label>kg ATR / L hydrous<input id="inAh" type="number" step="0.0001"></label>
+      <label>From<input id="inFrom" type="number" step="1" value="2019"></label>
+    </div>
+    <div class="g2">
+      <div><div class="chart-title">Hydrous ethanol parity and NY11 front</div><div class="chart-sub">US¢/lb, NY11-equivalent (96° basis, FOB Santos)</div>
+        <div class="chart-wrap"><canvas id="cPar"></canvas></div><div class="legend" id="lPar"></div></div>
+      <div><div class="chart-title">Sugar premium over ethanol</div><div class="chart-sub">NY11 − hydrous parity, US¢/lb. Above zero: mills earn more from sugar</div>
+        <div class="chart-wrap"><canvas id="cParSp"></canvas></div></div>
+    </div>
+    <div class="note" id="parNote"></div>
+  </div>
+  <div class="chart-card mb24" id="pumpCard"><div class="chart-title">Pump price ratio, São Paulo — hydrous ÷ gasoline</div>
+    <div class="chart-sub">Weekly ANP survey, %. Below ~70% flex-fuel drivers favour hydrous, supporting ethanol demand</div>
+    <div class="chart-wrap"><canvas id="cPump"></canvas></div></div>
+
+  <!-- WHITE PREMIUM -->
+  <div class="sec" id="s-white"><span class="sec-title">White premium — London No.5 vs NY No.11</span><div class="sec-line"></div></div>
+  <div class="g2 mb16">
+    <div class="chart-card"><div class="chart-title">Front-pair white premium</div><div class="chart-sub">US$/t: London No.5 − NY11 × 22.0462, nearest pair (Mar/Mar, May/May, Aug/Jul, Oct/Oct, Dec/Mar)</div>
+      <div class="chart-wrap"><canvas id="cWp"></canvas></div><div class="legend" id="lWp"></div></div>
+    <div class="tcard"><div class="tcard-head">Live pairs <span>Premium now, a week ago, and its percentile against each pair's last-30-day average before expiry since 2010</span></div><table id="tWp"></table>
+      <div class="note" style="padding:0 16px 14px">Rule of thumb: stand-alone refiners need roughly US$90–110/t to cover refining cost (energy, freight, finance) — the band on the chart. A premium below it discourages raw-sugar buying by destination refiners; above it pulls raws.</div></div>
+  </div>
+  <div class="tcard mb24"><div class="tcard-head">Premium history by pair <span>Average of the 30 days before expiry, US$/t</span></div><table id="tWpHist"></table></div>
+
+  <!-- EXPORTS -->
+  <div class="sec" id="s-exports"><span class="sec-title">Brazil sugar exports — Secex</span><div class="sec-line"></div></div>
+  <div class="g2 mb16">
+    <div class="chart-card"><div class="chart-title">Monthly exports, raw and white</div><div class="chart-sub">Million tonnes. Raw = NCM 1701.13/14 (VHP); white = 1701.91/99</div>
+      <div class="chart-wrap"><canvas id="cExpM"></canvas></div><div class="legend" id="lExpM"></div></div>
+    <div class="chart-card"><div class="chart-title">Cumulative exports by marketing year (Apr–Mar)</div><div class="chart-sub">Million tonnes</div>
+      <div class="chart-wrap"><canvas id="cExpC"></canvas></div><div class="legend" id="lExpC"></div></div>
+  </div>
+  <div class="g2 mb24">
+    <div class="tcard"><div class="tcard-head">Export pace <span id="paceSub"></span></div><table id="tPace"></table></div>
+    <div class="tcard"><div class="tcard-head">Top destinations <span id="destSub"></span></div><table id="tDest"></table></div>
+  </div>
+
+  <!-- WORLD -->
+  <div class="sec" id="s-world"><span class="sec-title">India · Thailand · world balance</span><div class="sec-line"></div></div>
+  <div class="g2 mb16">
+    <div class="chart-card"><div class="chart-title">Production — Brazil, India, Thailand</div><div class="chart-sub">Million tonnes raw value, USDA PSD by marketing year</div>
+      <div class="chart-wrap"><canvas id="cProd"></canvas></div><div class="legend" id="lProd"></div></div>
+    <div class="chart-card"><div class="chart-title">World ending stocks ÷ use</div><div class="chart-sub">%, USDA PSD</div>
+      <div class="chart-wrap"><canvas id="cStu"></canvas></div></div>
+  </div>
+  <div class="g2 mb16">
+    <div class="tcard"><div class="tcard-head">USDA balance sheets <span>Million tonnes raw value, last three marketing years</span></div><table id="tPsd"></table></div>
+    <div class="tcard"><div class="tcard-head">Latest agency and trade estimates <span>Curated; updated with the weekly report</span></div><table id="tEst"></table></div>
+  </div>
+
+  <div class="source-bar" id="sources">
+    Sources: <a href="https://www.gov.br/agricultura/pt-br/assuntos/sustentabilidade/agroenergia/acompanhamento-da-producao-sucroalcooleira">MAPA — Acompanhamento da produção sucroalcooleira</a> ·
+    <a href="https://unicadata.com.br/listagem.php?idMn=63">UNICA — Relatório de safra</a> ·
+    ICE Futures (NY No.11, London No.5) and B3 hydrous ethanol futures via TradingView ·
+    <a href="https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos">ANP weekly fuel price survey</a> ·
+    <a href="https://comexstat.mdic.gov.br/">Comex Stat / Secex</a> ·
+    <a href="https://apps.fas.usda.gov/psdonline/">USDA PSD</a>.
+    MAPA counts every mill and includes corn ethanol, so its totals differ slightly from UNICA's. Parity constants follow CONSECANA ATR factors; logistics and polarisation are editable assumptions.
+  </div>
+</div>
+
+<script>
+const C = {s1:'#a8892a', s2:'#3a9cc0', s3:'#e0605a', hist:'#454a5e', grid:'rgba(255,255,255,.05)', ink:'#8a8d9e'};
+Chart.defaults.color = C.ink; Chart.defaults.font.family = "'Segoe UI',system-ui,sans-serif"; Chart.defaults.font.size = 11;
+Chart.defaults.plugins.legend.display = false;
+Chart.defaults.interaction = {mode:'index', intersect:false};
+Chart.defaults.plugins.tooltip.backgroundColor = '#181c2a'; Chart.defaults.plugins.tooltip.borderColor = '#2d3355'; Chart.defaults.plugins.tooltip.borderWidth = 1;
+const charts = {};
+const $ = id => document.getElementById(id);
+const f = (v, d=1) => v==null||isNaN(v) ? '—' : (+v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct = (a, b) => (a!=null && b) ? (a/b-1)*100 : null;
+const sgn = (v, d=1, u='%') => v==null ? '—' : `<span class="${v>=0?'up':'dn'}">${v>=0?'+':''}${f(v,d)}${u}</span>`;
+const scaleX = (o={}) => Object.assign({grid:{color:C.grid}, ticks:{maxRotation:0, autoSkip:true, maxTicksLimit:10}}, o);
+const scaleY = (o={}) => Object.assign({grid:{color:C.grid}}, o);
+function draw(id, cfg){ if(charts[id]) charts[id].destroy(); charts[id] = new Chart($(id), cfg); }
+function legend(id, items){ $(id).innerHTML = items.map(([c,l,dash]) => `<span class="leg-item"><span class="leg-dot" style="background:${dash?'transparent':c};${dash?`border-top:2px dashed ${c};height:0`:''}"></span>${l}</span>`).join(''); }
+function table(id, head, rows, hl){ $(id).innerHTML = `<thead><tr>${head.map(h=>`<th class="${h[1]||''}">${h[0]}</th>`).join('')}</tr></thead><tbody>${rows.map((r,i)=>`<tr class="${hl&&hl(i,r)?'hl':''}">${r.map((c,j)=>`<td class="${head[j][1]||''}">${c}</td>`).join('')}</tr>`).join('')}</tbody>`; }
+const FN = ['1H Apr','2H Apr','1H May','2H May','1H Jun','2H Jun','1H Jul','2H Jul','1H Aug','2H Aug','1H Sep','2H Sep','1H Oct','2H Oct','1H Nov','2H Nov','1H Dec','2H Dec','1H Jan','2H Jan','1H Feb','2H Feb','1H Mar','2H Mar'];
+const MY = ['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'];
+const line = (label, data, color, o={}) => Object.assign({label, data, borderColor:color, backgroundColor:color, borderWidth:2, pointRadius:0, pointHoverRadius:4, tension:.25, spanGaps:true}, o);
+
+let J;
+fetch('sugar/data/sugar.json?' + Date.now()).then(r => r.json()).then(j => { J = j; render(); }).catch(e => { $('err').style.display='block'; console.error(e); });
+
+function render(){
+  $('built').textContent = J.built;
+  const cr = J.crush, cur = cr && cr.current, seas = cr ? Object.keys(cr.seasons).sort() : [];
+  const prev = seas[seas.length-2];
+  kpis(); crush(); parity(); white(); exportsSec(); world(); insights();
+
+  function kpis(){
+    const S = J.snapshot || {}, out = [];
+    const k = (label, val, unit, sub) => out.push(`<div class="kpi"><div class="kpi-label">${label}</div><div class="kpi-val">${val}</div><div class="kpi-unit">${unit}</div><div class="kpi-sub">${sub}</div></div>`);
+    if (S['SB1!']) k('NY No.11 front', f(S['SB1!'].last,2), '¢/lb · ' + S['SB1!'].date, `1w ${sgn(S['SB1!'].w1)} · 1m ${sgn(S['SB1!'].m1)} · YTD ${sgn(S['SB1!'].ytd)}`);
+    const wc = J.white && J.white.curve && J.white.curve[0];
+    if (S['W1!']) k('London No.5 front', f(S['W1!'].last,1), 'US$/t', `1w ${sgn(S['W1!'].w1)} · 1m ${sgn(S['W1!'].m1)} · YTD ${sgn(S['W1!'].ytd)}`);
+    if (wc) k('White premium', f(wc.prem,1), `US$/t · ${wc.pair}`, `vs ${f(wc.prem_1w,1)} a week ago · ${wc.pct_vs_hist!=null? wc.pct_vs_hist+'th pct of past '+wc.mon+' pairs':''}`);
+    const pn = J.parity && J.parity.now;
+    if (pn) k('Hydrous ethanol parity', f(pn.parity,2), `¢/lb · B3 R$${f(pn.eth,0)}/m³ · BRL ${f(pn.fx,3)}`, `Sugar pays ${sgn(pn.sb-pn.parity,2,'¢')} over ethanol`);
+    if (cr){ const sd = cr.same_date, a = sd[sd.length-1], b = sd[sd.length-2];
+      k('CS sugar to ' + cr.projection.end.slice(5), f(a.sugar,2), 'mmt season to date (MAPA)', `vs ${f(b.sugar,2)} last season ${sgn(pct(a.sugar,b.sugar))} · ${f(a.kgt,1)} kg/t vs ${f(b.kgt,1)}`); }
+    const E = J.exports; if (E){ const p = E.pace, a = p[p.length-1], b = p[p.length-2];
+      k('Brazil exports MY to ' + MY[E.k], f(a.to_date,2), `mmt · ${a.my} (Apr–${MY[E.k]})`, `vs ${f(b.to_date,2)} ${b.my} ${sgn(pct(a.to_date,b.to_date))}`); }
+    $('kpis').innerHTML = out.join('');
+  }
+
+  function crush(){
+    if (!cr) return;
+    const others = seas.slice(-6, -2);
+    const ds = [], dk = [];
+    others.forEach(s => { ds.push(line(s, cr.seasons[s].sugar, C.hist, {borderWidth:1.5})); });
+    ds.push(line(prev, cr.seasons[prev].sugar, C.s2)); ds.push(line(cur, cr.seasons[cur].sugar, C.s1, {borderWidth:2.5}));
+    draw('cSugarCum', {type:'line', data:{labels:FN, datasets:ds}, options:{maintainAspectRatio:false, scales:{x:scaleX(), y:scaleY({title:{display:true,text:'mmt'}})}}});
+    legend('lSugarCum', [[C.s1,cur],[C.s2,prev],[C.hist, others[0]+'–'+others[others.length-1]]]);
+    others.forEach(s => dk.push(line(s, cr.seasons[s].kgt_fn, C.hist, {borderWidth:1.5})));
+    dk.push(line(prev, cr.seasons[prev].kgt_fn, C.s2)); dk.push(line(cur, cr.seasons[cur].kgt_fn, C.s1, {borderWidth:2.5}));
+    draw('cKgt', {type:'line', data:{labels:FN, datasets:dk}, options:{maintainAspectRatio:false, scales:{x:scaleX(), y:scaleY({title:{display:true,text:'kg/t'}})}}});
+    legend('lKgt', [[C.s1,cur],[C.s2,prev],[C.hist,'earlier seasons']]);
+
+    const P = cr.projection, last = P.history[P.history.length-1];
+    $('projSub').textContent = `${cur} through ${P.end} (fortnight ${P.fn} of 24). Range = middle half of ${P.cane? P.cane.n:0} past-season paths; min–max in brackets`;
+    const row = (lab, k, u) => P[k] ? [lab, f(P[k].now,1), `<b>${f(P[k].mid,1)}</b>`, `${f(P[k].lo,1)}–${f(P[k].hi,1)}`, `(${f(P[k].min,1)}–${f(P[k].max,1)})`, f(last[k],1), sgn(pct(P[k].mid,last[k]))] : null;
+    table('tProj', [['',''],['To date','r'],['Projected','r'],['Likely range','r'],['Extremes','r'],[last.safra,'r'],['Change','r']],
+      [row('Cane, mmt','cane'), row('Sugar, mmt','sugar'), row('Ethanol, bn L','ethanol')].filter(Boolean));
+    $('projNote').innerHTML = `Each past season's remaining crush after fortnight ${P.fn} is scaled by how fast this season crushed over the last four fortnights relative to that season, and its rest-of-season sugar yield is applied relative to the current ${f(P.kgt_window,1)} kg/t. Ethanol includes corn ethanol.`;
+    $('sameSub').textContent = `Centre-South cumulative at fortnight ${P.fn}`;
+    table('tSame', [['Season',''],['Cane mmt','r'],['Sugar mmt','r'],['Ethanol bn L','r'],['Sugar kg/t','r'],['Hydrous stock bn L','r']],
+      cr.same_date.map(r => [r.safra, f(r.cane,1), f(r.sugar,2), f(r.ethanol,2), f(r.kgt,1), f(r.hyd_stock,2)]).reverse(), i => i===0);
+    $('stSub').textContent = `${cur} vs ${prev}, same date`;
+    table('tStates', [['State',''],['Cane mmt','r'],['vs LY','r'],['Sugar mmt','r'],['vs LY','r'],['kg/t','r']],
+      cr.states.filter(s => s.cane > 0.5).map(s => [s.uf, f(s.cane,1), sgn(pct(s.cane,s.cane_prev)), f(s.sugar,2), sgn(pct(s.sugar,s.sugar_prev)), f(s.sugar/s.cane*1000,1)]));
+    // stocks
+    const st = [];
+    others.forEach(s => st.push(line(s, cr.seasons[s].hyd_stock, C.hist, {borderWidth:1.5})));
+    st.push(line(prev, cr.seasons[prev].hyd_stock, C.s2)); st.push(line(cur, cr.seasons[cur].hyd_stock, C.s1, {borderWidth:2.5}));
+    draw('cStock', {type:'line', data:{labels:FN, datasets:st}, options:{maintainAspectRatio:false, scales:{x:scaleX(), y:scaleY({title:{display:true,text:'bn L'}})}}});
+    legend('lStock', [[C.s1,cur],[C.s2,prev],[C.hist,'earlier seasons']]);
+    // mix
+    const U = J.unica;
+    if (U){
+      const im = U.implied_mix, lab = cr.seasons[cur].end.map(e => FN[cr.seasons[cur].fn[cr.seasons[cur].end.indexOf(e)]-1]);
+      draw('cMix', {type:'line', data:{labels:lab, datasets:[
+        line('Implied (MAPA, corn removed)', im.map(x => x.mix), C.s1, {pointRadius: im.map(x => x.corn_est ? 3 : 0), pointStyle:'rectRot'}),
+        line(`UNICA accumulated ${U.seasons[1]}`, lab.map(_ => U.accumulated.mix_sugar[1]), C.s1, {borderDash:[5,4], borderWidth:1.5}),
+        line(`UNICA accumulated ${U.seasons[0]}`, lab.map(_ => U.accumulated.mix_sugar[0]), C.s2, {borderDash:[5,4], borderWidth:1.5})]},
+        options:{maintainAspectRatio:false, scales:{x:scaleX(), y:scaleY({title:{display:true,text:'% sugar'}})}}});
+      legend('lMix', [[C.s1,'Implied fortnightly mix'],[C.s1,`UNICA ${U.seasons[1]} to ${U.position}`,1],[C.s2,`UNICA ${U.seasons[0]} same date`,1]]);
+      $('mixSub').textContent = `Implied mix = sugar ATR ÷ (sugar + cane-ethanol ATR); corn ethanol from UNICA, diamonds = corn carried forward from UNICA's last four fortnights`;
+      $('unSub').textContent = `Centre-South, accumulated to ${U.position} and month of ${U.month} (UNICA now publishes monthly)`;
+      const M = [['cane_kt','Cane, kt',0],['sugar_kt','Sugar, kt',0],['ethanol_ml','Ethanol, M L',0],['atr_kg_t','ATR, kg/t',2],['mix_sugar','Sugar mix, %',2],['sugar_kg_t','Sugar, kg/t',2],['ethanol_l_t','Ethanol, L/t',2]];
+      table('tUnica', [['',''],[`Acc. ${U.seasons[0]}`,'r'],[`Acc. ${U.seasons[1]}`,'r'],['Δ','r'],[`${U.month} prev`,'r'],[`${U.month}`,'r'],['Δ','r']],
+        M.filter(m => U.accumulated[m[0]]).map(([k,l,d]) => { const a = U.accumulated[k], m = U.monthly[k]||[]; const isP = k==='mix_sugar';
+          return [l, f(a[0],d), f(a[1],d), isP ? sgn(a[1]-a[0],2,'pt') : sgn(pct(a[1],a[0])), f(m[0],d), f(m[1],d), isP ? sgn(m[1]-m[0],2,'pt') : sgn(pct(m[1],m[0]))]; }));
+    }
+  }
+
+  function parity(){
+    const P = J.parity; if (!P) return;
+    const K = J.constants;
+    $('inLog').value = K.logistics_brl; $('inPol').value = (K.pol*100).toFixed(2); $('inAs').value = K.atr.sugar; $('inAh').value = K.atr.hyd;
+    const redraw = () => {
+      const lg = +$('inLog').value, pol = +$('inPol').value/100, as = +$('inAs').value, ah = +$('inAh').value, y0 = String(+$('inFrom').value || 2019);
+      const i0 = Math.max(0, P.dates.findIndex(d => d >= y0));
+      const d = P.dates.slice(i0), par = [], sp = [];
+      for (let i = i0; i < P.dates.length; i++){ const v = (P.eth[i]*as/ah + lg)/P.fx[i]/22.0462/(1+pol); par.push(+v.toFixed(2)); sp.push(+(P.sb[i]-v).toFixed(2)); }
+      draw('cPar', {type:'line', data:{labels:d, datasets:[line('Hydrous parity', par, C.s2, {tension:0}), line('NY11 front', P.sb.slice(i0), C.s1, {tension:0})]},
+        options:{maintainAspectRatio:false, scales:{x:scaleX({ticks:{maxTicksLimit:8, callback:(v,i)=>d[i].slice(0,7)}}), y:scaleY({title:{display:true,text:'¢/lb'}})}}});
+      legend('lPar', [[C.s1,'NY11 front'],[C.s2,'Hydrous ethanol parity (B3 front)']]);
+      draw('cParSp', {type:'line', data:{labels:d, datasets:[line('Sugar − ethanol', sp, C.s1, {tension:0, fill:{target:{value:0}, above:'rgba(168,137,42,.18)', below:'rgba(58,156,192,.18)'}})]},
+        options:{maintainAspectRatio:false, scales:{x:scaleX({ticks:{maxTicksLimit:8, callback:(v,i)=>d[i].slice(0,7)}}), y:scaleY({title:{display:true,text:'¢/lb'}})}}});
+      const n = par.length-1, sorted = sp.slice(-1260).slice().sort((a,b)=>a-b), rank = Math.round(sorted.filter(x => x <= sp[n]).length/sorted.length*100);
+      $('parNote').innerHTML = `<b>${d[n]}:</b> B3 hydrous R$${f(P.eth[P.eth.length-1],0)}/m³ at BRL ${f(P.fx[P.fx.length-1],4)} ≈ <b>${f(par[n],2)}¢/lb</b> NY11-equivalent; NY11 front ${f(P.sb[P.sb.length-1],2)}¢ → sugar premium <b>${f(sp[n],2)}¢</b> (${rank}th percentile of the last five years). ` +
+        `Parity = (hydrous R$/m³ × ATR per kg sugar ÷ ATR per litre hydrous + logistics) ÷ BRL ÷ 22.0462 ÷ (1 + polarisation premium). B3 hydrous futures settle on the CEPEA/ESALQ Paulínia indicator, which tracked CEPEA's net-of-tax São Paulo price within a few percent in our check; front-month B3 and NY11 contracts do not expire together, so treat this as a daily indicator, not a hedge ratio.`;
+    };
+    ['inLog','inPol','inAs','inAh','inFrom'].forEach(id => $(id).addEventListener('input', redraw));
+    redraw();
+    const Pm = J.pump;
+    if (Pm){ draw('cPump', {type:'line', data:{labels:Pm.dates, datasets:[line('Hydrous ÷ gasoline', Pm.ratio, C.s1, {tension:0}), line('70% switch line', Pm.dates.map(_=>70), C.s3, {borderDash:[5,4], borderWidth:1.5})]},
+      options:{maintainAspectRatio:false, scales:{x:scaleX({ticks:{maxTicksLimit:8, callback:(v,i)=>Pm.dates[i].slice(0,7)}}), y:scaleY({title:{display:true,text:'%'}})}}}); }
+    else $('pumpCard').style.display = 'none';
+  }
+
+  function white(){
+    const W = J.white; if (!W) return;
+    const i0 = W.front.dates.findIndex(d => d >= '2015');
+    const d = W.front.dates.slice(i0), v = W.front.prem.slice(i0), pr = W.front.pair.slice(i0);
+    draw('cWp', {type:'line', data:{labels:d, datasets:[line('Front-pair premium', v, C.s1, {tension:0}),
+      line('Refining cost, low', d.map(_=>90), C.hist, {borderDash:[4,4], borderWidth:1, pointHoverRadius:0}), line('Refining cost, high', d.map(_=>110), C.hist, {borderDash:[4,4], borderWidth:1, pointHoverRadius:0, fill:'-1', backgroundColor:'rgba(138,141,158,.08)'})]},
+      options:{maintainAspectRatio:false, plugins:{tooltip:{callbacks:{footer:(it)=> pr[it[0].dataIndex]}}}, scales:{x:scaleX({ticks:{maxTicksLimit:8, callback:(x,i)=>d[i].slice(0,7)}}), y:scaleY({title:{display:true,text:'US$/t'}})}}});
+    legend('lWp', [[C.s1,'Front-pair premium'],[C.hist,'US$90–110/t refining-cost band',1]]);
+    table('tWp', [['Pair',''],['White $/t','r'],['Raw ¢/lb','r'],['Premium $/t','r'],['1w ago','r'],['Pctile','r']],
+      W.curve.map(c => [c.pair, f(c.white,1), f(c.raw,2), `<b>${f(c.prem,1)}</b>`, f(c.prem_1w,1), c.pct_vs_hist==null?'—':c.pct_vs_hist+'th']), i => i===0);
+    const mons = ['H','K','Q','V','Z'], names = {H:'Mar/Mar',K:'May/May',Q:'Aug/Jul',V:'Oct/Oct',Z:'Dec/Mar'};
+    const years = [...new Set(mons.flatMap(m => (W.history[m]||[]).map(h => h.year)))].sort().slice(-10);
+    table('tWpHist', [['Pair',''], ...years.map(y => [String(y),'r']), ['Avg','r']],
+      mons.filter(m => W.history[m]).map(m => { const h = W.history[m], vals = years.map(y => (h.find(x => x.year===y)||{}).avg30); const ok = vals.filter(x => x!=null);
+        return [names[m], ...vals.map(x => f(x,0)), `<b>${f(ok.reduce((a,b)=>a+b,0)/ok.length,0)}</b>`]; }));
+  }
+
+  function exportsSec(){
+    const E = J.exports; if (!E) return;
+    const M = E.monthly;
+    draw('cExpM', {type:'bar', data:{labels:M.ym, datasets:[{label:'Raw', data:M.raw, backgroundColor:C.s1, borderRadius:{topLeft:0,topRight:0}, borderColor:'#12151f', borderWidth:{top:2}}, {label:'White', data:M.white, backgroundColor:C.s2, borderRadius:{topLeft:4,topRight:4}, borderSkipped:'bottom'}]},
+      options:{maintainAspectRatio:false, scales:{x:scaleX({stacked:true, grid:{display:false}}), y:scaleY({stacked:true, title:{display:true,text:'mmt'}})}}});
+    legend('lExpM', [[C.s1,'Raw (VHP)'],[C.s2,'White']]);
+    const ys = Object.keys(E.my).sort(), cy = String(E.cur_my), py = String(E.cur_my-1), others = ys.filter(y => y!==cy && y!==py).slice(-4);
+    const ds = others.map(y => line(`${y}/${(+y+1)%100}`, E.my[y].cum, C.hist, {borderWidth:1.5}));
+    ds.push(line(`${py}/${(+py+1)%100}`, E.my[py].cum, C.s2)); ds.push(line(`${cy}/${(+cy+1)%100}`, E.my[cy].cum, C.s1, {borderWidth:2.5}));
+    draw('cExpC', {type:'line', data:{labels:MY, datasets:ds}, options:{maintainAspectRatio:false, scales:{x:scaleX(), y:scaleY({title:{display:true,text:'mmt'}})}}});
+    legend('lExpC', [[C.s1,`${cy}/${(+cy+1)%100}`],[C.s2,`${py}/${(+py+1)%100}`],[C.hist,'earlier years']]);
+    $('paceSub').textContent = `Apr–${MY[E.k]} each marketing year; Secex data through ${E.last}`;
+    table('tPace', [['MY',''],[`Apr–${MY[E.k]}`,'r'],['vs prior','r'],['Full year','r'],['Share shipped by '+MY[E.k],'r']],
+      E.pace.map((r,i) => [r.my, f(r.to_date,2), i ? sgn(pct(r.to_date, E.pace[i-1].to_date)) : '—', r.total ? f(r.total,2) : '—', r.total ? f(r.to_date/r.total*100,0)+'%' : '—']).reverse(), i => i===0);
+    $('destSub').textContent = `Apr–${MY[E.k]} ${E.cur_my}/${(E.cur_my+1)%100} vs same months a year earlier, mmt`;
+    table('tDest', [['Destination',''],['This MY','r'],['Last MY','r'],['Change','r']], E.dest.map(r => [r.country, f(r.t,3), f(r.prev,3), sgn(pct(r.t, r.prev))]));
+  }
+
+  function world(){
+    const P = J.psd; if (!P) return;
+    const yrs = P.Brazil.years, i0 = yrs.findIndex(y => y >= 2010), lab = yrs.slice(i0).map(y => `${y}/${(y+1)%100}`);
+    const al = (o, k) => yrs.slice(i0).map(y => { const i = o.years.indexOf(y); return i < 0 ? null : o[k][i]; });
+    draw('cProd', {type:'line', data:{labels:lab, datasets:[line('Brazil', al(P.Brazil,'prod'), C.s1), line('India', al(P.India,'prod'), C.s2), line('Thailand', al(P.Thailand,'prod'), C.s3)]},
+      options:{maintainAspectRatio:false, scales:{x:scaleX(), y:scaleY({title:{display:true,text:'mmt'}})}}});
+    legend('lProd', [[C.s1,'Brazil'],[C.s2,'India'],[C.s3,'Thailand']]);
+    const w = P.World, wi = w.years.findIndex(y => y >= 2005);
+    draw('cStu', {type:'bar', data:{labels:w.years.slice(wi).map(y => `${y}/${(y+1)%100}`), datasets:[{label:'Stocks/use %', data:w.stu.slice(wi), backgroundColor:C.s1, borderRadius:{topLeft:4,topRight:4}, borderSkipped:'bottom'}]},
+      options:{maintainAspectRatio:false, scales:{x:scaleX({grid:{display:false}}), y:scaleY({title:{display:true,text:'%'}})}}});
+    const rows = [];
+    ['Brazil','India','Thailand','China','EU','World'].forEach(c => { const o = P[c]; if (!o || !o.years) return; const n = o.years.length;
+      for (let i = n-3; i < n; i++){ if (i < 0) continue; rows.push([i===n-3 ? `<b>${c}</b>` : '', `${o.years[i]}/${(o.years[i]+1)%100}`, f(o.prod[i],1), f(o.cons[i],1), f(o.exp[i],1), f(o.end[i],1)]); } });
+    table('tPsd', [['',''],['MY',''],['Production','r'],['Consumption','r'],['Exports','r'],['End stocks','r']], rows);
+    const E = (J.estimates || []).slice().sort((a,b) => a.country.localeCompare(b.country) || b.date.localeCompare(a.date));
+    table('tEst', [['Country',''],['Season',''],['Item',''],['Value','r'],['Source',''],['Date','']],
+      E.map(e => [e.country + (e.scope && e.scope!=='Total' && e.scope!=='All India' ? ` <span class="pill">${e.scope}</span>` : ''), e.season, e.item, `<b>${f(e.value, Math.abs(e.value) < 1 ? 2 : 1)}</b> ${e.unit}`, e.url ? `<a href="${e.url}" style="color:inherit" target="_blank" rel="noopener">${e.source}</a>` : e.source, e.date]));
+  }
+
+  function insights(){
+    const L = [];
+    if (cr){ const P = cr.projection, sd = cr.same_date, a = sd[sd.length-1], b = sd[sd.length-2], last = P.history[P.history.length-1];
+      L.push(`Centre-South sugar is ${f(a.sugar,1)} mmt to ${P.end}, ${f(Math.abs(pct(a.sugar,b.sugar)),1)}% ${a.sugar<b.sugar?'below':'above'} last season on ${f(Math.abs(pct(a.cane,b.cane)),1)}% ${a.cane<b.cane?'less':'more'} cane: yield per tonne is ${f(a.kgt,1)} kg/t against ${f(b.kgt,1)}.`);
+      if (P.sugar) L.push(`Pace model puts final CS sugar at <b>${f(P.sugar.mid,1)} mmt</b> (likely ${f(P.sugar.lo,1)}–${f(P.sugar.hi,1)}) and cane at ${f(P.cane.mid,0)} mmt, against ${f(last.sugar,1)} mmt and ${f(last.cane,0)} mmt in ${last.safra}.`);
+      const est = (J.estimates||[]).filter(e => e.country==='Brazil' && e.season==='2026/27' && /production/i.test(e.item));
+      if (est.length && P.sugar) L.push(`Published 2026/27 Brazil forecasts (${est.map(e => `${e.source.split(' ')[0]} ${f(e.value,1)}${e.scope==='Centre-South'?' CS':''}`).join(', ')}) look high against the ${f(P.sugar.mid,1)} mmt CS pace; total Brazil adds about 3–3.5 mmt from the North-Northeast.`);
+    }
+    const pn = J.parity && J.parity.now; if (pn) L.push(`Hydrous ethanol is worth ${f(pn.parity,2)}¢/lb in NY11 terms; sugar pays ${f(pn.sb-pn.parity,2)}¢ more, so mills keep maximising sugar where the plant allows.`);
+    const wc = J.white && J.white.curve && J.white.curve[0]; if (wc) L.push(`White premium on ${wc.pair} is US$${f(wc.prem,0)}/t (${wc.pct_vs_hist!=null? wc.pct_vs_hist+'th percentile of past '+wc.mon+' pairs':'no history'}); ${wc.prem>110?'above refining cost, encouraging raw demand from destination refiners':wc.prem<90?'below refining cost, a drag on raw-sugar demand':'inside the typical refining-cost band'}.`);
+    const E = J.exports; if (E){ const p = E.pace, a = p[p.length-1], b = p[p.length-2]; L.push(`Brazil shipped ${f(a.to_date,1)} mmt in Apr–${MY[E.k]}, ${f(Math.abs(pct(a.to_date,b.to_date)),0)}% ${a.to_date<b.to_date?'less':'more'} than a year earlier; ${E.dest[0] ? E.dest[0].country + ' remains the largest buyer' : ''}.`); }
+    const ind = (J.estimates||[]).filter(e => e.country==='India' && e.season==='2026/27' && /production/i.test(e.item)).sort((a,b)=>b.date.localeCompare(a.date))[0];
+    if (ind) L.push(`India 2026/27: ${ind.source} at ${f(ind.value,1)} mmt (latest), below USDA's official 33.6 mmt; Thailand 2026/27 is expected lower after a 12.0 mmt 2025/26.`);
+    $('insights').innerHTML = L.map(x => `<li>${x}</li>`).join('');
+  }
+}
+</script>
+</body>
+</html>

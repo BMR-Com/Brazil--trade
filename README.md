@@ -151,3 +151,13 @@ Every Monday 08:00 UTC
 - **Sugar/Soy/Corn:** `mt` = metric tonnes
 - **FOB:** `fob_usd` in USD
 - **SSL note:** MDIC's CDN has certificate chain issues — `verify=False` is set in scraper.py (safe because we're only reading public open data, not sending credentials)
+
+## Sugar desk (`sugar.html`)
+
+A separate tab for Brazil and world sugar fundamentals, refreshed every weekday by `.github/workflows/sugar.yml`:
+
+- Centre-South crush, sugar, ethanol and ethanol stocks by fortnight (MAPA), plus UNICA's monthly report
+- Hydrous ethanol parity against NY No.11 (B3 hydrous ethanol futures, USD/BRL) and São Paulo pump prices (ANP)
+- White premium, London No.5 against NY No.11 by contract pair (ICE)
+- Brazil sugar exports, raw and white, by marketing year and destination (Secex, from this repo's trade data)
+- Brazil, India, Thailand and world balances (USDA PSD) and the latest published estimates (`sugar/data/estimates.json`)
