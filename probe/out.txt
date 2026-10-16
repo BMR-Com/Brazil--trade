@@ -2,70 +2,320 @@ FORM63 <form id="formConsulta" name="formConsulta" method="GET" action="listagem
 AROUND a href="javascript:;" title="Acompanhamento de safra" class="verde">Acompanhamento de safra</a></li><li class="breadcrumb-item active" aria-current="page"> <a href="listagem.php?idMn=63" title="RELAT&Oacute;RIO DE SAFRA" class="azul">RELAT&Oacute;RIO DE SAFRA</a></li> </ol> </nav> </div> </div> </header> <!-- CONTENT --> <section> <div> <div class="row"> <!-- PDF --> <div class="col-xl-12 col-lg-12 col-12"> <div class="content-pdf filter"> <form id="formConsulta" name="formConsulta" method="GET" action="listagem.php" style="position:relative; "> <input type="hidden" name="idMn" id="idMn" value="63"/> </form> <div class="pdf" style="margin-top: 20px;"> <div class="media"> <!-- <iframe src="https://docs.google.com/gview?url=https://unicadata.com.br/arquivos/pdfs/2026/09/978fce80f29c4ec511ea91c7ec89fcf7.pdf&embedded=true" width="100%" height="100%" frameborder="0" style="border:0"></iframe> --> <!-- <iframe src='https://unicadata.com.br/arquivos/pdfs/2026/09/978fce80f29c4ec511ea91c7ec89fcf7.pdf' width="100%" height="100%" frameborder="0" style="border:0"></iframe> --> <iframe class='iframe-doc' id='iframe_doc_936' src='https://unicadata.com.br/arquivos/pdfs/2026/09/978fce80f29c4ec511ea91c7ec89fcf7.pdf' height='600' width='653'></iframe> <!-- <iframe src="https://docs.google.com/gview?url=https://unicadata.com.br/arquivos/pdfs/2026/09/978fce80f29c4ec511ea91c7ec89fcf7.pdf&embedded=true" width="100%" height="100%" frameborder="0" style="border:0"></iframe> --> </div> </div> <!-- link relacionados --> </div> </div> </div> </div> <!-- BUTTONS --> <div class="actions d-inline-flex col-xl-3 col-lg-3 col-12"> <a href="https://unicadata.com.br/download_media.php?idM=6758186" class="btn btn-primary download" role="button" title="Baixar o documento" target="_blank">Baixar o documento</a> </div> </section> </main> </div> <iframe name="frmAjax" id="frmAjax" frameborder="0" width="0" height="0"></iframe> <!-- FOOTER --> <footer class="footer ml-sm-auto"> <div class="container d-flex align-items-center justify-content-between"> <p>C
 
 FORM31 > <div class="form-row align-items-center"> <div class="justify-content-start"> <div class="label col-auto mr-2"> <p>Selecione os parâmetros para a consulta:</p> </div> </div> <div class="form-row justify-content-end flex-fill align-items-center"> <input type="hidden" name="idTabela" id="idTabela" value="2493"/> <div class="col-4 mr-2 field-form"> <label>Produto</label> <img src="images/icon-calendar.svg" alt="Data"/> <select name="safra" class="form-control"> <option value="">Selecione</option> <option value="2020/2021" >2020/2021</option><option value="2019/2020" >2019/2020</option><option value="2018/2019" >2018/2019</option><option value="2017/2018" >2017/2018</option><option value="2016/2017" >2016/2017</option><option value="2015/2016" >2015/2016</option><option value="2014/2015" >2014/2015</option><option value="2013/2014" >2013/2014</option><option value="2012/2013" >2012/2013</option><option value="2011/2012" >2011/2012</option><option value="2010/2011" >2010/2011</option><option value="2009/2010" >2009/2010</option><option value="2008/2009" >2008/2009</option><option value="2007/2008" >2007/2008</option><option value="2006/2007" >2006/2007</option><option value="2005/2006" >2005/2006</option><option value="2004/2005" >2004/2005</option><option value="2003/2004" >2003/2004</option><option value="2002/2003" >2002/2003</option><option value="2001/2002" >2001/2002</option><option value="2000/2001" >2000/2001</option><option value="1999/2000" >1999/2000</option><option value="1998/1999" >1998/1999</option><option value="1997/1998" >1997/1998</option><option value="1996/1997" >1996/1997</option><option value="1995/1996" >1995/1996</option><option value="1994/1995" >1994/1995</option><option value="1993/1994" >1993/1994</option><option value="1992/1993" >1992/1993</option><option value="1991/1992" >1991/1992</option><option value="1990/1991" >1990/1991</option><option value="1989/1990" >1989/1990</option><option value="1988/1989" >1988/1989</option><option value="1987/1988" >1987/1988</option><option value="1986/1987" >1986/1987</option><option value="1985/1986" >1985/1986</option><option value="1984/1985" >1984/1985</option><option value="1983/1984" >1983/1984</option><option value="1982/1983" >1982/1983</option><option value="1981/1982" >1981/1982</option><option value="1980/1981" >1980/1981</option> </select> </div> <div class="col-4 mr-2 field-form"> <label>Estados</label> <input type="hidden" name="estado" id="estado" value="" /> <img src="images/icon-pin.svg" alt="Local" class="img-estado"/> <a style="font-size: 14px; color: #777777; line-height: 30px;" href="javascript:abrePopEstados('formulario');" class="bt-selecione-os-estados" title="Selecione os Estados">Selecione os Estados</a> </div> <div class="col-2"> <a class="btn btn-primary" href="javascript:visualizarHistoricoMoagem(4)" title="VISUALIZAR" class="bt-visualizar">VISUALIZAR</a> <!-- <button type="submit" class="btn btn-primary">Filtrar</button> --> </div> </div> </div> </form>
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 540, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/urllib3/connection.py", line 638, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1443, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 337, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 298, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/ssl.py", line 1327, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/ssl.py", line 1179, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
 
-The above exception was the direct cause of the following exception:
+PDF 200 application/pdf 1106043 None
+pages 11
 
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/requests/adapters.py", line 696, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 847, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 510, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 793, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 542, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 373, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='unicadata.com.br', port=443): Read timed out. (read timeout=40)
+--- page 1
+ S AFRA 2026/2027
+Acompanhamento
+da safra na região
+Centro-Sul
+Posição até 01/08/2026
 
-During handling of the above exception, another exception occurred:
+--- page 2
+ Tabela 1. Safra 2026/2027: posição ACUMULADA entre 1º de abril de 2026 até 01 de agosto de 2026
+Centro-Sul São Paulo Demais Estados
+Produtos
+2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%)
+Cana-de-açúcar ¹ 306.991 311.773 1,56% 173.062 172.434 -0,36% 133.930 139.339 4,04%
+Açúcar ¹ 19.331 16.991 -12,11% 12.380 11.032 -10,89% 6.951 5.958 -14,28%
+Etanol anidro ² 5.053 5.925 17,25% 2.338 2.590 10,78% 2.716 3.335 22,81%
+Etanol hidratado ² 8.858 10.269 15,93% 3.038 3.446 13,41% 5.819 6.823 17,24%
+Etanol total ² 13.911 16.194 16,41% 5.376 6.036 12,27% 8.535 10.158 19,01%
+ATR ¹ 38.950 39.879 2,38% 22.175 21.884 -1,31% 16.776 17.995 7,27%
+ATR/ tonelada de cana ³ 126,88 127,91 0,81% 128,13 126,92 -0,95% 125,26 129,14 3,10%
+açúcar 52,09% 44,71% 58,59% 52,91% 43,49% 34,75%
+Mix (%)
+etanol 47,91% 55,29% 41,41% 47,09% 56,51% 65,25%
+Litros etanol/ tonelada de cana 35,69 41,58 16,50% 31,07 35,00 12,68% 41,66 49,71 19,31%
+Kg açúcar/ tonelada de cana 62,97 54,50 -13,45% 71,53 63,98 -10,56% 51,90 42,76 -17,61%
+Tabela 2. Safra 2026/2027: posição MENSAL referente a julho de 2026
+Centro-Sul São Paulo Demais Estados
+Produtos
+2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%)
+Cana-de-açúcar ¹ 100.419 97.364 -3,04% 57.129 54.344 -4,88% 43.290 43.021 -0,62%
+Açúcar ¹ 7.057 6.237 -11,62% 4.550 3.992 -12,26% 2.507 2.245 -10,46%
+Etanol anidro ² 1.746 1.805 3,35% 826 829 0,39% 920 976 6,00%
+Etanol hidratado ² 2.729 3.024 10,83% 961 1.023 6,54% 1.768 2.001 13,17%
+Etanol total ² 4.475 4.829 7,91% 1.786 1.852 3,70% 2.688 2.976 10,71%
+ATR ¹ 13.711 13.339 -2,71% 7.829 7.355 -6,06% 5.881 5.984 1,75%
+ATR/ tonelada de cana ³ 136,53 137,00 0,34% 137,05 135,34 -1,25% 135,86 139,10 2,38%
+açúcar 54,02% 49,07% 60,99% 56,96% 44,74% 39,37%
+Mix (%)
+etanol 45,98% 50,93% 39,01% 43,04% 55,26% 60,63%
+Litros etanol/ tonelada de cana 36,82 41,00 11,36% 31,27 34,09 9,01% 44,15 49,74 12,67%
+Kg açúcar/ tonelada de cana 70,28 64,06 -8,85% 79,64 73,45 -7,77% 57,92 52,19 -9,90%
+Fonte: UNICA. Nota: ¹ - mil toneladas; ² - milhões de litros; ³ - kg de ATR/ tonelada de cana. Para efeito do cálculo do "ATR produto", excluiu-se a produção realizada de etanol a partir do milho, especificada na Tabela 8.
+TABLE [['Centro-Sul', None, 'São Paulo', 'Demais Estados'], ['2025/2026 2026/2027 Var. (%)', None, '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)'], ['306.991 311.773 1,56%', None, '173.062 172.434 -0,36%', None], ['19.331 16.991 -12,11%', None, '12.380 11.032 -10,89%', '6.951 5.958 -14,28%'], ['5.053 5.925 17,25%', None, '2.338 2.590 10,78%', None], ['8.858 10.269 15,93%', None, '3.038 3.446 13,41%', '5.819 6.823 17,24%'], ['13.911 16.194 16,41%', None, '5.376 6.036 12,27%', None], ['38.950 39.879 2,38%', None, '22.175 21.884 -1,31%', '16.776 17.995 7,27%'], ['126,88 127,91 0,81%', None, '128,13 126,92 -0,95%', None], ['52,09% 44,71%', None, '58,59% 52,91%', '43,49% 34,75%'], ['47,91% 55,29%', None, '41,41% 47,09%', '56,51% 65,25%'], ['35,69 41,58 16,50%', None, '31,07 35,00 12,68%', None], ['62,97 54,50 -13,45%', None, '71,53 63,98 -10,56%', '51,90 42,76 -17,61%'], [None, '', None, None]]
+TABLE [['Centro-Sul', 'São Paulo', 'Demais Estados'], ['2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)'], ['100.419 97.364 -3,04%', '57.129 54.344 -4,88%', None], ['7.057 6.237 -11,62%', '4.550 3.992 -12,26%', '2.507 2.245 -10,46%'], ['1.746 1.805 3,35%', '826 829 0,39%', None], ['2.729 3.024 10,83%', '961 1.023 6,54%', '1.768 2.001 13,17%'], ['4.475 4.829 7,91%', '1.786 1.852 3,70%', None], ['13.711 13.339 -2,71%', '7.829 7.355 -6,06%', '5.881 5.984 1,75%'], ['136,53 137,00 0,34%', '137,05 135,34 -1,25%', None], ['54,02% 49,07%', '60,99% 56,96%', '44,74% 39,37%'], ['45,98% 50,93%', '39,01% 43,04%', '55,26% 60,63%'], ['36,82 41,00 11,36%', '31,27 34,09 9,01%', None], ['70,28 64,06 -8,85%', '79,64 73,45 -7,77%', '57,92 52,19 -9,90%']]
 
-Traceback (most recent call last):
-  File "/home/runner/work/Brazil--trade/Brazil--trade/probe/probe.py", line 23, in <module>
-    t = S.get(B + q, timeout=40).text
-        ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/requests/sessions.py", line 671, in get
-    return self.request("GET", url, params=params, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/requests/sessions.py", line 651, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/requests/sessions.py", line 784, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/requests/adapters.py", line 742, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='unicadata.com.br', port=443): Read timed out. (read timeout=40)
+--- page 3
+ Tabela 3. Histórico da moagem quinzenal, ACUMULADA, da região Centro-Sul
+CANA-DE-AÇÚCAR (toneladas)
+Quinzena São Paulo Centro-Sul Demais Estados
+2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%)
+16/04 8.253.154 11.007.246 33% 16.675.740 20.403.906 22% 8.422.586 9.396.660 12%
+01/05 18.281.747 34.213.121 87% 34.631.274 60.412.599 74% 16.349.527 26.199.478 60%
+16/05 42.522.164 59.141.087 39% 77.149.564 103.135.039 34% 34.627.400 43.993.952 27%
+01/06 70.592.036 81.076.256 15% 124.950.712 144.624.861 16% 54.358.676 63.548.605 17%
+16/06 91.441.515 102.324.748 12% 163.786.647 183.380.413 12% 72.345.132 81.055.665 12%
+01/07 115.932.547 118.090.274 2% 206.572.531 214.408.802 4% 90.639.984 96.318.528 6%
+16/07 144.500.262 147.028.804 2% 256.589.215 265.250.347 3% 112.088.953 118.221.543 5%
+01/08 173.061.665 172.434.051 0% 306.991.377 311.773.080 2% 133.929.712 139.339.029 4%
+16/08
+01/09
+16/09
+01/10
+16/10
+01/11
+16/11
+01/12
+16/12
+01/01
+16/01
+01/02
+16/02
+01/03
+16/03
+01/04
+Fonte: UNICA.
+TABLE [['CANA-DE-AÇÚCAR (toneladas)\nQuinzena São Paulo Centro-Sul Demais Estados\n2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%)', 'CANA-DE-AÇÚCAR (toneladas)', None, None], [None, 'São Paulo', 'Centro-Sul', 'Demais Estados'], [None, None, '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)'], [None, '8.253.154 11.007.246 33%\n18.281.747 34.213.121 87%\n42.522.164 59.141.087 39%\n70.592.036 81.076.256 15%\n91.441.515 102.324.748 12%\n115.932.547 118.090.274 2%\n144.500.262 147.028.804 2%\n173.061.665 172.434.051 0%', '16.675.740 20.403.906 22%\n34.631.274 60.412.599 74%\n77.149.564 103.135.039 34%\n124.950.712 144.624.861 16%\n163.786.647 183.380.413 12%\n206.572.531 214.408.802 4%\n256.589.215 265.250.347 3%\n306.991.377 311.773.080 2%', None]]
+
+--- page 4
+ Tabela 4. Histórico da produção quinzenal, ACUMULADA, de açúcar da região Centro-Sul
+AÇÚCAR (toneladas)
+Quinzena São Paulo Centro-Sul Demais Estados
+2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%)
+16/04 403.936 453.735 12% 735.001 677.138 -8% 331.065 223.403 -33%
+01/05 961.961 1.692.958 76% 1.594.291 2.478.983 55% 632.330 786.025 24%
+16/05 2.521.186 3.184.866 26% 4.016.159 4.638.061 15% 1.494.973 1.453.195 -3%
+01/06 4.456.041 4.562.404 2% 6.975.608 6.850.959 -2% 2.519.567 2.288.555 -9%
+16/06 5.966.518 6.053.391 1% 9.428.179 9.123.691 -3% 3.461.661 3.070.300 -11%
+01/07 7.830.232 7.040.552 -10% 12.274.010 10.753.903 -12% 4.443.778 3.713.351 -16%
+16/07 10.046.910 9.132.369 -9% 15.699.563 13.966.749 -11% 5.652.653 4.834.380 -14%
+01/08 12.379.914 11.032.297 -11% 19.331.064 16.990.685 -12% 6.951.150 5.958.388 -14%
+16/08
+01/09
+16/09
+01/10
+16/10
+01/11
+16/11
+01/12
+16/12
+01/01
+16/01
+01/02
+16/02
+01/03
+16/03
+01/04
+Fonte: UNICA.
+TABLE [['Quinzena', 'AÇÚCAR (toneladas)', None, None], [None, 'São Paulo', 'Centro-Sul', 'Demais Estados'], [None, '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)'], [None, '403.936 453.735 12%\n961.961 1.692.958 76%\n2.521.186 3.184.866 26%\n4.456.041 4.562.404 2%\n5.966.518 6.053.391 1%\n7.830.232 7.040.552 -10%\n10.046.910 9.132.369 -9%\n12.379.914 11.032.297 -11%', '735.001 677.138 -8%\n1.594.291 2.478.983 55%\n4.016.159 4.638.061 15%\n6.975.608 6.850.959 -2%\n9.428.179 9.123.691 -3%\n12.274.010 10.753.903 -12%\n15.699.563 13.966.749 -11%\n19.331.064 16.990.685 -12%', None]]
+
+--- page 5
+ Tabela 5. Histórico da produção quinzenal, ACUMULADA, de etanol total da região Centro-Sul
+ETANOL TOTAL (m³)
+Quinzena São Paulo Centro-Sul Demais Estados
+2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%)
+16/04 257.184 377.905 47% 922.647 1.232.347 34% 665.463 854.442 28%
+01/05 582.567 1.212.980 108% 1.913.194 3.277.944 71% 1.330.627 2.064.964 55%
+16/05 1.295.110 2.111.788 63% 3.696.278 5.434.607 47% 2.401.168 3.322.819 38%
+01/06 2.159.828 2.873.547 33% 5.732.464 7.569.756 32% 3.572.636 4.696.209 31%
+16/06 2.823.542 3.653.347 29% 7.523.303 9.666.922 28% 4.699.761 6.013.575 28%
+01/07 3.589.900 4.183.521 17% 9.436.364 11.364.829 20% 5.846.464 7.181.308 23%
+16/07 4.471.378 5.164.134 15% 11.624.180 13.817.315 19% 7.152.802 8.653.181 21%
+01/08 5.376.250 6.035.892 12% 13.911.156 16.193.688 16% 8.534.906 10.157.796 19%
+16/08
+01/09
+16/09
+01/10
+16/10
+01/11
+16/11
+01/12
+16/12
+01/01
+16/01
+01/02
+16/02
+01/03
+16/03
+01/04
+Fonte: UNICA.
+TABLE [['Quinzena', 'ETANOL TOTAL (m³)', None, None], [None, 'São Paulo', 'Centro-Sul', 'Demais Estados'], [None, '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)'], [None, '257.184 377.905 47%\n582.567 1.212.980 108%\n1.295.110 2.111.788 63%\n2.159.828 2.873.547 33%\n2.823.542 3.653.347 29%\n3.589.900 4.183.521 17%\n4.471.378 5.164.134 15%\n5.376.250 6.035.892 12%', '922.647 1.232.347 34%\n1.913.194 3.277.944 71%\n3.696.278 5.434.607 47%\n5.732.464 7.569.756 32%\n7.523.303 9.666.922 28%\n9.436.364 11.364.829 20%\n11.624.180 13.817.315 19%\n13.911.156 16.193.688 16%', None]]
+
+--- page 6
+ Tabela 6. Histórico da produção quinzenal, ACUMULADA, de etanol anidro da região Centro-Sul
+ETANOL ANIDRO (m³)
+Quinzena São Paulo Centro-Sul Demais Estados
+2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%)
+16/04 62.988 103.107 64% 180.383 331.474 84% 117.395 228.367 95%
+01/05 175.588 404.625 130% 467.882 958.098 105% 292.294 553.473 89%
+16/05 463.178 806.247 74% 1.080.666 1.785.705 65% 617.488 979.458 59%
+01/06 840.912 1.145.815 36% 1.886.186 2.584.773 37% 1.045.274 1.438.958 38%
+16/06 1.152.627 1.498.311 30% 2.564.234 3.413.441 33% 1.411.607 1.915.130 36%
+01/07 1.512.087 1.760.899 16% 3.307.194 4.120.330 25% 1.795.107 2.359.431 31%
+16/07 1.921.898 2.191.515 14% 4.166.457 5.032.449 21% 2.244.559 2.840.934 27%
+01/08 2.337.794 2.589.835 11% 5.053.343 5.924.929 17% 2.715.549 3.335.094 23%
+16/08
+01/09
+16/09
+01/10
+16/10
+01/11
+16/11
+01/12
+16/12
+01/01
+16/01
+01/02
+16/02
+01/03
+16/03
+01/04
+Fonte: UNICA.
+TABLE [['Quinzena', 'ETANOL ANIDRO (m³)', None, None], [None, 'São Paulo', 'Centro-Sul', 'Demais Estados'], [None, '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)'], [None, '62.988 103.107 64%\n175.588 404.625 130%\n463.178 806.247 74%\n840.912 1.145.815 36%\n1.152.627 1.498.311 30%\n1.512.087 1.760.899 16%\n1.921.898 2.191.515 14%\n2.337.794 2.589.835 11%', '180.383 331.474 84%\n467.882 958.098 105%\n1.080.666 1.785.705 65%\n1.886.186 2.584.773 37%\n2.564.234 3.413.441 33%\n3.307.194 4.120.330 25%\n4.166.457 5.032.449 21%\n5.053.343 5.924.929 17%', None]]
+
+--- page 7
+ Tabela 7. Histórico da produção quinzenal, ACUMULADA, de etanol hidratado da região Centro-Sul
+ETANOL HIDRATADO (m³)
+Quinzena São Paulo Centro-Sul Demais Estados
+2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%) 2025/2026 2026/2027 Var. (%)
+16/04 194.196 274.798 42% 742.264 900.873 21% 548.068 626.075 14%
+01/05 406.979 808.355 99% 1.445.312 2.319.846 61% 1.038.333 1.511.491 46%
+16/05 831.932 1.305.541 57% 2.615.612 3.648.902 40% 1.783.680 2.343.361 31%
+01/06 1.318.916 1.727.732 31% 3.846.278 4.984.983 30% 2.527.362 3.257.251 29%
+16/06 1.670.915 2.155.036 29% 4.959.069 6.253.481 26% 3.288.154 4.098.445 25%
+01/07 2.077.813 2.422.622 17% 6.129.170 7.244.499 18% 4.051.357 4.821.877 19%
+16/07 2.549.480 2.972.619 17% 7.457.723 8.784.866 18% 4.908.243 5.812.247 18%
+01/08 3.038.456 3.446.057 13% 8.857.813 10.268.759 16% 5.819.357 6.822.702 17%
+16/08
+01/09
+16/09
+01/10
+16/10
+01/11
+16/11
+01/12
+16/12
+01/01
+16/01
+01/02
+16/02
+01/03
+16/03
+01/04
+Fonte: UNICA.
+TABLE [['Quinzena', 'ETANOL HIDRATADO (m³)', None, None], [None, 'São Paulo', 'Centro-Sul', 'Demais Estados'], [None, '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)', '2025/2026 2026/2027 Var. (%)'], [None, '194.196 274.798 42%\n406.979 808.355 99%\n831.932 1.305.541 57%\n1.318.916 1.727.732 31%\n1.670.915 2.155.036 29%\n2.077.813 2.422.622 17%\n2.549.480 2.972.619 17%\n3.038.456 3.446.057 13%', '742.264 900.873 21%\n1.445.312 2.319.846 61%\n2.615.612 3.648.902 40%\n3.846.278 4.984.983 30%\n4.959.069 6.253.481 26%\n6.129.170 7.244.499 18%\n7.457.723 8.784.866 18%\n8.857.813 10.268.759 16%', None]]
+
+--- page 8
+ Tabela 8. Histórico - produção de etanol a partir do milho da região Centro-Sul (mil litros) - 2026/2027
+QUINZENAL ACUMULADO
+Quinzena a. Etanol b. Etanol Total a. Etanol b. Etanol Total
+anidro hidratado a+b anidro hidratado a+b
+16/04 161.414 237.050 398.464 161.414 237.050 398.464
+01/05 163.008 237.126 400.134 324.422 474.176 798.598
+16/05 176.688 201.803 378.491 501.110 675.979 1.177.089
+01/06 198.225 223.229 421.454 699.335 899.208 1.598.543
+16/06 200.343 198.109 398.452 899.678 1.097.317 1.996.995
+01/07 219.787 177.892 397.679 1.119.465 1.275.209 2.394.674
+16/07 193.774 208.563 402.337 1.313.239 1.483.772 2.797.011
+01/08 219.911 214.278 434.189 1.533.150 1.698.050 3.231.200
+16/08
+01/09
+16/09
+01/10
+16/10
+01/11
+16/11
+01/12
+16/12
+01/01
+16/01
+01/02
+16/02
+01/03
+16/03
+01/04
+Fonte: UNICA.
+TABLE [['Quinzena', 'QUINZENAL', None, 'ACUMULADO', None], [None, 'a. Etanol b. Etanol\nanidro hidratado', 'Total\na+b', 'a. Etanol b. Etanol\nanidro hidratado', 'Total\na+b'], [None, '161.414 237.050\n163.008 237.126\n176.688 201.803\n198.225 223.229\n200.343 198.109\n219.787 177.892\n193.774 208.563\n219.911 214.278', '398.464\n400.134\n378.491\n421.454\n398.452\n397.679\n402.337\n434.189', '161.414 237.050\n324.422 474.176\n501.110 675.979\n699.335 899.208\n899.678 1.097.317\n1.119.465 1.275.209\n1.313.239 1.483.772\n1.533.150 1.698.050', None]]
+
+--- page 9
+ Tabela 9. Vendas mensais de etanol, por tipo de produto e mercado de destino, pelas unidades da região Centro-Sul (m³)
+2025/2026 2026/2027 2025/2026 2026/2027 2025/2026 2026/2027
+Abr 2.787.817 2.785.824 59.012 47.800 2.728.805 2.738.024
+Mai 2.987.219 2.893.084 88.279 16.849 2.898.940 2.876.235
+Jun 2.797.757 3.120.474 107.301 99.019 2.690.456 3.021.455
+Jul 2.941.249 3.217.785 112.259 118.398 2.828.990 3.099.387
+Ago
+Set
+Out
+Nov
+Dez
+Jan
+Fev
+Mar
+Total 11.514.042 12.017.167 366.851 282.066 11.147.191 11.735.101
+Abr 946.531 1.015.182 41.857 36.100 904.674 979.082
+Mai 1.101.316 1.094.774 25.631 13 1.075.685 1.094.761
+Jun 1.022.106 1.271.267 38.445 27.569 983.661 1.243.698
+Jul 1.094.221 1.225.668 24.133 11.855 1.070.088 1.213.813
+Ago
+Set
+Out
+Nov
+Dez
+Jan
+Fev
+Mar
+Total 4.164.174 4.606.891 130.066 75.537 4.034.108 4.531.354
+Abr 1.841.286 1.770.642 17.155 11.700 1.824.131 1.758.942
+Mai 1.885.903 1.798.310 62.648 16.836 1.823.255 1.781.474
+Jun 1.775.651 1.849.207 68.856 71.450 1.706.795 1.777.757
+Jul 1.847.028 1.992.117 88.126 106.543 1.758.902 1.885.574
+Ago
+Set
+Out
+Nov
+Dez
+Jan
+Fev
+Mar
+Total 7.349.868 7.410.276 236.785 206.529 7.113.083 7.203.747
+Fonte: UNICA. Nota: *2ª quinzena.
+latot
+lonatE
+ordina
+lonatE
+odatardih
+lonatE
+Total Mercado externo Mercado interno
+Produto Mês
+TABLE [['Produto', 'Mês', 'Total', 'Mercado externo', 'Mercado interno'], [None, None, '2025/2026 2026/2027', '2025/2026 2026/2027', '2025/2026 2026/2027'], ['Abr 2.787.817 2.785.824 59.012 47.800\nMai 2.987.219 2.893.084 88.279 16.849\nJun 2.797.757 3.120.474 107.301 99.019\nJul 2.941.249 3.217.785 112.259 118.398\nAgo\nlatot\nSet\nOut lonatE\nNov', None, None, None, '2.728.805 2.738.024\n2.898.940 2.876.235\n2.690.456 3.021.455\n2.828.990 3.099.387'], ['', 'Dez\nJan\nFev\nMar', '', None, ''], ['', 'Total', '11.514.042 12.017.167', '366.851 282.066', '11.147.191 11.735.101'], ['Abr 946.531 1.015.182\nMai 1.101.316 1.094.774\nJun 1.022.106 1.271.267\nJul 1.094.221 1.225.668\nAgo\nordina\nSet\nOut\nlonat\nNov', None, None, '41.857 36.100\n25.631 13\n38.445 27.569\n24.133 11.855', '904.674 979.082\n1.075.685 1.094.761\n983.661 1.243.698\n1.070.088 1.213.813'], ['E', 'Dez\nJan\nFev\nMar', '', '', ''], ['', 'Total', '4.164.174 4.606.891', '130.066 75.537', '4.034.108 4.531.354'], ['Abr 1.841.286 1.770.642\nMai 1.885.903 1.798.310\nJun 1.775.651 1.849.207\nJul 1.847.028 1.992.117\nAgo odatardih\nSet\nOut\nNov lon', None, None, '17.155 11.700\n62.648 16.836\n68.856 71.450\n88.126 106.543', '1.824.131 1.758.942\n1.823.255 1.781.474\n1.706.795 1.777.757\n1.758.902 1.885.574'], ['atE', 'Dez\nJan\nFev\nMar', '', '', ''], ['', 'Total', '7.349.868 7.410.276', '236.785 206.529', '7.113.083 7.203.747']]
+
+--- page 10
+ Os dados de produção divulgados neste relatório são compilados e analisados pela UNICA, com números
+fornecidos pelas unidades produtoras e pelos seguintes sindicatos e associações da Região Centro-Sul:
+▪ Associação das Indústrias Sucroenergéticas de Minas Gerais (SIAMIG)
+▪ Associação dos Produtores de Bioenergia de Mato Grosso do Sul (BIOSUL)
+▪ Associação dos Produtores de Bioenergia do Estado do Paraná (ALCOPAR)
+▪ Indústrias de Bioenergia de Mato Grosso (BIOINDMT)
+▪ Sindicato da Indústria de Fabricação de Etanol do Estado de Goiás (SIFAEG)
+▪ Sindicato da Indústria Sucroenergética do Estado do Rio de Janeiro (SISERJ)
+▪ Sociedade das Usinas e Destilarias do Espírito Santo (SUDES)
+Os dados referentes ao acompanhamento das condições climáticas e agrícolas são disponibilizados pelo
+Centro de Tecnologia Canavieira (CTC).
+O presente material tem objetivo meramente informativo e pode ser obtido gratuitamente no site
+www.unicadata.com.br.
+A UNICA procura garantir a precisão e confiabilidade dos dados e informações divulgadas. A entidade não se
+responsabiliza por qualquer decisão de caráter econômico-financeiro baseada no conteúdo publicado neste
+relatório. A reprodução parcial ou integral é permitida desde que a UNICA seja citada como fonte.
+
+--- page 11
+ 
+
+Q listagem.php?idMn=63&pagina=2 ['download_media.php?idM=6758186']
+
+Q listagem.php?idMn=63&idioma=2 ['download_media.php?idM=32820684']
