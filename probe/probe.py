@@ -18,20 +18,14 @@ print("AROUND", re.sub(r"\s+", " ", r.text[i - 3000:i + 500]))
 r = S.get(B + "historico-de-producao-e-moagem.php?idMn=31&tipoHistorico=4", timeout=40)
 print("\nFORM31", re.sub(r"\s+", " ", form_html(r.text, "formulario"))[-3000:])
 
-for q in ["historico-de-producao-e-moagem.php?idMn=31&tipoHistorico=4&safra=2020%2F2021&estado%5B%5D=SP&acao=visualizar",
-          "historico-de-producao-e-moagem.php?tipoHistorico=4&idMn=31&safra=2020%2F2021&estados%5B%5D=SP"]:
-    t = S.get(B + q, timeout=40).text
-    j = t.find("<table")
-    print("\nQ", q, j, re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "|", t[j:j + 3000])) if j > 0 else "")
-
 # latest report PDF
 try:
     import pdfplumber
-    p = S.get(B + "download_media.php?idM=6758186", timeout=60)
+    p = S.get("https://unicadata.com.br/arquivos/pdfs/2026/09/978fce80f29c4ec511ea91c7ec89fcf7.pdf", timeout=120)
     print("\nPDF", p.status_code, p.headers.get("content-type"), len(p.content), p.headers.get("content-disposition"))
     with pdfplumber.open(io.BytesIO(p.content)) as pdf:
         print("pages", len(pdf.pages))
-        for k, pg in enumerate(pdf.pages[:8]):
+        for k, pg in enumerate(pdf.pages[:12]):
             print(f"\n--- page {k+1}\n", (pg.extract_text() or "")[:3500])
             for tb in pg.extract_tables()[:3]:
                 print("TABLE", tb[:25])
