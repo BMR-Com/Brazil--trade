@@ -1,0 +1,50 @@
+name: Sugar — data refresh and model build
+
+on:
+  schedule:
+    - cron: "15 22 * * 1-5"    # weekdays after the ICE close
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Full history reload (MAPA since 2007, all contracts)"
+        type: boolean
+        default: false
+  push:
+    branches: [sugar-tab]
+    paths: ["sugar/scripts/**", ".github/workflows/sugar.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sugar-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install
+        run: pip install -q requests pandas numpy openpyxl xlrd pdfplumber websocket-client git+https://github.com/rongardF/tvdatafeed.git
+      - name: Fetch
+        run: |
+          if [ "${{ github.event.inputs.full }}" = "true" ] || [ ! -f sugar/data/mapa_fortnight.csv ]; then
+            python sugar/scripts/fetch.py --full
+          else
+            python sugar/scripts/fetch.py
+          fi
+      - name: Build
+        run: if [ -f sugar/scripts/build.py ]; then python sugar/scripts/build.py; fi
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sugar/data
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "sugar: data refresh $(date -u +%F) [bot]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

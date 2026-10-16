@@ -8,3 +8,5 @@ data/EXP_*.csv
 data/IMP_*.csv
 !data/exports.csv
 !data/countries.csv
+sugar/.mapa_tmp/
+__pycache__/
