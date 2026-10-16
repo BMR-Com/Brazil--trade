@@ -1,0 +1,123 @@
+
+=== https://unicadata.com.br/
+200 text/html; charset=UTF-8 len=24340
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html lang="pt" xmlns="http://www.w3.org/1999/xhtml">          <!-- head -->     <head>     <meta charset="utf-8">     <meta http-equiv="X-UA-Compatible" content="IE=edge">     <
+['listagem.php?idMn=11', 'listagem.php?idMn=110', 'listagem.php?idMn=119', 'listagem.php?idMn=127', 'listagem.php?idMn=128', 'listagem.php?idMn=133', 'listagem.php?idMn=134', 'listagem.php?idMn=135', 'listagem.php?idMn=145', 'listagem.php?idMn=146', 'listagem.php?idMn=147', 'listagem.php?idMn=157', 'listagem.php?idMn=158', 'listagem.php?idMn=171', 'listagem.php?idMn=172', 'listagem.php?idMn=19', 'listagem.php?idMn=4', 'listagem.php?idMn=63', 'listagem.php?idMn=7']
+
+=== https://unicadata.com.br/historico-de-producao-e-moagem.php?idMn=31&tipoHistorico=4
+200 text/html; charset=UTF-8 len=17357
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html lang="pt" xmlns="https://www.w3.org/1999/xhtml">          <!-- head -->     <head>     <meta charset="utf-8">     <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+['#', '//js.hs-scripts.com/51528823.js', 'css/bootstrap-grid.min.css', 'css/bootstrap-reboot.min.css', 'css/bootstrap.min.css', 'css/custom.css', 'favicon.ico', 'historico-de-producao-e-moagem.php', 'historico-de-producao-e-moagem.php?idMn=31&tipoHistorico=2', 'historico-de-producao-e-moagem.php?idMn=32&tipoHistorico=4', 'https://mwg.art.br/', 'https://observatoriodacana.com.br/', 'https://unicadata.com.br/historico-de-producao-e-moagem.php?idMn=31&tipoHistorico=4&idioma=2', 'https://www.googletagmanager.com/gtag/js?id=G-NJ4K80BJJQ', 'images/android-icon-192x192.png', 'images/apple-icon-114x114.png', 'images/apple-icon-120x120.png', 'images/apple-icon-144x144.png', 'images/apple-icon-152x152.png', 'images/apple-icon-180x180.png', 'images/apple-icon-57x57.png', 'images/apple-icon-60x60.png', 'images/apple-icon-76x76.png', 'images/favicon-16x16.png', 'images/favicon-32x32.png', 'images/favicon-96x96.png', 'images/icon-calendar.svg', 'images/icon-language.png', 'images/icon-pin.svg', 'images/logo-vert.svg', 'images/logo.svg', 'images/manifest.json', 'images/pple-icon-72x72.png', 'index.php', 'javascript:;', "javascript:abrePopEstados('formulario');", 'javascript:visualizarHistoricoMoagem(4)', 'js/Popup.js', 'js/scripts.js', 'js/swfobject.js', 'listagem.php?idMn=11', 'listagem.php?idMn=110', 'listagem.php?idMn=119', 'listagem.php?idMn=127', 'listagem.php?idMn=128', 'listagem.php?idMn=133', 'listagem.php?idMn=134', 'listagem.php?idMn=135', 'listagem.php?idMn=145', 'listagem.php?idMn=146', 'listagem.php?idMn=147', 'listagem.php?idMn=157', 'listagem.php?idMn=158', 'listagem.php?idMn=171', 'listagem.php?idMn=172', 'listagem.php?idMn=19', 'listagem.php?idMn=4', 'listagem.php?idMn=63', 'listagem.php?idMn=7']
+['safra']
+
+=== https://unicadata.com.br/listagem.php?idMn=63
+200 text/html; charset=UTF-8 len=13977
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html lang="pt" xmlns="https://www.w3.org/1999/xhtml">          <!-- head -->     <head>     <meta charset="utf-8">     <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+
+=== https://www.unica.com.br/
+200 text/html; charset=UTF-8 len=172870
+<!DOCTYPE html> <html lang="pt-BR"> <head> 	<meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge"> 	<link rel="pingback" href="https://unica.com.br/xmlrpc.php" />  	<script typ
+
+=== https://www.cepea.org.br/br/indicador/etanol.aspx
+403 text/html; charset=UTF-8 len=5638
+<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scal
+
+=== https://www.cepea.esalq.usp.br/br/indicador/series/etanol.aspx?id=103
+403 text/html; charset=UTF-8 len=5695
+<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scal
+
+=== https://cepea.org.br/br/indicador/etanol-diario-paulinia.aspx
+403 text/html; charset=UTF-8 len=5661
+<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scal
+
+=== https://www.cepea.org.br/br/indicador/acucar.aspx
+403 text/html; charset=UTF-8 len=5638
+<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scal
+
+=== https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-revenda-e-de-distribuicao-combustiveis/shlp/semanal/semanal-estados-desde-2013.xlsx
+200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet len=12623977
+
+=== https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
+200 text/html;charset=utf-8 len=445112
+<!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">  <head>     <meta charset="utf-8" />   <!-- Google Tag Manager -->   <script type="text">(function(w,d,s,l,i){
+['https://www.gov.br/anp/pt-br/acesso-a-informacao/institucional/agenda-dirigentes/agendadirigentesate2020.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-16-10-2022-22-10-2022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-07-31-2022-08-06.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-08-07-2022-08-13.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-08-14-2022-08-20.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-08-21_2022-08-27.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-08-28_2022-09-03.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-10-02-2022-10-08.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-10-09-2022-10-15.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-10-23-2022-10-29.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2022-12-25-2022-12-31.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo-semanal-lpc-2711-03122022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal-lpc-2022-10-30_2022-11-05.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_lpc_2022-09-04_2022-09-10.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_lpc_2022-09-11_2022-09-17.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_lpc_2022-09-25_2022-10-01.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_lpc_2022-11-06_2022-11-12.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_lpc_2022-11-20_2022-11-26.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_lpc_2022-12-04_2022-12-10.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_lpc_2022-12-11_2022-12-17.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_lpc_2022-12-18_2022-12-24.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/resumo_semanal_triad_2022-09-18_2022-09-24.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-07-13082022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-09-15102022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-14-20082022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-2022-10-23-2022-10-29.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-2022-12-25-2022-12-31.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-2108-27082022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-2711-03122022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-2808-030092022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas-lpc-3107-06082022.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-09-04_2022-09-10.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-09-11_2022-09-17.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-09-25_2022-10-01.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-10-02_2022-10-08.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-10-16_2022-10-22.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-10-30_2022-11-05-1.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-11-06_2022-11-12.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-11-13_2022-11-19.xlsx', 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2022/revendas_lpc_2022-11-20_2022-11-26.xlsx']you are using nologin method, data you access may be limited
+
+
+=== https://query1.finance.yahoo.com/v8/finance/chart/SB=F?range=5d&interval=1d
+200 application/json;charset=utf-8 len=1690
+{"chart":{"result":[{"meta":{"currency":"USX","symbol":"SB=F","exchangeName":"NYB","fullExchangeName":"ICE Futures","instrumentType":"FUTURE","firstTradeDate":951886800,"regularMarketTime":1792169999,"hasPrePostMarketData":false,"gmtoffset":-14400,"t
+
+=== https://query1.finance.yahoo.com/v8/finance/chart/SBH27.NYB?range=5d&interval=1d
+200 application/json;charset=utf-8 len=1720
+{"chart":{"result":[{"meta":{"currency":"USX","symbol":"SBH27.NYB","exchangeName":"NYB","fullExchangeName":"ICE Futures","instrumentType":"FUTURE","firstTradeDate":1711944000,"regularMarketTime":1792169999,"hasPrePostMarketData":false,"gmtoffset":-14
+
+=== https://query1.finance.yahoo.com/v8/finance/chart/BRL=X?range=5d&interval=1d
+200 application/json;charset=utf-8 len=1791
+{"chart":{"result":[{"meta":{"currency":"BRL","symbol":"BRL=X","exchangeName":"CCY","fullExchangeName":"CCY","instrumentType":"CURRENCY","firstTradeDate":1070236800,"regularMarketTime":1792188602,"hasPrePostMarketData":false,"gmtoffset":3600,"timezon
+
+=== https://query1.finance.yahoo.com/v8/finance/chart/BZ=F?range=5d&interval=1d
+200 application/json;charset=utf-8 len=1780
+{"chart":{"result":[{"meta":{"currency":"USD","symbol":"BZ=F","exchangeName":"NYM","fullExchangeName":"NY Mercantile","instrumentType":"FUTURE","firstTradeDate":1185768000,"regularMarketTime":1792184371,"hasPrePostMarketData":false,"gmtoffset":-14400
+
+=== https://query1.finance.yahoo.com/v8/finance/chart/SW=F?range=5d&interval=1d
+404 application/json;charset=utf-8 len=108
+{"chart":{"result":null,"error":{"code":"Not Found","description":"No data found, symbol may be delisted"}}}
+
+=== https://query1.finance.yahoo.com/v8/finance/chart/QW=F?range=5d&interval=1d
+404 application/json;charset=utf-8 len=108
+{"chart":{"result":null,"error":{"code":"Not Found","description":"No data found, symbol may be delisted"}}}
+
+=== https://apps.fas.usda.gov/psdonline/downloads/psd_sugar_csv.zip
+200 application/x-zip-compressed len=760052
+['psd_sugar.csv']
+Commodity_Code,Commodity_Description,Country_Code,Country_Name,Market_Year,Calendar_Year,Month,Attribute_ID,Attribute_Description,Unit_ID,Unit_Description,Value
+0612000,"Sugar, Centrifugal",AF,"Afghanistan",1972,1972,00,030,"Beet Sugar Production",08,"(1000 MT)",0.0000
+0612000,"Sugar, Centrifugal",AF,"Afghanistan",1972,1972,00,020,"Beginning Stocks",08,"(1000 MT)",0.0000
+0612000,"Sugar, Centrifugal",AF,"Afghanistan",1972,1972,00,043,"Cane Sugar Production",08,"(1000 MT)",10.0000
+0612000,"Sugar, Centrifugal",AF,"Afghanistan",1972,1972,00,176,"Ending Stocks",08,"(1000 MT)",10.0000
+0612000,"Sugar, Centrifugal",AF,"Afghanistan",1972,1972,00,088,"Exports",08,"(1000 MT)",0.0000
+0612000,"Sugar, Centrifugal",AF,"Afghanistan",1972,1972,00,139,"Human Dom. Consumption",08,"(1000 MT)",0.0000
+06
+
+=== https://balanca.economia.gov.br/balanca/bd/comexstat-bd/ncm/EXP_2026.csv
+ERR HTTPSConnectionPool(host='balanca.economia.gov.br', port=443): Max retries exceeded with url: /balanca/bd/comexstat-bd/ncm/EXP_2026.csv (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
+
+=== https://api-comexstat.mdic.gov.br/general/dates/updated
+200 application/json len=133
+{"data":{"updated":"2026-10-06","year":"2026","monthNumber":"09"},"success":true,"message":null,"processo_info":null,"language":"pt"}
+
+=== http://www.ocsb.go.th/
+503 text/html len=886
+<html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/_Incapsula_Resourc
+
+=== https://www.ocsb.go.th/
+503 text/html len=888
+<html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/_Incapsula_Resourc
+
+=== https://www.indiansugar.com/
+200 text/html; charset=utf-8 len=42284
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/0428c9af9d09670c.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/b723d333390df814.css" data-prec
+
+=== https://www.isma.org.in/
+403 text/html; charset=iso-8859-1 len=199
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>403 Forbidden</title> </head><body> <h1>Forbidden</h1> <p>You don't have permission to access this resource.</p> </body></html> 
+
+=== https://www.ice.com/marketdata/DelayedMarkets.shtml?getContractsAsJson=&productId=6&hubId=24
+403 text/html; charset=UTF-8 len=4542
+<!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]--> <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]--> <!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!
+
+=== https://www.barchart.com/futures/quotes/SW*0/futures-prices
+202 text/html; charset=UTF-8 len=0
+
+
+TV ICEEUR W1! (5000, Timestamp('2006-12-29 08:45:00'), '                         symbol   open   high    low  close  volume\ndatetime                                                           \n2026-10-15 07:45:00  ICEEUR:W1!  553.1  561.8  548.8  561.1  8992.0\n2026-10-16 07:45:00  ICEEUR:W1!  557.4  558.9  547.7  554.9  9782.0')
+
+TV ICEUS SB1! (5000, Timestamp('2006-12-01 08:30:00'), '                         symbol   open   high    low  close   volume\ndatetime                                                            \n2026-10-15 07:30:00  ICEUS:SB1!  20.80  21.22  20.60  21.13  61704.0\n2026-10-16 07:30:00  ICEUS:SB1!  21.01  21.01  20.47  20.85  76324.0')
+
+TV BMFBOVESPA ETH1! (3988, Timestamp('2010-05-14 19:05:00'), '                               symbol    open    high     low   close  volume\ndatetime                                                                     \n2026-10-14 19:05:00  BMFBOVESPA:ETH1!  2820.0  2844.0  2820.0  2844.0    11.0\n2026-10-15 19:05:00  BMFBOVESPA:ETH1!  2860.0  2873.0  2860.0  2873.0     1.0')
+
+TV FX_IDC USDBRL (5000, Timestamp('2007-08-13 22:00:00'), '                            symbol    open    high     low   close  volume\ndatetime                                                                  \n2026-10-14 22:00:00  FX_IDC:USDBRL  5.0487  5.0991  5.0373  5.0991     0.0\n2026-10-15 22:00:00  FX_IDC:USDBRL  5.0980  5.0980  5.0621  5.0627     0.0')
+
+TV ICEEUR WZ2026 (676, Timestamp('2024-02-15 08:45:00'), '                            symbol   open   high    low  close  volume\ndatetime                                                              \n2026-10-15 07:45:00  ICEEUR:WZ2026  553.1  561.8  548.8  561.1  8992.0\n2026-10-16 07:45:00  ICEEUR:WZ2026  557.4  558.9  547.7  554.9  9782.0')
+
+TV ICEUS SBH2027 (641, Timestamp('2024-04-01 07:30:00'), '                            symbol   open   high    low  close   volume\ndatetime                                                               \n2026-10-15 07:30:00  ICEUS:SBH2027  20.80  21.22  20.60  21.13  61704.0\n2026-10-16 07:30:00  ICEUS:SBH2027  21.01  21.01  20.47  20.85  76324.0')
