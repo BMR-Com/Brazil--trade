@@ -9,9 +9,6 @@ on:
         description: "Full history reload (MAPA since 2007, all contracts)"
         type: boolean
         default: false
-  push:
-    branches: [sugar-tab]
-    paths: ["sugar/scripts/**", ".github/workflows/sugar.yml"]
 
 permissions:
   contents: write
