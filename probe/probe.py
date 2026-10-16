@@ -1,38 +1,29 @@
 import re, io, traceback
 import requests
+import pandas as pd
 
 H = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
 S = requests.Session(); S.headers.update(H)
-B = "https://unicadata.com.br/"
+B = "https://www.gov.br/agricultura/pt-br/assuntos/sustentabilidade/agroenergia/acompanhamento-da-producao-sucroalcooleira/"
 
-def form_html(t, fid):
-    m = re.search(r'(?s)<form[^>]*id="%s".*?</form>' % fid, t)
-    return m.group(0) if m else ""
-
-r = S.get(B + "listagem.php?idMn=63", timeout=40)
-f = form_html(r.text, "formConsulta")
-print("FORM63", re.sub(r"\s+", " ", f)[:4000])
-i = r.text.find("download_media")
-print("AROUND", re.sub(r"\s+", " ", r.text[i - 3000:i + 500]))
-
-r = S.get(B + "historico-de-producao-e-moagem.php?idMn=31&tipoHistorico=4", timeout=40)
-print("\nFORM31", re.sub(r"\s+", " ", form_html(r.text, "formulario"))[-3000:])
-
-# latest report PDF
-try:
-    import pdfplumber
-    p = S.get("https://unicadata.com.br/arquivos/pdfs/2026/09/978fce80f29c4ec511ea91c7ec89fcf7.pdf", timeout=120)
-    print("\nPDF", p.status_code, p.headers.get("content-type"), len(p.content), p.headers.get("content-disposition"))
-    with pdfplumber.open(io.BytesIO(p.content)) as pdf:
-        print("pages", len(pdf.pages))
-        for k, pg in enumerate(pdf.pages[:12]):
-            print(f"\n--- page {k+1}\n", (pg.extract_text() or "")[:3500])
-            for tb in pg.extract_tables()[:3]:
-                print("TABLE", tb[:25])
-except Exception:
-    traceback.print_exc()
-
-# older reports listing?
-for q in ["listagem.php?idMn=63&pagina=2", "listagem.php?idMn=63&idioma=2"]:
-    t = S.get(B + q, timeout=40).text
-    print("\nQ", q, sorted(set(re.findall(r'download_media\.php\?idM=\d+', t))))
+for safra in ["2026-2027", "2025-2026", "2024-2025", "2018-2019"]:
+    try:
+        t = S.get(B + safra, timeout=60).text
+        links = re.findall(r'href="([^"]+\.xlsx?)"', t, re.I)
+        print("\n####", safra, len(links), links[:3], links[-2:])
+        if safra in ("2026-2027", "2025-2026"):
+            u = links[-1] if safra == "2026-2027" else links[len(links)//2]
+            # choose the newest-looking for 2026/27
+            r = S.get(u, timeout=120)
+            print("GET", u, r.status_code, len(r.content))
+            x = pd.ExcelFile(io.BytesIO(r.content))
+            print("sheets", x.sheet_names)
+            for sh in x.sheet_names[:6]:
+                d = x.parse(sh, header=None)
+                print(f"\n== sheet {sh} shape {d.shape}")
+                with pd.option_context("display.width", 250, "display.max_columns", 30):
+                    print(d.head(45).to_string()[:7000])
+                    print("...")
+                    print(d.tail(8).to_string()[:2500])
+    except Exception:
+        traceback.print_exc()
