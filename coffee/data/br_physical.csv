@@ -4551,6 +4551,12 @@ date,series,place,brl_bag
 2026-10-01,vitoria_conillon,Tipo 8,930.0
 2026-10-02,cepea_arabica,CEPEA/ESALQ,1572.01
 2026-10-02,cepea_conillon,CEPEA/ESALQ,992.41
+2026-10-02,coop_67,Campos Gerais/MG (Coopercam),1695.0
+2026-10-02,coop_67,Franca/SP (Cocapec),1650.0
+2026-10-02,coop_67,Machado/MG (Coopama),1610.0
+2026-10-02,coop_67,Patrocínio/MG (Expocaccer),1710.0
+2026-10-02,coop_67,Poços de Caldas/MG (Café Poços),1500.0
+2026-10-02,coop_67,Varginha/MG (Minasul),1630.0
 2026-10-02,coop_arabica,Araguari/MG (Coocacer),1670.0
 2026-10-02,coop_arabica,Campos Gerais/MG (Coopercam),1705.0
 2026-10-02,coop_arabica,Franca/SP (Cocapec),1680.0
@@ -4559,11 +4565,22 @@ date,series,place,brl_bag
 2026-10-02,coop_arabica,Patrocínio/MG (Expocaccer),1750.0
 2026-10-02,coop_arabica,Poços de Caldas/MG (CaféPoços),1570.0
 2026-10-02,coop_arabica,Varginha/MG (Minasul),1650.0
+2026-10-02,coop_cd,Campos Gerais/MG (Coopercam),1765.0
+2026-10-02,coop_cd,Patrocínio/MG (Expocaccer),1785.0
+2026-10-02,coop_cd,Poços de Caldas/MG (CaféPoços),1720.0
+2026-10-02,coop_cd,Varginha/MG (Minasul),1730.0
 2026-10-02,vitoria_conillon,Tipo 7,950.0
 2026-10-02,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),947.0
 2026-10-02,vitoria_conillon,Tipo 8,940.0
 2026-10-05,cepea_arabica,CEPEA/ESALQ,1568.56
 2026-10-05,cepea_conillon,CEPEA/ESALQ,966.0
+2026-10-05,coop_67,Campos Gerais/MG (Coopercam),1660.0
+2026-10-05,coop_67,Franca/SP (Cocapec),1600.0
+2026-10-05,coop_67,Guaxupé/MG (Cooxupé),1621.0
+2026-10-05,coop_67,Machado/MG (Coopama),1560.0
+2026-10-05,coop_67,Patrocínio/MG (Expocaccer),1640.0
+2026-10-05,coop_67,Poços de Caldas/MG (Café Poços),1520.0
+2026-10-05,coop_67,Varginha/MG (Minasul),1630.0
 2026-10-05,coop_arabica,Araguari/MG (Coocacer),1630.0
 2026-10-05,coop_arabica,Campos Gerais/MG (Coopercam),1670.0
 2026-10-05,coop_arabica,Franca/SP (Cocapec),1620.0
@@ -4573,8 +4590,20 @@ date,series,place,brl_bag
 2026-10-05,coop_arabica,Patrocínio/MG (Expocaccer),1670.0
 2026-10-05,coop_arabica,Poços de Caldas/MG (CaféPoços),1590.0
 2026-10-05,coop_arabica,Varginha/MG (Minasul),1650.0
+2026-10-05,coop_cd,Campos Gerais/MG (Coopercam),1730.0
+2026-10-05,coop_cd,Guaxupé/MG (Cooxupé),1684.0
+2026-10-05,coop_cd,Patrocínio/MG (Expocaccer),1700.0
+2026-10-05,coop_cd,Poços de Caldas/MG (CaféPoços),1740.0
+2026-10-05,coop_cd,Varginha/MG (Minasul),1730.0
 2026-10-06,cepea_arabica,CEPEA/ESALQ,1568.95
 2026-10-06,cepea_conillon,CEPEA/ESALQ,976.94
+2026-10-06,coop_67,Campos Gerais/MG (Coopercam),1700.0
+2026-10-06,coop_67,Franca/SP (Cocapec),1620.0
+2026-10-06,coop_67,Guaxupé/MG (Cooxupé),1666.0
+2026-10-06,coop_67,Machado/MG (Coopama),1630.0
+2026-10-06,coop_67,Patrocínio/MG (Expocaccer),1670.0
+2026-10-06,coop_67,Poços de Caldas/MG (Café Poços),1570.0
+2026-10-06,coop_67,Varginha/MG (Minasul),1700.0
 2026-10-06,coop_arabica,Araguari/MG (Coocacer),1700.0
 2026-10-06,coop_arabica,Campos Gerais/MG (Coopercam),1710.0
 2026-10-06,coop_arabica,Franca/SP (Cocapec),1650.0
@@ -4584,11 +4613,23 @@ date,series,place,brl_bag
 2026-10-06,coop_arabica,Patrocínio/MG (Expocaccer),1705.0
 2026-10-06,coop_arabica,Poços de Caldas/MG (CaféPoços),1640.0
 2026-10-06,coop_arabica,Varginha/MG (Minasul),1720.0
+2026-10-06,coop_cd,Campos Gerais/MG (Coopercam),1770.0
+2026-10-06,coop_cd,Guaxupé/MG (Cooxupé),1728.0
+2026-10-06,coop_cd,Patrocínio/MG (Expocaccer),1735.0
+2026-10-06,coop_cd,Poços de Caldas/MG (CaféPoços),1790.0
+2026-10-06,coop_cd,Varginha/MG (Minasul),1800.0
 2026-10-06,vitoria_conillon,Tipo 7,945.0
 2026-10-06,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),935.0
 2026-10-06,vitoria_conillon,Tipo 8,935.0
 2026-10-07,cepea_arabica,CEPEA/ESALQ,1566.59
 2026-10-07,cepea_conillon,CEPEA/ESALQ,970.02
+2026-10-07,coop_67,Campos Gerais/MG (Coopercam),1650.0
+2026-10-07,coop_67,Franca/SP (Cocapec),1620.0
+2026-10-07,coop_67,Guaxupé/MG (Cooxupé),1666.0
+2026-10-07,coop_67,Machado/MG (Coopama),1560.0
+2026-10-07,coop_67,Patrocínio/MG (Expocaccer),1645.0
+2026-10-07,coop_67,Poços de Caldas/MG (Café Poços),1530.0
+2026-10-07,coop_67,Varginha/MG (Minasul),1600.0
 2026-10-07,coop_arabica,Araguari/MG (Coocacer),1650.0
 2026-10-07,coop_arabica,Campos Gerais/MG (Coopercam),1660.0
 2026-10-07,coop_arabica,Franca/SP (Cocapec),1650.0
@@ -4598,11 +4639,22 @@ date,series,place,brl_bag
 2026-10-07,coop_arabica,Patrocínio/MG (Expocaccer),1680.0
 2026-10-07,coop_arabica,Poços de Caldas/MG (CaféPoços),1610.0
 2026-10-07,coop_arabica,Varginha/MG (Minasul),1620.0
+2026-10-07,coop_cd,Campos Gerais/MG (Coopercam),1720.0
+2026-10-07,coop_cd,Guaxupé/MG (Cooxupé),1728.0
+2026-10-07,coop_cd,Patrocínio/MG (Expocaccer),1715.0
+2026-10-07,coop_cd,Poços de Caldas/MG (CaféPoços),1760.0
+2026-10-07,coop_cd,Varginha/MG (Minasul),1700.0
 2026-10-07,vitoria_conillon,Tipo 7,935.0
 2026-10-07,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),920.0
 2026-10-07,vitoria_conillon,Tipo 8,925.0
 2026-10-08,cepea_arabica,CEPEA/ESALQ,1544.99
 2026-10-08,cepea_conillon,CEPEA/ESALQ,955.89
+2026-10-08,coop_67,Campos Gerais/MG (Coopercam),1645.0
+2026-10-08,coop_67,Franca/SP (Cocapec),1560.0
+2026-10-08,coop_67,Machado/MG (Coopama),1540.0
+2026-10-08,coop_67,Patrocínio/MG (Expocaccer),1645.0
+2026-10-08,coop_67,Poços de Caldas/MG (Café Poços),1530.0
+2026-10-08,coop_67,Varginha/MG (Minasul),1580.0
 2026-10-08,coop_arabica,Araguari/MG (Coocacer),1600.0
 2026-10-08,coop_arabica,Campos Gerais/MG (Coopercam),1655.0
 2026-10-08,coop_arabica,Franca/SP (Cocapec),1580.0
@@ -4611,11 +4663,20 @@ date,series,place,brl_bag
 2026-10-08,coop_arabica,Patrocínio/MG (Expocaccer),1680.0
 2026-10-08,coop_arabica,Poços de Caldas/MG (CaféPoços),1610.0
 2026-10-08,coop_arabica,Varginha/MG (Minasul),1600.0
+2026-10-08,coop_cd,Campos Gerais/MG (Coopercam),1715.0
+2026-10-08,coop_cd,Patrocínio/MG (Expocaccer),1715.0
+2026-10-08,coop_cd,Poços de Caldas/MG (CaféPoços),1760.0
+2026-10-08,coop_cd,Varginha/MG (Minasul),1680.0
 2026-10-08,vitoria_conillon,Tipo 7,930.0
 2026-10-08,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),912.0
 2026-10-08,vitoria_conillon,Tipo 8,920.0
 2026-10-09,cepea_arabica,CEPEA/ESALQ,1531.88
 2026-10-09,cepea_conillon,CEPEA/ESALQ,961.31
+2026-10-09,coop_67,Campos Gerais/MG (Coopercam),1630.0
+2026-10-09,coop_67,Franca/SP (Cocapec),1540.0
+2026-10-09,coop_67,Machado/MG (Coopama),1520.0
+2026-10-09,coop_67,Patrocínio/MG (Expocaccer),1605.0
+2026-10-09,coop_67,Varginha/MG (Minasul),1550.0
 2026-10-09,coop_arabica,Araguari/MG (Coocacer),1600.0
 2026-10-09,coop_arabica,Campos Gerais/MG (Coopercam),1640.0
 2026-10-09,coop_arabica,Franca/SP (Cocapec),1560.0
@@ -4623,11 +4684,20 @@ date,series,place,brl_bag
 2026-10-09,coop_arabica,Oeste da Bahia (AIBA),1485.0
 2026-10-09,coop_arabica,Patrocínio/MG (Expocaccer),1645.0
 2026-10-09,coop_arabica,Varginha/MG (Minasul),1570.0
+2026-10-09,coop_cd,Campos Gerais/MG (Coopercam),1700.0
+2026-10-09,coop_cd,Patrocínio/MG (Expocaccer),1675.0
+2026-10-09,coop_cd,Varginha/MG (Minasul),1650.0
 2026-10-09,vitoria_conillon,Tipo 7,920.0
 2026-10-09,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),914.0
 2026-10-09,vitoria_conillon,Tipo 8,910.0
 2026-10-13,cepea_arabica,CEPEA/ESALQ,1547.28
 2026-10-13,cepea_conillon,CEPEA/ESALQ,971.18
+2026-10-13,coop_67,Campos Gerais/MG (Coopercam),1650.0
+2026-10-13,coop_67,Franca/SP (Cocapec),1580.0
+2026-10-13,coop_67,Guaxupé/MG (Cooxupé),1616.0
+2026-10-13,coop_67,Machado/MG (Coopama),1570.0
+2026-10-13,coop_67,Patrocínio/MG (Expocaccer),1630.0
+2026-10-13,coop_67,Varginha/MG (Minasul),1600.0
 2026-10-13,coop_arabica,Araguari/MG (Coocacer),1700.0
 2026-10-13,coop_arabica,Campos Gerais/MG (Coopercam),1660.0
 2026-10-13,coop_arabica,Franca/SP (Cocapec),1600.0
@@ -4636,11 +4706,22 @@ date,series,place,brl_bag
 2026-10-13,coop_arabica,Oeste da Bahia (AIBA),1485.0
 2026-10-13,coop_arabica,Patrocínio/MG (Expocaccer),1665.0
 2026-10-13,coop_arabica,Varginha/MG (Minasul),1620.0
+2026-10-13,coop_cd,Campos Gerais/MG (Coopercam),1720.0
+2026-10-13,coop_cd,Guaxupé/MG (Cooxupé),1718.0
+2026-10-13,coop_cd,Patrocínio/MG (Expocaccer),1700.0
+2026-10-13,coop_cd,Varginha/MG (Minasul),1700.0
 2026-10-13,vitoria_conillon,Tipo 7,930.0
 2026-10-13,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),918.0
 2026-10-13,vitoria_conillon,Tipo 8,920.0
 2026-10-14,cepea_arabica,CEPEA/ESALQ,1571.19
 2026-10-14,cepea_conillon,CEPEA/ESALQ,972.64
+2026-10-14,coop_67,Campos Gerais/MG (Coopercam),1660.0
+2026-10-14,coop_67,Franca/SP (Cocapec),1640.0
+2026-10-14,coop_67,Guaxupé/MG (Cooxupé),1656.0
+2026-10-14,coop_67,Machado/MG (Coopama),1610.0
+2026-10-14,coop_67,Patrocínio/MG (Expocaccer),1690.0
+2026-10-14,coop_67,Poços de Caldas/MG (Café Poços),1540.0
+2026-10-14,coop_67,Varginha/MG (Minasul),1650.0
 2026-10-14,coop_arabica,Araguari/MG (Coocacer),1750.0
 2026-10-14,coop_arabica,Campos Gerais/MG (Coopercam),1670.0
 2026-10-14,coop_arabica,Franca/SP (Cocapec),1660.0
@@ -4650,11 +4731,23 @@ date,series,place,brl_bag
 2026-10-14,coop_arabica,Patrocínio/MG (Expocaccer),1730.0
 2026-10-14,coop_arabica,Poços de Caldas/MG (CaféPoços),1620.0
 2026-10-14,coop_arabica,Varginha/MG (Minasul),1670.0
+2026-10-14,coop_cd,Campos Gerais/MG (Coopercam),1730.0
+2026-10-14,coop_cd,Guaxupé/MG (Cooxupé),1758.0
+2026-10-14,coop_cd,Patrocínio/MG (Expocaccer),1765.0
+2026-10-14,coop_cd,Poços de Caldas/MG (CaféPoços),1770.0
+2026-10-14,coop_cd,Varginha/MG (Minasul),1750.0
 2026-10-14,vitoria_conillon,Tipo 7,940.0
 2026-10-14,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),930.0
 2026-10-14,vitoria_conillon,Tipo 8,930.0
 2026-10-15,cepea_arabica,CEPEA/ESALQ,1577.21
 2026-10-15,cepea_conillon,CEPEA/ESALQ,968.1
+2026-10-15,coop_67,Campos Gerais/MG (Coopercam),1640.0
+2026-10-15,coop_67,Franca/SP (Cocapec),1630.0
+2026-10-15,coop_67,Guaxupé/MG (Cooxupé),1626.0
+2026-10-15,coop_67,Machado/MG (Coopama),1590.0
+2026-10-15,coop_67,Patrocínio/MG (Expocaccer),1660.0
+2026-10-15,coop_67,Poços de Caldas/MG (Café Poços),1555.0
+2026-10-15,coop_67,Varginha/MG (Minasul),1600.0
 2026-10-15,coop_arabica,Araguari/MG (Coocacer),1700.0
 2026-10-15,coop_arabica,Campos Gerais/MG (Coopercam),1650.0
 2026-10-15,coop_arabica,Franca/SP (Cocapec),1650.0
@@ -4664,11 +4757,23 @@ date,series,place,brl_bag
 2026-10-15,coop_arabica,Patrocínio/MG (Expocaccer),1700.0
 2026-10-15,coop_arabica,Poços de Caldas/MG (CaféPoços),1635.0
 2026-10-15,coop_arabica,Varginha/MG (Minasul),1620.0
+2026-10-15,coop_cd,Campos Gerais/MG (Coopercam),1710.0
+2026-10-15,coop_cd,Guaxupé/MG (Cooxupé),1728.0
+2026-10-15,coop_cd,Patrocínio/MG (Expocaccer),1740.0
+2026-10-15,coop_cd,Poços de Caldas/MG (CaféPoços),1785.0
+2026-10-15,coop_cd,Varginha/MG (Minasul),1700.0
 2026-10-15,vitoria_conillon,Tipo 7,930.0
 2026-10-15,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),922.0
 2026-10-15,vitoria_conillon,Tipo 8,920.0
 2026-10-16,cepea_arabica,CEPEA/ESALQ,1601.25
 2026-10-16,cepea_conillon,CEPEA/ESALQ,963.28
+2026-10-16,coop_67,Campos Gerais/MG (Coopercam),1670.0
+2026-10-16,coop_67,Franca/SP (Cocapec),1700.0
+2026-10-16,coop_67,Guaxupé/MG (Cooxupé),1682.0
+2026-10-16,coop_67,Machado/MG (Coopama),1670.0
+2026-10-16,coop_67,Patrocínio/MG (Expocaccer),1685.0
+2026-10-16,coop_67,Poços de Caldas/MG (Café Poços),1565.0
+2026-10-16,coop_67,Varginha/MG (Minasul),1650.0
 2026-10-16,coop_arabica,Araguari/MG (Coocacer),1750.0
 2026-10-16,coop_arabica,Campos Gerais/MG (Coopercam),1680.0
 2026-10-16,coop_arabica,Franca/SP (Cocapec),1720.0
@@ -4678,6 +4783,11 @@ date,series,place,brl_bag
 2026-10-16,coop_arabica,Patrocínio/MG (Expocaccer),1725.0
 2026-10-16,coop_arabica,Poços de Caldas/MG (CaféPoços),1650.0
 2026-10-16,coop_arabica,Varginha/MG (Minasul),1670.0
+2026-10-16,coop_cd,Campos Gerais/MG (Coopercam),1740.0
+2026-10-16,coop_cd,Guaxupé/MG (Cooxupé),1787.0
+2026-10-16,coop_cd,Patrocínio/MG (Expocaccer),1765.0
+2026-10-16,coop_cd,Poços de Caldas/MG (CaféPoços),1800.0
+2026-10-16,coop_cd,Varginha/MG (Minasul),1750.0
 2026-10-16,vitoria_conillon,Tipo 7,940.0
 2026-10-16,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),929.0
 2026-10-16,vitoria_conillon,Tipo 8,930.0
