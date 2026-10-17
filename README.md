@@ -171,3 +171,7 @@ A separate tab for coffee physical prices and fundamentals, refreshed every week
 - Arabica–robusta arbitrage and the KC and RC forward curves
 - Managed-money positioning in ICE arabica (CFTC)
 - Brazil exports by crop year and destination (Secex), Colombia production and exports (FNC), USDA balances and the latest published estimates (`coffee/data/estimates.json`)
+
+## Brazil weather and USDA reports (`weather/`, `usda/`, `shared/brwx.js`)
+
+Daily rainfall and heat for Brazil's coffee (Minas Gerais by Conab region, Mogiana, Espírito Santo, Rondônia, Bahia), cane (Centre-South) and cotton (Mato Grosso, Bahia, Goiás) areas against the 1991–2020 normal, with the 16-day forecast and Niño 3.4 / ONI. History from NASA POWER, recent days and forecast from Open-Meteo, ENSO from NOAA CPC. `usda/reports.json` holds USDA attaché and outlook reports with their impact on cotton, coffee and sugar, updated weekly. The panel appears on the coffee and sugar desks and on the cotton site.

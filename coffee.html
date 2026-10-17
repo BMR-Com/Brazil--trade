@@ -221,6 +221,7 @@ Chart.defaults.plugins.legend.display = false; Chart.defaults.interaction = {mod
 Chart.defaults.plugins.tooltip.backgroundColor = '#181c2a'; Chart.defaults.plugins.tooltip.borderColor = '#2d3355'; Chart.defaults.plugins.tooltip.borderWidth = 1;
 const charts = {}, $ = id => document.getElementById(id);
 const f = (v, d=1) => v==null||isNaN(v) ? '—' : (+v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const ordn = n => { n = Math.round(n); const s = (n%100>=11 && n%100<=13) ? 'th' : ({1:'st',2:'nd',3:'rd'}[n%10] || 'th'); return n + s; };
 const pct = (a, b) => (a!=null && b) ? (a/b-1)*100 : null;
 const sgn = (v, d=1, u='%') => v==null ? '—' : `<span class="${v>=0?'up':'dn'}">${v>=0?'+':''}${f(v,d)}${u}</span>`;
 const sx = (lab, o={}) => Object.assign({grid:{color:C.grid}, ticks:{maxRotation:0, autoSkip:true, maxTicksLimit:8, callback:(v,i)=> String(lab[i]).slice(0,7)}}, o);
@@ -260,7 +261,7 @@ function render(){
     draw('cBrA', {type:'line', data:{labels:d, datasets:ds}, options:{scales:{x:sx(d), y:sy('¢/lb vs KC')}}});
     legend('lBrA', lg);
     table('tLad', [['Quality',''],['As of',''],['¢/lb','r'],['vs KC','r'],['1-yr avg','r'],['5-yr pctile','r']],
-      B.ladder.map(x => [x.name, x.date, f(x.c_lb,1), `<b>${sgn(x.basis,1,'¢')}</b>`, sgn(x.avg1y,1,'¢'), x.pct!=null ? x.pct+'th' : '—']));
+      B.ladder.map(x => [x.name, x.date, f(x.c_lb,1), `<b>${sgn(x.basis,1,'¢')}</b>`, sgn(x.avg1y,1,'¢'), x.pct!=null ? ordn(x.pct) : '—']));
     const c = B.conillon, j0 = since(c,'dates','2018'), dc = c.dates.slice(j0);
     draw('cBrC', {type:'line', data:{labels:dc, datasets:[line('CEPEA conilon', c.usd_t.slice(j0), C.s1), line('RC front', c.rc.slice(j0), C.s2), line('Basis', c.basis.slice(j0), C.s3, {borderWidth:1.5})]}, options:{scales:{x:sx(dc), y:sy('US$/t')}}});
     legend('lBrC', [[C.s1,'CEPEA conilon'],[C.s2,'ICE RC front'],[C.s3,'Basis (CEPEA − RC)']]);
