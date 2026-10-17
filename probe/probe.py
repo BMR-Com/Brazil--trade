@@ -13,3 +13,4 @@ for u in ["https://giacaphe.com/gia-ca-phe-noi-dia/", "https://giacaphe.com/"]:
     for m in re.finditer(r"Đắk Lắk", t):
         print("CTX", re.sub(r"\s+", " ", t[m.start()-200:m.start()+600])); break
     open("probe/seed/giacaphe.html", "w").write(t)
+# rerun
