@@ -104,7 +104,8 @@ def fetch_futures(full=False):
 # ---------------------------------------------------------------- Brazil physical (Notícias Agrícolas)
 NA = "https://www.noticiasagricolas.com.br/cotacoes/cafe/"
 NA_SERIES = {"indicador-cepea-esalq-cafe-arabica": "cepea_arabica", "indicador-cepea-esalq-cafe-conillon": "cepea_conillon",
-             "cafe-arabica-mercado-fisico-tipo-6-duro": "coop_arabica", "cafe-conillon-disponivel-vitoria-es": "vitoria_conillon"}
+             "cafe-arabica-mercado-fisico-tipo-6-duro": "coop_arabica", "cafe-conillon-disponivel-vitoria-es": "vitoria_conillon",
+             "cafe-cereja-descascado-mercado-fisico": "coop_cd", "cafe-arabica-mercado-fisico-tipo-6-7": "coop_67"}
 
 
 def _num(v):
@@ -155,9 +156,11 @@ def parse_na(html, series):
     return out
 
 
-def fetch_brazil(full=False):
+def fetch_brazil(full=False, only=None):
     rows = []
     for slug, name in NA_SERIES.items():
+        if only and name not in only:
+            continue
         dates = [None]
         if full:
             d0 = date(2018, 1, 1); d = date.today()
@@ -305,10 +308,10 @@ def fetch_cot():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--full", action="store_true"); ap.add_argument("--only", default="")
     a = ap.parse_args()
-    steps = {"futures": lambda: fetch_futures(a.full), "brazil": lambda: fetch_brazil(a.full), "colombia": lambda: fetch_colombia(a.full),
+    steps = {"futures": lambda: fetch_futures(a.full), "brazil": lambda: fetch_brazil(a.full), "brazil_new": lambda: fetch_brazil(True, {"coop_cd", "coop_67"}), "colombia": lambda: fetch_colombia(a.full),
              "vietnam": lambda: fetch_vietnam(a.full), "ico": fetch_ico, "psd": fetch_psd, "cot": fetch_cot}
     for k, f in steps.items():
-        if a.only and k not in a.only.split(","):
+        if (a.only and k not in a.only.split(",")) or (not a.only and k == "brazil_new"):
             continue
         try:
             f()
