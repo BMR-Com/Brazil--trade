@@ -1,0 +1,172 @@
+[
+ {
+  "country": "Brazil",
+  "season": "2026",
+  "item": "Production — total",
+  "value": 67.6,
+  "unit": "M bags",
+  "source": "Conab (3rd survey)",
+  "date": "2026-09-24",
+  "url": "https://forbes.com.br/forbes-agro/2026/09/conab-eleva-previsao-de-safra-recorde-de-cafe-para-676-mi-sacas-em-2026/"
+ },
+ {
+  "country": "Brazil",
+  "season": "2026",
+  "item": "Production — arabica",
+  "value": 48.2,
+  "unit": "M bags",
+  "source": "Conab (3rd survey)",
+  "date": "2026-09-24",
+  "url": "https://forbes.com.br/forbes-agro/2026/09/conab-eleva-previsao-de-safra-recorde-de-cafe-para-676-mi-sacas-em-2026/"
+ },
+ {
+  "country": "Brazil",
+  "season": "2026",
+  "item": "Production — conilon",
+  "value": 19.4,
+  "unit": "M bags",
+  "source": "Conab (3rd survey)",
+  "date": "2026-09-24",
+  "url": "https://forbes.com.br/forbes-agro/2026/09/conab-eleva-previsao-de-safra-recorde-de-cafe-para-676-mi-sacas-em-2026/"
+ },
+ {
+  "country": "Brazil",
+  "season": "2026/27",
+  "item": "Production — total",
+  "value": 71.9,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "Brazil",
+  "season": "2026/27",
+  "item": "Bean exports",
+  "value": 45.0,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "Brazil",
+  "season": "Jul–Sep 2026",
+  "item": "Exports (crop year to date)",
+  "value": 11.21,
+  "unit": "M bags",
+  "source": "Cecafé (+15.5% y/y)",
+  "date": "2026-10-09",
+  "url": "https://www.cecafe.com.br/sem-categoria/exportacao-cafe-39-mi-sacas-setembro-20261009/"
+ },
+ {
+  "country": "Brazil",
+  "season": "Sep 2026",
+  "item": "Exports (month)",
+  "value": 3.894,
+  "unit": "M bags",
+  "source": "Cecafé (+3.1% y/y)",
+  "date": "2026-10-09",
+  "url": "https://www.cecafe.com.br/sem-categoria/exportacao-cafe-39-mi-sacas-setembro-20261009/"
+ },
+ {
+  "country": "Vietnam",
+  "season": "2026/27",
+  "item": "Production",
+  "value": 32.5,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://dailycoffeenews.com/2026/06/24/vietnam-coffee-report-production-rising-for-third-straight-year/"
+ },
+ {
+  "country": "Vietnam",
+  "season": "2026/27",
+  "item": "Bean exports",
+  "value": 25.4,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "Colombia",
+  "season": "2026/27",
+  "item": "Production",
+  "value": 13.4,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "Indonesia",
+  "season": "2026/27",
+  "item": "Production",
+  "value": 11.4,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "Ethiopia",
+  "season": "2026/27",
+  "item": "Production",
+  "value": 12.1,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "World",
+  "season": "2026/27",
+  "item": "Production",
+  "value": 189.7,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "World",
+  "season": "2026/27",
+  "item": "Consumption",
+  "value": 179.7,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "World",
+  "season": "2026/27",
+  "item": "Ending stocks",
+  "value": 26.3,
+  "unit": "M bags",
+  "source": "USDA (June 2026)",
+  "date": "2026-06-25",
+  "url": "https://backend.qahwaworld.com/usda-world-coffee-market-report-2026/"
+ },
+ {
+  "country": "Brazil",
+  "season": "Jan–Sep 2026",
+  "item": "Exports — arabica",
+  "value": 20.739,
+  "unit": "M bags",
+  "source": "Cecafé (−10.7% y/y)",
+  "date": "2026-10-09",
+  "url": "https://www.cecafe.com.br/sem-categoria/exportacao-cafe-39-mi-sacas-setembro-20261009/"
+ },
+ {
+  "country": "Brazil",
+  "season": "Jan–Sep 2026",
+  "item": "Exports — conilon/robusta",
+  "value": 5.162,
+  "unit": "M bags",
+  "source": "Cecafé (+68.3% y/y)",
+  "date": "2026-10-09",
+  "url": "https://www.cecafe.com.br/sem-categoria/exportacao-cafe-39-mi-sacas-setembro-20261009/"
+ }
+]

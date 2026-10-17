@@ -126,7 +126,7 @@ def parse_na(html, series):
     parts = re.split(r"(\d{2}/\d{2}/\d{4})", html)
     tabs = []
     try:
-        tabs = pd.read_html(io.StringIO(html))
+        tabs = pd.read_html(io.StringIO(html), thousands=".", decimal=",")
     except Exception:
         return out
     dates = re.findall(r'class="fechamento"[^>]*>[^0-9]*(\d{2}/\d{2}/\d{4})', html) or \
@@ -169,9 +169,6 @@ def fetch_brazil(full=False):
             r = get(u)
             if r is None or not r.ok:
                 continue
-            if d is None and os.environ.get("COFFEE_DEBUG"):
-                os.makedirs(os.path.join(DATA, "_debug"), exist_ok=True)
-                open(os.path.join(DATA, "_debug", name + ".html"), "w").write(r.text)
             rows += parse_na(r.text, name)
             if d:
                 time.sleep(0.4)
@@ -300,7 +297,7 @@ def fetch_cot():
     if r is None or not r.ok:
         log("cot fail"); return
     d = pd.read_csv(io.BytesIO(r.content))
-    d = d[d["commodity"].astype(str).str.contains("Coffee", case=False)]
+    d = d[(d["commodity"] == "Coffee") & (d["crop_type"].astype(str) == "all")]
     keep = [c for c in d.columns if c in ("date", "commodity", "open_interest") or c.startswith(("managed_money", "prod_merc", "swap"))]
     d[keep].to_csv(os.path.join(DATA, "cot_coffee.csv"), index=False); log("cot", len(d))
 

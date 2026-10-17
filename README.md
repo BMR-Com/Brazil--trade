@@ -161,3 +161,13 @@ A separate tab for Brazil and world sugar fundamentals, refreshed every weekday 
 - White premium, London No.5 against NY No.11 by contract pair (ICE)
 - Brazil sugar exports, raw and white, by marketing year and destination (Secex, from this repo's trade data)
 - Brazil, India, Thailand and world balances (USDA PSD) and the latest published estimates (`sugar/data/estimates.json`)
+
+## Coffee desk (`coffee.html`)
+
+A separate tab for coffee physical prices and fundamentals, refreshed every weekday by `.github/workflows/coffee.yml`:
+
+- Origin cash prices against ICE futures: Brazil (CEPEA/ESALQ arabica and conilon, co-op quotes), Colombia (FNC internal price and Excelso ex-dock), Vietnam (Central Highlands farm-gate)
+- ICO group indicator prices, certified stocks and world exports (ICO Coffee Market Report, via BMR-Com/coffee-analytics)
+- Arabica–robusta arbitrage and the KC and RC forward curves
+- Managed-money positioning in ICE arabica (CFTC)
+- Brazil exports by crop year and destination (Secex), Colombia production and exports (FNC), USDA balances and the latest published estimates (`coffee/data/estimates.json`)

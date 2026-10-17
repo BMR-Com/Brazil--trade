@@ -3,9 +3,6 @@ name: Coffee — data refresh and model build
 on:
   schedule:
     - cron: "35 22 * * 1-5"    # weekdays after the ICE close
-  push:
-    branches: [coffee-tab]
-    paths: ["coffee/scripts/**", ".github/workflows/coffee.yml"]
   workflow_dispatch:
     inputs:
       full:
@@ -35,7 +32,7 @@ jobs:
           if [ "${{ github.event.inputs.full }}" = "true" ]; then
             python coffee/scripts/fetch.py --full
           else
-            COFFEE_DEBUG=1 python coffee/scripts/fetch.py
+            python coffee/scripts/fetch.py
           fi
       - name: Build
         run: if [ -f coffee/scripts/build.py ]; then python coffee/scripts/build.py; fi
