@@ -111,7 +111,7 @@ tbody tr:hover{background:rgba(255,255,255,.025);}
 <div class="page" id="page">
   <div class="subnav">
     <a href="#s-summary">Summary</a><a href="#s-crush">Centre-South crush</a><a href="#s-parity">Ethanol parity</a>
-    <a href="#s-white">White premium</a><a href="#s-exports">Brazil exports</a><a href="#s-world">India · Thailand · world</a>
+    <a href="#s-white">White premium</a><a href="#s-exports">Brazil exports</a><a href="#s-wx">Weather &amp; USDA</a><a href="#s-world">India · Thailand · world</a>
   </div>
 
   <div class="g3 mb16" id="kpis"></div>
@@ -185,6 +185,9 @@ tbody tr:hover{background:rgba(255,255,255,.025);}
     <div class="tcard"><div class="tcard-head">Export pace <span id="paceSub"></span></div><table id="tPace"></table></div>
     <div class="tcard"><div class="tcard-head">Top destinations <span id="destSub"></span></div><table id="tDest"></table></div>
   </div>
+
+  <div class="sec" id="s-wx"><span class="sec-title">Brazil weather, El Niño and USDA reports</span><div class="sec-line"></div></div>
+  <div id="brwx" data-crop="sugar" class="mb24"></div>
 
   <!-- WORLD -->
   <div class="sec" id="s-world"><span class="sec-title">India · Thailand · world balance</span><div class="sec-line"></div></div>
@@ -402,5 +405,6 @@ function render(){
   }
 }
 </script>
+<script src="shared/brwx.js"></script>
 </body>
 </html>

@@ -112,18 +112,19 @@ tbody tr:hover{background:rgba(255,255,255,.025);}
 <div class="page" id="page">
   <div class="subnav">
     <a href="#s-summary">Summary</a><a href="#s-phys">Physical vs futures</a><a href="#s-fut">Arbitrage &amp; curves</a>
-    <a href="#s-pos">Positioning, spreads &amp; stocks</a><a href="#s-exp">Exports</a><a href="#s-sup">Supply</a>
+    <a href="#s-pos">Positioning, spreads &amp; stocks</a><a href="#s-exp">Exports</a><a href="#s-wx">Weather &amp; USDA</a><a href="#s-sup">Supply</a>
   </div>
   <div class="g3 mb16" id="kpis"></div>
   <div class="insight-box mb24" id="s-summary"><div class="ins-head">Desk read</div><ul class="ins-list" id="insights"></ul></div>
 
   <div class="sec" id="s-phys"><span class="sec-title">Physical prices vs futures — Brazil · Colombia · Vietnam</span><div class="sec-line"></div></div>
   <div class="g2 mb16">
-    <div class="chart-card"><div class="chart-title">Brazil arabica — CEPEA/ESALQ vs NY</div><div class="chart-sub">US¢/lb. CEPEA type 6 hard cup, delivered São Paulo, converted at the day's BRL; basis = CEPEA − KC front</div>
+    <div class="chart-card"><div class="chart-title">Brazil arabica basis by quality vs NY</div><div class="chart-sub">US¢/lb under/over KC front, weekly. Good cup = B3 arabica 4/5 (hard cup or better); semi-washed = cereja descascado co-op average; tipo 6 = hard-cup co-op average and CEPEA</div>
       <div class="chart-wrap"><canvas id="cBrA"></canvas></div><div class="legend" id="lBrA"></div></div>
     <div class="chart-card"><div class="chart-title">Brazil conilon — CEPEA/ESALQ vs London</div><div class="chart-sub">US$/t. CEPEA type 7/8, Espírito Santo; basis = CEPEA − RC front</div>
       <div class="chart-wrap"><canvas id="cBrC"></canvas></div><div class="legend" id="lBrC"></div></div>
   </div>
+  <div class="tcard mb16"><div class="tcard-head">Brazil arabica basis ladder <span>Latest price converted to ¢/lb, discount to KC front, one-year average and five-year percentile. Fine cup (bebida fina / 17-18 FC) export differentials are not published freely; good cup via B3 is the closest public benchmark</span></div><table id="tLad"></table></div>
   <div class="g2 mb16">
     <div class="tcard"><div class="tcard-head">Brazil co-op arabica quotes <span id="coopSub"></span></div><table id="tCoop"></table></div>
     <div class="tcard"><div class="tcard-head">Conilon, Vitória/ES <span id="vitSub"></span></div><table id="tVit"></table></div>
@@ -170,6 +171,10 @@ tbody tr:hover{background:rgba(255,255,255,.025);}
       <div class="chart-wrap"><canvas id="cPm"></canvas></div><div class="legend" id="lPm"></div></div>
   </div>
 
+  <div class="chart-card mb24"><div class="chart-title">Brazil green coffee to Belgium — the Antwerp certification signal</div>
+    <div class="chart-sub" id="belSub">Thousand bags a month vs the average of the same month in the prior three years. Antwerp holds ICE certified warehouses, so an unusual surge to Belgium tends to precede certified-stock builds</div>
+    <div class="chart-wrap"><canvas id="cBel"></canvas></div><div class="legend" id="lBel"></div></div>
+
   <div class="sec" id="s-exp"><span class="sec-title">Exports — Brazil, Colombia, world</span><div class="sec-line"></div></div>
   <div class="g2 mb16">
     <div class="chart-card"><div class="chart-title">Brazil monthly exports by type</div><div class="chart-sub">Million 60-kg bags, product weight (Secex). Secex codes do not split arabica from conilon; Cecafé does, in the estimates table</div>
@@ -184,6 +189,9 @@ tbody tr:hover{background:rgba(255,255,255,.025);}
   </div>
   <div class="chart-card mb24"><div class="chart-title">World exports, rolling 12 months</div><div class="chart-sub">Million bags, ICO — arabicas and robustas</div>
     <div class="chart-wrap"><canvas id="cWexp"></canvas></div><div class="legend" id="lWexp"></div></div>
+
+  <div class="sec" id="s-wx"><span class="sec-title">Brazil weather, El Niño and USDA reports</span><div class="sec-line"></div></div>
+  <div id="brwx" data-crop="coffee" class="mb24"></div>
 
   <div class="sec" id="s-sup"><span class="sec-title">Supply — USDA and latest estimates</span><div class="sec-line"></div></div>
   <div class="g2 mb16">
@@ -237,23 +245,30 @@ function render(){
   if (S['KC1!']) k('ICE arabica front', f(S['KC1!'].last,2), '¢/lb · ' + S['KC1!'].date, mv(S['KC1!']));
   if (S['RC1!']) k('ICE robusta front', f(S['RC1!'].last,0), 'US$/t', mv(S['RC1!']));
   if (A) k('Arabica − robusta arb', f(A.now.arb,0), `US$/t · ratio ${f(A.now.ratio,2)}×`, `${A.now.pct5y}th percentile of five years`);
-  if (B && B.arabica.basis.length){ const n = B.arabica.basis.length-1; k('Brazil arabica basis', sgn(B.arabica.basis[n],1,'¢'), `CEPEA R$${f(B.arabica.brl[n],0)}/bag = ${f(B.arabica.c_lb[n],1)}¢/lb · ${B.arabica.dates[n]}`, B.conillon.basis.length ? `Conilon ${sgn(B.conillon.basis[B.conillon.basis.length-1],0,' $/t')} vs London` : ''); }
+  if (B && B.ladder && B.ladder.length){ const g = B.ladder.find(x => x.key==='icf') || B.ladder[0], cd = B.ladder.find(x => x.key==='cd'), t6 = B.ladder.find(x => x.key==='cepea');
+    k('Brazil good-cup basis', sgn(g.basis,1,'¢'), `B3 arabica 4/5 ${f(g.c_lb,1)}¢/lb vs KC · ${g.date}`, `${cd ? 'Semi-washed '+sgn(cd.basis,0,'¢')+' · ' : ''}${t6 ? 'CEPEA tipo 6 '+sgn(t6.basis,0,'¢') : ''}`); }
   if (CO && CO.internal) { const c = CO.internal.now; k('Colombia FNC internal', f(c.c_lb,1), `¢/lb equiv · COP ${f(c.cop/1e6,3)}M/carga · ${c.date}`, `vs NY ${sgn(c.c_lb-c.kc,1,'¢')}${CO.monthly ? ` · ex-dock diff ${sgn(CO.monthly.diff.filter(x=>x!=null).slice(-1)[0],1,'¢')} (month)` : ''}`); }
   if (VN) k('Vietnam farm-gate robusta', f(VN.now.usd_t,0), `US$/t · ${f(VN.now.vnd,0)} VND/kg · ${VN.now.date}`, `vs London ${sgn(VN.now.usd_t-VN.now.rc,0,' $/t')}`);
   $('kpis').innerHTML = out.join('');
 
   // Brazil physical
   if (B){
-    const a = B.arabica, i0 = since(a,'dates','2018');
-    const d = a.dates.slice(i0);
-    draw('cBrA', {type:'line', data:{labels:d, datasets:[line('CEPEA arabica', a.c_lb.slice(i0), C.s1), line('KC front', a.kc.slice(i0), C.s2), line('Basis', a.basis.slice(i0), C.s3, {borderWidth:1.5})]}, options:{scales:{x:sx(d), y:sy('¢/lb')}}});
-    legend('lBrA', [[C.s1,'CEPEA arabica'],[C.s2,'ICE KC front'],[C.s3,'Basis (CEPEA − KC)']]);
+    const LH = B.ladder_hist, d = LH.dates, ds = [], lg = [];
+    const spec = [['icf','Good cup (B3 4/5)',C.s1,{}],['cd','Semi-washed (CD)',C.s2,{}],['t6','Tipo 6 co-ops',C.s3,{}],['cepea','CEPEA tipo 6',C.hist,{borderDash:[5,4]}]];
+    spec.forEach(([k2,l,c,o]) => { if (LH[k2]) { ds.push(line(l, LH[k2], c, o)); lg.push([c,l,!!o.borderDash]); } });
+    ds.push(zero(d));
+    draw('cBrA', {type:'line', data:{labels:d, datasets:ds}, options:{scales:{x:sx(d), y:sy('¢/lb vs KC')}}});
+    legend('lBrA', lg);
+    table('tLad', [['Quality',''],['As of',''],['¢/lb','r'],['vs KC','r'],['1-yr avg','r'],['5-yr pctile','r']],
+      B.ladder.map(x => [x.name, x.date, f(x.c_lb,1), `<b>${sgn(x.basis,1,'¢')}</b>`, sgn(x.avg1y,1,'¢'), x.pct!=null ? x.pct+'th' : '—']));
     const c = B.conillon, j0 = since(c,'dates','2018'), dc = c.dates.slice(j0);
     draw('cBrC', {type:'line', data:{labels:dc, datasets:[line('CEPEA conilon', c.usd_t.slice(j0), C.s1), line('RC front', c.rc.slice(j0), C.s2), line('Basis', c.basis.slice(j0), C.s3, {borderWidth:1.5})]}, options:{scales:{x:sx(dc), y:sy('US$/t')}}});
     legend('lBrC', [[C.s1,'CEPEA conilon'],[C.s2,'ICE RC front'],[C.s3,'Basis (CEPEA − RC)']]);
     const q = B.quotes || {};
-    if (q.coop_arabica){ $('coopSub').textContent = `Tipo 6 bebida dura, R$/60-kg bag, ${q.coop_arabica.date}`;
-      table('tCoop', [['Co-op / town',''],['R$/bag','r'],['Week ago','r'],['¢/lb','r'],['vs KC','r']], q.coop_arabica.rows.map(r => [r.place, f(r.brl,0), f(r.brl_1w,0), f(r.usd,1), sgn(r.usd - S['KC1!'].last,1,'¢')])); }
+    if (q.coop_arabica){ const cdq = {}; (q.coop_cd ? q.coop_cd.rows : []).forEach(r => cdq[r.place.split('(')[1] || r.place] = r);
+      $('coopSub').textContent = `R$/60-kg bag, ${q.coop_arabica.date}: semi-washed (cereja descascado) and tipo 6 bebida dura`;
+      table('tCoop', [['Co-op / town',''],['Semi-washed R$','r'],['vs KC','r'],['Tipo 6 R$','r'],['vs KC','r']], q.coop_arabica.rows.map(r => { const c = cdq[r.place.split('(')[1] || r.place];
+        return [r.place, c ? f(c.brl,0) : '—', c ? sgn(c.usd - S['KC1!'].last,1,'¢') : '—', f(r.brl,0), sgn(r.usd - S['KC1!'].last,1,'¢')]; })); }
     if (q.vitoria_conillon){ $('vitSub').textContent = `R$/60-kg bag, ${q.vitoria_conillon.date}`;
       table('tVit', [['Type',''],['R$/bag','r'],['Week ago','r'],['US$/t','r'],['vs RC','r']], q.vitoria_conillon.rows.map(r => [r.place, f(r.brl,0), f(r.brl_1w,0), f(r.usd,0), sgn(r.usd - S['RC1!'].last,0,'')])); }
   }
@@ -303,6 +318,13 @@ function render(){
     $('pmSub').textContent = `Contracts. ${T.now.date}: ${f(T.pm_now.short,0)} short vs ${f(T.pm_now.avg5y,0)} five-year average — low hedging = little coffee being carried`;
     draw('cPm', {type:'line', data:{labels:d, datasets:[line('Producer/merchant short', T.pm_short.slice(i0), C.s1), line('5-year average', T.pm_short_5y.slice(i0), C.hist, {borderDash:[5,4]})]}, options:{scales:{x:sx(d), y:sy('contracts')}}});
     legend('lPm', [[C.s1,'Producer/merchant short'],[C.hist,'Five-year average',1]]); }
+  // Belgium / Antwerp signal
+  const BE = J.br_exports && J.br_exports.belgium;
+  if (BE){ const i0 = Math.max(0, BE.ym.findIndex(x => x >= '2021')), d = BE.ym.slice(i0);
+    $('belSub').textContent = `Thousand bags a month vs the same months' prior-3-year average. ${BE.now.months}: ${f(BE.now.last3,0)}k bags, ${sgn(BE.now.vs_avg,0)} vs normal, ${f(BE.now.share,1)}% of Brazil's green exports. Antwerp holds ICE certified warehouses, so a surge to Belgium tends to precede certified-stock builds (NY certs in the tooltip)`;
+    draw('cBel', {type:'bar', data:{labels:d, datasets:[{label:'Belgium', data:BE.bags.slice(i0), backgroundColor:C.s1, borderRadius:{topLeft:4,topRight:4}, borderSkipped:'bottom'}, {type:'line', label:'Prior 3-yr avg', data:BE.avg3.slice(i0), borderColor:C.s2, backgroundColor:C.s2, borderWidth:2, pointRadius:0, borderDash:[5,4]}]},
+      options:{plugins:{tooltip:{callbacks:{footer:it => { const c = BE.certs_ny[i0+it[0].dataIndex]; return `Share of BR green exports ${f(BE.share[i0+it[0].dataIndex],1)}%` + (c!=null ? ` · NY certs ${f(c,2)}M bags` : ''); }}}}, scales:{x:sx(d,{grid:{display:false}}), y:sy('k bags')}}});
+    legend('lBel', [[C.s1,'Brazil green exports to Belgium'],[C.s2,'Prior three-year average, same month',1]]); }
   // Exports
   const E = J.br_exports;
   if (E){ const M = E.monthly;
@@ -341,14 +363,17 @@ function render(){
   // Desk read
   const L = [];
   if (S['KC1!'] && S['RC1!']) L.push(`Arabica ${f(S['KC1!'].last,1)}¢ (${S['KC1!'].w1>=0?'+':''}${f(S['KC1!'].w1,1)}% on the week) and robusta $${f(S['RC1!'].last,0)}/t (${S['RC1!'].w1>=0?'+':''}${f(S['RC1!'].w1,1)}%); the arb is $${f(A.now.arb,0)}/t, ${A.now.pct5y}th percentile of five years — arabica is expensive relative to robusta, which favours robusta in blends.`);
-  if (B && B.arabica.basis.length){ const n = B.arabica.basis.length-1; L.push(`Brazil cash arabica (CEPEA) is ${f(B.arabica.c_lb[n],0)}¢/lb equivalent, ${f(Math.abs(B.arabica.basis[n]),0)}¢ under NY: a record-sized crop is keeping local sellers well behind the futures rally.`); }
+  if (B && B.ladder){ const g = B.ladder.find(x => x.key==='icf'), cd = B.ladder.find(x => x.key==='cd'), t6 = B.ladder.find(x => x.key==='t6');
+    if (g) L.push(`Brazil good cup (B3 4/5) trades ${f(Math.abs(g.basis),0)}¢ under NY (1-yr avg ${f(g.avg1y,0)}¢)${cd ? `, semi-washed ${f(Math.abs(cd.basis),0)}¢ under` : ''}${t6 ? ` and tipo 6 hard cup ${f(Math.abs(t6.basis),0)}¢ under` : ''}: the widening quality spread shows the big 2026 crop is heavy in lower grades.`); }
   if (CO && CO.internal) L.push(`Colombian farm-gate (FNC) is ${f(CO.internal.now.c_lb,0)}¢/lb equivalent, ${sgn(CO.internal.now.c_lb-CO.internal.now.kc,0,'¢')} vs NY; Excelso ex-dock is running ${f(CO.monthly.diff.filter(x=>x!=null).slice(-1)[0],0)}¢ over NY on the monthly average — washed milds stay scarce.`);
   if (VN) L.push(`Vietnam Central Highlands farm-gate is $${f(VN.now.usd_t,0)}/t (${f(VN.now.vnd,0)} VND/kg), ${sgn(VN.now.usd_t-VN.now.rc,0,' $/t')} over London: origin holds a premium ahead of the 2026/27 harvest.`);
   if (SP && T && T.pm_now) L.push(`KC front is ${f(SP.now.spread,1)}¢ over second (${SP.now.pct5y}th percentile of five years) against ~${f(SP.now.carry,1)}¢ of financing cost, with NY certs at ${f(J.ico.stocks.ny.slice(-1)[0],2)}M bags and commercial shorts ${f(T.pm_now.short/1000,0)}k vs a ${f(T.pm_now.avg5y/1000,0)}k five-year average: the inversion still pays to run inventory lean.`);
+  if (BE && BE.now.vs_avg != null) L.push(`Brazil sent ${f(BE.now.last3,0)}k bags of green coffee to Belgium in ${BE.now.months}, ${sgn(BE.now.vs_avg,0)} on the three-year norm (${f(BE.now.share,1)}% of exports). With Antwerp's ICE warehouses there, ${BE.now.vs_avg > 30 ? 'this points to more coffee heading for certification — watch for NY certs to keep building, which would ease the inversion' : 'flows look normal for certification'}.`);
   if (T) L.push(`Funds hold ${f(T.now.mm_net,0)} net long in arabica (${T.now.chg>=0?'+':''}${f(T.now.chg,0)} on the week), only the ${T.now.pct5y}th percentile of five years — positioning is light for a market at these prices.`);
   if (E){ const cy = String(E.cur_cy), a = E.cy[cy], b = E.cy[String(E.cur_cy-1)]; if (a && b && b.cum[E.k]!=null) L.push(`Brazil shipped ${f(a.cum[E.k],1)}M bags in Jul–${CYM[E.k]}, ${sgn(pct(a.cum[E.k], b.cum[E.k]),0)} on last crop year, as the bigger 2026 crop moves; Conab puts the crop at 67.6M bags (48.2 arabica, 19.4 conilon).`); }
   $('insights').innerHTML = L.map(x => `<li>${x}</li>`).join('');
 }
 </script>
+<script src="shared/brwx.js"></script>
 </body>
 </html>

@@ -107,7 +107,7 @@ def brazil(w):
                        "rc": [rd(v, 0) for v in jc.rc], "basis": [rd(v, 0) for v in con_t - jc.rc]}
     # latest co-op and Vitória quotes
     tabs = {}
-    for sname in ["coop_arabica", "vitoria_conillon"]:
+    for sname in ["coop_cd", "coop_arabica", "vitoria_conillon"]:
         g = b[b.series == sname]
         if g.empty:
             continue
@@ -118,9 +118,36 @@ def brazil(w):
         for _, r in cur.iterrows():
             pv = prev[prev.place == r.place].brl_bag
             rows.append({"place": r.place, "brl": rd(r.brl_bag, 0), "brl_1w": rd(pv.iloc[0], 0) if len(pv) else None,
-                         "usd": rd(r.brl_bag / f / LB_BAG * 100, 1) if sname == "coop_arabica" else rd(r.brl_bag / f / 0.06, 0)})
+                         "usd": rd(r.brl_bag / f / LB_BAG * 100, 1) if sname != "vitoria_conillon" else rd(r.brl_bag / f / 0.06, 0)})
         tabs[sname] = {"date": str(d)[:10], "rows": rows}
     out["quotes"] = tabs
+    # Basis ladder by quality. B3 arabica (ICF) is type 4/5 "hard cup or better" (good cup) in US$/bag;
+    # cereja descascado (CD) = semi-washed; tipo 6 duro and 6/7 = lower grades; CEPEA = type 6 hard cup.
+    kc = w["KC1!"]
+    lad = {"icf": (w["ICF1!"] / LB_BAG * 100) if "ICF1!" in w else None}
+    for key, ser in [("cd", "coop_cd"), ("t6", "coop_arabica"), ("t67", "coop_67"), ("cepea", "cepea_arabica")]:
+        g = b[b.series == ser].groupby("date").brl_bag.mean()
+        if len(g):
+            f = fx.reindex(g.index, method="ffill")
+            lad[key] = g / f / LB_BAG * 100
+    frame = pd.concat({k: v for k, v in lad.items() if v is not None}, axis=1, sort=True)
+    frame["kc"] = kc.reindex(frame.index, method="ffill")
+    bas = frame.drop(columns="kc").sub(frame.kc, axis=0)
+    wk = bas.resample("W-FRI").mean()
+    wk = wk[wk.index >= "2018-01-01"]
+    out["ladder_hist"] = {"dates": [str(i)[:10] for i in wk.index], **{c: [rd(v, 1) for v in wk[c]] for c in wk.columns}}
+    names = {"icf": "B3 arabica 4/5 — good cup (front future)", "cd": "Semi-washed (cereja descascado), co-op avg",
+             "t6": "Tipo 6 bebida dura, co-op avg", "t67": "Tipo 6/7, co-op avg", "cepea": "CEPEA/ESALQ tipo 6 bebida dura (SP)"}
+    ladder = []
+    for c in ["icf", "cd", "t6", "t67", "cepea"]:
+        if c not in frame or frame[c].dropna().empty:
+            continue
+        sr = frame[c].dropna(); d = sr.index[-1]
+        kcv = kc[kc.index <= d].iloc[-1]
+        hist = bas[c].dropna(); h1y = hist[hist.index >= d - timedelta(days=365)]
+        ladder.append({"key": c, "name": names[c], "date": str(d)[:10], "c_lb": rd(sr.iloc[-1], 1), "basis": rd(sr.iloc[-1] - kcv, 1),
+                       "avg1y": rd(h1y.mean(), 1), "pct": rd((hist[hist.index >= d - timedelta(days=1826)] <= hist.iloc[-1]).mean() * 100, 0)})
+    out["ladder"] = ladder
     return out
 
 
@@ -232,7 +259,25 @@ def brazil_exports():
     prv_d = d[(d.cy == cur - 1) & (d.mi <= k)].groupby("country_name").bags.sum()
     dest = [{"country": c, "bags": rd(v / 1e6, 3), "prev": rd(prv_d.get(c, 0) / 1e6, 3)} for c, v in cur_d.sort_values(ascending=False).head(12).items()]
     sub = {s: [rd(v / 1e6, 3) for v in m.tail(36).get(s, pd.Series([0] * 36))] for s in ["green", "roasted", "soluble"]}
-    return {"last": f"{ly}-{lm:02d}", "cur_cy": cur, "k": k, "cy": cy, "dest": dest,
+    # Belgium (Antwerp hosts ICE certified warehouses): unusual green-coffee flows there can precede certification
+    gb = d[(d.subtype == "green") & (d.country_name == "Belgium")].groupby(["year", "month"]).bags.sum()
+    gt = d[d.subtype == "green"].groupby(["year", "month"]).bags.sum()
+    bel = pd.DataFrame({"bel": gb, "tot": gt}).fillna(0).reset_index()
+    bel["ym"] = [f"{a}-{b:02d}" for a, b in zip(bel.year, bel.month)]
+    bel["avg3"] = [bel[(bel.month == m) & (bel.year.between(y - 3, y - 1))].bel.mean() for y, m in zip(bel.year, bel.month)]
+    bel = bel[bel.year >= 2018]
+    cs = read("ico_certified_stocks.csv")
+    certs = {}
+    if cs is not None:
+        cs = cs.sort_values(["stock_month", "report_period"]).drop_duplicates("stock_month", keep="last")
+        certs = dict(zip(cs.stock_month, cs.new_york_bags_millions))
+    last3 = bel.tail(3)
+    belgium = {"ym": bel.ym.tolist(), "bags": [rd(v / 1e3, 0) for v in bel.bel], "avg3": [rd(v / 1e3, 0) for v in bel.avg3],
+               "share": [rd(a / b * 100, 1) if b else None for a, b in zip(bel.bel, bel.tot)], "certs_ny": [certs.get(m) for m in bel.ym],
+               "now": {"last3": rd(last3.bel.sum() / 1e3, 0), "avg3_last3": rd(last3.avg3.sum() / 1e3, 0),
+                       "vs_avg": rd((last3.bel.sum() / last3.avg3.sum() - 1) * 100, 0) if last3.avg3.sum() else None,
+                       "share": rd(last3.bel.sum() / last3.tot.sum() * 100, 1), "months": f"{last3.ym.iloc[0]} to {last3.ym.iloc[-1]}"}}
+    return {"belgium": belgium, "last": f"{ly}-{lm:02d}", "cur_cy": cur, "k": k, "cy": cy, "dest": dest,
             "monthly": {"ym": [f"{a}-{b:02d}" for a, b in zip(m.year.tail(36), m.month.tail(36))], **sub, "usd_bag": [rd(v, 0) for v in m.usd_bag.tail(36)]}}
 
 

@@ -1,5 +1,5 @@
 """
-Brazil crop-region weather (Open-Meteo, ERA5 reanalysis + 16-day forecast) and ENSO (NOAA CPC Niño 3.4).
+Brazil crop-region weather (NASA POWER daily history, Open-Meteo 16-day forecast and last few days) and ENSO (NOAA CPC Niño 3.4).
 Writes weather/data/br_weather.json used by the coffee, sugar and cotton pages.
 """
 import os, io, json, time, math
@@ -14,10 +14,19 @@ H = {"User-Agent": "BMR-Com research (github.com/BMR-Com)"}
 
 REGIONS = [
     # crop, region, town, lat, lon
+    # Minas Gerais coffee belt, by Conab region: Sul e Centro-Oeste (~half of MG output), Cerrado Mineiro
+    # (Triângulo/Alto Paranaíba/Noroeste), Zona da Mata/Rio Doce/Central (Matas de Minas), Norte/Jequitinhonha
     ("coffee", "Sul de Minas", "Varginha MG", -21.55, -45.43),
+    ("coffee", "Sul de Minas", "Guaxupé MG", -21.30, -46.71),
+    ("coffee", "Sul de Minas", "Três Pontas MG", -21.37, -45.51),
+    ("coffee", "Sul de Minas", "Machado MG", -21.67, -45.92),
     ("coffee", "Cerrado Mineiro", "Patrocínio MG", -18.94, -46.99),
-    ("coffee", "Mogiana", "Franca SP", -20.54, -47.40),
+    ("coffee", "Cerrado Mineiro", "Araguari MG", -18.65, -48.19),
+    ("coffee", "Cerrado Mineiro", "Carmo do Paranaíba MG", -19.00, -46.32),
     ("coffee", "Matas de Minas", "Manhuaçu MG", -20.26, -42.03),
+    ("coffee", "Matas de Minas", "Viçosa MG", -20.75, -42.88),
+    ("coffee", "Norte / Jequitinhonha", "Capelinha MG", -17.69, -42.52),
+    ("coffee", "Mogiana", "Franca SP", -20.54, -47.40),
     ("coffee", "Espírito Santo (conilon)", "Linhares ES", -19.39, -40.07),
     ("coffee", "Rondônia (robusta)", "Cacoal RO", -11.44, -61.45),
     ("coffee", "Bahia Cerrado", "Luís Eduardo Magalhães BA", -12.09, -45.79),
@@ -36,27 +45,55 @@ REGIONS = [
 CLIM = (1991, 2020)
 
 
-def get(url, tries=4):
+def get(url, tries=5):
     for k in range(tries):
         try:
             r = requests.get(url, headers=H, timeout=120)
             if r.ok:
                 return r
-            print("http", r.status_code, url[:120])
+            print("http", r.status_code, r.text[:160], url[:100], flush=True)
+            if r.status_code == 429:
+                time.sleep(65); continue
         except Exception as e:
-            print("err", e)
+            print("err", e, flush=True)
         time.sleep(5 + 10 * k)
     return None
 
 
 def archive(lat, lon, start, end):
-    u = (f"https://archive-api.open-meteo.com/v1/archive?latitude={lat}&longitude={lon}&start_date={start}&end_date={end}"
-         "&daily=precipitation_sum,temperature_2m_max,temperature_2m_min&timezone=America%2FSao_Paulo")
+    """Daily history from NASA POWER (MERRA-2 / IMERG-corrected rain, free, no key). ~2-day latency."""
+    u = (f"https://power.larc.nasa.gov/api/temporal/daily/point?parameters=PRECTOTCORR,T2M_MAX,T2M_MIN&community=AG"
+         f"&longitude={lon}&latitude={lat}&start={start.replace('-', '')}&end={end.replace('-', '')}&format=JSON")
     r = get(u)
     if r is None:
         return None
-    d = r.json()["daily"]
-    return pd.DataFrame({"date": pd.to_datetime(d["time"]), "p": d["precipitation_sum"], "tmax": d["temperature_2m_max"], "tmin": d["temperature_2m_min"]}).set_index("date")
+    p = r.json()["properties"]["parameter"]
+    idx = pd.to_datetime(list(p["PRECTOTCORR"].keys()), format="%Y%m%d")
+    df = pd.DataFrame({"p": list(p["PRECTOTCORR"].values()), "tmax": list(p["T2M_MAX"].values()), "tmin": list(p["T2M_MIN"].values())}, index=idx)
+    df.index.name = "date"
+    return df.mask(df <= -998)
+
+
+def history(lat, lon, town):
+    """Daily history cached in weather/data/hist/<town>.csv: fetched once in full (1991 on), then topped up."""
+    hd = os.path.join(DATA, "hist"); os.makedirs(hd, exist_ok=True)
+    fn = os.path.join(hd, "".join(c for c in town if c.isalnum()) + ".csv")
+    today = date.today()
+    old = pd.read_csv(fn, parse_dates=["date"]).set_index("date") if os.path.exists(fn) else None
+    if old is None or old.index.min() > pd.Timestamp(f"{CLIM[0]}-01-02"):
+        parts = []
+        new = archive(lat, lon, f"{CLIM[0]}-01-01", str(today - timedelta(days=1)))
+        if new is None:
+            return None
+    else:
+        x = archive(lat, lon, str((old.index.max() - timedelta(days=60)).date()), str(today - timedelta(days=1)))
+        new = old if x is None else x.combine_first(old)
+        # reanalysis lags a few days; the last values get revised, so the fresh pull overwrites them
+        if x is not None:
+            new.loc[x.index] = x
+    new = new[~new.index.duplicated(keep="last")].sort_index().round(1)
+    new.reset_index().to_csv(fn, index=False)
+    return new
 
 
 def forecast(lat, lon):
@@ -137,7 +174,7 @@ def main():
     for crop, region, town, lat, lon in REGIONS:
         key = (lat, lon)
         if key not in cache:
-            hist = archive(lat, lon, f"{CLIM[0]}-01-01", str(today - timedelta(days=1)))
+            hist = history(lat, lon, town)
             fc = forecast(lat, lon)
             time.sleep(1)
             if hist is None:
@@ -170,6 +207,33 @@ def main():
             rec["fc16"]["normal"] = round(float(np.mean(vals)), 1) if vals else None
         out["regions"].append(rec)
         print(town, rec["d30"])
+    # Minas Gerais coffee belt index: region averages weighted by approximate Conab production shares
+    W = {"Sul de Minas": 0.50, "Cerrado Mineiro": 0.25, "Matas de Minas": 0.22, "Norte / Jequitinhonha": 0.03}
+    def agg(key, field):
+        tot, wt = 0.0, 0.0
+        for reg, w in W.items():
+            vals = [r[key][field] for r in out["regions"] if r["region"] == reg and r.get(key) and r[key].get(field) is not None]
+            if vals:
+                tot += w * float(np.mean(vals)); wt += w
+        return round(tot / wt, 1) if wt else None
+    mg = {"weights": W}
+    for key in ["d7", "d30", "d90"]:
+        mg[key] = {f: agg(key, f) for f in ["rain", "normal", "tmax", "hot_days"]}
+        mg[key]["pct_normal"] = round(mg[key]["rain"] / mg[key]["normal"] * 100, 0) if mg[key]["normal"] else None
+    mg["fc16"] = {f: agg("fc16", f) for f in ["rain", "normal", "hot_days"]}
+    curves = {}
+    for part in ["cur", "prev", "normal"]:
+        acc, wt = None, 0.0
+        for reg, w in W.items():
+            arrs = [np.array(r["season"][part]) for r in out["regions"] if r["region"] == reg and r["season"][part]]
+            if not arrs:
+                continue
+            n = min(len(a) for a in arrs); m = np.mean([a[:n] for a in arrs], axis=0) * w
+            acc = m if acc is None else acc[:n] + m[:len(acc[:n])]
+            wt += w
+        curves[part] = [round(v / wt, 1) for v in acc] if acc is not None else []
+    mg["season"] = {"start": out["regions"][0]["season"]["start"], **curves}
+    out["mg_index"] = mg
     try:
         out["enso"] = enso()
     except Exception as e:

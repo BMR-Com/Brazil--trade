@@ -1,0 +1,16 @@
+[
+ {
+  "date": "2026-10-13",
+  "id": "BR2026-0040",
+  "title": "Bracing for Impact — How the 2026 El Niño Affects Brazil's Agriculture",
+  "post": "Brasilia",
+  "commodities": ["coffee", "sugar", "cotton"],
+  "url": "https://www.fas.usda.gov/data/gain-report/2026/10/Bracing%20for%20Impact%20-%20How%20the%202026%20El%20Nino%20Affects%20Brazil%27s%20Agriculture_Brasilia_Brazil_BR2026-0040.pdf",
+  "summary": "NOAA expects El Niño to reach very strong intensity in Nov 2026–Jan 2027, during Brazil's planting and vegetative phases. North, Northeast and north-west Centre-West face heat and below-average rain; the South faces excess rain and floods; the Southeast is the least affected but faces irregular rain and heatwaves (risk rated medium-high).",
+  "impact": {
+   "coffee": "Southeast coffee needs a dry spell followed by steady rain for flowering. El Niño years bring irregular rain that disrupts flowering, fruit set, filling and bean weight; heat can cause uneven flowering and flower abortion. Post expects a negative production impact that grows with how irregular rain is at critical stages.",
+   "sugar": "Irregular winter rain in the Centre-South can interrupt harvesting and slow crushing; excess moisture delays sugar concentration (lower ATR and quality). Summer dryness and heat, mainly in the North/Northeast, can hurt planting, development and yields.",
+   "cotton": "Heat and low soil moisture can cut yields. Second-crop cotton follows soybeans, so late soybean planting from irregular rain shortens the cotton window; Post sees the impact as possibly limited, since 2025/26 still produced a large crop despite late planting."
+  }
+ }
+]
