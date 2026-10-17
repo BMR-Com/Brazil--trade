@@ -1,0 +1,50 @@
+name: Coffee — data refresh and model build
+
+on:
+  schedule:
+    - cron: "35 22 * * 1-5"    # weekdays after the ICE close
+  push:
+    branches: [coffee-tab]
+    paths: ["coffee/scripts/**", ".github/workflows/coffee.yml"]
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Full history reload (physical price backfill)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coffee-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install
+        run: pip install -q requests pandas numpy openpyxl lxml html5lib beautifulsoup4 websocket-client git+https://github.com/rongardF/tvdatafeed.git
+      - name: Fetch
+        run: |
+          if [ "${{ github.event.inputs.full }}" = "true" ]; then
+            python coffee/scripts/fetch.py --full
+          else
+            COFFEE_DEBUG=1 python coffee/scripts/fetch.py
+          fi
+      - name: Build
+        run: if [ -f coffee/scripts/build.py ]; then python coffee/scripts/build.py; fi
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add coffee/data
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "coffee: data refresh $(date -u +%F) [bot]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
