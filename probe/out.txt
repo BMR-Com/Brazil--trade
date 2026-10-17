@@ -1,7 +1,118 @@
-https://federaciondecafeteros.org/wp-content/uploads/2026/09/Precios-area-y-produccion-de-cafe-Octubre-2026.xlsx 200 465971
-https://federaciondecafeteros.org/wp-content/uploads/2026/06/Exportaciones-Agosto-2026.xlsx 200 3568903
-FNC xlsx ['https://federaciondecafeteros.org/wp-content/uploads/2026/06/Exportaciones-Agosto-2026.xlsx', 'https://federaciondecafeteros.org/wp-content/uploads/2026/07/Precios-area-y-produccion-de-cafe-Agosto-2026.xlsx', 'https://federaciondecafeteros.org/wp-content/uploads/2026/09/Precios-area-y-produccion-de-cafe-Octubre-2026.xlsx']
-https://giacaphe.com/gia-ca-phe-noi-dia/ scripts: ['https://api.giacaphe.com/apps/js/sp-flyicon.min.js', 'https://giacaphe.com/live-quotes/quotes-update-nOsjt.php', 'https://giacaphe.com/wp-admin/admin-ajax.php', 'https://giacaphe.com/wp-content/plugins/rocket-lazy-load/assets/js/19.1.2/lazyload.min.js', 'https://giacaphe.com/wp-content/plugins/wp-postviews/js/wp-postviews-cache.js?ver=2.0.1', 'https://giacaphe.com/wp-content/themes/mobile/imgs/footer-logo.svg', 'https://giacaphe.com/wp-content/themes/mobile/js/update-quotes.min.js?ver=2025_09_22_10']
-CTX y 17/10/2026 cao nhất 93,000 vnđ/kg</title> <meta name="description" content="Giá cà phê hôm nay 17/10/2026 trung bình 92,900 vnđ/kg tăng mạnh 1,000đ so với ngày trước đó. Các vùng được khảo sát gồm Đắk Lắk, Lâm Đồng, Gia Lai, Đắk Nông, Kon Tum" /> <link rel="canonical" href="https://giacaphe.com/gia-ca-phe-noi-dia/" /> <meta property="og:locale" content="vi_VN" /> <meta property="og:type" content="article" /> <meta property="og:title" content="Giá cà phê hôm nay 17/10/2026 cao nhất 93,000 vnđ/kg" /> <meta property="og:description" content="Giá cà phê hôm nay 17/10/2026 trung bình 92,900 vnđ/kg tăng mạnh 1,000đ so với ngày trước đó. Các vùng được khảo sát gồm Đắk Lắk, Lâm Đồng, Gia Lai, Đắk Nông, Kon Tum" /> <meta property="og:url" content="https://giacaphe.com/gia-ca-phe-noi-dia/" 
-https://giacaphe.com/ scripts: ['https://api.giacaphe.com/apps/js/sp-flyicon.min.js', 'https://giacaphe.com/live-quotes/quotes-update-nOsjt.php', 'https://giacaphe.com/wp-admin/admin-ajax.php', 'https://giacaphe.com/wp-content/plugins/rocket-lazy-load/assets/js/19.1.2/lazyload.min.js', 'https://giacaphe.com/wp-content/themes/mobile/imgs/footer-logo.svg', 'https://giacaphe.com/wp-content/uploads/2011/04/ca-phe-braxin-360x240.jpg', 'https://giacaphe.com/wp-content/uploads/2014/02/thu-hoach-nong-truong-ca-phe-310x233.jpg', 'https://giacaphe.com/wp-content/uploads/2025/08/hop-dong-mo-la-gi-350x233.jpg', 'https://giacaphe.com/wp-content/uploads/2025/12/loi-ich-cua-ca-phe-doi-voi-gan-350x233.jpg', 'https://giacaphe.com/wp-content/uploads/2025/12/loi-ich-cua-ca-phe-doi-voi-gan-650x433.jpg', 'https://giacaphe.com/wp-content/uploads/2026/04/gia-vang-se-tang-toi-dau-1-1-350x233.jpg', 'https://giacaphe.com/wp-content/uploads/2026/07/screenshot-2026-07-17-at-00.08.09-1-650x433.jpg', 'https://giacaphe.com/wp-content/uploads/2026/08/nang-luong-mat-troi-350x233.jpg', 'https://giacaphe.com/wp-content/uploads/2026/08/nang-luong-mat-troi-650x433.jpg', 'https://giacaphe.com/wp-content/uploads/2026/10/ca-phe-bau-duc-1-350x233.jpg', 'https://giacaphe.com/wp-content/uploads/2026/10/ca-phe-bau-duc-1-650x433.jpg', 'https://giacaphe.com/wp-content/uploads/2026/10/le-hoi-ca-phe-son-la-350x233.jpg', 'https://giacaphe.com/wp-content/uploads/2026/10/le-hoi-ca-phe-son-la-650x433.jpg', 'https://giacaphe.com/wp-content/uploads/2026/10/san-pham-ca-phe-minh-tien-350x233.jpg', 'https://giacaphe.com/wp-content/uploads/2026/10/tac-dung-cua-ca-phe-va-nao-bo-650x433.jpg']
-CTX rk<span class='gnd_market_kyhan'>(12/26)</span></td> <td class='gnd-gia' data-price='305.6'>305.60</td> <td><span class='price_change' data-price='10.8'>10.80</span></td> </tr><tr> <td>Đắk Lắk</td> <td class='gnd-gia'> <span class='rOJKWJfCr gfXKlMoyk'> </span> </td> <td class='price_change'> <span class='rOJKWJfCr tyKYwH'> </span> </td> </tr><tr> <td>Lâm Đồng</td> <td class='gnd-gia'> <span class='rOJKWJfCr FeOVwYgTKK'> </span> </td> <td class='price_change'> <span class='rOJKWJfCr iWTLqTux'> </span> </td> </tr><tr> <td>Gia Lai</td> <td class='gnd-gia'> <span class='rOJKWJfCr NQJkgyP'> </span> </td> <td class='price_change'>
+
+=== cafe-arabica-mercado-fisico-tipo-6-7 200
+                         Município  Preço (R$/Sc de 60 kg)  Variação (%)
+0             Guaxupé/MG (Cooxupé)                  1682.0          3.44
+1  Poços de Caldas/MG (Café Poços)                  1565.0          0.64
+2       Patrocínio/MG (Expocaccer)                  1685.0          1.51
+3            Varginha/MG (Minasul)                  1650.0          3.13
+4             Machado/MG (Coopama)                  1670.0          5.03
+5     Campos Gerais/MG (Coopercam)                  1670.0          1.83
+6              Franca/SP (Cocapec)                  1700.0          4.29
+                         Município  Preço (R$/Sc de 60 kg)  Variação (%)
+0             Guaxupé/MG (Cooxupé)                  1626.0         -1.81
+1  Poços de Caldas/MG (Café Poços)                  1555.0          0.97
+2       Patrocínio/MG (Expocaccer)                  1660.0         -1.78
+3            Varginha/MG (Minasul)                  1600.0         -3.03
+4             Machado/MG (Coopama)                  1590.0         -1.24
+5     Campos Gerais/MG (Coopercam)                  1640.0         -1.20
+6              Franca/SP (Cocapec)                  1630.0         -0.61
+
+=== cafe-arabica-4-5-b3-prego-regular 200
+  Contrato - Mês  Fechamento (US$/sc 60 kg)  Variação (%)
+0  Dezembro/2026                     375.95          2.16
+1     Março/2027                     367.55          0.84
+  Contrato - Mês  Fechamento (US$/sc 60 kg)  Variação (%)
+0  Dezembro/2026                      368.0          0.00
+1     Março/2027                      364.5          0.07
+2  Setembro/2027                      338.8         -0.98
+
+=== cafe-cereja-descascado-mercado-fisico 200
+                        Município  Preço (R$/Sc de 60 kg)  Variação (%)
+0            Guaxupé/MG (Cooxupé)                  1787.0          3.41
+1  Poços de Caldas/MG (CaféPoços)                  1800.0          0.84
+2      Patrocínio/MG (Expocaccer)                  1765.0          1.44
+3           Varginha/MG (Minasul)                  1750.0          2.94
+4    Campos Gerais/MG (Coopercam)                  1740.0          1.75
+                        Município  Preço (R$/Sc de 60 kg)  Variação (%)
+0            Guaxupé/MG (Cooxupé)                  1728.0         -1.71
+1  Poços de Caldas/MG (CaféPoços)                  1785.0          0.85
+2      Patrocínio/MG (Expocaccer)                  1740.0         -1.42
+3           Varginha/MG (Minasul)                  1700.0         -2.86
+4    Campos Gerais/MG (Coopercam)                  1710.0         -1.16
+ALL CAFE []
+
+=== https://www.noticiasagricolas.com.br/cotacoes/cafe/cafe-arabica-mercado-fisico-tipo-6-bebida-boa 404 78957
+logias Meio Ambiente Milho Petróleo Política Agrícola Política e Economia Questões Indígenas Segurança no Agro Soja Sucroenergético Trigo USDA COTAÇÕES Mercado Físico - Safras &amp; Mercado Algodão Amendoim Arroz Boi Gordo Cacau Café Feijão Frango Frutas Laranja Látex Legumes Leite Mandioca Mercado Financeiro Milho Ovos Silvicultura Soja Sorgo Suínos Sucroenergético Trigo Verduras Gráficos Futuros CME Soja Milho Trigo Cotação do Dólar VÍDEOS Conexão Campo Cidade Conexão USA Tempo &amp; Dinheiro Fechamento de Mercado Grupo Ceres | Minuto do Agro Bom Dia Agronegócio Agronegócio Algodão Biocombustível Boi Café Carnes Tempo e Clima Código Florestal Feijão e Grãos Esp. Granjeiros Grãos Hortifruti Laranja/Citrus Leite Logística Máquinas e Tecnologias Meio Ambiente Milho No Campo da Lei Palestra/Eventos Pecuária e Mercado Política Agrícola Política e Economia Questões Indígenas Realidades da Sa
+
+=== https://www.cccmg.com.br/cotacao/ 403 5569
+ Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+
+=== https://www.cooxupe.com.br/ 200 79250
+A Fone: (35) 3696-1200 Meteorologia &nbsp&nbsp&nbsp&nbsp Ouvidoria &nbsp&nbsp&nbsp Contato Menu A Cooxupé Quem Somos Unidades Brand Book Certificações Documentos Mercado de Capitais Nota Comercial Anúncio de Início Termo da 1ª (Primeira) Emissão de Notas Aviso ao Mercado Anúncio de Encerramento CPR Financeira Pública Oferta CPR-F Cooxupé &#8211; Termo de Emissão Oferta CPR-F Cooxupé &#8211; Primeiro Aditamento ao Termo de Emissão Estrutura Organizacional Missão, Visão, Valores, Política e Objetivos Cooxupé Relatório de Sustentabilidade e Demonstrações Financeiras Cooxupé Protocolo Gerações Relatório de Transparência Salarial Governança e Transparência Código de Conduta Ética Diretrizes de Segurança da Informação para Fornecedores Política de Relacionamento com a Administração Pública Estatuto Social Português Inglês Manual Anticorrupção Políticas de Privacidade Política de Sustentabilida
+
+=== https://hubdocafe.cooxupe.com.br/ 200 167742
+-cerca-de-947-mil-propriedades-rurais-no-brasil\",\"title\":\"Mulheres já lideram cerca de 947 mil propriedades rurais no Brasil\",\"excerpt\":\"\u003cp\u003eDia Internacional das Mulheres Rurais destaca avanço da participação feminina no campo e desafios no acesso a crédito, tecnologia e autonomia financeira\u003c/p\u003e\\n\",\"readingTimeMinutes\":3,\"date\":\"2026-10-15T08:00:00\",\"author\":{\"node\":{\"name\":\"Redação\",\"slug\":\"joao\"}},\"categories\":{\"edges\":[{\"node\":{\"id\":\"dGVybToy\",\"slug\":\"cooperado\",\"name\":\"Cooperado\"}}]},\"featuredImage\":{\"node\":{\"sourceUrl\":\"https://admin-hdc.baroes.com.br/wp-content/uploads/2026/10/iStock-2295215104.jpg\",\"altText\":\"propriedades rurais\"}},\"featuredVideo\":null}}],[\"$\",\"div\",null,{\"className\":\"index-module__UmHDfG__cotacaoSlot\",\"children\":\"$L10\"}]]}],null,[\"$\",\"section\",null,{\"className\":\"ind
+
+=== https://apps.fas.usda.gov/newgainapi/api/Report/GetReports?commodityId=&countryId=&dateFrom=2026-10-01&dateTo=2026-10-17 404 application/json; charset=utf-8 193
+{"message":"No HTTP resource was found that matches the request URI 'https://apps.fas.usda.gov/newgainapi/api/Report/GetReports?commodityId=&countryId=&dateFrom=2026-10-01&dateTo=2026-10-17'."}
+
+=== https://www.fas.usda.gov/data/search?f%5B0%5D=data_type%3AGAIN%20Report 403 text/html 392
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;www&#46;fas&#46;usda&#46;gov&#47;data&#47;search&#63;" on this server.<P>
+Reference&#32;&#35;18&#46;e572cd17&#46;1792241950&#46;de46ce0
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;e572cd17&#46;1792241950&#46;de46ce0</P>
+</BODY>
+</HTML>
+
+
+=== https://gain.fas.usda.gov/#/search 200 text/html 3338
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GAIN</title>
+  <style>
+    .app{
+      background-color:#CCC;
+    }
+    .appContainer {
+    background-color:#FFF;
+    }
+  </style>
+  <!-- Local -->
+  <!-- <base href="/"> -->
+  <!-- Dev server -->
+  <!-- <base href="/NewGAIN/"> -->
+  <!-- Staging server -->
+  <!-- <base href="/NewGAIN/"> -->
+  <!-- Production -->
+  <base href="/">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./assets/images/icon-gain_1.png">
+
+<!-- Global s
+
+=== https://apps.fas.usda.gov/newgainapi/api/Report/GetAllReports 404 application/json; charset=utf-8 134
+{"message":"No HTTP resource was found that matches the request URI 'https://apps.fas.usda.gov/newgainapi/api/Report/GetAllReports'."}
+FAS coffee search 403 []
+rss 403 <HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;www&#46;fas&#46;usda&#46;gov&#47;rss&#46;xml" on this server.<P>
+Reference&#32;&#35;18&#46;e572cd17&#46;1792241951&#46;de47995
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;e572cd17&#46;1792241951&#46;de47995</P>
+</BODY>
+</HTML>
+
+
+openmeteo archive 200 {"latitude":-21.546574,"longitude":-45.460114,"generationtime_ms":0.19681453704833984,"utc_offset_seconds":-10800,"timezone":"America/Sao_Paulo","timezone_abbreviation":"GMT-3","elevation":916.0,"daily_units":{"time":"iso8601","precipitation_sum":"mm","temperature_2m_max":"°C"},"daily":{"time":["2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-06","2026-09-07","2026-09-08",
+openmeteo fc 200 {"latitude":-21.546574,"longitude":-45.460114,"generationtime_ms":1.0429620742797852,"utc_offset_seconds":-10800,"timezone":"America/Sao_Paulo","timezone_abbreviation":"GMT-3","elevation":916.0,"daily_units":{"time":"iso8601","precipitation_sum":"mm","temperature_2m_max":"°C"},"daily":{"time":["2026-10-03","2026-10-04","2026-10-05","2026-10-06","2026-10-07","2026-10-08","2026-10-09","2026-10-10","
+climate 200 {"latitude":-21.599998,"longitude":-45.399994,"generationtime_ms":4.991888999938965,"utc_offset_seconds":0,"timezone":"GMT","timezone_abbreviation":"GMT","elevation":916.0,"daily_units":{"time":"iso86
+seasonal 200 {"latitude":-21.49883,"longitude":-45.362885,"generationtime_ms":2.818465232849121,"utc_offset_seconds":0,"timezone":"GMT","timezone_abbreviation":"GMT","elevation":916.0,"daily_units":{"time":"iso8601","precipitation_sum":"mm","precipitation_sum_member01":"mm","precipitation_sum_member02":"mm","pre
