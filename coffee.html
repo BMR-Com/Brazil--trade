@@ -112,7 +112,7 @@ tbody tr:hover{background:rgba(255,255,255,.025);}
 <div class="page" id="page">
   <div class="subnav">
     <a href="#s-summary">Summary</a><a href="#s-phys">Physical vs futures</a><a href="#s-fut">Arbitrage &amp; curves</a>
-    <a href="#s-pos">Positioning &amp; stocks</a><a href="#s-exp">Exports</a><a href="#s-sup">Supply</a>
+    <a href="#s-pos">Positioning, spreads &amp; stocks</a><a href="#s-exp">Exports</a><a href="#s-sup">Supply</a>
   </div>
   <div class="g3 mb16" id="kpis"></div>
   <div class="insight-box mb24" id="s-summary"><div class="ins-head">Desk read</div><ul class="ins-list" id="insights"></ul></div>
@@ -153,12 +153,21 @@ tbody tr:hover{background:rgba(255,255,255,.025);}
     <div class="tcard"><div class="tcard-head">ICE robusta (RC) curve <span>US$/t; spread to front</span></div><table id="tRC"></table></div>
   </div>
 
-  <div class="sec" id="s-pos"><span class="sec-title">Positioning and certified stocks</span><div class="sec-line"></div></div>
+  <div class="sec" id="s-pos"><span class="sec-title">Positioning, spreads and certified stocks</span><div class="sec-line"></div></div>
   <div class="g2 mb24">
     <div class="chart-card"><div class="chart-title">Managed money net — ICE arabica</div><div class="chart-sub" id="cotSub">Contracts, CFTC disaggregated (futures + options)</div>
       <div class="chart-wrap"><canvas id="cCot"></canvas></div></div>
     <div class="chart-card"><div class="chart-title">ICE certified stocks</div><div class="chart-sub">Million bags, month-end (ICO report)</div>
       <div class="chart-wrap"><canvas id="cStk"></canvas></div><div class="legend" id="lStk"></div></div>
+  </div>
+
+  <div class="g3 mb24">
+    <div class="chart-card"><div class="chart-title">KC front spread vs cost of carry</div><div class="chart-sub" id="spSub">¢/lb, weekly. Spread = front − second (positive = inverted); carry = financing the front for one ~2-month roll</div>
+      <div class="chart-wrap"><canvas id="cSp"></canvas></div><div class="legend" id="lSp"></div></div>
+    <div class="chart-card"><div class="chart-title">Inversion vs certified stocks</div><div class="chart-sub">Monthly: NY certified stocks (M bags) vs average front spread (¢/lb)</div>
+      <div class="chart-wrap"><canvas id="cSpC"></canvas></div><div class="legend" id="lSpC"></div></div>
+    <div class="chart-card"><div class="chart-title">Commercial (producer/merchant) shorts</div><div class="chart-sub" id="pmSub">Contracts, ICE arabica, against their five-year average</div>
+      <div class="chart-wrap"><canvas id="cPm"></canvas></div><div class="legend" id="lPm"></div></div>
   </div>
 
   <div class="sec" id="s-exp"><span class="sec-title">Exports — Brazil, Colombia, world</span><div class="sec-line"></div></div>
@@ -191,6 +200,7 @@ tbody tr:hover{background:rgba(255,255,255,.025);}
     <a href="https://giacaphe.com/gia-ca-phe-noi-dia/">giacaphe.com</a> (Vietnam farm-gate) ·
     <a href="https://ico.org/resources/coffee-market-report-statistics-section/">ICO Coffee Market Report</a> ·
     <a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm">CFTC</a> ·
+    spread/carry/certified-stock framing after <a href="https://www.coffeetradingacademy.com/blog">CoffeeTradingAcademy</a> ·
     <a href="https://comexstat.mdic.gov.br/">Comex Stat / Secex</a> · <a href="https://apps.fas.usda.gov/psdonline/">USDA PSD</a>.
     Physical prices are origin cash quotes in local currency converted at the day's exchange rate; they include quality, location and tax differences, so read the basis as a trend rather than an export-parity number.
   </div>
@@ -279,6 +289,20 @@ function render(){
   const K = J.ico && J.ico.stocks;
   if (K){ draw('cStk', {type:'line', data:{labels:K.month, datasets:[line('New York (arabica)', K.ny, C.s1), line('London (robusta)', K.ldn, C.s2)]}, options:{scales:{x:sx(K.month), y:sy('M bags')}}});
     legend('lStk', [[C.s1,'New York (arabica)'],[C.s2,'London (robusta)']]); }
+  // Spread structure (framework from CoffeeTradingAcademy's carry/inversion notes)
+  const SP = J.structure;
+  if (SP){ const i0 = since(SP,'dates','2018'), d = SP.dates.slice(i0);
+    $('spSub').textContent = `¢/lb, weekly. Front − second (positive = inverted) vs financing the front for one ~2-month roll at ${f(SP.now.rate,2)}%. Now ${f(SP.now.spread,1)}¢ inverted (${SP.now.pct5y}th pct of 5y) vs ${f(SP.now.carry,1)}¢ carry`;
+    draw('cSp', {type:'line', data:{labels:d, datasets:[line('Front − second', SP.spread.slice(i0), C.s1), line('Financing carry (as −)', SP.carry.slice(i0).map(v => v==null?null:-v), C.s2, {borderDash:[5,4]}), zero(d)]}, options:{scales:{x:sx(d), y:sy('¢/lb')}}});
+    legend('lSp', [[C.s1,'Front − second spread'],[C.s2,'Full financing carry (negative)',1]]);
+    if (SP.vs_certs){ const P = SP.vs_certs.filter(p => p.y!=null), last = P.slice(-6);
+      draw('cSpC', {type:'scatter', data:{datasets:[{label:'Months since 2014', data:P.slice(0,-6), backgroundColor:C.hist, pointRadius:4}, {label:'Last 6 months', data:last, backgroundColor:C.s1, pointRadius:6}]},
+        options:{interaction:{mode:'nearest', intersect:true}, plugins:{tooltip:{callbacks:{label:c => `${c.raw.m}: ${f(c.raw.x,2)}M bags, ${f(c.raw.y,1)}¢`}}}, scales:{x:{grid:{color:C.grid}, title:{display:true, text:'Certified stocks, M bags'}}, y:sy('Front spread ¢/lb')}}});
+      legend('lSpC', [[C.s1,'Last 6 months'],[C.hist,'Earlier months']]); } }
+  if (T && T.pm_short){ const i0 = Math.max(0, T.dates.findIndex(x => x >= '2018')), d = T.dates.slice(i0);
+    $('pmSub').textContent = `Contracts. ${T.now.date}: ${f(T.pm_now.short,0)} short vs ${f(T.pm_now.avg5y,0)} five-year average — low hedging = little coffee being carried`;
+    draw('cPm', {type:'line', data:{labels:d, datasets:[line('Producer/merchant short', T.pm_short.slice(i0), C.s1), line('5-year average', T.pm_short_5y.slice(i0), C.hist, {borderDash:[5,4]})]}, options:{scales:{x:sx(d), y:sy('contracts')}}});
+    legend('lPm', [[C.s1,'Producer/merchant short'],[C.hist,'Five-year average',1]]); }
   // Exports
   const E = J.br_exports;
   if (E){ const M = E.monthly;
@@ -320,6 +344,7 @@ function render(){
   if (B && B.arabica.basis.length){ const n = B.arabica.basis.length-1; L.push(`Brazil cash arabica (CEPEA) is ${f(B.arabica.c_lb[n],0)}¢/lb equivalent, ${f(Math.abs(B.arabica.basis[n]),0)}¢ under NY: a record-sized crop is keeping local sellers well behind the futures rally.`); }
   if (CO && CO.internal) L.push(`Colombian farm-gate (FNC) is ${f(CO.internal.now.c_lb,0)}¢/lb equivalent, ${sgn(CO.internal.now.c_lb-CO.internal.now.kc,0,'¢')} vs NY; Excelso ex-dock is running ${f(CO.monthly.diff.filter(x=>x!=null).slice(-1)[0],0)}¢ over NY on the monthly average — washed milds stay scarce.`);
   if (VN) L.push(`Vietnam Central Highlands farm-gate is $${f(VN.now.usd_t,0)}/t (${f(VN.now.vnd,0)} VND/kg), ${sgn(VN.now.usd_t-VN.now.rc,0,' $/t')} over London: origin holds a premium ahead of the 2026/27 harvest.`);
+  if (SP && T && T.pm_now) L.push(`KC front is ${f(SP.now.spread,1)}¢ over second (${SP.now.pct5y}th percentile of five years) against ~${f(SP.now.carry,1)}¢ of financing cost, with NY certs at ${f(J.ico.stocks.ny.slice(-1)[0],2)}M bags and commercial shorts ${f(T.pm_now.short/1000,0)}k vs a ${f(T.pm_now.avg5y/1000,0)}k five-year average: the inversion still pays to run inventory lean.`);
   if (T) L.push(`Funds hold ${f(T.now.mm_net,0)} net long in arabica (${T.now.chg>=0?'+':''}${f(T.now.chg,0)} on the week), only the ${T.now.pct5y}th percentile of five years — positioning is light for a market at these prices.`);
   if (E){ const cy = String(E.cur_cy), a = E.cy[cy], b = E.cy[String(E.cur_cy-1)]; if (a && b && b.cum[E.k]!=null) L.push(`Brazil shipped ${f(a.cum[E.k],1)}M bags in Jul–${CYM[E.k]}, ${sgn(pct(a.cum[E.k], b.cum[E.k]),0)} on last crop year, as the bigger 2026 crop moves; Conab puts the crop at 67.6M bags (48.2 arabica, 19.4 conilon).`); }
   $('insights').innerHTML = L.map(x => `<li>${x}</li>`).join('');

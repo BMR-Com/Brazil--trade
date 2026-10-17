@@ -70,7 +70,7 @@ def _hist(tv, sym, ex, n=5000):
 
 
 CONT = [("KC1!", "ICEUS"), ("KC2!", "ICEUS"), ("RC1!", "ICEEUR"), ("RC2!", "ICEEUR"), ("ICF1!", "BMFBOVESPA"),
-        ("USDBRL", "FX_IDC"), ("USDCOP", "FX_IDC"), ("USDVND", "FX_IDC")]
+        ("USDBRL", "FX_IDC"), ("USDCOP", "FX_IDC"), ("USDVND", "FX_IDC"), ("US03MY", "TVC")]
 
 
 def fetch_futures(full=False):

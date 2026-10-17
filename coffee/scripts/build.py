@@ -255,6 +255,27 @@ def psd():
     return out
 
 
+def structure(w):
+    """Front KC spread (inversion) vs certified stocks and vs the cost of carrying coffee for one roll (~2 months)."""
+    q = w[["KC1!", "KC2!"]].dropna()
+    q = q[q.index >= "2012-01-01"]
+    rate = w["US03MY"].reindex(q.index).ffill().fillna(4.0) if "US03MY" in w else pd.Series(4.0, index=q.index)
+    spread = q["KC1!"] - q["KC2!"]                         # + = front over second (inversion)
+    carry = q["KC1!"] * rate / 100 * 61 / 360              # financing one 2-month roll, ¢/lb
+    wk = pd.concat([spread.rename("sp"), carry.rename("carry"), rate.rename("r")], axis=1).resample("W-FRI").last()
+    out = {"dates": [str(i)[:10] for i in wk.index], "spread": [rd(v, 2) for v in wk.sp], "carry": [rd(v, 2) for v in wk.carry],
+           "now": {"spread": rd(spread.iloc[-1], 2), "carry": rd(carry.iloc[-1], 2), "rate": rd(rate.iloc[-1], 2), "date": str(q.index[-1])[:10],
+                   "pct5y": rd((spread[spread.index >= spread.index[-1] - timedelta(days=1826)] <= spread.iloc[-1]).mean() * 100, 0)}}
+    s = read("ico_certified_stocks.csv")
+    if s is not None:
+        s = s.sort_values(["stock_month", "report_period"]).drop_duplicates("stock_month", keep="last")
+        ms = spread.resample("MS").mean(); ms.index = ms.index.strftime("%Y-%m")
+        pts = [{"x": rd(r.new_york_bags_millions, 2), "y": rd(ms.get(r.stock_month), 2), "m": r.stock_month}
+               for r in s.itertuples() if r.stock_month in ms.index]
+        out["vs_certs"] = pts
+    return out
+
+
 def cot():
     c = read("cot_coffee.csv")
     if c is None or c.empty:
@@ -262,7 +283,11 @@ def cot():
     c = c.sort_values("date"); c = c[c.date >= "2015-01-01"]
     net = c.managed_money_net
     pct = (net.tail(260) <= net.iloc[-1]).mean() * 100
-    return {"dates": c.date.tolist(), "mm_net": c.managed_money_net.tolist(), "mm_long": c.managed_money_long.tolist(),
+    pms = c.prod_merc_short
+    pm5 = pms.rolling(260, min_periods=100).mean()
+    return {"pm_short": pms.tolist(), "pm_short_5y": [rd(v, 0) for v in pm5],
+            "pm_now": {"short": int(pms.iloc[-1]), "avg5y": rd(pm5.iloc[-1], 0)},
+            "dates": c.date.tolist(), "mm_net": c.managed_money_net.tolist(), "mm_long": c.managed_money_long.tolist(),
             "mm_short": c.managed_money_short.tolist(), "pm_net": c.prod_merc_net.tolist(), "oi": c.open_interest.tolist(),
             "now": {"date": c.date.iloc[-1], "mm_net": int(net.iloc[-1]), "chg": int(net.iloc[-1] - net.iloc[-2]), "pct5y": rd(pct, 0),
                     "oi": int(c.open_interest.iloc[-1])}}
@@ -271,7 +296,7 @@ def cot():
 def main():
     w, snap = prices()
     res = {"built": str(date.today()), "snapshot": snap, "arb": arb(w), "curves": curves(), "brazil": brazil(w),
-           "colombia": colombia(w), "vietnam": vietnam(w), "ico": ico(w), "br_exports": brazil_exports(), "psd": psd(), "cot": cot(),
+           "colombia": colombia(w), "vietnam": vietnam(w), "ico": ico(w), "br_exports": brazil_exports(), "psd": psd(), "cot": cot(), "structure": structure(w),
            "constants": {"lb_t": LB_T, "lb_bag": LB_BAG, "col_lb_carga": rd(COL_LB_CARGA, 2)}}
     est = os.path.join(DATA, "estimates.json")
     res["estimates"] = json.load(open(est)) if os.path.exists(est) else []
