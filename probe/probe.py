@@ -1,42 +1,40 @@
-import re, io, zipfile, traceback, requests
+import re, io, traceback, requests
+import pandas as pd
 from html import unescape
 H = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
 S = requests.Session(); S.headers.update(H)
 def txt(h):
     h = re.sub(r"(?s)<(script|style)[^>]*>.*?</\1>", " ", h); return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " | ", h)))
-def get(u, n=1500, show=True):
+def get(u, **kw):
     try:
-        r = S.get(u, timeout=60); ct = r.headers.get("content-type", "")
-        print(f"\n=== {u}\n{r.status_code} {ct} len={len(r.content)}")
-        if show and ("html" in ct or "text" in ct or "json" in ct): print(txt(r.text)[:n])
-        return r
+        r = S.get(u, timeout=60, **kw); print(f"\n=== {u}\n{r.status_code} {r.headers.get('content-type','')} len={len(r.content)}"); return r
     except Exception as e:
         print(f"\n=== {u}\nERR {e}")
-for u in ["https://www.ico.org/coffee_prices.asp", "https://ico.org/resources/coffee-prices/", "https://www.ico.org/prices/pr-prices.pdf",
-          "https://ico.org/resources/coffee-market-report-statistics-section/", "https://www.ico.org/prices/p1-January.pdf",
-          "https://www.ico.org/new_historical.asp", "https://www.ico.org/prices/po-production.pdf"]:
-    r = get(u, 1200)
-    if r is not None and r.ok and "html" in r.headers.get("content-type", ""):
-        print("LINKS", sorted(set(re.findall(r'href="([^"]*(?:\.pdf|\.xlsx?|price|indicator)[^"]*)"', r.text, re.I)))[:60])
-for u in ["https://www.noticiasagricolas.com.br/cotacoes/cafe", "https://www.noticiasagricolas.com.br/cotacoes/cafe/indicador-cepea-esalq-cafe-arabica",
-          "https://www.noticiasagricolas.com.br/cotacoes/cafe/indicador-cepea-esalq-cafe-conillon", "https://www.noticiasagricolas.com.br/cotacoes/cafe/cafe-arabica-mercado-fisico-tipo-6-duro"]:
-    r = get(u, 2500)
+NA = "https://www.noticiasagricolas.com.br/cotacoes/cafe/"
+for s in ["indicador-cepea-esalq-cafe-arabica", "indicador-cepea-esalq-cafe-conillon", "cafe-arabica-mercado-fisico-tipo-6-duro", "cafe-conillon-disponivel-vitoria-es", "cafe-cereja-descascado-mercado-fisico"]:
+    r = get(NA + s)
     if r is not None and r.ok:
-        print("LINKS", sorted(set(re.findall(r'href="(/cotacoes/cafe/[^"]+)"', r.text)))[:80])
-get("https://www.cecafe.com.br/dados-estatisticos/exportacoes-brasileiras/", 800)
-r = get("https://apps.fas.usda.gov/psdonline/downloads/psd_coffee_csv.zip", show=False)
-if r is not None and r.ok:
-    z = zipfile.ZipFile(io.BytesIO(r.content)); print(z.namelist()); print(z.read(z.namelist()[0])[:600])
-get("https://www.conab.gov.br/info-agro/safras/cafe", 800)
-try:
-    from tvDatafeed import TvDatafeed, Interval
-    tv = TvDatafeed()
-    for sym, ex in [("KC1!", "ICEUS"), ("KC2!", "ICEUS"), ("RC1!", "ICEEUR"), ("RC2!", "ICEEUR"), ("ICF1!", "BMFBOVESPA"), ("KCZ2026", "ICEUS"),
-                    ("KCH2027", "ICEUS"), ("RCX2026", "ICEEUR"), ("RCF2027", "ICEEUR"), ("KCZ2015", "ICEUS"), ("RCX2015", "ICEEUR"), ("ICFZ2026", "BMFBOVESPA")]:
         try:
-            d = tv.get_hist(symbol=sym, exchange=ex, interval=Interval.in_daily, n_bars=5000)
-            print("TV", ex, sym, None if d is None else (len(d), str(d.index[0])[:10], str(d.index[-1])[:10], float(d.close.iloc[-1])))
-        except Exception as e:
-            print("TV err", sym, e)
-except Exception:
-    traceback.print_exc()
+            tabs = pd.read_html(io.StringIO(r.text), decimal=",", thousands=".")
+            print("tables", len(tabs))
+            for t in tabs[:3]: print(t.head(12).to_string()[:1500])
+        except Exception as e: print("read_html", e)
+        print("DATES", re.findall(r'(?:Fechamento|Data)[^<]{0,40}(\d{2}/\d{2}/\d{4})', r.text)[:5])
+        print("hist links", sorted(set(re.findall(r'href="([^"]*' + s + r'[^"]*\d{4}[^"]*)"', r.text)))[:10])
+# historical page format on NA: /cotacoes/cafe/<slug>/YYYY-MM-DD ?
+r = get(NA + "indicador-cepea-esalq-cafe-arabica/2026-09-15")
+if r is not None and r.ok:
+    try: print(pd.read_html(io.StringIO(r.text), decimal=",", thousands=".")[0].head(5).to_string())
+    except Exception as e: print(e)
+for u in ["https://federaciondecafeteros.org/wp/estadisticas-cafeteras/", "https://federaciondecafeteros.org/wp/", "https://federaciondecafeteros.org/app/uploads/2019/10/precio_cafe.pdf"]:
+    r = get(u)
+    if r is not None and r.ok and "html" in r.headers.get("content-type", ""):
+        print("LINKS", sorted(set(re.findall(r'href="([^"]*(?:\.xlsx?|\.pdf|precio|estadistic)[^"]*)"', r.text, re.I)))[:50])
+        print(txt(r.text)[:1500])
+for u in ["https://giacaphe.com/gia-ca-phe-noi-dia/", "https://giacaphe.com/", "https://www.customs.gov.vn/", "https://tintaynguyen.com/gia-ca-phe/"]:
+    r = get(u)
+    if r is not None and r.ok:
+        t = txt(r.text); i = t.lower().find("đắk lắk"); print(t[max(0,i-300):i+1500] if i>=0 else t[:800])
+        try:
+            tabs = pd.read_html(io.StringIO(r.text)); print("tables", len(tabs)); [print(x.head(10).to_string()[:1200]) for x in tabs[:2]]
+        except Exception as e: print("read_html", e)
