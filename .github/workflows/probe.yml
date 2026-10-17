@@ -1,0 +1,19 @@
+name: probe-coffee
+on:
+  push:
+    branches: [probe-coffee]
+    paths: [probe/probe.py]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -q requests pandas websocket-client git+https://github.com/rongardF/tvdatafeed.git
+      - run: python probe/probe.py > probe/out.txt 2>&1 || true
+      - run: |
+          git config user.name probe; git config user.email probe@users.noreply.github.com
+          git add -f probe/out.txt; git commit -m "probe output" && git push
