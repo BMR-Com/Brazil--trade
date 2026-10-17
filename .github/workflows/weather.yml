@@ -21,8 +21,13 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
       - run: pip install -q requests pandas numpy
-      - run: python weather/scripts/weather.py
+      - name: Build weather
+        run: |
+          set -o pipefail
+          python weather/scripts/weather.py 2>&1 | tail -n 400 > weather/data/run.log || (cat weather/data/run.log; exit 1)
+          tail -n 5 weather/data/run.log
       - name: Commit
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
