@@ -24,7 +24,7 @@ jobs:
       - name: Build weather
         run: |
           set -o pipefail
-          python weather/scripts/weather.py 2>&1 | tail -n 400 > weather/data/run.log || (cat weather/data/run.log; exit 1)
+          python weather/scripts/weather.py > weather/data/run.log 2>&1 || (tail -n 60 weather/data/run.log; exit 1)
           tail -n 5 weather/data/run.log
       - name: Commit
         if: always()

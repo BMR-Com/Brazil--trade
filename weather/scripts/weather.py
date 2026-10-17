@@ -73,6 +73,9 @@ def archive(lat, lon, start, end):
     return df
 
 
+NEW_BUDGET = {"left": 8}   # full-history downloads per run (free-tier rate limits); the rest follow on later runs
+
+
 def history(lat, lon, town):
     """Daily history cached in weather/data/hist/<town>.csv: fetched once in full (1991 on), then topped up."""
     hd = os.path.join(DATA, "hist"); os.makedirs(hd, exist_ok=True)
@@ -82,6 +85,10 @@ def history(lat, lon, town):
     if old is None or old.index.min() > pd.Timestamp(f"{CLIM[0]}-01-02") or "src_era5" not in open(fn).readline() if os.path.exists(fn) else True:
         parts = []
         # one-off full history; ~180 API-call units each on the free tier, so pace requests (600/min, 5000/h)
+        if NEW_BUDGET["left"] <= 0:
+            print("history deferred to a later run:", town, flush=True)
+            return None
+        NEW_BUDGET["left"] -= 1
         new = archive(lat, lon, f"{CLIM[0]}-01-01", str(today - timedelta(days=1)))
         time.sleep(25)
         if new is None:
