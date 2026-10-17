@@ -1,5 +1,5 @@
 """
-Brazil crop-region weather (NASA POWER daily history, Open-Meteo 16-day forecast and last few days) and ENSO (NOAA CPC Niño 3.4).
+Brazil crop-region weather (ERA5 reanalysis history and 16-day forecast via Open-Meteo) and ENSO (NOAA CPC Niño 3.4).
 Writes weather/data/br_weather.json used by the coffee, sugar and cotton pages.
 """
 import os, io, json, time, math
@@ -61,17 +61,16 @@ def get(url, tries=5):
 
 
 def archive(lat, lon, start, end):
-    """Daily history from NASA POWER (MERRA-2 / IMERG-corrected rain, free, no key). ~2-day latency."""
-    u = (f"https://power.larc.nasa.gov/api/temporal/daily/point?parameters=PRECTOTCORR,T2M_MAX,T2M_MIN&community=AG"
-         f"&longitude={lon}&latitude={lat}&start={start.replace('-', '')}&end={end.replace('-', '')}&format=JSON")
+    """Daily ERA5 reanalysis via the Open-Meteo archive API (rain and max temperature)."""
+    u = (f"https://archive-api.open-meteo.com/v1/archive?latitude={lat}&longitude={lon}&start_date={start}&end_date={end}"
+         "&daily=precipitation_sum,temperature_2m_max&timezone=America%2FSao_Paulo")
     r = get(u)
     if r is None:
         return None
-    p = r.json()["properties"]["parameter"]
-    idx = pd.to_datetime(list(p["PRECTOTCORR"].keys()), format="%Y%m%d")
-    df = pd.DataFrame({"p": list(p["PRECTOTCORR"].values()), "tmax": list(p["T2M_MAX"].values()), "tmin": list(p["T2M_MIN"].values())}, index=idx)
+    d = r.json()["daily"]
+    df = pd.DataFrame({"p": d["precipitation_sum"], "tmax": d["temperature_2m_max"]}, index=pd.to_datetime(d["time"]))
     df.index.name = "date"
-    return df.mask(df <= -998)
+    return df
 
 
 def history(lat, lon, town):
@@ -79,10 +78,12 @@ def history(lat, lon, town):
     hd = os.path.join(DATA, "hist"); os.makedirs(hd, exist_ok=True)
     fn = os.path.join(hd, "".join(c for c in town if c.isalnum()) + ".csv")
     today = date.today()
-    old = pd.read_csv(fn, parse_dates=["date"]).set_index("date") if os.path.exists(fn) else None
-    if old is None or old.index.min() > pd.Timestamp(f"{CLIM[0]}-01-02"):
+    old = pd.read_csv(fn, parse_dates=["date"]).set_index("date").drop(columns=["src_era5"], errors="ignore") if os.path.exists(fn) else None
+    if old is None or old.index.min() > pd.Timestamp(f"{CLIM[0]}-01-02") or "src_era5" not in open(fn).readline() if os.path.exists(fn) else True:
         parts = []
+        # one-off full history; ~180 API-call units each on the free tier, so pace requests (600/min, 5000/h)
         new = archive(lat, lon, f"{CLIM[0]}-01-01", str(today - timedelta(days=1)))
+        time.sleep(25)
         if new is None:
             return None
     else:
@@ -92,18 +93,18 @@ def history(lat, lon, town):
         if x is not None:
             new.loc[x.index] = x
     new = new[~new.index.duplicated(keep="last")].sort_index().round(1)
-    new.reset_index().to_csv(fn, index=False)
+    new.reset_index().rename(columns={"date": "date"}).assign(src_era5=1).to_csv(fn, index=False)
     return new
 
 
 def forecast(lat, lon):
-    u = (f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=precipitation_sum,temperature_2m_max,temperature_2m_min"
+    u = (f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=precipitation_sum,temperature_2m_max"
          "&past_days=10&forecast_days=16&timezone=America%2FSao_Paulo")
     r = get(u)
     if r is None:
         return None
     d = r.json()["daily"]
-    return pd.DataFrame({"date": pd.to_datetime(d["time"]), "p": d["precipitation_sum"], "tmax": d["temperature_2m_max"], "tmin": d["temperature_2m_min"]}).set_index("date")
+    return pd.DataFrame({"date": pd.to_datetime(d["time"]), "p": d["precipitation_sum"], "tmax": d["temperature_2m_max"]}).set_index("date")
 
 
 def window_stats(df, end, days):

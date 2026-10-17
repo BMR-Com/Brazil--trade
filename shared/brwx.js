@@ -42,7 +42,7 @@
     h += '</div>';
     if (W) {
       var rows = W.regions.filter(function (r) { return r.crop === crop; });
-      h += '<div class="bx-grid"><div class="bx-card"><div class="bx-t">Rainfall vs 1991–2020 normal, by region</div><div class="bx-s">History from NASA POWER (MERRA-2 with satellite-corrected rain), last days and 16-day forecast from Open-Meteo, as of ' + (rows[0] ? rows[0].asof : '') + '. Red under 75% of normal, blue over 125%. Hot days = max ≥34°C. Not station data — Somar and INMET station readings can differ locally.</div><table><thead><tr><th>Region · town</th><th class="r">7d mm</th><th class="r">30d % norm</th><th class="r">90d % norm</th><th class="r">Hot days 30d</th><th class="r">Next 16d mm</th><th class="r">vs norm</th></tr></thead><tbody>' +
+      h += '<div class="bx-grid"><div class="bx-card"><div class="bx-t">Rainfall vs 1991–2020 normal, by region</div><div class="bx-s">ERA5 reanalysis and 16-day model forecast via Open-Meteo, as of ' + (rows[0] ? rows[0].asof : '') + '. Red under 75% of normal, blue over 125%. Hot days = max ≥34°C. Not station data — Somar and INMET station readings can differ locally.</div><table><thead><tr><th>Region · town</th><th class="r">7d mm</th><th class="r">30d % norm</th><th class="r">90d % norm</th><th class="r">Hot days 30d</th><th class="r">Next 16d mm</th><th class="r">vs norm</th></tr></thead><tbody>' +
         rows.map(function (r) {
           var fc = r.fc16 || {};
           return '<tr><td>' + r.region + ' · ' + r.town + '</td><td class="r">' + f(r.d7.rain) + '</td><td class="r">' + pc(r.d30.pct_normal) + '</td><td class="r">' + pc(r.d90.pct_normal) +
