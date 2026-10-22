@@ -4831,7 +4831,7 @@ date,series,place,brl_bag
 2026-10-20,coop_arabica,Franca/SP (Cocapec),1680.0
 2026-10-20,coop_arabica,Guaxupé/MG (Cooxupé),1724.0
 2026-10-20,coop_arabica,Machado/MG (Coopama),1790.0
-2026-10-20,coop_arabica,Oeste da Bahia (AIBA),1565.0
+2026-10-20,coop_arabica,Oeste da Bahia (AIBA),1540.0
 2026-10-20,coop_arabica,Patrocínio/MG (Expocaccer),1730.0
 2026-10-20,coop_arabica,Poços de Caldas/MG (CaféPoços),1670.0
 2026-10-20,coop_arabica,Varginha/MG (Minasul),1670.0
@@ -4843,3 +4843,29 @@ date,series,place,brl_bag
 2026-10-20,vitoria_conillon,Tipo 7,930.0
 2026-10-20,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),932.0
 2026-10-20,vitoria_conillon,Tipo 8,920.0
+2026-10-21,cepea_arabica,CEPEA/ESALQ,1620.92
+2026-10-21,cepea_conillon,CEPEA/ESALQ,968.87
+2026-10-21,coop_67,Campos Gerais/MG (Coopercam),1703.0
+2026-10-21,coop_67,Franca/SP (Cocapec),1680.0
+2026-10-21,coop_67,Guaxupé/MG (Cooxupé),1712.0
+2026-10-21,coop_67,Machado/MG (Coopama),1670.0
+2026-10-21,coop_67,Patrocínio/MG (Expocaccer),1715.0
+2026-10-21,coop_67,Poços de Caldas/MG (Café Poços),1595.0
+2026-10-21,coop_67,Varginha/MG (Minasul),1680.0
+2026-10-21,coop_arabica,Araguari/MG (Coocacer),1740.0
+2026-10-21,coop_arabica,Campos Gerais/MG (Coopercam),1713.0
+2026-10-21,coop_arabica,Franca/SP (Cocapec),1700.0
+2026-10-21,coop_arabica,Guaxupé/MG (Cooxupé),1739.0
+2026-10-21,coop_arabica,Machado/MG (Coopama),1780.0
+2026-10-21,coop_arabica,Oeste da Bahia (AIBA),1547.5
+2026-10-21,coop_arabica,Patrocínio/MG (Expocaccer),1755.0
+2026-10-21,coop_arabica,Poços de Caldas/MG (CaféPoços),1685.0
+2026-10-21,coop_arabica,Varginha/MG (Minasul),1700.0
+2026-10-21,coop_cd,Campos Gerais/MG (Coopercam),1773.0
+2026-10-21,coop_cd,Guaxupé/MG (Cooxupé),1817.0
+2026-10-21,coop_cd,Patrocínio/MG (Expocaccer),1780.0
+2026-10-21,coop_cd,Poços de Caldas/MG (CaféPoços),1835.0
+2026-10-21,coop_cd,Varginha/MG (Minasul),1780.0
+2026-10-21,vitoria_conillon,Tipo 7,910.0
+2026-10-21,vitoria_conillon,Tipo 7/8 (com até 13% de umidade e até 5% de broca),923.0
+2026-10-21,vitoria_conillon,Tipo 8,900.0
