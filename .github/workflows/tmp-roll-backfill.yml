@@ -2,6 +2,8 @@ name: tmp roll backfill (KC/CC contracts)
 on:
   push:
     branches: [tmp/roll-backfill]
+permissions:
+  contents: write
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -12,5 +14,7 @@ jobs:
         with: {python-version: "3.11"}
       - run: pip install -q pandas websocket-client requests git+https://github.com/rongardF/tvdatafeed.git
       - run: python tmp/backfill.py
-      - uses: actions/upload-artifact@v4
-        with: {name: kc_cc_contracts, path: kc_cc_contracts.csv}
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p tmp/out && gzip -c kc_cc_contracts.csv > tmp/out/kc_cc_contracts.csv.gz
+          git add tmp/out && git commit -m "tmp: backfill output" && git push origin HEAD:tmp/roll-backfill
