@@ -1,4 +1,4 @@
-name: tmp roll backfill (KC/CC contracts)
+name: tmp roll backfill (ags)
 on:
   push:
     branches: [tmp/roll-backfill]
@@ -8,13 +8,19 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        root: [ZC, ZS, ZM, ZL, ZW, KE, LE, HE, COT]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
       - run: pip install -q pandas websocket-client requests git+https://github.com/rongardF/tvdatafeed.git
-      - run: python tmp/backfill.py
+      - run: python tmp/backfill_ags.py ${{ matrix.root }}
       - run: |
           git config user.name "github-actions[bot]"; git config user.email "github-actions[bot]@users.noreply.github.com"
-          mkdir -p tmp/out && for f in tv_contracts.csv cot_legacy.csv cot_disagg.csv; do gzip -c $f > tmp/out/$f.gz; done
-          git add tmp/out && git commit -m "tmp: backfill output" && git push origin HEAD:tmp/roll-backfill
+          mkdir -p tmp/out && mv ags_*.csv.gz tmp/out/
+          git add tmp/out && git commit -m "tmp: ags backfill ${{ matrix.root }}"
+          for i in 1 2 3 4 5 6; do git pull --rebase -q origin tmp/roll-backfill && git push origin HEAD:tmp/roll-backfill && break; sleep $((RANDOM % 20 + 5)); done
