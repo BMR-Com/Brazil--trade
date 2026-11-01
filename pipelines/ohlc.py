@@ -15,8 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from contracts import SPEC, CODES  # noqa: E402
 
 OUT = Path(__file__).resolve().parent.parent / "data" / "ohlc"
-N_ACTIVE = {"DC": 6, "GDK": 6, "CSC": 6, "CB": 6, "GNF": 6, "DY": 6, "HE": 5, "LE": 5, "GF": 5,
-            "ZC": 5, "ZS": 6, "ZM": 6, "ZL": 6, "ZW": 5, "KE": 5, "CT": 5, "NG": 8, "CL": 8, "HO": 6, "RB": 6}
+N_ACTIVE = {"CT": 5, "SB": 5, "KC": 6}
 
 
 def last_trade_guess(sym, y, m):
@@ -25,6 +24,10 @@ def last_trade_guess(sym, y, m):
         return pd.Timestamp(y, m, 14)
     if sym == "CT":
         return pd.Timestamp(y, m, 8)        # ~17 business days before month end
+    if sym == "SB":
+        return pd.Timestamp(y, m, 1) - pd.Timedelta(days=1)   # last business day of the month before delivery
+    if sym == "KC":
+        return pd.Timestamp(y, m, 18)       # ~8 business days before the last business day of the month
     if sym == "HE":
         return pd.Timestamp(y, m, 14)
     if sym in ("NG", "CL", "HO", "RB"):      # NYMEX energy stops trading in the month before delivery

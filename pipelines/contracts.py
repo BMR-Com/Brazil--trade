@@ -13,26 +13,10 @@ from tvdates import trade_dates, fix_stored  # noqa: E402
 
 OUT = Path(__file__).resolve().parent.parent / "data" / "contracts"
 CODES = "FGHJKMNQUVXZ"
-SPEC = {  # sym: (exchange, TV root, months, first year)
-    "HE": ("CME", "HE", "GJKMNQVZ", 2006),
-    "LE": ("CME", "LE", "GJMQVZ", 2006),
-    "GF": ("CME", "GF", "FHJKQUVX", 2006),
-    "DC": ("CME", "DC", CODES, 2006),
-    "GDK": ("CME", "GDK", CODES, 2012),
-    "CSC": ("CME", "CSC", CODES, 2012),
-    "CB": ("CME", "CB", CODES, 2012),
-    "GNF": ("CME", "GNF", CODES, 2012),
-    "DY": ("CME", "DY", CODES, 2012),
-    "ZC": ("CBOT", "ZC", "HKNUZ", 2006),
-    "ZS": ("CBOT", "ZS", "FHKNQUX", 2006),
-    "ZM": ("CBOT", "ZM", "FHKNQUVZ", 2008),
-    "ZL": ("CBOT", "ZL", "FHKNQUVZ", 2008),
-    "ZW": ("CBOT", "ZW", "HKNUZ", 2006),
-    "KE": ("CBOT", "KE", "HKNUZ", 2008),
+SPEC = {  # sym: (exchange, TV root, months, first year) — softs desk
     "CT": ("ICEUS", "CT", "HKNZ", 2006),   # ICE cotton No. 2: Mar, May, Jul, Dec (October ignored)
-    # energy desk (NYMEX, every month)
-    "NG": ("NYMEX", "NG", CODES, 2015), "CL": ("NYMEX", "CL", CODES, 2015),
-    "HO": ("NYMEX", "HO", CODES, 2015), "RB": ("NYMEX", "RB", CODES, 2015),
+    "SB": ("ICEUS", "SB", "HKNV", 2006),   # ICE sugar No. 11: Mar, May, Jul, Oct
+    "KC": ("ICEUS", "KC", "HKNUZ", 2006),  # ICE coffee C: Mar, May, Jul, Sep, Dec
 }
 
 

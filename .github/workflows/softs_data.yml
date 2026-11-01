@@ -1,0 +1,52 @@
+name: softs-data
+# Daily after the ICE softs close: CFTC COT (Fridays), contract closes, technicals, vol, COT desk, balance sheets,
+# price outlook, briefs. The AMS/USDA dairy, livestock and CME steps of the US desk are not part of the softs desk.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['pipelines/cot.py', 'pipelines/ohlc.py', 'models/**', '.github/workflows/softs_data.yml']
+  schedule:
+    - cron: '41 20 * * 1-5'   # ~3:40 pm CT weekdays, after the ICE cotton close (2:20 pm ET)
+    - cron: '41 21 * * 1-5'   # same in standard time
+    - cron: '47 20 * * 5'     # Friday after the 3:30 pm ET CFTC release
+permissions: {contents: write}
+concurrency: {group: softs-data, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests pandas numpy scipy git+https://github.com/rongardF/tvdatafeed.git
+      - name: CFTC COT (cotton, sugar, coffee)
+        continue-on-error: true
+        timeout-minutes: 15
+        run: python pipelines/cot.py
+      - name: active-contract closes
+        continue-on-error: true
+        timeout-minutes: 15
+        run: python pipelines/ohlc.py
+      - name: technicals, vol, research
+        continue-on-error: true
+        run: python -W ignore models/technicals.py && python models/vol.py && python -W ignore models/research.py
+      - name: COT desk
+        continue-on-error: true
+        run: python models/cot_backtest.py; python -W ignore models/cot_desk.py
+      - name: balance sheets, price outlook, briefs
+        continue-on-error: true
+        run: |
+          python -W ignore models/grains_esr_brief.py || true
+          python -W ignore models/balance_sheets.py || true
+          python -W ignore models/cotton_price_outlook.py || true
+          python -W ignore models/trader_sheet.py || true
+          python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || true
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: softs COT, closes, briefs $(date -u +%F)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

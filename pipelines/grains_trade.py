@@ -11,9 +11,7 @@ OUT = Path(__file__).resolve().parent.parent / "data" / "grains" / "raw"
 H = {"User-Agent": "Mozilla/5.0 (BMR-Com research; github actions)"}
 FAS_KEY = os.environ.get("FAS_API_KEY", "")
 ESR = "https://api.fas.usda.gov/api/esr"
-ESR_COMMODITIES = {"corn": 401, "soybeans": 801, "soybean_meal": 901, "soybean_oil": 902, "wheat_all": 107,
-                   "wheat_hrw": 101, "wheat_srw": 102, "wheat_hrs": 103, "wheat_white": 104, "wheat_durum": 105, "sorghum": 701,
-                   "cotton_upland": 1404, "cotton_pima": 1301, "beef": 1701, "pork": 1702}
+ESR_COMMODITIES = {"cotton_upland": 1404, "cotton_pima": 1301}   # softs desk: FAS export sales cover cotton only
 
 
 def get(url, **kw):

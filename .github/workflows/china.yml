@@ -1,0 +1,49 @@
+name: china
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['data/china/raw/**', 'models/china_cotton.py', 'pipelines/china_prices.py', 'pipelines/china_collect.py', 'pipelines/india_cai.py', 'china/**', '.github/workflows/china.yml']
+  schedule:
+    - cron: '40 8 * * 1-5'    # after the Zhengzhou day session (15:00 Beijing)
+    - cron: '30 21 * * 1-5'   # after the ICE close
+    - cron: '15 23 * * 1-5'   # evening: picks up raw files the desk received during the day
+permissions: {contents: write}
+concurrency: {group: china, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q pandas numpy requests beautifulsoup4 playwright git+https://github.com/rongardF/tvdatafeed.git
+      - name: sync China raw files collected by the Mac browser task into the US desk (public repo, new files only)
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse https://github.com/BMR-Com/us-commodity-desk /tmp/desk
+          git -C /tmp/desk sparse-checkout set data/china/raw
+          rsync -a --ignore-existing /tmp/desk/data/china/raw/ data/china/raw/
+      - name: China customs monthly bulletin and China Cotton Association pages (new data only)
+        continue-on-error: true
+        timeout-minutes: 25
+        run: python -m playwright install --with-deps chromium >/dev/null && python pipelines/china_collect.py gacc cca
+      - name: Zhengzhou cotton and yarn, USD/CNY, ICE (TradingView)
+        continue-on-error: true
+        run: python pipelines/china_prices.py
+      - name: India CAI daily spot rates (new dates only)
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python pipelines/india_cai.py
+      - name: China cotton model and brief
+        run: python -W ignore models/china_cotton.py
+      - name: commit (always; if the model refused to publish, raw data are kept and the page keeps the last good build)
+        if: always()
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/china; [ -d data/india ] && git add data/india || true
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: China cotton $(date -u +%F)"
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 5; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

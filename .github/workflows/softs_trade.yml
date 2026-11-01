@@ -1,0 +1,48 @@
+name: softs-trade
+# USDA FAS weekly export sales for upland and Pima cotton, then the cotton export-sales brief, balance sheet and price outlook.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['pipelines/grains_trade.py', 'models/grains_esr_brief.py', 'models/balance_sheets.py', 'models/cotton_price_outlook.py', '.github/workflows/softs_trade.yml']
+  schedule:
+    - cron: '31 12 * * 4'     # Thursday weekly export sales, 8:30 ET in daylight time
+    - cron: '31 13 * * 4'     # same in standard time; exits at once if the week is already stored
+    - cron: '43 12 * * 4'     # retries: GitHub delays or drops scheduled runs at busy times
+    - cron: '53 12 * * 4'
+    - cron: '7 13 * * 4'
+    - cron: '43 13 * * 4'
+    - cron: '53 13 * * 4'
+    - cron: '0 14 * * 5'      # Friday: catches a holiday-shifted report
+    - cron: '30 17 * * 4'     # Thursday backstop
+permissions: {contents: write}
+concurrency: {group: softs-trade, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests pandas numpy scipy
+      - name: cotton export sales
+        continue-on-error: true
+        timeout-minutes: 30
+        run: python pipelines/grains_trade.py export_sales_release
+        env: {FAS_API_KEY: '${{ secrets.FAS_API_KEY }}', ESR_WAIT: '45'}
+      - name: export sales brief, balance sheet, price outlook
+        continue-on-error: true
+        run: |
+          python -W ignore models/grains_esr_brief.py || true
+          python -W ignore models/balance_sheets.py || true
+          python -W ignore models/cotton_price_outlook.py || true
+          python -W ignore models/trader_sheet.py || true
+          python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || true
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/grains data/summary data/brief data/derived
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: cotton export sales $(date -u +%F)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

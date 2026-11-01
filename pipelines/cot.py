@@ -9,12 +9,10 @@ import requests
 
 OUT = Path(__file__).resolve().parent.parent / "data" / "cot"
 H = {"User-Agent": "Mozilla/5.0 (BMR-Com research; github actions)"}
-CODES = {  # CFTC contract market codes
-    "DC": "052641", "GDK": "052644", "GNF": "052642", "DY": "052645", "CB": "050642", "CSC": "063642",
-    "HE": "054642", "LE": "057642", "GF": "061641",
-    "ZC": "002602", "ZS": "005602", "ZM": "026603", "ZL": "007601", "ZW": "001602", "KE": "001612",
-    "CT": "033661",
-    "NG": "023651", "CL": "067651", "HO": "022651", "RB": "111659",
+CODES = {  # CFTC contract market codes (softs desk)
+    "CT": "033661",   # Cotton No. 2
+    "SB": "080732",   # Sugar No. 11
+    "KC": "083731",   # Coffee C
 }
 SETS = {"fo": "kh3c-gbw2", "fut": "72hh-3qpy"}
 

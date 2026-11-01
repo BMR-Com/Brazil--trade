@@ -88,6 +88,7 @@ R = [
     ("ca_ab", "Lethbridge, Alberta", "Canada", 49.69, -112.84, ["wheat", "beef"], "04-20", "wheat, feedlots"),
     ("nz_wk", "Waikato, New Zealand", "New Zealand", -37.79, 175.28, ["milk", "butter", "nfdm", "cheese"], "07-01", "pasture dairy (top dairy exporter)"),
 ]
+R = [r for r in R if set(r[5]) & {"cotton", "sugar", "coffee"}]   # softs desk: cotton, sugar and coffee regions only
 
 
 LIMITED = {"hit": False}

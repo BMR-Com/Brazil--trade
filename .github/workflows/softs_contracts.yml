@@ -1,0 +1,39 @@
+name: softs-contracts
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['pipelines/contracts.py', '.github/workflows/softs_contracts.yml']
+  schedule:
+    - cron: '10 23 * * 1-5'   # evening weekdays: refresh per-contract history
+permissions: {contents: write}
+concurrency: {group: softs-contracts, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q pandas numpy requests git+https://github.com/rongardF/tvdatafeed.git
+      - run: python pipelines/contracts.py CT
+      - run: python pipelines/contracts.py SB
+        continue-on-error: true
+      - run: python pipelines/contracts.py KC
+        continue-on-error: true
+      - name: spreads, calendar, seasonality, specs, trader sheet
+        continue-on-error: true
+        run: |
+          python -W ignore models/trader_sheet.py || true
+          python -W ignore models/research.py || true
+          python -W ignore models/contract_calendar.py || true
+          python -W ignore models/seasonal_desk.py || true
+          python models/contract_specs.py || true
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: softs per-contract history $(date -u +%F)"
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 5; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
