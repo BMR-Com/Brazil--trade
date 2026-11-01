@@ -1,0 +1,17 @@
+name: softs-probe
+# Temporary: check which public coffee data pages are reachable from GitHub runners (Cecafé daily registrations, Conab series).
+on:
+  push:
+    branches: [softs-desk]
+    paths: ['.github/workflows/softs_probe.yml', 'scripts/probe_sources.py']
+permissions: {contents: read}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests beautifulsoup4
+      - run: python scripts/probe_sources.py
