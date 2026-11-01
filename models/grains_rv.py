@@ -18,11 +18,11 @@ MN = dict(zip(CODES, ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "S
 SYMS = {"ZC": "Corn", "ZS": "Soybeans", "ZM": "Soybean meal", "ZL": "Soybean oil", "ZW": "Chicago wheat", "KE": "KC HRW wheat", "CT": "Cotton", "SB": "Sugar No. 11", "KC": "Coffee C",
         "HE": "Lean hogs", "LE": "Live cattle", "GF": "Feeder cattle"}
 UNIT = {"ZC": "¢/bu", "ZS": "¢/bu", "ZW": "¢/bu", "KE": "¢/bu", "ZM": "$/st", "ZL": "¢/lb", "CT": "¢/lb", "SB": "¢/lb", "KC": "¢/lb", "HE": "¢/lb", "LE": "¢/lb", "GF": "¢/lb"}
-USD = {"ZC": 50, "ZS": 50, "ZW": 50, "KE": 50, "ZM": 100, "ZL": 600, "CT": 500, "HE": 400, "LE": 400, "GF": 500}   # $ per 1.00 of quote
+USD = {"ZC": 50, "ZS": 50, "ZW": 50, "KE": 50, "ZM": 100, "ZL": 600, "CT": 500, "SB": 1120, "KC": 375, "HE": 400, "LE": 400, "GF": 500}   # $ per 1.00 of quote
 STORAGE = {"ZC": 0.165, "ZS": 0.165, "ZW": 0.165, "KE": 0.165}      # ¢/bu/day: CBOT tariff (SRW/HRW at the variable-rate floor)
 CASH = {"HE", "GF"}
 CROSS = {"ZC": {("N", "U"), ("N", "Z"), ("U", "Z")}, "ZS": {("Q", "U"), ("U", "X"), ("N", "X"), ("Q", "X")}, "ZW": {("K", "N")}, "KE": {("K", "N")},
-         "CT": {("N", "Z"), ("K", "Z")}}   # spreads across crop years: no storage arbitrage, so no full-carry measure
+         "CT": {("N", "Z"), ("K", "Z")}, "SB": {("N", "V"), ("V", "H")}}   # spreads across crop years: no storage arbitrage, so no full-carry measure
 
 
 def ltd(sym, code):
@@ -32,6 +32,10 @@ def ltd(sym, code):
         return pd.Timestamp(y, m, 14)
     if sym == "CT":
         return pd.Timestamp(y, m, 8)
+    if sym == "SB":
+        return pd.Timestamp(y, m, 1) - pd.Timedelta(days=1)
+    if sym == "KC":
+        return pd.Timestamp(y, m, 18)
     if sym == "HE":
         return pd.Timestamp(y, m, 14)
     return pd.Timestamp(y, m, 1) + pd.offsets.MonthEnd(0)
