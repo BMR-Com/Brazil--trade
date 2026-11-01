@@ -1,0 +1,47 @@
+name: softs-coffee
+# Cecafé daily export registrations (by type and port), Conab regional coffee survey, and Brazil coffee weather
+# weighted by Conab production. The Cecafé page shows only the latest day, so this must run every business day.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main, softs-desk]
+    paths: ['pipelines/cecafe_daily.py', 'pipelines/conab_coffee.py', 'models/coffee_weather.py', '.github/workflows/softs_coffee.yml']
+  schedule:
+    - cron: '20 11 * * 1-6'    # Brazil morning: the previous day's registrations
+    - cron: '20 23 * * 1-5'    # evening: same-day update when Cecafé posts it
+permissions: {contents: write}
+concurrency: {group: softs-coffee, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests pandas numpy beautifulsoup4 xlrd openpyxl
+      - name: Cecafé daily registrations
+        continue-on-error: true
+        timeout-minutes: 5
+        run: python pipelines/cecafe_daily.py
+      - name: Conab coffee survey (state and region production)
+        continue-on-error: true
+        timeout-minutes: 5
+        run: python pipelines/conab_coffee.py
+      - name: weather for new coffee regions (first run after a change only)
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        timeout-minutes: 45
+        run: timeout 2600 python -u pipelines/geo_weather.py
+        env: {GEO_WX_NEW: '14'}
+      - name: production-weighted coffee weather
+        continue-on-error: true
+        run: python models/coffee_weather.py
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/coffee data/geo/weather.json data/geo/weather_hist 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: Cecafé daily, Conab coffee, weighted weather $(date -u +%F)"
+          B="${GITHUB_REF_NAME}"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin "$B" && git push -q origin "HEAD:$B" && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

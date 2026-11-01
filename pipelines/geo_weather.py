@@ -96,9 +96,20 @@ R = [
     ("au_mk", "Mackay, Queensland", "Australia", -21.14, 149.19, ["sugar"], "11-01", "cane: wet season Dec-Mar; crush Jun-Nov"),
     ("cn_gx", "Nanning, Guangxi", "China", 22.82, 108.32, ["sugar"], "04-01", "China's main cane province; winter frost risk"),
     ("eu_fr_b", "Amiens, northern France (beet)", "European Union", 49.89, 2.30, ["sugar"], "03-15", "sugar beet: spring sowing, summer root growth"),
-    ("br_mg", "Varginha, South Minas Gerais", "Brazil", -21.55, -45.43, ["coffee"], "09-01", "arabica: flowering with Sep-Oct rains; frost Jun-Aug"),
+    # Brazil coffee: one point per Conab producing region (models/coffee_weather.py weights them by Conab production)
+    ("br_mg", "Varginha, Sul de Minas", "Brazil", -21.55, -45.43, ["coffee"], "09-01", "arabica: flowering with Sep-Oct rains; frost Jun-Aug"),
     ("br_cer", "Patrocínio, Cerrado Mineiro", "Brazil", -18.94, -46.99, ["coffee"], "09-01", "arabica (Cerrado): dry winter, irrigated in part"),
-    ("br_es", "Linhares, Espírito Santo", "Brazil", -19.39, -40.07, ["coffee"], "09-01", "conilon (robusta); drought and heat"),
+    ("br_zm", "Manhuaçu, Zona da Mata (MG)", "Brazil", -20.26, -42.03, ["coffee"], "09-01", "arabica, mountain coffee; some conilon"),
+    ("br_nmg", "Capelinha, Jequitinhonha (MG)", "Brazil", -17.69, -42.52, ["coffee"], "09-01", "arabica, northern Minas"),
+    ("br_spc", "Franca, Alta Mogiana (SP)", "Brazil", -20.54, -47.40, ["coffee"], "09-01", "arabica, Mogiana"),
+    ("br_esa", "Venda Nova do Imigrante, ES mountains", "Brazil", -20.34, -41.13, ["coffee"], "09-01", "arabica, Espírito Santo highlands"),
+    ("br_prc", "Carlópolis, Norte Pioneiro (PR)", "Brazil", -23.43, -49.72, ["coffee"], "09-01", "arabica; the most frost-exposed area"),
+    ("br_bac", "Luís Eduardo Magalhães, Bahia cerrado", "Brazil", -12.09, -45.80, ["coffee"], "09-01", "irrigated arabica"),
+    ("br_bapl", "Vitória da Conquista, Bahia plateau", "Brazil", -14.86, -40.84, ["coffee"], "09-01", "arabica, Planalto da Bahia"),
+    ("br_es", "Linhares, Espírito Santo", "Brazil", -19.39, -40.07, ["coffee"], "07-01", "conilon (robusta), coastal ES; drought and heat"),
+    ("br_esn", "São Gabriel da Palha, north ES", "Brazil", -19.02, -40.54, ["coffee"], "07-01", "conilon heartland (north Espírito Santo)"),
+    ("br_baa", "Itabela, south Bahia (Atlântico)", "Brazil", -16.57, -39.56, ["coffee"], "07-01", "irrigated conilon"),
+    ("br_ro", "Cacoal, Rondônia", "Brazil", -11.44, -61.45, ["coffee"], "07-01", "robusta/conilon (Amazon clones)"),
     ("vn_dl", "Buon Ma Thuot, Dak Lak", "Vietnam", 12.67, 108.04, ["coffee"], "05-01", "robusta: rainy season May-Oct, harvest Nov-Jan, irrigation in the dry season"),
     ("co_cz", "Manizales, Colombian coffee belt", "Colombia", 5.07, -75.52, ["coffee"], "03-01", "washed arabica: two flowerings, main crop Oct-Jan, mitaca Apr-Jun"),
     ("hn_cp", "Santa Rosa de Copán, Honduras", "Honduras", 14.77, -88.78, ["coffee"], "05-01", "Central American washed arabica; harvest Nov-Mar"),
@@ -222,6 +233,10 @@ def main():
         o["wb60"] = None if o["r60"] is None else o["r60"] - (window(obs, end, 60, "et0") or 0)
         o["tmax30"] = window(obs, end, 30, "tmax", "mean")
         o["hot30"] = int((obs.loc[pd.Timestamp(end - timedelta(days=29)):, "tmax"] >= 35).sum())
+        if "tmin" in obs:   # frost watch (coffee, cane): coldest night and nights at or below 3 °C (2 m air; leaf frost forms a few degrees higher)
+            t30 = obs.loc[pd.Timestamp(end - timedelta(days=29)):, "tmin"].dropna()
+            o["tmin30"] = float(t30.min()) if len(t30) else None
+            o["cold30"] = int((t30 <= 3).sum())
         sm_end = last_obs
         o["sm7"] = window(rec, sm_end, 7, "sm7", "mean")
         o["sm100"] = window(rec, sm_end, 7, "sm100", "mean")
@@ -230,6 +245,9 @@ def main():
             o["f16_tmax"] = float(fut.tmax.mean())
             o["f16_days"] = len(fut)
             o["f16_from"] = fut.index.min().date().isoformat()
+            if "tmin" in fut:
+                o["f16_tmin"] = float(fut.tmin.min())
+                o["f16_cold"] = int((fut.tmin <= 3).sum())
         if hist is not None:
             yrs = sorted(set(hist.index.year))
             def hy(fn):

@@ -3,7 +3,7 @@
 // (built by coffee/scripts/build.py); COT, spreads/vol, seasonality and technicals use the desk modules with KC.
 const Coffee = (() => {
   let built = false, tab = 'kc-primer', K = null;
-  const TABS = [['kc-primer', 'Primer'], ['kc-geo', "Where it's grown, trade &amp; weather"], ['kc-bal', 'World balance'], ['kc-br', 'Brazil: basis ladder &amp; exports'],
+  const TABS = [['kc-primer', 'Primer'], ['kc-geo', "Where it's grown, trade &amp; weather"], ['kc-bal', 'World balance'], ['kc-br', 'Brazil: basis ladder &amp; exports'], ['kc-cecafe', 'Cecafé daily registrations'], ['kc-wx', 'Brazil weather by production'],
     ['kc-certs', 'Certified stocks &amp; structure'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'],
     ['kc-flows', 'Futures, options &amp; COT'], ['kc-rv', 'Spreads &amp; vol'], ['kc-outlook', 'Outlook'], ['kc-seas', 'Seasonality &amp; technicals']];
   const body = () => $('#kcBody');
@@ -23,7 +23,7 @@ const Coffee = (() => {
   function render() {
     history.replaceState(null, '', '#' + tab);
     body().innerHTML = '<div class="card"><p class="note">Loading…</p></div>';
-    ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs),
+    ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs), 'kc-cecafe': guard(cecafe), 'kc-wx': guard(weather),
       'kc-arb': guard(arb), 'kc-orig': guard(origins), 'kc-flows': guard(flows), 'kc-rv': () => RVView.mount(body(), 'KC'),
       'kc-outlook': guard(outlook), 'kc-seas': () => MktStudy.mount(body(), ['KC']) })[tab]();
   }
@@ -103,6 +103,55 @@ const Coffee = (() => {
     const j0 = Math.max(0, BE.ym.length - 36);
     chart('kcBel', { type: 'bar', data: { labels: BE.ym.slice(j0), datasets: [{ label: 'Brazil green to Belgium, k bags', data: BE.bags.slice(j0), backgroundColor: '#7d3c98' },
       { type: 'line', label: 'Prior 3-yr avg', data: BE.avg3.slice(j0), borderColor: '#7f8c8d', borderDash: [5, 4], pointRadius: 0 }] } });
+  }
+
+  // ---------- Cecafé daily ----------
+  async function cecafe() {
+    const C = await getJSON('data/coffee/cecafe.json').catch(() => null);
+    if (!C) { body().innerHTML = '<div class="card"><p class="note">Cecafé daily registrations not collected yet; they start with the first daily run.</p></div>'; return; }
+    const T = [['arabica', 'Arabica'], ['conilon', 'Conilon'], ['soluble', 'Soluble'], ['total', 'Total']];
+    const k = v => v == null ? '–' : fmt(v / 1000, 0) + 'k', S = C.same_point_prev_month, P = C.prev_month_total;
+    const mn = m => { const [y, mo] = m.split('-'); return MON[+mo - 1] + ' ' + y; };
+    body().innerHTML = `<div class="grid g4">${T.map(([t, l]) => kpi(`${l}, ${mn(C.month)} to ${C.asof.slice(8)}th`, k(C.mtd[t]) + ' bags',
+        `today ${k(C.day[t])}; ${S ? `same point of ${mn(C.prev_month)} ${k(S[t])} (${sgn(100 * (C.mtd[t] / S[t] - 1), 0, '%')})` : `all of ${mn(C.prev_month)} ${k(P[t])}`}`)).join('')}</div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Month-to-date registrations by type</h2><div style="position:relative;height:280px"><canvas id="kcCe"></canvas></div>
+          <p class="note">Certificates of origin issued, 60-kg bags, cumulative through the month (one point per Cecafé report). Dotted: previous months. History starts ${C.history_from}; the page shows only the latest day, so the desk stores each day as it comes.</p></div>
+        <div class="card"><h2>${mn(C.month)} by port of shipment</h2><div class="tbl"><table><tr><th class="l">Port / unit</th>${T.map(([, l]) => `<th>${l}</th>`).join('')}</tr>
+          ${C.ports_mtd.map(r => `<tr><td class="l">${r.unit}</td>${T.map(([t]) => `<td class="n">${k(r[t])}</td>`).join('')}</tr>`).join('')}</table></div>
+          <h3>Completed months</h3><div class="tbl"><table><tr><th class="l">Month</th>${T.map(([, l]) => `<th>${l}</th>`).join('')}</tr>
+          ${Object.entries(C.finals).reverse().slice(0, 12).map(([m, r]) => `<tr><td class="l">${mn(m)}</td>${T.map(([t]) => `<td class="n">${k(r[t])}</td>`).join('')}</tr>`).join('')}</table></div></div></div>
+      <p class="note">Source: <a href="${C.source}" target="_blank" rel="noopener">Cecafé, Resumo Diário</a>; ${C.measure}. Registrations lead shipments by days to weeks; SECEX shipment data are on the Brazil tab. Updated ${C.generated}.</p>`;
+    const ms = Object.keys(C.path).sort().slice(-3);
+    chart('kcCe', { type: 'line', data: { labels: Array.from({ length: 31 }, (_, i) => i + 1), datasets: ms.flatMap((m, q) => [['arabica', '#7d3c98'], ['conilon', '#d68910']].map(([t, col]) => ({
+      label: `${t} ${mn(m)}`, data: C.path[m].day.map((d, i) => d ? { x: d, y: C.path[m][t][i] } : null).filter(Boolean), borderColor: col, borderDash: m === C.month ? [] : [3, 3],
+      borderWidth: m === C.month ? 2.4 : 1.1, pointRadius: m === C.month ? 2 : 0, parsing: false }))) },
+      options: { scales: { x: { type: 'linear', min: 1, max: 31 } } } });
+  }
+
+  // ---------- production-weighted weather ----------
+  async function weather() {
+    const W = await getJSON('data/coffee/weather_weighted.json').catch(() => null);
+    if (!W) { body().innerHTML = '<div class="card"><p class="note">Weighted coffee weather not built yet.</p></div>'; return; }
+    const H = await getCSV('data/coffee/weather_weighted_hist.csv').catch(() => []);
+    const pc = v => v == null ? '–' : fmt(v, 0) + '%';
+    const card = (t, lab) => { const X = W.types[t]; return `<div class="card"><h2>${lab}: weather weighted by Conab production</h2>
+      <div class="grid g3">${kpi('Last 30 days rain', pc(X.r30_pct_normal), 'of the 2011–25 average')}${kpi('Last 90 days', pc(X.r90_pct_normal), 'of average')}
+        ${kpi('Since season start', pc(X.rstd_pct_normal), t === 'arabica' ? 'from Sep 1 (flowering)' : 'from Jul 1')}
+        ${kpi('Next 16 days (forecast)', pc(X.f16_rain_pct_normal), 'of the usual rain for those dates')}
+        ${kpi('Root-zone soil moisture', X.sm100_p == null ? '–' : fmt(X.sm100_p, 0) + 'th pct', '28–100 cm, vs same week 2011–25')}
+        ${kpi('Frost watch', X.f16_tmin == null ? '–' : fmt(X.f16_tmin, 1) + ' °C', X.coldest_forecast ? `coldest forecast night, weighted; lowest point ${X.coldest_forecast[1].toFixed(1)} °C; ${pc(X.frost_risk_share)} of output ≤3 °C` : '')}</div>
+      <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Region (weather point)</th><th>Conab ${W.conab.season} output, k bags</th><th>Share</th><th>30d rain, mm</th><th>vs avg</th><th>Season rain</th><th>vs avg</th><th>Soil moisture pct</th><th>16-day rain</th><th>Coldest night ahead</th></tr>
+        ${X.regions.map(r => `<tr><td class="l">${r.name}<br><span class="note">${r.conab_rows.join(', ')}</span></td><td class="n">${fmt(r.prod_k, 0)}</td><td class="n">${fmt(r.share, 1)}%</td>
+          <td class="n">${r.has_weather ? fmt(r.r30, 0) : '<span class="note">pending</span>'}</td><td class="n">${r.r30_n ? sgn(100 * (r.r30 / r.r30_n - 1), 0, '%') : '–'}</td>
+          <td class="n">${r.rstd != null ? fmt(r.rstd, 0) : '–'}</td><td class="n">${r.rstd_n ? sgn(100 * (r.rstd / r.rstd_n - 1), 0, '%') : '–'}</td>
+          <td class="n">${r.sm100_p ?? '–'}</td><td class="n">${r.f16_rain != null ? fmt(r.f16_rain, 0) : '–'}</td><td class="n">${r.f16_tmin != null ? fmt(r.f16_tmin, 1) + ' °C' : '–'}</td></tr>`).join('')}</table></div>
+      <p class="note">Covers ${pc(X.mapped_share)} of Brazil's ${t} output; weather available for ${pc(X.weather_share)} of that (missing points drop out and the rest are re-weighted).</p></div>`; };
+    body().innerHTML = card('arabica', 'Arabica') + `<div style="margin-top:12px"></div>` + card('conilon', 'Conilon') +
+      (H.length > 1 ? `<div class="card" style="margin-top:12px"><h2>Weighted rain index over time</h2><div style="position:relative;height:240px"><canvas id="kcWh"></canvas></div></div>` : '') +
+      `<p class="note">Weights: Conab survey ${W.conab.survey} of ${W.conab.season}, production by state and by Minas Gerais and Bahia region. Weather: Open-Meteo ERA5 and forecast at one point per region, against 2011–2025 (see Where it's grown for each point). Weather through ${W.weather_through || '–'}. For forecasts also check Somar Meteorologia and Climatempo.</p>`;
+    if (H.length > 1) chart('kcWh', { type: 'line', data: { labels: H.map(r => r.date), datasets: [['arabica_r30_pct_normal', 'Arabica 30-day rain % of avg', '#7d3c98'], ['conilon_r30_pct_normal', 'Conilon 30-day rain % of avg', '#d68910'],
+      ['arabica_rstd_pct_normal', 'Arabica season rain % of avg', '#2c6fbb']].map(([k, l, c]) => ({ label: l, data: H.map(r => r[k]), borderColor: c, pointRadius: 0 })) } });
   }
 
   async function certs() {

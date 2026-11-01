@@ -54,7 +54,7 @@ CAL = {
         "European Union": {"regions": ["eu_fr_b"], "stages": [(P, 3, 4, 1, "beet sowing"), (C, 6, 8, 3, "root growth: summer heat and dryness, yellows virus"), (H, 9, 1, 1, "beet campaign")]},
     },
     "coffee": {
-        "Brazil": {"regions": ["br_mg", "br_cer", "br_es"], "stages": [(C, 9, 11, 3, "flowering with the first spring rains: sets the next crop"), (V, 12, 3, 2, "cherry fill: summer rain and heat"), (H, 4, 9, 1, "harvest (arabica May-Sep, conilon Apr-Jul)"), (V, 6, 8, 3, "frost risk in South Minas and Paraná (also damages the following crop)")]},
+        "Brazil": {"regions": ["br_mg", "br_cer", "br_zm", "br_es", "br_esn", "br_ro"], "stages": [(C, 9, 11, 3, "flowering with the first spring rains: sets the next crop"), (V, 12, 3, 2, "cherry fill: summer rain and heat"), (H, 4, 9, 1, "harvest (arabica May-Sep, conilon Apr-Jul)"), (V, 6, 8, 3, "frost risk in South Minas and Paraná (also damages the following crop)")]},
         "Vietnam": {"regions": ["vn_dl"], "stages": [(C, 2, 4, 2, "flowering: dry-season irrigation water"), (V, 5, 10, 2, "rainy season cherry development"), (H, 11, 1, 1, "harvest; rain at harvest delays drying")]},
         "Colombia": {"regions": ["co_cz"], "stages": [(C, 3, 5, 2, "flowering for the main crop"), (H, 10, 1, 1, "main crop harvest"), (H, 4, 6, 1, "mitaca (fly crop)")]},
         "Indonesia": {"regions": ["id_lp"], "stages": [(C, 10, 1, 2, "flowering and cherry set"), (H, 4, 8, 1, "Sumatra robusta harvest")]},
