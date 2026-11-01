@@ -34,6 +34,14 @@ C = {
     "cotton": [
         dict(sym="CT", name="Cotton No. 2", ex="ICE US", code=None, size="50,000 lb", quote="¢/lb", tick="0.01¢ = $5", usd=500, price="CT", months="Mar, May, Jul, Oct, Dec", settle="Physical (certificated cotton at ICE warehouses)", options="Yes", margin_note="ICE margin: see ICE Clear US (risk-based, not published as a flat rate)"),
     ],
+    "sugar": [
+        dict(sym="SB", name="Sugar No. 11", ex="ICE US", code=None, size="112,000 lb (50.8 t)", quote="¢/lb", tick="0.01¢ = $11.20", usd=1120, price="SB", months="Mar, May, Jul, Oct", settle="Physical, raw cane sugar FOB the receiver's vessel at a port in the country of origin (30 origins)", options="Yes", margin_note="ICE margin: see ICE Clear US"),
+        dict(sym="W", name="White Sugar No. 5 (London)", ex="ICE Europe", code=None, size="50 t", quote="$/t", tick="$0.10 = $5", usd=50, price=None, months="Mar, May, Aug, Oct, Dec", settle="Physical, refined white sugar FOB designated ports", options="Yes"),
+    ],
+    "coffee": [
+        dict(sym="KC", name="Coffee C (arabica)", ex="ICE US", code=None, size="37,500 lb", quote="¢/lb", tick="0.05¢ = $18.75", usd=375, price="KC", months="Mar, May, Jul, Sep, Dec", settle="Physical, washed arabica from 19 origins in ICE-licensed warehouses (US and Europe), with origin and port differentials", options="Yes", margin_note="ICE margin: see ICE Clear US"),
+        dict(sym="RC", name="Robusta (London)", ex="ICE Europe", code=None, size="10 t", quote="$/t", tick="$1 = $10", usd=10, price=None, months="Jan, Mar, May, Jul, Sep, Nov", settle="Physical, robusta in ICE-licensed warehouses in Europe and the US", options="Yes"),
+    ],
     "hogs": [
         dict(sym="HE", name="Lean hogs", ex="CME", code="LN", size="40,000 lb", quote="¢/lb", tick="0.025¢ = $10", usd=400, price="HE", months="Feb, Apr, May, Jun, Jul, Aug, Oct, Dec", settle="Cash-settled to the CME Lean Hog Index", options="Yes"),
         dict(sym="PRK", name="Pork cutout", ex="CME", code="PRK", size="40,000 lb", quote="¢/lb", tick="0.025¢ = $10", usd=400, price=None, months="as lean hogs", settle="Cash-settled to the CME Pork Cutout Index", options="Yes (thin)"),

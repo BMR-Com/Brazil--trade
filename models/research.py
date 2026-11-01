@@ -46,8 +46,8 @@ DELTA = 60 / 61        # EWMA centre of mass 60 days
 AF = 261
 # months ahead the held contract must be: physical delivery in the month before (grains, cotton) or futures
 # expiring the month before the contract month (NYMEX energy) -> 2; cash-settled / end-of-month expiry -> 1
-AHEAD = {s: 2 for s in ("ZC", "ZS", "ZM", "ZL", "ZW", "KE", "CT", "NG", "CL", "HO", "RB")}
-STORABLE = {"ZC", "ZS", "ZM", "ZL", "ZW", "KE", "CT", "NG", "CL", "HO", "RB", "CSC", "CB", "GNF", "DY"}
+AHEAD = {s: 2 for s in ("ZC", "ZS", "ZM", "ZL", "ZW", "KE", "CT", "SB", "KC", "NG", "CL", "HO", "RB")}
+STORABLE = {"ZC", "ZS", "ZM", "ZL", "ZW", "KE", "CT", "SB", "KC", "NG", "CL", "HO", "RB", "CSC", "CB", "GNF", "DY"}
 WASDE = {"ZC": "corn", "ZS": "soybeans", "ZM": "meal", "ZL": "oil", "ZW": "wheat", "KE": "wheat"}
 EIA = {"NG": "storL48", "CL": "crude", "HO": "dist", "RB": "gaso"}
 

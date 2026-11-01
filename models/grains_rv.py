@@ -15,9 +15,9 @@ CON = ROOT / "data" / "contracts"
 OUT = ROOT / "data" / "grains" / "derived" / "rv.json"
 CODES = "FGHJKMNQUVXZ"
 MN = dict(zip(CODES, ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]))
-SYMS = {"ZC": "Corn", "ZS": "Soybeans", "ZM": "Soybean meal", "ZL": "Soybean oil", "ZW": "Chicago wheat", "KE": "KC HRW wheat", "CT": "Cotton",
+SYMS = {"ZC": "Corn", "ZS": "Soybeans", "ZM": "Soybean meal", "ZL": "Soybean oil", "ZW": "Chicago wheat", "KE": "KC HRW wheat", "CT": "Cotton", "SB": "Sugar No. 11", "KC": "Coffee C",
         "HE": "Lean hogs", "LE": "Live cattle", "GF": "Feeder cattle"}
-UNIT = {"ZC": "¢/bu", "ZS": "¢/bu", "ZW": "¢/bu", "KE": "¢/bu", "ZM": "$/st", "ZL": "¢/lb", "CT": "¢/lb", "HE": "¢/lb", "LE": "¢/lb", "GF": "¢/lb"}
+UNIT = {"ZC": "¢/bu", "ZS": "¢/bu", "ZW": "¢/bu", "KE": "¢/bu", "ZM": "$/st", "ZL": "¢/lb", "CT": "¢/lb", "SB": "¢/lb", "KC": "¢/lb", "HE": "¢/lb", "LE": "¢/lb", "GF": "¢/lb"}
 USD = {"ZC": 50, "ZS": 50, "ZW": 50, "KE": 50, "ZM": 100, "ZL": 600, "CT": 500, "HE": 400, "LE": 400, "GF": 500}   # $ per 1.00 of quote
 STORAGE = {"ZC": 0.165, "ZS": 0.165, "ZW": 0.165, "KE": 0.165}      # ¢/bu/day: CBOT tariff (SRW/HRW at the variable-rate floor)
 CASH = {"HE", "GF"}

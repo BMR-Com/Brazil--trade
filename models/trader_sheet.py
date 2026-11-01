@@ -10,7 +10,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 D = ROOT / "data"
 MKTS = [("ZC", "corn", "grains"), ("ZS", "soybeans", "grains"), ("ZM", "meal", "grains"), ("ZL", "oil", "grains"), ("ZW", "wheat", "grains"),
-        ("KE", "kc", "grains"), ("CT", "cotton", "softs"), ("HE", None, "livestock"), ("LE", None, "livestock"), ("GF", None, "livestock"),
+        ("KE", "kc", "grains"), ("CT", "cotton", "softs"), ("SB", "sugar", "softs"), ("KC", "coffee", "softs"), ("HE", None, "livestock"), ("LE", None, "livestock"), ("GF", None, "livestock"),
         ("DC", None, "dairy"), ("GDK", None, "dairy")]
 EVT = [("WASDE", "WASDE / Crop Production"), ("Crop Production", "WASDE / Crop Production"), ("Grain Stocks", "Grain Stocks"), ("Acreage", "Acreage"),
        ("Prospective Plantings", "Prospective Plantings"), ("Hogs and Pigs", "Hogs and Pigs"), ("Cattle on Feed", "Cattle on Feed"), ("export sales", "Export sales")]

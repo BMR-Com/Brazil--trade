@@ -1,0 +1,61 @@
+name: softs-bootstrap
+# One-off: fill sugar and coffee history (COT, contract curves, closes, PSD/Comtrade, origin weather) on the softs-desk
+# branch while it is being built. Commits back to the branch that ran it. Delete once the branch is merged.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [softs-desk]
+    paths: ['.github/workflows/softs_bootstrap.yml']
+permissions: {contents: write}
+concurrency: {group: softs-bootstrap, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests pandas numpy scipy pycountry git+https://github.com/rongardF/tvdatafeed.git
+      - name: CFTC COT
+        continue-on-error: true
+        timeout-minutes: 15
+        run: python pipelines/cot.py
+      - name: contract history (sugar, coffee)
+        continue-on-error: true
+        timeout-minutes: 60
+        run: python pipelines/contracts.py SB KC
+      - name: active-contract closes
+        continue-on-error: true
+        timeout-minutes: 15
+        run: python pipelines/ohlc.py
+      - name: PSD and Comtrade
+        continue-on-error: true
+        timeout-minutes: 30
+        run: python pipelines/geo.py psd comtrade
+      - name: origin weather
+        continue-on-error: true
+        timeout-minutes: 45
+        run: timeout 2600 python -u pipelines/geo_weather.py
+        env: {GEO_WX_NEW: '18'}
+      - name: models
+        continue-on-error: true
+        run: |
+          python models/geo.py || true
+          python -W ignore models/technicals.py || true
+          python models/vol.py || true
+          python -W ignore models/research.py || true
+          python models/cot_backtest.py || true
+          python -W ignore models/cot_desk.py || true
+          python -W ignore models/seasonal_desk.py || true
+          python -W ignore models/contract_calendar.py || true
+          python -W ignore models/contract_specs.py || true
+          python -W ignore models/trader_sheet.py || true
+      - name: commit to this branch
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: softs bootstrap (sugar, coffee) $(date -u +%F)"
+          B="${GITHUB_REF_NAME}"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin "$B" && git push -q origin "HEAD:$B" && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

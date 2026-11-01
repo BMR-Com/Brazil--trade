@@ -51,6 +51,8 @@ PAGES = {
     "oil": ("oil", "Soybean oil", ["soybean_oil"], "soybeans", "soybeans"),
     "wheat": ("wheat", "Wheat", ["wheat_all"], "wheat", "wheat"),
     "cotton": ("cotton", "Cotton", ["cotton_upland", "cotton_pima"], "cotton", "cotton"),
+    "sugar": ("sugar", "Sugar", [], None, "sugar"),
+    "coffee": ("coffee", "Coffee", [], None, "coffee"),
     "pork": ("pork", "Pork", ["pork"], "hogs", "pork"),
     "beef": ("beef", "Beef", ["beef"], "cattle", "beef"),
     "milk": ("milk", "Milk", [], "milk", "milk"),

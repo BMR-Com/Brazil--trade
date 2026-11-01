@@ -87,6 +87,24 @@ R = [
     ("ca_sk", "Regina, Saskatchewan", "Canada", 50.45, -104.61, ["wheat"], "04-20", "spring wheat, canola"),
     ("ca_ab", "Lethbridge, Alberta", "Canada", 49.69, -112.84, ["wheat", "beef"], "04-20", "wheat, feedlots"),
     ("nz_wk", "Waikato, New Zealand", "New Zealand", -37.79, 175.28, ["milk", "butter", "nfdm", "cheese"], "07-01", "pasture dairy (top dairy exporter)"),
+    # softs desk: sugar and coffee origins
+    ("br_sp", "Ribeirão Preto, São Paulo", "Brazil", -21.18, -47.81, ["sugar"], "10-01", "Centre-South cane: rainy season Oct-Mar grows next year's cane; dry Apr-Nov crush"),
+    ("br_gos", "Rio Verde, Goiás (cane)", "Brazil", -17.80, -50.92, ["sugar"], "10-01", "cane on the western frontier; frost-free but drought-prone"),
+    ("in_up", "Muzaffarnagar, Uttar Pradesh", "India", 29.47, 77.70, ["sugar"], "06-01", "north Indian cane (irrigated; monsoon recharges water)"),
+    ("in_kol", "Kolhapur, Maharashtra", "India", 16.70, 74.24, ["sugar"], "06-01", "Maharashtra cane: monsoon rain fills the reservoirs that irrigate it"),
+    ("th_ns", "Nakhon Sawan, Thailand", "Thailand", 15.70, 100.14, ["sugar"], "05-01", "rain-fed cane: monsoon May-Oct; crush Dec-Apr"),
+    ("au_mk", "Mackay, Queensland", "Australia", -21.14, 149.19, ["sugar"], "11-01", "cane: wet season Dec-Mar; crush Jun-Nov"),
+    ("cn_gx", "Nanning, Guangxi", "China", 22.82, 108.32, ["sugar"], "04-01", "China's main cane province; winter frost risk"),
+    ("eu_fr_b", "Amiens, northern France (beet)", "European Union", 49.89, 2.30, ["sugar"], "03-15", "sugar beet: spring sowing, summer root growth"),
+    ("br_mg", "Varginha, South Minas Gerais", "Brazil", -21.55, -45.43, ["coffee"], "09-01", "arabica: flowering with Sep-Oct rains; frost Jun-Aug"),
+    ("br_cer", "Patrocínio, Cerrado Mineiro", "Brazil", -18.94, -46.99, ["coffee"], "09-01", "arabica (Cerrado): dry winter, irrigated in part"),
+    ("br_es", "Linhares, Espírito Santo", "Brazil", -19.39, -40.07, ["coffee"], "09-01", "conilon (robusta); drought and heat"),
+    ("vn_dl", "Buon Ma Thuot, Dak Lak", "Vietnam", 12.67, 108.04, ["coffee"], "05-01", "robusta: rainy season May-Oct, harvest Nov-Jan, irrigation in the dry season"),
+    ("co_cz", "Manizales, Colombian coffee belt", "Colombia", 5.07, -75.52, ["coffee"], "03-01", "washed arabica: two flowerings, main crop Oct-Jan, mitaca Apr-Jun"),
+    ("hn_cp", "Santa Rosa de Copán, Honduras", "Honduras", 14.77, -88.78, ["coffee"], "05-01", "Central American washed arabica; harvest Nov-Mar"),
+    ("et_jm", "Jimma, Ethiopia", "Ethiopia", 7.67, 36.83, ["coffee"], "03-01", "arabica: main rains Jun-Sep, harvest Oct-Jan"),
+    ("id_lp", "Lampung, Sumatra", "Indonesia", -5.10, 104.90, ["coffee"], "10-01", "robusta: harvest Apr-Aug"),
+    ("ug_ms", "Masaka, Uganda", "Uganda", -0.33, 31.73, ["coffee"], "03-01", "robusta: two rainy seasons, two harvests"),
 ]
 R = [r for r in R if set(r[5]) & {"cotton", "sugar", "coffee"}]   # softs desk: cotton, sugar and coffee regions only
 

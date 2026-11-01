@@ -27,6 +27,7 @@ SPEC = {
     "ZM": ("Soybean meal", "Grains & oilseeds", "$/short ton", 100, 5, 1, "grain"), "ZL": ("Soybean oil", "Grains & oilseeds", "¢/lb", 600, 0.5, 2, "grain"),
     "ZW": ("Chicago wheat", "Grains & oilseeds", "¢/bu", 50, 5, 2, "grain"), "KE": ("KC HRW wheat", "Grains & oilseeds", "¢/bu", 50, 5, 2, "grain"),
     "CT": ("Cotton", "Softs", "¢/lb", 500, 1, 2, "cotton"),
+    "SB": ("Sugar No. 11", "Softs", "¢/lb", 1120, 0.25, 2, "sugar"), "KC": ("Coffee C", "Softs", "¢/lb", 375, 5, 2, "coffee"),
     "LE": ("Live cattle", "Livestock", "¢/lb", 400, 1, 3, "le"), "GF": ("Feeder cattle", "Livestock", "¢/lb", 500, 1, 3, "gf"),
     "HE": ("Lean hogs", "Livestock", "¢/lb", 400, 1, 3, "he"),
     "DC": ("Class III milk", "Dairy", "$/cwt", 2000, 0.25, 2, "dairy"), "GDK": ("Class IV milk", "Dairy", "$/cwt", 2000, 0.25, 2, "dairy"),
@@ -37,6 +38,8 @@ SPEC = {
 }
 RULE_TEXT = {"grain": "last Friday at least 2 business days before the last business day of the month before the contract month",
              "cotton": "last Friday at least 5 business days before the last business day of the month before the contract month",
+             "sugar": "15th calendar day of the month before the contract month (prior business day if not one)",
+             "coffee": "second Friday of the month before the contract month",
              "le": "first Friday of the contract month", "gf": "last Thursday of the contract month (same as futures)",
              "he": "10th business day of the contract month (same as futures)",
              "dairy": "business day before the USDA class/product price announcement (about the first Wednesday after the contract month)",
@@ -68,6 +71,16 @@ def expiry(rule, y, m):
         while d.weekday() != 4:
             d -= timedelta(days=1)
         return d
+    if rule == "sugar":
+        d = date(py, pm, 15)
+        while d.weekday() >= 5:
+            d -= timedelta(days=1)
+        return d
+    if rule == "coffee":
+        d = date(py, pm, 1)
+        while d.weekday() != 4:
+            d += timedelta(days=1)
+        return d + timedelta(days=7)
     if rule == "le":
         d = date(y, m, 1)
         while d.weekday() != 4:

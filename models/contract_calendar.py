@@ -75,6 +75,22 @@ def ice_cotton(m):
     return {"fnd": fnd, "ltd": ltd, "out_by": prev_bd(fnd)}
 
 
+def ice_sugar(m):
+    """ICE Sugar No. 11: no first notice before expiry; LTD = last business day of the month before the delivery month.
+    Delivery is FOB the receiver's vessel at a port in the origin country, so speculators simply exit by LTD."""
+    prev = (m - 1)
+    ltd = last_bd(prev)
+    return {"fnd": None, "ltd": ltd, "out_by": prev_bd(ltd, 2)}
+
+
+def ice_coffee(m):
+    """ICE Coffee C: FND = seven business days before the first business day of the delivery month; LTD = one business
+    day before the last notice day (about eight business days before the end of the delivery month)."""
+    fnd = prev_bd(first_bd(m), 7)
+    ltd = bdays(m.start_time, m.end_time.normalize())[-9]
+    return {"fnd": fnd, "ltd": ltd, "out_by": prev_bd(fnd)}
+
+
 def cme_le(m):
     """Live cattle: physical delivery; LTD = last business day of the contract month (noon CT). Deliveries can be
     tendered from the first business day of the contract month, so speculative longs exit before it."""
@@ -149,6 +165,8 @@ MKT = {
     "ZW": ("Chicago wheat", cbot_grain, "HKNUZ", "physical", "As corn."),
     "KE": ("KC wheat", cbot_grain, "HKNUZ", "physical", "As corn."),
     "CT": ("Cotton No. 2", ice_cotton, "HKNVZ", "physical", "Exit or roll before first notice day; open interest and liquidity move to the next month 1-3 weeks earlier."),
+    "SB": ("Sugar No. 11", ice_sugar, "HKNV", "physical", "No notice period: the expiring month trades to its last day and is delivered FOB origin; specs roll 1-3 weeks before expiry, when index funds roll (Goldman roll, 5th-9th business day of the month before)."),
+    "KC": ("Coffee C", ice_coffee, "HKNUZ", "physical", "Exit or roll before first notice day (7 business days before the delivery month); certified-stock delivery makes the spot month a squeeze risk."),
     "LE": ("Live cattle", cme_le, "GJMQVZ", "physical", "Speculators exit before the contract month: from its first business day, longs can be assigned live cattle."),
     "GF": ("Feeder cattle", cme_gf, "FHJKQUVX", "cash", "No delivery: can be held to final cash settlement on the CME Feeder Cattle Index; liquidity thins in the last week."),
     "HE": ("Lean hogs", cme_he, "GJKMNQVZ", "cash", "No delivery: can be held to final cash settlement on the CME Lean Hog Index (10th business day); liquidity thins in the last days."),

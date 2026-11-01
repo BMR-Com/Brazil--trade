@@ -45,6 +45,23 @@ CAL = {
         "Pakistan": {"regions": ["pk_ml"], "stages": [(P, 4, 6, 1, "planting"), (C, 7, 9, 3, "boll set; monsoon floods and heat"), (H, 9, 12, 1, "picking")]},
         "Australia": {"regions": ["au_nsw"], "stages": [(P, 10, 11, 1, "planting (irrigation allocations decide area)"), (C, 1, 2, 3, "boll set"), (H, 3, 6, 1, "picking")]},
     },
+    "sugar": {
+        "Brazil": {"regions": ["br_sp", "br_gos"], "stages": [(C, 10, 3, 3, "rainy season grows the cane for the next crush: Oct-Mar rain sets cane tonnage and ATR"), (H, 4, 11, 2, "Centre-South crush: dry weather speeds crushing and raises ATR; fires and frost (Jun-Aug) cut cane")]},
+        "India": {"regions": ["in_up", "in_kol"], "stages": [(C, 6, 9, 3, "monsoon: rain and reservoir levels decide cane yields and next year's planting"), (H, 11, 4, 1, "crush Nov-Apr; government export quotas and ethanol diversion")]},
+        "Thailand": {"regions": ["th_ns"], "stages": [(C, 5, 10, 3, "monsoon grows rain-fed cane"), (H, 12, 4, 1, "crush Dec-Apr")]},
+        "China": {"regions": ["cn_gx"], "stages": [(C, 5, 9, 2, "summer growth in Guangxi"), (H, 11, 4, 1, "crush; winter frost risk")]},
+        "Australia": {"regions": ["au_mk"], "stages": [(C, 12, 3, 2, "wet season growth"), (H, 6, 11, 1, "crush; rain stops harvesting")]},
+        "European Union": {"regions": ["eu_fr_b"], "stages": [(P, 3, 4, 1, "beet sowing"), (C, 6, 8, 3, "root growth: summer heat and dryness, yellows virus"), (H, 9, 1, 1, "beet campaign")]},
+    },
+    "coffee": {
+        "Brazil": {"regions": ["br_mg", "br_cer", "br_es"], "stages": [(C, 9, 11, 3, "flowering with the first spring rains: sets the next crop"), (V, 12, 3, 2, "cherry fill: summer rain and heat"), (H, 4, 9, 1, "harvest (arabica May-Sep, conilon Apr-Jul)"), (V, 6, 8, 3, "frost risk in South Minas and Paraná (also damages the following crop)")]},
+        "Vietnam": {"regions": ["vn_dl"], "stages": [(C, 2, 4, 2, "flowering: dry-season irrigation water"), (V, 5, 10, 2, "rainy season cherry development"), (H, 11, 1, 1, "harvest; rain at harvest delays drying")]},
+        "Colombia": {"regions": ["co_cz"], "stages": [(C, 3, 5, 2, "flowering for the main crop"), (H, 10, 1, 1, "main crop harvest"), (H, 4, 6, 1, "mitaca (fly crop)")]},
+        "Indonesia": {"regions": ["id_lp"], "stages": [(C, 10, 1, 2, "flowering and cherry set"), (H, 4, 8, 1, "Sumatra robusta harvest")]},
+        "Ethiopia": {"regions": ["et_jm"], "stages": [(C, 6, 9, 2, "main rains"), (H, 10, 1, 1, "harvest")]},
+        "Honduras": {"regions": ["hn_cp"], "stages": [(C, 5, 9, 2, "rainy season cherry development"), (H, 11, 3, 1, "harvest")]},
+        "Uganda": {"regions": ["ug_ms"], "stages": [(C, 3, 5, 2, "first rains"), (H, 10, 2, 1, "main harvest")]},
+    },
     "beef": {
         "United States": {"regions": ["us_ne", "us_ks"], "stages": [(P, 4, 5, 1, "spring grass green-up: pasture decides herd rebuilding and feeder placements"), (C, 6, 8, 2, "summer pasture: drought forces cow culling and early placements"), (H, 9, 11, 1, "fall calf run, placements on feed")]},
         "Brazil": {"regions": ["br_go", "br_mt"], "stages": [(C, 10, 4, 2, "rainy season: pasture growth, cattle retained, fewer slaughters"), (H, 5, 9, 1, "dry season: more cattle sent to slaughter, higher beef exports")]},
