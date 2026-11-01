@@ -4,7 +4,8 @@ const Softs = (() => {
   const built = {};
   function show(k) {
     const el = document.getElementById(k);
-    if (window[k === 'sugar' ? 'Sugar' : 'Coffee'] && window[k === 'sugar' ? 'Sugar' : 'Coffee'].show) return window[k === 'sugar' ? 'Sugar' : 'Coffee'].show();
+    const M = k === 'sugar' ? (typeof Sugar !== 'undefined' ? Sugar : null) : (typeof Coffee !== 'undefined' ? Coffee : null);
+    if (M && M.show) return M.show();
     if (!built[k]) {
       el.style.padding = '0';
       el.innerHTML = `<iframe title="${k}" src="${LEGACY[k]}" style="display:block;width:100%;height:calc(100vh - 92px);min-height:640px;border:0"></iframe>`;
