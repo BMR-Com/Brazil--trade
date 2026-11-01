@@ -10,13 +10,15 @@ on:
     - cron: '20 11 * * 1-6'    # Brazil morning: the previous day's registrations
     - cron: '20 23 * * 1-5'    # evening: same-day update when Cecafé posts it
 permissions: {contents: write}
-concurrency: {group: softs-coffee, cancel-in-progress: false}
+concurrency: {group: softs-bootstrap, cancel-in-progress: false}   # shares the queue with the other jobs that write data/geo/weather.json
 jobs:
   run:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - name: start from the branch head (an earlier queued run may have committed)
+        run: git pull -q --ff-only origin "${GITHUB_REF_NAME}" || true
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - run: pip install -q requests pandas numpy beautifulsoup4 xlrd openpyxl
