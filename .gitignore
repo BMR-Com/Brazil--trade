@@ -10,3 +10,5 @@ data/IMP_*.csv
 !data/countries.csv
 sugar/.mapa_tmp/
 __pycache__/
+__pycache__/
+*.pyc

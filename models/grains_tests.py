@@ -1,0 +1,184 @@
+"""Grains backtests summary -> data/grains/derived/tests.json (per commodity HTML-ready rows).
+
+1. WASDE revision momentum: after USDA revises an item for a marketing year, how often is the
+   next revision of that item (same year) in the same direction? Uses every monthly WASDE.
+2. Condition yield model test (from condition.json) and export pace test (from exports.json)
+   when available.
+3. Price reaction to WASDE: front-month continuous futures return on WASDE day vs the direction
+   of the ending-stocks revision (when price data available).
+"""
+import json
+from pathlib import Path
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent.parent
+D = ROOT / "data" / "grains" / "derived"
+ITEMS = {"corn": ["yield", "production", "exports", "feed_residual", "ethanol", "end_stocks"],
+         "soybeans": ["yield", "production", "exports", "crush", "end_stocks"],
+         "wheat": ["production", "exports", "feed_residual", "end_stocks"],
+         "meal": ["production", "exports", "domestic", "end_stocks"], "oil": ["production", "biofuel", "exports", "end_stocks"]}
+SYM = {"corn": "ZC", "soybeans": "ZS", "wheat": "ZW", "meal": "ZM", "oil": "ZL"}
+MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August",
+                                       "September", "October", "November", "December"], 1)}
+
+
+def momentum(com, wasde):
+    out = {}
+    us = wasde["commodities"][com]["us"]
+    # need full histories: rebuild from the tidy WASDE source
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from grains_wasde import tidy, load, FILES
+    d = tidy(load(FILES[com]))
+    d = d[d.region == "United States"]
+    for item in ITEMS[com]:
+        x = d[d.attr == item].sort_values("wasde")
+        pairs = []
+        for my, g in x.groupby("my"):
+            r = g.value.diff().dropna()
+            r = r[r != 0]
+            s = np.sign(r.values)
+            pairs += list(zip(s[:-1], s[1:]))
+        if len(pairs) < 15:
+            continue
+        same = np.mean([a == b for a, b in pairs])
+        out[item] = {"n": len(pairs), "same_direction": round(float(same), 2)}
+    return out
+
+
+def wasde_price_reaction(com):
+    p = ROOT / "data" / "prices" / f"{SYM[com]}.csv"
+    if not p.exists():
+        return None
+    px = pd.read_csv(p, parse_dates=["date"]).set_index("date").c1_close.dropna()
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from grains_wasde import tidy, load, FILES
+    d = tidy(load(FILES[com]))
+    d = d[(d.region == "United States") & (d.attr == "end_stocks")]
+    rows = []
+    for (wn, rep), g in d.groupby(["wasde", "report"]):
+        try:
+            mon, yr = rep.split()
+            mi = MONTHS[mon]
+        except Exception:
+            continue
+        # WASDE is released around the 9th-12th; find the day with the largest abs return in that window as a proxy is biased,
+        # so use the 12th-or-next trading day close vs the prior close.
+        day = pd.Timestamp(int(yr), mi, 1)
+        win = px[day + pd.Timedelta(days=7): day + pd.Timedelta(days=13)]
+        if len(win) < 2:
+            continue
+        # revision to the newest marketing year reported in this WASDE
+        my = sorted(g.my)[-1]
+        prev = d[(d.my == my) & (d.wasde < wn)].sort_values("wasde")
+        if prev.empty:
+            continue
+        rev = g[g.my == my].value.iloc[0] - prev.value.iloc[-1]
+        if rev == 0:
+            continue
+        rows.append(dict(report=rep, my=my, rev_pct=100 * rev / prev.value.iloc[-1], ret_window=100 * (win.iloc[-1] / win.iloc[0] - 1)))
+    r = pd.DataFrame(rows)
+    if len(r) < 20:
+        return None
+    hit = (np.sign(-r.rev_pct) == np.sign(r.ret_window)).mean()
+    return {"n": int(len(r)), "corr": round(float(np.corrcoef(r.rev_pct, r.ret_window)[0, 1]), 3), "hit": round(float(hit), 2),
+            "note": "approximate: window return over WASDE week (exact release dates not used)"}
+
+
+def bias(com):
+    p = ROOT / "data" / "derived" / "convergence_bias.json"
+    if not p.exists():
+        return None
+    b = json.loads(p.read_text()).get(SYM.get(com, ""), {})
+    return b if b.get("n_contracts") else None
+
+
+def pace_price_test(com, kind="exports"):
+    """Does (pace-implied exports - USDA)/USDA predict the roll-adjusted front-month return over the next 4 weeks?
+    kind: 'exports' (inspections pace) or 'sales' (export sales commitments)."""
+    p = D / f"{kind}_detail_{com}.csv"
+    if not p.exists() or not (ROOT / "data" / "prices" / f"{SYM[com]}.csv").exists():
+        return None
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from cot_backtest import roll_adjusted_index
+    idx = roll_adjusted_index(SYM[com])
+    d = pd.read_csv(p, parse_dates=["week"]).dropna(subset=["usda"])
+    d = d[(d.wk >= 12) & (d.my >= "2010/11")]  # early-season pace is too noisy
+    d["gap"] = 100 * (d.implied / d.usda - 1)
+    lag = pd.Timedelta(days=7 if kind == "sales" else 4)  # ESR out Thursday after week ending; inspections Monday
+
+    def fwd(t, n=20):
+        t = t + lag  # start from the release day close: no look-ahead
+        a = idx[t + pd.Timedelta(days=1):]
+        b = idx[:t]
+        return 100 * (a.iloc[n - 1] / b.iloc[-1] - 1) if len(a) >= n and len(b) else np.nan
+    d["ret20"] = [fwd(t) for t in d.week]
+    d = d.dropna(subset=["ret20"])
+    if len(d) < 50:
+        return None
+    big = d[d.gap.abs() >= 5]
+    nono = d[d.groupby("my").cumcount() % 4 == 0]  # non-overlapping 4-week steps
+    cc = lambda x: round(float(np.corrcoef(x.gap, x.ret20)[0, 1]), 2) if len(x) > 10 else None
+    yrs = nono.groupby("my")[["gap", "ret20"]].apply(lambda x: cc(x) if len(x) > 3 else None).dropna()
+    pnl = np.sign(nono.gap) * nono.ret20
+    robust = {"early": cc(nono[nono.my < "2018/19"]), "late": cc(nono[nono.my >= "2018/19"]),
+              "years_pos": int((yrs > 0).sum()), "years": int(len(yrs)),
+              "sign_t": round(float(pnl.mean() / pnl.std() * np.sqrt(len(pnl))), 2)}
+    return {"n": int(len(d)), "corr": round(float(np.corrcoef(d.gap, d.ret20)[0, 1]), 3), "robust": robust,
+            "corr_nonoverlap": round(float(np.corrcoef(nono.gap, nono.ret20)[0, 1]), 3), "n_nonoverlap": int(len(nono)),
+            "hit_when_gap_ge_5": round(float((np.sign(big.gap) == np.sign(big.ret20)).mean()), 2) if len(big) else None,
+            "n_gap_ge_5": int(len(big))}
+
+
+def html(com, mom, cond, exp, react, sal=None):
+    parts = []
+    b = bias(com)
+    if b:
+        cells = "".join(f"<td>{b[h]['mean_pct']:+.2f}%<br><span class='note'>{100 * b[h]['up_share']:.0f}% up · t {b[h]['t']:+.1f}</span></td>" for h in ("h20", "h60", "h120") if h in b)
+        parts.append(f"<h3>Convergence: futures vs their own final price</h3><div class='tbl'><table><tr><th>Expired since 2010</th><th>From 20 bdays</th><th>From 60</th><th>From 120</th></tr><tr><td>{b['n_contracts']} contracts</td>{cells}</tr></table></div><p class='note'>Positive = futures finished above where they traded. t-stats overstate significance (neighbouring contracts share shocks).</p>")
+    if mom:
+        parts.append("<h3>WASDE revision momentum</h3><div class='tbl'><table><tr><th>Item</th><th>Next revision same direction</th><th>n</th></tr>" +
+                     "".join(f"<tr><td>{k.replace('_', ' ')}</td><td>{100 * v['same_direction']:.0f}%</td><td>{v['n']}</td></tr>" for k, v in mom.items()) +
+                     "</table></div><p class='note'>After USDA revises an item for a marketing year, how often its next revision of that item goes the same way. Well above 50% means revisions trend: USDA moves toward the final number in steps.</p>")
+    if cond:
+        m = cond.get("model")
+        if m:
+            t = m['test']
+            usda = f" On the {t['n_usda']} years where USDA had a yield forecast out by that date: model {t['mae_model_same_years']} vs USDA {t['mae_usda_same_date']} bu/ac." if t.get('mae_usda_same_date') is not None else ""
+            parts.append(f"<h3>Condition yield model</h3><p>Leave-one-year-out over {t['n']} years, condition at week {m['week']}: mean abs error {t['mae_model']} bu/ac vs {t['mae_trend']} for trend alone; direction vs trend right {100 * t['hit_direction']:.0f}% of years.{usda}</p>")
+    if exp and exp.get("test"):
+        t = exp["test"]
+        parts.append(f"<h3>Export pace</h3><p>Pace-implied exports at this point of the season: mean abs error {t['mae_pct']}% of final vs {t['mae_usda_pct']}% for USDA's same-month forecast; called the direction of USDA's next export revision {100 * t['revision_hit']:.0f}% of the time (n={t['n']}).</p>")
+    pp = pace_price_test(com) if com in ("corn", "soybeans", "wheat") else None
+    if pp:
+        parts.append(f"<h3>Does export pace predict price?</h3><p>Pace-implied minus USDA exports (weeks 12+, MY 2010 on) vs the roll-adjusted front-month move over the next 4 weeks from the release day: correlation {pp['corr']} ({pp['corr_nonoverlap']} non-overlapping, n={pp['n_nonoverlap']}); when pace ran 5%+ away from USDA, price moved in the pace direction {100 * (pp['hit_when_gap_ge_5'] or 0):.0f}% of the time (n={pp['n_gap_ge_5']} weekly readings, overlapping).{f" Split: {pp['robust']['early']} before 2018/19, {pp['robust']['late']} after; positive in {pp['robust']['years_pos']} of {pp['robust']['years']} years; trading the sign: t {pp['robust']['sign_t']}."}</p>")
+    if sal and sal.get("test"):
+        t = sal["test"]
+        parts.append(f"<h3>Export sales commitments</h3><p>Commitment-implied exports (shipped + outstanding, scaled by the usual share committed by this week) called the direction of USDA's next export revision <b>{100 * t['revision_hit']:.0f}%</b> of weekly readings ({t['revision_n']} marketing years); {100 * t['revision_hit_gap3']:.0f}% when the gap to USDA was over 3% (n={t['revision_n_gap3']}). As a level forecast at this point of the season: {t['near']['mae_pct']}% mean miss vs {t['near']['mae_usda_pct']}% for USDA.</p>")
+    sp = pace_price_test(com, "sales") if sal else None
+    if sp:
+        parts.append(f"<h3>Do export sales predict price?</h3><p>Commitment-implied minus USDA vs the next 4 weeks' front-month move: correlation {sp['corr']} ({sp['corr_nonoverlap']} on {sp['n_nonoverlap']} non-overlapping readings; returns start at the release-day close); when the gap was 5%+, price moved in its direction {100 * (sp['hit_when_gap_ge_5'] or 0):.0f}% of the time (n={sp['n_gap_ge_5']}, overlapping).{f" Split: {sp['robust']['early']} before 2018/19, {sp['robust']['late']} after; positive in {sp['robust']['years_pos']} of {sp['robust']['years']} years; trading the sign: t {sp['robust']['sign_t']}."} Treat as weak unless the split and year count both hold up.</p>")
+    pr = (sal or {}).get("price")
+    if pr:
+        parts.append(f"<h3>Release-day reaction to weekly sales</h3><p>Net sales well above their 4-week average (n={pr['big_up_n']}): front month {pr['big_up_ret']:+.2f}% on the day, up {100 * pr['big_up_hit']:.0f}% of the time; well below (n={pr['big_dn_n']}): {pr['big_dn_ret']:+.2f}%, down {100 * pr['big_dn_hit']:.0f}%. Without trade estimates this measures surprise vs recent pace, not vs expectations.</p>")
+    if react:
+        parts.append(f"<h3>Price reaction to WASDE</h3><p>Ending-stocks revision vs front-month move over WASDE week: correlation {react['corr']}, price moved opposite to the stocks revision {100 * react['hit']:.0f}% of the time (n={react['n']}; {react['note']}).</p>")
+    return "".join(parts) or "<p class='note'>No tests yet.</p>"
+
+
+if __name__ == "__main__":
+    wasde = json.loads((D / "wasde.json").read_text())
+    cond = json.loads((D / "condition.json").read_text()) if (D / "condition.json").exists() else {}
+    exp = json.loads((D / "exports.json").read_text()) if (D / "exports.json").exists() else {}
+    sal = json.loads((D / "sales.json").read_text()) if (D / "sales.json").exists() else {}
+    out = {}
+    for com in ITEMS:
+        mom = momentum(com, wasde)
+        react = wasde_price_reaction(com)
+        out[com] = {"momentum": mom, "price_reaction": react, "html": html(com, mom, cond.get(com), exp.get(com), react, sal.get(com))}
+        print(com, mom, react)
+    out["kc"] = out["wheat"]
+    (D / "tests.json").write_text(json.dumps(out, indent=1))
