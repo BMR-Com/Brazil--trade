@@ -74,6 +74,51 @@ def fit_predict(D, tgt, ly, h):
     return hist
 
 
+def br_workdays(year, month):
+    """Brazilian national working days in a month (MDIC counts these for daily averages)."""
+    from dateutil.easter import easter
+    e = pd.Timestamp(easter(year))
+    hol = {pd.Timestamp(year, m, d) for m, d in [(1, 1), (4, 21), (5, 1), (9, 7), (10, 12), (11, 2), (11, 15), (11, 20), (12, 25)]}
+    hol |= {e - pd.Timedelta(days=48), e - pd.Timedelta(days=47), e - pd.Timedelta(days=2), e + pd.Timedelta(days=60)}
+    days = pd.bdate_range(pd.Timestamp(year, month, 1), pd.Timestamp(year, month, 1) + pd.offsets.MonthEnd(0))
+    return int(sum(d not in hol for d in days))
+
+
+def weekly_read(h1):
+    p = ROOT / "data/sugar/secex_weekly.csv"
+    if not p.exists():
+        return None
+    w = pd.read_csv(p).sort_values(["month", "days"])
+    r = w.iloc[-1]
+    y, m = map(int, r.month.split("-"))
+    full = br_workdays(y, m)
+    if pd.notna(r.ly_days):                       # align with MDIC's own day count, read from last year's full month
+        full += int(r.ly_days) - br_workdays(y - 1, m)
+    proj = r.avg_t_day * full / 1e6
+    fc = next((pr for t, pr, yy in h1 if str(t + 1) == r.month), None)
+    return {"month": r.month, "asof": r.asof, "days": int(r.days), "workdays": full, "mtd_mt": round(r.mtd_t / 1e6, 3),
+            "avg_t_day": round(r.avg_t_day), "ly_avg_t_day": round(r.ly_avg_t_day), "projected_mt": round(proj, 2),
+            "ly_month_mt": round(r.ly_month_t / 1e6, 2), "forecast_mt": None if fc is None else round(fc, 2),
+            "surprise_mt": None if fc is None else round(proj - fc, 2)}
+
+
+def china():
+    p = ROOT / "data/sugar/china_imports.csv"
+    if not p.exists():
+        return None
+    c = pd.read_csv(p, dtype={"period": str})
+    c["kt"] = c.kg / 1e6
+    pv = c.pivot_table(index="period", columns="partner", values="kt", aggfunc="sum").sort_index().fillna(0)
+    pv.index = pd.PeriodIndex([f"{x[:4]}-{x[4:]}" for x in pv.index], freq="M")
+    pv = pv.tail(36)
+    last = pv.index[-1]
+    yoy = lambda col: None if (last - 12) not in pv.index else round(float(pv.loc[last, col] - pv.loc[last - 12, col]), 0)
+    ytd = pv[pv.index.year == last.year].sum(); ytd_ly = pv[(pv.index.year == last.year - 1) & (pv.index.month <= last.month)].sum()
+    return {"last": str(last), "months": [str(x) for x in pv.index], "world_kt": pv.get("World", pd.Series(0, pv.index)).round(0).tolist(),
+            "brazil_kt": pv.get("Brazil", pd.Series(0, pv.index)).round(0).tolist(),
+            "ytd_kt": round(float(ytd.get("World", 0)), 0), "ytd_ly_kt": round(float(ytd_ly.get("World", 0)), 0), "yoy_kt": yoy("World") if "World" in pv else None}
+
+
 def main():
     D = monthly()
     D["y1"] = D.tot.shift(-1); D["ly1"] = D.tot.shift(11)
@@ -96,6 +141,8 @@ def main():
                        "cons": hist.cons.round(3).tolist(), "season_build": hist.avail.round(3).tolist()},
            "variables": ["MAPA monthly sugar production (last 3 months)", "SECEX exports last month", "Season-to-date Brazil balance (production − consumption − exports)",
                          "Exports in the same months last year"]}
+    out["weekly"] = weekly_read(h1)
+    out["china"] = china()
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out))
     print("sugar flows", out["forecast"], surp[-4:])

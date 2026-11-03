@@ -35,6 +35,10 @@ jobs:
       - name: COT desk
         continue-on-error: true
         run: python models/cot_backtest.py; python -W ignore models/cot_desk.py
+      - name: sugar flows (SECEX weekly, China imports)
+        continue-on-error: true
+        timeout-minutes: 10
+        run: pip install -q openpyxl && python pipelines/sugar_flows_fetch.py
       - name: balance sheets, price outlook, briefs
         continue-on-error: true
         run: |
