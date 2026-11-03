@@ -30,21 +30,79 @@ const Sugar = (() => {
   const asof = () => `<p class="note">Sugar data built ${S.built}. Sources: MAPA (fortnightly Centre-South production), UNICA (monthly reports), ANP (pump prices), B3 ethanol and ICE futures (TradingView), MDIC/SECEX (exports), USDA FAS PSD.</p>`;
 
   function primer() {
+    const row = (a, b) => `<tr><td class="l"><b>${a}</b></td><td class="l">${b}</td></tr>`;
+    const SPR = [
+      ['Mar/May (H/K)', 'Q1 → Q2: Brazil off-season into the new crush', 'Usually a premium (Mar over May): Centre-South stocks are lowest in March and the new crop starts filling May.',
+        'Old-crop Brazilian sugar delivered into March; Central American surplus when March pays above its carry; whether India/Thailand ship in Q1; the start date of the new crush (stood-over cane and a dry late March bring it forward, rain and immature cane delay it).',
+        'When ethanol pays better than sugar, Brazil makes less sugar and the Q1/Q2 supply gap narrows: the spread drifts toward flat.'],
+      ['May/Jul (K/N)', 'Early crush → peak crush', 'Usually a premium: even an early start leaves less sugar for May than for July, when Brazil runs at full speed.',
+        'Stood-over cane, rain interrupting early field work, the opening sugar/ethanol mix, and any unusually large Q2 supply from India or Thailand.',
+        'A heavy Q2 from other exporters, weak import demand or a weak white premium (refiners stop bidding for raws) can push May to a discount; longs avoiding delivery can weaken it into expiry.'],
+      ['Jul/Oct (N/V)', 'Peak crush, port bottleneck', 'No fixed pattern: mills make sugar faster than Santos can load it, so stocks build inland toward an October peak.',
+        'Vessel queues and their timing, terminal capacity shared with soybeans (Q2) and corn (from July), the expected October stock level, and the mix.',
+        'A queue peaking before July weighs on July; big expected October stocks weigh on October.'],
+      ['Oct/Mar (V/H)', 'Stock peak → off-season low', 'Usually a discount (Oct under Mar): October sits on the year’s largest Brazilian stocks, March on the smallest.',
+        'Centre-South production and stocks, sugar vs ethanol pay, whether exports flow or back up at the ports, the quality and size of Thai/Indian/Australian supply, and the cost of carrying sugar to March.',
+        'The discount is roughly capped by carry (financing, storage, insurance). Low Brazilian stocks, port jams, strong Q3 demand and export bans elsewhere can flip it to a premium.']];
+    const LSPR = [
+      ['Mar/May', 'Refined supply from the northern-hemisphere campaign vs re-export refiners running on Brazilian raws.'],
+      ['May/Aug', 'August is London-only: the bridge from Q2 to the main Brazilian white (crystal) and refined-from-Brazil-raws season.'],
+      ['Aug/Oct', 'Peak availability of Brazilian crystal sugar and refinery output; freight and container availability matter more than in raws.'],
+      ['Oct/Dec', 'EU beet campaign starts; December often sees deliveries of fresh beet and Brazilian sugar.'],
+      ['Dec/Mar', 'Asian white supply (Thai/Indian) and destination demand in Q1, against what refiners can make from the raw curve.']];
     body().innerHTML = Specs.slot('sugar') + `<div class="grid g2">
-      <div class="card"><h2>ICE Sugar No. 11 (SB)</h2><div class="tbl"><table>
-        <tr><td>Size</td><td class="l">112,000 lb (50.8 t) of raw cane sugar</td></tr><tr><td>Quote / tick</td><td class="l">¢/lb; 0.01¢ = $11.20</td></tr>
-        <tr><td>Months</td><td class="l">Mar, May, Jul, Oct. March is the biggest month; October expires near the end of the Brazilian crush.</td></tr>
-        <tr><td>Delivery</td><td class="l">FOB the receiver's vessel at a port in one of ~30 origin countries (in practice Brazil). No notice period: the expiring month trades to its last day, then delivers.</td></tr>
-        <tr><td>Last trade</td><td class="l">Last business day of the month before the delivery month. Options expire on the 15th of the month before that.</td></tr>
-        <tr><td>White sugar</td><td class="l">ICE London No. 5 ($/t, Mar/May/Aug/Oct/Dec). The white premium (No. 5 minus No. 11 × 22.046) is what refiners earn for melting raws.</td></tr></table></div>
+      <div class="card"><h2>Two benchmarks: raw (New York) and white (London)</h2><div class="tbl"><table>
+        <tr><th class="l"></th><th class="l">ICE Sugar No. 11 (raw)</th><th class="l">ICE London No. 5 (white)</th></tr>
+        <tr><td class="l">What</td><td class="l">Raw cane sugar, an industrial input that must be refined before people eat it</td><td class="l">Refined, food-grade white sugar</td></tr>
+        <tr><td class="l">Size / quote</td><td class="l">112,000 lb (50.8 t); ¢/lb, tick 0.01¢ = $11.20</td><td class="l">50 t; $/t, tick $0.10 = $5</td></tr>
+        <tr><td class="l">Months</td><td class="l">Mar, May, Jul, Oct</td><td class="l">Mar, May, Aug, Oct, Dec</td></tr>
+        <tr><td class="l">Last trade</td><td class="l">Last business day before the delivery month</td><td class="l">16 calendar days before the delivery month (mid-February for March)</td></tr>
+        <tr><td class="l">Quality</td><td class="l">Basis 96° polarization; higher pol earns a premium (Brazilian VHP at ~99° gets one), lower pol a penalty</td><td class="l">Minimum 99.8° pol, colour 45 ICUMSA or lower</td></tr>
+        <tr><td class="l">Delivery</td><td class="l">FOB bulk, receiver's vessel at a port in an approved origin; the delivery window runs into the contract month</td><td class="l">FOB in bags (bulk by agreement) at an approved port; window starts in the contract month</td></tr>
+        <tr><td class="l">Who uses it</td><td class="l">Cane mills (Brazil above all), raw importers and refiners, trade houses, funds</td><td class="l">Refiners, beet and cane white-sugar producers, food and drink buyers in deficit regions</td></tr></table></div>
         <h3>Calendar</h3><p>Brazil Centre-South (≈90% of Brazil's sugar) crushes April to November and ships most of the world's raw sugar from June to January; its October–March rains grow the next crop. India crushes November–April and Thailand December–April, so Asian supply arrives in the first quarter. The ISO crop year runs October–September.</p></div>
-      <div class="card"><h2>What moves sugar</h2><div class="tbl"><table><tr><th class="l">Driver</th><th class="l">Mechanism</th><th class="l">Where on this desk</th></tr>
+      <div class="card"><h2>The white premium: the link between the two</h2>
+        <p>White premium = London No. 5 ($/t) − New York No. 11 (¢/lb × 22.0462). It is the futures margin a toll refiner earns by buying raws in New York and selling whites in London.</p>
+        <div class="tbl"><table>
+          ${row('Horizontal vs diagonal', 'Horizontal pairs the same (or nearest) months: Mar/Mar, May/May, Aug/Jul, Oct/Oct. Refiners hedge on the diagonal, raws one month earlier than whites, because raw sugar has to be shipped and melted first.')}
+          ${row('When it is wide', 'Refining pays: refiners buy more raws (supports No. 11 and the front raw spreads) and white supply rises with a lag, which in time pulls the premium back.')}
+          ${row('When it is narrow', 'Refiners run at minimum rates rather than shut (restarting is costly), raws lose a buyer, and mills that can choose (crystal vs VHP in Brazil, remelt in Asia) shift toward raws.')}
+          ${row('What sets the cost line', 'Energy (gas, fuel oil, coal), the raw-to-white conversion loss, bags and handling, freight to the destination, and financing. A premium below that line squeezes stand-alone refiners first.')}
+          ${row('Why it moves on its own', 'Raws and whites have different seasons and supply chains: EU beet and Indian/Thai whites in Q4–Q1, Brazilian crystal and refined-from-raws in Q2–Q3. A white-specific shortage (an export ban, a refinery outage, a squeeze into a London expiry) moves the premium while raws stand still.')}</table></div>
+        <p class="note">Desk: the <a href="#" onclick="document.querySelector('#suTabs button[data-t=su-white]').click();return false">White premium</a> tab shows the front and forward premium against past years.</p></div></div>
+
+      <div class="card" style="margin-top:12px"><h2>New York raw spreads: what each one measures</h2>
+        <p>A spread is the nearer contract minus the later one. A <b>premium</b> (inverse) says sugar is scarcer now than later; a <b>discount</b> (carry) says the near month is well supplied and someone has to be paid to store. Each No. 11 month is the early leg of one spread and the late leg of another, so a shock in one quarter ripples along the curve.</p>
+        <div class="tbl"><table><tr><th class="l">Spread</th><th class="l">Window</th><th class="l">Normal shape and why</th><th class="l">What moves it</th><th class="l">When it breaks the pattern</th></tr>
+        ${SPR.map(r => `<tr>${r.map((x, i) => `<td class="l">${i ? x : '<b>' + x + '</b>'}</td>`).join('')}</tr>`).join('')}</table></div></div>
+
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>London white spreads</h2><div class="tbl"><table><tr><th class="l">Spread</th><th class="l">What it reflects</th></tr>
+          ${LSPR.map(r => `<tr><td class="l"><b>${r[0]}</b></td><td class="l">${r[1]}</td></tr>`).join('')}</table></div>
+          <p class="note">London spreads respond to refinery runs, destination demand (Middle East, North and East Africa, South Asia) and who is willing to deliver into an expiry. Packaging and freight make whites slower to move than raws, so local shortages show up in the front London spread before the premium.</p></div>
+        <div class="card"><h2>Rules that hold across all spreads</h2><div class="tbl"><table>
+          ${row('Carry caps the discount', 'A discount wide enough to pay financing, storage and insurance pays someone to hold sugar, so carry limits how far a spread can fall. Higher interest rates widen that limit; each exporter’s own costs differ.')}
+          ${row('Liquidity decides who sets it', 'Front spreads move on fundamentals and deliveries; spreads further out move on order flow and can drift away from fundamentals.')}
+          ${row('Expiry and rolls', 'Physical settlement forces futures onto the physical value, so front spreads swing hardest in the last weeks. Index funds roll out of the front month on a fixed schedule, pressing the front leg down and the next one up.')}
+          ${row('Who delivers', 'October and May deliveries are almost all Centre-South Brazil (a clean expiry); March can bring several origins, which makes receivers more cautious.')}
+          ${row('Curve shape', 'A curve mostly at premiums (backwardation) says the market wants sugar now; mostly at discounts (contango) says it is oversupplied and pays storage. A shift from one to the other matters more than the level.')}
+          ${row('Physical premiums', 'Regional premiums and discounts to the futures (FOB Santos VHP, delivered whites in destinations) do the same job as carry: they move sugar between months and regions.')}</table></div></div></div>
+
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Reading a sugar balance: trade flows by quarter</h2><div class="tbl"><table>
+          ${row('Annual balance', 'Production minus consumption by crop year (Oct/Sep or Apr/Mar). It tells you whether stocks grow or shrink, but not when sugar is short.')}
+          ${row('Quarterly trade flow', 'For each quarter, exportable raw and white sugar by origin (Centre-South Brazil, India, Thailand, Central America, Australia, EU) against import needs by destination (China, Indonesia, Middle East refiners, Africa, US). Raws and whites are kept apart, with refiners converting one into the other.')}
+          ${row('Inputs', 'Crop and mix, port logistics and queues, importer stocks, government stocks and trade policy (export quotas, bans, import duties and licences), freight and energy, and the white premium (which sets refiners’ appetite for raws).')}
+          ${row('How to read it', 'A deficit quarter is where stress builds; a surplus quarter needs a cheaper price or a wider carry to clear. Revisions to a balance matter more than its level, because each provider’s level differs.')}
+          ${row('Limits', 'Trade flows describe where pressure sits, not when price turns: they react to the market as much as they lead it.')}</table></div></div>
+        <div class="card"><h2>What moves sugar</h2><div class="tbl"><table><tr><th class="l">Driver</th><th class="l">Mechanism</th><th class="l">Where on this desk</th></tr>
         <tr><td class="l">Brazil cane and ATR</td><td class="l">Cane crushed × sugar per tonne (ATR) sets how much sugar the mills can make. Rain Oct–Mar, frost and fires Jun–Sep.</td><td class="l">Centre-South crush, weather</td></tr>
         <tr><td class="l">Sugar/ethanol mix</td><td class="l">Brazilian mills switch cane between sugar and ethanol. When hydrous ethanol pays more than sugar, mills cut the sugar mix; the swing is about 4–5 mt of sugar.</td><td class="l">Ethanol parity &amp; mix</td></tr>
         <tr><td class="l">Brazil fuel prices</td><td class="l">Petrobras gasoline pricing, the real and crude set what ethanol is worth at the pump. Drivers fill with hydrous when it costs under ~70% of gasoline.</td><td class="l">Ethanol parity &amp; mix</td></tr>
         <tr><td class="l">India and Thailand</td><td class="l">India's crop, ethanol diversion and export quotas decide whether India sells to the world. Thailand is the second-largest exporter and the main supplier to Asia.</td><td class="l">India &amp; Thailand</td></tr>
         <tr><td class="l">Refining margin</td><td class="l">A wide white premium pulls raw sugar into refineries (Middle East, North Africa, Asia) and supports No. 11; a narrow one leaves raws unsold.</td><td class="l">White premium</td></tr>
-        <tr><td class="l">Funds</td><td class="l">Managed money swings are large in sugar; crowded positions, together with index-fund rolls, drive moves around expiry.</td><td class="l">Futures, options &amp; COT</td></tr></table></div></div></div>`;
+        <tr><td class="l">Funds</td><td class="l">Managed money swings are large in sugar; crowded positions, together with index-fund rolls, drive moves around expiry.</td><td class="l">Futures, options &amp; COT</td></tr></table></div></div></div>
+      <p class="note">Primer written for this desk from public exchange rules and industry explanations (ICE contract rules; Czapp/Czarnikow explainers on the sugar contracts and spreads). Live readings sit on the other tabs.</p>`;
   }
 
   // ---------- world balance ----------

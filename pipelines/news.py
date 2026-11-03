@@ -118,7 +118,7 @@ def main():
             items += got
             print(site, len(got))
         time.sleep(1.2)
-    for name, url in [("Brownfield", "https://www.brownfieldagnews.com/feed/"), ("farmdoc daily", "https://farmdocdaily.illinois.edu/feed")]:
+    for name, url in [("Brownfield", "https://www.brownfieldagnews.com/feed/"), ("farmdoc daily", "https://farmdocdaily.illinois.edu/feed"), ("Czapp", "https://www.czapp.com/feed/")]:
         x = fetch(url)
         if x:
             got = parse(x, "feeds")
