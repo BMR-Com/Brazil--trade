@@ -353,7 +353,16 @@ def structure(w):
     wk = pd.concat([spread.rename("sp"), carry.rename("carry"), rate.rename("r")], axis=1).resample("W-FRI").last()
     out = {"dates": [str(i)[:10] for i in wk.index], "spread": [rd(v, 2) for v in wk.sp], "carry": [rd(v, 2) for v in wk.carry],
            "now": {"spread": rd(spread.iloc[-1], 2), "carry": rd(carry.iloc[-1], 2), "rate": rd(rate.iloc[-1], 2), "date": str(q.index[-1])[:10],
-                   "pct5y": rd((spread[spread.index >= spread.index[-1] - timedelta(days=1826)] <= spread.iloc[-1]).mean() * 100, 0)}}
+                   "pct5y": rd((spread[spread.index >= spread.index[-1] - timedelta(days=1826)] <= spread.iloc[-1]).mean() * 100, 0),
+                   # since ICE barred re-grading of de-certified coffee (1 Dec 2023): the earlier history is a different market
+                   "pct_regime": rd((spread[spread.index >= "2023-12-01"] <= spread.iloc[-1]).mean() * 100, 0)}}
+    regs = [("2012-01-01", "2018-12-31", "2012–18: re-grading allowed, Brazil deliverable but rarely delivered"),
+            ("2019-01-01", "2020-12-31", "2019–20: first Brazil gradings (late 2020)"),
+            ("2021-01-01", "2023-11-30", "2021–Nov 2023: Brazil in the certified pile, re-grading still allowed"),
+            ("2023-12-01", str(spread.index[-1])[:10], "Dec 2023 on: re-grading of de-certified coffee barred")]
+    out["regimes"] = [{"label": l, "from": a, "to": b, "inverted_pct": rd((spread[a:b] > 0).mean() * 100, 0),
+                       "median": rd(spread[a:b].median(), 2), "p10": rd(spread[a:b].quantile(.1), 2), "p90": rd(spread[a:b].quantile(.9), 2)}
+                      for a, b, l in regs if len(spread[a:b])]
     cm = ice_monthly_m()
     if cm:
         ms = spread.resample("MS").mean(); ms.index = ms.index.strftime("%Y-%m")
