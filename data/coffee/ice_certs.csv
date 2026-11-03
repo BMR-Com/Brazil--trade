@@ -1,0 +1,3770 @@
+date,section,origin,port,bags
+2024-06-12 00:00:00,certified,Brazil,ANT,407853
+2024-06-12 00:00:00,certified,Brazil,HA/BR,978
+2024-06-12 00:00:00,certified,Brazil,NY,711
+2024-06-12 00:00:00,certified,Brazil,VA,230
+2024-06-12 00:00:00,certified,Burundi,ANT,2485
+2024-06-12 00:00:00,certified,Burundi,HA/BR,105
+2024-06-12 00:00:00,certified,Colombia,HA/BR,750
+2024-06-12 00:00:00,certified,Colombia,NOLA,656
+2024-06-12 00:00:00,certified,Colombia,NY,240
+2024-06-12 00:00:00,certified,El Salvador,ANT,525
+2024-06-12 00:00:00,certified,El Salvador,HA/BR,525
+2024-06-12 00:00:00,certified,Guatemala,ANT,20625
+2024-06-12 00:00:00,certified,Honduras,ANT,120440
+2024-06-12 00:00:00,certified,Honduras,HA/BR,8729
+2024-06-12 00:00:00,certified,Honduras,HOU,547
+2024-06-12 00:00:00,certified,India,ANT,1165
+2024-06-12 00:00:00,certified,India,HA/BR,284
+2024-06-12 00:00:00,certified,Kenya,HA/BR,285
+2024-06-12 00:00:00,certified,Mexico,ANT,17339
+2024-06-12 00:00:00,certified,Mexico,HA/BR,510
+2024-06-12 00:00:00,certified,Nicaragua,ANT,86781
+2024-06-12 00:00:00,certified,Nicaragua,HA/BR,1100
+2024-06-12 00:00:00,certified,Papua New Guinea,ANT,1600
+2024-06-12 00:00:00,certified,Papua New Guinea,HA/BR,10332
+2024-06-12 00:00:00,certified,Papua New Guinea,NY,1280
+2024-06-12 00:00:00,certified,Peru,ANT,68163
+2024-06-12 00:00:00,certified,Peru,HA/BR,23762
+2024-06-12 00:00:00,certified,Peru,NY,1925
+2024-06-12 00:00:00,certified,Rwanda,ANT,4410
+2024-06-12 00:00:00,certified,Tanzania,ANT,14473
+2024-06-12 00:00:00,certified,Tanzania,HA/BR,1160
+2024-06-12 00:00:00,certified,Uganda,ANT,2910
+2024-06-12 00:00:00,certified,Venezuela,HA/BR,2000
+2024-06-12 00:00:00,graded_failed,Brazil,ANT,2390
+2024-06-12 00:00:00,graded_failed,Honduras,ANT,275
+2024-06-12 00:00:00,graded_failed,Nicaragua,ANT,570
+2024-06-12 00:00:00,graded_passed,Brazil,ANT,1905
+2024-06-12 00:00:00,graded_passed,Honduras,ANT,2475
+2024-06-12 00:00:00,graded_passed,Nicaragua,ANT,1140
+2024-06-12 00:00:00,graded_passed,Tanzania,ANT,320
+2024-06-12 00:00:00,pending,Brazil,ANT,31007
+2024-06-12 00:00:00,pending,Colombia,HOU,15675
+2024-06-12 00:00:00,pending,Honduras,ANT,2750
+2024-06-12 00:00:00,pending,Mexico,ANT,1375
+2024-06-12 00:00:00,pending,Rwanda,ANT,2240
+2024-06-12 00:00:00,transition,Brazil,ANT,403038
+2024-06-12 00:00:00,transition,Brazil,HA/BR,570
+2024-06-12 00:00:00,transition,Guatemala,ANT,20625
+2024-06-12 00:00:00,transition,Honduras,ANT,23150
+2024-06-12 00:00:00,transition,Honduras,HA/BR,4256
+2024-06-12 00:00:00,transition,India,ANT,1160
+2024-06-12 00:00:00,transition,India,HA/BR,284
+2024-06-12 00:00:00,transition,Mexico,ANT,16485
+2024-06-12 00:00:00,transition,Nicaragua,ANT,86781
+2024-06-12 00:00:00,transition,Papua New Guinea,ANT,1600
+2024-06-12 00:00:00,transition,Papua New Guinea,HA/BR,10332
+2024-06-12 00:00:00,transition,Peru,ANT,59929
+2024-06-12 00:00:00,transition,Peru,HA/BR,23762
+2024-06-12 00:00:00,transition,Tanzania,ANT,14473
+2024-06-12 00:00:00,transition,Tanzania,HA/BR,580
+2024-06-12 00:00:00,transition,Uganda,ANT,2560
+2024-06-12 00:00:00,transition,Venezuela,HA/BR,2000
+2024-08-07 00:00:00,certified,Brazil,ANT,416197
+2024-08-07 00:00:00,certified,Brazil,HA/BR,978
+2024-08-07 00:00:00,certified,Brazil,NY,711
+2024-08-07 00:00:00,certified,Brazil,VA,230
+2024-08-07 00:00:00,certified,Burundi,ANT,1915
+2024-08-07 00:00:00,certified,Burundi,HA/BR,105
+2024-08-07 00:00:00,certified,Colombia,HA/BR,750
+2024-08-07 00:00:00,certified,Colombia,HOU,10450
+2024-08-07 00:00:00,certified,Colombia,NOLA,500
+2024-08-07 00:00:00,certified,El Salvador,ANT,250
+2024-08-07 00:00:00,certified,El Salvador,HA/BR,500
+2024-08-07 00:00:00,certified,Guatemala,ANT,15077
+2024-08-07 00:00:00,certified,Honduras,ANT,111955
+2024-08-07 00:00:00,certified,Honduras,HA/BR,8879
+2024-08-07 00:00:00,certified,Honduras,HOU,547
+2024-08-07 00:00:00,certified,India,ANT,1165
+2024-08-07 00:00:00,certified,India,HA/BR,284
+2024-08-07 00:00:00,certified,Kenya,HA/BR,285
+2024-08-07 00:00:00,certified,Mexico,ANT,37699
+2024-08-07 00:00:00,certified,Mexico,HA/BR,510
+2024-08-07 00:00:00,certified,Nicaragua,ANT,86986
+2024-08-07 00:00:00,certified,Nicaragua,HA/BR,500
+2024-08-07 00:00:00,certified,Papua New Guinea,ANT,5120
+2024-08-07 00:00:00,certified,Papua New Guinea,HA/BR,9830
+2024-08-07 00:00:00,certified,Papua New Guinea,NY,1280
+2024-08-07 00:00:00,certified,Peru,ANT,67698
+2024-08-07 00:00:00,certified,Peru,HA/BR,14963
+2024-08-07 00:00:00,certified,Peru,NY,1925
+2024-08-07 00:00:00,certified,Rwanda,ANT,5370
+2024-08-07 00:00:00,certified,Tanzania,ANT,18215
+2024-08-07 00:00:00,certified,Tanzania,HA/BR,1160
+2024-08-07 00:00:00,certified,Uganda,ANT,2910
+2024-08-07 00:00:00,certified,Venezuela,HA/BR,1500
+2024-08-07 00:00:00,graded_failed,Honduras,ANT,1100
+2024-08-07 00:00:00,graded_failed,Nicaragua,ANT,855
+2024-08-07 00:00:00,graded_failed,Peru,ANT,1375
+2024-08-07 00:00:00,graded_failed,Rwanda,ANT,2560
+2024-08-07 00:00:00,graded_failed,Uganda,ANT,320
+2024-08-07 00:00:00,graded_passed,Brazil,ANT,445
+2024-08-07 00:00:00,graded_passed,Mexico,ANT,285
+2024-08-07 00:00:00,graded_passed,Nicaragua,ANT,855
+2024-08-07 00:00:00,graded_passed,Peru,ANT,275
+2024-08-07 00:00:00,pending,Brazil,ANT,8455
+2024-08-07 00:00:00,pending,Honduras,ANT,3300
+2024-08-07 00:00:00,pending,Mexico,ANT,1994
+2024-08-07 00:00:00,pending,Nicaragua,ANT,26541
+2024-08-07 00:00:00,pending,Papua New Guinea,ANT,1920
+2024-08-07 00:00:00,pending,Peru,ANT,1375
+2024-08-07 00:00:00,pending,Rwanda,ANT,3200
+2024-08-07 00:00:00,pending,Uganda,ANT,2883
+2024-08-07 00:00:00,transition,Brazil,ANT,411707
+2024-08-07 00:00:00,transition,Brazil,HA/BR,570
+2024-08-07 00:00:00,transition,Guatemala,ANT,15077
+2024-08-07 00:00:00,transition,Honduras,ANT,26225
+2024-08-07 00:00:00,transition,Honduras,HA/BR,4531
+2024-08-07 00:00:00,transition,India,ANT,1160
+2024-08-07 00:00:00,transition,India,HA/BR,284
+2024-08-07 00:00:00,transition,Mexico,ANT,36845
+2024-08-07 00:00:00,transition,Nicaragua,ANT,86986
+2024-08-07 00:00:00,transition,Papua New Guinea,ANT,5120
+2024-08-07 00:00:00,transition,Papua New Guinea,HA/BR,9830
+2024-08-07 00:00:00,transition,Peru,ANT,60614
+2024-08-07 00:00:00,transition,Peru,HA/BR,14963
+2024-08-07 00:00:00,transition,Rwanda,ANT,960
+2024-08-07 00:00:00,transition,Tanzania,ANT,18215
+2024-08-07 00:00:00,transition,Tanzania,HA/BR,580
+2024-08-07 00:00:00,transition,Uganda,ANT,2560
+2024-08-07 00:00:00,transition,Venezuela,HA/BR,1500
+2024-08-08 00:00:00,certified,Brazil,ANT,416197
+2024-08-08 00:00:00,certified,Brazil,HA/BR,978
+2024-08-08 00:00:00,certified,Brazil,NY,711
+2024-08-08 00:00:00,certified,Brazil,VA,230
+2024-08-08 00:00:00,certified,Burundi,ANT,1915
+2024-08-08 00:00:00,certified,Burundi,HA/BR,105
+2024-08-08 00:00:00,certified,Colombia,HA/BR,750
+2024-08-08 00:00:00,certified,Colombia,HOU,10450
+2024-08-08 00:00:00,certified,Colombia,NOLA,500
+2024-08-08 00:00:00,certified,El Salvador,ANT,250
+2024-08-08 00:00:00,certified,El Salvador,HA/BR,500
+2024-08-08 00:00:00,certified,Guatemala,ANT,15077
+2024-08-08 00:00:00,certified,Honduras,ANT,112505
+2024-08-08 00:00:00,certified,Honduras,HA/BR,8879
+2024-08-08 00:00:00,certified,Honduras,HOU,547
+2024-08-08 00:00:00,certified,India,ANT,1165
+2024-08-08 00:00:00,certified,India,HA/BR,284
+2024-08-08 00:00:00,certified,Kenya,HA/BR,285
+2024-08-08 00:00:00,certified,Mexico,ANT,37699
+2024-08-08 00:00:00,certified,Mexico,HA/BR,510
+2024-08-08 00:00:00,certified,Nicaragua,ANT,88696
+2024-08-08 00:00:00,certified,Nicaragua,HA/BR,500
+2024-08-08 00:00:00,certified,Papua New Guinea,ANT,5120
+2024-08-08 00:00:00,certified,Papua New Guinea,HA/BR,9830
+2024-08-08 00:00:00,certified,Papua New Guinea,NY,1280
+2024-08-08 00:00:00,certified,Peru,ANT,67698
+2024-08-08 00:00:00,certified,Peru,HA/BR,14963
+2024-08-08 00:00:00,certified,Peru,NY,1925
+2024-08-08 00:00:00,certified,Rwanda,ANT,5370
+2024-08-08 00:00:00,certified,Tanzania,ANT,18215
+2024-08-08 00:00:00,certified,Tanzania,HA/BR,1160
+2024-08-08 00:00:00,certified,Uganda,ANT,2910
+2024-08-08 00:00:00,certified,Venezuela,HA/BR,1500
+2024-08-08 00:00:00,graded_failed,Honduras,ANT,550
+2024-08-08 00:00:00,graded_failed,Nicaragua,ANT,1140
+2024-08-08 00:00:00,graded_failed,Peru,ANT,550
+2024-08-08 00:00:00,graded_passed,Honduras,ANT,550
+2024-08-08 00:00:00,graded_passed,Nicaragua,ANT,1710
+2024-08-08 00:00:00,pending,Brazil,ANT,8455
+2024-08-08 00:00:00,pending,Honduras,ANT,3300
+2024-08-08 00:00:00,pending,Mexico,ANT,1994
+2024-08-08 00:00:00,pending,Nicaragua,ANT,23691
+2024-08-08 00:00:00,pending,Papua New Guinea,ANT,1920
+2024-08-08 00:00:00,pending,Peru,ANT,2200
+2024-08-08 00:00:00,pending,Rwanda,ANT,3200
+2024-08-08 00:00:00,pending,Uganda,ANT,2883
+2024-08-08 00:00:00,transition,Brazil,ANT,411707
+2024-08-08 00:00:00,transition,Brazil,HA/BR,570
+2024-08-08 00:00:00,transition,Guatemala,ANT,15077
+2024-08-08 00:00:00,transition,Honduras,ANT,26775
+2024-08-08 00:00:00,transition,Honduras,HA/BR,4531
+2024-08-08 00:00:00,transition,India,ANT,1160
+2024-08-08 00:00:00,transition,India,HA/BR,284
+2024-08-08 00:00:00,transition,Mexico,ANT,36845
+2024-08-08 00:00:00,transition,Nicaragua,ANT,88696
+2024-08-08 00:00:00,transition,Papua New Guinea,ANT,5120
+2024-08-08 00:00:00,transition,Papua New Guinea,HA/BR,9830
+2024-08-08 00:00:00,transition,Peru,ANT,60614
+2024-08-08 00:00:00,transition,Peru,HA/BR,14963
+2024-08-08 00:00:00,transition,Rwanda,ANT,960
+2024-08-08 00:00:00,transition,Tanzania,ANT,18215
+2024-08-08 00:00:00,transition,Tanzania,HA/BR,580
+2024-08-08 00:00:00,transition,Uganda,ANT,2560
+2024-08-08 00:00:00,transition,Venezuela,HA/BR,1500
+2024-10-08 00:00:00,certified,Brazil,ANT,362743
+2024-10-08 00:00:00,certified,Brazil,HA/BR,570
+2024-10-08 00:00:00,certified,Brazil,NOLA,1920
+2024-10-08 00:00:00,certified,Brazil,NY,711
+2024-10-08 00:00:00,certified,Brazil,VA,230
+2024-10-08 00:00:00,certified,Burundi,ANT,1710
+2024-10-08 00:00:00,certified,Burundi,HA/BR,568
+2024-10-08 00:00:00,certified,Colombia,HA/BR,250
+2024-10-08 00:00:00,certified,Colombia,HOU,7150
+2024-10-08 00:00:00,certified,Colombia,NOLA,225
+2024-10-08 00:00:00,certified,El Salvador,ANT,250
+2024-10-08 00:00:00,certified,El Salvador,HA/BR,250
+2024-10-08 00:00:00,certified,Guatemala,ANT,12327
+2024-10-08 00:00:00,certified,Honduras,ANT,84139
+2024-10-08 00:00:00,certified,Honduras,HA/BR,8273
+2024-10-08 00:00:00,certified,Honduras,HOU,547
+2024-10-08 00:00:00,certified,India,ANT,1165
+2024-10-08 00:00:00,certified,India,HA/BR,284
+2024-10-08 00:00:00,certified,Kenya,ANT,570
+2024-10-08 00:00:00,certified,Kenya,HA/BR,855
+2024-10-08 00:00:00,certified,Mexico,ANT,44318
+2024-10-08 00:00:00,certified,Mexico,HA/BR,500
+2024-10-08 00:00:00,certified,Mexico,NOLA,2466
+2024-10-08 00:00:00,certified,Nicaragua,ANT,129877
+2024-10-08 00:00:00,certified,Nicaragua,HA/BR,500
+2024-10-08 00:00:00,certified,Papua New Guinea,ANT,4965
+2024-10-08 00:00:00,certified,Papua New Guinea,HA/BR,11430
+2024-10-08 00:00:00,certified,Papua New Guinea,NY,2240
+2024-10-08 00:00:00,certified,Peru,ANT,86582
+2024-10-08 00:00:00,certified,Peru,HA/BR,9270
+2024-10-08 00:00:00,certified,Peru,NY,1925
+2024-10-08 00:00:00,certified,Rwanda,ANT,5370
+2024-10-08 00:00:00,certified,Tanzania,ANT,18215
+2024-10-08 00:00:00,certified,Tanzania,HA/BR,1480
+2024-10-08 00:00:00,certified,Uganda,ANT,2910
+2024-10-08 00:00:00,certified,Venezuela,HA/BR,1000
+2024-10-08 00:00:00,pending,Brazil,ANT,28005
+2024-10-08 00:00:00,pending,Honduras,ANT,1375
+2024-10-08 00:00:00,pending,India,ANT,2880
+2024-10-08 00:00:00,pending,Nicaragua,ANT,10021
+2024-10-08 00:00:00,pending,Peru,ANT,12925
+2024-10-08 00:00:00,transition,Brazil,ANT,359274
+2024-10-08 00:00:00,transition,Brazil,HA/BR,570
+2024-10-08 00:00:00,transition,Guatemala,ANT,12327
+2024-10-08 00:00:00,transition,Honduras,ANT,27857
+2024-10-08 00:00:00,transition,Honduras,HA/BR,4175
+2024-10-08 00:00:00,transition,India,ANT,1160
+2024-10-08 00:00:00,transition,India,HA/BR,284
+2024-10-08 00:00:00,transition,Mexico,ANT,43464
+2024-10-08 00:00:00,transition,Nicaragua,ANT,129877
+2024-10-08 00:00:00,transition,Papua New Guinea,ANT,4965
+2024-10-08 00:00:00,transition,Papua New Guinea,HA/BR,11430
+2024-10-08 00:00:00,transition,Peru,ANT,80398
+2024-10-08 00:00:00,transition,Peru,HA/BR,9270
+2024-10-08 00:00:00,transition,Rwanda,ANT,960
+2024-10-08 00:00:00,transition,Tanzania,ANT,18215
+2024-10-08 00:00:00,transition,Tanzania,HA/BR,900
+2024-10-08 00:00:00,transition,Uganda,ANT,2560
+2024-10-08 00:00:00,transition,Venezuela,HA/BR,1000
+2024-12-02 00:00:00,certified,Brazil,ANT,498074
+2024-12-02 00:00:00,certified,Brazil,HA/BR,725
+2024-12-02 00:00:00,certified,Brazil,HOU,640
+2024-12-02 00:00:00,certified,Brazil,NOLA,1920
+2024-12-02 00:00:00,certified,Brazil,NY,711
+2024-12-02 00:00:00,certified,Brazil,VA,230
+2024-12-02 00:00:00,certified,Burundi,ANT,1710
+2024-12-02 00:00:00,certified,Burundi,HA/BR,568
+2024-12-02 00:00:00,certified,Colombia,HOU,7150
+2024-12-02 00:00:00,certified,Colombia,NOLA,225
+2024-12-02 00:00:00,certified,Costa Rica,ANT,2000
+2024-12-02 00:00:00,certified,El Salvador,ANT,250
+2024-12-02 00:00:00,certified,Guatemala,ANT,11277
+2024-12-02 00:00:00,certified,Honduras,ANT,57344
+2024-12-02 00:00:00,certified,Honduras,HA/BR,6809
+2024-12-02 00:00:00,certified,Honduras,HOU,547
+2024-12-02 00:00:00,certified,India,ANT,1485
+2024-12-02 00:00:00,certified,India,HA/BR,284
+2024-12-02 00:00:00,certified,Kenya,ANT,570
+2024-12-02 00:00:00,certified,Kenya,HA/BR,570
+2024-12-02 00:00:00,certified,Mexico,ANT,40308
+2024-12-02 00:00:00,certified,Mexico,HA/BR,500
+2024-12-02 00:00:00,certified,Mexico,NOLA,2466
+2024-12-02 00:00:00,certified,Nicaragua,ANT,115759
+2024-12-02 00:00:00,certified,Nicaragua,HA/BR,500
+2024-12-02 00:00:00,certified,Papua New Guinea,ANT,3475
+2024-12-02 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2024-12-02 00:00:00,certified,Papua New Guinea,NY,1280
+2024-12-02 00:00:00,certified,Peru,ANT,94131
+2024-12-02 00:00:00,certified,Peru,HA/BR,8025
+2024-12-02 00:00:00,certified,Peru,NY,1925
+2024-12-02 00:00:00,certified,Rwanda,ANT,5370
+2024-12-02 00:00:00,certified,Tanzania,ANT,18215
+2024-12-02 00:00:00,certified,Tanzania,HA/BR,1480
+2024-12-02 00:00:00,certified,Uganda,ANT,2910
+2024-12-02 00:00:00,certified,Venezuela,HA/BR,750
+2024-12-02 00:00:00,pending,Brazil,ANT,86875
+2024-12-02 00:00:00,pending,El Salvador,ANT,2750
+2024-12-02 00:00:00,pending,Nicaragua,ANT,275
+2024-12-02 00:00:00,pending,Tanzania,ANT,320
+2024-12-02 00:00:00,transition,Brazil,ANT,494672
+2024-12-02 00:00:00,transition,Brazil,HA/BR,725
+2024-12-02 00:00:00,transition,Costa Rica,ANT,2000
+2024-12-02 00:00:00,transition,Guatemala,ANT,11277
+2024-12-02 00:00:00,transition,Honduras,ANT,20668
+2024-12-02 00:00:00,transition,Honduras,HA/BR,2925
+2024-12-02 00:00:00,transition,India,ANT,1480
+2024-12-02 00:00:00,transition,India,HA/BR,284
+2024-12-02 00:00:00,transition,Mexico,ANT,39454
+2024-12-02 00:00:00,transition,Nicaragua,ANT,115759
+2024-12-02 00:00:00,transition,Papua New Guinea,ANT,3475
+2024-12-02 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2024-12-02 00:00:00,transition,Peru,ANT,87947
+2024-12-02 00:00:00,transition,Peru,HA/BR,8025
+2024-12-02 00:00:00,transition,Rwanda,ANT,960
+2024-12-02 00:00:00,transition,Tanzania,ANT,18215
+2024-12-02 00:00:00,transition,Tanzania,HA/BR,900
+2024-12-02 00:00:00,transition,Uganda,ANT,2560
+2024-12-02 00:00:00,transition,Venezuela,HA/BR,750
+2024-12-04 00:00:00,certified,Brazil,ANT,512949
+2024-12-04 00:00:00,certified,Brazil,HA/BR,725
+2024-12-04 00:00:00,certified,Brazil,HOU,640
+2024-12-04 00:00:00,certified,Brazil,NOLA,1920
+2024-12-04 00:00:00,certified,Brazil,NY,711
+2024-12-04 00:00:00,certified,Brazil,VA,230
+2024-12-04 00:00:00,certified,Burundi,ANT,1710
+2024-12-04 00:00:00,certified,Burundi,HA/BR,568
+2024-12-04 00:00:00,certified,Colombia,HOU,7150
+2024-12-04 00:00:00,certified,Colombia,NOLA,225
+2024-12-04 00:00:00,certified,Costa Rica,ANT,2000
+2024-12-04 00:00:00,certified,El Salvador,ANT,250
+2024-12-04 00:00:00,certified,Guatemala,ANT,11277
+2024-12-04 00:00:00,certified,Honduras,ANT,54607
+2024-12-04 00:00:00,certified,Honduras,HA/BR,6809
+2024-12-04 00:00:00,certified,Honduras,HOU,547
+2024-12-04 00:00:00,certified,India,ANT,1485
+2024-12-04 00:00:00,certified,India,HA/BR,284
+2024-12-04 00:00:00,certified,Kenya,ANT,570
+2024-12-04 00:00:00,certified,Kenya,HA/BR,570
+2024-12-04 00:00:00,certified,Mexico,ANT,40308
+2024-12-04 00:00:00,certified,Mexico,HA/BR,500
+2024-12-04 00:00:00,certified,Mexico,NOLA,2466
+2024-12-04 00:00:00,certified,Nicaragua,ANT,102359
+2024-12-04 00:00:00,certified,Nicaragua,HA/BR,500
+2024-12-04 00:00:00,certified,Papua New Guinea,ANT,3475
+2024-12-04 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2024-12-04 00:00:00,certified,Papua New Guinea,NY,1280
+2024-12-04 00:00:00,certified,Peru,ANT,92131
+2024-12-04 00:00:00,certified,Peru,HA/BR,8025
+2024-12-04 00:00:00,certified,Peru,NY,1925
+2024-12-04 00:00:00,certified,Rwanda,ANT,5370
+2024-12-04 00:00:00,certified,Tanzania,ANT,18215
+2024-12-04 00:00:00,certified,Tanzania,HA/BR,1480
+2024-12-04 00:00:00,certified,Uganda,ANT,2910
+2024-12-04 00:00:00,certified,Venezuela,HA/BR,750
+2024-12-04 00:00:00,graded_failed,Brazil,ANT,3016
+2024-12-04 00:00:00,graded_passed,Brazil,ANT,9121
+2024-12-04 00:00:00,pending,Brazil,ANT,94102
+2024-12-04 00:00:00,pending,El Salvador,ANT,2750
+2024-12-04 00:00:00,pending,Tanzania,ANT,320
+2024-12-04 00:00:00,transition,Brazil,ANT,509547
+2024-12-04 00:00:00,transition,Brazil,HA/BR,725
+2024-12-04 00:00:00,transition,Costa Rica,ANT,2000
+2024-12-04 00:00:00,transition,Guatemala,ANT,11277
+2024-12-04 00:00:00,transition,Honduras,ANT,20668
+2024-12-04 00:00:00,transition,Honduras,HA/BR,2925
+2024-12-04 00:00:00,transition,India,ANT,1480
+2024-12-04 00:00:00,transition,India,HA/BR,284
+2024-12-04 00:00:00,transition,Mexico,ANT,39454
+2024-12-04 00:00:00,transition,Nicaragua,ANT,102359
+2024-12-04 00:00:00,transition,Papua New Guinea,ANT,3475
+2024-12-04 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2024-12-04 00:00:00,transition,Peru,ANT,85947
+2024-12-04 00:00:00,transition,Peru,HA/BR,8025
+2024-12-04 00:00:00,transition,Rwanda,ANT,960
+2024-12-04 00:00:00,transition,Tanzania,ANT,18215
+2024-12-04 00:00:00,transition,Tanzania,HA/BR,900
+2024-12-04 00:00:00,transition,Uganda,ANT,2560
+2024-12-04 00:00:00,transition,Venezuela,HA/BR,750
+2025-01-30 00:00:00,certified,Brazil,ANT,563065
+2025-01-30 00:00:00,certified,Brazil,HA/BR,725
+2025-01-30 00:00:00,certified,Brazil,HOU,2188
+2025-01-30 00:00:00,certified,Brazil,NOLA,1920
+2025-01-30 00:00:00,certified,Brazil,NY,711
+2025-01-30 00:00:00,certified,Brazil,VA,230
+2025-01-30 00:00:00,certified,Burundi,ANT,1710
+2025-01-30 00:00:00,certified,Burundi,HA/BR,284
+2025-01-30 00:00:00,certified,Colombia,HOU,7150
+2025-01-30 00:00:00,certified,Colombia,NOLA,225
+2025-01-30 00:00:00,certified,Costa Rica,ANT,1940
+2025-01-30 00:00:00,certified,El Salvador,ANT,250
+2025-01-30 00:00:00,certified,Guatemala,ANT,3525
+2025-01-30 00:00:00,certified,Honduras,ANT,40070
+2025-01-30 00:00:00,certified,Honduras,HA/BR,4684
+2025-01-30 00:00:00,certified,Honduras,HOU,547
+2025-01-30 00:00:00,certified,India,ANT,2090
+2025-01-30 00:00:00,certified,India,HA/BR,284
+2025-01-30 00:00:00,certified,India,MIAMI,1920
+2025-01-30 00:00:00,certified,Kenya,ANT,570
+2025-01-30 00:00:00,certified,Kenya,HA/BR,285
+2025-01-30 00:00:00,certified,Kenya,MIAMI,1280
+2025-01-30 00:00:00,certified,Mexico,ANT,31913
+2025-01-30 00:00:00,certified,Mexico,HA/BR,500
+2025-01-30 00:00:00,certified,Mexico,NOLA,2200
+2025-01-30 00:00:00,certified,Nicaragua,ANT,79407
+2025-01-30 00:00:00,certified,Nicaragua,HA/BR,500
+2025-01-30 00:00:00,certified,Papua New Guinea,ANT,3475
+2025-01-30 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-01-30 00:00:00,certified,Papua New Guinea,NY,1280
+2025-01-30 00:00:00,certified,Peru,ANT,84186
+2025-01-30 00:00:00,certified,Peru,HA/BR,5952
+2025-01-30 00:00:00,certified,Peru,NY,1375
+2025-01-30 00:00:00,certified,Rwanda,ANT,5370
+2025-01-30 00:00:00,certified,Tanzania,ANT,18215
+2025-01-30 00:00:00,certified,Tanzania,HA/BR,2120
+2025-01-30 00:00:00,certified,Uganda,ANT,2625
+2025-01-30 00:00:00,certified,Venezuela,HA/BR,750
+2025-01-30 00:00:00,pending,Brazil,ANT,73340
+2025-01-30 00:00:00,pending,Brazil,HOU,774
+2025-01-30 00:00:00,pending,Kenya,ANT,640
+2025-01-30 00:00:00,pending,Tanzania,ANT,3201
+2025-01-30 00:00:00,transition,Brazil,ANT,561473
+2025-01-30 00:00:00,transition,Brazil,HA/BR,725
+2025-01-30 00:00:00,transition,Costa Rica,ANT,1940
+2025-01-30 00:00:00,transition,Guatemala,ANT,3525
+2025-01-30 00:00:00,transition,Honduras,ANT,13668
+2025-01-30 00:00:00,transition,Honduras,HA/BR,2175
+2025-01-30 00:00:00,transition,India,ANT,2085
+2025-01-30 00:00:00,transition,India,HA/BR,284
+2025-01-30 00:00:00,transition,Mexico,ANT,31059
+2025-01-30 00:00:00,transition,Nicaragua,ANT,79407
+2025-01-30 00:00:00,transition,Papua New Guinea,ANT,3475
+2025-01-30 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-01-30 00:00:00,transition,Peru,ANT,80016
+2025-01-30 00:00:00,transition,Peru,HA/BR,5952
+2025-01-30 00:00:00,transition,Rwanda,ANT,960
+2025-01-30 00:00:00,transition,Tanzania,ANT,18215
+2025-01-30 00:00:00,transition,Tanzania,HA/BR,1540
+2025-01-30 00:00:00,transition,Uganda,ANT,2275
+2025-01-30 00:00:00,transition,Venezuela,HA/BR,750
+2025-03-20 00:00:00,certified,Brazil,ANT,493837
+2025-03-20 00:00:00,certified,Brazil,HA/BR,285
+2025-03-20 00:00:00,certified,Brazil,HOU,1548
+2025-03-20 00:00:00,certified,Brazil,NOLA,320
+2025-03-20 00:00:00,certified,Brazil,NY,711
+2025-03-20 00:00:00,certified,Brazil,VA,230
+2025-03-20 00:00:00,certified,Burundi,ANT,1710
+2025-03-20 00:00:00,certified,Burundi,HA/BR,284
+2025-03-20 00:00:00,certified,Colombia,HOU,7700
+2025-03-20 00:00:00,certified,Colombia,NOLA,773
+2025-03-20 00:00:00,certified,Costa Rica,ANT,1750
+2025-03-20 00:00:00,certified,El Salvador,ANT,250
+2025-03-20 00:00:00,certified,Guatemala,ANT,1941
+2025-03-20 00:00:00,certified,Honduras,ANT,28721
+2025-03-20 00:00:00,certified,Honduras,HA/BR,2184
+2025-03-20 00:00:00,certified,Honduras,HOU,547
+2025-03-20 00:00:00,certified,Honduras,MIAMI,3990
+2025-03-20 00:00:00,certified,India,ANT,1450
+2025-03-20 00:00:00,certified,India,HA/BR,284
+2025-03-20 00:00:00,certified,India,MIAMI,1920
+2025-03-20 00:00:00,certified,Kenya,ANT,1150
+2025-03-20 00:00:00,certified,Kenya,HA/BR,2227
+2025-03-20 00:00:00,certified,Kenya,MIAMI,1280
+2025-03-20 00:00:00,certified,Mexico,ANT,28743
+2025-03-20 00:00:00,certified,Mexico,HA/BR,500
+2025-03-20 00:00:00,certified,Mexico,NOLA,1400
+2025-03-20 00:00:00,certified,Nicaragua,ANT,52238
+2025-03-20 00:00:00,certified,Nicaragua,HA/BR,500
+2025-03-20 00:00:00,certified,Papua New Guinea,ANT,3475
+2025-03-20 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-03-20 00:00:00,certified,Papua New Guinea,NY,1280
+2025-03-20 00:00:00,certified,Peru,ANT,68439
+2025-03-20 00:00:00,certified,Peru,HA/BR,1518
+2025-03-20 00:00:00,certified,Peru,NY,1100
+2025-03-20 00:00:00,certified,Rwanda,ANT,5370
+2025-03-20 00:00:00,certified,Tanzania,ANT,33762
+2025-03-20 00:00:00,certified,Tanzania,HA/BR,2440
+2025-03-20 00:00:00,certified,Uganda,ANT,7201
+2025-03-20 00:00:00,certified,Uganda,HA/BR,320
+2025-03-20 00:00:00,certified,Venezuela,HA/BR,750
+2025-03-20 00:00:00,certified,Venezuela,MIAMI,1750
+2025-03-20 00:00:00,certified,Venezuela,NY,6246
+2025-03-20 00:00:00,graded_failed,Tanzania,HA/BR,640
+2025-03-20 00:00:00,graded_failed,Uganda,ANT,1320
+2025-03-20 00:00:00,graded_passed,Tanzania,ANT,2561
+2025-03-20 00:00:00,graded_passed,Uganda,ANT,660
+2025-03-20 00:00:00,pending,Brazil,ANT,4005
+2025-03-20 00:00:00,pending,Brazil,NY,1750
+2025-03-20 00:00:00,pending,Colombia,NOLA,275
+2025-03-20 00:00:00,pending,Honduras,HOU,5845
+2025-03-20 00:00:00,pending,Honduras,MIAMI,285
+2025-03-20 00:00:00,pending,Papua New Guinea,ANT,570
+2025-03-20 00:00:00,pending,Tanzania,ANT,2230
+2025-03-20 00:00:00,pending,Tanzania,HA/BR,320
+2025-03-20 00:00:00,pending,Uganda,ANT,991
+2025-03-20 00:00:00,pending,Venezuela,MIAMI,250
+2025-03-20 00:00:00,transition,Brazil,ANT,492580
+2025-03-20 00:00:00,transition,Brazil,HA/BR,285
+2025-03-20 00:00:00,transition,Costa Rica,ANT,1750
+2025-03-20 00:00:00,transition,Guatemala,ANT,1941
+2025-03-20 00:00:00,transition,Honduras,ANT,9599
+2025-03-20 00:00:00,transition,Honduras,HA/BR,175
+2025-03-20 00:00:00,transition,India,ANT,1445
+2025-03-20 00:00:00,transition,India,HA/BR,284
+2025-03-20 00:00:00,transition,Kenya,ANT,580
+2025-03-20 00:00:00,transition,Kenya,HA/BR,1942
+2025-03-20 00:00:00,transition,Mexico,ANT,27889
+2025-03-20 00:00:00,transition,Nicaragua,ANT,52238
+2025-03-20 00:00:00,transition,Papua New Guinea,ANT,3475
+2025-03-20 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-03-20 00:00:00,transition,Peru,ANT,64269
+2025-03-20 00:00:00,transition,Peru,HA/BR,1518
+2025-03-20 00:00:00,transition,Rwanda,ANT,960
+2025-03-20 00:00:00,transition,Tanzania,ANT,33762
+2025-03-20 00:00:00,transition,Tanzania,HA/BR,580
+2025-03-20 00:00:00,transition,Uganda,ANT,6851
+2025-03-20 00:00:00,transition,Uganda,HA/BR,320
+2025-03-20 00:00:00,transition,Venezuela,HA/BR,750
+2025-03-24 00:00:00,certified,Brazil,ANT,491751
+2025-03-24 00:00:00,certified,Brazil,HA/BR,285
+2025-03-24 00:00:00,certified,Brazil,HOU,1548
+2025-03-24 00:00:00,certified,Brazil,NY,711
+2025-03-24 00:00:00,certified,Brazil,VA,230
+2025-03-24 00:00:00,certified,Burundi,ANT,1710
+2025-03-24 00:00:00,certified,Burundi,HA/BR,284
+2025-03-24 00:00:00,certified,Colombia,HOU,7700
+2025-03-24 00:00:00,certified,Colombia,NOLA,1048
+2025-03-24 00:00:00,certified,Costa Rica,ANT,1750
+2025-03-24 00:00:00,certified,El Salvador,ANT,250
+2025-03-24 00:00:00,certified,Guatemala,ANT,1941
+2025-03-24 00:00:00,certified,Honduras,ANT,28471
+2025-03-24 00:00:00,certified,Honduras,HA/BR,2184
+2025-03-24 00:00:00,certified,Honduras,HOU,2827
+2025-03-24 00:00:00,certified,Honduras,MIAMI,3990
+2025-03-24 00:00:00,certified,India,ANT,1450
+2025-03-24 00:00:00,certified,India,HA/BR,284
+2025-03-24 00:00:00,certified,India,MIAMI,1920
+2025-03-24 00:00:00,certified,Kenya,ANT,1150
+2025-03-24 00:00:00,certified,Kenya,HA/BR,2227
+2025-03-24 00:00:00,certified,Kenya,MIAMI,1280
+2025-03-24 00:00:00,certified,Mexico,ANT,28743
+2025-03-24 00:00:00,certified,Mexico,HA/BR,500
+2025-03-24 00:00:00,certified,Mexico,NOLA,1400
+2025-03-24 00:00:00,certified,Nicaragua,ANT,49153
+2025-03-24 00:00:00,certified,Nicaragua,HA/BR,500
+2025-03-24 00:00:00,certified,Papua New Guinea,ANT,3475
+2025-03-24 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-03-24 00:00:00,certified,Papua New Guinea,NY,1280
+2025-03-24 00:00:00,certified,Peru,ANT,68439
+2025-03-24 00:00:00,certified,Peru,HA/BR,1518
+2025-03-24 00:00:00,certified,Peru,NY,1100
+2025-03-24 00:00:00,certified,Rwanda,ANT,5370
+2025-03-24 00:00:00,certified,Tanzania,ANT,33762
+2025-03-24 00:00:00,certified,Tanzania,HA/BR,2440
+2025-03-24 00:00:00,certified,Uganda,ANT,7531
+2025-03-24 00:00:00,certified,Uganda,HA/BR,320
+2025-03-24 00:00:00,certified,Venezuela,HA/BR,750
+2025-03-24 00:00:00,certified,Venezuela,MIAMI,1750
+2025-03-24 00:00:00,certified,Venezuela,NY,6246
+2025-03-24 00:00:00,graded_failed,Honduras,HOU,1710
+2025-03-24 00:00:00,graded_passed,Colombia,NOLA,275
+2025-03-24 00:00:00,graded_passed,Honduras,HOU,2280
+2025-03-24 00:00:00,graded_passed,Uganda,ANT,330
+2025-03-24 00:00:00,pending,Brazil,ANT,7565
+2025-03-24 00:00:00,pending,Brazil,NY,1750
+2025-03-24 00:00:00,pending,Honduras,HA/BR,8625
+2025-03-24 00:00:00,pending,Honduras,HOU,3280
+2025-03-24 00:00:00,pending,Honduras,MIAMI,285
+2025-03-24 00:00:00,pending,Papua New Guinea,ANT,570
+2025-03-24 00:00:00,pending,Tanzania,ANT,2230
+2025-03-24 00:00:00,pending,Tanzania,HA/BR,320
+2025-03-24 00:00:00,pending,Uganda,ANT,661
+2025-03-24 00:00:00,pending,Venezuela,MIAMI,250
+2025-03-24 00:00:00,transition,Brazil,ANT,490494
+2025-03-24 00:00:00,transition,Brazil,HA/BR,285
+2025-03-24 00:00:00,transition,Costa Rica,ANT,1750
+2025-03-24 00:00:00,transition,Guatemala,ANT,1941
+2025-03-24 00:00:00,transition,Honduras,ANT,9599
+2025-03-24 00:00:00,transition,Honduras,HA/BR,175
+2025-03-24 00:00:00,transition,India,ANT,1445
+2025-03-24 00:00:00,transition,India,HA/BR,284
+2025-03-24 00:00:00,transition,Kenya,ANT,580
+2025-03-24 00:00:00,transition,Kenya,HA/BR,1942
+2025-03-24 00:00:00,transition,Mexico,ANT,27889
+2025-03-24 00:00:00,transition,Nicaragua,ANT,49153
+2025-03-24 00:00:00,transition,Papua New Guinea,ANT,3475
+2025-03-24 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-03-24 00:00:00,transition,Peru,ANT,64269
+2025-03-24 00:00:00,transition,Peru,HA/BR,1518
+2025-03-24 00:00:00,transition,Rwanda,ANT,960
+2025-03-24 00:00:00,transition,Tanzania,ANT,33762
+2025-03-24 00:00:00,transition,Tanzania,HA/BR,580
+2025-03-24 00:00:00,transition,Uganda,ANT,7181
+2025-03-24 00:00:00,transition,Uganda,HA/BR,320
+2025-03-24 00:00:00,transition,Venezuela,HA/BR,750
+2025-06-27 00:00:00,certified,Brazil,ANT,231074
+2025-06-27 00:00:00,certified,Brazil,HOU,1548
+2025-06-27 00:00:00,certified,Brazil,NY,711
+2025-06-27 00:00:00,certified,Burundi,ANT,1710
+2025-06-27 00:00:00,certified,Burundi,HA/BR,284
+2025-06-27 00:00:00,certified,Colombia,ANT,1144
+2025-06-27 00:00:00,certified,Colombia,HOU,7081
+2025-06-27 00:00:00,certified,Colombia,NOLA,1322
+2025-06-27 00:00:00,certified,Costa Rica,ANT,750
+2025-06-27 00:00:00,certified,El Salvador,ANT,7675
+2025-06-27 00:00:00,certified,El Salvador,HOU,275
+2025-06-27 00:00:00,certified,Guatemala,HOU,275
+2025-06-27 00:00:00,certified,Honduras,ANT,33250
+2025-06-27 00:00:00,certified,Honduras,HA/BR,16149
+2025-06-27 00:00:00,certified,Honduras,HOU,27175
+2025-06-27 00:00:00,certified,Honduras,MIAMI,4275
+2025-06-27 00:00:00,certified,Honduras,NY,7125
+2025-06-27 00:00:00,certified,India,ANT,33093
+2025-06-27 00:00:00,certified,India,HA/BR,6044
+2025-06-27 00:00:00,certified,India,MIAMI,1350
+2025-06-27 00:00:00,certified,Kenya,ANT,10110
+2025-06-27 00:00:00,certified,Kenya,HA/BR,2192
+2025-06-27 00:00:00,certified,Kenya,MIAMI,710
+2025-06-27 00:00:00,certified,Mexico,ANT,188835
+2025-06-27 00:00:00,certified,Mexico,HA/BR,500
+2025-06-27 00:00:00,certified,Mexico,HOU,9690
+2025-06-27 00:00:00,certified,Mexico,NOLA,13011
+2025-06-27 00:00:00,certified,Nicaragua,ANT,63433
+2025-06-27 00:00:00,certified,Nicaragua,HA/BR,500
+2025-06-27 00:00:00,certified,Nicaragua,HOU,3575
+2025-06-27 00:00:00,certified,Papua New Guinea,ANT,3475
+2025-06-27 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-06-27 00:00:00,certified,Papua New Guinea,NY,1280
+2025-06-27 00:00:00,certified,Peru,ANT,53567
+2025-06-27 00:00:00,certified,Peru,HA/BR,1268
+2025-06-27 00:00:00,certified,Peru,NY,1100
+2025-06-27 00:00:00,certified,Rwanda,ANT,5117
+2025-06-27 00:00:00,certified,Tanzania,ANT,51113
+2025-06-27 00:00:00,certified,Tanzania,HA/BR,2760
+2025-06-27 00:00:00,certified,Uganda,ANT,22843
+2025-06-27 00:00:00,certified,Uganda,HA/BR,320
+2025-06-27 00:00:00,certified,Venezuela,HA/BR,250
+2025-06-27 00:00:00,certified,Venezuela,MIAMI,2250
+2025-06-27 00:00:00,certified,Venezuela,NY,13745
+2025-06-27 00:00:00,graded_failed,Nicaragua,ANT,1650
+2025-06-27 00:00:00,graded_passed,Nicaragua,ANT,1100
+2025-06-27 00:00:00,pending,El Salvador,ANT,4941
+2025-06-27 00:00:00,pending,India,HA/BR,120
+2025-06-27 00:00:00,pending,Mexico,ANT,3360
+2025-06-27 00:00:00,pending,Nicaragua,ANT,7699
+2025-06-27 00:00:00,pending,Tanzania,ANT,3200
+2025-06-27 00:00:00,pending,Uganda,ANT,9826
+2025-06-27 00:00:00,pending,Venezuela,MIAMI,284
+2025-06-27 00:00:00,transition,Brazil,ANT,230742
+2025-06-27 00:00:00,transition,Colombia,ANT,1144
+2025-06-27 00:00:00,transition,Costa Rica,ANT,750
+2025-06-27 00:00:00,transition,El Salvador,ANT,7425
+2025-06-27 00:00:00,transition,Honduras,ANT,24520
+2025-06-27 00:00:00,transition,Honduras,HA/BR,14425
+2025-06-27 00:00:00,transition,India,ANT,33088
+2025-06-27 00:00:00,transition,India,HA/BR,6044
+2025-06-27 00:00:00,transition,Kenya,ANT,9540
+2025-06-27 00:00:00,transition,Kenya,HA/BR,1907
+2025-06-27 00:00:00,transition,Mexico,ANT,187981
+2025-06-27 00:00:00,transition,Nicaragua,ANT,63433
+2025-06-27 00:00:00,transition,Papua New Guinea,ANT,3475
+2025-06-27 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-06-27 00:00:00,transition,Peru,ANT,49397
+2025-06-27 00:00:00,transition,Peru,HA/BR,1268
+2025-06-27 00:00:00,transition,Rwanda,ANT,855
+2025-06-27 00:00:00,transition,Tanzania,ANT,51113
+2025-06-27 00:00:00,transition,Tanzania,HA/BR,580
+2025-06-27 00:00:00,transition,Uganda,ANT,22493
+2025-06-27 00:00:00,transition,Uganda,HA/BR,320
+2025-06-27 00:00:00,transition,Venezuela,HA/BR,250
+2025-07-10 00:00:00,certified,Brazil,ANT,213007
+2025-07-10 00:00:00,certified,Brazil,HOU,1548
+2025-07-10 00:00:00,certified,Brazil,NY,711
+2025-07-10 00:00:00,certified,Burundi,ANT,1425
+2025-07-10 00:00:00,certified,Burundi,HA/BR,284
+2025-07-10 00:00:00,certified,Colombia,ANT,594
+2025-07-10 00:00:00,certified,Colombia,HOU,7081
+2025-07-10 00:00:00,certified,Colombia,NOLA,1322
+2025-07-10 00:00:00,certified,Costa Rica,ANT,750
+2025-07-10 00:00:00,certified,El Salvador,ANT,10700
+2025-07-10 00:00:00,certified,El Salvador,HOU,275
+2025-07-10 00:00:00,certified,Guatemala,HOU,275
+2025-07-10 00:00:00,certified,Honduras,ANT,31824
+2025-07-10 00:00:00,certified,Honduras,HA/BR,14774
+2025-07-10 00:00:00,certified,Honduras,HOU,27175
+2025-07-10 00:00:00,certified,Honduras,MIAMI,4275
+2025-07-10 00:00:00,certified,Honduras,NY,7125
+2025-07-10 00:00:00,certified,India,ANT,33093
+2025-07-10 00:00:00,certified,India,HA/BR,6164
+2025-07-10 00:00:00,certified,India,MIAMI,1350
+2025-07-10 00:00:00,certified,Kenya,ANT,10110
+2025-07-10 00:00:00,certified,Kenya,HA/BR,2192
+2025-07-10 00:00:00,certified,Kenya,MIAMI,710
+2025-07-10 00:00:00,certified,Mexico,ANT,187866
+2025-07-10 00:00:00,certified,Mexico,HA/BR,250
+2025-07-10 00:00:00,certified,Mexico,HOU,8550
+2025-07-10 00:00:00,certified,Mexico,NOLA,9609
+2025-07-10 00:00:00,certified,Nicaragua,ANT,69680
+2025-07-10 00:00:00,certified,Nicaragua,HA/BR,500
+2025-07-10 00:00:00,certified,Nicaragua,HOU,1925
+2025-07-10 00:00:00,certified,Papua New Guinea,ANT,4045
+2025-07-10 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-07-10 00:00:00,certified,Papua New Guinea,NY,1280
+2025-07-10 00:00:00,certified,Peru,ANT,53567
+2025-07-10 00:00:00,certified,Peru,HA/BR,1268
+2025-07-10 00:00:00,certified,Peru,NY,1100
+2025-07-10 00:00:00,certified,Rwanda,ANT,5117
+2025-07-10 00:00:00,certified,Tanzania,ANT,53033
+2025-07-10 00:00:00,certified,Tanzania,HA/BR,2760
+2025-07-10 00:00:00,certified,Uganda,ANT,27475
+2025-07-10 00:00:00,certified,Uganda,HA/BR,320
+2025-07-10 00:00:00,certified,Venezuela,HA/BR,250
+2025-07-10 00:00:00,certified,Venezuela,MIAMI,2250
+2025-07-10 00:00:00,certified,Venezuela,NY,13745
+2025-07-10 00:00:00,graded_failed,Nicaragua,ANT,550
+2025-07-10 00:00:00,graded_failed,Papua New Guinea,ANT,285
+2025-07-10 00:00:00,graded_passed,Nicaragua,ANT,3023
+2025-07-10 00:00:00,graded_passed,Papua New Guinea,ANT,570
+2025-07-10 00:00:00,pending,Burundi,HA/BR,3200
+2025-07-10 00:00:00,pending,El Salvador,ANT,1643
+2025-07-10 00:00:00,pending,Nicaragua,ANT,14553
+2025-07-10 00:00:00,pending,Uganda,ANT,2610
+2025-07-10 00:00:00,pending,Venezuela,MIAMI,284
+2025-07-10 00:00:00,transition,Brazil,ANT,212675
+2025-07-10 00:00:00,transition,Colombia,ANT,594
+2025-07-10 00:00:00,transition,Costa Rica,ANT,750
+2025-07-10 00:00:00,transition,El Salvador,ANT,10450
+2025-07-10 00:00:00,transition,Honduras,ANT,24520
+2025-07-10 00:00:00,transition,Honduras,HA/BR,14425
+2025-07-10 00:00:00,transition,India,ANT,33088
+2025-07-10 00:00:00,transition,India,HA/BR,6164
+2025-07-10 00:00:00,transition,Kenya,ANT,9540
+2025-07-10 00:00:00,transition,Kenya,HA/BR,1907
+2025-07-10 00:00:00,transition,Mexico,ANT,187012
+2025-07-10 00:00:00,transition,Nicaragua,ANT,69680
+2025-07-10 00:00:00,transition,Papua New Guinea,ANT,4045
+2025-07-10 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-07-10 00:00:00,transition,Peru,ANT,49397
+2025-07-10 00:00:00,transition,Peru,HA/BR,1268
+2025-07-10 00:00:00,transition,Rwanda,ANT,855
+2025-07-10 00:00:00,transition,Tanzania,ANT,53033
+2025-07-10 00:00:00,transition,Tanzania,HA/BR,580
+2025-07-10 00:00:00,transition,Uganda,ANT,27125
+2025-07-10 00:00:00,transition,Uganda,HA/BR,320
+2025-07-10 00:00:00,transition,Venezuela,HA/BR,250
+2025-07-16 00:00:00,certified,Brazil,ANT,197287
+2025-07-16 00:00:00,certified,Brazil,HOU,1548
+2025-07-16 00:00:00,certified,Brazil,NY,711
+2025-07-16 00:00:00,certified,Burundi,ANT,1425
+2025-07-16 00:00:00,certified,Burundi,HA/BR,2844
+2025-07-16 00:00:00,certified,Colombia,ANT,594
+2025-07-16 00:00:00,certified,Colombia,HOU,7081
+2025-07-16 00:00:00,certified,Colombia,NOLA,1322
+2025-07-16 00:00:00,certified,Costa Rica,ANT,750
+2025-07-16 00:00:00,certified,El Salvador,ANT,12343
+2025-07-16 00:00:00,certified,Guatemala,HOU,275
+2025-07-16 00:00:00,certified,Honduras,ANT,28824
+2025-07-16 00:00:00,certified,Honduras,HA/BR,14774
+2025-07-16 00:00:00,certified,Honduras,HOU,24325
+2025-07-16 00:00:00,certified,Honduras,MIAMI,4275
+2025-07-16 00:00:00,certified,Honduras,NY,7125
+2025-07-16 00:00:00,certified,India,ANT,32523
+2025-07-16 00:00:00,certified,India,HA/BR,6164
+2025-07-16 00:00:00,certified,India,MIAMI,1350
+2025-07-16 00:00:00,certified,Kenya,ANT,10110
+2025-07-16 00:00:00,certified,Kenya,HA/BR,2192
+2025-07-16 00:00:00,certified,Kenya,MIAMI,710
+2025-07-16 00:00:00,certified,Mexico,ANT,187134
+2025-07-16 00:00:00,certified,Mexico,HA/BR,250
+2025-07-16 00:00:00,certified,Mexico,HOU,8550
+2025-07-16 00:00:00,certified,Mexico,NOLA,9609
+2025-07-16 00:00:00,certified,Nicaragua,ANT,79358
+2025-07-16 00:00:00,certified,Nicaragua,HA/BR,500
+2025-07-16 00:00:00,certified,Nicaragua,HOU,1925
+2025-07-16 00:00:00,certified,Papua New Guinea,ANT,3795
+2025-07-16 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-07-16 00:00:00,certified,Papua New Guinea,NY,1280
+2025-07-16 00:00:00,certified,Peru,ANT,53567
+2025-07-16 00:00:00,certified,Peru,HA/BR,1268
+2025-07-16 00:00:00,certified,Peru,NY,1100
+2025-07-16 00:00:00,certified,Rwanda,ANT,5117
+2025-07-16 00:00:00,certified,Tanzania,ANT,52178
+2025-07-16 00:00:00,certified,Tanzania,HA/BR,2760
+2025-07-16 00:00:00,certified,Uganda,ANT,27590
+2025-07-16 00:00:00,certified,Uganda,HA/BR,320
+2025-07-16 00:00:00,certified,Venezuela,HA/BR,250
+2025-07-16 00:00:00,certified,Venezuela,MIAMI,2250
+2025-07-16 00:00:00,certified,Venezuela,NY,13745
+2025-07-16 00:00:00,graded_failed,Burundi,HA/BR,640
+2025-07-16 00:00:00,graded_failed,Nicaragua,ANT,275
+2025-07-16 00:00:00,graded_failed,Venezuela,MIAMI,284
+2025-07-16 00:00:00,graded_passed,Burundi,HA/BR,1600
+2025-07-16 00:00:00,graded_passed,El Salvador,ANT,1643
+2025-07-16 00:00:00,graded_passed,Nicaragua,ANT,1925
+2025-07-16 00:00:00,graded_passed,Uganda,ANT,330
+2025-07-16 00:00:00,pending,Kenya,ANT,6600
+2025-07-16 00:00:00,pending,Nicaragua,ANT,7700
+2025-07-16 00:00:00,pending,Uganda,ANT,6240
+2025-07-16 00:00:00,transition,Brazil,ANT,196955
+2025-07-16 00:00:00,transition,Burundi,HA/BR,2560
+2025-07-16 00:00:00,transition,Colombia,ANT,594
+2025-07-16 00:00:00,transition,Costa Rica,ANT,750
+2025-07-16 00:00:00,transition,El Salvador,ANT,12093
+2025-07-16 00:00:00,transition,Honduras,ANT,21520
+2025-07-16 00:00:00,transition,Honduras,HA/BR,14425
+2025-07-16 00:00:00,transition,India,ANT,32518
+2025-07-16 00:00:00,transition,India,HA/BR,6164
+2025-07-16 00:00:00,transition,Kenya,ANT,9540
+2025-07-16 00:00:00,transition,Kenya,HA/BR,1907
+2025-07-16 00:00:00,transition,Mexico,ANT,186280
+2025-07-16 00:00:00,transition,Nicaragua,ANT,79358
+2025-07-16 00:00:00,transition,Papua New Guinea,ANT,3795
+2025-07-16 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-07-16 00:00:00,transition,Peru,ANT,49397
+2025-07-16 00:00:00,transition,Peru,HA/BR,1268
+2025-07-16 00:00:00,transition,Rwanda,ANT,855
+2025-07-16 00:00:00,transition,Tanzania,ANT,52178
+2025-07-16 00:00:00,transition,Tanzania,HA/BR,580
+2025-07-16 00:00:00,transition,Uganda,ANT,27240
+2025-07-16 00:00:00,transition,Uganda,HA/BR,320
+2025-07-16 00:00:00,transition,Venezuela,HA/BR,250
+2025-10-27 00:00:00,certified,Brazil,ANT,24005
+2025-10-27 00:00:00,certified,Brazil,HOU,1548
+2025-10-27 00:00:00,certified,Brazil,NY,580
+2025-10-27 00:00:00,certified,Burundi,ANT,4160
+2025-10-27 00:00:00,certified,Burundi,HA/BR,3164
+2025-10-27 00:00:00,certified,Colombia,ANT,272
+2025-10-27 00:00:00,certified,Colombia,NOLA,471
+2025-10-27 00:00:00,certified,Costa Rica,ANT,250
+2025-10-27 00:00:00,certified,El Salvador,ANT,10215
+2025-10-27 00:00:00,certified,Honduras,ANT,28433
+2025-10-27 00:00:00,certified,Honduras,HA/BR,15550
+2025-10-27 00:00:00,certified,Honduras,HOU,9900
+2025-10-27 00:00:00,certified,Honduras,NY,537
+2025-10-27 00:00:00,certified,India,ANT,13520
+2025-10-27 00:00:00,certified,India,HA/BR,4649
+2025-10-27 00:00:00,certified,India,MIAMI,1030
+2025-10-27 00:00:00,certified,Kenya,ANT,14550
+2025-10-27 00:00:00,certified,Kenya,HA/BR,2192
+2025-10-27 00:00:00,certified,Kenya,MIAMI,710
+2025-10-27 00:00:00,certified,Mexico,ANT,85152
+2025-10-27 00:00:00,certified,Mexico,HOU,856
+2025-10-27 00:00:00,certified,Mexico,NOLA,1612
+2025-10-27 00:00:00,certified,Mexico,NY,30286
+2025-10-27 00:00:00,certified,Nicaragua,ANT,54829
+2025-10-27 00:00:00,certified,Nicaragua,HOU,275
+2025-10-27 00:00:00,certified,Papua New Guinea,ANT,3795
+2025-10-27 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-10-27 00:00:00,certified,Papua New Guinea,NY,995
+2025-10-27 00:00:00,certified,Peru,ANT,36788
+2025-10-27 00:00:00,certified,Peru,HA/BR,1240
+2025-10-27 00:00:00,certified,Peru,NY,1100
+2025-10-27 00:00:00,certified,Rwanda,ANT,13353
+2025-10-27 00:00:00,certified,Tanzania,ANT,47233
+2025-10-27 00:00:00,certified,Tanzania,HA/BR,2760
+2025-10-27 00:00:00,certified,Uganda,ANT,21048
+2025-10-27 00:00:00,certified,Uganda,HA/BR,320
+2025-10-27 00:00:00,certified,Venezuela,HA/BR,250
+2025-10-27 00:00:00,certified,Venezuela,MIAMI,250
+2025-10-27 00:00:00,certified,Venezuela,NY,2500
+2025-10-27 00:00:00,graded_failed,Rwanda,ANT,330
+2025-10-27 00:00:00,graded_failed,Uganda,ANT,320
+2025-10-27 00:00:00,graded_passed,Rwanda,ANT,2970
+2025-10-27 00:00:00,pending,Honduras,HOU,3025
+2025-10-27 00:00:00,transition,Brazil,ANT,23940
+2025-10-27 00:00:00,transition,Burundi,ANT,4160
+2025-10-27 00:00:00,transition,Burundi,HA/BR,2880
+2025-10-27 00:00:00,transition,Colombia,ANT,272
+2025-10-27 00:00:00,transition,Costa Rica,ANT,250
+2025-10-27 00:00:00,transition,El Salvador,ANT,9965
+2025-10-27 00:00:00,transition,Honduras,ANT,27680
+2025-10-27 00:00:00,transition,Honduras,HA/BR,15550
+2025-10-27 00:00:00,transition,India,ANT,13515
+2025-10-27 00:00:00,transition,India,HA/BR,4649
+2025-10-27 00:00:00,transition,Kenya,ANT,13980
+2025-10-27 00:00:00,transition,Kenya,HA/BR,1907
+2025-10-27 00:00:00,transition,Mexico,ANT,84796
+2025-10-27 00:00:00,transition,Nicaragua,ANT,54829
+2025-10-27 00:00:00,transition,Papua New Guinea,ANT,3795
+2025-10-27 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-10-27 00:00:00,transition,Peru,ANT,35759
+2025-10-27 00:00:00,transition,Peru,HA/BR,1240
+2025-10-27 00:00:00,transition,Rwanda,ANT,9375
+2025-10-27 00:00:00,transition,Tanzania,ANT,47233
+2025-10-27 00:00:00,transition,Tanzania,HA/BR,580
+2025-10-27 00:00:00,transition,Uganda,ANT,20698
+2025-10-27 00:00:00,transition,Uganda,HA/BR,320
+2025-10-27 00:00:00,transition,Venezuela,HA/BR,250
+2025-10-31 00:00:00,certified,Brazil,ANT,19705
+2025-10-31 00:00:00,certified,Brazil,HOU,1548
+2025-10-31 00:00:00,certified,Brazil,NY,580
+2025-10-31 00:00:00,certified,Burundi,ANT,4132
+2025-10-31 00:00:00,certified,Burundi,HA/BR,3164
+2025-10-31 00:00:00,certified,Colombia,ANT,272
+2025-10-31 00:00:00,certified,Colombia,NOLA,471
+2025-10-31 00:00:00,certified,Costa Rica,ANT,250
+2025-10-31 00:00:00,certified,El Salvador,ANT,10215
+2025-10-31 00:00:00,certified,Honduras,ANT,28183
+2025-10-31 00:00:00,certified,Honduras,HA/BR,15550
+2025-10-31 00:00:00,certified,Honduras,HOU,9900
+2025-10-31 00:00:00,certified,Honduras,NY,537
+2025-10-31 00:00:00,certified,India,ANT,13520
+2025-10-31 00:00:00,certified,India,HA/BR,4649
+2025-10-31 00:00:00,certified,India,MIAMI,1030
+2025-10-31 00:00:00,certified,Kenya,ANT,14550
+2025-10-31 00:00:00,certified,Kenya,HA/BR,2157
+2025-10-31 00:00:00,certified,Kenya,MIAMI,710
+2025-10-31 00:00:00,certified,Mexico,ANT,75441
+2025-10-31 00:00:00,certified,Mexico,HOU,856
+2025-10-31 00:00:00,certified,Mexico,NOLA,1612
+2025-10-31 00:00:00,certified,Mexico,NY,30286
+2025-10-31 00:00:00,certified,Nicaragua,ANT,53629
+2025-10-31 00:00:00,certified,Nicaragua,HOU,275
+2025-10-31 00:00:00,certified,Papua New Guinea,ANT,3795
+2025-10-31 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-10-31 00:00:00,certified,Papua New Guinea,NY,995
+2025-10-31 00:00:00,certified,Peru,ANT,36713
+2025-10-31 00:00:00,certified,Peru,HA/BR,1240
+2025-10-31 00:00:00,certified,Peru,NY,1100
+2025-10-31 00:00:00,certified,Rwanda,ANT,13353
+2025-10-31 00:00:00,certified,Tanzania,ANT,43817
+2025-10-31 00:00:00,certified,Tanzania,HA/BR,2760
+2025-10-31 00:00:00,certified,Uganda,ANT,21048
+2025-10-31 00:00:00,certified,Uganda,HA/BR,320
+2025-10-31 00:00:00,certified,Venezuela,HA/BR,250
+2025-10-31 00:00:00,certified,Venezuela,MIAMI,250
+2025-10-31 00:00:00,certified,Venezuela,NY,2500
+2025-10-31 00:00:00,pending,Honduras,HOU,3025
+2025-10-31 00:00:00,pending,Rwanda,ANT,3960
+2025-10-31 00:00:00,transition,Brazil,ANT,19640
+2025-10-31 00:00:00,transition,Burundi,ANT,4132
+2025-10-31 00:00:00,transition,Burundi,HA/BR,2880
+2025-10-31 00:00:00,transition,Colombia,ANT,272
+2025-10-31 00:00:00,transition,Costa Rica,ANT,250
+2025-10-31 00:00:00,transition,El Salvador,ANT,9965
+2025-10-31 00:00:00,transition,Honduras,ANT,27680
+2025-10-31 00:00:00,transition,Honduras,HA/BR,15550
+2025-10-31 00:00:00,transition,India,ANT,13515
+2025-10-31 00:00:00,transition,India,HA/BR,4649
+2025-10-31 00:00:00,transition,Kenya,ANT,13980
+2025-10-31 00:00:00,transition,Kenya,HA/BR,1872
+2025-10-31 00:00:00,transition,Mexico,ANT,75085
+2025-10-31 00:00:00,transition,Nicaragua,ANT,53629
+2025-10-31 00:00:00,transition,Papua New Guinea,ANT,3795
+2025-10-31 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-10-31 00:00:00,transition,Peru,ANT,35684
+2025-10-31 00:00:00,transition,Peru,HA/BR,1240
+2025-10-31 00:00:00,transition,Rwanda,ANT,9375
+2025-10-31 00:00:00,transition,Tanzania,ANT,43817
+2025-10-31 00:00:00,transition,Tanzania,HA/BR,580
+2025-10-31 00:00:00,transition,Uganda,ANT,20698
+2025-10-31 00:00:00,transition,Uganda,HA/BR,320
+2025-10-31 00:00:00,transition,Venezuela,HA/BR,250
+2025-11-07 00:00:00,certified,Brazil,ANT,11848
+2025-11-07 00:00:00,certified,Brazil,HOU,1548
+2025-11-07 00:00:00,certified,Brazil,NY,580
+2025-11-07 00:00:00,certified,Burundi,ANT,4122
+2025-11-07 00:00:00,certified,Burundi,HA/BR,3164
+2025-11-07 00:00:00,certified,Colombia,ANT,25
+2025-11-07 00:00:00,certified,Colombia,NOLA,471
+2025-11-07 00:00:00,certified,Costa Rica,ANT,250
+2025-11-07 00:00:00,certified,El Salvador,ANT,9715
+2025-11-07 00:00:00,certified,Honduras,ANT,27808
+2025-11-07 00:00:00,certified,Honduras,HA/BR,15550
+2025-11-07 00:00:00,certified,Honduras,HOU,9900
+2025-11-07 00:00:00,certified,Honduras,NY,537
+2025-11-07 00:00:00,certified,India,ANT,12935
+2025-11-07 00:00:00,certified,India,HA/BR,4319
+2025-11-07 00:00:00,certified,India,MIAMI,1030
+2025-11-07 00:00:00,certified,Kenya,ANT,14550
+2025-11-07 00:00:00,certified,Kenya,HA/BR,2157
+2025-11-07 00:00:00,certified,Kenya,MIAMI,710
+2025-11-07 00:00:00,certified,Mexico,ANT,73097
+2025-11-07 00:00:00,certified,Mexico,HOU,856
+2025-11-07 00:00:00,certified,Mexico,NOLA,1612
+2025-11-07 00:00:00,certified,Mexico,NY,28284
+2025-11-07 00:00:00,certified,Nicaragua,ANT,53629
+2025-11-07 00:00:00,certified,Nicaragua,HOU,275
+2025-11-07 00:00:00,certified,Papua New Guinea,ANT,3795
+2025-11-07 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2025-11-07 00:00:00,certified,Papua New Guinea,NY,995
+2025-11-07 00:00:00,certified,Peru,ANT,36713
+2025-11-07 00:00:00,certified,Peru,HA/BR,1240
+2025-11-07 00:00:00,certified,Peru,NY,1100
+2025-11-07 00:00:00,certified,Rwanda,ANT,13353
+2025-11-07 00:00:00,certified,Tanzania,ANT,43817
+2025-11-07 00:00:00,certified,Tanzania,HA/BR,2760
+2025-11-07 00:00:00,certified,Uganda,ANT,21048
+2025-11-07 00:00:00,certified,Uganda,HA/BR,320
+2025-11-07 00:00:00,certified,Venezuela,HA/BR,250
+2025-11-07 00:00:00,certified,Venezuela,MIAMI,250
+2025-11-07 00:00:00,certified,Venezuela,NY,2500
+2025-11-07 00:00:00,pending,Brazil,ANT,11934
+2025-11-07 00:00:00,pending,Honduras,HOU,3025
+2025-11-07 00:00:00,pending,Kenya,ANT,320
+2025-11-07 00:00:00,pending,Rwanda,ANT,4930
+2025-11-07 00:00:00,transition,Brazil,ANT,11783
+2025-11-07 00:00:00,transition,Burundi,ANT,4122
+2025-11-07 00:00:00,transition,Burundi,HA/BR,2880
+2025-11-07 00:00:00,transition,Colombia,ANT,25
+2025-11-07 00:00:00,transition,Costa Rica,ANT,250
+2025-11-07 00:00:00,transition,El Salvador,ANT,9465
+2025-11-07 00:00:00,transition,Honduras,ANT,27305
+2025-11-07 00:00:00,transition,Honduras,HA/BR,15550
+2025-11-07 00:00:00,transition,India,ANT,12930
+2025-11-07 00:00:00,transition,India,HA/BR,4319
+2025-11-07 00:00:00,transition,Kenya,ANT,13980
+2025-11-07 00:00:00,transition,Kenya,HA/BR,1872
+2025-11-07 00:00:00,transition,Mexico,ANT,72741
+2025-11-07 00:00:00,transition,Nicaragua,ANT,53629
+2025-11-07 00:00:00,transition,Papua New Guinea,ANT,3795
+2025-11-07 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2025-11-07 00:00:00,transition,Peru,ANT,35684
+2025-11-07 00:00:00,transition,Peru,HA/BR,1240
+2025-11-07 00:00:00,transition,Rwanda,ANT,9375
+2025-11-07 00:00:00,transition,Tanzania,ANT,43817
+2025-11-07 00:00:00,transition,Tanzania,HA/BR,580
+2025-11-07 00:00:00,transition,Uganda,ANT,20698
+2025-11-07 00:00:00,transition,Uganda,HA/BR,320
+2025-11-07 00:00:00,transition,Venezuela,HA/BR,250
+2026-02-17 00:00:00,certified,Brazil,ANT,36970
+2026-02-17 00:00:00,certified,Brazil,HOU,123
+2026-02-17 00:00:00,certified,Burundi,ANT,4442
+2026-02-17 00:00:00,certified,Burundi,HA/BR,2279
+2026-02-17 00:00:00,certified,Colombia,ANT,25
+2026-02-17 00:00:00,certified,Colombia,NOLA,225
+2026-02-17 00:00:00,certified,El Salvador,ANT,3448
+2026-02-17 00:00:00,certified,Guatemala,HOU,4125
+2026-02-17 00:00:00,certified,Honduras,ANT,23253
+2026-02-17 00:00:00,certified,Honduras,HA/BR,1800
+2026-02-17 00:00:00,certified,Honduras,HOU,30328
+2026-02-17 00:00:00,certified,Honduras,MIAMI,1257
+2026-02-17 00:00:00,certified,Honduras,NY,35
+2026-02-17 00:00:00,certified,India,ANT,6798
+2026-02-17 00:00:00,certified,India,HA/BR,1984
+2026-02-17 00:00:00,certified,India,MIAMI,1030
+2026-02-17 00:00:00,certified,Kenya,ANT,13119
+2026-02-17 00:00:00,certified,Kenya,HA/BR,2543
+2026-02-17 00:00:00,certified,Kenya,MIAMI,710
+2026-02-17 00:00:00,certified,Mexico,ANT,41939
+2026-02-17 00:00:00,certified,Mexico,NOLA,112
+2026-02-17 00:00:00,certified,Mexico,NY,18586
+2026-02-17 00:00:00,certified,Nicaragua,ANT,57813
+2026-02-17 00:00:00,certified,Nicaragua,HOU,5525
+2026-02-17 00:00:00,certified,Papua New Guinea,ANT,5811
+2026-02-17 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2026-02-17 00:00:00,certified,Papua New Guinea,NY,710
+2026-02-17 00:00:00,certified,Peru,ANT,66048
+2026-02-17 00:00:00,certified,Peru,HA/BR,1240
+2026-02-17 00:00:00,certified,Peru,MIAMI,4250
+2026-02-17 00:00:00,certified,Peru,NY,98
+2026-02-17 00:00:00,certified,Rwanda,ANT,27043
+2026-02-17 00:00:00,certified,Tanzania,ANT,36173
+2026-02-17 00:00:00,certified,Tanzania,HA/BR,2690
+2026-02-17 00:00:00,certified,Uganda,ANT,21027
+2026-02-17 00:00:00,certified,Uganda,HA/BR,320
+2026-02-17 00:00:00,certified,Venezuela,HA/BR,1000
+2026-02-17 00:00:00,certified,Venezuela,MIAMI,250
+2026-02-17 00:00:00,graded_failed,Honduras,HOU,1983
+2026-02-17 00:00:00,graded_failed,Honduras,MIAMI,991
+2026-02-17 00:00:00,graded_failed,Nicaragua,ANT,2010
+2026-02-17 00:00:00,graded_failed,Peru,ANT,1100
+2026-02-17 00:00:00,graded_failed,Venezuela,HA/BR,1000
+2026-02-17 00:00:00,graded_passed,Guatemala,HOU,4125
+2026-02-17 00:00:00,graded_passed,Honduras,HOU,3217
+2026-02-17 00:00:00,graded_passed,Honduras,MIAMI,1257
+2026-02-17 00:00:00,graded_passed,Nicaragua,ANT,2680
+2026-02-17 00:00:00,pending,El Salvador,ANT,2750
+2026-02-17 00:00:00,pending,Guatemala,HOU,1375
+2026-02-17 00:00:00,pending,Honduras,ANT,14024
+2026-02-17 00:00:00,pending,Honduras,HOU,36957
+2026-02-17 00:00:00,pending,Honduras,MIAMI,5716
+2026-02-17 00:00:00,pending,Kenya,ANT,4400
+2026-02-17 00:00:00,pending,Mexico,ANT,11551
+2026-02-17 00:00:00,pending,Mexico,HOU,2200
+2026-02-17 00:00:00,pending,Nicaragua,ANT,42101
+2026-02-17 00:00:00,pending,Nicaragua,NY,4125
+2026-02-17 00:00:00,pending,Peru,ANT,6650
+2026-02-17 00:00:00,pending,Rwanda,ANT,1360
+2026-02-17 00:00:00,pending,Uganda,ANT,1050
+2026-02-17 00:00:00,pending,Venezuela,HA/BR,2500
+2026-02-17 00:00:00,pending,Venezuela,NOLA,1249
+2026-02-17 00:00:00,pending,Venezuela,NY,5750
+2026-02-17 00:00:00,transition,Brazil,ANT,36905
+2026-02-17 00:00:00,transition,Burundi,ANT,4442
+2026-02-17 00:00:00,transition,Burundi,HA/BR,1995
+2026-02-17 00:00:00,transition,Colombia,ANT,25
+2026-02-17 00:00:00,transition,El Salvador,ANT,3448
+2026-02-17 00:00:00,transition,Honduras,ANT,22750
+2026-02-17 00:00:00,transition,Honduras,HA/BR,1800
+2026-02-17 00:00:00,transition,India,ANT,6793
+2026-02-17 00:00:00,transition,India,HA/BR,1984
+2026-02-17 00:00:00,transition,Kenya,ANT,13119
+2026-02-17 00:00:00,transition,Kenya,HA/BR,2543
+2026-02-17 00:00:00,transition,Mexico,ANT,41583
+2026-02-17 00:00:00,transition,Nicaragua,ANT,57813
+2026-02-17 00:00:00,transition,Papua New Guinea,ANT,5811
+2026-02-17 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2026-02-17 00:00:00,transition,Peru,ANT,65019
+2026-02-17 00:00:00,transition,Peru,HA/BR,1240
+2026-02-17 00:00:00,transition,Rwanda,ANT,23065
+2026-02-17 00:00:00,transition,Tanzania,ANT,36173
+2026-02-17 00:00:00,transition,Tanzania,HA/BR,580
+2026-02-17 00:00:00,transition,Uganda,ANT,20677
+2026-02-17 00:00:00,transition,Uganda,HA/BR,320
+2026-02-17 00:00:00,transition,Venezuela,HA/BR,1000
+2026-02-20 00:00:00,certified,Brazil,ANT,33582
+2026-02-20 00:00:00,certified,Brazil,HOU,123
+2026-02-20 00:00:00,certified,Burundi,ANT,4442
+2026-02-20 00:00:00,certified,Burundi,HA/BR,1139
+2026-02-20 00:00:00,certified,Colombia,ANT,25
+2026-02-20 00:00:00,certified,Colombia,NOLA,225
+2026-02-20 00:00:00,certified,El Salvador,ANT,3448
+2026-02-20 00:00:00,certified,Guatemala,HOU,5500
+2026-02-20 00:00:00,certified,Honduras,ANT,25728
+2026-02-20 00:00:00,certified,Honduras,HA/BR,1800
+2026-02-20 00:00:00,certified,Honduras,HOU,50338
+2026-02-20 00:00:00,certified,Honduras,MIAMI,6423
+2026-02-20 00:00:00,certified,Honduras,NY,35
+2026-02-20 00:00:00,certified,India,ANT,6798
+2026-02-20 00:00:00,certified,India,HA/BR,1984
+2026-02-20 00:00:00,certified,India,MIAMI,1030
+2026-02-20 00:00:00,certified,Kenya,ANT,13119
+2026-02-20 00:00:00,certified,Kenya,HA/BR,2543
+2026-02-20 00:00:00,certified,Kenya,MIAMI,710
+2026-02-20 00:00:00,certified,Mexico,ANT,39521
+2026-02-20 00:00:00,certified,Mexico,HOU,550
+2026-02-20 00:00:00,certified,Mexico,NOLA,112
+2026-02-20 00:00:00,certified,Mexico,NY,18586
+2026-02-20 00:00:00,certified,Nicaragua,ANT,57638
+2026-02-20 00:00:00,certified,Nicaragua,HOU,5525
+2026-02-20 00:00:00,certified,Papua New Guinea,ANT,5811
+2026-02-20 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2026-02-20 00:00:00,certified,Papua New Guinea,NY,710
+2026-02-20 00:00:00,certified,Peru,ANT,65553
+2026-02-20 00:00:00,certified,Peru,HA/BR,1240
+2026-02-20 00:00:00,certified,Peru,MIAMI,4250
+2026-02-20 00:00:00,certified,Peru,NY,98
+2026-02-20 00:00:00,certified,Rwanda,ANT,27043
+2026-02-20 00:00:00,certified,Tanzania,ANT,36173
+2026-02-20 00:00:00,certified,Tanzania,HA/BR,2690
+2026-02-20 00:00:00,certified,Uganda,ANT,21027
+2026-02-20 00:00:00,certified,Uganda,HA/BR,320
+2026-02-20 00:00:00,certified,Venezuela,HA/BR,1500
+2026-02-20 00:00:00,certified,Venezuela,MIAMI,250
+2026-02-20 00:00:00,certified,Venezuela,NY,1250
+2026-02-20 00:00:00,graded_failed,Honduras,ANT,550
+2026-02-20 00:00:00,graded_failed,Honduras,MIAMI,550
+2026-02-20 00:00:00,graded_failed,Mexico,ANT,550
+2026-02-20 00:00:00,graded_failed,Peru,ANT,1500
+2026-02-20 00:00:00,graded_failed,Venezuela,HA/BR,750
+2026-02-20 00:00:00,graded_failed,Venezuela,NY,1250
+2026-02-20 00:00:00,graded_passed,Honduras,ANT,2475
+2026-02-20 00:00:00,graded_passed,Honduras,HOU,275
+2026-02-20 00:00:00,graded_passed,Honduras,MIAMI,3575
+2026-02-20 00:00:00,graded_passed,Mexico,ANT,2475
+2026-02-20 00:00:00,graded_passed,Peru,ANT,1000
+2026-02-20 00:00:00,graded_passed,Venezuela,HA/BR,500
+2026-02-20 00:00:00,graded_passed,Venezuela,NY,1250
+2026-02-20 00:00:00,pending,El Salvador,ANT,5500
+2026-02-20 00:00:00,pending,Guatemala,ANT,5500
+2026-02-20 00:00:00,pending,Guatemala,HOU,5500
+2026-02-20 00:00:00,pending,Honduras,ANT,16771
+2026-02-20 00:00:00,pending,Honduras,HOU,26807
+2026-02-20 00:00:00,pending,Honduras,MIAMI,1541
+2026-02-20 00:00:00,pending,Kenya,ANT,4400
+2026-02-20 00:00:00,pending,Mexico,ANT,9076
+2026-02-20 00:00:00,pending,Mexico,HOU,1100
+2026-02-20 00:00:00,pending,Nicaragua,ANT,50413
+2026-02-20 00:00:00,pending,Nicaragua,NY,1375
+2026-02-20 00:00:00,pending,Peru,ANT,9150
+2026-02-20 00:00:00,pending,Rwanda,ANT,1680
+2026-02-20 00:00:00,pending,Uganda,ANT,1710
+2026-02-20 00:00:00,pending,Venezuela,HA/BR,2250
+2026-02-20 00:00:00,pending,Venezuela,NOLA,1249
+2026-02-20 00:00:00,pending,Venezuela,NY,1000
+2026-02-20 00:00:00,transition,Brazil,ANT,33517
+2026-02-20 00:00:00,transition,Burundi,ANT,4442
+2026-02-20 00:00:00,transition,Burundi,HA/BR,855
+2026-02-20 00:00:00,transition,Colombia,ANT,25
+2026-02-20 00:00:00,transition,El Salvador,ANT,3448
+2026-02-20 00:00:00,transition,Honduras,ANT,25225
+2026-02-20 00:00:00,transition,Honduras,HA/BR,1800
+2026-02-20 00:00:00,transition,India,ANT,6793
+2026-02-20 00:00:00,transition,India,HA/BR,1984
+2026-02-20 00:00:00,transition,Kenya,ANT,13119
+2026-02-20 00:00:00,transition,Kenya,HA/BR,2543
+2026-02-20 00:00:00,transition,Mexico,ANT,39165
+2026-02-20 00:00:00,transition,Nicaragua,ANT,57638
+2026-02-20 00:00:00,transition,Papua New Guinea,ANT,5811
+2026-02-20 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2026-02-20 00:00:00,transition,Peru,ANT,64524
+2026-02-20 00:00:00,transition,Peru,HA/BR,1240
+2026-02-20 00:00:00,transition,Rwanda,ANT,23065
+2026-02-20 00:00:00,transition,Tanzania,ANT,36173
+2026-02-20 00:00:00,transition,Tanzania,HA/BR,580
+2026-02-20 00:00:00,transition,Uganda,ANT,20677
+2026-02-20 00:00:00,transition,Uganda,HA/BR,320
+2026-02-20 00:00:00,transition,Venezuela,HA/BR,1500
+2026-03-10 00:00:00,certified,Brazil,ANT,16781
+2026-03-10 00:00:00,certified,Brazil,HOU,123
+2026-03-10 00:00:00,certified,Burundi,ANT,4442
+2026-03-10 00:00:00,certified,Burundi,HA/BR,854
+2026-03-10 00:00:00,certified,Colombia,ANT,25
+2026-03-10 00:00:00,certified,Colombia,NOLA,225
+2026-03-10 00:00:00,certified,El Salvador,ANT,8288
+2026-03-10 00:00:00,certified,Guatemala,ANT,5225
+2026-03-10 00:00:00,certified,Guatemala,HOU,6325
+2026-03-10 00:00:00,certified,Honduras,ANT,33874
+2026-03-10 00:00:00,certified,Honduras,HA/BR,1800
+2026-03-10 00:00:00,certified,Honduras,HOU,88714
+2026-03-10 00:00:00,certified,Honduras,MIAMI,7448
+2026-03-10 00:00:00,certified,Honduras,NOLA,3300
+2026-03-10 00:00:00,certified,Honduras,NY,35
+2026-03-10 00:00:00,certified,India,ANT,6798
+2026-03-10 00:00:00,certified,India,HA/BR,1984
+2026-03-10 00:00:00,certified,India,MIAMI,1030
+2026-03-10 00:00:00,certified,Kenya,ANT,15499
+2026-03-10 00:00:00,certified,Kenya,HA/BR,2475
+2026-03-10 00:00:00,certified,Kenya,MIAMI,710
+2026-03-10 00:00:00,certified,Mexico,ANT,48278
+2026-03-10 00:00:00,certified,Mexico,HOU,1925
+2026-03-10 00:00:00,certified,Mexico,NOLA,2400
+2026-03-10 00:00:00,certified,Mexico,NY,18586
+2026-03-10 00:00:00,certified,Nicaragua,ANT,97623
+2026-03-10 00:00:00,certified,Nicaragua,HOU,5525
+2026-03-10 00:00:00,certified,Nicaragua,NY,1375
+2026-03-10 00:00:00,certified,Papua New Guinea,ANT,5811
+2026-03-10 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2026-03-10 00:00:00,certified,Papua New Guinea,NY,425
+2026-03-10 00:00:00,certified,Peru,ANT,65676
+2026-03-10 00:00:00,certified,Peru,HA/BR,992
+2026-03-10 00:00:00,certified,Peru,MIAMI,3750
+2026-03-10 00:00:00,certified,Peru,NY,98
+2026-03-10 00:00:00,certified,Rwanda,ANT,28832
+2026-03-10 00:00:00,certified,Tanzania,ANT,36173
+2026-03-10 00:00:00,certified,Tanzania,HA/BR,2690
+2026-03-10 00:00:00,certified,Uganda,ANT,22077
+2026-03-10 00:00:00,certified,Uganda,HA/BR,320
+2026-03-10 00:00:00,certified,Venezuela,HA/BR,3000
+2026-03-10 00:00:00,certified,Venezuela,MIAMI,250
+2026-03-10 00:00:00,certified,Venezuela,NOLA,250
+2026-03-10 00:00:00,certified,Venezuela,NY,2250
+2026-03-10 00:00:00,graded_failed,Guatemala,HOU,275
+2026-03-10 00:00:00,graded_failed,Honduras,HOU,1375
+2026-03-10 00:00:00,graded_failed,Kenya,ANT,320
+2026-03-10 00:00:00,graded_failed,Mexico,ANT,684
+2026-03-10 00:00:00,graded_failed,Nicaragua,ANT,335
+2026-03-10 00:00:00,graded_failed,Peru,ANT,250
+2026-03-10 00:00:00,graded_failed,Uganda,ANT,329
+2026-03-10 00:00:00,graded_passed,Guatemala,HOU,1650
+2026-03-10 00:00:00,graded_passed,Honduras,HOU,6326
+2026-03-10 00:00:00,graded_passed,Kenya,ANT,1600
+2026-03-10 00:00:00,graded_passed,Mexico,ANT,1026
+2026-03-10 00:00:00,graded_passed,Mexico,HOU,1925
+2026-03-10 00:00:00,graded_passed,Nicaragua,ANT,2105
+2026-03-10 00:00:00,graded_passed,Peru,ANT,250
+2026-03-10 00:00:00,pending,Brazil,ANT,20486
+2026-03-10 00:00:00,pending,Guatemala,ANT,275
+2026-03-10 00:00:00,pending,Honduras,ANT,19499
+2026-03-10 00:00:00,pending,Honduras,HOU,2199
+2026-03-10 00:00:00,pending,Honduras,NOLA,1364
+2026-03-10 00:00:00,pending,India,ANT,2240
+2026-03-10 00:00:00,pending,Mexico,ANT,9576
+2026-03-10 00:00:00,pending,Mexico,HOU,550
+2026-03-10 00:00:00,pending,Mexico,NOLA,5555
+2026-03-10 00:00:00,pending,Nicaragua,ANT,13957
+2026-03-10 00:00:00,pending,Nicaragua,HOU,275
+2026-03-10 00:00:00,pending,Peru,ANT,12250
+2026-03-10 00:00:00,pending,Rwanda,ANT,280
+2026-03-10 00:00:00,pending,Uganda,ANT,21353
+2026-03-10 00:00:00,transition,Brazil,ANT,16716
+2026-03-10 00:00:00,transition,Burundi,ANT,4442
+2026-03-10 00:00:00,transition,Burundi,HA/BR,570
+2026-03-10 00:00:00,transition,Colombia,ANT,25
+2026-03-10 00:00:00,transition,El Salvador,ANT,8288
+2026-03-10 00:00:00,transition,Guatemala,ANT,5225
+2026-03-10 00:00:00,transition,Honduras,ANT,33371
+2026-03-10 00:00:00,transition,Honduras,HA/BR,1800
+2026-03-10 00:00:00,transition,India,ANT,6793
+2026-03-10 00:00:00,transition,India,HA/BR,1984
+2026-03-10 00:00:00,transition,Kenya,ANT,15499
+2026-03-10 00:00:00,transition,Kenya,HA/BR,2475
+2026-03-10 00:00:00,transition,Mexico,ANT,47922
+2026-03-10 00:00:00,transition,Nicaragua,ANT,97623
+2026-03-10 00:00:00,transition,Papua New Guinea,ANT,5811
+2026-03-10 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2026-03-10 00:00:00,transition,Peru,ANT,64647
+2026-03-10 00:00:00,transition,Peru,HA/BR,992
+2026-03-10 00:00:00,transition,Rwanda,ANT,24854
+2026-03-10 00:00:00,transition,Tanzania,ANT,36173
+2026-03-10 00:00:00,transition,Tanzania,HA/BR,580
+2026-03-10 00:00:00,transition,Uganda,ANT,21727
+2026-03-10 00:00:00,transition,Uganda,HA/BR,320
+2026-03-10 00:00:00,transition,Venezuela,HA/BR,3000
+2026-06-05 00:00:00,certified,Brazil,ANT,10740
+2026-06-05 00:00:00,certified,Burundi,ANT,1453
+2026-06-05 00:00:00,certified,Burundi,HA/BR,285
+2026-06-05 00:00:00,certified,Colombia,ANT,25
+2026-06-05 00:00:00,certified,Colombia,NOLA,225
+2026-06-05 00:00:00,certified,El Salvador,ANT,4343
+2026-06-05 00:00:00,certified,Guatemala,ANT,1375
+2026-06-05 00:00:00,certified,Guatemala,HOU,2200
+2026-06-05 00:00:00,certified,Honduras,ANT,37224
+2026-06-05 00:00:00,certified,Honduras,HA/BR,675
+2026-06-05 00:00:00,certified,Honduras,HOU,56684
+2026-06-05 00:00:00,certified,Honduras,MIAMI,7246
+2026-06-05 00:00:00,certified,Honduras,NOLA,15992
+2026-06-05 00:00:00,certified,Honduras,NY,35
+2026-06-05 00:00:00,certified,India,ANT,13724
+2026-06-05 00:00:00,certified,India,HA/BR,2349
+2026-06-05 00:00:00,certified,India,MIAMI,1030
+2026-06-05 00:00:00,certified,Kenya,ANT,5873
+2026-06-05 00:00:00,certified,Kenya,HA/BR,1299
+2026-06-05 00:00:00,certified,Kenya,MIAMI,570
+2026-06-05 00:00:00,certified,Mexico,ANT,41318
+2026-06-05 00:00:00,certified,Mexico,NOLA,10799
+2026-06-05 00:00:00,certified,Mexico,NY,7541
+2026-06-05 00:00:00,certified,Nicaragua,ANT,38850
+2026-06-05 00:00:00,certified,Nicaragua,HOU,1125
+2026-06-05 00:00:00,certified,Papua New Guinea,ANT,5233
+2026-06-05 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2026-06-05 00:00:00,certified,Papua New Guinea,NY,425
+2026-06-05 00:00:00,certified,Peru,ANT,57313
+2026-06-05 00:00:00,certified,Peru,HA/BR,496
+2026-06-05 00:00:00,certified,Peru,MIAMI,3500
+2026-06-05 00:00:00,certified,Peru,NY,98
+2026-06-05 00:00:00,certified,Rwanda,ANT,14235
+2026-06-05 00:00:00,certified,Tanzania,ANT,11563
+2026-06-05 00:00:00,certified,Tanzania,HA/BR,1830
+2026-06-05 00:00:00,certified,Uganda,ANT,41146
+2026-06-05 00:00:00,certified,Uganda,HA/BR,320
+2026-06-05 00:00:00,certified,Venezuela,HA/BR,3000
+2026-06-05 00:00:00,certified,Venezuela,MIAMI,4250
+2026-06-05 00:00:00,certified,Venezuela,NOLA,250
+2026-06-05 00:00:00,certified,Venezuela,NY,2500
+2026-06-05 00:00:00,pending,Honduras,ANT,275
+2026-06-05 00:00:00,transition,Brazil,ANT,10675
+2026-06-05 00:00:00,transition,Burundi,ANT,1453
+2026-06-05 00:00:00,transition,Burundi,HA/BR,285
+2026-06-05 00:00:00,transition,Colombia,ANT,25
+2026-06-05 00:00:00,transition,El Salvador,ANT,4343
+2026-06-05 00:00:00,transition,Guatemala,ANT,1375
+2026-06-05 00:00:00,transition,Honduras,ANT,36721
+2026-06-05 00:00:00,transition,Honduras,HA/BR,675
+2026-06-05 00:00:00,transition,India,ANT,13719
+2026-06-05 00:00:00,transition,India,HA/BR,2349
+2026-06-05 00:00:00,transition,Kenya,ANT,5873
+2026-06-05 00:00:00,transition,Kenya,HA/BR,1299
+2026-06-05 00:00:00,transition,Mexico,ANT,40962
+2026-06-05 00:00:00,transition,Nicaragua,ANT,38850
+2026-06-05 00:00:00,transition,Papua New Guinea,ANT,5233
+2026-06-05 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2026-06-05 00:00:00,transition,Peru,ANT,56813
+2026-06-05 00:00:00,transition,Peru,HA/BR,496
+2026-06-05 00:00:00,transition,Rwanda,ANT,10257
+2026-06-05 00:00:00,transition,Tanzania,ANT,11563
+2026-06-05 00:00:00,transition,Tanzania,HA/BR,580
+2026-06-05 00:00:00,transition,Uganda,ANT,40861
+2026-06-05 00:00:00,transition,Uganda,HA/BR,320
+2026-06-05 00:00:00,transition,Venezuela,HA/BR,3000
+2026-06-09 00:00:00,certified,Brazil,ANT,10740
+2026-06-09 00:00:00,certified,Burundi,ANT,1453
+2026-06-09 00:00:00,certified,Burundi,HA/BR,285
+2026-06-09 00:00:00,certified,Colombia,ANT,25
+2026-06-09 00:00:00,certified,Colombia,NOLA,225
+2026-06-09 00:00:00,certified,El Salvador,ANT,4343
+2026-06-09 00:00:00,certified,Guatemala,ANT,1375
+2026-06-09 00:00:00,certified,Guatemala,HOU,2200
+2026-06-09 00:00:00,certified,Honduras,ANT,36674
+2026-06-09 00:00:00,certified,Honduras,HA/BR,675
+2026-06-09 00:00:00,certified,Honduras,HOU,56409
+2026-06-09 00:00:00,certified,Honduras,MIAMI,7246
+2026-06-09 00:00:00,certified,Honduras,NOLA,15992
+2026-06-09 00:00:00,certified,Honduras,NY,35
+2026-06-09 00:00:00,certified,India,ANT,13392
+2026-06-09 00:00:00,certified,India,HA/BR,2349
+2026-06-09 00:00:00,certified,India,MIAMI,1030
+2026-06-09 00:00:00,certified,Kenya,ANT,5873
+2026-06-09 00:00:00,certified,Kenya,HA/BR,1299
+2026-06-09 00:00:00,certified,Kenya,MIAMI,570
+2026-06-09 00:00:00,certified,Mexico,ANT,36818
+2026-06-09 00:00:00,certified,Mexico,NOLA,10799
+2026-06-09 00:00:00,certified,Mexico,NY,6041
+2026-06-09 00:00:00,certified,Nicaragua,ANT,38575
+2026-06-09 00:00:00,certified,Nicaragua,HOU,1125
+2026-06-09 00:00:00,certified,Papua New Guinea,ANT,5233
+2026-06-09 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2026-06-09 00:00:00,certified,Papua New Guinea,NY,425
+2026-06-09 00:00:00,certified,Peru,ANT,57313
+2026-06-09 00:00:00,certified,Peru,HA/BR,496
+2026-06-09 00:00:00,certified,Peru,MIAMI,3500
+2026-06-09 00:00:00,certified,Peru,NY,98
+2026-06-09 00:00:00,certified,Rwanda,ANT,14235
+2026-06-09 00:00:00,certified,Tanzania,ANT,11563
+2026-06-09 00:00:00,certified,Tanzania,HA/BR,1830
+2026-06-09 00:00:00,certified,Uganda,ANT,39721
+2026-06-09 00:00:00,certified,Uganda,HA/BR,320
+2026-06-09 00:00:00,certified,Venezuela,HA/BR,3000
+2026-06-09 00:00:00,certified,Venezuela,MIAMI,3750
+2026-06-09 00:00:00,certified,Venezuela,NOLA,250
+2026-06-09 00:00:00,certified,Venezuela,NY,2250
+2026-06-09 00:00:00,pending,Honduras,ANT,275
+2026-06-09 00:00:00,transition,Brazil,ANT,10675
+2026-06-09 00:00:00,transition,Burundi,ANT,1453
+2026-06-09 00:00:00,transition,Burundi,HA/BR,285
+2026-06-09 00:00:00,transition,Colombia,ANT,25
+2026-06-09 00:00:00,transition,El Salvador,ANT,4343
+2026-06-09 00:00:00,transition,Guatemala,ANT,1375
+2026-06-09 00:00:00,transition,Honduras,ANT,36171
+2026-06-09 00:00:00,transition,Honduras,HA/BR,675
+2026-06-09 00:00:00,transition,India,ANT,13387
+2026-06-09 00:00:00,transition,India,HA/BR,2349
+2026-06-09 00:00:00,transition,Kenya,ANT,5873
+2026-06-09 00:00:00,transition,Kenya,HA/BR,1299
+2026-06-09 00:00:00,transition,Mexico,ANT,36462
+2026-06-09 00:00:00,transition,Nicaragua,ANT,38575
+2026-06-09 00:00:00,transition,Papua New Guinea,ANT,5233
+2026-06-09 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2026-06-09 00:00:00,transition,Peru,ANT,56813
+2026-06-09 00:00:00,transition,Peru,HA/BR,496
+2026-06-09 00:00:00,transition,Rwanda,ANT,10257
+2026-06-09 00:00:00,transition,Tanzania,ANT,11563
+2026-06-09 00:00:00,transition,Tanzania,HA/BR,580
+2026-06-09 00:00:00,transition,Uganda,ANT,39436
+2026-06-09 00:00:00,transition,Uganda,HA/BR,320
+2026-06-09 00:00:00,transition,Venezuela,HA/BR,3000
+2026-06-26 00:00:00,certified,Brazil,ANT,10455
+2026-06-26 00:00:00,certified,Burundi,ANT,714
+2026-06-26 00:00:00,certified,Burundi,HA/BR,285
+2026-06-26 00:00:00,certified,Colombia,ANT,25
+2026-06-26 00:00:00,certified,Colombia,NOLA,225
+2026-06-26 00:00:00,certified,El Salvador,ANT,3243
+2026-06-26 00:00:00,certified,Guatemala,ANT,1375
+2026-06-26 00:00:00,certified,Guatemala,HOU,1650
+2026-06-26 00:00:00,certified,Honduras,ANT,35624
+2026-06-26 00:00:00,certified,Honduras,HA/BR,675
+2026-06-26 00:00:00,certified,Honduras,HOU,53692
+2026-06-26 00:00:00,certified,Honduras,MIAMI,7246
+2026-06-26 00:00:00,certified,Honduras,NOLA,14742
+2026-06-26 00:00:00,certified,Honduras,NY,35
+2026-06-26 00:00:00,certified,India,ANT,13392
+2026-06-26 00:00:00,certified,India,HA/BR,2349
+2026-06-26 00:00:00,certified,India,MIAMI,1030
+2026-06-26 00:00:00,certified,Kenya,ANT,4628
+2026-06-26 00:00:00,certified,Kenya,HA/BR,1299
+2026-06-26 00:00:00,certified,Kenya,MIAMI,570
+2026-06-26 00:00:00,certified,Mexico,ANT,34509
+2026-06-26 00:00:00,certified,Mexico,NOLA,10799
+2026-06-26 00:00:00,certified,Mexico,NY,5755
+2026-06-26 00:00:00,certified,Nicaragua,ANT,28951
+2026-06-26 00:00:00,certified,Nicaragua,HOU,1125
+2026-06-26 00:00:00,certified,Papua New Guinea,ANT,5233
+2026-06-26 00:00:00,certified,Papua New Guinea,HA/BR,10365
+2026-06-26 00:00:00,certified,Papua New Guinea,NY,320
+2026-06-26 00:00:00,certified,Peru,ANT,57313
+2026-06-26 00:00:00,certified,Peru,HA/BR,496
+2026-06-26 00:00:00,certified,Peru,MIAMI,2500
+2026-06-26 00:00:00,certified,Peru,NY,98
+2026-06-26 00:00:00,certified,Rwanda,ANT,10709
+2026-06-26 00:00:00,certified,Tanzania,ANT,11563
+2026-06-26 00:00:00,certified,Tanzania,HA/BR,1830
+2026-06-26 00:00:00,certified,Uganda,ANT,38694
+2026-06-26 00:00:00,certified,Uganda,HA/BR,320
+2026-06-26 00:00:00,certified,Venezuela,HA/BR,3000
+2026-06-26 00:00:00,certified,Venezuela,MIAMI,3750
+2026-06-26 00:00:00,certified,Venezuela,NOLA,250
+2026-06-26 00:00:00,certified,Venezuela,NY,1250
+2026-06-26 00:00:00,pending,Honduras,ANT,275
+2026-06-26 00:00:00,transition,Brazil,ANT,10390
+2026-06-26 00:00:00,transition,Burundi,ANT,714
+2026-06-26 00:00:00,transition,Burundi,HA/BR,285
+2026-06-26 00:00:00,transition,Colombia,ANT,25
+2026-06-26 00:00:00,transition,El Salvador,ANT,3243
+2026-06-26 00:00:00,transition,Guatemala,ANT,1375
+2026-06-26 00:00:00,transition,Honduras,ANT,35121
+2026-06-26 00:00:00,transition,Honduras,HA/BR,675
+2026-06-26 00:00:00,transition,India,ANT,13387
+2026-06-26 00:00:00,transition,India,HA/BR,2349
+2026-06-26 00:00:00,transition,Kenya,ANT,4628
+2026-06-26 00:00:00,transition,Kenya,HA/BR,1299
+2026-06-26 00:00:00,transition,Mexico,ANT,34153
+2026-06-26 00:00:00,transition,Nicaragua,ANT,28951
+2026-06-26 00:00:00,transition,Papua New Guinea,ANT,5233
+2026-06-26 00:00:00,transition,Papua New Guinea,HA/BR,10365
+2026-06-26 00:00:00,transition,Peru,ANT,56813
+2026-06-26 00:00:00,transition,Peru,HA/BR,496
+2026-06-26 00:00:00,transition,Rwanda,ANT,7016
+2026-06-26 00:00:00,transition,Tanzania,ANT,11563
+2026-06-26 00:00:00,transition,Tanzania,HA/BR,580
+2026-06-26 00:00:00,transition,Uganda,ANT,38409
+2026-06-26 00:00:00,transition,Uganda,HA/BR,320
+2026-06-26 00:00:00,transition,Venezuela,HA/BR,3000
+2026-09-09 00:00:00,certified,Brazil,ANT,7710
+2026-09-09 00:00:00,certified,Brazil,NY,960
+2026-09-09 00:00:00,certified,Burundi,ANT,960
+2026-09-09 00:00:00,certified,Burundi,HA/BR,285
+2026-09-09 00:00:00,certified,Colombia,ANT,25
+2026-09-09 00:00:00,certified,Colombia,NOLA,225
+2026-09-09 00:00:00,certified,El Salvador,ANT,868
+2026-09-09 00:00:00,certified,Guatemala,HOU,1375
+2026-09-09 00:00:00,certified,Honduras,ANT,10937
+2026-09-09 00:00:00,certified,Honduras,HA/BR,125
+2026-09-09 00:00:00,certified,Honduras,HOU,39029
+2026-09-09 00:00:00,certified,Honduras,MIAMI,1147
+2026-09-09 00:00:00,certified,Honduras,NOLA,4396
+2026-09-09 00:00:00,certified,India,ANT,4984
+2026-09-09 00:00:00,certified,India,HA/BR,1709
+2026-09-09 00:00:00,certified,India,MIAMI,710
+2026-09-09 00:00:00,certified,Kenya,ANT,2880
+2026-09-09 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-09 00:00:00,certified,Mexico,ANT,12389
+2026-09-09 00:00:00,certified,Mexico,NOLA,5367
+2026-09-09 00:00:00,certified,Mexico,NY,36
+2026-09-09 00:00:00,certified,Nicaragua,ANT,12412
+2026-09-09 00:00:00,certified,Nicaragua,HOU,25
+2026-09-09 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-09 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-09 00:00:00,certified,Peru,ANT,46602
+2026-09-09 00:00:00,certified,Peru,HA/BR,496
+2026-09-09 00:00:00,certified,Peru,MIAMI,1500
+2026-09-09 00:00:00,certified,Peru,NY,98
+2026-09-09 00:00:00,certified,Rwanda,ANT,7196
+2026-09-09 00:00:00,certified,Tanzania,ANT,9344
+2026-09-09 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-09 00:00:00,certified,Uganda,ANT,35287
+2026-09-09 00:00:00,certified,Uganda,HA/BR,35
+2026-09-09 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-09 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-09 00:00:00,certified,Venezuela,NY,250
+2026-09-09 00:00:00,graded_failed,Brazil,ANT,1283
+2026-09-09 00:00:00,graded_passed,Brazil,ANT,1282
+2026-09-09 00:00:00,graded_passed,Brazil,NY,640
+2026-09-09 00:00:00,pending,Brazil,ANT,54310
+2026-09-09 00:00:00,pending,Honduras,HOU,13915
+2026-09-09 00:00:00,pending,Kenya,ANT,960
+2026-09-09 00:00:00,transition,Brazil,ANT,7645
+2026-09-09 00:00:00,transition,Burundi,ANT,960
+2026-09-09 00:00:00,transition,Burundi,HA/BR,285
+2026-09-09 00:00:00,transition,Colombia,ANT,25
+2026-09-09 00:00:00,transition,El Salvador,ANT,868
+2026-09-09 00:00:00,transition,Honduras,ANT,10434
+2026-09-09 00:00:00,transition,Honduras,HA/BR,125
+2026-09-09 00:00:00,transition,India,ANT,4979
+2026-09-09 00:00:00,transition,India,HA/BR,1709
+2026-09-09 00:00:00,transition,Kenya,ANT,2880
+2026-09-09 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-09 00:00:00,transition,Mexico,ANT,12033
+2026-09-09 00:00:00,transition,Nicaragua,ANT,12412
+2026-09-09 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-09 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-09 00:00:00,transition,Peru,ANT,46102
+2026-09-09 00:00:00,transition,Peru,HA/BR,496
+2026-09-09 00:00:00,transition,Rwanda,ANT,3503
+2026-09-09 00:00:00,transition,Tanzania,ANT,9344
+2026-09-09 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-09 00:00:00,transition,Uganda,ANT,35002
+2026-09-09 00:00:00,transition,Uganda,HA/BR,35
+2026-09-09 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-10 00:00:00,certified,Brazil,ANT,7710
+2026-09-10 00:00:00,certified,Brazil,NY,960
+2026-09-10 00:00:00,certified,Burundi,ANT,960
+2026-09-10 00:00:00,certified,Burundi,HA/BR,285
+2026-09-10 00:00:00,certified,Colombia,ANT,25
+2026-09-10 00:00:00,certified,Colombia,NOLA,225
+2026-09-10 00:00:00,certified,El Salvador,ANT,868
+2026-09-10 00:00:00,certified,Guatemala,HOU,1375
+2026-09-10 00:00:00,certified,Honduras,ANT,10937
+2026-09-10 00:00:00,certified,Honduras,HA/BR,125
+2026-09-10 00:00:00,certified,Honduras,HOU,39029
+2026-09-10 00:00:00,certified,Honduras,MIAMI,1147
+2026-09-10 00:00:00,certified,Honduras,NOLA,4396
+2026-09-10 00:00:00,certified,India,ANT,4984
+2026-09-10 00:00:00,certified,India,HA/BR,1709
+2026-09-10 00:00:00,certified,India,MIAMI,710
+2026-09-10 00:00:00,certified,Kenya,ANT,885
+2026-09-10 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-10 00:00:00,certified,Mexico,ANT,12389
+2026-09-10 00:00:00,certified,Mexico,NOLA,5367
+2026-09-10 00:00:00,certified,Mexico,NY,36
+2026-09-10 00:00:00,certified,Nicaragua,ANT,12412
+2026-09-10 00:00:00,certified,Nicaragua,HOU,25
+2026-09-10 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-10 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-10 00:00:00,certified,Peru,ANT,46602
+2026-09-10 00:00:00,certified,Peru,HA/BR,496
+2026-09-10 00:00:00,certified,Peru,MIAMI,1500
+2026-09-10 00:00:00,certified,Peru,NY,98
+2026-09-10 00:00:00,certified,Rwanda,ANT,7196
+2026-09-10 00:00:00,certified,Tanzania,ANT,9344
+2026-09-10 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-10 00:00:00,certified,Uganda,ANT,35287
+2026-09-10 00:00:00,certified,Uganda,HA/BR,35
+2026-09-10 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-10 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-10 00:00:00,certified,Venezuela,NY,250
+2026-09-10 00:00:00,pending,Brazil,ANT,61430
+2026-09-10 00:00:00,pending,Honduras,HOU,13915
+2026-09-10 00:00:00,pending,Kenya,ANT,960
+2026-09-10 00:00:00,transition,Brazil,ANT,7645
+2026-09-10 00:00:00,transition,Burundi,ANT,960
+2026-09-10 00:00:00,transition,Burundi,HA/BR,285
+2026-09-10 00:00:00,transition,Colombia,ANT,25
+2026-09-10 00:00:00,transition,El Salvador,ANT,868
+2026-09-10 00:00:00,transition,Honduras,ANT,10434
+2026-09-10 00:00:00,transition,Honduras,HA/BR,125
+2026-09-10 00:00:00,transition,India,ANT,4979
+2026-09-10 00:00:00,transition,India,HA/BR,1709
+2026-09-10 00:00:00,transition,Kenya,ANT,885
+2026-09-10 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-10 00:00:00,transition,Mexico,ANT,12033
+2026-09-10 00:00:00,transition,Nicaragua,ANT,12412
+2026-09-10 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-10 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-10 00:00:00,transition,Peru,ANT,46102
+2026-09-10 00:00:00,transition,Peru,HA/BR,496
+2026-09-10 00:00:00,transition,Rwanda,ANT,3503
+2026-09-10 00:00:00,transition,Tanzania,ANT,9344
+2026-09-10 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-10 00:00:00,transition,Uganda,ANT,35002
+2026-09-10 00:00:00,transition,Uganda,HA/BR,35
+2026-09-10 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-11 00:00:00,certified,Brazil,ANT,7710
+2026-09-11 00:00:00,certified,Brazil,NY,960
+2026-09-11 00:00:00,certified,Burundi,ANT,960
+2026-09-11 00:00:00,certified,Burundi,HA/BR,285
+2026-09-11 00:00:00,certified,Colombia,ANT,25
+2026-09-11 00:00:00,certified,Colombia,NOLA,225
+2026-09-11 00:00:00,certified,El Salvador,ANT,868
+2026-09-11 00:00:00,certified,Guatemala,HOU,1375
+2026-09-11 00:00:00,certified,Honduras,ANT,10937
+2026-09-11 00:00:00,certified,Honduras,HA/BR,125
+2026-09-11 00:00:00,certified,Honduras,HOU,38979
+2026-09-11 00:00:00,certified,Honduras,MIAMI,1147
+2026-09-11 00:00:00,certified,Honduras,NOLA,4396
+2026-09-11 00:00:00,certified,India,ANT,4984
+2026-09-11 00:00:00,certified,India,HA/BR,1709
+2026-09-11 00:00:00,certified,India,MIAMI,710
+2026-09-11 00:00:00,certified,Kenya,ANT,885
+2026-09-11 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-11 00:00:00,certified,Mexico,ANT,12353
+2026-09-11 00:00:00,certified,Mexico,NOLA,5367
+2026-09-11 00:00:00,certified,Mexico,NY,36
+2026-09-11 00:00:00,certified,Nicaragua,ANT,11973
+2026-09-11 00:00:00,certified,Nicaragua,HOU,25
+2026-09-11 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-11 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-11 00:00:00,certified,Peru,ANT,46602
+2026-09-11 00:00:00,certified,Peru,HA/BR,496
+2026-09-11 00:00:00,certified,Peru,MIAMI,1500
+2026-09-11 00:00:00,certified,Peru,NY,98
+2026-09-11 00:00:00,certified,Rwanda,ANT,7196
+2026-09-11 00:00:00,certified,Tanzania,ANT,9344
+2026-09-11 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-11 00:00:00,certified,Uganda,ANT,35287
+2026-09-11 00:00:00,certified,Uganda,HA/BR,35
+2026-09-11 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-11 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-11 00:00:00,certified,Venezuela,NY,250
+2026-09-11 00:00:00,pending,Brazil,ANT,63995
+2026-09-11 00:00:00,pending,Honduras,HOU,13865
+2026-09-11 00:00:00,pending,Kenya,ANT,960
+2026-09-11 00:00:00,transition,Brazil,ANT,7645
+2026-09-11 00:00:00,transition,Burundi,ANT,960
+2026-09-11 00:00:00,transition,Burundi,HA/BR,285
+2026-09-11 00:00:00,transition,Colombia,ANT,25
+2026-09-11 00:00:00,transition,El Salvador,ANT,868
+2026-09-11 00:00:00,transition,Honduras,ANT,10434
+2026-09-11 00:00:00,transition,Honduras,HA/BR,125
+2026-09-11 00:00:00,transition,India,ANT,4979
+2026-09-11 00:00:00,transition,India,HA/BR,1709
+2026-09-11 00:00:00,transition,Kenya,ANT,885
+2026-09-11 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-11 00:00:00,transition,Mexico,ANT,11997
+2026-09-11 00:00:00,transition,Nicaragua,ANT,11973
+2026-09-11 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-11 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-11 00:00:00,transition,Peru,ANT,46102
+2026-09-11 00:00:00,transition,Peru,HA/BR,496
+2026-09-11 00:00:00,transition,Rwanda,ANT,3503
+2026-09-11 00:00:00,transition,Tanzania,ANT,9344
+2026-09-11 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-11 00:00:00,transition,Uganda,ANT,35002
+2026-09-11 00:00:00,transition,Uganda,HA/BR,35
+2026-09-11 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-14 00:00:00,certified,Brazil,ANT,7710
+2026-09-14 00:00:00,certified,Brazil,NY,960
+2026-09-14 00:00:00,certified,Burundi,ANT,960
+2026-09-14 00:00:00,certified,Burundi,HA/BR,285
+2026-09-14 00:00:00,certified,Colombia,ANT,25
+2026-09-14 00:00:00,certified,Colombia,NOLA,225
+2026-09-14 00:00:00,certified,El Salvador,ANT,868
+2026-09-14 00:00:00,certified,Guatemala,HOU,1375
+2026-09-14 00:00:00,certified,Honduras,ANT,10937
+2026-09-14 00:00:00,certified,Honduras,HA/BR,125
+2026-09-14 00:00:00,certified,Honduras,HOU,38979
+2026-09-14 00:00:00,certified,Honduras,MIAMI,1147
+2026-09-14 00:00:00,certified,Honduras,NOLA,4396
+2026-09-14 00:00:00,certified,India,ANT,4984
+2026-09-14 00:00:00,certified,India,HA/BR,1709
+2026-09-14 00:00:00,certified,India,MIAMI,710
+2026-09-14 00:00:00,certified,Kenya,ANT,885
+2026-09-14 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-14 00:00:00,certified,Mexico,ANT,12353
+2026-09-14 00:00:00,certified,Mexico,NOLA,5367
+2026-09-14 00:00:00,certified,Mexico,NY,36
+2026-09-14 00:00:00,certified,Nicaragua,ANT,11973
+2026-09-14 00:00:00,certified,Nicaragua,HOU,25
+2026-09-14 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-14 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-14 00:00:00,certified,Peru,ANT,46602
+2026-09-14 00:00:00,certified,Peru,HA/BR,496
+2026-09-14 00:00:00,certified,Peru,MIAMI,1500
+2026-09-14 00:00:00,certified,Peru,NY,98
+2026-09-14 00:00:00,certified,Rwanda,ANT,7196
+2026-09-14 00:00:00,certified,Tanzania,ANT,9344
+2026-09-14 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-14 00:00:00,certified,Uganda,ANT,35287
+2026-09-14 00:00:00,certified,Uganda,HA/BR,35
+2026-09-14 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-14 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-14 00:00:00,certified,Venezuela,NY,250
+2026-09-14 00:00:00,pending,Brazil,ANT,63995
+2026-09-14 00:00:00,pending,Honduras,HOU,13865
+2026-09-14 00:00:00,pending,Kenya,ANT,960
+2026-09-14 00:00:00,transition,Brazil,ANT,7645
+2026-09-14 00:00:00,transition,Burundi,ANT,960
+2026-09-14 00:00:00,transition,Burundi,HA/BR,285
+2026-09-14 00:00:00,transition,Colombia,ANT,25
+2026-09-14 00:00:00,transition,El Salvador,ANT,868
+2026-09-14 00:00:00,transition,Honduras,ANT,10434
+2026-09-14 00:00:00,transition,Honduras,HA/BR,125
+2026-09-14 00:00:00,transition,India,ANT,4979
+2026-09-14 00:00:00,transition,India,HA/BR,1709
+2026-09-14 00:00:00,transition,Kenya,ANT,885
+2026-09-14 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-14 00:00:00,transition,Mexico,ANT,11997
+2026-09-14 00:00:00,transition,Nicaragua,ANT,11973
+2026-09-14 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-14 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-14 00:00:00,transition,Peru,ANT,46102
+2026-09-14 00:00:00,transition,Peru,HA/BR,496
+2026-09-14 00:00:00,transition,Rwanda,ANT,3503
+2026-09-14 00:00:00,transition,Tanzania,ANT,9344
+2026-09-14 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-14 00:00:00,transition,Uganda,ANT,35002
+2026-09-14 00:00:00,transition,Uganda,HA/BR,35
+2026-09-14 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-15 00:00:00,certified,Brazil,ANT,7710
+2026-09-15 00:00:00,certified,Brazil,NY,960
+2026-09-15 00:00:00,certified,Burundi,ANT,960
+2026-09-15 00:00:00,certified,Burundi,HA/BR,285
+2026-09-15 00:00:00,certified,Colombia,ANT,25
+2026-09-15 00:00:00,certified,Colombia,NOLA,225
+2026-09-15 00:00:00,certified,El Salvador,ANT,868
+2026-09-15 00:00:00,certified,Guatemala,HOU,1375
+2026-09-15 00:00:00,certified,Honduras,ANT,10937
+2026-09-15 00:00:00,certified,Honduras,HA/BR,125
+2026-09-15 00:00:00,certified,Honduras,HOU,38979
+2026-09-15 00:00:00,certified,Honduras,MIAMI,1147
+2026-09-15 00:00:00,certified,Honduras,NOLA,4396
+2026-09-15 00:00:00,certified,India,ANT,4984
+2026-09-15 00:00:00,certified,India,HA/BR,1709
+2026-09-15 00:00:00,certified,India,MIAMI,710
+2026-09-15 00:00:00,certified,Kenya,ANT,885
+2026-09-15 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-15 00:00:00,certified,Mexico,ANT,12353
+2026-09-15 00:00:00,certified,Mexico,NOLA,5081
+2026-09-15 00:00:00,certified,Mexico,NY,36
+2026-09-15 00:00:00,certified,Nicaragua,ANT,11973
+2026-09-15 00:00:00,certified,Nicaragua,HOU,25
+2026-09-15 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-15 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-15 00:00:00,certified,Peru,ANT,46602
+2026-09-15 00:00:00,certified,Peru,HA/BR,496
+2026-09-15 00:00:00,certified,Peru,MIAMI,1500
+2026-09-15 00:00:00,certified,Peru,NY,98
+2026-09-15 00:00:00,certified,Rwanda,ANT,7196
+2026-09-15 00:00:00,certified,Tanzania,ANT,9344
+2026-09-15 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-15 00:00:00,certified,Uganda,ANT,35287
+2026-09-15 00:00:00,certified,Uganda,HA/BR,35
+2026-09-15 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-15 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-15 00:00:00,certified,Venezuela,NY,250
+2026-09-15 00:00:00,pending,Brazil,ANT,63995
+2026-09-15 00:00:00,pending,Honduras,HOU,13865
+2026-09-15 00:00:00,pending,Kenya,ANT,960
+2026-09-15 00:00:00,transition,Brazil,ANT,7645
+2026-09-15 00:00:00,transition,Burundi,ANT,960
+2026-09-15 00:00:00,transition,Burundi,HA/BR,285
+2026-09-15 00:00:00,transition,Colombia,ANT,25
+2026-09-15 00:00:00,transition,El Salvador,ANT,868
+2026-09-15 00:00:00,transition,Honduras,ANT,10434
+2026-09-15 00:00:00,transition,Honduras,HA/BR,125
+2026-09-15 00:00:00,transition,India,ANT,4979
+2026-09-15 00:00:00,transition,India,HA/BR,1709
+2026-09-15 00:00:00,transition,Kenya,ANT,885
+2026-09-15 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-15 00:00:00,transition,Mexico,ANT,11997
+2026-09-15 00:00:00,transition,Nicaragua,ANT,11973
+2026-09-15 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-15 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-15 00:00:00,transition,Peru,ANT,46102
+2026-09-15 00:00:00,transition,Peru,HA/BR,496
+2026-09-15 00:00:00,transition,Rwanda,ANT,3503
+2026-09-15 00:00:00,transition,Tanzania,ANT,9344
+2026-09-15 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-15 00:00:00,transition,Uganda,ANT,35002
+2026-09-15 00:00:00,transition,Uganda,HA/BR,35
+2026-09-15 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-16 00:00:00,certified,Brazil,ANT,22960
+2026-09-16 00:00:00,certified,Brazil,NY,960
+2026-09-16 00:00:00,certified,Burundi,ANT,960
+2026-09-16 00:00:00,certified,Burundi,HA/BR,285
+2026-09-16 00:00:00,certified,Colombia,ANT,25
+2026-09-16 00:00:00,certified,Colombia,NOLA,225
+2026-09-16 00:00:00,certified,El Salvador,ANT,868
+2026-09-16 00:00:00,certified,Guatemala,HOU,1375
+2026-09-16 00:00:00,certified,Honduras,ANT,10937
+2026-09-16 00:00:00,certified,Honduras,HA/BR,125
+2026-09-16 00:00:00,certified,Honduras,HOU,38979
+2026-09-16 00:00:00,certified,Honduras,MIAMI,1147
+2026-09-16 00:00:00,certified,Honduras,NOLA,4396
+2026-09-16 00:00:00,certified,India,ANT,4607
+2026-09-16 00:00:00,certified,India,HA/BR,1709
+2026-09-16 00:00:00,certified,India,MIAMI,710
+2026-09-16 00:00:00,certified,Kenya,ANT,1845
+2026-09-16 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-16 00:00:00,certified,Mexico,ANT,12353
+2026-09-16 00:00:00,certified,Mexico,NOLA,5081
+2026-09-16 00:00:00,certified,Mexico,NY,36
+2026-09-16 00:00:00,certified,Nicaragua,ANT,11973
+2026-09-16 00:00:00,certified,Nicaragua,HOU,25
+2026-09-16 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-16 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-16 00:00:00,certified,Peru,ANT,46602
+2026-09-16 00:00:00,certified,Peru,HA/BR,496
+2026-09-16 00:00:00,certified,Peru,MIAMI,1500
+2026-09-16 00:00:00,certified,Peru,NY,98
+2026-09-16 00:00:00,certified,Rwanda,ANT,7196
+2026-09-16 00:00:00,certified,Tanzania,ANT,9344
+2026-09-16 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-16 00:00:00,certified,Uganda,ANT,35287
+2026-09-16 00:00:00,certified,Uganda,HA/BR,35
+2026-09-16 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-16 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-16 00:00:00,certified,Venezuela,NY,250
+2026-09-16 00:00:00,graded_failed,Brazil,ANT,2960
+2026-09-16 00:00:00,graded_passed,Brazil,ANT,15250
+2026-09-16 00:00:00,graded_passed,Kenya,ANT,960
+2026-09-16 00:00:00,pending,Brazil,ANT,48745
+2026-09-16 00:00:00,pending,Honduras,HOU,13865
+2026-09-16 00:00:00,transition,Brazil,ANT,22895
+2026-09-16 00:00:00,transition,Burundi,ANT,960
+2026-09-16 00:00:00,transition,Burundi,HA/BR,285
+2026-09-16 00:00:00,transition,Colombia,ANT,25
+2026-09-16 00:00:00,transition,El Salvador,ANT,868
+2026-09-16 00:00:00,transition,Honduras,ANT,10434
+2026-09-16 00:00:00,transition,Honduras,HA/BR,125
+2026-09-16 00:00:00,transition,India,ANT,4602
+2026-09-16 00:00:00,transition,India,HA/BR,1709
+2026-09-16 00:00:00,transition,Kenya,ANT,1845
+2026-09-16 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-16 00:00:00,transition,Mexico,ANT,11997
+2026-09-16 00:00:00,transition,Nicaragua,ANT,11973
+2026-09-16 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-16 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-16 00:00:00,transition,Peru,ANT,46102
+2026-09-16 00:00:00,transition,Peru,HA/BR,496
+2026-09-16 00:00:00,transition,Rwanda,ANT,3503
+2026-09-16 00:00:00,transition,Tanzania,ANT,9344
+2026-09-16 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-16 00:00:00,transition,Uganda,ANT,35002
+2026-09-16 00:00:00,transition,Uganda,HA/BR,35
+2026-09-16 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-17 00:00:00,certified,Brazil,ANT,37492
+2026-09-17 00:00:00,certified,Brazil,NY,960
+2026-09-17 00:00:00,certified,Burundi,ANT,960
+2026-09-17 00:00:00,certified,Burundi,HA/BR,285
+2026-09-17 00:00:00,certified,Colombia,ANT,25
+2026-09-17 00:00:00,certified,Colombia,NOLA,225
+2026-09-17 00:00:00,certified,El Salvador,ANT,868
+2026-09-17 00:00:00,certified,Guatemala,HOU,1375
+2026-09-17 00:00:00,certified,Honduras,ANT,10937
+2026-09-17 00:00:00,certified,Honduras,HA/BR,125
+2026-09-17 00:00:00,certified,Honduras,HOU,38929
+2026-09-17 00:00:00,certified,Honduras,MIAMI,1147
+2026-09-17 00:00:00,certified,Honduras,NOLA,4396
+2026-09-17 00:00:00,certified,India,ANT,4607
+2026-09-17 00:00:00,certified,India,HA/BR,1709
+2026-09-17 00:00:00,certified,India,MIAMI,710
+2026-09-17 00:00:00,certified,Kenya,ANT,1845
+2026-09-17 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-17 00:00:00,certified,Mexico,ANT,12353
+2026-09-17 00:00:00,certified,Mexico,NOLA,5081
+2026-09-17 00:00:00,certified,Nicaragua,ANT,11935
+2026-09-17 00:00:00,certified,Nicaragua,HOU,25
+2026-09-17 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-17 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-17 00:00:00,certified,Peru,ANT,46602
+2026-09-17 00:00:00,certified,Peru,HA/BR,496
+2026-09-17 00:00:00,certified,Peru,MIAMI,1500
+2026-09-17 00:00:00,certified,Peru,NY,98
+2026-09-17 00:00:00,certified,Rwanda,ANT,7196
+2026-09-17 00:00:00,certified,Tanzania,ANT,9344
+2026-09-17 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-17 00:00:00,certified,Uganda,ANT,35287
+2026-09-17 00:00:00,certified,Uganda,HA/BR,35
+2026-09-17 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-17 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-17 00:00:00,certified,Venezuela,NY,250
+2026-09-17 00:00:00,graded_failed,Brazil,ANT,5715
+2026-09-17 00:00:00,graded_passed,Brazil,ANT,14532
+2026-09-17 00:00:00,pending,Brazil,ANT,31168
+2026-09-17 00:00:00,pending,Honduras,HOU,13865
+2026-09-17 00:00:00,transition,Brazil,ANT,37427
+2026-09-17 00:00:00,transition,Burundi,ANT,960
+2026-09-17 00:00:00,transition,Burundi,HA/BR,285
+2026-09-17 00:00:00,transition,Colombia,ANT,25
+2026-09-17 00:00:00,transition,El Salvador,ANT,868
+2026-09-17 00:00:00,transition,Honduras,ANT,10434
+2026-09-17 00:00:00,transition,Honduras,HA/BR,125
+2026-09-17 00:00:00,transition,India,ANT,4602
+2026-09-17 00:00:00,transition,India,HA/BR,1709
+2026-09-17 00:00:00,transition,Kenya,ANT,1845
+2026-09-17 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-17 00:00:00,transition,Mexico,ANT,11997
+2026-09-17 00:00:00,transition,Nicaragua,ANT,11935
+2026-09-17 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-17 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-17 00:00:00,transition,Peru,ANT,46102
+2026-09-17 00:00:00,transition,Peru,HA/BR,496
+2026-09-17 00:00:00,transition,Rwanda,ANT,3503
+2026-09-17 00:00:00,transition,Tanzania,ANT,9344
+2026-09-17 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-17 00:00:00,transition,Uganda,ANT,35002
+2026-09-17 00:00:00,transition,Uganda,HA/BR,35
+2026-09-17 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-18 00:00:00,certified,Brazil,ANT,48020
+2026-09-18 00:00:00,certified,Brazil,NY,960
+2026-09-18 00:00:00,certified,Burundi,ANT,960
+2026-09-18 00:00:00,certified,Burundi,HA/BR,285
+2026-09-18 00:00:00,certified,Colombia,ANT,25
+2026-09-18 00:00:00,certified,Colombia,NOLA,225
+2026-09-18 00:00:00,certified,El Salvador,ANT,868
+2026-09-18 00:00:00,certified,Guatemala,HOU,1375
+2026-09-18 00:00:00,certified,Honduras,ANT,10937
+2026-09-18 00:00:00,certified,Honduras,HA/BR,125
+2026-09-18 00:00:00,certified,Honduras,HOU,38929
+2026-09-18 00:00:00,certified,Honduras,MIAMI,1147
+2026-09-18 00:00:00,certified,Honduras,NOLA,4396
+2026-09-18 00:00:00,certified,India,ANT,4607
+2026-09-18 00:00:00,certified,India,HA/BR,1709
+2026-09-18 00:00:00,certified,India,MIAMI,710
+2026-09-18 00:00:00,certified,Kenya,ANT,1845
+2026-09-18 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-18 00:00:00,certified,Mexico,ANT,12353
+2026-09-18 00:00:00,certified,Mexico,NOLA,5081
+2026-09-18 00:00:00,certified,Nicaragua,ANT,11935
+2026-09-18 00:00:00,certified,Nicaragua,HOU,25
+2026-09-18 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-18 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-18 00:00:00,certified,Peru,ANT,46602
+2026-09-18 00:00:00,certified,Peru,HA/BR,496
+2026-09-18 00:00:00,certified,Peru,MIAMI,1500
+2026-09-18 00:00:00,certified,Peru,NY,98
+2026-09-18 00:00:00,certified,Rwanda,ANT,7196
+2026-09-18 00:00:00,certified,Tanzania,ANT,9344
+2026-09-18 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-18 00:00:00,certified,Uganda,ANT,35287
+2026-09-18 00:00:00,certified,Uganda,HA/BR,35
+2026-09-18 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-18 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-18 00:00:00,certified,Venezuela,NY,250
+2026-09-18 00:00:00,graded_failed,Brazil,ANT,2462
+2026-09-18 00:00:00,graded_passed,Brazil,ANT,10528
+2026-09-18 00:00:00,pending,Brazil,ANT,23685
+2026-09-18 00:00:00,pending,Honduras,HOU,13865
+2026-09-18 00:00:00,transition,Brazil,ANT,47955
+2026-09-18 00:00:00,transition,Burundi,ANT,960
+2026-09-18 00:00:00,transition,Burundi,HA/BR,285
+2026-09-18 00:00:00,transition,Colombia,ANT,25
+2026-09-18 00:00:00,transition,El Salvador,ANT,868
+2026-09-18 00:00:00,transition,Honduras,ANT,10434
+2026-09-18 00:00:00,transition,Honduras,HA/BR,125
+2026-09-18 00:00:00,transition,India,ANT,4602
+2026-09-18 00:00:00,transition,India,HA/BR,1709
+2026-09-18 00:00:00,transition,Kenya,ANT,1845
+2026-09-18 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-18 00:00:00,transition,Mexico,ANT,11997
+2026-09-18 00:00:00,transition,Nicaragua,ANT,11935
+2026-09-18 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-18 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-18 00:00:00,transition,Peru,ANT,46102
+2026-09-18 00:00:00,transition,Peru,HA/BR,496
+2026-09-18 00:00:00,transition,Rwanda,ANT,3503
+2026-09-18 00:00:00,transition,Tanzania,ANT,9344
+2026-09-18 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-18 00:00:00,transition,Uganda,ANT,35002
+2026-09-18 00:00:00,transition,Uganda,HA/BR,35
+2026-09-18 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-21 00:00:00,certified,Brazil,ANT,48020
+2026-09-21 00:00:00,certified,Burundi,ANT,960
+2026-09-21 00:00:00,certified,Burundi,HA/BR,285
+2026-09-21 00:00:00,certified,Colombia,ANT,25
+2026-09-21 00:00:00,certified,Colombia,NOLA,225
+2026-09-21 00:00:00,certified,El Salvador,ANT,868
+2026-09-21 00:00:00,certified,Guatemala,HOU,1375
+2026-09-21 00:00:00,certified,Honduras,ANT,9987
+2026-09-21 00:00:00,certified,Honduras,HA/BR,125
+2026-09-21 00:00:00,certified,Honduras,HOU,38929
+2026-09-21 00:00:00,certified,Honduras,MIAMI,897
+2026-09-21 00:00:00,certified,Honduras,NOLA,4396
+2026-09-21 00:00:00,certified,India,ANT,4607
+2026-09-21 00:00:00,certified,India,HA/BR,1709
+2026-09-21 00:00:00,certified,India,MIAMI,710
+2026-09-21 00:00:00,certified,Kenya,ANT,1845
+2026-09-21 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-21 00:00:00,certified,Mexico,ANT,10603
+2026-09-21 00:00:00,certified,Mexico,NOLA,5081
+2026-09-21 00:00:00,certified,Nicaragua,ANT,10785
+2026-09-21 00:00:00,certified,Nicaragua,HOU,25
+2026-09-21 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-21 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-21 00:00:00,certified,Peru,ANT,46602
+2026-09-21 00:00:00,certified,Peru,HA/BR,496
+2026-09-21 00:00:00,certified,Peru,MIAMI,1500
+2026-09-21 00:00:00,certified,Peru,NY,98
+2026-09-21 00:00:00,certified,Rwanda,ANT,7196
+2026-09-21 00:00:00,certified,Tanzania,ANT,9344
+2026-09-21 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-21 00:00:00,certified,Uganda,ANT,35287
+2026-09-21 00:00:00,certified,Uganda,HA/BR,35
+2026-09-21 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-21 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-21 00:00:00,certified,Venezuela,NY,250
+2026-09-21 00:00:00,pending,Brazil,ANT,23685
+2026-09-21 00:00:00,pending,Honduras,HOU,13865
+2026-09-21 00:00:00,pending,Uganda,ANT,1670
+2026-09-21 00:00:00,transition,Brazil,ANT,47955
+2026-09-21 00:00:00,transition,Burundi,ANT,960
+2026-09-21 00:00:00,transition,Burundi,HA/BR,285
+2026-09-21 00:00:00,transition,Colombia,ANT,25
+2026-09-21 00:00:00,transition,El Salvador,ANT,868
+2026-09-21 00:00:00,transition,Honduras,ANT,9484
+2026-09-21 00:00:00,transition,Honduras,HA/BR,125
+2026-09-21 00:00:00,transition,India,ANT,4602
+2026-09-21 00:00:00,transition,India,HA/BR,1709
+2026-09-21 00:00:00,transition,Kenya,ANT,1845
+2026-09-21 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-21 00:00:00,transition,Mexico,ANT,10247
+2026-09-21 00:00:00,transition,Nicaragua,ANT,10785
+2026-09-21 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-21 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-21 00:00:00,transition,Peru,ANT,46102
+2026-09-21 00:00:00,transition,Peru,HA/BR,496
+2026-09-21 00:00:00,transition,Rwanda,ANT,3503
+2026-09-21 00:00:00,transition,Tanzania,ANT,9344
+2026-09-21 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-21 00:00:00,transition,Uganda,ANT,35002
+2026-09-21 00:00:00,transition,Uganda,HA/BR,35
+2026-09-21 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-22 00:00:00,certified,Brazil,ANT,52791
+2026-09-22 00:00:00,certified,Burundi,ANT,960
+2026-09-22 00:00:00,certified,Burundi,HA/BR,285
+2026-09-22 00:00:00,certified,Colombia,ANT,25
+2026-09-22 00:00:00,certified,Colombia,NOLA,225
+2026-09-22 00:00:00,certified,El Salvador,ANT,868
+2026-09-22 00:00:00,certified,Guatemala,HOU,1375
+2026-09-22 00:00:00,certified,Honduras,ANT,9737
+2026-09-22 00:00:00,certified,Honduras,HA/BR,125
+2026-09-22 00:00:00,certified,Honduras,HOU,38929
+2026-09-22 00:00:00,certified,Honduras,MIAMI,897
+2026-09-22 00:00:00,certified,Honduras,NOLA,4396
+2026-09-22 00:00:00,certified,India,ANT,3544
+2026-09-22 00:00:00,certified,India,HA/BR,1709
+2026-09-22 00:00:00,certified,India,MIAMI,710
+2026-09-22 00:00:00,certified,Kenya,ANT,1845
+2026-09-22 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-22 00:00:00,certified,Mexico,ANT,10468
+2026-09-22 00:00:00,certified,Mexico,NOLA,5081
+2026-09-22 00:00:00,certified,Nicaragua,ANT,10785
+2026-09-22 00:00:00,certified,Nicaragua,HOU,25
+2026-09-22 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-22 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-22 00:00:00,certified,Peru,ANT,46602
+2026-09-22 00:00:00,certified,Peru,HA/BR,496
+2026-09-22 00:00:00,certified,Peru,MIAMI,1500
+2026-09-22 00:00:00,certified,Peru,NY,98
+2026-09-22 00:00:00,certified,Rwanda,ANT,7196
+2026-09-22 00:00:00,certified,Tanzania,ANT,9344
+2026-09-22 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-22 00:00:00,certified,Uganda,ANT,35287
+2026-09-22 00:00:00,certified,Uganda,HA/BR,35
+2026-09-22 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-22 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-22 00:00:00,certified,Venezuela,NY,250
+2026-09-22 00:00:00,graded_failed,Brazil,ANT,5212
+2026-09-22 00:00:00,graded_passed,Brazil,ANT,4771
+2026-09-22 00:00:00,pending,Brazil,ANT,18487
+2026-09-22 00:00:00,pending,Honduras,HOU,13865
+2026-09-22 00:00:00,pending,Uganda,ANT,1670
+2026-09-22 00:00:00,transition,Brazil,ANT,52726
+2026-09-22 00:00:00,transition,Burundi,ANT,960
+2026-09-22 00:00:00,transition,Burundi,HA/BR,285
+2026-09-22 00:00:00,transition,Colombia,ANT,25
+2026-09-22 00:00:00,transition,El Salvador,ANT,868
+2026-09-22 00:00:00,transition,Honduras,ANT,9484
+2026-09-22 00:00:00,transition,Honduras,HA/BR,125
+2026-09-22 00:00:00,transition,India,ANT,3539
+2026-09-22 00:00:00,transition,India,HA/BR,1709
+2026-09-22 00:00:00,transition,Kenya,ANT,1845
+2026-09-22 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-22 00:00:00,transition,Mexico,ANT,10112
+2026-09-22 00:00:00,transition,Nicaragua,ANT,10785
+2026-09-22 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-22 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-22 00:00:00,transition,Peru,ANT,46102
+2026-09-22 00:00:00,transition,Peru,HA/BR,496
+2026-09-22 00:00:00,transition,Rwanda,ANT,3503
+2026-09-22 00:00:00,transition,Tanzania,ANT,9344
+2026-09-22 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-22 00:00:00,transition,Uganda,ANT,35002
+2026-09-22 00:00:00,transition,Uganda,HA/BR,35
+2026-09-22 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-23 00:00:00,certified,Brazil,ANT,52791
+2026-09-23 00:00:00,certified,Burundi,ANT,960
+2026-09-23 00:00:00,certified,Burundi,HA/BR,285
+2026-09-23 00:00:00,certified,Colombia,ANT,25
+2026-09-23 00:00:00,certified,Colombia,NOLA,225
+2026-09-23 00:00:00,certified,El Salvador,ANT,868
+2026-09-23 00:00:00,certified,Guatemala,HOU,1375
+2026-09-23 00:00:00,certified,Honduras,ANT,9737
+2026-09-23 00:00:00,certified,Honduras,HA/BR,125
+2026-09-23 00:00:00,certified,Honduras,HOU,38684
+2026-09-23 00:00:00,certified,Honduras,MIAMI,897
+2026-09-23 00:00:00,certified,Honduras,NOLA,4396
+2026-09-23 00:00:00,certified,India,ANT,3544
+2026-09-23 00:00:00,certified,India,HA/BR,1709
+2026-09-23 00:00:00,certified,India,MIAMI,285
+2026-09-23 00:00:00,certified,Kenya,ANT,1845
+2026-09-23 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-23 00:00:00,certified,Mexico,ANT,10468
+2026-09-23 00:00:00,certified,Mexico,NOLA,3651
+2026-09-23 00:00:00,certified,Nicaragua,ANT,10785
+2026-09-23 00:00:00,certified,Nicaragua,HOU,25
+2026-09-23 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-23 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-23 00:00:00,certified,Peru,ANT,46602
+2026-09-23 00:00:00,certified,Peru,HA/BR,496
+2026-09-23 00:00:00,certified,Peru,MIAMI,1500
+2026-09-23 00:00:00,certified,Rwanda,ANT,7196
+2026-09-23 00:00:00,certified,Tanzania,ANT,9344
+2026-09-23 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-23 00:00:00,certified,Uganda,ANT,35287
+2026-09-23 00:00:00,certified,Uganda,HA/BR,35
+2026-09-23 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-23 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-23 00:00:00,certified,Venezuela,NY,250
+2026-09-23 00:00:00,pending,Brazil,ANT,18487
+2026-09-23 00:00:00,pending,Brazil,NY,960
+2026-09-23 00:00:00,pending,Honduras,HOU,13720
+2026-09-23 00:00:00,pending,Uganda,ANT,1670
+2026-09-23 00:00:00,transition,Brazil,ANT,52726
+2026-09-23 00:00:00,transition,Burundi,ANT,960
+2026-09-23 00:00:00,transition,Burundi,HA/BR,285
+2026-09-23 00:00:00,transition,Colombia,ANT,25
+2026-09-23 00:00:00,transition,El Salvador,ANT,868
+2026-09-23 00:00:00,transition,Honduras,ANT,9484
+2026-09-23 00:00:00,transition,Honduras,HA/BR,125
+2026-09-23 00:00:00,transition,India,ANT,3539
+2026-09-23 00:00:00,transition,India,HA/BR,1709
+2026-09-23 00:00:00,transition,Kenya,ANT,1845
+2026-09-23 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-23 00:00:00,transition,Mexico,ANT,10112
+2026-09-23 00:00:00,transition,Nicaragua,ANT,10785
+2026-09-23 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-23 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-23 00:00:00,transition,Peru,ANT,46102
+2026-09-23 00:00:00,transition,Peru,HA/BR,496
+2026-09-23 00:00:00,transition,Rwanda,ANT,3503
+2026-09-23 00:00:00,transition,Tanzania,ANT,9344
+2026-09-23 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-23 00:00:00,transition,Uganda,ANT,35002
+2026-09-23 00:00:00,transition,Uganda,HA/BR,35
+2026-09-23 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-24 00:00:00,certified,Brazil,ANT,52791
+2026-09-24 00:00:00,certified,Burundi,ANT,960
+2026-09-24 00:00:00,certified,Burundi,HA/BR,285
+2026-09-24 00:00:00,certified,Colombia,ANT,25
+2026-09-24 00:00:00,certified,Colombia,NOLA,225
+2026-09-24 00:00:00,certified,El Salvador,ANT,868
+2026-09-24 00:00:00,certified,Guatemala,HOU,1375
+2026-09-24 00:00:00,certified,Honduras,ANT,9737
+2026-09-24 00:00:00,certified,Honduras,HA/BR,125
+2026-09-24 00:00:00,certified,Honduras,HOU,38508
+2026-09-24 00:00:00,certified,Honduras,MIAMI,897
+2026-09-24 00:00:00,certified,Honduras,NOLA,4396
+2026-09-24 00:00:00,certified,India,ANT,3544
+2026-09-24 00:00:00,certified,India,HA/BR,1709
+2026-09-24 00:00:00,certified,India,MIAMI,285
+2026-09-24 00:00:00,certified,Kenya,ANT,1845
+2026-09-24 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-24 00:00:00,certified,Mexico,ANT,10468
+2026-09-24 00:00:00,certified,Mexico,NOLA,3651
+2026-09-24 00:00:00,certified,Nicaragua,ANT,10785
+2026-09-24 00:00:00,certified,Nicaragua,HOU,25
+2026-09-24 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-24 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-24 00:00:00,certified,Peru,ANT,46602
+2026-09-24 00:00:00,certified,Peru,HA/BR,496
+2026-09-24 00:00:00,certified,Peru,MIAMI,1500
+2026-09-24 00:00:00,certified,Rwanda,ANT,7196
+2026-09-24 00:00:00,certified,Tanzania,ANT,9344
+2026-09-24 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-24 00:00:00,certified,Uganda,ANT,35287
+2026-09-24 00:00:00,certified,Uganda,HA/BR,35
+2026-09-24 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-24 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-24 00:00:00,certified,Venezuela,NY,250
+2026-09-24 00:00:00,pending,Brazil,ANT,18487
+2026-09-24 00:00:00,pending,Brazil,NY,960
+2026-09-24 00:00:00,pending,Honduras,HOU,13923
+2026-09-24 00:00:00,pending,Uganda,ANT,1670
+2026-09-24 00:00:00,transition,Brazil,ANT,52726
+2026-09-24 00:00:00,transition,Burundi,ANT,960
+2026-09-24 00:00:00,transition,Burundi,HA/BR,285
+2026-09-24 00:00:00,transition,Colombia,ANT,25
+2026-09-24 00:00:00,transition,El Salvador,ANT,868
+2026-09-24 00:00:00,transition,Honduras,ANT,9484
+2026-09-24 00:00:00,transition,Honduras,HA/BR,125
+2026-09-24 00:00:00,transition,India,ANT,3539
+2026-09-24 00:00:00,transition,India,HA/BR,1709
+2026-09-24 00:00:00,transition,Kenya,ANT,1845
+2026-09-24 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-24 00:00:00,transition,Mexico,ANT,10112
+2026-09-24 00:00:00,transition,Nicaragua,ANT,10785
+2026-09-24 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-24 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-24 00:00:00,transition,Peru,ANT,46102
+2026-09-24 00:00:00,transition,Peru,HA/BR,496
+2026-09-24 00:00:00,transition,Rwanda,ANT,3503
+2026-09-24 00:00:00,transition,Tanzania,ANT,9344
+2026-09-24 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-24 00:00:00,transition,Uganda,ANT,35002
+2026-09-24 00:00:00,transition,Uganda,HA/BR,35
+2026-09-24 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-25 00:00:00,certified,Brazil,ANT,52791
+2026-09-25 00:00:00,certified,Burundi,ANT,960
+2026-09-25 00:00:00,certified,Burundi,HA/BR,285
+2026-09-25 00:00:00,certified,Colombia,ANT,25
+2026-09-25 00:00:00,certified,Colombia,NOLA,225
+2026-09-25 00:00:00,certified,El Salvador,ANT,868
+2026-09-25 00:00:00,certified,Guatemala,HOU,1375
+2026-09-25 00:00:00,certified,Honduras,ANT,9737
+2026-09-25 00:00:00,certified,Honduras,HA/BR,125
+2026-09-25 00:00:00,certified,Honduras,HOU,38508
+2026-09-25 00:00:00,certified,Honduras,MIAMI,897
+2026-09-25 00:00:00,certified,Honduras,NOLA,4396
+2026-09-25 00:00:00,certified,India,ANT,3544
+2026-09-25 00:00:00,certified,India,HA/BR,1709
+2026-09-25 00:00:00,certified,India,MIAMI,285
+2026-09-25 00:00:00,certified,Kenya,ANT,1845
+2026-09-25 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-25 00:00:00,certified,Mexico,ANT,10468
+2026-09-25 00:00:00,certified,Mexico,NOLA,3651
+2026-09-25 00:00:00,certified,Nicaragua,ANT,10785
+2026-09-25 00:00:00,certified,Nicaragua,HOU,25
+2026-09-25 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-25 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-25 00:00:00,certified,Peru,ANT,46602
+2026-09-25 00:00:00,certified,Peru,HA/BR,496
+2026-09-25 00:00:00,certified,Peru,MIAMI,1500
+2026-09-25 00:00:00,certified,Rwanda,ANT,7196
+2026-09-25 00:00:00,certified,Tanzania,ANT,9344
+2026-09-25 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-25 00:00:00,certified,Uganda,ANT,35287
+2026-09-25 00:00:00,certified,Uganda,HA/BR,35
+2026-09-25 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-25 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-25 00:00:00,certified,Venezuela,NY,250
+2026-09-25 00:00:00,pending,Brazil,ANT,18487
+2026-09-25 00:00:00,pending,Brazil,NY,960
+2026-09-25 00:00:00,pending,Honduras,HOU,13923
+2026-09-25 00:00:00,pending,Uganda,ANT,1670
+2026-09-25 00:00:00,transition,Brazil,ANT,52726
+2026-09-25 00:00:00,transition,Burundi,ANT,960
+2026-09-25 00:00:00,transition,Burundi,HA/BR,285
+2026-09-25 00:00:00,transition,Colombia,ANT,25
+2026-09-25 00:00:00,transition,El Salvador,ANT,868
+2026-09-25 00:00:00,transition,Honduras,ANT,9484
+2026-09-25 00:00:00,transition,Honduras,HA/BR,125
+2026-09-25 00:00:00,transition,India,ANT,3539
+2026-09-25 00:00:00,transition,India,HA/BR,1709
+2026-09-25 00:00:00,transition,Kenya,ANT,1845
+2026-09-25 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-25 00:00:00,transition,Mexico,ANT,10112
+2026-09-25 00:00:00,transition,Nicaragua,ANT,10785
+2026-09-25 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-25 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-25 00:00:00,transition,Peru,ANT,46102
+2026-09-25 00:00:00,transition,Peru,HA/BR,496
+2026-09-25 00:00:00,transition,Rwanda,ANT,3503
+2026-09-25 00:00:00,transition,Tanzania,ANT,9344
+2026-09-25 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-25 00:00:00,transition,Uganda,ANT,35002
+2026-09-25 00:00:00,transition,Uganda,HA/BR,35
+2026-09-25 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-28 00:00:00,certified,Brazil,ANT,52791
+2026-09-28 00:00:00,certified,Burundi,ANT,960
+2026-09-28 00:00:00,certified,Burundi,HA/BR,285
+2026-09-28 00:00:00,certified,Colombia,ANT,25
+2026-09-28 00:00:00,certified,Colombia,NOLA,225
+2026-09-28 00:00:00,certified,El Salvador,ANT,820
+2026-09-28 00:00:00,certified,Guatemala,HOU,1375
+2026-09-28 00:00:00,certified,Honduras,ANT,9737
+2026-09-28 00:00:00,certified,Honduras,HA/BR,125
+2026-09-28 00:00:00,certified,Honduras,HOU,38508
+2026-09-28 00:00:00,certified,Honduras,MIAMI,897
+2026-09-28 00:00:00,certified,Honduras,NOLA,4396
+2026-09-28 00:00:00,certified,India,ANT,3390
+2026-09-28 00:00:00,certified,India,HA/BR,1709
+2026-09-28 00:00:00,certified,India,MIAMI,285
+2026-09-28 00:00:00,certified,Kenya,ANT,1845
+2026-09-28 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-28 00:00:00,certified,Mexico,ANT,10277
+2026-09-28 00:00:00,certified,Mexico,NOLA,3651
+2026-09-28 00:00:00,certified,Nicaragua,ANT,10785
+2026-09-28 00:00:00,certified,Nicaragua,HOU,25
+2026-09-28 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-28 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-28 00:00:00,certified,Peru,ANT,45894
+2026-09-28 00:00:00,certified,Peru,HA/BR,496
+2026-09-28 00:00:00,certified,Peru,MIAMI,1500
+2026-09-28 00:00:00,certified,Rwanda,ANT,7196
+2026-09-28 00:00:00,certified,Tanzania,ANT,9344
+2026-09-28 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-28 00:00:00,certified,Uganda,ANT,35287
+2026-09-28 00:00:00,certified,Uganda,HA/BR,35
+2026-09-28 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-28 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-28 00:00:00,certified,Venezuela,NY,250
+2026-09-28 00:00:00,pending,Brazil,ANT,18487
+2026-09-28 00:00:00,pending,Brazil,NY,960
+2026-09-28 00:00:00,pending,Honduras,HOU,15023
+2026-09-28 00:00:00,pending,Uganda,ANT,1670
+2026-09-28 00:00:00,transition,Brazil,ANT,52726
+2026-09-28 00:00:00,transition,Burundi,ANT,960
+2026-09-28 00:00:00,transition,Burundi,HA/BR,285
+2026-09-28 00:00:00,transition,Colombia,ANT,25
+2026-09-28 00:00:00,transition,El Salvador,ANT,820
+2026-09-28 00:00:00,transition,Honduras,ANT,9484
+2026-09-28 00:00:00,transition,Honduras,HA/BR,125
+2026-09-28 00:00:00,transition,India,ANT,3385
+2026-09-28 00:00:00,transition,India,HA/BR,1709
+2026-09-28 00:00:00,transition,Kenya,ANT,1845
+2026-09-28 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-28 00:00:00,transition,Mexico,ANT,10027
+2026-09-28 00:00:00,transition,Nicaragua,ANT,10785
+2026-09-28 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-28 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-28 00:00:00,transition,Peru,ANT,45894
+2026-09-28 00:00:00,transition,Peru,HA/BR,496
+2026-09-28 00:00:00,transition,Rwanda,ANT,3503
+2026-09-28 00:00:00,transition,Tanzania,ANT,9344
+2026-09-28 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-28 00:00:00,transition,Uganda,ANT,35002
+2026-09-28 00:00:00,transition,Uganda,HA/BR,35
+2026-09-28 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-29 00:00:00,certified,Brazil,ANT,59676
+2026-09-29 00:00:00,certified,Burundi,ANT,960
+2026-09-29 00:00:00,certified,Burundi,HA/BR,285
+2026-09-29 00:00:00,certified,Colombia,ANT,25
+2026-09-29 00:00:00,certified,Colombia,NOLA,225
+2026-09-29 00:00:00,certified,El Salvador,ANT,820
+2026-09-29 00:00:00,certified,Guatemala,HOU,1375
+2026-09-29 00:00:00,certified,Honduras,ANT,8412
+2026-09-29 00:00:00,certified,Honduras,HA/BR,125
+2026-09-29 00:00:00,certified,Honduras,HOU,38283
+2026-09-29 00:00:00,certified,Honduras,MIAMI,897
+2026-09-29 00:00:00,certified,Honduras,NOLA,4396
+2026-09-29 00:00:00,certified,India,ANT,3390
+2026-09-29 00:00:00,certified,India,HA/BR,1709
+2026-09-29 00:00:00,certified,India,MIAMI,285
+2026-09-29 00:00:00,certified,Kenya,ANT,1525
+2026-09-29 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-29 00:00:00,certified,Mexico,ANT,10277
+2026-09-29 00:00:00,certified,Mexico,NOLA,3651
+2026-09-29 00:00:00,certified,Nicaragua,ANT,9788
+2026-09-29 00:00:00,certified,Nicaragua,HOU,25
+2026-09-29 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-29 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-29 00:00:00,certified,Peru,ANT,44394
+2026-09-29 00:00:00,certified,Peru,HA/BR,496
+2026-09-29 00:00:00,certified,Peru,MIAMI,1500
+2026-09-29 00:00:00,certified,Rwanda,ANT,7196
+2026-09-29 00:00:00,certified,Tanzania,ANT,9344
+2026-09-29 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-29 00:00:00,certified,Uganda,ANT,35287
+2026-09-29 00:00:00,certified,Uganda,HA/BR,35
+2026-09-29 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-29 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-29 00:00:00,certified,Venezuela,NY,250
+2026-09-29 00:00:00,graded_failed,Brazil,ANT,3965
+2026-09-29 00:00:00,graded_passed,Brazil,ANT,6885
+2026-09-29 00:00:00,pending,Brazil,ANT,16803
+2026-09-29 00:00:00,pending,Brazil,NY,960
+2026-09-29 00:00:00,pending,Honduras,HOU,15023
+2026-09-29 00:00:00,pending,Uganda,ANT,1670
+2026-09-29 00:00:00,transition,Brazil,ANT,59611
+2026-09-29 00:00:00,transition,Burundi,ANT,960
+2026-09-29 00:00:00,transition,Burundi,HA/BR,285
+2026-09-29 00:00:00,transition,Colombia,ANT,25
+2026-09-29 00:00:00,transition,El Salvador,ANT,820
+2026-09-29 00:00:00,transition,Honduras,ANT,8159
+2026-09-29 00:00:00,transition,Honduras,HA/BR,125
+2026-09-29 00:00:00,transition,India,ANT,3385
+2026-09-29 00:00:00,transition,India,HA/BR,1709
+2026-09-29 00:00:00,transition,Kenya,ANT,1525
+2026-09-29 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-29 00:00:00,transition,Mexico,ANT,10027
+2026-09-29 00:00:00,transition,Nicaragua,ANT,9788
+2026-09-29 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-29 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-29 00:00:00,transition,Peru,ANT,44394
+2026-09-29 00:00:00,transition,Peru,HA/BR,496
+2026-09-29 00:00:00,transition,Rwanda,ANT,3503
+2026-09-29 00:00:00,transition,Tanzania,ANT,9344
+2026-09-29 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-29 00:00:00,transition,Uganda,ANT,35002
+2026-09-29 00:00:00,transition,Uganda,HA/BR,35
+2026-09-29 00:00:00,transition,Venezuela,HA/BR,2750
+2026-09-30 00:00:00,certified,Brazil,ANT,66017
+2026-09-30 00:00:00,certified,Brazil,NY,640
+2026-09-30 00:00:00,certified,Burundi,ANT,960
+2026-09-30 00:00:00,certified,Burundi,HA/BR,285
+2026-09-30 00:00:00,certified,Colombia,ANT,25
+2026-09-30 00:00:00,certified,Colombia,NOLA,225
+2026-09-30 00:00:00,certified,El Salvador,ANT,820
+2026-09-30 00:00:00,certified,Guatemala,HOU,1375
+2026-09-30 00:00:00,certified,Honduras,ANT,8412
+2026-09-30 00:00:00,certified,Honduras,HA/BR,125
+2026-09-30 00:00:00,certified,Honduras,HOU,36733
+2026-09-30 00:00:00,certified,Honduras,MIAMI,897
+2026-09-30 00:00:00,certified,Honduras,NOLA,3850
+2026-09-30 00:00:00,certified,India,ANT,3390
+2026-09-30 00:00:00,certified,India,HA/BR,1709
+2026-09-30 00:00:00,certified,India,MIAMI,285
+2026-09-30 00:00:00,certified,Kenya,ANT,1525
+2026-09-30 00:00:00,certified,Kenya,HA/BR,1299
+2026-09-30 00:00:00,certified,Mexico,ANT,10277
+2026-09-30 00:00:00,certified,Mexico,NOLA,3365
+2026-09-30 00:00:00,certified,Nicaragua,ANT,9788
+2026-09-30 00:00:00,certified,Nicaragua,HOU,25
+2026-09-30 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-09-30 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-09-30 00:00:00,certified,Peru,ANT,44394
+2026-09-30 00:00:00,certified,Peru,HA/BR,496
+2026-09-30 00:00:00,certified,Peru,MIAMI,1500
+2026-09-30 00:00:00,certified,Rwanda,ANT,7196
+2026-09-30 00:00:00,certified,Tanzania,ANT,9344
+2026-09-30 00:00:00,certified,Tanzania,HA/BR,1725
+2026-09-30 00:00:00,certified,Uganda,ANT,35621
+2026-09-30 00:00:00,certified,Uganda,HA/BR,35
+2026-09-30 00:00:00,certified,Venezuela,HA/BR,2750
+2026-09-30 00:00:00,certified,Venezuela,MIAMI,3500
+2026-09-30 00:00:00,certified,Venezuela,NY,250
+2026-09-30 00:00:00,graded_failed,Brazil,ANT,1296
+2026-09-30 00:00:00,graded_failed,Brazil,NY,320
+2026-09-30 00:00:00,graded_failed,Uganda,ANT,1336
+2026-09-30 00:00:00,graded_passed,Brazil,ANT,6341
+2026-09-30 00:00:00,graded_passed,Brazil,NY,640
+2026-09-30 00:00:00,graded_passed,Uganda,ANT,334
+2026-09-30 00:00:00,pending,Brazil,ANT,12202
+2026-09-30 00:00:00,pending,Honduras,HOU,15023
+2026-09-30 00:00:00,transition,Brazil,ANT,65952
+2026-09-30 00:00:00,transition,Burundi,ANT,960
+2026-09-30 00:00:00,transition,Burundi,HA/BR,285
+2026-09-30 00:00:00,transition,Colombia,ANT,25
+2026-09-30 00:00:00,transition,El Salvador,ANT,820
+2026-09-30 00:00:00,transition,Honduras,ANT,8159
+2026-09-30 00:00:00,transition,Honduras,HA/BR,125
+2026-09-30 00:00:00,transition,India,ANT,3385
+2026-09-30 00:00:00,transition,India,HA/BR,1709
+2026-09-30 00:00:00,transition,Kenya,ANT,1525
+2026-09-30 00:00:00,transition,Kenya,HA/BR,1299
+2026-09-30 00:00:00,transition,Mexico,ANT,10027
+2026-09-30 00:00:00,transition,Nicaragua,ANT,9788
+2026-09-30 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-09-30 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-09-30 00:00:00,transition,Peru,ANT,44394
+2026-09-30 00:00:00,transition,Peru,HA/BR,496
+2026-09-30 00:00:00,transition,Rwanda,ANT,3503
+2026-09-30 00:00:00,transition,Tanzania,ANT,9344
+2026-09-30 00:00:00,transition,Tanzania,HA/BR,580
+2026-09-30 00:00:00,transition,Uganda,ANT,35336
+2026-09-30 00:00:00,transition,Uganda,HA/BR,35
+2026-09-30 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-01 00:00:00,certified,Brazil,ANT,66017
+2026-10-01 00:00:00,certified,Brazil,NY,640
+2026-10-01 00:00:00,certified,Burundi,ANT,960
+2026-10-01 00:00:00,certified,Burundi,HA/BR,285
+2026-10-01 00:00:00,certified,Colombia,ANT,25
+2026-10-01 00:00:00,certified,Colombia,NOLA,225
+2026-10-01 00:00:00,certified,El Salvador,ANT,820
+2026-10-01 00:00:00,certified,Guatemala,HOU,1375
+2026-10-01 00:00:00,certified,Honduras,ANT,8412
+2026-10-01 00:00:00,certified,Honduras,HA/BR,125
+2026-10-01 00:00:00,certified,Honduras,HOU,36733
+2026-10-01 00:00:00,certified,Honduras,MIAMI,897
+2026-10-01 00:00:00,certified,Honduras,NOLA,3850
+2026-10-01 00:00:00,certified,India,ANT,3390
+2026-10-01 00:00:00,certified,India,HA/BR,1709
+2026-10-01 00:00:00,certified,India,MIAMI,285
+2026-10-01 00:00:00,certified,Kenya,ANT,1525
+2026-10-01 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-01 00:00:00,certified,Mexico,ANT,10277
+2026-10-01 00:00:00,certified,Mexico,NOLA,3365
+2026-10-01 00:00:00,certified,Nicaragua,ANT,9498
+2026-10-01 00:00:00,certified,Nicaragua,HOU,25
+2026-10-01 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-01 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-01 00:00:00,certified,Peru,ANT,44394
+2026-10-01 00:00:00,certified,Peru,HA/BR,496
+2026-10-01 00:00:00,certified,Peru,MIAMI,1500
+2026-10-01 00:00:00,certified,Rwanda,ANT,7196
+2026-10-01 00:00:00,certified,Tanzania,ANT,9344
+2026-10-01 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-01 00:00:00,certified,Uganda,ANT,35621
+2026-10-01 00:00:00,certified,Uganda,HA/BR,35
+2026-10-01 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-01 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-01 00:00:00,certified,Venezuela,NY,250
+2026-10-01 00:00:00,pending,Brazil,ANT,12646
+2026-10-01 00:00:00,pending,Honduras,HOU,15023
+2026-10-01 00:00:00,transition,Brazil,ANT,65952
+2026-10-01 00:00:00,transition,Burundi,ANT,960
+2026-10-01 00:00:00,transition,Burundi,HA/BR,285
+2026-10-01 00:00:00,transition,Colombia,ANT,25
+2026-10-01 00:00:00,transition,El Salvador,ANT,820
+2026-10-01 00:00:00,transition,Honduras,ANT,8159
+2026-10-01 00:00:00,transition,Honduras,HA/BR,125
+2026-10-01 00:00:00,transition,India,ANT,3385
+2026-10-01 00:00:00,transition,India,HA/BR,1709
+2026-10-01 00:00:00,transition,Kenya,ANT,1525
+2026-10-01 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-01 00:00:00,transition,Mexico,ANT,10027
+2026-10-01 00:00:00,transition,Nicaragua,ANT,9498
+2026-10-01 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-01 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-01 00:00:00,transition,Peru,ANT,44394
+2026-10-01 00:00:00,transition,Peru,HA/BR,496
+2026-10-01 00:00:00,transition,Rwanda,ANT,3503
+2026-10-01 00:00:00,transition,Tanzania,ANT,9344
+2026-10-01 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-01 00:00:00,transition,Uganda,ANT,35336
+2026-10-01 00:00:00,transition,Uganda,HA/BR,35
+2026-10-01 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-02 00:00:00,certified,Brazil,ANT,66017
+2026-10-02 00:00:00,certified,Brazil,NY,640
+2026-10-02 00:00:00,certified,Burundi,ANT,960
+2026-10-02 00:00:00,certified,Burundi,HA/BR,285
+2026-10-02 00:00:00,certified,Colombia,ANT,25
+2026-10-02 00:00:00,certified,Colombia,NOLA,225
+2026-10-02 00:00:00,certified,El Salvador,ANT,820
+2026-10-02 00:00:00,certified,Guatemala,HOU,1375
+2026-10-02 00:00:00,certified,Honduras,ANT,8412
+2026-10-02 00:00:00,certified,Honduras,HOU,36733
+2026-10-02 00:00:00,certified,Honduras,MIAMI,897
+2026-10-02 00:00:00,certified,Honduras,NOLA,3850
+2026-10-02 00:00:00,certified,India,ANT,3390
+2026-10-02 00:00:00,certified,India,HA/BR,1709
+2026-10-02 00:00:00,certified,India,MIAMI,285
+2026-10-02 00:00:00,certified,Kenya,ANT,1525
+2026-10-02 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-02 00:00:00,certified,Mexico,ANT,10277
+2026-10-02 00:00:00,certified,Mexico,NOLA,3365
+2026-10-02 00:00:00,certified,Nicaragua,ANT,9498
+2026-10-02 00:00:00,certified,Nicaragua,HOU,25
+2026-10-02 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-02 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-02 00:00:00,certified,Peru,ANT,44394
+2026-10-02 00:00:00,certified,Peru,HA/BR,496
+2026-10-02 00:00:00,certified,Peru,MIAMI,1500
+2026-10-02 00:00:00,certified,Rwanda,ANT,7196
+2026-10-02 00:00:00,certified,Tanzania,ANT,9344
+2026-10-02 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-02 00:00:00,certified,Uganda,ANT,35621
+2026-10-02 00:00:00,certified,Uganda,HA/BR,35
+2026-10-02 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-02 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-02 00:00:00,certified,Venezuela,NY,250
+2026-10-02 00:00:00,pending,Brazil,ANT,12646
+2026-10-02 00:00:00,pending,Honduras,HOU,15798
+2026-10-02 00:00:00,transition,Brazil,ANT,65952
+2026-10-02 00:00:00,transition,Burundi,ANT,960
+2026-10-02 00:00:00,transition,Burundi,HA/BR,285
+2026-10-02 00:00:00,transition,Colombia,ANT,25
+2026-10-02 00:00:00,transition,El Salvador,ANT,820
+2026-10-02 00:00:00,transition,Honduras,ANT,8159
+2026-10-02 00:00:00,transition,India,ANT,3385
+2026-10-02 00:00:00,transition,India,HA/BR,1709
+2026-10-02 00:00:00,transition,Kenya,ANT,1525
+2026-10-02 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-02 00:00:00,transition,Mexico,ANT,10027
+2026-10-02 00:00:00,transition,Nicaragua,ANT,9498
+2026-10-02 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-02 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-02 00:00:00,transition,Peru,ANT,44394
+2026-10-02 00:00:00,transition,Peru,HA/BR,496
+2026-10-02 00:00:00,transition,Rwanda,ANT,3503
+2026-10-02 00:00:00,transition,Tanzania,ANT,9344
+2026-10-02 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-02 00:00:00,transition,Uganda,ANT,35336
+2026-10-02 00:00:00,transition,Uganda,HA/BR,35
+2026-10-02 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-05 00:00:00,certified,Brazil,ANT,66017
+2026-10-05 00:00:00,certified,Brazil,NY,640
+2026-10-05 00:00:00,certified,Burundi,ANT,960
+2026-10-05 00:00:00,certified,Burundi,HA/BR,285
+2026-10-05 00:00:00,certified,Colombia,ANT,25
+2026-10-05 00:00:00,certified,Colombia,NOLA,225
+2026-10-05 00:00:00,certified,El Salvador,ANT,820
+2026-10-05 00:00:00,certified,Guatemala,HOU,1375
+2026-10-05 00:00:00,certified,Honduras,ANT,8412
+2026-10-05 00:00:00,certified,Honduras,HOU,36483
+2026-10-05 00:00:00,certified,Honduras,MIAMI,897
+2026-10-05 00:00:00,certified,Honduras,NOLA,3850
+2026-10-05 00:00:00,certified,India,ANT,3390
+2026-10-05 00:00:00,certified,India,HA/BR,1709
+2026-10-05 00:00:00,certified,India,MIAMI,285
+2026-10-05 00:00:00,certified,Kenya,ANT,1525
+2026-10-05 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-05 00:00:00,certified,Mexico,ANT,10277
+2026-10-05 00:00:00,certified,Mexico,NOLA,3365
+2026-10-05 00:00:00,certified,Nicaragua,ANT,9498
+2026-10-05 00:00:00,certified,Nicaragua,HOU,25
+2026-10-05 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-05 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-05 00:00:00,certified,Peru,ANT,44394
+2026-10-05 00:00:00,certified,Peru,HA/BR,496
+2026-10-05 00:00:00,certified,Peru,MIAMI,1500
+2026-10-05 00:00:00,certified,Rwanda,ANT,7196
+2026-10-05 00:00:00,certified,Tanzania,ANT,9344
+2026-10-05 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-05 00:00:00,certified,Uganda,ANT,35621
+2026-10-05 00:00:00,certified,Uganda,HA/BR,35
+2026-10-05 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-05 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-05 00:00:00,certified,Venezuela,NY,250
+2026-10-05 00:00:00,pending,Brazil,ANT,12646
+2026-10-05 00:00:00,pending,Honduras,HOU,15798
+2026-10-05 00:00:00,transition,Brazil,ANT,65952
+2026-10-05 00:00:00,transition,Burundi,ANT,960
+2026-10-05 00:00:00,transition,Burundi,HA/BR,285
+2026-10-05 00:00:00,transition,Colombia,ANT,25
+2026-10-05 00:00:00,transition,El Salvador,ANT,820
+2026-10-05 00:00:00,transition,Honduras,ANT,8159
+2026-10-05 00:00:00,transition,India,ANT,3385
+2026-10-05 00:00:00,transition,India,HA/BR,1709
+2026-10-05 00:00:00,transition,Kenya,ANT,1525
+2026-10-05 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-05 00:00:00,transition,Mexico,ANT,10027
+2026-10-05 00:00:00,transition,Nicaragua,ANT,9498
+2026-10-05 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-05 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-05 00:00:00,transition,Peru,ANT,44394
+2026-10-05 00:00:00,transition,Peru,HA/BR,496
+2026-10-05 00:00:00,transition,Rwanda,ANT,3503
+2026-10-05 00:00:00,transition,Tanzania,ANT,9344
+2026-10-05 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-05 00:00:00,transition,Uganda,ANT,35336
+2026-10-05 00:00:00,transition,Uganda,HA/BR,35
+2026-10-05 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-06 00:00:00,certified,Brazil,ANT,65992
+2026-10-06 00:00:00,certified,Brazil,NY,640
+2026-10-06 00:00:00,certified,Burundi,ANT,675
+2026-10-06 00:00:00,certified,Burundi,HA/BR,285
+2026-10-06 00:00:00,certified,Colombia,ANT,25
+2026-10-06 00:00:00,certified,Colombia,NOLA,225
+2026-10-06 00:00:00,certified,El Salvador,ANT,203
+2026-10-06 00:00:00,certified,Guatemala,HOU,1375
+2026-10-06 00:00:00,certified,Honduras,ANT,6912
+2026-10-06 00:00:00,certified,Honduras,HOU,36483
+2026-10-06 00:00:00,certified,Honduras,MIAMI,897
+2026-10-06 00:00:00,certified,Honduras,NOLA,3850
+2026-10-06 00:00:00,certified,India,ANT,3369
+2026-10-06 00:00:00,certified,India,HA/BR,1709
+2026-10-06 00:00:00,certified,India,MIAMI,285
+2026-10-06 00:00:00,certified,Kenya,ANT,1525
+2026-10-06 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-06 00:00:00,certified,Mexico,ANT,10182
+2026-10-06 00:00:00,certified,Mexico,NOLA,3365
+2026-10-06 00:00:00,certified,Nicaragua,ANT,9498
+2026-10-06 00:00:00,certified,Nicaragua,HOU,25
+2026-10-06 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-06 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-06 00:00:00,certified,Peru,ANT,44232
+2026-10-06 00:00:00,certified,Peru,HA/BR,496
+2026-10-06 00:00:00,certified,Peru,MIAMI,1500
+2026-10-06 00:00:00,certified,Rwanda,ANT,7196
+2026-10-06 00:00:00,certified,Tanzania,ANT,9186
+2026-10-06 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-06 00:00:00,certified,Uganda,ANT,33022
+2026-10-06 00:00:00,certified,Uganda,HA/BR,35
+2026-10-06 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-06 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-06 00:00:00,certified,Venezuela,NY,250
+2026-10-06 00:00:00,pending,Brazil,ANT,12646
+2026-10-06 00:00:00,pending,Honduras,HOU,15798
+2026-10-06 00:00:00,transition,Brazil,ANT,65927
+2026-10-06 00:00:00,transition,Burundi,ANT,675
+2026-10-06 00:00:00,transition,Burundi,HA/BR,285
+2026-10-06 00:00:00,transition,Colombia,ANT,25
+2026-10-06 00:00:00,transition,El Salvador,ANT,203
+2026-10-06 00:00:00,transition,Honduras,ANT,6659
+2026-10-06 00:00:00,transition,India,ANT,3364
+2026-10-06 00:00:00,transition,India,HA/BR,1709
+2026-10-06 00:00:00,transition,Kenya,ANT,1525
+2026-10-06 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-06 00:00:00,transition,Mexico,ANT,9932
+2026-10-06 00:00:00,transition,Nicaragua,ANT,9498
+2026-10-06 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-06 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-06 00:00:00,transition,Peru,ANT,44232
+2026-10-06 00:00:00,transition,Peru,HA/BR,496
+2026-10-06 00:00:00,transition,Rwanda,ANT,3503
+2026-10-06 00:00:00,transition,Tanzania,ANT,9186
+2026-10-06 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-06 00:00:00,transition,Uganda,ANT,32737
+2026-10-06 00:00:00,transition,Uganda,HA/BR,35
+2026-10-06 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-07 00:00:00,certified,Brazil,ANT,69907
+2026-10-07 00:00:00,certified,Brazil,NY,640
+2026-10-07 00:00:00,certified,Burundi,ANT,675
+2026-10-07 00:00:00,certified,Colombia,ANT,25
+2026-10-07 00:00:00,certified,Colombia,NOLA,225
+2026-10-07 00:00:00,certified,Guatemala,HOU,1375
+2026-10-07 00:00:00,certified,Honduras,ANT,6812
+2026-10-07 00:00:00,certified,Honduras,HOU,36483
+2026-10-07 00:00:00,certified,Honduras,MIAMI,897
+2026-10-07 00:00:00,certified,Honduras,NOLA,3850
+2026-10-07 00:00:00,certified,India,ANT,3369
+2026-10-07 00:00:00,certified,India,HA/BR,1709
+2026-10-07 00:00:00,certified,India,MIAMI,285
+2026-10-07 00:00:00,certified,Kenya,ANT,1525
+2026-10-07 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-07 00:00:00,certified,Mexico,ANT,10182
+2026-10-07 00:00:00,certified,Mexico,NOLA,3365
+2026-10-07 00:00:00,certified,Nicaragua,ANT,8981
+2026-10-07 00:00:00,certified,Nicaragua,HOU,25
+2026-10-07 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-07 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-07 00:00:00,certified,Peru,ANT,44232
+2026-10-07 00:00:00,certified,Peru,HA/BR,496
+2026-10-07 00:00:00,certified,Peru,MIAMI,1500
+2026-10-07 00:00:00,certified,Rwanda,ANT,6456
+2026-10-07 00:00:00,certified,Tanzania,ANT,9186
+2026-10-07 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-07 00:00:00,certified,Uganda,ANT,29676
+2026-10-07 00:00:00,certified,Uganda,HA/BR,35
+2026-10-07 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-07 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-07 00:00:00,certified,Venezuela,NY,250
+2026-10-07 00:00:00,graded_failed,Brazil,ANT,435
+2026-10-07 00:00:00,graded_passed,Brazil,ANT,3915
+2026-10-07 00:00:00,pending,Brazil,ANT,8296
+2026-10-07 00:00:00,pending,Honduras,HOU,15798
+2026-10-07 00:00:00,transition,Brazil,ANT,69842
+2026-10-07 00:00:00,transition,Burundi,ANT,675
+2026-10-07 00:00:00,transition,Colombia,ANT,25
+2026-10-07 00:00:00,transition,Honduras,ANT,6559
+2026-10-07 00:00:00,transition,India,ANT,3364
+2026-10-07 00:00:00,transition,India,HA/BR,1709
+2026-10-07 00:00:00,transition,Kenya,ANT,1525
+2026-10-07 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-07 00:00:00,transition,Mexico,ANT,9932
+2026-10-07 00:00:00,transition,Nicaragua,ANT,8981
+2026-10-07 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-07 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-07 00:00:00,transition,Peru,ANT,44232
+2026-10-07 00:00:00,transition,Peru,HA/BR,496
+2026-10-07 00:00:00,transition,Rwanda,ANT,2763
+2026-10-07 00:00:00,transition,Tanzania,ANT,9186
+2026-10-07 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-07 00:00:00,transition,Uganda,ANT,29391
+2026-10-07 00:00:00,transition,Uganda,HA/BR,35
+2026-10-07 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-08 00:00:00,certified,Brazil,ANT,72762
+2026-10-08 00:00:00,certified,Brazil,NY,640
+2026-10-08 00:00:00,certified,Burundi,ANT,675
+2026-10-08 00:00:00,certified,Colombia,ANT,25
+2026-10-08 00:00:00,certified,Colombia,NOLA,225
+2026-10-08 00:00:00,certified,Guatemala,HOU,1375
+2026-10-08 00:00:00,certified,Honduras,ANT,5812
+2026-10-08 00:00:00,certified,Honduras,HOU,36483
+2026-10-08 00:00:00,certified,Honduras,MIAMI,897
+2026-10-08 00:00:00,certified,Honduras,NOLA,3850
+2026-10-08 00:00:00,certified,India,ANT,1944
+2026-10-08 00:00:00,certified,India,HA/BR,854
+2026-10-08 00:00:00,certified,India,MIAMI,285
+2026-10-08 00:00:00,certified,Kenya,ANT,1525
+2026-10-08 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-08 00:00:00,certified,Mexico,ANT,10182
+2026-10-08 00:00:00,certified,Mexico,NOLA,3365
+2026-10-08 00:00:00,certified,Nicaragua,ANT,8981
+2026-10-08 00:00:00,certified,Nicaragua,HOU,25
+2026-10-08 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-08 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-08 00:00:00,certified,Peru,ANT,43732
+2026-10-08 00:00:00,certified,Peru,HA/BR,496
+2026-10-08 00:00:00,certified,Peru,MIAMI,1500
+2026-10-08 00:00:00,certified,Rwanda,ANT,6456
+2026-10-08 00:00:00,certified,Tanzania,ANT,9116
+2026-10-08 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-08 00:00:00,certified,Uganda,ANT,29676
+2026-10-08 00:00:00,certified,Uganda,HA/BR,35
+2026-10-08 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-08 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-08 00:00:00,certified,Venezuela,NY,250
+2026-10-08 00:00:00,graded_failed,Brazil,ANT,2340
+2026-10-08 00:00:00,graded_passed,Brazil,ANT,2920
+2026-10-08 00:00:00,pending,Brazil,ANT,14967
+2026-10-08 00:00:00,pending,Honduras,HOU,15798
+2026-10-08 00:00:00,transition,Brazil,ANT,72762
+2026-10-08 00:00:00,transition,Burundi,ANT,675
+2026-10-08 00:00:00,transition,Colombia,ANT,25
+2026-10-08 00:00:00,transition,Honduras,ANT,5559
+2026-10-08 00:00:00,transition,India,ANT,1939
+2026-10-08 00:00:00,transition,India,HA/BR,854
+2026-10-08 00:00:00,transition,Kenya,ANT,1525
+2026-10-08 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-08 00:00:00,transition,Mexico,ANT,9932
+2026-10-08 00:00:00,transition,Nicaragua,ANT,8981
+2026-10-08 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-08 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-08 00:00:00,transition,Peru,ANT,43732
+2026-10-08 00:00:00,transition,Peru,HA/BR,496
+2026-10-08 00:00:00,transition,Rwanda,ANT,2763
+2026-10-08 00:00:00,transition,Tanzania,ANT,9116
+2026-10-08 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-08 00:00:00,transition,Uganda,ANT,29391
+2026-10-08 00:00:00,transition,Uganda,HA/BR,35
+2026-10-08 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-09 00:00:00,certified,Brazil,ANT,72762
+2026-10-09 00:00:00,certified,Brazil,NY,640
+2026-10-09 00:00:00,certified,Burundi,ANT,675
+2026-10-09 00:00:00,certified,Colombia,ANT,25
+2026-10-09 00:00:00,certified,Colombia,NOLA,225
+2026-10-09 00:00:00,certified,Guatemala,HOU,1375
+2026-10-09 00:00:00,certified,Honduras,ANT,5812
+2026-10-09 00:00:00,certified,Honduras,HOU,36233
+2026-10-09 00:00:00,certified,Honduras,MIAMI,897
+2026-10-09 00:00:00,certified,Honduras,NOLA,3850
+2026-10-09 00:00:00,certified,India,ANT,1944
+2026-10-09 00:00:00,certified,India,HA/BR,854
+2026-10-09 00:00:00,certified,India,MIAMI,285
+2026-10-09 00:00:00,certified,Kenya,ANT,1525
+2026-10-09 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-09 00:00:00,certified,Mexico,ANT,10182
+2026-10-09 00:00:00,certified,Mexico,NOLA,3365
+2026-10-09 00:00:00,certified,Nicaragua,ANT,8981
+2026-10-09 00:00:00,certified,Nicaragua,HOU,25
+2026-10-09 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-09 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-09 00:00:00,certified,Peru,ANT,43732
+2026-10-09 00:00:00,certified,Peru,HA/BR,496
+2026-10-09 00:00:00,certified,Peru,MIAMI,1500
+2026-10-09 00:00:00,certified,Rwanda,ANT,6456
+2026-10-09 00:00:00,certified,Tanzania,ANT,9116
+2026-10-09 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-09 00:00:00,certified,Uganda,ANT,29676
+2026-10-09 00:00:00,certified,Uganda,HA/BR,35
+2026-10-09 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-09 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-09 00:00:00,certified,Venezuela,NY,250
+2026-10-09 00:00:00,graded_failed,Brazil,ANT,3036
+2026-10-09 00:00:00,pending,Brazil,ANT,12531
+2026-10-09 00:00:00,pending,Honduras,HOU,15548
+2026-10-09 00:00:00,transition,Brazil,ANT,72762
+2026-10-09 00:00:00,transition,Burundi,ANT,675
+2026-10-09 00:00:00,transition,Colombia,ANT,25
+2026-10-09 00:00:00,transition,Honduras,ANT,5559
+2026-10-09 00:00:00,transition,India,ANT,1939
+2026-10-09 00:00:00,transition,India,HA/BR,854
+2026-10-09 00:00:00,transition,Kenya,ANT,1525
+2026-10-09 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-09 00:00:00,transition,Mexico,ANT,9932
+2026-10-09 00:00:00,transition,Nicaragua,ANT,8981
+2026-10-09 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-09 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-09 00:00:00,transition,Peru,ANT,43732
+2026-10-09 00:00:00,transition,Peru,HA/BR,496
+2026-10-09 00:00:00,transition,Rwanda,ANT,2763
+2026-10-09 00:00:00,transition,Tanzania,ANT,9116
+2026-10-09 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-09 00:00:00,transition,Uganda,ANT,29391
+2026-10-09 00:00:00,transition,Uganda,HA/BR,35
+2026-10-09 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-12 00:00:00,certified,Brazil,ANT,71427
+2026-10-12 00:00:00,certified,Brazil,NY,640
+2026-10-12 00:00:00,certified,Burundi,ANT,675
+2026-10-12 00:00:00,certified,Colombia,ANT,25
+2026-10-12 00:00:00,certified,Colombia,NOLA,225
+2026-10-12 00:00:00,certified,Guatemala,HOU,1375
+2026-10-12 00:00:00,certified,Honduras,ANT,5812
+2026-10-12 00:00:00,certified,Honduras,HOU,36233
+2026-10-12 00:00:00,certified,Honduras,MIAMI,897
+2026-10-12 00:00:00,certified,Honduras,NOLA,3850
+2026-10-12 00:00:00,certified,India,ANT,1944
+2026-10-12 00:00:00,certified,India,HA/BR,854
+2026-10-12 00:00:00,certified,India,MIAMI,285
+2026-10-12 00:00:00,certified,Kenya,ANT,1525
+2026-10-12 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-12 00:00:00,certified,Mexico,ANT,10182
+2026-10-12 00:00:00,certified,Mexico,NOLA,3365
+2026-10-12 00:00:00,certified,Nicaragua,ANT,8981
+2026-10-12 00:00:00,certified,Nicaragua,HOU,25
+2026-10-12 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-12 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-12 00:00:00,certified,Peru,ANT,43232
+2026-10-12 00:00:00,certified,Peru,HA/BR,496
+2026-10-12 00:00:00,certified,Peru,MIAMI,1500
+2026-10-12 00:00:00,certified,Rwanda,ANT,6456
+2026-10-12 00:00:00,certified,Tanzania,ANT,9116
+2026-10-12 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-12 00:00:00,certified,Uganda,ANT,29676
+2026-10-12 00:00:00,certified,Uganda,HA/BR,35
+2026-10-12 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-12 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-12 00:00:00,certified,Venezuela,NY,250
+2026-10-12 00:00:00,pending,Brazil,ANT,14464
+2026-10-12 00:00:00,pending,Honduras,HOU,15548
+2026-10-12 00:00:00,transition,Brazil,ANT,71427
+2026-10-12 00:00:00,transition,Burundi,ANT,675
+2026-10-12 00:00:00,transition,Colombia,ANT,25
+2026-10-12 00:00:00,transition,Honduras,ANT,5559
+2026-10-12 00:00:00,transition,India,ANT,1939
+2026-10-12 00:00:00,transition,India,HA/BR,854
+2026-10-12 00:00:00,transition,Kenya,ANT,1525
+2026-10-12 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-12 00:00:00,transition,Mexico,ANT,9932
+2026-10-12 00:00:00,transition,Nicaragua,ANT,8981
+2026-10-12 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-12 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-12 00:00:00,transition,Peru,ANT,43232
+2026-10-12 00:00:00,transition,Peru,HA/BR,496
+2026-10-12 00:00:00,transition,Rwanda,ANT,2763
+2026-10-12 00:00:00,transition,Tanzania,ANT,9116
+2026-10-12 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-12 00:00:00,transition,Uganda,ANT,29391
+2026-10-12 00:00:00,transition,Uganda,HA/BR,35
+2026-10-12 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-13 00:00:00,certified,Brazil,ANT,71242
+2026-10-13 00:00:00,certified,Brazil,NY,640
+2026-10-13 00:00:00,certified,Burundi,ANT,675
+2026-10-13 00:00:00,certified,Colombia,ANT,25
+2026-10-13 00:00:00,certified,Colombia,NOLA,225
+2026-10-13 00:00:00,certified,Guatemala,HOU,275
+2026-10-13 00:00:00,certified,Honduras,ANT,5812
+2026-10-13 00:00:00,certified,Honduras,HOU,36233
+2026-10-13 00:00:00,certified,Honduras,MIAMI,897
+2026-10-13 00:00:00,certified,Honduras,NOLA,2750
+2026-10-13 00:00:00,certified,India,ANT,1944
+2026-10-13 00:00:00,certified,India,HA/BR,854
+2026-10-13 00:00:00,certified,India,MIAMI,285
+2026-10-13 00:00:00,certified,Kenya,ANT,1525
+2026-10-13 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-13 00:00:00,certified,Mexico,ANT,10182
+2026-10-13 00:00:00,certified,Mexico,NOLA,2435
+2026-10-13 00:00:00,certified,Nicaragua,ANT,8981
+2026-10-13 00:00:00,certified,Nicaragua,HOU,25
+2026-10-13 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-13 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-13 00:00:00,certified,Peru,ANT,43232
+2026-10-13 00:00:00,certified,Peru,HA/BR,496
+2026-10-13 00:00:00,certified,Peru,MIAMI,1500
+2026-10-13 00:00:00,certified,Rwanda,ANT,6456
+2026-10-13 00:00:00,certified,Tanzania,ANT,9116
+2026-10-13 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-13 00:00:00,certified,Uganda,ANT,29676
+2026-10-13 00:00:00,certified,Uganda,HA/BR,35
+2026-10-13 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-13 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-13 00:00:00,certified,Venezuela,NY,250
+2026-10-13 00:00:00,pending,Brazil,ANT,26434
+2026-10-13 00:00:00,pending,Honduras,HOU,15548
+2026-10-13 00:00:00,transition,Brazil,ANT,71242
+2026-10-13 00:00:00,transition,Burundi,ANT,675
+2026-10-13 00:00:00,transition,Colombia,ANT,25
+2026-10-13 00:00:00,transition,Honduras,ANT,5559
+2026-10-13 00:00:00,transition,India,ANT,1939
+2026-10-13 00:00:00,transition,India,HA/BR,854
+2026-10-13 00:00:00,transition,Kenya,ANT,1525
+2026-10-13 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-13 00:00:00,transition,Mexico,ANT,9932
+2026-10-13 00:00:00,transition,Nicaragua,ANT,8981
+2026-10-13 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-13 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-13 00:00:00,transition,Peru,ANT,43232
+2026-10-13 00:00:00,transition,Peru,HA/BR,496
+2026-10-13 00:00:00,transition,Rwanda,ANT,2763
+2026-10-13 00:00:00,transition,Tanzania,ANT,9116
+2026-10-13 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-13 00:00:00,transition,Uganda,ANT,29391
+2026-10-13 00:00:00,transition,Uganda,HA/BR,35
+2026-10-13 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-14 00:00:00,certified,Brazil,ANT,71242
+2026-10-14 00:00:00,certified,Brazil,NY,640
+2026-10-14 00:00:00,certified,Burundi,ANT,675
+2026-10-14 00:00:00,certified,Colombia,ANT,25
+2026-10-14 00:00:00,certified,Colombia,NOLA,225
+2026-10-14 00:00:00,certified,Guatemala,HOU,275
+2026-10-14 00:00:00,certified,Honduras,ANT,3563
+2026-10-14 00:00:00,certified,Honduras,HOU,35683
+2026-10-14 00:00:00,certified,Honduras,MIAMI,897
+2026-10-14 00:00:00,certified,Honduras,NOLA,2750
+2026-10-14 00:00:00,certified,India,ANT,1944
+2026-10-14 00:00:00,certified,India,HA/BR,854
+2026-10-14 00:00:00,certified,India,MIAMI,285
+2026-10-14 00:00:00,certified,Kenya,ANT,1525
+2026-10-14 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-14 00:00:00,certified,Mexico,ANT,10182
+2026-10-14 00:00:00,certified,Mexico,NOLA,1571
+2026-10-14 00:00:00,certified,Nicaragua,ANT,7735
+2026-10-14 00:00:00,certified,Nicaragua,HOU,25
+2026-10-14 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-14 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-14 00:00:00,certified,Peru,ANT,43232
+2026-10-14 00:00:00,certified,Peru,HA/BR,496
+2026-10-14 00:00:00,certified,Peru,MIAMI,1500
+2026-10-14 00:00:00,certified,Rwanda,ANT,6456
+2026-10-14 00:00:00,certified,Tanzania,ANT,9116
+2026-10-14 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-14 00:00:00,certified,Uganda,ANT,29676
+2026-10-14 00:00:00,certified,Uganda,HA/BR,35
+2026-10-14 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-14 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-14 00:00:00,certified,Venezuela,NY,250
+2026-10-14 00:00:00,pending,Brazil,ANT,26434
+2026-10-14 00:00:00,pending,Honduras,HOU,11698
+2026-10-14 00:00:00,transition,Brazil,ANT,71242
+2026-10-14 00:00:00,transition,Burundi,ANT,675
+2026-10-14 00:00:00,transition,Colombia,ANT,25
+2026-10-14 00:00:00,transition,Honduras,ANT,3310
+2026-10-14 00:00:00,transition,India,ANT,1939
+2026-10-14 00:00:00,transition,India,HA/BR,854
+2026-10-14 00:00:00,transition,Kenya,ANT,1525
+2026-10-14 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-14 00:00:00,transition,Mexico,ANT,9932
+2026-10-14 00:00:00,transition,Nicaragua,ANT,7735
+2026-10-14 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-14 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-14 00:00:00,transition,Peru,ANT,43232
+2026-10-14 00:00:00,transition,Peru,HA/BR,496
+2026-10-14 00:00:00,transition,Rwanda,ANT,2763
+2026-10-14 00:00:00,transition,Tanzania,ANT,9116
+2026-10-14 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-14 00:00:00,transition,Uganda,ANT,29391
+2026-10-14 00:00:00,transition,Uganda,HA/BR,35
+2026-10-14 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-15 00:00:00,certified,Brazil,ANT,71242
+2026-10-15 00:00:00,certified,Brazil,NY,640
+2026-10-15 00:00:00,certified,Burundi,ANT,675
+2026-10-15 00:00:00,certified,Colombia,ANT,25
+2026-10-15 00:00:00,certified,Colombia,NOLA,225
+2026-10-15 00:00:00,certified,Guatemala,HOU,275
+2026-10-15 00:00:00,certified,Honduras,ANT,3563
+2026-10-15 00:00:00,certified,Honduras,HOU,33408
+2026-10-15 00:00:00,certified,Honduras,MIAMI,897
+2026-10-15 00:00:00,certified,Honduras,NOLA,2750
+2026-10-15 00:00:00,certified,India,ANT,1944
+2026-10-15 00:00:00,certified,India,HA/BR,854
+2026-10-15 00:00:00,certified,India,MIAMI,285
+2026-10-15 00:00:00,certified,Kenya,ANT,1525
+2026-10-15 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-15 00:00:00,certified,Mexico,ANT,9932
+2026-10-15 00:00:00,certified,Mexico,NOLA,1571
+2026-10-15 00:00:00,certified,Nicaragua,ANT,7289
+2026-10-15 00:00:00,certified,Nicaragua,HOU,25
+2026-10-15 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-15 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-15 00:00:00,certified,Peru,ANT,43232
+2026-10-15 00:00:00,certified,Peru,HA/BR,496
+2026-10-15 00:00:00,certified,Peru,MIAMI,1500
+2026-10-15 00:00:00,certified,Rwanda,ANT,6456
+2026-10-15 00:00:00,certified,Tanzania,ANT,9116
+2026-10-15 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-15 00:00:00,certified,Uganda,ANT,29676
+2026-10-15 00:00:00,certified,Uganda,HA/BR,35
+2026-10-15 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-15 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-15 00:00:00,certified,Venezuela,NY,250
+2026-10-15 00:00:00,pending,Brazil,ANT,26434
+2026-10-15 00:00:00,pending,Honduras,HOU,10423
+2026-10-15 00:00:00,transition,Brazil,ANT,71242
+2026-10-15 00:00:00,transition,Burundi,ANT,675
+2026-10-15 00:00:00,transition,Colombia,ANT,25
+2026-10-15 00:00:00,transition,Honduras,ANT,3310
+2026-10-15 00:00:00,transition,India,ANT,1939
+2026-10-15 00:00:00,transition,India,HA/BR,854
+2026-10-15 00:00:00,transition,Kenya,ANT,1525
+2026-10-15 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-15 00:00:00,transition,Mexico,ANT,9682
+2026-10-15 00:00:00,transition,Nicaragua,ANT,7289
+2026-10-15 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-15 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-15 00:00:00,transition,Peru,ANT,43232
+2026-10-15 00:00:00,transition,Peru,HA/BR,496
+2026-10-15 00:00:00,transition,Rwanda,ANT,2763
+2026-10-15 00:00:00,transition,Tanzania,ANT,9116
+2026-10-15 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-15 00:00:00,transition,Uganda,ANT,29391
+2026-10-15 00:00:00,transition,Uganda,HA/BR,35
+2026-10-15 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-16 00:00:00,certified,Brazil,ANT,75692
+2026-10-16 00:00:00,certified,Brazil,NY,640
+2026-10-16 00:00:00,certified,Burundi,ANT,675
+2026-10-16 00:00:00,certified,Colombia,ANT,25
+2026-10-16 00:00:00,certified,Colombia,NOLA,225
+2026-10-16 00:00:00,certified,Guatemala,HOU,275
+2026-10-16 00:00:00,certified,Honduras,ANT,3563
+2026-10-16 00:00:00,certified,Honduras,HOU,33408
+2026-10-16 00:00:00,certified,Honduras,MIAMI,897
+2026-10-16 00:00:00,certified,Honduras,NOLA,2750
+2026-10-16 00:00:00,certified,India,ANT,1944
+2026-10-16 00:00:00,certified,India,HA/BR,854
+2026-10-16 00:00:00,certified,India,MIAMI,285
+2026-10-16 00:00:00,certified,Kenya,ANT,1525
+2026-10-16 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-16 00:00:00,certified,Mexico,ANT,9322
+2026-10-16 00:00:00,certified,Mexico,NOLA,1571
+2026-10-16 00:00:00,certified,Nicaragua,ANT,7040
+2026-10-16 00:00:00,certified,Nicaragua,HOU,25
+2026-10-16 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-16 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-16 00:00:00,certified,Peru,ANT,41482
+2026-10-16 00:00:00,certified,Peru,HA/BR,496
+2026-10-16 00:00:00,certified,Peru,MIAMI,1500
+2026-10-16 00:00:00,certified,Rwanda,ANT,6456
+2026-10-16 00:00:00,certified,Tanzania,ANT,9116
+2026-10-16 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-16 00:00:00,certified,Uganda,ANT,29626
+2026-10-16 00:00:00,certified,Uganda,HA/BR,35
+2026-10-16 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-16 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-16 00:00:00,certified,Venezuela,NY,250
+2026-10-16 00:00:00,graded_failed,Brazil,ANT,5736
+2026-10-16 00:00:00,graded_passed,Brazil,ANT,4450
+2026-10-16 00:00:00,pending,Brazil,ANT,16978
+2026-10-16 00:00:00,pending,Honduras,HOU,10423
+2026-10-16 00:00:00,transition,Brazil,ANT,75692
+2026-10-16 00:00:00,transition,Burundi,ANT,675
+2026-10-16 00:00:00,transition,Colombia,ANT,25
+2026-10-16 00:00:00,transition,Honduras,ANT,3310
+2026-10-16 00:00:00,transition,India,ANT,1939
+2026-10-16 00:00:00,transition,India,HA/BR,854
+2026-10-16 00:00:00,transition,Kenya,ANT,1525
+2026-10-16 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-16 00:00:00,transition,Mexico,ANT,9072
+2026-10-16 00:00:00,transition,Nicaragua,ANT,7040
+2026-10-16 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-16 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-16 00:00:00,transition,Peru,ANT,41482
+2026-10-16 00:00:00,transition,Peru,HA/BR,496
+2026-10-16 00:00:00,transition,Rwanda,ANT,2763
+2026-10-16 00:00:00,transition,Tanzania,ANT,9116
+2026-10-16 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-16 00:00:00,transition,Uganda,ANT,29341
+2026-10-16 00:00:00,transition,Uganda,HA/BR,35
+2026-10-16 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-19 00:00:00,certified,Brazil,ANT,74802
+2026-10-19 00:00:00,certified,Brazil,NY,640
+2026-10-19 00:00:00,certified,Burundi,ANT,675
+2026-10-19 00:00:00,certified,Colombia,ANT,25
+2026-10-19 00:00:00,certified,Colombia,NOLA,225
+2026-10-19 00:00:00,certified,Guatemala,HOU,275
+2026-10-19 00:00:00,certified,Honduras,ANT,3538
+2026-10-19 00:00:00,certified,Honduras,HOU,33408
+2026-10-19 00:00:00,certified,Honduras,MIAMI,897
+2026-10-19 00:00:00,certified,Honduras,NOLA,2750
+2026-10-19 00:00:00,certified,India,ANT,1944
+2026-10-19 00:00:00,certified,India,HA/BR,854
+2026-10-19 00:00:00,certified,India,MIAMI,285
+2026-10-19 00:00:00,certified,Kenya,ANT,1525
+2026-10-19 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-19 00:00:00,certified,Mexico,ANT,9322
+2026-10-19 00:00:00,certified,Mexico,NOLA,1571
+2026-10-19 00:00:00,certified,Nicaragua,ANT,7040
+2026-10-19 00:00:00,certified,Nicaragua,HOU,25
+2026-10-19 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-19 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-19 00:00:00,certified,Peru,ANT,41482
+2026-10-19 00:00:00,certified,Peru,HA/BR,496
+2026-10-19 00:00:00,certified,Peru,MIAMI,1500
+2026-10-19 00:00:00,certified,Rwanda,ANT,6456
+2026-10-19 00:00:00,certified,Tanzania,ANT,9116
+2026-10-19 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-19 00:00:00,certified,Uganda,ANT,29626
+2026-10-19 00:00:00,certified,Uganda,HA/BR,35
+2026-10-19 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-19 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-19 00:00:00,certified,Venezuela,NY,250
+2026-10-19 00:00:00,pending,Brazil,ANT,27848
+2026-10-19 00:00:00,pending,Honduras,HOU,10423
+2026-10-19 00:00:00,transition,Brazil,ANT,74802
+2026-10-19 00:00:00,transition,Burundi,ANT,675
+2026-10-19 00:00:00,transition,Colombia,ANT,25
+2026-10-19 00:00:00,transition,Honduras,ANT,3285
+2026-10-19 00:00:00,transition,India,ANT,1939
+2026-10-19 00:00:00,transition,India,HA/BR,854
+2026-10-19 00:00:00,transition,Kenya,ANT,1525
+2026-10-19 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-19 00:00:00,transition,Mexico,ANT,9072
+2026-10-19 00:00:00,transition,Nicaragua,ANT,7040
+2026-10-19 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-19 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-19 00:00:00,transition,Peru,ANT,41482
+2026-10-19 00:00:00,transition,Peru,HA/BR,496
+2026-10-19 00:00:00,transition,Rwanda,ANT,2763
+2026-10-19 00:00:00,transition,Tanzania,ANT,9116
+2026-10-19 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-19 00:00:00,transition,Uganda,ANT,29341
+2026-10-19 00:00:00,transition,Uganda,HA/BR,35
+2026-10-19 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-20 00:00:00,certified,Brazil,ANT,71512
+2026-10-20 00:00:00,certified,Brazil,NY,640
+2026-10-20 00:00:00,certified,Burundi,ANT,675
+2026-10-20 00:00:00,certified,Colombia,ANT,25
+2026-10-20 00:00:00,certified,Colombia,NOLA,225
+2026-10-20 00:00:00,certified,Guatemala,HOU,275
+2026-10-20 00:00:00,certified,Honduras,ANT,3538
+2026-10-20 00:00:00,certified,Honduras,HOU,33408
+2026-10-20 00:00:00,certified,Honduras,MIAMI,897
+2026-10-20 00:00:00,certified,Honduras,NOLA,2250
+2026-10-20 00:00:00,certified,India,ANT,1944
+2026-10-20 00:00:00,certified,India,HA/BR,854
+2026-10-20 00:00:00,certified,India,MIAMI,285
+2026-10-20 00:00:00,certified,Kenya,ANT,1525
+2026-10-20 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-20 00:00:00,certified,Mexico,ANT,9322
+2026-10-20 00:00:00,certified,Mexico,NOLA,1571
+2026-10-20 00:00:00,certified,Nicaragua,ANT,6454
+2026-10-20 00:00:00,certified,Nicaragua,HOU,25
+2026-10-20 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-20 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-20 00:00:00,certified,Peru,ANT,40907
+2026-10-20 00:00:00,certified,Peru,HA/BR,496
+2026-10-20 00:00:00,certified,Peru,MIAMI,1500
+2026-10-20 00:00:00,certified,Rwanda,ANT,6456
+2026-10-20 00:00:00,certified,Tanzania,ANT,9116
+2026-10-20 00:00:00,certified,Tanzania,HA/BR,1725
+2026-10-20 00:00:00,certified,Uganda,ANT,29626
+2026-10-20 00:00:00,certified,Uganda,HA/BR,35
+2026-10-20 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-20 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-20 00:00:00,certified,Venezuela,NY,250
+2026-10-20 00:00:00,pending,Brazil,ANT,26803
+2026-10-20 00:00:00,pending,Honduras,HOU,10423
+2026-10-20 00:00:00,transition,Brazil,ANT,71512
+2026-10-20 00:00:00,transition,Burundi,ANT,675
+2026-10-20 00:00:00,transition,Colombia,ANT,25
+2026-10-20 00:00:00,transition,Honduras,ANT,3285
+2026-10-20 00:00:00,transition,India,ANT,1939
+2026-10-20 00:00:00,transition,India,HA/BR,854
+2026-10-20 00:00:00,transition,Kenya,ANT,1525
+2026-10-20 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-20 00:00:00,transition,Mexico,ANT,9072
+2026-10-20 00:00:00,transition,Nicaragua,ANT,6454
+2026-10-20 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-20 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-20 00:00:00,transition,Peru,ANT,40907
+2026-10-20 00:00:00,transition,Peru,HA/BR,496
+2026-10-20 00:00:00,transition,Rwanda,ANT,2763
+2026-10-20 00:00:00,transition,Tanzania,ANT,9116
+2026-10-20 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-20 00:00:00,transition,Uganda,ANT,29341
+2026-10-20 00:00:00,transition,Uganda,HA/BR,35
+2026-10-20 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-21 00:00:00,certified,Brazil,ANT,79444
+2026-10-21 00:00:00,certified,Brazil,NY,640
+2026-10-21 00:00:00,certified,Burundi,ANT,675
+2026-10-21 00:00:00,certified,Colombia,ANT,25
+2026-10-21 00:00:00,certified,Colombia,NOLA,225
+2026-10-21 00:00:00,certified,Guatemala,HOU,275
+2026-10-21 00:00:00,certified,Honduras,ANT,3538
+2026-10-21 00:00:00,certified,Honduras,HOU,33408
+2026-10-21 00:00:00,certified,Honduras,MIAMI,897
+2026-10-21 00:00:00,certified,Honduras,NOLA,2250
+2026-10-21 00:00:00,certified,India,ANT,1944
+2026-10-21 00:00:00,certified,India,HA/BR,854
+2026-10-21 00:00:00,certified,India,MIAMI,285
+2026-10-21 00:00:00,certified,Kenya,ANT,1525
+2026-10-21 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-21 00:00:00,certified,Mexico,ANT,9322
+2026-10-21 00:00:00,certified,Mexico,NOLA,1571
+2026-10-21 00:00:00,certified,Nicaragua,ANT,6454
+2026-10-21 00:00:00,certified,Nicaragua,HOU,25
+2026-10-21 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-21 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-21 00:00:00,certified,Peru,ANT,40907
+2026-10-21 00:00:00,certified,Peru,HA/BR,496
+2026-10-21 00:00:00,certified,Peru,MIAMI,1500
+2026-10-21 00:00:00,certified,Rwanda,ANT,6456
+2026-10-21 00:00:00,certified,Tanzania,ANT,6101
+2026-10-21 00:00:00,certified,Tanzania,HA/BR,1655
+2026-10-21 00:00:00,certified,Uganda,ANT,29626
+2026-10-21 00:00:00,certified,Uganda,HA/BR,35
+2026-10-21 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-21 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-21 00:00:00,certified,Venezuela,NY,250
+2026-10-21 00:00:00,graded_failed,Brazil,ANT,855
+2026-10-21 00:00:00,graded_passed,Brazil,ANT,7932
+2026-10-21 00:00:00,pending,Brazil,ANT,18016
+2026-10-21 00:00:00,pending,Honduras,HOU,10423
+2026-10-21 00:00:00,transition,Brazil,ANT,79444
+2026-10-21 00:00:00,transition,Burundi,ANT,675
+2026-10-21 00:00:00,transition,Colombia,ANT,25
+2026-10-21 00:00:00,transition,Honduras,ANT,3285
+2026-10-21 00:00:00,transition,India,ANT,1939
+2026-10-21 00:00:00,transition,India,HA/BR,854
+2026-10-21 00:00:00,transition,Kenya,ANT,1525
+2026-10-21 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-21 00:00:00,transition,Mexico,ANT,9072
+2026-10-21 00:00:00,transition,Nicaragua,ANT,6454
+2026-10-21 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-21 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-21 00:00:00,transition,Peru,ANT,40907
+2026-10-21 00:00:00,transition,Peru,HA/BR,496
+2026-10-21 00:00:00,transition,Rwanda,ANT,2763
+2026-10-21 00:00:00,transition,Tanzania,ANT,6101
+2026-10-21 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-21 00:00:00,transition,Uganda,ANT,29341
+2026-10-21 00:00:00,transition,Uganda,HA/BR,35
+2026-10-21 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-22 00:00:00,certified,Brazil,ANT,78589
+2026-10-22 00:00:00,certified,Brazil,NY,640
+2026-10-22 00:00:00,certified,Burundi,ANT,640
+2026-10-22 00:00:00,certified,Colombia,ANT,25
+2026-10-22 00:00:00,certified,Colombia,NOLA,225
+2026-10-22 00:00:00,certified,Guatemala,HOU,275
+2026-10-22 00:00:00,certified,Honduras,ANT,3538
+2026-10-22 00:00:00,certified,Honduras,HOU,32608
+2026-10-22 00:00:00,certified,Honduras,MIAMI,897
+2026-10-22 00:00:00,certified,Honduras,NOLA,2250
+2026-10-22 00:00:00,certified,India,ANT,1944
+2026-10-22 00:00:00,certified,India,HA/BR,854
+2026-10-22 00:00:00,certified,India,MIAMI,285
+2026-10-22 00:00:00,certified,Kenya,ANT,1525
+2026-10-22 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-22 00:00:00,certified,Mexico,ANT,8822
+2026-10-22 00:00:00,certified,Mexico,NOLA,1571
+2026-10-22 00:00:00,certified,Nicaragua,ANT,6454
+2026-10-22 00:00:00,certified,Nicaragua,HOU,25
+2026-10-22 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-22 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-22 00:00:00,certified,Peru,ANT,37782
+2026-10-22 00:00:00,certified,Peru,HA/BR,496
+2026-10-22 00:00:00,certified,Peru,MIAMI,1500
+2026-10-22 00:00:00,certified,Rwanda,ANT,6456
+2026-10-22 00:00:00,certified,Tanzania,ANT,6101
+2026-10-22 00:00:00,certified,Tanzania,HA/BR,1655
+2026-10-22 00:00:00,certified,Uganda,ANT,29626
+2026-10-22 00:00:00,certified,Uganda,HA/BR,35
+2026-10-22 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-22 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-22 00:00:00,certified,Venezuela,NY,250
+2026-10-22 00:00:00,pending,Brazil,ANT,18426
+2026-10-22 00:00:00,pending,Honduras,HOU,10423
+2026-10-22 00:00:00,transition,Brazil,ANT,78589
+2026-10-22 00:00:00,transition,Burundi,ANT,640
+2026-10-22 00:00:00,transition,Colombia,ANT,25
+2026-10-22 00:00:00,transition,Honduras,ANT,3285
+2026-10-22 00:00:00,transition,India,ANT,1939
+2026-10-22 00:00:00,transition,India,HA/BR,854
+2026-10-22 00:00:00,transition,Kenya,ANT,1525
+2026-10-22 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-22 00:00:00,transition,Mexico,ANT,8572
+2026-10-22 00:00:00,transition,Nicaragua,ANT,6454
+2026-10-22 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-22 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-22 00:00:00,transition,Peru,ANT,37782
+2026-10-22 00:00:00,transition,Peru,HA/BR,496
+2026-10-22 00:00:00,transition,Rwanda,ANT,2763
+2026-10-22 00:00:00,transition,Tanzania,ANT,6101
+2026-10-22 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-22 00:00:00,transition,Uganda,ANT,29341
+2026-10-22 00:00:00,transition,Uganda,HA/BR,35
+2026-10-22 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-23 00:00:00,certified,Brazil,ANT,74216
+2026-10-23 00:00:00,certified,Brazil,NY,640
+2026-10-23 00:00:00,certified,Burundi,ANT,640
+2026-10-23 00:00:00,certified,Colombia,ANT,25
+2026-10-23 00:00:00,certified,Colombia,NOLA,225
+2026-10-23 00:00:00,certified,Guatemala,HOU,275
+2026-10-23 00:00:00,certified,Honduras,ANT,3535
+2026-10-23 00:00:00,certified,Honduras,HOU,32506
+2026-10-23 00:00:00,certified,Honduras,MIAMI,897
+2026-10-23 00:00:00,certified,Honduras,NOLA,2250
+2026-10-23 00:00:00,certified,India,ANT,1944
+2026-10-23 00:00:00,certified,India,HA/BR,569
+2026-10-23 00:00:00,certified,India,MIAMI,285
+2026-10-23 00:00:00,certified,Kenya,ANT,1525
+2026-10-23 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-23 00:00:00,certified,Mexico,ANT,8822
+2026-10-23 00:00:00,certified,Mexico,NOLA,1571
+2026-10-23 00:00:00,certified,Nicaragua,ANT,6036
+2026-10-23 00:00:00,certified,Nicaragua,HOU,25
+2026-10-23 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-23 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-23 00:00:00,certified,Peru,ANT,36932
+2026-10-23 00:00:00,certified,Peru,HA/BR,496
+2026-10-23 00:00:00,certified,Peru,MIAMI,1500
+2026-10-23 00:00:00,certified,Rwanda,ANT,6456
+2026-10-23 00:00:00,certified,Tanzania,ANT,6101
+2026-10-23 00:00:00,certified,Tanzania,HA/BR,1655
+2026-10-23 00:00:00,certified,Uganda,ANT,29202
+2026-10-23 00:00:00,certified,Uganda,HA/BR,35
+2026-10-23 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-23 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-23 00:00:00,certified,Venezuela,NY,250
+2026-10-23 00:00:00,graded_failed,Brazil,ANT,2138
+2026-10-23 00:00:00,graded_passed,Brazil,ANT,427
+2026-10-23 00:00:00,pending,Brazil,ANT,21081
+2026-10-23 00:00:00,pending,Honduras,HOU,10423
+2026-10-23 00:00:00,transition,Brazil,ANT,74216
+2026-10-23 00:00:00,transition,Burundi,ANT,640
+2026-10-23 00:00:00,transition,Colombia,ANT,25
+2026-10-23 00:00:00,transition,Honduras,ANT,3285
+2026-10-23 00:00:00,transition,India,ANT,1939
+2026-10-23 00:00:00,transition,India,HA/BR,569
+2026-10-23 00:00:00,transition,Kenya,ANT,1525
+2026-10-23 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-23 00:00:00,transition,Mexico,ANT,8572
+2026-10-23 00:00:00,transition,Nicaragua,ANT,6036
+2026-10-23 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-23 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-23 00:00:00,transition,Peru,ANT,36932
+2026-10-23 00:00:00,transition,Peru,HA/BR,496
+2026-10-23 00:00:00,transition,Rwanda,ANT,2763
+2026-10-23 00:00:00,transition,Tanzania,ANT,6101
+2026-10-23 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-23 00:00:00,transition,Uganda,ANT,28917
+2026-10-23 00:00:00,transition,Uganda,HA/BR,35
+2026-10-23 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-26 00:00:00,certified,Brazil,ANT,75992
+2026-10-26 00:00:00,certified,Brazil,NY,640
+2026-10-26 00:00:00,certified,Burundi,ANT,640
+2026-10-26 00:00:00,certified,Colombia,ANT,25
+2026-10-26 00:00:00,certified,Colombia,NOLA,225
+2026-10-26 00:00:00,certified,Guatemala,HOU,275
+2026-10-26 00:00:00,certified,Honduras,ANT,1025
+2026-10-26 00:00:00,certified,Honduras,HOU,32506
+2026-10-26 00:00:00,certified,Honduras,MIAMI,897
+2026-10-26 00:00:00,certified,Honduras,NOLA,2250
+2026-10-26 00:00:00,certified,India,ANT,1944
+2026-10-26 00:00:00,certified,India,HA/BR,569
+2026-10-26 00:00:00,certified,India,MIAMI,285
+2026-10-26 00:00:00,certified,Kenya,ANT,1525
+2026-10-26 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-26 00:00:00,certified,Mexico,ANT,7682
+2026-10-26 00:00:00,certified,Mexico,NOLA,1571
+2026-10-26 00:00:00,certified,Nicaragua,ANT,5542
+2026-10-26 00:00:00,certified,Nicaragua,HOU,25
+2026-10-26 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-26 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-26 00:00:00,certified,Peru,ANT,36932
+2026-10-26 00:00:00,certified,Peru,HA/BR,496
+2026-10-26 00:00:00,certified,Peru,MIAMI,1500
+2026-10-26 00:00:00,certified,Rwanda,ANT,6456
+2026-10-26 00:00:00,certified,Tanzania,ANT,6101
+2026-10-26 00:00:00,certified,Tanzania,HA/BR,1655
+2026-10-26 00:00:00,certified,Uganda,ANT,29202
+2026-10-26 00:00:00,certified,Uganda,HA/BR,35
+2026-10-26 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-26 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-26 00:00:00,certified,Venezuela,NY,250
+2026-10-26 00:00:00,graded_failed,Brazil,ANT,1278
+2026-10-26 00:00:00,graded_passed,Brazil,ANT,2148
+2026-10-26 00:00:00,pending,Brazil,ANT,31076
+2026-10-26 00:00:00,pending,Honduras,HOU,10423
+2026-10-26 00:00:00,transition,Brazil,ANT,75992
+2026-10-26 00:00:00,transition,Burundi,ANT,640
+2026-10-26 00:00:00,transition,Colombia,ANT,25
+2026-10-26 00:00:00,transition,Honduras,ANT,775
+2026-10-26 00:00:00,transition,India,ANT,1939
+2026-10-26 00:00:00,transition,India,HA/BR,569
+2026-10-26 00:00:00,transition,Kenya,ANT,1525
+2026-10-26 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-26 00:00:00,transition,Mexico,ANT,7432
+2026-10-26 00:00:00,transition,Nicaragua,ANT,5542
+2026-10-26 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-26 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-26 00:00:00,transition,Peru,ANT,36932
+2026-10-26 00:00:00,transition,Peru,HA/BR,496
+2026-10-26 00:00:00,transition,Rwanda,ANT,2763
+2026-10-26 00:00:00,transition,Tanzania,ANT,6101
+2026-10-26 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-26 00:00:00,transition,Uganda,ANT,28917
+2026-10-26 00:00:00,transition,Uganda,HA/BR,35
+2026-10-26 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-27 00:00:00,certified,Brazil,ANT,79227
+2026-10-27 00:00:00,certified,Brazil,NY,640
+2026-10-27 00:00:00,certified,Burundi,ANT,640
+2026-10-27 00:00:00,certified,Colombia,ANT,25
+2026-10-27 00:00:00,certified,Colombia,NOLA,225
+2026-10-27 00:00:00,certified,Guatemala,HOU,275
+2026-10-27 00:00:00,certified,Honduras,ANT,750
+2026-10-27 00:00:00,certified,Honduras,HOU,32506
+2026-10-27 00:00:00,certified,Honduras,MIAMI,897
+2026-10-27 00:00:00,certified,Honduras,NOLA,2250
+2026-10-27 00:00:00,certified,India,ANT,1944
+2026-10-27 00:00:00,certified,India,HA/BR,569
+2026-10-27 00:00:00,certified,India,MIAMI,285
+2026-10-27 00:00:00,certified,Kenya,ANT,1525
+2026-10-27 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-27 00:00:00,certified,Mexico,ANT,7682
+2026-10-27 00:00:00,certified,Mexico,NOLA,1571
+2026-10-27 00:00:00,certified,Nicaragua,ANT,5542
+2026-10-27 00:00:00,certified,Nicaragua,HOU,25
+2026-10-27 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-27 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-27 00:00:00,certified,Peru,ANT,33184
+2026-10-27 00:00:00,certified,Peru,HA/BR,496
+2026-10-27 00:00:00,certified,Peru,MIAMI,1500
+2026-10-27 00:00:00,certified,Rwanda,ANT,6456
+2026-10-27 00:00:00,certified,Tanzania,ANT,6101
+2026-10-27 00:00:00,certified,Tanzania,HA/BR,1655
+2026-10-27 00:00:00,certified,Uganda,ANT,29202
+2026-10-27 00:00:00,certified,Uganda,HA/BR,35
+2026-10-27 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-27 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-27 00:00:00,certified,Venezuela,NY,250
+2026-10-27 00:00:00,graded_failed,Brazil,ANT,2910
+2026-10-27 00:00:00,graded_passed,Brazil,ANT,3235
+2026-10-27 00:00:00,pending,Brazil,ANT,36101
+2026-10-27 00:00:00,pending,Honduras,HOU,10423
+2026-10-27 00:00:00,transition,Brazil,ANT,79227
+2026-10-27 00:00:00,transition,Burundi,ANT,640
+2026-10-27 00:00:00,transition,Colombia,ANT,25
+2026-10-27 00:00:00,transition,Honduras,ANT,500
+2026-10-27 00:00:00,transition,India,ANT,1939
+2026-10-27 00:00:00,transition,India,HA/BR,569
+2026-10-27 00:00:00,transition,Kenya,ANT,1525
+2026-10-27 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-27 00:00:00,transition,Mexico,ANT,7432
+2026-10-27 00:00:00,transition,Nicaragua,ANT,5542
+2026-10-27 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-27 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-27 00:00:00,transition,Peru,ANT,33184
+2026-10-27 00:00:00,transition,Peru,HA/BR,496
+2026-10-27 00:00:00,transition,Rwanda,ANT,2763
+2026-10-27 00:00:00,transition,Tanzania,ANT,6101
+2026-10-27 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-27 00:00:00,transition,Uganda,ANT,28917
+2026-10-27 00:00:00,transition,Uganda,HA/BR,35
+2026-10-27 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-28 00:00:00,certified,Brazil,ANT,79227
+2026-10-28 00:00:00,certified,Brazil,NY,640
+2026-10-28 00:00:00,certified,Burundi,ANT,640
+2026-10-28 00:00:00,certified,Colombia,ANT,25
+2026-10-28 00:00:00,certified,Colombia,NOLA,225
+2026-10-28 00:00:00,certified,Guatemala,HOU,275
+2026-10-28 00:00:00,certified,Honduras,ANT,750
+2026-10-28 00:00:00,certified,Honduras,HOU,31981
+2026-10-28 00:00:00,certified,Honduras,MIAMI,897
+2026-10-28 00:00:00,certified,Honduras,NOLA,2250
+2026-10-28 00:00:00,certified,India,ANT,1944
+2026-10-28 00:00:00,certified,India,HA/BR,569
+2026-10-28 00:00:00,certified,India,MIAMI,285
+2026-10-28 00:00:00,certified,Kenya,ANT,1525
+2026-10-28 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-28 00:00:00,certified,Mexico,ANT,7682
+2026-10-28 00:00:00,certified,Mexico,NOLA,1571
+2026-10-28 00:00:00,certified,Nicaragua,ANT,4959
+2026-10-28 00:00:00,certified,Nicaragua,HOU,25
+2026-10-28 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-28 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-28 00:00:00,certified,Peru,ANT,32110
+2026-10-28 00:00:00,certified,Peru,HA/BR,496
+2026-10-28 00:00:00,certified,Peru,MIAMI,1500
+2026-10-28 00:00:00,certified,Rwanda,ANT,6136
+2026-10-28 00:00:00,certified,Tanzania,ANT,6101
+2026-10-28 00:00:00,certified,Tanzania,HA/BR,1370
+2026-10-28 00:00:00,certified,Uganda,ANT,29202
+2026-10-28 00:00:00,certified,Uganda,HA/BR,35
+2026-10-28 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-28 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-28 00:00:00,certified,Venezuela,NY,250
+2026-10-28 00:00:00,pending,Brazil,ANT,41961
+2026-10-28 00:00:00,pending,Honduras,HOU,10423
+2026-10-28 00:00:00,transition,Brazil,ANT,79227
+2026-10-28 00:00:00,transition,Burundi,ANT,640
+2026-10-28 00:00:00,transition,Colombia,ANT,25
+2026-10-28 00:00:00,transition,Honduras,ANT,500
+2026-10-28 00:00:00,transition,India,ANT,1939
+2026-10-28 00:00:00,transition,India,HA/BR,569
+2026-10-28 00:00:00,transition,Kenya,ANT,1525
+2026-10-28 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-28 00:00:00,transition,Mexico,ANT,7432
+2026-10-28 00:00:00,transition,Nicaragua,ANT,4959
+2026-10-28 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-28 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-28 00:00:00,transition,Peru,ANT,32110
+2026-10-28 00:00:00,transition,Peru,HA/BR,496
+2026-10-28 00:00:00,transition,Rwanda,ANT,2443
+2026-10-28 00:00:00,transition,Tanzania,ANT,6101
+2026-10-28 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-28 00:00:00,transition,Uganda,ANT,28917
+2026-10-28 00:00:00,transition,Uganda,HA/BR,35
+2026-10-28 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-29 00:00:00,certified,Brazil,ANT,82412
+2026-10-29 00:00:00,certified,Brazil,NY,640
+2026-10-29 00:00:00,certified,Burundi,ANT,640
+2026-10-29 00:00:00,certified,Colombia,ANT,25
+2026-10-29 00:00:00,certified,Colombia,NOLA,225
+2026-10-29 00:00:00,certified,Guatemala,HOU,275
+2026-10-29 00:00:00,certified,Honduras,ANT,750
+2026-10-29 00:00:00,certified,Honduras,HOU,31981
+2026-10-29 00:00:00,certified,Honduras,MIAMI,897
+2026-10-29 00:00:00,certified,Honduras,NOLA,2250
+2026-10-29 00:00:00,certified,India,ANT,1944
+2026-10-29 00:00:00,certified,India,HA/BR,569
+2026-10-29 00:00:00,certified,India,MIAMI,285
+2026-10-29 00:00:00,certified,Kenya,ANT,1525
+2026-10-29 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-29 00:00:00,certified,Mexico,ANT,7682
+2026-10-29 00:00:00,certified,Mexico,NOLA,1571
+2026-10-29 00:00:00,certified,Nicaragua,ANT,4959
+2026-10-29 00:00:00,certified,Nicaragua,HOU,25
+2026-10-29 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-29 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-29 00:00:00,certified,Peru,ANT,32110
+2026-10-29 00:00:00,certified,Peru,HA/BR,496
+2026-10-29 00:00:00,certified,Peru,MIAMI,1500
+2026-10-29 00:00:00,certified,Rwanda,ANT,5984
+2026-10-29 00:00:00,certified,Tanzania,ANT,6101
+2026-10-29 00:00:00,certified,Tanzania,HA/BR,1370
+2026-10-29 00:00:00,certified,Uganda,ANT,29202
+2026-10-29 00:00:00,certified,Uganda,HA/BR,35
+2026-10-29 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-29 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-29 00:00:00,certified,Venezuela,NY,250
+2026-10-29 00:00:00,graded_failed,Brazil,ANT,1360
+2026-10-29 00:00:00,graded_passed,Brazil,ANT,3185
+2026-10-29 00:00:00,pending,Brazil,ANT,43996
+2026-10-29 00:00:00,pending,Honduras,HOU,10398
+2026-10-29 00:00:00,transition,Brazil,ANT,82412
+2026-10-29 00:00:00,transition,Burundi,ANT,640
+2026-10-29 00:00:00,transition,Colombia,ANT,25
+2026-10-29 00:00:00,transition,Honduras,ANT,500
+2026-10-29 00:00:00,transition,India,ANT,1939
+2026-10-29 00:00:00,transition,India,HA/BR,569
+2026-10-29 00:00:00,transition,Kenya,ANT,1525
+2026-10-29 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-29 00:00:00,transition,Mexico,ANT,7432
+2026-10-29 00:00:00,transition,Nicaragua,ANT,4959
+2026-10-29 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-29 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-29 00:00:00,transition,Peru,ANT,32110
+2026-10-29 00:00:00,transition,Peru,HA/BR,496
+2026-10-29 00:00:00,transition,Rwanda,ANT,2291
+2026-10-29 00:00:00,transition,Tanzania,ANT,6101
+2026-10-29 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-29 00:00:00,transition,Uganda,ANT,28917
+2026-10-29 00:00:00,transition,Uganda,HA/BR,35
+2026-10-29 00:00:00,transition,Venezuela,HA/BR,2750
+2026-10-30 00:00:00,certified,Brazil,ANT,82412
+2026-10-30 00:00:00,certified,Brazil,NY,640
+2026-10-30 00:00:00,certified,Burundi,ANT,640
+2026-10-30 00:00:00,certified,Colombia,ANT,25
+2026-10-30 00:00:00,certified,Colombia,NOLA,225
+2026-10-30 00:00:00,certified,Guatemala,HOU,275
+2026-10-30 00:00:00,certified,Honduras,ANT,750
+2026-10-30 00:00:00,certified,Honduras,HOU,31981
+2026-10-30 00:00:00,certified,Honduras,MIAMI,897
+2026-10-30 00:00:00,certified,Honduras,NOLA,2250
+2026-10-30 00:00:00,certified,India,ANT,1944
+2026-10-30 00:00:00,certified,India,HA/BR,569
+2026-10-30 00:00:00,certified,India,MIAMI,285
+2026-10-30 00:00:00,certified,Kenya,ANT,1525
+2026-10-30 00:00:00,certified,Kenya,HA/BR,1299
+2026-10-30 00:00:00,certified,Mexico,ANT,7682
+2026-10-30 00:00:00,certified,Mexico,NOLA,1571
+2026-10-30 00:00:00,certified,Nicaragua,ANT,4959
+2026-10-30 00:00:00,certified,Nicaragua,HOU,25
+2026-10-30 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-10-30 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-10-30 00:00:00,certified,Peru,ANT,32110
+2026-10-30 00:00:00,certified,Peru,HA/BR,496
+2026-10-30 00:00:00,certified,Peru,MIAMI,1500
+2026-10-30 00:00:00,certified,Rwanda,ANT,5984
+2026-10-30 00:00:00,certified,Tanzania,ANT,6101
+2026-10-30 00:00:00,certified,Tanzania,HA/BR,1370
+2026-10-30 00:00:00,certified,Uganda,ANT,29202
+2026-10-30 00:00:00,certified,Uganda,HA/BR,35
+2026-10-30 00:00:00,certified,Venezuela,HA/BR,2750
+2026-10-30 00:00:00,certified,Venezuela,MIAMI,3500
+2026-10-30 00:00:00,certified,Venezuela,NY,250
+2026-10-30 00:00:00,pending,Brazil,ANT,47476
+2026-10-30 00:00:00,pending,Honduras,HOU,10373
+2026-10-30 00:00:00,transition,Brazil,ANT,82412
+2026-10-30 00:00:00,transition,Burundi,ANT,640
+2026-10-30 00:00:00,transition,Colombia,ANT,25
+2026-10-30 00:00:00,transition,Honduras,ANT,500
+2026-10-30 00:00:00,transition,India,ANT,1939
+2026-10-30 00:00:00,transition,India,HA/BR,569
+2026-10-30 00:00:00,transition,Kenya,ANT,1525
+2026-10-30 00:00:00,transition,Kenya,HA/BR,1299
+2026-10-30 00:00:00,transition,Mexico,ANT,7432
+2026-10-30 00:00:00,transition,Nicaragua,ANT,4959
+2026-10-30 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-10-30 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-10-30 00:00:00,transition,Peru,ANT,32110
+2026-10-30 00:00:00,transition,Peru,HA/BR,496
+2026-10-30 00:00:00,transition,Rwanda,ANT,2291
+2026-10-30 00:00:00,transition,Tanzania,ANT,6101
+2026-10-30 00:00:00,transition,Tanzania,HA/BR,580
+2026-10-30 00:00:00,transition,Uganda,ANT,28917
+2026-10-30 00:00:00,transition,Uganda,HA/BR,35
+2026-10-30 00:00:00,transition,Venezuela,HA/BR,2750
+2026-11-02 00:00:00,certified,Brazil,ANT,78434
+2026-11-02 00:00:00,certified,Brazil,NY,640
+2026-11-02 00:00:00,certified,Burundi,ANT,640
+2026-11-02 00:00:00,certified,Colombia,ANT,25
+2026-11-02 00:00:00,certified,Colombia,NOLA,225
+2026-11-02 00:00:00,certified,Guatemala,HOU,275
+2026-11-02 00:00:00,certified,Honduras,ANT,750
+2026-11-02 00:00:00,certified,Honduras,HOU,31808
+2026-11-02 00:00:00,certified,Honduras,MIAMI,897
+2026-11-02 00:00:00,certified,Honduras,NOLA,2250
+2026-11-02 00:00:00,certified,India,ANT,1944
+2026-11-02 00:00:00,certified,India,HA/BR,569
+2026-11-02 00:00:00,certified,India,MIAMI,285
+2026-11-02 00:00:00,certified,Kenya,ANT,1525
+2026-11-02 00:00:00,certified,Kenya,HA/BR,1299
+2026-11-02 00:00:00,certified,Mexico,ANT,7682
+2026-11-02 00:00:00,certified,Mexico,NOLA,1571
+2026-11-02 00:00:00,certified,Nicaragua,ANT,4959
+2026-11-02 00:00:00,certified,Nicaragua,HOU,25
+2026-11-02 00:00:00,certified,Papua New Guinea,ANT,1528
+2026-11-02 00:00:00,certified,Papua New Guinea,HA/BR,288
+2026-11-02 00:00:00,certified,Peru,ANT,32110
+2026-11-02 00:00:00,certified,Peru,HA/BR,496
+2026-11-02 00:00:00,certified,Peru,MIAMI,1500
+2026-11-02 00:00:00,certified,Rwanda,ANT,5984
+2026-11-02 00:00:00,certified,Tanzania,ANT,6101
+2026-11-02 00:00:00,certified,Tanzania,HA/BR,1370
+2026-11-02 00:00:00,certified,Uganda,ANT,29202
+2026-11-02 00:00:00,certified,Uganda,HA/BR,35
+2026-11-02 00:00:00,certified,Venezuela,HA/BR,2750
+2026-11-02 00:00:00,certified,Venezuela,MIAMI,3500
+2026-11-02 00:00:00,certified,Venezuela,NY,250
+2026-11-02 00:00:00,pending,Brazil,ANT,47476
+2026-11-02 00:00:00,pending,Honduras,HOU,10373
+2026-11-02 00:00:00,transition,Brazil,ANT,78434
+2026-11-02 00:00:00,transition,Burundi,ANT,640
+2026-11-02 00:00:00,transition,Colombia,ANT,25
+2026-11-02 00:00:00,transition,Honduras,ANT,500
+2026-11-02 00:00:00,transition,India,ANT,1939
+2026-11-02 00:00:00,transition,India,HA/BR,569
+2026-11-02 00:00:00,transition,Kenya,ANT,1525
+2026-11-02 00:00:00,transition,Kenya,HA/BR,1299
+2026-11-02 00:00:00,transition,Mexico,ANT,7432
+2026-11-02 00:00:00,transition,Nicaragua,ANT,4959
+2026-11-02 00:00:00,transition,Papua New Guinea,ANT,1528
+2026-11-02 00:00:00,transition,Papua New Guinea,HA/BR,288
+2026-11-02 00:00:00,transition,Peru,ANT,32110
+2026-11-02 00:00:00,transition,Peru,HA/BR,496
+2026-11-02 00:00:00,transition,Rwanda,ANT,2291
+2026-11-02 00:00:00,transition,Tanzania,ANT,6101
+2026-11-02 00:00:00,transition,Tanzania,HA/BR,580
+2026-11-02 00:00:00,transition,Uganda,ANT,28917
+2026-11-02 00:00:00,transition,Uganda,HA/BR,35
+2026-11-02 00:00:00,transition,Venezuela,HA/BR,2750
