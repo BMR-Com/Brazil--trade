@@ -47,7 +47,51 @@ const Coffee = (() => {
         <tr><td class="l">Physical basis</td><td class="l">The discount Brazilian and other origins sell at under KC. A widening discount means physical is plentiful and futures are rich; a narrowing one means origin is holding back.</td><td class="l">Brazil basis ladder</td></tr>
         <tr><td class="l">Arabica/robusta arb</td><td class="l">When arabica is expensive against robusta, roasters blend in more robusta, cutting arabica demand (and the reverse).</td><td class="l">Arabica / robusta</td></tr>
         <tr><td class="l">Currencies</td><td class="l">A weaker real or peso raises local-currency prices and encourages farmer selling; a stronger one slows it.</td><td class="l">Brazil, Colombia</td></tr>
-        <tr><td class="l">Funds and trade hedging</td><td class="l">Managed money swings; producer/merchant short hedges fall when prices are high and margin calls hurt, which thins liquidity.</td><td class="l">Futures, options &amp; COT</td></tr></table></div></div></div>`;
+        <tr><td class="l">Funds and trade hedging</td><td class="l">Managed money swings; producer/merchant short hedges fall when prices are high and margin calls hurt, which thins liquidity.</td><td class="l">Futures, options &amp; COT</td></tr></table></div></div></div>
+      <div class="card" style="margin-top:12px"><h2>Delivery: grading, origin and port differentials, age discount</h2>
+        <p>Coffee C delivers certified washed arabica held in ICE-licensed warehouses. Each lot is graded by the exchange (defects, bean size, cup); the invoice is the settlement price adjusted for the coffee's origin, the port it sits in, its grade and how long ago it was graded. 100 points = 1 ¢/lb.</p>
+        <div class="grid g2"><div><h3>Origin (growth) differentials</h3><div class="tbl"><table><tr><th class="l">Origin</th><th>Now</th><th>From May 2027</th></tr>
+          <tr><td class="l">Mexico, El Salvador, Nicaragua, Panama, Papua New Guinea, Peru, Honduras, Tanzania, Uganda</td><td class="n">par</td><td class="n">par</td></tr>
+          <tr><td class="l">Guatemala</td><td class="n">par</td><td class="n">+5.00¢</td></tr>
+          <tr><td class="l">Costa Rica, Kenya</td><td class="n">par</td><td class="n">+10.00¢</td></tr>
+          <tr><td class="l">Colombia</td><td class="n">+4.00¢</td><td class="n">+10.00¢</td></tr>
+          <tr><td class="l">Venezuela, Burundi, Rwanda, India</td><td class="n">−1.00¢</td><td class="n">−1.00¢</td></tr>
+          <tr><td class="l">Dominican Republic, Ecuador</td><td class="n">−4.00¢</td><td class="n">−4.00¢</td></tr>
+          <tr><td class="l">Brazil (semi-washed)</td><td class="n">−6.00¢</td><td class="n">−6.00¢</td></tr>
+          <tr><td class="l">Vietnam (washed arabica, scheduled)</td><td class="n">–</td><td class="n">−6.00¢ (later schedule)</td></tr></table></div></div>
+          <div><h3>Port (warehouse) differentials</h3><div class="tbl"><table><tr><th class="l">Port district</th><th>Differential</th></tr>
+          <tr><td class="l">New York, Virginia</td><td class="n">par</td></tr><tr><td class="l">New Orleans, Miami, Houston</td><td class="n">−0.50¢</td></tr>
+          <tr><td class="l">Antwerp, Hamburg/Bremen, Barcelona</td><td class="n">−1.25¢</td></tr></table></div>
+          <h3>Grade</h3><p>Basis is eight full imperfections (defects) per sample for most origins; each full imperfection worse than basis costs 10 points (0.10¢). No lot can be more than 15 imperfections below basis (23 in total; Colombia 10 below basis). At least half the beans must be screen 15 or larger. Coffee must cup clean, with no unwashed or aged flavour.</p></div></div>
+        <h3>Age discount (time since the certificate of grade)</h3>
+        <div class="grid g2"><div class="tbl"><table><tr><th class="l">Days since grading</th><th class="l">Deduction</th></tr>
+          <tr><td class="l">up to 120</td><td class="l">none</td></tr><tr><td class="l">121–150</td><td class="l">0.50¢</td></tr>
+          <tr><td class="l">151–360</td><td class="l">0.50¢ + 0.25¢ per 30 days</td></tr><tr><td class="l">361–720</td><td class="l">2.25¢ + 0.50¢ per 30 days</td></tr>
+          <tr><td class="l">721–1,080</td><td class="l">8.25¢ + 1.00¢ per 30 days</td></tr><tr><td class="l">1,081–1,440</td><td class="l">20.25¢ + 1.25¢ per 30 days</td></tr>
+          <tr><td class="l">1,441–1,800</td><td class="l">35.25¢ + 1.50¢ per 30 days</td></tr><tr><td class="l">longer</td><td class="l">steps up by a further 0.25¢ per 30 days each year (no cap)</td></tr></table></div>
+          <div><div class="grid g2"><label>Days since grading<br><input id="kcAge" type="number" value="400" step="30"></label>
+            <label>Origin<br><select id="kcOrg"><option value="0">par origin</option><option value="400">Colombia (+4¢)</option><option value="-100">Venezuela/Burundi/Rwanda/India (−1¢)</option><option value="-400">Dominican Rep./Ecuador (−4¢)</option><option value="-600">Brazil (−6¢)</option></select></label>
+            <label>Port<br><select id="kcPort"><option value="0">New York / Virginia</option><option value="-50">New Orleans / Miami / Houston</option><option value="-125">Antwerp / Hamburg-Bremen / Barcelona</option></select></label>
+            <label>Imperfections below basis<br><input id="kcImp" type="number" value="0" min="0" max="15"></label></div>
+            <div id="kcAgeOut" style="margin-top:8px"></div></div></div>
+        <div class="tbl" style="margin-top:8px"><table>
+          <tr><td class="l"><b>Why it matters</b></td><td class="l">The receiver takes what the deliverer chooses, so the cheapest-to-deliver lot sets the value of the spot month: old Brazilian coffee in Antwerp carries the biggest discounts and is what gets delivered first when it is in the certified pile. The age discount pushes owners to deliver or sell old certified lots before they lose value, so a pile of ageing certs weighs on the front spread; fresh gradings at par origins in US ports support it.</td></tr>
+          <tr><td class="l"><b>Timing and costs</b></td><td class="l">Delivery notices can be issued from 7 business days before the first business day of the delivery month to the last notice day (7 business days before the last business day); delivery follows 7 business days after the notice. The deliverer pays storage through the end of the delivery month. Weight can be up to 2% under par.</td></tr>
+          <tr><td class="l"><b>Certified-stock signals</b></td><td class="l">Coffee waiting for grading, the grading pass rate and unusual shipments to European warehouse ports (Antwerp, Hamburg/Bremen) show certified supply coming before it is counted. See the Certs &amp; structure tab.</td></tr></table></div>
+        <p class="note">From the ICE Coffee "C" rules (Appendix IV differentials, Appendix V age adjustments, Rules 8.01–8.14). Several origin differentials change from the May 2027 delivery; check the current rulebook before acting.</p></div>`;
+    const kc = () => {
+      const d = +$('#kcAge').value || 0, org = +$('#kcOrg').value, port = +$('#kcPort').value, imp = Math.max(0, +$('#kcImp').value || 0);
+      const B = [[1800, 5325, 175], [1440, 3525, 150], [1080, 2025, 125], [720, 825, 100], [360, 225, 50], [150, 50, 25]];
+      let age = 0;
+      if (d > 120 && d <= 150) age = 50;
+      else if (d > 150) { const [st, base, inc] = B.find(x => d > x[0]); age = base + Math.ceil((d - st) / 30) * inc; }
+      if (d > 3600) { age = 18825 + Math.ceil((d - 3600) / 30) * 300; }
+      else if (d > 1800) { const T = [[3240, 15525, 275], [2880, 12525, 250], [2520, 9825, 225], [2160, 7425, 200], [1800, 5325, 175]]; const [st, base, inc] = T.find(x => d > x[0]); age = base + Math.ceil((d - st) / 30) * inc; }
+      const tot = org + port - 10 * imp - age;
+      $('#kcAgeOut').innerHTML = `<div class="grid g4">${kpi('Age discount', '−' + fmt(age / 100, 2) + '¢', d + ' days since grading')}${kpi('Origin', (org >= 0 ? '+' : '') + fmt(org / 100, 2) + '¢', '')}${kpi('Port', fmt(port / 100, 2) + '¢', '')}
+        ${kpi('Net to settlement', (tot >= 0 ? '+' : '') + fmt(tot / 100, 2) + '¢/lb', `≈ $${fmt(tot / 100 * 375, 0)} per contract (37,500 lb); grade ${fmt(-imp * 10 / 100, 2)}¢`)}</div>`;
+    };
+    ['#kcAge', '#kcOrg', '#kcPort', '#kcImp'].forEach(id => $(id).addEventListener('input', kc)); kc();
   }
 
   async function balance() {

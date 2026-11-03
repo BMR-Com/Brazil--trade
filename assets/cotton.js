@@ -40,7 +40,38 @@ const Cotton = (() => {
         <tr><td class="l">Mill fixation</td><td class="l">Unfixed on-call sales are mills' short futures exposure: they must buy futures to fix, which supports the old-crop months into first notice.</td><td class="l">On-call</td></tr>
         <tr><td class="l">Spec positioning</td><td class="l">Managed money swings are large relative to open interest; crowded shorts fuel short-covering rallies.</td><td class="l">Futures, options &amp; COT</td></tr>
         <tr><td class="l">World balance</td><td class="l">World ex-China stocks/use sets the value of US cotton against polyester and other origins.</td><td class="l">WASDE</td></tr></table></div>
-        <h3>Full dashboards</h3><p class="note">${src(SITE.wasde, 'WASDE analytics')} · ${src(SITE.esr, 'Export sales')} · ${src(SITE.crop, 'Crop progress')} · ${src(SITE.oncall, 'On-call')} · ${src(SITE.cot, 'COT desk')} · ${src(SITE.opts, 'Softs options')}</p></div></div>`;
+        <h3>Full dashboards</h3><p class="note">${src(SITE.wasde, 'WASDE analytics')} · ${src(SITE.esr, 'Export sales')} · ${src(SITE.crop, 'Crop progress')} · ${src(SITE.oncall, 'On-call')} · ${src(SITE.cot, 'COT desk')} · ${src(SITE.opts, 'Softs options')}</p></div></div>
+      <div class="card" style="margin-top:12px"><h2>Delivery: points, quality differentials, age and storage penalties</h2>
+        <p>Cotton No. 2 delivers US-grown cotton held as electronic warehouse receipts in ICE-licensed warehouses. Each bale is classed by USDA; the invoice is the notice price plus or minus the quality differentials for each bale, less penalties for cotton that has sat certificated for months.</p>
+        <div class="grid g2"><div class="tbl"><table>
+          <tr><td class="l"><b>Delivery points</b></td><td class="l">Galveston, Houston and Dallas/Fort Worth (Texas), Memphis (Tennessee), Greenville/Spartanburg (South Carolina), each including warehouses within 15 miles. Savannah, Georgia is added from the October 2028 expiry. The contract sets no location premium or discount between points: the difference is in each warehouse's storage and load-out tariff (Texas ports carry the highest storage caps).</td></tr>
+          <tr><td class="l"><b>Basis quality</b></td><td class="l">Strict Low Middling, 1-1/16 inch staple, leaf 4, micronaire 3.5–4.9, strength 25 g/tex or more, colours 11–51 white and 12–32 light spotted. 92–108 bales of 400–650 lb, 50,000 lb net ±1%.</td></tr>
+          <tr><td class="l"><b>Quality differentials</b></td><td class="l">Premiums and discounts for grade, leaf and staple are the average of USDA AMS commercial spot quotations on the sixth business day before delivery. 1-1/32 inch staple delivers at twice the quoted 1-1/16 discount. Each bale's points are netted on the invoice.</td></tr>
+          <tr><td class="l"><b>Year of growth</b></td><td class="l">No penalty if delivered by 31 December of the year after the crop year; 2¢/lb in the following calendar year and another 2¢/lb for each year after.</td></tr>
+          <tr><td class="l"><b>Weight date allowance</b></td><td class="l">½ lb per bale per month from the month after weighing (shrinkage), on top of the age penalty.</td></tr>
+          <tr><td class="l"><b>Storage and fees</b></td><td class="l">The deliverer pays storage up to the delivery day (each warehouse's tariff, capped per delivery point); load-out, inspection ($2/bale) and certificate fees per the ICE tariff schedule.</td></tr>
+          <tr><td class="l"><b>Timing</b></td><td class="l">First notice 5 business days before the first delivery day; last trading day 17 business days before month end; last notice 12 business days before month end.</td></tr></table></div>
+        <div><h3>Aged cotton penalty (months certificated)</h3><div class="tbl"><table><tr><th class="l">Month after original certification</th><th class="l">Penalty, lb per bale</th></tr>
+          <tr><td class="l">1–3</td><td class="l">none</td></tr><tr><td class="l">4–10</td><td class="l">3 in month 4, +3 each month (21 in month 10)</td></tr>
+          <tr><td class="l">11–16</td><td class="l">25 in month 11, +4 each month (45 in month 16)</td></tr><tr><td class="l">17–22</td><td class="l">50 in month 17, +5 each month (75 in month 22)</td></tr>
+          <tr><td class="l">23 on</td><td class="l">81 in month 23, +6 each month (no cap)</td></tr></table></div>
+          <div class="grid g2"><label>Months certificated<br><input id="ctAge" type="number" value="10" min="0"></label><label>Price, ¢/lb<br><input id="ctPx" type="number" value="70" step="1"></label>
+            <label>Average bale weight, lb<br><input id="ctBw" type="number" value="500" step="10"></label><label>Months since weighing<br><input id="ctWd" type="number" value="10" min="0"></label></div>
+          <div id="ctAgeOut" style="margin-top:8px"></div></div></div>
+        <div class="tbl" style="margin-top:8px"><table>
+          <tr><td class="l"><b>Why it matters</b></td><td class="l">The penalty is taken as pounds off each bale, so in price terms it is (penalty lb ÷ bale weight) × the price, and it grows faster the longer cotton sits. Old certificated stock therefore delivers at a discount and tends to be tendered first, which weighs on the spot month; a fresh certification wave (new-crop cotton, strong basis elsewhere) is cheaper to deliver and can pressure the front spread too. High certificated stocks with an ageing profile are a bearish structure signal; low and fresh ones support the inverse.</td></tr>
+          <tr><td class="l"><b>On-call link</b></td><td class="l">Mills fix on-call purchases against the front months; if they leave fixing late into notice period, they compete with longs who want to avoid delivery. See the On-call tab for unfixed sales by month.</td></tr></table></div>
+        <p class="note">From the ICE Cotton No. 2 Deliverer's &amp; Receiver's Guide, contract specifications and tariff schedule. Penalties and tariffs change; check the current ICE documents before acting.</p></div>`;
+    const kpi = (lab, v, sub) => `<div class="kpi card" style="padding:10px"><div class="lbl">${lab}</div><div class="val" style="font-size:19px">${v}</div>${sub ? `<div class="sub">${sub}</div>` : ''}</div>`;
+    const ct = () => {
+      const m = Math.max(0, +$('#ctAge').value || 0), px = +$('#ctPx').value || 0, bw = +$('#ctBw').value || 500, wd = Math.max(0, +$('#ctWd').value || 0);
+      let lb = 0;
+      if (m >= 4 && m <= 10) lb = 3 * (m - 3); else if (m >= 11 && m <= 16) lb = 25 + 4 * (m - 11); else if (m >= 17 && m <= 22) lb = 50 + 5 * (m - 17); else if (m >= 23) lb = 81 + 6 * (m - 23);
+      const wlb = 0.5 * wd, pen = lb / bw * px, wpen = wlb / bw * px;
+      $('#ctAgeOut').innerHTML = `<div class="grid g4">${kpi('Age penalty', fmt(lb, 0) + ' lb/bale', `month ${m} of certification`)}${kpi('In price', fmt(pen, 2) + '¢/lb', `${fmt(100 * lb / bw, 1)}% of value at ${fmt(px, 0)}¢`)}
+        ${kpi('Weight allowance', fmt(wlb, 1) + ' lb/bale', fmt(wpen, 2) + '¢/lb')}${kpi('Total', fmt(pen + wpen, 2) + '¢/lb', `≈ $${fmt((pen + wpen) * 500, 0)} per contract (50,000 lb)`)}</div>`;
+    };
+    ['#ctAge', '#ctPx', '#ctBw', '#ctWd'].forEach(id => $(id).addEventListener('input', ct)); ct();
   }
   async function wasde() {
     body().innerHTML = '<div class="card"><p class="note">Loading WASDE analysis…</p></div>';
