@@ -1,37 +1,6 @@
 {
-"generated": "2026-11-01 00:08 UTC",
+"generated": "2026-11-03 17:35 UTC",
 "events": [
-{
-"date": "2026-10-26",
-"time": "3:00 PM CT",
-"event": "NASS Crop Progress",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE",
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=10&day=26&report_id=17011",
-"estimated": false
-},
-{
-"date": "2026-10-26",
-"time": "10:00 AM CT",
-"event": "USDA export inspections",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE"
-],
-"importance": 1,
-"link": null,
-"estimated": false
-},
 {
 "date": "2026-10-27",
 "time": "3:30 PM CT",
@@ -124,18 +93,6 @@
 {
 "date": "2026-10-29",
 "time": "",
-"event": "Feeder cattle Oct 26: last trading day (settles to CME Feeder Index)",
-"cat": "CME contract",
-"markets": [
-"GF"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-10-29",
-"time": "",
 "event": "Buenos Aires Grain Exchange crop progress (weekly)",
 "cat": "South America",
 "markets": [
@@ -162,32 +119,6 @@
 },
 {
 "date": "2026-10-30",
-"time": "",
-"event": "Soybeans Nov 26: first notice day",
-"cat": "CME contract",
-"markets": [
-"ZS"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-10-30",
-"time": "2:00 PM CT",
-"event": "NASS Agricultural Prices",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"DC"
-],
-"importance": 1,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=10&day=30&report_id=12001",
-"estimated": false
-},
-{
-"date": "2026-10-30",
 "time": "2:30 PM CT",
 "event": "CFTC Commitments of Traders",
 "cat": "CFTC",
@@ -197,42 +128,6 @@
 "importance": 1,
 "link": null,
 "estimated": false
-},
-{
-"date": "2026-10-30",
-"time": "",
-"event": "ULSD (heating oil) Nov 26: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"HO"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-10-30",
-"time": "",
-"event": "Live cattle Oct 26: last trading day",
-"cat": "CME contract",
-"markets": [
-"LE"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-10-30",
-"time": "",
-"event": "RBOB gasoline Nov 26: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"RB"
-],
-"importance": 1,
-"link": null,
-"estimated": true
 },
 {
 "date": "2026-11-02",
@@ -701,18 +596,6 @@
 "estimated": false
 },
 {
-"date": "2026-11-13",
-"time": "",
-"event": "Soybeans Nov 26: last trading day",
-"cat": "CME contract",
-"markets": [
-"ZS"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
 "date": "2026-11-16",
 "time": "3:00 PM CT",
 "event": "NASS Crop Progress",
@@ -834,18 +717,6 @@
 },
 {
 "date": "2026-11-19",
-"time": "",
-"event": "Feeder cattle Nov 26: last trading day (settles to CME Feeder Index)",
-"cat": "CME contract",
-"markets": [
-"GF"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-11-19",
 "time": "2:00 PM CT",
 "event": "NASS Livestock Slaughter",
 "cat": "USDA",
@@ -921,18 +792,6 @@
 "importance": 1,
 "link": null,
 "estimated": false
-},
-{
-"date": "2026-11-20",
-"time": "",
-"event": "WTI crude Dec 26: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"CL"
-],
-"importance": 1,
-"link": null,
-"estimated": true
 },
 {
 "date": "2026-11-23",
@@ -1050,18 +909,6 @@
 "estimated": false
 },
 {
-"date": "2026-11-25",
-"time": "",
-"event": "Natural gas Dec 26: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"NG"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
 "date": "2026-11-26",
 "time": "",
 "event": "US exchange holiday (CME ags closed)",
@@ -1162,66 +1009,6 @@
 },
 {
 "date": "2026-11-30",
-"time": "",
-"event": "KC HRW wheat Dec 26: first notice day",
-"cat": "CME contract",
-"markets": [
-"KE"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-11-30",
-"time": "",
-"event": "Corn Dec 26: first notice day",
-"cat": "CME contract",
-"markets": [
-"ZC"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-11-30",
-"time": "",
-"event": "Soybean oil Dec 26: first notice day",
-"cat": "CME contract",
-"markets": [
-"ZL"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-11-30",
-"time": "",
-"event": "Soybean meal Dec 26: first notice day",
-"cat": "CME contract",
-"markets": [
-"ZM"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-11-30",
-"time": "",
-"event": "Chicago wheat Dec 26: first notice day",
-"cat": "CME contract",
-"markets": [
-"ZW"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-11-30",
 "time": "2:00 PM CT",
 "event": "NASS Agricultural Prices",
 "cat": "USDA",
@@ -1250,30 +1037,6 @@
 "estimated": false
 },
 {
-"date": "2026-11-30",
-"time": "",
-"event": "ULSD (heating oil) Dec 26: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"HO"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-11-30",
-"time": "",
-"event": "RBOB gasoline Dec 26: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"RB"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
 "date": "2026-12-01",
 "time": "2:00 PM CT",
 "event": "NASS Fats & Oils",
@@ -1299,18 +1062,6 @@
 "importance": 1,
 "link": null,
 "estimated": false
-},
-{
-"date": "2026-12-01",
-"time": "",
-"event": "Live cattle Dec 26: delivery month begins",
-"cat": "CME contract",
-"markets": [
-"LE"
-],
-"importance": 1,
-"link": null,
-"estimated": true
 },
 {
 "date": "2026-12-02",
@@ -1705,18 +1456,6 @@
 },
 {
 "date": "2026-12-14",
-"time": "",
-"event": "Lean hogs Dec 26: last trading day (settles to Lean Hog Index)",
-"cat": "CME contract",
-"markets": [
-"HE"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-14",
 "time": "10:00 AM CT",
 "event": "USDA export inspections",
 "cat": "USDA",
@@ -1729,66 +1468,6 @@
 "importance": 1,
 "link": null,
 "estimated": false
-},
-{
-"date": "2026-12-14",
-"time": "",
-"event": "KC HRW wheat Dec 26: last trading day",
-"cat": "CME contract",
-"markets": [
-"KE"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-14",
-"time": "",
-"event": "Corn Dec 26: last trading day",
-"cat": "CME contract",
-"markets": [
-"ZC"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-14",
-"time": "",
-"event": "Soybean oil Dec 26: last trading day",
-"cat": "CME contract",
-"markets": [
-"ZL"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-14",
-"time": "",
-"event": "Soybean meal Dec 26: last trading day",
-"cat": "CME contract",
-"markets": [
-"ZM"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-14",
-"time": "",
-"event": "Chicago wheat Dec 26: last trading day",
-"cat": "CME contract",
-"markets": [
-"ZW"
-],
-"importance": 1,
-"link": null,
-"estimated": true
 },
 {
 "date": "2026-12-15",
@@ -1958,18 +1637,6 @@
 "importance": 1,
 "link": null,
 "estimated": false
-},
-{
-"date": "2026-12-21",
-"time": "",
-"event": "WTI crude Jan 27: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"CL"
-],
-"importance": 1,
-"link": null,
-"estimated": true
 },
 {
 "date": "2026-12-22",
@@ -2193,18 +1860,6 @@
 "estimated": false
 },
 {
-"date": "2026-12-29",
-"time": "",
-"event": "Natural gas Jan 27: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"NG"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
 "date": "2026-12-30",
 "time": "9:30 AM CT",
 "event": "EIA Weekly Petroleum Status Report (crude, gasoline, distillate stocks)",
@@ -2296,42 +1951,6 @@
 {
 "date": "2026-12-31",
 "time": "",
-"event": "Soybean oil Jan 27: first notice day",
-"cat": "CME contract",
-"markets": [
-"ZL"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-31",
-"time": "",
-"event": "Soybean meal Jan 27: first notice day",
-"cat": "CME contract",
-"markets": [
-"ZM"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-31",
-"time": "",
-"event": "Soybeans Jan 27: first notice day",
-"cat": "CME contract",
-"markets": [
-"ZS"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-31",
-"time": "",
 "event": "Buenos Aires Grain Exchange crop progress (weekly)",
 "cat": "South America",
 "markets": [
@@ -2342,42 +1961,6 @@
 "importance": 1,
 "link": null,
 "estimated": false
-},
-{
-"date": "2026-12-31",
-"time": "",
-"event": "ULSD (heating oil) Jan 27: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"HO"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-31",
-"time": "",
-"event": "Live cattle Dec 26: last trading day",
-"cat": "CME contract",
-"markets": [
-"LE"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2026-12-31",
-"time": "",
-"event": "RBOB gasoline Jan 27: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"RB"
-],
-"importance": 1,
-"link": null,
-"estimated": true
 },
 {
 "date": "2027-01-01",
@@ -2751,42 +2334,6 @@
 "estimated": false
 },
 {
-"date": "2027-01-14",
-"time": "",
-"event": "Soybean oil Jan 27: last trading day",
-"cat": "CME contract",
-"markets": [
-"ZL"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2027-01-14",
-"time": "",
-"event": "Soybean meal Jan 27: last trading day",
-"cat": "CME contract",
-"markets": [
-"ZM"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
-"date": "2027-01-14",
-"time": "",
-"event": "Soybeans Jan 27: last trading day",
-"cat": "CME contract",
-"markets": [
-"ZS"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
 "date": "2027-01-15",
 "time": "12:00 PM CT",
 "event": "Baker Hughes rig count",
@@ -2868,18 +2415,6 @@
 "importance": 2,
 "link": null,
 "estimated": false
-},
-{
-"date": "2027-01-20",
-"time": "",
-"event": "WTI crude Feb 27: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"CL"
-],
-"importance": 1,
-"link": null,
-"estimated": true
 },
 {
 "date": "2027-01-21",
@@ -3039,18 +2574,6 @@
 "estimated": false
 },
 {
-"date": "2027-01-27",
-"time": "",
-"event": "Natural gas Feb 27: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"NG"
-],
-"importance": 1,
-"link": null,
-"estimated": true
-},
-{
 "date": "2027-01-28",
 "time": "9:30 AM CT",
 "event": "EIA Weekly Natural Gas Storage Report",
@@ -3097,18 +2620,6 @@
 {
 "date": "2027-01-28",
 "time": "",
-"event": "Feeder cattle Jan 27: last trading day (settles to CME Feeder Index)",
-"cat": "CME contract",
-"markets": [
-"GF"
-],
-"importance": 2,
-"link": null,
-"estimated": true
-},
-{
-"date": "2027-01-28",
-"time": "",
 "event": "Buenos Aires Grain Exchange crop progress (weekly)",
 "cat": "South America",
 "markets": [
@@ -3146,28 +2657,19 @@
 "estimated": false
 },
 {
-"date": "2027-01-29",
-"time": "",
-"event": "ULSD (heating oil) Feb 27: last trading day",
-"cat": "NYMEX contract",
+"date": "2027-02-01",
+"time": "10:00 AM CT",
+"event": "USDA export inspections",
+"cat": "USDA",
 "markets": [
-"HO"
+"ZC",
+"ZS",
+"ZW",
+"KE"
 ],
 "importance": 1,
 "link": null,
-"estimated": true
-},
-{
-"date": "2027-01-29",
-"time": "",
-"event": "RBOB gasoline Feb 27: last trading day",
-"cat": "NYMEX contract",
-"markets": [
-"RB"
-],
-"importance": 1,
-"link": null,
-"estimated": true
+"estimated": false
 }
 ]
 }
