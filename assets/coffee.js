@@ -229,7 +229,7 @@ const Coffee = (() => {
         ${kpi('KC front spread', sgn(sn.spread, 1, '¢'), `front minus second, ${sn.date}; ${ord(sn.pct_regime ?? sn.pct5y)} since Dec 2023; full carry ${f2(sn.carry)}¢`)}</div>
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Certified stocks and bags pending grading</h2>${rngBar('kcSt', ['1M', '3M', '6M', '1Y', 'All'], '3M')}${box('kcSt', 260)}<p class="note">ICE daily certified-stock report, bags of arabica in licensed warehouses that passed grading, and bags waiting to be graded. Of the certified total, ${f0(c.transition)} bags were graded under the earlier rules (transition bags). Pending bags that pass will add to the total; they are the earliest public sign of new deliverable supply.</p></div>
-        <div class="card"><h2>Front spread against certified stocks</h2>${box('kcSc', 280)}<p class="note">Each point is a month: average ICE certified stocks (x, million bags) against the KC front-month spread (y, ¢/lb, positive = inverted). Low certs go with inverted curves; the latest month is highlighted.</p></div></div>
+        <div class="card"><h2>Front spread against certified stocks</h2>${box('kcSc', 280)}<p class="note">Each point is a month since 2020: certified stocks (x) against the KC front-month spread (y, ¢/lb, positive = inverted). The lines give the fair spread for each certs level, with a separate level since ICE barred re-grading of de-certified coffee in December 2023.${St.fair ? ` At ${f2(St.fair.certs)}m bags the fair spread is ${sgn(St.fair.fair, 1, '¢')}; today's ${sgn(sn.spread, 1, '¢')} is ${sgn(St.fair.resid, 1, '¢')} ${St.fair.resid >= 0 ? 'rich' : 'cheap'} to it (${ord(St.fair.resid_pct)} of gaps since Dec 2023). Certs explain about ${f0(St.fair.r2 * 100)}% of the monthly spread; the gap is a valuation, not a timing signal.` : ''} Certs before Sep 2026 are ICO monthly figures; from Sep 2026 ICE daily reports. Variables: ${(St.fair?.variables || []).join('; ')}.</p></div></div>
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Certified stocks by origin</h2><div class="tbl">${tbl(C.by_origin, 'Origin')}</div></div>
         <div class="card"><h2>Certified stocks by warehouse port</h2><div class="tbl">${tbl(C.by_port, 'Port')}</div><p class="note">ANT Antwerp, HA/BR Hamburg-Bremen, BAR Barcelona, HOU Houston, NOLA New Orleans, NY New York, VA Virginia. European ports deliver at a 1.25¢ discount; Gulf ports and Miami at 0.50¢ (see the primer).</p></div></div>
@@ -243,10 +243,15 @@ const Coffee = (() => {
       chart('kcSt', { type: 'line', data: { labels: C.dates.slice(a), datasets: [{ label: 'Certified, bags', data: C.total.slice(a), borderColor: '#7d3c98', pointRadius: pr, yAxisID: 'y' }, { label: 'Pending grading', data: C.pending.slice(a), borderColor: '#d68910', pointRadius: pr, yAxisID: 'y1' }] },
         options: { scales: { y: { beginAtZero: false, title: { display: true, text: 'certified' } }, y1: { position: 'right', beginAtZero: true, grid: { display: false }, title: { display: true, text: 'pending' } } } } }); };
     drawSt('3M'); rngWire('kcSt', drawSt);
-    const V = St.vs_certs || [];
-    if (V.length) chart('kcSc', { type: 'scatter', data: { datasets: [{ label: 'Months', data: V.slice(0, -1).map(p => ({ x: p.x, y: p.y })), backgroundColor: 'rgba(125,60,152,.35)' },
-      { label: 'Latest ' + V.at(-1).m, data: [{ x: V.at(-1).x, y: V.at(-1).y }], backgroundColor: '#c0392b', pointRadius: 6 }] },
-      options: { interaction: { mode: 'nearest', intersect: true }, scales: { x: { title: { display: true, text: 'ICE certs, m bags' } }, y: { title: { display: true, text: 'front spread ¢/lb' } } } } });
+    const V = St.vs_certs || [], Fv = St.fair, pre = V.filter(p => !p.post), post = V.filter(p => p.post).slice(0, -1);
+    if (V.length) chart('kcSc', { type: 'scatter', data: { datasets: [
+      { label: '2020 – Nov 2023', data: pre.map(p => ({ x: p.x, y: p.y, m: p.m })), backgroundColor: 'rgba(127,140,141,.45)' },
+      { label: 'Since Dec 2023', data: post.map(p => ({ x: p.x, y: p.y, m: p.m })), backgroundColor: 'rgba(125,60,152,.55)' },
+      { label: 'Latest ' + V.at(-1).m, data: [{ x: V.at(-1).x, y: V.at(-1).y, m: V.at(-1).m }], backgroundColor: '#c0392b', pointRadius: 6 },
+      ...(Fv ? [{ type: 'line', label: 'Fair spread, current rules', data: Fv.curve_post, borderColor: '#7d3c98', borderWidth: 1.5, pointRadius: 0 },
+               { type: 'line', label: 'Fair spread, earlier rules', data: Fv.curve_pre, borderColor: '#95a5a6', borderDash: [4, 3], borderWidth: 1.2, pointRadius: 0 }] : [])] },
+      options: { interaction: { mode: 'nearest', intersect: true }, plugins: { tooltip: { callbacks: { label: c => `${c.raw.m || ''} certs ${f2(c.raw.x)}m, spread ${f2(c.raw.y)}¢` } } },
+        scales: { x: { type: 'logarithmic', title: { display: true, text: 'certified stocks, m bags (log scale)' } }, y: { title: { display: true, text: 'front spread ¢/lb' } } } } });
     const drawSp = r => { const i0 = rngFrom(St.dates, r);
       chart('kcSp', { type: 'line', data: { labels: St.dates.slice(i0), datasets: [{ label: 'Front − second, ¢/lb', data: St.spread.slice(i0), borderColor: '#2c6fbb', pointRadius: 0 }, { label: 'Full carry (negative)', data: St.carry.slice(i0).map(x => -x), borderColor: '#7f8c8d', borderDash: [4, 3], pointRadius: 0 }] } }); };
     drawSp('2Y'); rngWire('kcSp', drawSp);

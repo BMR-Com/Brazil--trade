@@ -306,13 +306,21 @@ def ice_daily():
 
 
 def ice_monthly_m():
-    """Monthly average ICE certified arabica stocks, million bags, keyed 'YYYY-MM'."""
+    """Monthly ICE certified arabica stocks, million bags, keyed 'YYYY-MM'. ICE daily reports (monthly average) where
+    ICE has them for most of the month; earlier months from the ICO monthly report, whose New York and London columns
+    are swapped in the source from Oct 2025 (checked against ICE daily reports)."""
+    out = {}
+    s = read("ico_certified_stocks.csv")
+    if s is not None:
+        s = s.sort_values(["stock_month", "report_period"]).drop_duplicates("stock_month", keep="last")
+        for r in s.itertuples():
+            out[r.stock_month] = r.london_bags_millions if r.stock_month >= "2025-10" else r.new_york_bags_millions
     d = ice_daily()
-    if d is None:
-        return {}
-    t = d[d.section == "certified"].groupby("date").bags.sum()
-    m = t.resample("MS").mean() / 1e6
-    return {k.strftime("%Y-%m"): v for k, v in m.items()}
+    if d is not None:
+        t = d[d.section == "certified"].groupby("date").bags.sum()
+        n = t.resample("MS").count(); m = t.resample("MS").mean() / 1e6
+        out.update({k.strftime("%Y-%m"): v for k, v in m.items() if n[k] >= 10})
+    return dict(sorted(out.items()))
 
 
 def certs_ice():
@@ -366,7 +374,23 @@ def structure(w):
     cm = ice_monthly_m()
     if cm:
         ms = spread.resample("MS").mean(); ms.index = ms.index.strftime("%Y-%m")
-        out["vs_certs"] = [{"x": rd(v, 3), "y": rd(ms.get(k), 2), "m": k} for k, v in sorted(cm.items()) if k in ms.index]
+        pts = [(k, v, ms.get(k)) for k, v in cm.items() if k >= "2020-01" and k in ms.index and v and v > 0]
+        out["vs_certs"] = [{"x": rd(v, 3), "y": rd(y, 2), "m": k, "post": k >= "2023-12"} for k, v, y in pts]
+        # fair spread for a given certs level: monthly spread on ln(certs), separate level after the Dec 2023 rule change
+        X = np.array([[1, np.log(v), float(k >= "2023-12")] for k, v, y in pts]); Y = np.array([y for k, v, y in pts])
+        b, *_ = np.linalg.lstsq(X, Y, rcond=None)
+        res = Y - X @ b
+        c_now = list(cm.values())[-1]
+        fair = b[0] + b[1] * np.log(c_now) + b[2]
+        r_now = float(spread.iloc[-1]) - fair
+        post_res = res[X[:, 2] == 1]
+        lo, hi = min(v for k, v, y in pts), max(v for k, v, y in pts)
+        grid = np.exp(np.linspace(np.log(lo), np.log(hi), 25))
+        out["fair"] = {"certs": rd(c_now, 3), "fair": rd(fair, 2), "resid": rd(r_now, 2),
+                       "resid_pct": rd((post_res <= r_now).mean() * 100, 0), "r2": rd(1 - res.var() / Y.var(), 2), "n": len(Y),
+                       "curve_post": [{"x": rd(g, 3), "y": rd(b[0] + b[1] * np.log(g) + b[2], 2)} for g in grid],
+                       "curve_pre": [{"x": rd(g, 3), "y": rd(b[0] + b[1] * np.log(g), 2)} for g in grid],
+                       "variables": ["ICE certified arabica stocks (monthly average)", "KC front-month spread", "Rule regime (re-grading barred from Dec 2023)"]}
     return out
 
 
