@@ -192,8 +192,19 @@ const Coffee = (() => {
           <td class="n">${r.sm100_p ?? '–'}</td><td class="n">${r.f16_rain != null ? fmt(r.f16_rain, 0) : '–'}</td><td class="n">${r.f16_tmin != null ? fmt(r.f16_tmin, 1) + ' °C' : '–'}</td></tr>`).join('')}</table></div>
       <p class="note">Covers ${pc(X.mapped_share)} of Brazil's ${t} output; weather available for ${pc(X.weather_share)} of that (missing points drop out and the rest are re-weighted).</p></div>`; };
     body().innerHTML = card('arabica', 'Arabica') + `<div style="margin-top:12px"></div>` + card('conilon', 'Conilon') +
-      (H.length > 1 ? `<div class="card" style="margin-top:12px"><h2>Weighted rain index over time</h2><div style="position:relative;height:240px"><canvas id="kcWh"></canvas></div></div>` : '') +
+      `<div class="grid g2" style="margin-top:12px">${['arabica', 'conilon'].map(t => { const c = (W.types[t] || {}).season_curve; if (!c) return '';
+        const td = c.to_date; return `<div class="card"><h2>${t === 'arabica' ? 'Arabica' : 'Conilon'}: season rain since 1 September <span class="note">production-weighted, mm</span></h2>
+        ${td ? `<p>${c.season} to date: <b>${fmt(td.mm, 0)} mm</b>, ${td.pct_mean != null ? td.pct_mean + '% of the ' + c.years + ' average' : ''}${td.last != null ? `; last season at the same point ${fmt(td.last, 0)} mm` : ''}${td.rank ? ` (ranks ${td.rank} of ${td.n + 1} seasons, 1 = driest)` : ''}.</p>` : `<p class="note">Current-season daily data loads with the next weather run.</p>`}
+        <div style="position:relative;height:260px"><canvas id="kcSc_${t}"></canvas></div></div>`; }).join('')}</div>` +
+      (H.length > 1 ? `<div class="card" style="margin-top:12px"><h2>Weighted rain index, daily readings</h2><div style="position:relative;height:200px"><canvas id="kcWh"></canvas></div><p class="note">Recorded from 1 Nov 2026, one point per run.</p></div>` : '') +
       `<p class="note">Weights: Conab survey ${W.conab.survey} of ${W.conab.season}, production by state and by Minas Gerais and Bahia region. Weather: Open-Meteo ERA5 and forecast at one point per region, against 2011–2025 (see Where it's grown for each point). Weather through ${W.weather_through || '–'}. For forecasts also check Somar Meteorologia and Climatempo.</p>`;
+    ['arabica', 'conilon'].forEach(t => { const c = (W.types[t] || {}).season_curve; if (!c) return;
+      chart('kcSc_' + t, { type: 'line', data: { labels: c.labels, datasets: [
+        { label: '90th pct', data: c.p90, borderColor: 'rgba(127,140,141,.25)', backgroundColor: 'rgba(127,140,141,.15)', pointRadius: 0, fill: '+1' },
+        { label: '10th pct', data: c.p10, borderColor: 'rgba(127,140,141,.25)', pointRadius: 0, fill: false },
+        { label: 'Average ' + (c.years || ''), data: c.mean, borderColor: '#7f8c8d', borderDash: [5, 4], pointRadius: 0 },
+        { label: c.last_season, data: c.last, borderColor: '#d68910', pointRadius: 0 },
+        { label: c.season, data: c.current, borderColor: '#2c6fbb', borderWidth: 2.6, pointRadius: 0 }] }, options: { plugins: { legend: { labels: { filter: i => !/pct/.test(i.text) } } } } }); });
     if (H.length > 1) chart('kcWh', { type: 'line', data: { labels: H.map(r => r.date), datasets: [['arabica_r30_pct_normal', 'Arabica 30-day rain % of avg', '#7d3c98'], ['conilon_r30_pct_normal', 'Conilon 30-day rain % of avg', '#d68910'],
       ['arabica_rstd_pct_normal', 'Arabica season rain % of avg', '#2c6fbb']].map(([k, l, c]) => ({ label: l, data: H.map(r => r[k]), borderColor: c, pointRadius: 0 })) } });
   }

@@ -210,6 +210,9 @@ def main():
                                                                   "forecast_days": 16, "past_days": 7, "timezone": "auto"}),
                    ["precipitation_sum", "temperature_2m_max", "temperature_2m_min", "et0_fao_evapotranspiration"])
         time.sleep(4)
+        if rec is not None:                     # keep the recent daily series so season curves can be rebuilt (models/coffee_weather.py)
+            (HIST / "recent").mkdir(exist_ok=True)
+            rec.round(3).to_csv(HIST / "recent" / f"{rid}.csv.gz", compression="gzip")
         if rec is None:
             print("no recent data", rid, "(kept last run's reading)" if rid in prev else "", flush=True)
             if rid in prev:

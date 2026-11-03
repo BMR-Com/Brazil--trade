@@ -36,6 +36,62 @@ def J(p):
         return None
 
 
+def daily_rain(pid):
+    """Daily rain for one point: 2011-2025 history plus the recent 400-day file (recent wins on overlap)."""
+    parts = []
+    for f in (D / "geo/weather_hist" / f"{pid}.csv.gz", D / "geo/weather_hist/recent" / f"{pid}.csv.gz"):
+        if f.exists():
+            x = pd.read_csv(f, index_col=0, parse_dates=True)
+            if "rain" in x:
+                parts.append(x["rain"])
+    if not parts:
+        return None
+    r = pd.concat(parts)
+    return r[~r.index.duplicated(keep="last")].sort_index()
+
+
+def season_curves(weights):
+    """Production-weighted cumulative rain from 1 Sep to 31 May for every season: current, last, average, 10th-90th pct."""
+    series = {pid: daily_rain(pid) for pid in weights}
+    series = {k: v for k, v in series.items() if v is not None}
+    if not series:
+        return None
+    df = pd.DataFrame(series)
+    w = pd.Series({k: weights[k] for k in df.columns})
+    wr = df.mul(w, axis=1).sum(axis=1, min_count=1) / df.notna().mul(w, axis=1).sum(axis=1).replace(0, float("nan"))
+    today = pd.Timestamp(date.today())
+    cur_start = pd.Timestamp(today.year if today.month >= 9 else today.year - 1, 9, 1)
+    curves = {}
+    for y in range(2011, cur_start.year + 1):
+        st = pd.Timestamp(y, 9, 1); en = pd.Timestamp(y + 1, 5, 31)
+        s = wr[(wr.index >= st) & (wr.index <= en)]
+        if len(s) < 7:
+            continue
+        idx = (s.index - st).days
+        curves[y] = pd.Series(s.cumsum().values, index=idx)
+    if not curves:
+        return None
+    days = list(range(0, 273))
+    hist = pd.DataFrame({y: c.reindex(days) for y, c in curves.items() if y < cur_start.year - 1 and c.index.max() >= 270})
+    week = list(range(0, 273, 7))
+    pick = lambda c: [None if pd.isna(v) else round(float(v), 0) for v in c.reindex(week)]
+    lab = [(cur_start + pd.Timedelta(days=d)).strftime("%d %b") for d in week]
+    cur = curves.get(cur_start.year); last = curves.get(cur_start.year - 1)
+    out = {"labels": lab, "season": f"{cur_start.year}/{str(cur_start.year + 1)[2:]}", "last_season": f"{cur_start.year - 1}/{str(cur_start.year)[2:]}",
+           "current": pick(cur) if cur is not None else None, "last": pick(last) if last is not None else None,
+           "mean": pick(hist.mean(axis=1)), "p10": pick(hist.quantile(0.1, axis=1)), "p90": pick(hist.quantile(0.9, axis=1)),
+           "years": f"{min(hist.columns)}/{str(min(hist.columns) + 1)[2:]}–{max(hist.columns)}/{str(max(hist.columns) + 1)[2:]}" if len(hist.columns) else None,
+           "through": str(wr.dropna().index.max().date())}
+    if cur is not None and len(cur):
+        d = int(cur.index.max())
+        m = hist.mean(axis=1).get(d)
+        out["to_date"] = {"day": d, "mm": round(float(cur.iloc[-1]), 0), "mean": None if pd.isna(m) else round(float(m), 0),
+                          "last": None if last is None or d not in last.index else round(float(last.get(d)), 0),
+                          "pct_mean": None if not m else round(100 * float(cur.iloc[-1]) / float(m), 0),
+                          "rank": int((hist.loc[d] < cur.iloc[-1]).sum()) + 1 if d in hist.index else None, "n": len(hist.columns)}
+    return out
+
+
 def main():
     C, W = J("coffee/conab_regions.json"), J("geo/weather.json")
     if not C or not W:
@@ -77,7 +133,8 @@ def main():
             regions.append({"id": i, "name": w.get("name", i), "conab_rows": p["rows"], "prod_k": round(p["weight"], 1), "share": round(100 * p["weight"] / mapped, 1),
                             "has_weather": i in have, **{k: w.get(k) for k in ["r30", "r30_n", "r30_p", "r90", "r90_n", "r90_p", "rstd", "rstd_n", "rstd_p", "season_from",
                                                                                 "sm100_p", "wb60_p", "tmin30", "cold30", "f16_rain", "f16_rain_n", "f16_tmin", "f16_cold", "data_through"]}})
-        out["types"][typ] = {"brazil_prod_k": tot, "mapped_share": round(100 * mapped / tot, 1) if tot else None,
+        sc = season_curves({i: p["weight"] for i, p in pts.items()})
+        out["types"][typ] = {"brazil_prod_k": tot, "season_curve": sc, "mapped_share": round(100 * mapped / tot, 1) if tot else None,
                              "weather_share": round(100 * cw / mapped, 1) if mapped else None, **agg, "regions": regions}
         for k in ["r30_pct_normal", "r90_pct_normal", "rstd_pct_normal", "f16_rain_pct_normal", "sm100_p"]:
             hist_row[f"{typ}_{k}"] = agg.get(k)
