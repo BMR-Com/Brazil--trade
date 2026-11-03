@@ -5,7 +5,7 @@ conilon and soluble: certificates of origin issued (the exporters' registrations
 clearance unit and by port of shipment. Each row has the day's movement, the month to date and the previous month.
 
 The page only ever shows the latest day, so every run appends what it sees to data/coffee/cecafe_daily.csv
-(one row per report date x month x table x unit x column). Run it every business day; history builds from the
+(column report = Cecafé's "information received up to" date; one row per report date x month x table x unit x column). Run it every business day; history builds from the
 first run. Then writes data/coffee/cecafe.json for the desk (current month pace by type, daily path, ports).
 """
 import json, re, sys
@@ -56,7 +56,7 @@ def scrape():
                     continue
                 v = [num(x) for x in c[1:]]
                 for j, col in enumerate(COLS):
-                    rows.append({"asof": asof, "month": month, "table": TABLES[k], "unit": c[0].title(), "col": col,
+                    rows.append({"report": asof, "month": month, "table": TABLES[k], "unit": c[0].title(), "col": col,
                                  **{TYPES[q]: v[4 * j + q] for q in range(4)}})
     if not rows:
         raise RuntimeError("no tables parsed: page layout changed?")
@@ -66,16 +66,16 @@ def scrape():
 def build(df):
     """Desk summary from the stored history."""
     tot = df[(df.table == "certificados") & (df.unit.str.upper().str.startswith("TOTA"))]
-    asof = tot.asof.max()
-    cur = tot[(tot.asof == asof)]
+    asof = tot.report.max()
+    cur = tot[(tot.report == asof)]
     cm = cur.month.max()
     now = cur[(cur.month == cm) & (cur.col == "mtd")].iloc[0]
     prev_full = cur[(cur.month == cm) & (cur.col == "prev")].iloc[0]
     # month-to-date path for each month we have seen (one point per report date)
     path = {}
     for mo, g in tot[tot.col == "mtd"].groupby("month"):
-        g = g.drop_duplicates("asof", keep="last").sort_values("asof")
-        path[mo] = {"asof": g.asof.tolist(), "day": [int(d[8:]) if d[:7] == mo else None for d in g.asof], **{t: g[t].tolist() for t in TYPES}}
+        g = g.drop_duplicates("report", keep="last").sort_values("report")
+        path[mo] = {"asof": g.report.tolist(), "day": [int(d[8:]) if d[:7] == mo else None for d in g.report], **{t: g[t].tolist() for t in TYPES}}
     # final month totals: the 'prev' column of the following month (or the last mtd seen)
     finals = {}
     for _, r in tot[tot.col == "prev"].iterrows():
@@ -100,7 +100,7 @@ def build(df):
             "measure": "certificates of origin issued (export registrations), 60-kg bags",
             "mtd": {t: now[t] for t in TYPES}, "day": {t: day[t] for t in TYPES}, "prev_month": pm, "prev_month_total": {t: prev_full[t] for t in TYPES},
             "same_point_prev_month": same, "finals": dict(sorted(finals.items())), "path": path, "ports_mtd": ports,
-            "history_from": tot.asof.min()}
+            "history_from": tot.report.min()}
 
 
 def clean(o):
@@ -118,7 +118,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     try:
         new = scrape()
-        print("cecafe: parsed", len(new), "rows; report date", new.asof.max())
+        print("cecafe: parsed", len(new), "rows; report date", new.report.max())
     except Exception as e:
         print("cecafe: scrape failed", e)
         new = pd.DataFrame()
@@ -126,7 +126,7 @@ def main():
     df = pd.concat([old, new], ignore_index=True)
     if df.empty:
         return
-    df = df.drop_duplicates(["asof", "month", "table", "unit", "col"], keep="last").sort_values(["asof", "month", "table", "unit", "col"])
+    df = df.drop_duplicates(["report", "month", "table", "unit", "col"], keep="last").sort_values(["report", "month", "table", "unit", "col"])
     df.to_csv(CSV, index=False)
     J = build(df)
     (OUT / "cecafe.json").write_text(json.dumps(clean(J)))
