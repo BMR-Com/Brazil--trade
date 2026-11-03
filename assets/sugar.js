@@ -185,7 +185,21 @@ const Sugar = (() => {
           ${E.pace.map(r => `<tr><td class="l">${r.my}</td><td class="n">${f2(r.to_date)}</td><td class="n">${r.total ? f2(r.total) : '–'}</td><td class="n">${r.total ? fmt(100 * r.to_date / r.total, 0) + '%' : '–'}</td></tr>`).join('')}</table></div></div>
         <div class="card"><h2>Top destinations this marketing year</h2><div class="tbl"><table><tr><th class="l">Country</th><th>mt</th><th>Same time last year</th><th>Change</th></tr>
           ${E.dest.map(r => `<tr><td class="l">${r.country}</td><td class="n">${f2(r.t)}</td><td class="n">${f2(r.prev)}</td><td class="n">${sgn(r.t - r.prev, 2)}</td></tr>`).join('')}</table></div></div></div>
+      <div id="suFlow" style="margin-top:12px"></div>
       <p class="note">Full Brazil export detail for every product: <a href="#brexp">Brazil exports tab</a>.</p>${asof()}`;
+    getJSON('data/sugar/flows.json').then(F => {
+      const fc = F.forecast, B = F.balance, Su = F.surprise;
+      $('#suFlow').innerHTML = `<div class="card"><h2>Brazil export flow forecast <span class="note">data to ${F.last_month}</span></h2>
+        <div class="grid g4">${kpi('Next month (' + fc.next_month + ')', f2(fc.next_month_mt) + ' mt', `same month last year ${f2(fc.next_month_ly)} mt`)}
+        ${kpi('Next three months', f2(fc.next3_mt) + ' mt', `${fc.next3}; last year ${f2(fc.next3_ly)} mt (${sgn(100 * (fc.next3_mt / fc.next3_ly - 1), 0, '%')})`)}
+        ${kpi('Last month vs forecast', sgn(Su.mt.at(-1), 2) + ' mt', `${Su.months.at(-1)}: ${Su.mt.at(-1) < 0 ? 'Brazil shipped less than its production and pace implied' : 'Brazil shipped more than its production and pace implied'}`)}
+        ${kpi('Season stock build', f2(B.season_build.at(-1)) + ' mt', 'production − consumption − exports since April')}</div>
+        <div class="grid g2" style="margin-top:8px"><div style="position:relative;height:240px"><canvas id="suFlB"></canvas></div><div style="position:relative;height:240px"><canvas id="suFlS"></canvas></div></div>
+        <p class="note">Left: monthly Brazil sugar production, exports and domestic use, mt. Right: actual exports minus the forecast made a month earlier, mt. Variables used: ${F.variables.join('; ')}. Sources: MAPA, MDIC/SECEX, USDA PSD.</p></div>`;
+      chart('suFlB', { type: 'bar', data: { labels: B.months, datasets: [{ label: 'Production', data: B.prod, backgroundColor: '#2f6b3a' }, { label: 'Exports', data: B.exports, backgroundColor: '#d68910' },
+        { type: 'line', label: 'Domestic use', data: B.cons, borderColor: '#7f8c8d', pointRadius: 0 }] } });
+      chart('suFlS', { type: 'bar', data: { labels: Su.months, datasets: [{ label: 'Exports vs forecast, mt', data: Su.mt, backgroundColor: Su.mt.map(v => v < 0 ? '#c0392b' : '#2c6fbb') }] } });
+    }).catch(() => { $('#suFlow').innerHTML = ''; });
     chart('suEm', { type: 'bar', data: { labels: M.ym, datasets: [{ label: 'Raw', data: M.raw, backgroundColor: '#d68910', stack: 's' }, { label: 'White', data: M.white, backgroundColor: '#2c6fbb', stack: 's' },
       { type: 'line', label: '$/t', data: M.usd_t, borderColor: '#7f8c8d', pointRadius: 0, yAxisID: 'y1' }] }, options: { scales: { x: { stacked: true }, y: { stacked: true }, y1: { position: 'right', grid: { display: false } } } } });
     const ys = Object.keys(E.my).sort().slice(-6), ML = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'];

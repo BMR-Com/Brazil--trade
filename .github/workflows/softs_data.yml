@@ -43,6 +43,7 @@ jobs:
           python -W ignore models/cotton_price_outlook.py || true
           python -W ignore models/trader_sheet.py || true
           python -W ignore models/sugar_signals.py || true
+          python -W ignore models/sugar_flows.py || true
           python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || true
       - name: commit
         run: |
