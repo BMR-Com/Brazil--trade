@@ -96,7 +96,7 @@ const Sugar = (() => {
         <tr><td class="l"><b>3. Delivery window</b></td><td class="l">The ship can present from the 1st of the delivery month to the 15th of the second month after (March: 1 March – 15 May).</td><td class="l">Runs through the delivery month and the following one.</td></tr>
         <tr><td class="l"><b>4. Notice of readiness and laytime</b></td><td class="l">The master tenders notice of readiness (NOR) once the ship is at the port and ready. Laytime (the free loading time) starts at the next local working period, or after the 7-day nomination period if NOR comes early. Berthing is in NOR order unless local custom differs.</td><td class="l">Laytime starts in the afternoon if NOR is given in the morning, otherwise next working morning; weekends and holidays are excluded. In congestion NOR can be tendered at the usual waiting place.</td></tr>
         <tr><td class="l"><b>5. Guaranteed loading rate</b></td><td class="l">4,000 t per weather working day for a ship with four or more workable hatches, pro rata for fewer.</td><td class="l">1,500 t per weather working day (bags are slower), on four or more hatches.</td></tr>
-        <tr><td class="l"><b>6. Demurrage and despatch</b></td><td class="l">If loading takes longer than laytime, the deliverer pays the receiver demurrage at the charter-party rate (which must match the market rate for that ship). If it is faster, the receiver pays the deliverer despatch at half that rate. On top, an escalating daily delay fee applies once a delay runs long. Settled within 60 days of the bill of lading.</td><td class="l">Same idea: the seller pays demurrage beyond laytime, the buyer pays despatch at half the rate, and an escalating daily fee is added to long delays. Settled in dollars within 60 days of the bill of lading.</td></tr>
+        <tr><td class="l"><b>6. Demurrage and despatch</b></td><td class="l">If loading takes longer than laytime, the deliverer pays the receiver demurrage at the charter-party rate (which must match the market rate for that ship). If it is faster, the receiver pays the deliverer despatch at half that rate. On top, the deliverer pays the receiver a daily fee while the ship stays on demurrage: 0% of the demurrage rate for the first 15 days, 50% for days 16–30 and 100% after that (from the March 2028 delivery: 0% days 1–10, 50% days 11–20, 100% days 21–30, 150% after). No cap. Settled within 60 days of the bill of lading.</td><td class="l">Same idea: the seller pays demurrage beyond laytime, the buyer pays despatch at half the rate, and the seller adds a daily fee while on demurrage: 0% of the demurrage rate for days 1–21, 25% for days 22–35, 50% for days 36–49, 100% after. Settled in dollars within 60 days of the bill of lading.</td></tr>
         <tr><td class="l"><b>7. Weight and quality</b></td><td class="l">Shipper's weights and tests at loading, under an independent supervisor; samples split and sealed. Price is adjusted for polarization (premium above 96°, discount below).</td><td class="l">Supervisor's certificate of weight, packing and quality (pol, colour, moisture); disputes go to an exchange-approved chemist.</td></tr>
         <tr><td class="l"><b>8. Documents and payment</b></td><td class="l">Clean on-board bills of lading, invoice at the actual polarization, weight and quality certificates, certificate of origin; the receiver pays on presentation. Risk passes when the sugar crosses the ship's rail, title on payment.</td><td class="l">Seller lodges documents on settlement day and is paid through the clearing house unless the buyer rejects them that afternoon.</td></tr>
         <tr><td class="l"><b>9. Default</b></td><td class="l">Failure to load or to take delivery goes to expedited arbitration and cash settlement against the expiry price; force majeure gives limited extra time.</td><td class="l">Insufficient-seller rules and arbitration; quality, weight and packing claims go to arbitration.</td></tr></table></div>
@@ -105,6 +105,14 @@ const Sugar = (() => {
           ${row('Why the receiver matters', 'A single large receiver (a refiner or trade house that needs the sugar) means the delivery is absorbed and the front spread firms after expiry; a large delivery with no natural receiver means the sugar has to be re-sold, which weighs on the next month and on physical premiums.')}
           ${row('Off-exchange alternatives', 'Most physical sugar is not delivered through the exchange: buyers and sellers swap futures for physical sugar (exchange for physical) and price off the futures with a premium or discount. Exchange delivery is the backstop that keeps futures tied to physical value.')}</table></div>
         <p class="note">Summary of the ICE Sugar No. 11 rules and ICE Futures Europe White Sugar delivery procedures; rule details change (some No. 11 polarization and delay-fee terms change from the March 2028 delivery), so check the current rulebook before acting.</p></div>
+      <div class="card" style="margin-top:12px"><h2>What a delay costs: demurrage and the daily fee in ¢/lb</h2>
+        <div class="grid g4" id="dmIn">
+          <label>Contract<br><select id="dmK"><option value="n11">No. 11, to Oct 2027 deliveries</option><option value="n11b">No. 11, from Mar 2028</option><option value="n5">No. 5 (white)</option></select></label>
+          <label>Cargo, tonnes<br><input id="dmQ" type="number" value="50000" step="5000"></label>
+          <label>Demurrage rate, $/day<br><input id="dmR" type="number" value="20000" step="1000"></label>
+          <label>Wait for a berth, days<br><input id="dmW" type="number" value="20" step="1"></label></div>
+        <div id="dmOut" style="margin-top:8px"></div>
+        <p class="note">Laytime = cargo ÷ the contract loading rate (No. 11: 4,000 t a day, No. 5: 1,500 t a day). Time on demurrage = waiting for a berth + loading time − laytime; here loading is assumed to run at exactly the contract rate, so only the queue puts the ship on demurrage. The deliverer pays demurrage for every day on demurrage plus the daily fee on top; 1 ¢/lb = $22.05/t. Demurrage rates follow the freight market for the ship's size (roughly $10–30k a day for the Handysize-to-Panamax ships that load sugar), so set the rate to today's market. Despatch (half the demurrage rate) is paid the other way when a ship loads faster than laytime.</p></div>
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Reading a sugar balance: trade flows by quarter</h2><div class="tbl"><table>
           ${row('Annual balance', 'Production minus consumption by crop year (Oct/Sep or Apr/Mar). It tells you whether stocks grow or shrink, but not when sugar is short.')}
@@ -120,6 +128,28 @@ const Sugar = (() => {
         <tr><td class="l">Refining margin</td><td class="l">A wide white premium pulls raw sugar into refineries (Middle East, North Africa, Asia) and supports No. 11; a narrow one leaves raws unsold.</td><td class="l">White premium</td></tr>
         <tr><td class="l">Funds</td><td class="l">Managed money swings are large in sugar; crowded positions, together with index-fund rolls, drive moves around expiry.</td><td class="l">Futures, options &amp; COT</td></tr></table></div></div></div>
       <p class="note">Primer written for this desk from public exchange rules and industry explanations (ICE contract rules; Czapp/Czarnikow explainers on the sugar contracts and spreads). Live readings sit on the other tabs.</p>`;
+    const BANDS = { n11: [[15, 0], [15, 0.5], [1e9, 1]], n11b: [[10, 0], [10, 0.5], [10, 1], [1e9, 1.5]], n5: [[21, 0], [14, 0.25], [14, 0.5], [1e9, 1]] };
+    const RATE = { n11: 4000, n11b: 4000, n5: 1500 };
+    const dm = () => {
+      const k = $('#dmK').value, q = +$('#dmQ').value || 0, r = +$('#dmR').value || 0, w = +$('#dmW').value || 0;
+      const lay = q / RATE[k], dd = Math.max(0, w), rows = [];
+      let left = dd, start = 0, tot = 0, fee = 0;
+      for (const [len, pct] of BANDS[k]) {
+        const d = Math.min(left, len); if (d <= 0) break;
+        const c = d * r, f = d * r * pct; tot += c; fee += f;
+        rows.push([`days ${start + 1}–${start + d}`, d, pct, c + f]);
+        left -= d; start += len;
+      }
+      const all = tot + fee, pt = q ? all / q : 0, clb = pt / 22.0462, unit = k === 'n5' ? '$/t' : '¢/lb';
+      const per = (x) => k === 'n5' ? '$' + fmt(x / q, 2) + '/t' : fmt(x / q / 22.0462, 3) + ' ¢/lb';
+      $('#dmOut').innerHTML = `<div class="grid g4">${kpi('Laytime', fmt(lay, 1) + ' days', `${fmt(q, 0)} t at ${fmt(RATE[k], 0)} t a day`)}
+        ${kpi('Days on demurrage', fmt(dd, 0), 'berth wait beyond laytime (loading at contract rate)')}
+        ${kpi('Total cost to the deliverer', '$' + fmt(all / 1000, 0) + 'k', `demurrage $${fmt(tot / 1000, 0)}k + daily fee $${fmt(fee / 1000, 0)}k`)}
+        ${kpi('In the price', k === 'n5' ? '$' + fmt(pt, 2) + '/t' : fmt(clb, 2) + ' ¢/lb', k === 'n5' ? `${fmt(clb, 2)} ¢/lb equivalent` : `$${fmt(pt, 2)}/t`)}</div>
+        <div class="tbl"><table><tr><th class="l">Period on demurrage</th><th>Days</th><th>Daily fee (% of demurrage)</th><th>Cost incl. fee</th><th>Per unit</th><th>Per extra day</th></tr>
+        ${rows.map(x => `<tr><td class="l">${x[0]}</td><td class="n">${fmt(x[1], 0)}</td><td class="n">${fmt(100 * x[2], 0)}%</td><td class="n">$${fmt(x[3] / 1000, 0)}k</td><td class="n">${per(x[3])}</td><td class="n">${per(x[3] / x[1])}</td></tr>`).join('')}</table></div>`;
+    };
+    ['#dmK', '#dmQ', '#dmR', '#dmW'].forEach(id => $(id).addEventListener('input', dm)); dm();
   }
 
   // ---------- world balance ----------
@@ -263,6 +293,7 @@ const Sugar = (() => {
       <div id="suFlow" style="margin-top:12px"></div>
       <p class="note">Full Brazil export detail for every product: <a href="#brexp">Brazil exports tab</a>.</p>${asof()}`;
     getJSON('data/sugar/flows.json').then(F => {
+      if (!$('#suFlow')) return;
       const fc = F.forecast, B = F.balance, Su = F.surprise;
       $('#suFlow').innerHTML = `<div class="card"><h2>Brazil export flow forecast <span class="note">data to ${F.last_month}</span></h2>
         <div class="grid g4">${kpi('Next month (' + fc.next_month + ')', f2(fc.next_month_mt) + ' mt', `same month last year ${f2(fc.next_month_ly)} mt`)}
@@ -343,7 +374,7 @@ const Sugar = (() => {
         { label: 'R$/t', data: H.brl_t, borderColor: '#d68910', pointRadius: 0, spanGaps: true, yAxisID: 'y1' }] }, options: { scales: { y1: { position: 'right', grid: { display: false } } } } });
     }).catch(() => { $('#suSig').innerHTML = ''; });
     getJSON('data/sugar/czapp_digest.json').then(Z => {
-      if (!Z || !(Z.items || []).length) return;
+      if (!Z || !(Z.items || []).length || !$('#suCz')) return;
       $('#suCz').innerHTML = `<div class="card"><h2>Industry reading this week <span class="note">Czapp (Czarnikow) free insights, week to ${Z.week_ending}</span></h2>
         ${Z.themes && Z.themes.length ? `<ul>${Z.themes.map(t => `<li>${t}</li>`).join('')}</ul>` : ''}
         <div class="tbl"><table><tr><th class="l">Date</th><th class="l">Article</th><th class="l">What it says for sugar</th></tr>
