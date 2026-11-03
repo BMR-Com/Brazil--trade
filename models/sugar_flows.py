@@ -96,27 +96,38 @@ def weekly_read(h1):
         full += int(r.ly_days) - br_workdays(y - 1, m)
     proj = r.avg_t_day * full / 1e6
     fc = next((pr for t, pr, yy in h1 if str(t + 1) == r.month), None)
-    return {"month": r.month, "asof": r.asof, "days": int(r.days), "workdays": full, "mtd_mt": round(r.mtd_t / 1e6, 3),
+    return {"month": r.month, "asof": r["asof"], "days": int(r.days), "workdays": full, "mtd_mt": round(r.mtd_t / 1e6, 3),
             "avg_t_day": round(r.avg_t_day), "ly_avg_t_day": round(r.ly_avg_t_day), "projected_mt": round(proj, 2),
             "ly_month_mt": round(r.ly_month_t / 1e6, 2), "forecast_mt": None if fc is None else round(fc, 2),
             "surprise_mt": None if fc is None else round(proj - fc, 2)}
 
 
 def china():
-    p = ROOT / "data/sugar/china_imports.csv"
-    if not p.exists():
-        return None
-    c = pd.read_csv(p, dtype={"period": str})
-    c["kt"] = c.kg / 1e6
-    pv = c.pivot_table(index="period", columns="partner", values="kt", aggfunc="sum").sort_index().fillna(0)
-    pv.index = pd.PeriodIndex([f"{x[:4]}-{x[4:]}" for x in pv.index], freq="M")
-    pv = pv.tail(36)
-    last = pv.index[-1]
-    yoy = lambda col: None if (last - 12) not in pv.index else round(float(pv.loc[last, col] - pv.loc[last - 12, col]), 0)
-    ytd = pv[pv.index.year == last.year].sum(); ytd_ly = pv[(pv.index.year == last.year - 1) & (pv.index.month <= last.month)].sum()
-    return {"last": str(last), "months": [str(x) for x in pv.index], "world_kt": pv.get("World", pd.Series(0, pv.index)).round(0).tolist(),
-            "brazil_kt": pv.get("Brazil", pd.Series(0, pv.index)).round(0).tolist(),
-            "ytd_kt": round(float(ytd.get("World", 0)), 0), "ytd_ly_kt": round(float(ytd_ly.get("World", 0)), 0), "yoy_kt": yoy("World") if "World" in pv else None}
+    """China's sugar imports, nowcast from Brazil's shipments to China (SECEX by destination). Brazil supplied 79-88%
+    of China's imports in 2021-24 (China customs via UN Comtrade), and its shipments lead China's customs figures by
+    one to two months; Comtrade has no China monthly data after Dec 2024, so SECEX is the live source."""
+    frames = []
+    for fn in ["exports_pre2015.csv", "exports_2015on.csv"]:
+        q = ROOT / "data" / fn
+        if q.exists():
+            x = pd.read_csv(q, dtype={"ncm": str}, usecols=["year", "month", "ncm", "country_name", "kg_net"])
+            frames.append(x[(x.ncm.str[:4] == "1701") & (x.ncm.str[4:6] != "12")])
+    d = pd.concat(frames)
+    d = d[d.country_name.str.contains("China", case=False) & ~d.country_name.str.contains("Hong|Taiw|Maca", case=False)]
+    d["ym"] = pd.PeriodIndex.from_fields(year=d.year, month=d.month, freq="M")
+    s = (d.groupby("ym").kg_net.sum() / 1e6).reindex(pd.period_range("2018-01", d.ym.max(), freq="M"), fill_value=0)
+    last = s.index[-1]
+    t36 = s.tail(36)
+    ly = lambda k: float(s.get(last - 12 - k, 0))
+    ytd = float(s[s.index.year == last.year].sum()); ytd_ly = float(s[(s.index.year == last.year - 1) & (s.index.month <= last.month)].sum())
+    ct = ROOT / "data/sugar/china_imports.csv"
+    cust = None
+    if ct.exists():
+        c = pd.read_csv(ct, dtype={"period": str}); w = c[c.partner == "World"]
+        cust = {"months": [f"{x[:4]}-{x[4:]}" for x in w.period], "kt": (w.kg / 1e6).round(0).tolist()}
+    return {"last": str(last), "months": [str(x) for x in t36.index], "brazil_to_china_kt": t36.round(0).tolist(),
+            "last_kt": round(float(s.iloc[-1]), 0), "last2_kt": round(float(s.iloc[-2:].sum()), 0), "last2_ly_kt": round(ly(0) + ly(1), 0),
+            "ytd_kt": round(ytd, 0), "ytd_ly_kt": round(ytd_ly, 0), "china_customs": cust}
 
 
 def main():

@@ -194,10 +194,16 @@ const Sugar = (() => {
         ${kpi('Next three months', f2(fc.next3_mt) + ' mt', `${fc.next3}; last year ${f2(fc.next3_ly)} mt (${sgn(100 * (fc.next3_mt / fc.next3_ly - 1), 0, '%')})`)}
         ${kpi('Last month vs forecast', sgn(Su.mt.at(-1), 2) + ' mt', `${Su.months.at(-1)}: ${Su.mt.at(-1) < 0 ? 'Brazil shipped less than its production and pace implied' : 'Brazil shipped more than its production and pace implied'}`)}
         ${kpi('Season stock build', f2(B.season_build.at(-1)) + ' mt', 'production − consumption − exports since April')}</div>
+        ${F.weekly ? `<div class="grid g4" style="margin-top:8px">${kpi('Mid-month read (' + F.weekly.month + ')', f2(F.weekly.projected_mt) + ' mt', `SECEX weekly: ${f2(F.weekly.mtd_mt)} mt in ${F.weekly.days} of ${F.weekly.workdays} working days (${fmt(F.weekly.avg_t_day / 1000, 0)}k t/day vs ${fmt(F.weekly.ly_avg_t_day / 1000, 0)}k last year)`)}
+          ${kpi('Mid-month vs forecast', F.weekly.surprise_mt == null ? '–' : sgn(F.weekly.surprise_mt, 2) + ' mt', F.weekly.forecast_mt == null ? '' : `forecast ${f2(F.weekly.forecast_mt)} mt; data to ${F.weekly.asof}`)}
+          ${F.china ? kpi('Brazil → China, last 2 months', fmt(F.china.last2_kt, 0) + ' kt', `same months last year ${fmt(F.china.last2_ly_kt, 0)} kt; Brazil supplies about 85% of China's imports`) : ''}
+          ${F.china ? kpi('Brazil → China, year to date', fmt(F.china.ytd_kt, 0) + ' kt', `to ${F.china.last}; last year ${fmt(F.china.ytd_ly_kt, 0)} kt`) : ''}</div>` : ''}
         <div class="grid g2" style="margin-top:8px"><div style="position:relative;height:240px"><canvas id="suFlB"></canvas></div><div style="position:relative;height:240px"><canvas id="suFlS"></canvas></div></div>
-        <p class="note">Left: monthly Brazil sugar production, exports and domestic use, mt. Right: actual exports minus the forecast made a month earlier, mt. Variables used: ${F.variables.join('; ')}. Sources: MAPA, MDIC/SECEX, USDA PSD.</p></div>`;
+        ${F.china ? '<div style="position:relative;height:200px;margin-top:8px"><canvas id="suFlC"></canvas></div>' : ''}
+        <p class="note">Left: monthly Brazil sugar production, exports and domestic use, mt. Right: actual exports minus the forecast made a month earlier, mt. Variables used: ${F.variables.join('; ')}. Mid-month read = SECEX weekly month-to-date daily average × working days. Sources: MAPA, MDIC/SECEX (monthly and weekly), USDA PSD, China customs via UN Comtrade.</p></div>`;
       chart('suFlB', { type: 'bar', data: { labels: B.months, datasets: [{ label: 'Production', data: B.prod, backgroundColor: '#2f6b3a' }, { label: 'Exports', data: B.exports, backgroundColor: '#d68910' },
         { type: 'line', label: 'Domestic use', data: B.cons, borderColor: '#7f8c8d', pointRadius: 0 }] } });
+      if (F.china) chart('suFlC', { type: 'bar', data: { labels: F.china.months, datasets: [{ label: 'Brazil sugar exports to China, kt (leads China customs imports by 1–2 months)', data: F.china.brazil_to_china_kt, backgroundColor: '#c0392b' }] } });
       chart('suFlS', { type: 'bar', data: { labels: Su.months, datasets: [{ label: 'Exports vs forecast, mt', data: Su.mt, backgroundColor: Su.mt.map(v => v < 0 ? '#c0392b' : '#2c6fbb') }] } });
     }).catch(() => { $('#suFlow').innerHTML = ''; });
     chart('suEm', { type: 'bar', data: { labels: M.ym, datasets: [{ label: 'Raw', data: M.raw, backgroundColor: '#d68910', stack: 's' }, { label: 'White', data: M.white, backgroundColor: '#2c6fbb', stack: 's' },

@@ -79,7 +79,10 @@ def comtrade_china(months=60):
 
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
-    for f in (secex_weekly, comtrade_china):
+    jobs = [secex_weekly]
+    if not os.path.exists(os.path.join(OUT, 'china_imports.csv')):
+        jobs.append(comtrade_china)                # history only: Comtrade has no China monthly data after Dec 2024
+    for f in jobs:
         try:
             f()
         except Exception as e:
