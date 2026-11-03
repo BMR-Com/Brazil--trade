@@ -266,11 +266,7 @@ def brazil_exports():
     bel["ym"] = [f"{a}-{b:02d}" for a, b in zip(bel.year, bel.month)]
     bel["avg3"] = [bel[(bel.month == m) & (bel.year.between(y - 3, y - 1))].bel.mean() for y, m in zip(bel.year, bel.month)]
     bel = bel[bel.year >= 2018]
-    cs = read("ico_certified_stocks.csv")
-    certs = {}
-    if cs is not None:
-        cs = cs.sort_values(["stock_month", "report_period"]).drop_duplicates("stock_month", keep="last")
-        certs = dict(zip(cs.stock_month, cs.new_york_bags_millions))
+    certs = {k: rd(v, 3) for k, v in ice_monthly_m().items()}   # ICE daily report, monthly average
     last3 = bel.tail(3)
     belgium = {"ym": bel.ym.tolist(), "bags": [rd(v / 1e3, 0) for v in bel.bel], "avg3": [rd(v / 1e3, 0) for v in bel.avg3],
                "share": [rd(a / b * 100, 1) if b else None for a, b in zip(bel.bel, bel.tot)], "certs_ny": [certs.get(m) for m in bel.ym],
@@ -300,6 +296,53 @@ def psd():
     return out
 
 
+def ice_daily():
+    """ICE daily certified-stock report (data/coffee/ice_certs.csv, from pipelines/coffee_certs.py): daily bags."""
+    p = os.path.join(TRADE, "coffee", "ice_certs.csv")
+    if not os.path.exists(p):
+        return None
+    d = pd.read_csv(p, parse_dates=["date"])
+    return d[d.origin != "ALL"] if len(d) else None
+
+
+def ice_monthly_m():
+    """Monthly average ICE certified arabica stocks, million bags, keyed 'YYYY-MM'."""
+    d = ice_daily()
+    if d is None:
+        return {}
+    t = d[d.section == "certified"].groupby("date").bags.sum()
+    m = t.resample("MS").mean() / 1e6
+    return {k.strftime("%Y-%m"): v for k, v in m.items()}
+
+
+def certs_ice():
+    d = ice_daily()
+    if d is None or d.empty:
+        return None
+    sec = lambda s: d[d.section == s].groupby("date").bags.sum()
+    tot = sec("certified")
+    days = tot.index
+    pend = sec("pending").reindex(days, fill_value=0)
+    tran = sec("transition").reindex(days, fill_value=0)
+    last = days[-1]
+    L = d[d.date == last]
+    by = lambda s, k: {str(a): int(b) for a, b in L[L.section == s].groupby(k).bags.sum().sort_values(ascending=False).items()}
+    def chg(n):
+        ref = tot[tot.index <= last - timedelta(days=n)]
+        return None if ref.empty else int(tot.iloc[-1] - ref.iloc[-1])
+    gp = sec("graded_passed"); gf = sec("graded_failed")
+    p30 = int(gp[gp.index > last - timedelta(days=30)].sum()); f30 = int(gf[gf.index > last - timedelta(days=30)].sum())
+    yr = tot[tot.index >= last - timedelta(days=3653)]
+    return {"dates": [str(x)[:10] for x in days], "total": [int(v) for v in tot], "pending": [int(v) for v in pend],
+            "transition": [int(v) for v in tran],
+            "now": {"date": str(last)[:10], "total": int(tot.iloc[-1]), "pending": int(pend.iloc[-1]), "transition": int(tran.iloc[-1]),
+                    "chg_1w": chg(7), "chg_1m": chg(30), "chg_1y": chg(365),
+                    "min_since": str(yr[yr <= tot.iloc[-1]].index[-2])[:10] if (yr <= tot.iloc[-1]).sum() > 1 else None,
+                    "passed_30d": p30, "failed_30d": f30},
+            "by_origin": by("certified", "origin"), "by_port": by("certified", "port"),
+            "pending_by_origin": by("pending", "origin"), "pending_by_port": by("pending", "port")}
+
+
 def structure(w):
     """Front KC spread (inversion) vs certified stocks and vs the cost of carrying coffee for one roll (~2 months)."""
     q = w[["KC1!", "KC2!"]].dropna()
@@ -311,13 +354,10 @@ def structure(w):
     out = {"dates": [str(i)[:10] for i in wk.index], "spread": [rd(v, 2) for v in wk.sp], "carry": [rd(v, 2) for v in wk.carry],
            "now": {"spread": rd(spread.iloc[-1], 2), "carry": rd(carry.iloc[-1], 2), "rate": rd(rate.iloc[-1], 2), "date": str(q.index[-1])[:10],
                    "pct5y": rd((spread[spread.index >= spread.index[-1] - timedelta(days=1826)] <= spread.iloc[-1]).mean() * 100, 0)}}
-    s = read("ico_certified_stocks.csv")
-    if s is not None:
-        s = s.sort_values(["stock_month", "report_period"]).drop_duplicates("stock_month", keep="last")
+    cm = ice_monthly_m()
+    if cm:
         ms = spread.resample("MS").mean(); ms.index = ms.index.strftime("%Y-%m")
-        pts = [{"x": rd(r.new_york_bags_millions, 2), "y": rd(ms.get(r.stock_month), 2), "m": r.stock_month}
-               for r in s.itertuples() if r.stock_month in ms.index]
-        out["vs_certs"] = pts
+        out["vs_certs"] = [{"x": rd(v, 3), "y": rd(ms.get(k), 2), "m": k} for k, v in sorted(cm.items()) if k in ms.index]
     return out
 
 
@@ -341,7 +381,7 @@ def cot():
 def main():
     w, snap = prices()
     res = {"built": str(date.today()), "snapshot": snap, "arb": arb(w), "curves": curves(), "brazil": brazil(w),
-           "colombia": colombia(w), "vietnam": vietnam(w), "ico": ico(w), "br_exports": brazil_exports(), "psd": psd(), "cot": cot(), "structure": structure(w),
+           "colombia": colombia(w), "vietnam": vietnam(w), "ico": ico(w), "br_exports": brazil_exports(), "psd": psd(), "cot": cot(), "structure": structure(w), "certs_ice": certs_ice(),
            "constants": {"lb_t": LB_T, "lb_bag": LB_BAG, "col_lb_carga": rd(COL_LB_CARGA, 2)}}
     est = os.path.join(DATA, "estimates.json")
     res["estimates"] = json.load(open(est)) if os.path.exists(est) else []

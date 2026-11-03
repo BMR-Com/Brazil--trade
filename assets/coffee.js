@@ -211,24 +211,31 @@ const Coffee = (() => {
 
   async function certs() {
     await load();
-    const St = K.structure, I = K.ico.stocks, n = I.month.length - 1, sn = St.now;
+    const St = K.structure, C = K.certs_ice, sn = St.now;
+    if (!C) { body().innerHTML = '<div class="card"><p>ICE certified-stock history is loading; it fills on the next coffee data run.</p></div>'; return; }
+    const c = C.now, kb = v => v == null ? '–' : f0(v / 1000) + 'k', sk = v => v == null ? '–' : (v >= 0 ? '+' : '−') + f0(Math.abs(v) / 1000) + 'k';
+    const po = Object.entries(C.pending_by_origin), pp = Object.entries(C.pending_by_port), gr = c.passed_30d + c.failed_30d;
+    const tbl = (o, h) => `<table><tr><th class="l">${h}</th><th>Bags</th><th>Share</th></tr>${Object.entries(o).map(([k, v]) => `<tr><td class="l">${k}</td><td class="n">${f0(v)}</td><td class="n">${f1(v / c.total * 100)}%</td></tr>`).join('')}</table>`;
     body().innerHTML = `<div class="grid g4">
-        ${kpi('NY certified stocks', f2(I.ny[n]) + 'm bags', `${I.month[n]} (ICO); ${sgn(I.ny[n] - I.ny[Math.max(0, n - 12)], 2)}m on the year`)}
-        ${kpi('London robusta certs', f2(I.ldn[n]) + 'm bags', `${sgn(I.ldn[n] - I.ldn[Math.max(0, n - 12)], 2)}m on the year`)}
-        ${kpi('KC front spread', sgn(sn.spread, 1, '¢'), `front minus second, ${sn.date}; ${ord(sn.pct5y)} of 5 years`)}
-        ${kpi('Full carry', f2(sn.carry) + '¢', `cost of carry at ${f2(sn.rate)}% rates; spread ${sn.spread > 0 ? 'inverted: the market pays to have coffee now' : 'in contango'}`)}</div>
+        ${kpi('ICE certified arabica', f0(c.total) + ' bags', `${c.date}; ${sk(c.chg_1w)} on the week, ${sk(c.chg_1m)} on the month, ${sk(c.chg_1y)} on the year`)}
+        ${kpi('Pending grading', f0(c.pending) + ' bags', po.length ? po.map(([k, v]) => `${k} ${kb(v)}`).join(', ') + (pp.length ? ' · at ' + pp.map(([k, v]) => `${k} ${kb(v)}`).join(', ') : '') : 'none waiting')}
+        ${kpi('Grading, last 30 days', gr ? f0(c.passed_30d / gr * 100) + '% passed' : '–', `${f0(c.passed_30d)} bags passed, ${f0(c.failed_30d)} failed`)}
+        ${kpi('KC front spread', sgn(sn.spread, 1, '¢'), `front minus second, ${sn.date}; ${ord(sn.pct5y)} of 5 years; full carry ${f2(sn.carry)}¢`)}</div>
       <div class="grid g2" style="margin-top:12px">
-        <div class="card"><h2>Certified stocks</h2>${box('kcSt', 280)}<p class="note">ICE-graded coffee in licensed warehouses, million bags (ICO monthly report).</p></div>
-        <div class="card"><h2>Front spread against certified stocks</h2>${box('kcSc', 280)}<p class="note">Each point is a month: NY certified stocks (x) against the KC front-month spread (y, ¢/lb, positive = inverted). Low certs go with inverted curves; the latest month is highlighted.</p></div></div>
+        <div class="card"><h2>Certified stocks and bags pending grading</h2>${box('kcSt', 280)}<p class="note">ICE daily certified-stock report, bags of arabica in licensed warehouses that passed grading, and bags waiting to be graded. Of the certified total, ${f0(c.transition)} bags were graded under the earlier rules (transition bags). Pending bags that pass will add to the total; they are the earliest public sign of new deliverable supply.</p></div>
+        <div class="card"><h2>Front spread against certified stocks</h2>${box('kcSc', 280)}<p class="note">Each point is a month: average ICE certified stocks (x, million bags) against the KC front-month spread (y, ¢/lb, positive = inverted). Low certs go with inverted curves; the latest month is highlighted.</p></div></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Certified stocks by origin</h2><div class="tbl">${tbl(C.by_origin, 'Origin')}</div></div>
+        <div class="card"><h2>Certified stocks by warehouse port</h2><div class="tbl">${tbl(C.by_port, 'Port')}</div><p class="note">ANT Antwerp, HA/BR Hamburg-Bremen, BAR Barcelona, HOU Houston, NOLA New Orleans, NY New York, VA Virginia. European ports deliver at a 1.25¢ discount; Gulf ports and Miami at 0.50¢ (see the primer).</p></div></div>
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>KC front spread history</h2>${box('kcSp', 260)}</div>
         <div class="card"><h2>KC curve</h2><div class="tbl"><table><tr><th class="l">Contract</th><th>Price</th><th>1 week ago</th><th>Change</th><th>Volume</th></tr>
           ${K.curves.KC.map(r => `<tr><td class="l">${r.label}</td><td class="n">${f2(r.px)}</td><td class="n">${f2(r.px_1w)}</td><td class="n">${sgn(r.px - r.px_1w, 2)}</td><td class="n">${f0(r.vol)}</td></tr>`).join('')}</table></div></div></div>${asof()}`;
-    chart('kcSt', { type: 'line', data: { labels: I.month, datasets: [{ label: 'New York (arabica)', data: I.ny, borderColor: '#7d3c98', pointRadius: 0 }, { label: 'London (robusta)', data: I.ldn, borderColor: '#d68910', pointRadius: 0 }] } });
-    const V = St.vs_certs;
-    chart('kcSc', { type: 'scatter', data: { datasets: [{ label: 'Months', data: V.slice(0, -1).map(p => ({ x: p.x, y: p.y })), backgroundColor: 'rgba(125,60,152,.35)' },
+    chart('kcSt', { type: 'line', data: { labels: C.dates, datasets: [{ label: 'Certified, bags', data: C.total, borderColor: '#7d3c98', pointRadius: 0 }, { label: 'Pending grading', data: C.pending, borderColor: '#d68910', pointRadius: 0 }] } });
+    const V = St.vs_certs || [];
+    if (V.length) chart('kcSc', { type: 'scatter', data: { datasets: [{ label: 'Months', data: V.slice(0, -1).map(p => ({ x: p.x, y: p.y })), backgroundColor: 'rgba(125,60,152,.35)' },
       { label: 'Latest ' + V.at(-1).m, data: [{ x: V.at(-1).x, y: V.at(-1).y }], backgroundColor: '#c0392b', pointRadius: 6 }] },
-      options: { interaction: { mode: 'nearest', intersect: true }, scales: { x: { title: { display: true, text: 'NY certs, m bags' } }, y: { title: { display: true, text: 'front spread ¢/lb' } } } } });
+      options: { interaction: { mode: 'nearest', intersect: true }, scales: { x: { title: { display: true, text: 'ICE certs, m bags' } }, y: { title: { display: true, text: 'front spread ¢/lb' } } } } });
     const i0 = since(St.dates, 6);
     chart('kcSp', { type: 'line', data: { labels: St.dates.slice(i0), datasets: [{ label: 'Front − second, ¢/lb', data: St.spread.slice(i0), borderColor: '#2c6fbb', pointRadius: 0 }, { label: 'Full carry (negative)', data: St.carry.slice(i0).map(x => -x), borderColor: '#7f8c8d', borderDash: [4, 3], pointRadius: 0 }] } });
   }
