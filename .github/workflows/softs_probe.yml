@@ -3,7 +3,7 @@ name: softs-probe
 on:
   push:
     branches: [softs-desk]
-    paths: ['.github/workflows/softs_probe.yml', 'scripts/probe_flows.py']
+    paths: ['.github/workflows/softs_probe.yml', 'pipelines/sugar_flows_fetch.py']
 permissions: {contents: write}
 concurrency: {group: softs-bootstrap, cancel-in-progress: false}
 jobs:
@@ -14,9 +14,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
-      - run: pip install -q requests
-      - run: python scripts/probe_flows.py
+      - run: pip install -q requests pandas openpyxl
+      - run: python pipelines/sugar_flows_fetch.py
       - run: |
           git config user.name github-actions; git config user.email github-actions@github.com
           git pull -q --ff-only || true
-          git add data/probe && git commit -qm "probe output: flows" && git push -q || true
+          git add data/sugar && git commit -qm "probe output: flows" && git push -q || true
