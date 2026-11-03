@@ -1,0 +1,22 @@
+name: softs-probe
+# Temporary: check SECEX weekly products file and UN Comtrade China sugar imports from GitHub runners.
+on:
+  push:
+    branches: [softs-desk]
+    paths: ['.github/workflows/softs_probe.yml', 'scripts/probe_flows.py']
+permissions: {contents: write}
+concurrency: {group: softs-bootstrap, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests
+      - run: python scripts/probe_flows.py
+      - run: |
+          git config user.name github-actions; git config user.email github-actions@github.com
+          git pull -q --ff-only || true
+          git add data/probe && git commit -qm "probe output: flows" && git push -q || true
