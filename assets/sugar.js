@@ -224,15 +224,28 @@ const Sugar = (() => {
     const F = [
       ['World balance', tilt(-(W.prod[n] - W.cons[n]), 1.5), `USDA has world production ${f1(W.prod[n])} mt against consumption ${f1(W.cons[n])} mt, a ${W.prod[n] >= W.cons[n] ? 'surplus' : 'deficit'} of ${f1(Math.abs(W.prod[n] - W.cons[n]))} mt; stocks/use ${f1(W.stu[n])}%.`],
       ['Centre-South crop', tilt(34.5 - Pj.sugar.mid, 0.5), `At past-season pace the Centre-South makes ${f2(Pj.sugar.mid)} mt of sugar this season (middle range ${f1(Pj.sugar.lo)}–${f1(Pj.sugar.hi)}), from ${f1(Pj.cane.mid)} mt of cane.`],
-      ['Ethanol parity', tilt(-Pa.eth_minus_sugar, 1), `Sugar ${f2(Pa.sb)} ¢/lb against hydrous parity ${f2(Pa.parity)} ¢/lb: ${Pa.eth_minus_sugar < 0 ? 'sugar still pays more, so mills keep the mix high; parity is the floor where mills would switch to ethanol' : 'ethanol pays more, so mills cut the sugar mix'}.`],
+      ['Ethanol parity', tilt(-Pa.eth_minus_sugar, 1), `Sugar ${f2(Pa.sb)} ¢/lb against hydrous parity ${f2(Pa.parity)} ¢/lb: ${Pa.eth_minus_sugar < 0 ? 'sugar still pays more, so mills keep the mix high. Below parity mills shift cane to ethanol, but that changes the mix over a season, not the price week to week' : 'ethanol pays more, so mills cut the sugar mix'}.`],
       ['Refining demand', tilt((wp?.prem || 90) - 90, 10), wp ? `Front white premium $${f1(wp.prem)}/t (${wp.pair}), ${fmt(wp.pct_vs_hist, 0)}th percentile of past years.` : 'No white premium data.'],
     ];
     body().innerHTML = `<div class="card"><h2>Sugar outlook factors</h2><div class="tbl"><table>${F.map(([a, t, x]) => `<tr><td class="l"><b>${a}</b></td><td>${t}</td><td class="l sv-w">${x}</td></tr>`).join('')}</table></div>
         <p class="note">Rule-of-thumb read of the data on these tabs; not a forecast.</p></div>
+      <div id="suSig" style="margin-top:12px"></div>
       <div id="suTech" style="margin-top:12px"></div>
       <div class="grid g2" style="margin-top:12px"><div class="card"><h2>Next events</h2><div id="suCal"></div></div>
         <div class="card"><h2>Sugar headlines</h2><div id="suNews"></div></div></div>
       <div id="suSzUp" style="margin-top:12px"></div>`;
+    getJSON('data/sugar/signals.json').then(G => {
+      const N = G.now, H = G.history, k = v => v == null ? '–' : fmt(v, 0);
+      $('#suSig').innerHTML = `<div class="card"><h2>Positioning, reais and parity <span class="note">CFTC ${G.cot_date}</span></h2>
+        <div class="grid g4">${kpi('Managed money net', sgn(N.mm_net, 0) + ' lots', `${f1(N.mm_pct_oi)}% of open interest; ${k(N.mm_pctile_3y)}th percentile of 3 years; ${sgn(N.mm_chg_1w, 0)} on the week`)}
+        ${kpi('Sugar in reais', 'R$ ' + k(N.brl_t) + '/t', `${k(N.brl_t_pctile_5y)}th percentile of 5 years: the price mills see when they fix`)}
+        ${kpi('Over hydrous parity', sgn(N.parity_premium, 2) + ' ¢/lb', N.parity_premium > 0 ? 'sugar pays more than ethanol: mix stays at maximum sugar' : 'ethanol pays more: mills shift cane to ethanol')}
+        ${kpi('Market depth', k(N.lots_per_point_last) + ' lots/pt', `fund lots per point of price last week; median ${k(N.lots_per_point_median)} since 2021`)}</div>
+        <div style="position:relative;height:220px;margin-top:8px"><canvas id="suSigC"></canvas></div>
+        <p class="note">Managed money net as % of open interest (left) and sugar in R$ per tonne (right), weekly. Sources: CFTC, ICE, USD/BRL, B3 ethanol.</p></div>`;
+      chart('suSigC', { type: 'line', data: { labels: H.dates, datasets: [{ label: 'Managed money net, % OI', data: H.mm_pct_oi, borderColor: '#2c6fbb', pointRadius: 0, spanGaps: true, yAxisID: 'y' },
+        { label: 'R$/t', data: H.brl_t, borderColor: '#d68910', pointRadius: 0, spanGaps: true, yAxisID: 'y1' }] }, options: { scales: { y1: { position: 'right', grid: { display: false } } } } });
+    }).catch(() => { $('#suSig').innerHTML = ''; });
     Tech.mount($('#suTech'), ['SB']);
     try { MktStudy.upcoming($('#suSzUp'), ['SB'], () => $('#suTabs button[data-t="su-seas"]').click()); } catch (e) { /* no seasonal data yet */ }
     try { Intel.calendar($('#suCal'), { markets: ['SB'], days: 30, minImp: 1 }); } catch (e) { $('#suCal').innerHTML = '<p class="note">Calendar not available.</p>'; }
