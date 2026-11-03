@@ -308,6 +308,7 @@ const Sugar = (() => {
     body().innerHTML = `<div class="card"><h2>Sugar outlook factors</h2><div class="tbl"><table>${F.map(([a, t, x]) => `<tr><td class="l"><b>${a}</b></td><td>${t}</td><td class="l sv-w">${x}</td></tr>`).join('')}</table></div>
         <p class="note">Rule-of-thumb read of the data on these tabs; not a forecast.</p></div>
       <div id="suSig" style="margin-top:12px"></div>
+      <div id="suCz" style="margin-top:12px"></div>
       <div id="suTech" style="margin-top:12px"></div>
       <div class="grid g2" style="margin-top:12px"><div class="card"><h2>Next events</h2><div id="suCal"></div></div>
         <div class="card"><h2>Sugar headlines</h2><div id="suNews"></div></div></div>
@@ -324,6 +325,14 @@ const Sugar = (() => {
       chart('suSigC', { type: 'line', data: { labels: H.dates, datasets: [{ label: 'Managed money net, % OI', data: H.mm_pct_oi, borderColor: '#2c6fbb', pointRadius: 0, spanGaps: true, yAxisID: 'y' },
         { label: 'R$/t', data: H.brl_t, borderColor: '#d68910', pointRadius: 0, spanGaps: true, yAxisID: 'y1' }] }, options: { scales: { y1: { position: 'right', grid: { display: false } } } } });
     }).catch(() => { $('#suSig').innerHTML = ''; });
+    getJSON('data/sugar/czapp_digest.json').then(Z => {
+      if (!Z || !(Z.items || []).length) return;
+      $('#suCz').innerHTML = `<div class="card"><h2>Industry reading this week <span class="note">Czapp (Czarnikow) free insights, week to ${Z.week_ending}</span></h2>
+        ${Z.themes && Z.themes.length ? `<ul>${Z.themes.map(t => `<li>${t}</li>`).join('')}</ul>` : ''}
+        <div class="tbl"><table><tr><th class="l">Date</th><th class="l">Article</th><th class="l">What it says for sugar</th></tr>
+        ${Z.items.map(i => `<tr><td class="l">${i.date}</td><td class="l"><a href="${i.url}" target="_blank" rel="noopener">${i.title}</a></td><td class="l">${i.takeaway}</td></tr>`).join('')}</table></div>
+        <p class="note">Our own one-line reading of each free article; follow the link for the original. Updated weekly.</p></div>`;
+    }).catch(() => {});
     Tech.mount($('#suTech'), ['SB']);
     try { MktStudy.upcoming($('#suSzUp'), ['SB'], () => $('#suTabs button[data-t="su-seas"]').click()); } catch (e) { /* no seasonal data yet */ }
     try { Intel.calendar($('#suCal'), { markets: ['SB'], days: 30, minImp: 1 }); } catch (e) { $('#suCal').innerHTML = '<p class="note">Calendar not available.</p>'; }
