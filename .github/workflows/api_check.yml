@@ -1,0 +1,22 @@
+name: api-check
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['scripts/api_check.py', '.github/workflows/api_check.yml']
+permissions: {contents: write}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests
+      - run: python scripts/api_check.py
+        env: {FAS_API_KEY: '${{ secrets.FAS_API_KEY }}', NASS_API_KEY: '${{ secrets.NASS_API_KEY }}', AMS_API_KEY: '${{ secrets.AMS_API_KEY }}'}
+      - run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/probe/api_check.json; git commit -qm "probe: API secret check" || exit 0
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q && break; sleep 5; done
