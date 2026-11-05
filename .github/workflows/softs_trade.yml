@@ -1,5 +1,6 @@
 name: softs-trade
 # USDA FAS weekly export sales for upland and Pima cotton, then the cotton export-sales brief, balance sheet and price outlook.
+# A run started before 8:30 ET polls the FAS API every 2 minutes (ESR_WAIT) and publishes as soon as the new week appears.
 on:
   workflow_dispatch: {}
   push:
