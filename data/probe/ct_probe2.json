@@ -1,0 +1,114 @@
+{
+ "mars_match": [
+  {
+   "slug_id": "1625",
+   "slug_name": "CNDCQS",
+   "report_title": "Daily Cotton Quality Summary by Office",
+   "published_date": "11/05/2026 07:40:46"
+  },
+  {
+   "slug_id": "1646",
+   "slug_name": "CNWWQO",
+   "report_title": "Cotton Weekly Quality Report by Office",
+   "published_date": "10/30/2026 08:29:12"
+  },
+  {
+   "slug_id": "1652",
+   "slug_name": "CNDCQS_S",
+   "report_title": "Daily Cotton Quality Summary by State",
+   "published_date": "11/04/2026 07:31:00"
+  },
+  {
+   "slug_id": "1654",
+   "slug_name": "CNWWQS",
+   "report_title": "Cotton Weekly Quality Report by State",
+   "published_date": "10/30/2026 08:33:17"
+  },
+  {
+   "slug_id": "1658",
+   "slug_name": "CNAACQ",
+   "report_title": "Annual Cotton Quality Report",
+   "published_date": "06/29/2026 12:57:33"
+  },
+  {
+   "slug_id": "1659",
+   "slug_name": "CNMMCQ",
+   "report_title": "Monthly Season to Date Cotton Quality Report",
+   "published_date": "10/30/2026 08:52:24"
+  },
+  {
+   "slug_id": "3242",
+   "slug_name": "AMS_3242",
+   "report_title": "Western Video Market Livestock Video/Internet Auction - Cottonwood, CA",
+   "published_date": "10/16/2026 12:56:51"
+  },
+  {
+   "slug_id": "3454",
+   "slug_name": "AMS_3454",
+   "report_title": "Western Video Sheep Video/Internet Auction - Cottonwood, CA",
+   "published_date": "10/16/2026 12:46:13"
+  },
+  {
+   "slug_id": "3804",
+   "slug_name": "AMS_3804",
+   "report_title": "Daily Spot Cotton Quotations",
+   "published_date": "11/04/2026 12:53:48"
+  },
+  {
+   "slug_id": "3895",
+   "slug_name": "AMS_3895",
+   "report_title": "Monthly Cotton Price Statistics",
+   "published_date": "11/03/2026 14:35:01"
+  },
+  {
+   "slug_id": "3896",
+   "slug_name": "AMS_3896",
+   "report_title": "Annual Cotton Price Statistics",
+   "published_date": "08/06/2026 11:53:36"
+  }
+ ],
+ "mars_3804_20250731.json": [
+  200,
+  1456932
+ ],
+ "mars_3804_latest.json": [
+  200,
+  1456971
+ ],
+ "cotton_cert_stock_20261104.pdf": [
+  404,
+  196
+ ],
+ "Cotton_Cert_Stock_20261104.xls": [
+  404,
+  196
+ ],
+ "cotton_certificated_stocks_20261104.xls": [
+  404,
+  196
+ ],
+ "cotton_daily_cert_stock_20261104.xls": [
+  404,
+  196
+ ],
+ "cotton_cert_20261104.xls": [
+  404,
+  196
+ ],
+ "ct_certs_20261104.xls": [
+  404,
+  196
+ ],
+ "Cotton_Premiums_and_Discounts.pdf": [
+  404,
+  196
+ ],
+ "cotton_premiums_discounts.xls": [
+  404,
+  196
+ ],
+ "Cotton_Certificated_Stock.xls": [
+  404,
+  196
+ ]
+}
