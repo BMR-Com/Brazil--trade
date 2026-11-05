@@ -153,7 +153,7 @@ const Cotton = (() => {
       <div class="card" style="margin-top:12px"><h2>Premium history, key qualities</h2><div style="position:relative;height:260px"><canvas id="ctDiffH"></canvas></div></div>
       <div class="card" style="margin-top:12px"><h2>Certs on board <span class="note">private: your ICE files are read in this browser only</span></h2>
         <p class="note">Load the two files from the ICE Report Center (Certified Stock Reports – Cotton): the daily certified stock by delivery point and the grade/staple report. They are processed here and remembered in this browser; nothing is uploaded or saved to the site.</p>
-        <div class="grid g2"><label>Certified stock (by delivery point)<br><input type="file" id="ctFStock" accept=".csv,text/csv"></label><label>Grade / staple<br><input type="file" id="ctFGrade" accept=".csv,text/csv"></label></div>
+        <div class="grid g2"><label>Certified stock (by delivery point)<br><input type="file" id="ctFStock" accept=".csv,text/csv"></label><label>Grade / staple (ICE updates the full detail on Mondays)<br><input type="file" id="ctFGrade" accept=".csv,text/csv"></label></div>
         <p class="note" style="margin-top:6px"><a href="#" id="ctFClear">Forget loaded files</a></p>
         <div id="ctCertOut" style="margin-top:10px"></div></div>`;
     const drawGrid = mode => {
@@ -171,11 +171,11 @@ const Cotton = (() => {
     const parseCSV = t => t.trim().split(/\r?\n/).map(line => { const out = []; let cur = '', q = false; for (const ch of line) { if (ch === '"') q = !q; else if (ch === ',' && !q) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map(x => x.trim()); });
     const analyse = () => {
       const st = LS.get('ctIceStock'), gr = LS.get('ctIceGrade'), O = $('#ctCertOut'); if (!O) return;
-      let html = '';
+      let html = '', stTot = 0;
       if (st) {
         const R = parseCSV(st), h = R[0], rr = R.slice(1).filter(r => r[0]);
         const iCur = h.findIndex(x => /^Current Stock/i.test(x)), iNew = h.findIndex(x => /^New Certs/i.test(x)), iDec = h.findIndex(x => /^Decerts/i.test(x)), iPrev = h.findIndex(x => /^Stock/i.test(x));
-        const tot = i => rr.reduce((a, r) => a + (+r[i] || 0), 0);
+        const tot = i => rr.reduce((a, r) => a + (+r[i] || 0), 0); stTot = tot(iCur);
         html += `<div class="grid g4">${kp('Certificated stock', fmt(tot(iCur), 0) + ' bales', h[iCur].replace('Current Stock - ', ''))}${kp('New certs', fmt(tot(iNew), 0), h[iNew].replace('New Certs - ', ''))}${kp('Decerts', fmt(tot(iDec), 0), '')}${kp('Change', sg(tot(iCur) - tot(iPrev)) + ' bales', 'vs ' + h[iPrev].replace('Stock - ', ''))}</div>
           <div class="tbl" style="margin-top:8px"><table><tr>${h.map((x, i) => `<th class="${i ? '' : 'l'}">${x}</th>`).join('')}</tr>${rr.map(r => `<tr>${r.map((x, i) => `<td class="${i ? 'n' : 'l'}">${i ? fmt(+x, 0) : x}</td>`).join('')}</tr>`).join('')}</table></div>`;
       }
@@ -188,17 +188,17 @@ const Cotton = (() => {
         const by = k => { const m = {}; priced.forEach(x => { (m[x[k]] = m[x[k]] || { n: 0, v: 0 }); m[x[k]].n += x.n; m[x[k]].v += x.n * x.p; }); return Object.entries(m).sort(); };
         const cheap = [...priced].sort((a, b) => a.p - b.p).slice(0, 5);
         const mkt = $('#ctPx')?.value;
-        html += `<h3 style="margin-top:14px">Quality of the certs on board <span class="note">grade/staple file, ${fmt(n, 0)} bales${np < n ? `, ${fmt(n - np, 0)} without a grid value` : ''}</span></h3>
+        html += `<h3 style="margin-top:14px">Quality of the certs on board <span class="note">weekly grade/staple report ${LS.get('ctIceGradeDate') || ''}: ${fmt(n, 0)} bales${stTot ? ` (${fmt(n / stTot * 100, 0)}% of the ${fmt(stTot, 0)} bales in the latest stock file)` : ''}${np < n ? `, ${fmt(n - np, 0)} without a grid value` : ''}</span></h3>
           <div class="grid g4">${kp('Average premium', sg(w) + ' pts', `${sg(w / 100, 2)}¢/lb against 41-4-34 at the ${D.date} grid`)}${kp('Per lot', '$' + fmt(w / 100 * 500, 0), '50,000 lb contract')}
             ${kp('Cheapest to deliver', `${cheap[0]?.c}-${cheap[0]?.l}-${cheap[0]?.s}`, `${sg(cheap[0]?.p)} pts, ${fmt(cheap[0]?.n, 0)} bales`)}${kp('Base-grade cotton on board', fmt(priced.filter(x => x.p <= 0).reduce((a, x) => a + x.n, 0), 0) + ' bales', 'at or below 41-4-34 value')}</div>
           <div class="grid g2" style="margin-top:8px"><div class="tbl"><table><tr><th class="l">Staple</th><th>Bales</th><th>Share</th><th>Avg pts</th></tr>${by('s').map(([k, v]) => `<tr><td class="l">${k}${k === '37' ? '+' : ''}</td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / np * 100, 1)}%</td><td class="n">${sg(v.v / v.n)}</td></tr>`).join('')}</table></div>
             <div class="tbl"><table><tr><th class="l">Color</th><th>Bales</th><th>Share</th><th>Avg pts</th></tr>${by('c').map(([k, v]) => `<tr><td class="l">${k}</td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / np * 100, 1)}%</td><td class="n">${sg(v.v / v.n)}</td></tr>`).join('')}</table></div></div>
           <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Cheapest qualities on board</th><th>Bales</th><th>Points</th><th>¢/lb</th></tr>${cheap.map(x => `<tr><td class="l">${x.c}-${x.l}-${x.s}</td><td class="n">${fmt(x.n, 0)}</td><td class="n">${sg(x.p)}</td><td class="n">${sg(x.p / 100, 2)}</td></tr>`).join('')}</table></div>
-          <p class="note">Values each bale in the file at today's grid (strength and micronaire are not in the file, so no strength discount is applied). A deliverer picks the cheapest qualities first, so the low end of this table sets the value of the spot month; a pile priced well above base means receivers pay the notice price plus that premium, and only new certification of lower grades would cheapen it.${st ? ' If the grade file total differs from the stock file, the two reports cover different dates or bale sets.' : ''}</p>`;
+          <p class="note">Values each bale in the file at today's grid (strength and micronaire are not in the file, so no strength discount is applied). A deliverer picks the cheapest qualities first, so the low end of this table sets the value of the spot month; a pile priced well above base means receivers pay the notice price plus that premium, and only new certification of lower grades would cheapen it.${st ? ' The stock file is daily; ICE refreshes the full grade/staple detail on Mondays, so between Mondays the quality mix lags new certs and decerts.' : ''}</p>`;
       }
       O.innerHTML = html || '<p class="note">No files loaded in this browser yet.</p>';
     };
-    const hook = (id, key) => { const el = $('#' + id); if (el) el.onchange = e => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { LS.set(key, rd.result); analyse(); }; rd.readAsText(f); }; };
+    const hook = (id, key) => { const el = $('#' + id); if (el) el.onchange = e => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { LS.set(key, rd.result); const m = f.name.match(/(\d{4}-\d{2}-\d{2})/); LS.set(key + 'Date', m ? m[1] : f.name); analyse(); }; rd.readAsText(f); }; };
     hook('ctFStock', 'ctIceStock'); hook('ctFGrade', 'ctIceGrade');
     $('#ctFClear').onclick = e => { e.preventDefault(); LS.del('ctIceStock'); LS.del('ctIceGrade'); analyse(); };
     analyse();
