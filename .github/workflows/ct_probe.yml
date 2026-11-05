@@ -1,0 +1,17 @@
+name: ct-probe
+on: {push: {branches: [main], paths: ['scripts/probe_ct.py', '.github/workflows/ct_probe.yml']}}
+permissions: {contents: write}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests && python scripts/probe_ct.py
+        env: {AMS_API_KEY: '${{ secrets.AMS_API_KEY }}'}
+      - run: |
+          git config user.name bmr-data-bot; git config user.email bot@users.noreply.github.com
+          git add data/probe; git commit -qm "probe: cotton certs and differentials" || exit 0
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q && break; sleep 5; done
