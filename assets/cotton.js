@@ -202,9 +202,11 @@ const Cotton = (() => {
           <p class="note">${low ? `${fmt(low, 0)} bales (${fmt(low / T * 100, 1)}%) are in 25.0–25.9 and take the ${sg(disc)}-point strength discount; the average premium below includes it.` : `No bales in 25.0–25.9, so no strength discount applies to the certs on board.`} ${fmt((tc.at(-1) || 0) / T * 100, 0)}% test 30 g/tex or stronger.</p>`;
       }
       if (gr) {
-        const R = parseCSV(gr), h = R[0], sc = h.map((x, i) => [x, i]).filter(([x]) => /^Staple/i.test(x)).map(([x, i]) => [x.replace(/Staple\s*/i, ''), i]);
+        const R = parseCSV(gr), h = R[0], sc = h.map((x, i) => [x.trim(), i]).filter(([x]) => /^(staple\s*)?3\d\+?$/i.test(x)).map(([x, i]) => [x.replace(/staple\s*/i, ''), i]);
+        const iCo = h.findIndex(x => /^color/i.test(x)), iLf = h.findIndex(x => /^leaf/i.test(x)), iRd = h.findIndex(x => /date/i.test(x));
+        if (iRd >= 0 && R[1]) LS.get('ctIceGrade') || (REPO.ctIceGradeDate = REPO.ctIceGradeDate || R[1][iRd]);
         const cells = [];
-        R.slice(1).forEach(r => { if (!/^\d+$/.test(r[0]) || !/^\d+$/.test(r[1])) return; sc.forEach(([s, i]) => { const n = +r[i] || 0; if (n) cells.push({ c: r[0], l: r[1], s: s.replace('+', ''), n, p: pts(G, r[0], r[1], s) }); }); });
+        R.slice(1).forEach(r => { const c = r[iCo], l = r[iLf]; if (!/^\d+$/.test(c) || !/^\d+$/.test(l)) return; sc.forEach(([s, i]) => { const n = +String(r[i]).replace(/,/g, '') || 0; if (n) cells.push({ c, l, s: s.replace('+', ''), n, p: pts(G, c, l, s) }); }); });
         const n = cells.reduce((a, x) => a + x.n, 0), priced = cells.filter(x => x.p != null), np = priced.reduce((a, x) => a + x.n, 0);
         const w = priced.reduce((a, x) => a + x.n * x.p, 0) / (np || 1) + (strAdj ? strAdj.share * strAdj.disc : 0);
         const by = k => { const m = {}; priced.forEach(x => { (m[x[k]] = m[x[k]] || { n: 0, v: 0 }); m[x[k]].n += x.n; m[x[k]].v += x.n * x.p; }); return Object.entries(m).sort(); };
