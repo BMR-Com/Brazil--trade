@@ -151,10 +151,10 @@ const Cotton = (() => {
         <div class="tbl" id="ctGrid"></div>
         <p class="note">Each delivered bale is invoiced at the notice price plus or minus these differences for its color, leaf and staple (plus the strength discount if GPT is 25.0–25.9). They are the average of the designated spot markets' quoted differences, set on the sixth business day before delivery. Leaf 1 and 2 share one value; staple 37 covers 37 and longer.</p></div>
       <div class="card" style="margin-top:12px"><h2>Premium history, key qualities</h2><div style="position:relative;height:260px"><canvas id="ctDiffH"></canvas></div></div>
-      <div class="card" style="margin-top:12px"><h2>Certs on board <span class="note">private: your ICE files are read in this browser only</span></h2>
-        <p class="note">Load the two files from the ICE Report Center (Certified Stock Reports – Cotton): the daily certified stock by delivery point and the grade/staple report. They are processed here and remembered in this browser; nothing is uploaded or saved to the site.</p>
-        <div class="grid g2"><label>Certified stock (by delivery point)<br><input type="file" id="ctFStock" accept=".csv,text/csv"></label><label>Grade / staple (ICE updates the full detail on Mondays)<br><input type="file" id="ctFGrade" accept=".csv,text/csv"></label></div>
-        <p class="note" style="margin-top:6px"><a href="#" id="ctFClear">Forget loaded files</a></p>
+      <div class="card" style="margin-top:12px"><h2>Certs on board <span class="note">ICE Report Center files (Certified Stock Reports – Cotton)</span></h2>
+        <p class="note">Shows the latest ICE files stored on the desk (data/cotton/ice). To look at a newer file before it is added, pick it below: it is read in this browser and replaces the stored one until you choose "Forget loaded files".</p>
+        <div class="grid g3"><label>Certified stock (by delivery point)<br><input type="file" id="ctFStock" accept=".csv,text/csv"></label><label>Stock by warehouse<br><input type="file" id="ctFWh" accept=".csv,text/csv"></label><label>Grade / staple (ICE updates the full detail on Mondays)<br><input type="file" id="ctFGrade" accept=".csv,text/csv"></label></div>
+        <p class="note" style="margin-top:6px"><a href="#" id="ctFClear">Forget loaded files (back to the stored ones)</a></p>
         <div id="ctCertOut" style="margin-top:10px"></div></div>`;
     const drawGrid = mode => {
       const ref = mode === 'm' ? P1 : mode === 'y' ? P1y : null;
@@ -168,9 +168,17 @@ const Cotton = (() => {
       options: { scales: { y: { title: { display: true, text: 'points vs 41-4-34' } } } } });
 
     // ----- private ICE files -----
+    let WM = null;
+    try { const [csv, rules] = await Promise.all([fetch('data/cotton/warehouse_map.csv').then(r => r.text()), getJSON('data/cotton/warehouse_map_rules.json')]);
+      const L = csv.trim().split(/\r?\n/).map(l => { const o = []; let c = '', q = false; for (const ch of l) { if (ch === '"') q = !q; else if (ch === ',' && !q) { o.push(c); c = ''; } else c += ch; } o.push(c); return o; });
+      const hd = L[0]; WM = { rows: L.slice(1).map(r => Object.fromEntries(hd.map((k, i) => [k, r[i] || '']))), rules: rules.owner_rules }; } catch (e) { WM = null; }
+    const REPO = {};
+    try { const Lt = await getJSON('data/cotton/ice/latest.json');
+      await Promise.all([['ctIceStock', 'stock'], ['ctIceGrade', 'grade'], ['ctIceWh', 'warehouse']].map(async ([k, f]) => { if (Lt[f]) { REPO[k] = await fetch(Lt[f]).then(r => r.ok ? r.text() : null); REPO[k + 'Date'] = Lt[f + '_date']; } })); } catch (e) {}
+    const got = k => LS.get(k) ?? REPO[k] ?? null;
     const parseCSV = t => t.trim().split(/\r?\n/).map(line => { const out = []; let cur = '', q = false; for (const ch of line) { if (ch === '"') q = !q; else if (ch === ',' && !q) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map(x => x.trim()); });
     const analyse = () => {
-      const st = LS.get('ctIceStock'), gr = LS.get('ctIceGrade'), O = $('#ctCertOut'); if (!O) return;
+      const st = got('ctIceStock'), gr = got('ctIceGrade'), O = $('#ctCertOut'); if (!O) return;
       let html = '', stTot = 0;
       if (st) {
         const R = parseCSV(st), h = R[0], rr = R.slice(1).filter(r => r[0]);
@@ -188,7 +196,7 @@ const Cotton = (() => {
         const by = k => { const m = {}; priced.forEach(x => { (m[x[k]] = m[x[k]] || { n: 0, v: 0 }); m[x[k]].n += x.n; m[x[k]].v += x.n * x.p; }); return Object.entries(m).sort(); };
         const cheap = [...priced].sort((a, b) => a.p - b.p).slice(0, 5);
         const mkt = $('#ctPx')?.value;
-        html += `<h3 style="margin-top:14px">Quality of the certs on board <span class="note">weekly grade/staple report ${LS.get('ctIceGradeDate') || ''}: ${fmt(n, 0)} bales${stTot ? ` (${fmt(n / stTot * 100, 0)}% of the ${fmt(stTot, 0)} bales in the latest stock file)` : ''}${np < n ? `, ${fmt(n - np, 0)} without a grid value` : ''}</span></h3>
+        html += `<h3 style="margin-top:14px">Quality of the certs on board <span class="note">weekly grade/staple report ${got('ctIceGradeDate') || ''}: ${fmt(n, 0)} bales${stTot ? ` (${fmt(n / stTot * 100, 0)}% of the ${fmt(stTot, 0)} bales in the latest stock file)` : ''}${np < n ? `, ${fmt(n - np, 0)} without a grid value` : ''}</span></h3>
           <div class="grid g4">${kp('Average premium', sg(w) + ' pts', `${sg(w / 100, 2)}¢/lb against 41-4-34 at the ${D.date} grid`)}${kp('Per lot', '$' + fmt(w / 100 * 500, 0), '50,000 lb contract')}
             ${kp('Cheapest to deliver', `${cheap[0]?.c}-${cheap[0]?.l}-${cheap[0]?.s}`, `${sg(cheap[0]?.p)} pts, ${fmt(cheap[0]?.n, 0)} bales`)}${kp('Base-grade cotton on board', fmt(priced.filter(x => x.p <= 0).reduce((a, x) => a + x.n, 0), 0) + ' bales', 'at or below 41-4-34 value')}</div>
           <div class="grid g2" style="margin-top:8px"><div class="tbl"><table><tr><th class="l">Staple</th><th>Bales</th><th>Share</th><th>Avg pts</th></tr>${by('s').map(([k, v]) => `<tr><td class="l">${k}${k === '37' ? '+' : ''}</td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / np * 100, 1)}%</td><td class="n">${sg(v.v / v.n)}</td></tr>`).join('')}</table></div>
@@ -196,11 +204,31 @@ const Cotton = (() => {
           <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Cheapest qualities on board</th><th>Bales</th><th>Points</th><th>¢/lb</th></tr>${cheap.map(x => `<tr><td class="l">${x.c}-${x.l}-${x.s}</td><td class="n">${fmt(x.n, 0)}</td><td class="n">${sg(x.p)}</td><td class="n">${sg(x.p / 100, 2)}</td></tr>`).join('')}</table></div>
           <p class="note">Values each bale in the file at today's grid (strength and micronaire are not in the file, so no strength discount is applied). A deliverer picks the cheapest qualities first, so the low end of this table sets the value of the spot month; a pile priced well above base means receivers pay the notice price plus that premium, and only new certification of lower grades would cheapen it.${st ? ' The stock file is daily; ICE refreshes the full grade/staple detail on Mondays, so between Mondays the quality mix lags new certs and decerts.' : ''}</p>`;
       }
+      const wh = got('ctIceWh');
+      if (wh && WM) {
+        const R = parseCSV(wh), h = R[0].map(x => x.toLowerCase()), iC = h.findIndex(x => /number|code/.test(x)), iN = h.findIndex(x => x === 'warehouse'), iB = h.findIndex(x => /receipt|bales|stock/.test(x)), iD = h.findIndex(x => /date/.test(x));
+        const byCode = Object.fromEntries(WM.rows.filter(r => r.code).map(r => [r.code, r])), norm = t => t.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const byName = Object.fromEntries(WM.rows.map(r => [norm(r.warehouse), r]));
+        const rule = t => { for (const [re, m] of WM.rules) if (new RegExp(re, 'i').test(t)) return m; return null; };
+        const W = R.slice(1).filter(r => r[iN]).map(r => { const code = r[iC], nm = r[iN], n = +r[iB] || 0, hit = byCode[code] || byName[norm(nm)];
+          return { code, nm, n, merchant: hit?.merchant || rule(nm) || 'Unmapped', dp: hit?.delivery_point || '?', how: byCode[code] ? 'code' : hit ? 'name' : rule(nm) ? 'owner rule' : '–' }; });
+        const tot = W.reduce((a, x) => a + x.n, 0), rd = R[1]?.[iD] || got('ctIceWhDate') || '';
+        const dps = [...new Set(W.filter(x => x.n).map(x => x.dp))].sort();
+        const M = {}; W.forEach(x => { const o = M[x.merchant] = M[x.merchant] || { n: 0, dp: {}, w: 0 }; o.n += x.n; o.dp[x.dp] = (o.dp[x.dp] || 0) + x.n; if (x.n) o.w++; });
+        const ms = Object.entries(M).filter(([, v]) => v.n).sort((a, b) => b[1].n - a[1].n);
+        html += `<h3 style="margin-top:14px">Certs by merchant <span class="note">ICE stock by warehouse, ${rd}: ${fmt(tot, 0)} bales; warehouse → merchant mapping from data/cotton/warehouse_map.csv</span></h3>
+          <div class="tbl"><table><tr><th class="l">Merchant</th><th>Bales</th><th>Share</th>${dps.map(d => `<th>${d}</th>`).join('')}<th>Warehouses holding</th></tr>
+          ${ms.map(([k, v]) => `<tr><td class="l"><b>${k}</b></td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / tot * 100, 1)}%</td>${dps.map(d => `<td class="n">${v.dp[d] ? fmt(v.dp[d], 0) : ''}</td>`).join('')}<td class="n">${v.w}</td></tr>`).join('')}
+          <tr><td class="l">Total</td><td class="n">${fmt(tot, 0)}</td><td class="n">100%</td>${dps.map(d => `<td class="n">${fmt(W.filter(x => x.dp === d).reduce((a, x) => a + x.n, 0), 0)}</td>`).join('')}<td class="n">${W.filter(x => x.n).length}</td></tr></table></div>
+          <details style="margin-top:6px"><summary class="note">By warehouse (${W.length} listed, ${W.filter(x => x.n).length} holding certs)</summary><div class="tbl"><table><tr><th class="l">Code</th><th class="l">Warehouse</th><th class="l">Delivery point</th><th class="l">Merchant</th><th>Bales</th><th class="l">Matched by</th></tr>
+          ${[...W].sort((a, b) => b.n - a.n).map(x => `<tr><td class="l">${x.code}</td><td class="l">${x.nm}</td><td class="l">${x.dp}</td><td class="l">${x.merchant}</td><td class="n">${x.n ? fmt(x.n, 0) : ''}</td><td class="l">${x.how}</td></tr>`).join('')}</table></div></details>
+          ${stTot && Math.abs(stTot - tot) > 100 ? `<p class="note">The warehouse report (${rd}) totals ${fmt(tot, 0)} bales against ${fmt(stTot, 0)} in the latest delivery-point file; the two are from different dates, so certification in between is not yet assigned to merchants.</p>` : ''}`;
+      }
       O.innerHTML = html || '<p class="note">No files loaded in this browser yet.</p>';
     };
     const hook = (id, key) => { const el = $('#' + id); if (el) el.onchange = e => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { LS.set(key, rd.result); const m = f.name.match(/(\d{4}-\d{2}-\d{2})/); LS.set(key + 'Date', m ? m[1] : f.name); analyse(); }; rd.readAsText(f); }; };
-    hook('ctFStock', 'ctIceStock'); hook('ctFGrade', 'ctIceGrade');
-    $('#ctFClear').onclick = e => { e.preventDefault(); LS.del('ctIceStock'); LS.del('ctIceGrade'); analyse(); };
+    hook('ctFStock', 'ctIceStock'); hook('ctFGrade', 'ctIceGrade'); hook('ctFWh', 'ctIceWh');
+    $('#ctFClear').onclick = e => { e.preventDefault(); ['ctIceStock', 'ctIceGrade', 'ctIceWh'].forEach(k => { LS.del(k); LS.del(k + 'Date'); }); analyse(); };
     analyse();
   }
 

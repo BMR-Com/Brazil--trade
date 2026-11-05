@@ -5,7 +5,7 @@ code,warehouse,delivery_point,owner_on_record,merchant,how_mapped,note
 167025,Staple Cotton Cooperative Assoc. West Memphis,Memphis,Staple Cotton Cooperative Association,Staple Cooperative,rule: Staple = Staple Cooperative,
 167035,Riverbend Distribution Center,Memphis,Riverbend Distribution Center LLC (Louis Dreyfus),Allenberg,rule: LDC = Allenberg,
 490150,Anderson Clayton Desoto,Memphis,Anderson Clayton Desoto (Olam Cotton),Olam,rule: Anderson Clayton = Olam,
-710330,Staple Cotton Cooperative Assoc. Greer,Greenville,Staple Cotton Cooperative Association,Staple Cooperative,rule: Staple = Staple Cooperative,records also list 710530 for the same name
+710530,Staple Cotton Cooperative Assoc. Greer,Greenville,Staple Cotton Cooperative Association,Staple Cooperative,rule: Staple = Staple Cooperative,code confirmed 710530 by the ICE warehouse report
 793961,Bunge USA LLC - Meyers 1,Memphis,Bunge USA LLC,Bunge,rule: owner,delivery point inferred; not in the merchant table
 794505,Cotton Trade Warehouse,Memphis,Cotton Trade Warehouse (Cargill Inc.),Cargill,rule: Cargill,
 794540,Memphis Compress,Memphis,Memphis Compress Company (Louis Dreyfus Cotton Storage LLC),Allenberg,rule: LDC = Allenberg,
@@ -16,18 +16,18 @@ code,warehouse,delivery_point,owner_on_record,merchant,how_mapped,note
 795007,Total Commodity Warehouse,Memphis,Total Commodity Warehouse (Sunbelt Warehouse),Ecom,table + rule: Sunbelt = Ecom,
 795026,ICD #4 (Int'l Cotton Depots),Memphis,International Cotton Depots - ICD #4,Cofco,table,
 819292,Cargill Baytown Warehouse,Houston,Cargill Baytown Cotton Warehouse (Cargill Inc.),Cargill,rule: Cargill,delivery point inferred (Baytown TX)
-846947,Anderson Clayton Ft Worth 1,Dallas,Anderson Clayton Dallas (Olam Cotton),Olam,table + rule,records give the address as Fort Worth
+846847,Anderson Clayton Ft Worth 1,Dallas,Anderson Clayton Dallas (Olam Cotton),Olam,table + rule,records give the address as Fort Worth; code corrected from the ICE warehouse report (was read as 846947)
 853007,Fort Worth Commodity Warehouse,Dallas,Fort Worth Commodity Warehouse (Sunbelt Warehouse),Ecom,table + rule: Sunbelt = Ecom,
-857509,Dallas Warehouse Company LLC #2,Dallas,Dallas Warehouse Company LLC,Independent,table,
+857500,Dallas Warehouse Company LLC #2,Dallas,Dallas Warehouse Company LLC,Independent,table,code corrected from the ICE warehouse report (was read as 857509)
 858053,Moody Compress #1,Galveston,Moody Compress & Warehouse Company #1,Independent,table,
 858054,Moody Compress #2,Galveston,Moody Compress & Warehouse Company #2,Independent,table,
 858055,Moody Compress #3,Galveston,Moody Compress & Warehouse Company #3,Independent,table,
 858056,Moody Compress #4,Galveston,Moody Compress & Warehouse Company #4,Independent,table,
 858063,Moody Compress #6,Houston,Moody Compress & Warehouse Company - Plant #6,Independent,table,
 858065,Southern Compress #1,Galveston,Southern Compress Warehouse (LDC Cotton Storage LLC),Allenberg,table + rule: LDC = Allenberg,
-871049,Houston Commodity Warehousing Corp,Houston,Houston Commodity Warehouse (Sunbelt Warehouse),Ecom,table + rule: Sunbelt = Ecom,
-875269,Supply Chain Management LLC Dallas 1,Dallas,Supply Chain Management LLC Dallas #1,Wynne Cowan,rule: Supply Chain Mgt = Wynne Cowan,
-913054,Supply Chain Management LLC,Houston,Supply Chain Management LLC,Wynne Cowan,table,
+871048,Houston Commodity Warehousing Corp,Houston,Houston Commodity Warehouse (Sunbelt Warehouse),Ecom,table + rule: Sunbelt = Ecom,code corrected from the ICE warehouse report (was read as 871049)
+875260,Supply Chain Management LLC Dallas 1,Dallas,Supply Chain Management LLC Dallas #1,Wynne Cowan,rule: Supply Chain Mgt = Wynne Cowan,code corrected from the ICE warehouse report (was read as 875269)
+913054,Supply Chain Management LLC Baytown,Houston,Supply Chain Management LLC,Wynne Cowan,table,
 925011,Dallas Warehouse Company LLC,Dallas,Dallas Warehouse Company LLC,Independent,table,
 ,Moody Compress #5,Galveston,,Independent,table,code not in the records list
 ,Moody Compress #9,Galveston,,Independent,table,code not in the records list
