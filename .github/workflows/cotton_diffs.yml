@@ -1,0 +1,30 @@
+name: cotton-diffs
+# ICE Cotton No. 2 quality premiums and discounts from USDA AMS Daily Spot Cotton Quotations (published early afternoon CT).
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['pipelines/cotton_diffs.py', '.github/workflows/cotton_diffs.yml']
+  schedule:
+    - cron: '23 20 * * 1-5'
+    - cron: '47 22 * * 1-5'
+permissions: {contents: write}
+concurrency: {group: cotton-diffs, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests pandas
+      - run: python pipelines/cotton_diffs.py
+        env: {AMS_API_KEY: '${{ secrets.AMS_API_KEY }}'}
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/cotton/ice_diffs.csv data/cotton/ice_diffs.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: ICE cotton quality differentials $(date -u +%F)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

@@ -5,7 +5,7 @@ const Cotton = (() => {
   const ORG = location.hostname === 'bmr-com.github.io' ? '' : 'https://bmr-com.github.io';   // sibling Pages sites (same origin when live)
   const SITE = { wasde: ORG + '/wasde-analytics/', esr: ORG + '/usd-export-sales-email/', crop: ORG + '/cotton-crop-progress/', oncall: ORG + '/cotton-on-call/',
     cot: ORG + '/cftc-cot-full/', opts: ORG + '/softs--options-/' };
-  const TABS = [['ct-primer', 'Primer'], ['ct-geo', "Where it's grown, trade &amp; weather"], ['ct-wasde', 'WASDE'], ['ct-esr', 'Export sales'], ['ct-crop', 'Crop progress'], ['ct-ams', 'AMS market review'], ['ct-china', 'China'], ['ct-india', 'India'], ['ct-loan', 'Loan'], ['ct-oncall', 'On-call'], ['ct-basis', 'Basis &amp; ideas'],
+  const TABS = [['ct-primer', 'Primer'], ['ct-geo', "Where it's grown, trade &amp; weather"], ['ct-wasde', 'WASDE'], ['ct-esr', 'Export sales'], ['ct-crop', 'Crop progress'], ['ct-ams', 'AMS market review'], ['ct-china', 'China'], ['ct-india', 'India'], ['ct-loan', 'Loan'], ['ct-certs', 'Certs &amp; quality premiums'], ['ct-oncall', 'On-call'], ['ct-basis', 'Basis &amp; ideas'],
     ['ct-flows', 'Futures, options &amp; COT'], ['ct-rv', 'Spreads &amp; vol'], ['ct-outlook', 'Outlook'], ['ct-seas', 'Seasonality &amp; technicals']];
   function shell() {
     $('#cotton').innerHTML = `<nav class="tabs" id="ctTabs">${TABS.map(([k, l], i) => `<button data-t="${k}" class="${k === tab ? 'on' : ''}">${i + 1} · ${l}</button>`).join('')}</nav><main><div id="ctBody"></div></main>`;
@@ -24,7 +24,7 @@ const Cotton = (() => {
       'ct-china': () => { try { typeof ChinaCotton !== 'undefined' ? ChinaCotton.mount(body()) : body().innerHTML = '<div class="card"><p class="note">China module not loaded.</p></div>'; } catch (e) { body().innerHTML = '<div class="card"><p class="note">China tab failed to load.</p></div>'; } }, 'ct-india': () => { try { typeof IndiaCotton !== 'undefined' ? IndiaCotton.mount(body()) : body().innerHTML = '<div class="card"><p class="note">India module not loaded.</p></div>'; } catch (e) { body().innerHTML = '<div class="card"><p class="note">India tab failed to load.</p></div>'; } }, 'ct-loan': () => { try { typeof CottonLoan !== 'undefined' ? CottonLoan.mount(body()) : body().innerHTML = '<div class="card"><p class="note">Loan module not loaded.</p></div>'; } catch (e) { body().innerHTML = '<div class="card"><p class="note">Loan tab failed to load.</p></div>'; } },
       'ct-oncall': () => frame(SITE.oncall, 'Cotton on-call', 'CFTC weekly cotton on-call: unfixed call sales and purchases by contract month, mill fixation pace and what it means for futures.'),
       'ct-basis': () => frame(SITE.crop + 'basis.html', 'Spot basis &amp; trade ideas', 'USDA spot cotton (41-4-34) minus nearby futures: seasonal pattern, current reading, what followed, and the rule-based trade ideas.'),
-      'ct-ams': () => { try { AmsReview.mount(body()); } catch (e) { body().innerHTML = '<div class="card"><p class="note">AMS review failed to load.</p></div>'; } }, 'ct-flows': flows, 'ct-rv': () => RVView.mount(body(), 'CT'), 'ct-outlook': outlook, 'ct-seas': () => MktStudy.mount(body(), ['CT']) })[tab]();
+      'ct-ams': () => { try { AmsReview.mount(body()); } catch (e) { body().innerHTML = '<div class="card"><p class="note">AMS review failed to load.</p></div>'; } }, 'ct-flows': flows, 'ct-rv': () => RVView.mount(body(), 'CT'), 'ct-outlook': outlook, 'ct-certs': certs, 'ct-seas': () => MktStudy.mount(body(), ['CT']) })[tab]();
   }
   function primer() {
     body().innerHTML = Specs.slot('cotton') + `<div class="grid g2">
@@ -128,6 +128,82 @@ const Cotton = (() => {
       <p class="note">Options flow, vol surface and skew: ${src(SITE.opts, 'softs options terminal')}. Index-trader (CIT) positions and the full COT read: ${src(SITE.cot, 'COT positioning desk')}.</p></div>`;
     CotDesk.mount($('#ctCot'), ['CT']);
   }
+  // Certs & quality premiums. The ICE grid is public USDA data (data/cotton/ice_diffs.json). ICE certificated-stock files
+  // are read in the viewer's browser only (file picker, kept in this browser's localStorage) and never stored in the repo.
+  async function certs() {
+    const D = await getJSON('data/cotton/ice_diffs.json').catch(() => null);
+    const kp = (lab, v, sub) => `<div class="kpi card" style="padding:10px"><div class="lbl">${lab}</div><div class="val" style="font-size:19px">${v}</div>${sub ? `<div class="sub">${sub}</div>` : ''}</div>`;
+    const sg = (v, d = 0) => v == null || isNaN(v) ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + fmt(Math.abs(v), d);
+    const LS = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} }, del: k => { try { localStorage.removeItem(k); } catch (e) {} } };
+    const gk = (c, l, st) => `${c}|${['1', '2'].includes(String(l)) ? '1 & 2' : l}|${String(st).replace('+', '')}`;
+    const pts = (G, c, l, st) => G ? G[gk(c, l, st)] : undefined;
+    if (!D) { body().innerHTML = '<div class="card"><p class="note">The quality-premium grid loads after the first cotton-diffs data run.</p></div>'; return; }
+    const G = D.grid, P1 = D.prev['1m']?.grid, P1y = D.prev['1y']?.grid;
+    const rows = []; D.colors.forEach(c => D.leaves.forEach(l => { if (D.staples.some(st => G[`${c}|${l}|${st}`] != null)) rows.push([c, l]); }));
+    const strn = D.strength[0];
+    body().innerHTML = `<div class="grid g4">
+        ${kp('Grid date', D.date, 'USDA spot quotations, ICE tenderable differences')}
+        ${kp('31-3-36', sg(pts(G, '31', '3', '36')) + ' pts', `${sg(pts(G, '31', '3', '36') - pts(P1, '31', '3', '36'))} on the month, ${sg(pts(G, '31', '3', '36') - pts(P1y, '31', '3', '36'))} on the year`)}
+        ${kp('21-2-37', sg(pts(G, '21', '2', '37')) + ' pts', `${sg(pts(G, '21', '2', '37') - pts(P1, '21', '2', '37'))} on the month`)}
+        ${kp('Strength ' + (strn?.range || ''), sg(strn?.points) + ' pts', 'GPT 25.0–25.9; below 25 not deliverable')}</div>
+      <div class="card" style="margin-top:12px"><h2>ICE Cotton No. 2 premiums and discounts <span class="note">points (100 = 1¢/lb) against 41-4-34</span></h2>
+        <div class="seg" style="display:flex;gap:6px;margin:0 0 8px"><label class="note">Show <select id="ctGridMode"><option value="lvl">level</option><option value="m">change, 1 month</option><option value="y">change, 1 year</option></select></label></div>
+        <div class="tbl" id="ctGrid"></div>
+        <p class="note">Each delivered bale is invoiced at the notice price plus or minus these differences for its color, leaf and staple (plus the strength discount if GPT is 25.0–25.9). They are the average of the designated spot markets' quoted differences, set on the sixth business day before delivery. Leaf 1 and 2 share one value; staple 37 covers 37 and longer.</p></div>
+      <div class="card" style="margin-top:12px"><h2>Premium history, key qualities</h2><div style="position:relative;height:260px"><canvas id="ctDiffH"></canvas></div></div>
+      <div class="card" style="margin-top:12px"><h2>Certs on board <span class="note">private: your ICE files are read in this browser only</span></h2>
+        <p class="note">Load the two files from the ICE Report Center (Certified Stock Reports – Cotton): the daily certified stock by delivery point and the grade/staple report. They are processed here and remembered in this browser; nothing is uploaded or saved to the site.</p>
+        <div class="grid g2"><label>Certified stock (by delivery point)<br><input type="file" id="ctFStock" accept=".csv,text/csv"></label><label>Grade / staple<br><input type="file" id="ctFGrade" accept=".csv,text/csv"></label></div>
+        <p class="note" style="margin-top:6px"><a href="#" id="ctFClear">Forget loaded files</a></p>
+        <div id="ctCertOut" style="margin-top:10px"></div></div>`;
+    const drawGrid = mode => {
+      const ref = mode === 'm' ? P1 : mode === 'y' ? P1y : null;
+      const cellv = (c, l, st) => { const v = G[`${c}|${l}|${st}`]; if (v == null) return null; return ref ? (ref[`${c}|${l}|${st}`] == null ? null : v - ref[`${c}|${l}|${st}`]) : v; };
+      const bg = v => v == null ? '' : `background:${v >= 0 ? `rgba(47,107,58,${Math.min(0.55, Math.abs(v) / (ref ? 300 : 800))})` : `rgba(192,57,43,${Math.min(0.55, Math.abs(v) / (ref ? 300 : 800))})`}`;
+      $('#ctGrid').innerHTML = `<table><tr><th class="l">Color</th><th class="l">Leaf</th>${D.staples.map(st => `<th>${st}${st === '37' ? '+' : ''}</th>`).join('')}</tr>${rows.map(([c, l]) => `<tr><td class="l">${c}</td><td class="l">${l}</td>${D.staples.map(st => { const v = cellv(c, l, st); return `<td class="n" style="${bg(v)}">${v == null ? '' : sg(v)}</td>`; }).join('')}</tr>`).join('')}</table>`;
+    };
+    drawGrid('lvl'); $('#ctGridMode').onchange = e => drawGrid(e.target.value);
+    const H = D.history, ks = Object.keys(H), lab = H[ks[0]].dates;
+    chart('ctDiffH', { type: 'line', data: { labels: lab, datasets: ks.map((k, i) => ({ label: k, data: lab.map(d => { const j = H[k].dates.indexOf(d); return j < 0 ? null : H[k].points[j]; }), borderColor: ['#7f8c8d', '#2c6fbb', '#2f6b3a', '#7d3c98', '#d68910', '#c0392b', '#16a085', '#34495e'][i % 8], pointRadius: 0, borderWidth: 1.4, spanGaps: true })) },
+      options: { scales: { y: { title: { display: true, text: 'points vs 41-4-34' } } } } });
+
+    // ----- private ICE files -----
+    const parseCSV = t => t.trim().split(/\r?\n/).map(line => { const out = []; let cur = '', q = false; for (const ch of line) { if (ch === '"') q = !q; else if (ch === ',' && !q) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map(x => x.trim()); });
+    const analyse = () => {
+      const st = LS.get('ctIceStock'), gr = LS.get('ctIceGrade'), O = $('#ctCertOut'); if (!O) return;
+      let html = '';
+      if (st) {
+        const R = parseCSV(st), h = R[0], rr = R.slice(1).filter(r => r[0]);
+        const iCur = h.findIndex(x => /^Current Stock/i.test(x)), iNew = h.findIndex(x => /^New Certs/i.test(x)), iDec = h.findIndex(x => /^Decerts/i.test(x)), iPrev = h.findIndex(x => /^Stock/i.test(x));
+        const tot = i => rr.reduce((a, r) => a + (+r[i] || 0), 0);
+        html += `<div class="grid g4">${kp('Certificated stock', fmt(tot(iCur), 0) + ' bales', h[iCur].replace('Current Stock - ', ''))}${kp('New certs', fmt(tot(iNew), 0), h[iNew].replace('New Certs - ', ''))}${kp('Decerts', fmt(tot(iDec), 0), '')}${kp('Change', sg(tot(iCur) - tot(iPrev)) + ' bales', 'vs ' + h[iPrev].replace('Stock - ', ''))}</div>
+          <div class="tbl" style="margin-top:8px"><table><tr>${h.map((x, i) => `<th class="${i ? '' : 'l'}">${x}</th>`).join('')}</tr>${rr.map(r => `<tr>${r.map((x, i) => `<td class="${i ? 'n' : 'l'}">${i ? fmt(+x, 0) : x}</td>`).join('')}</tr>`).join('')}</table></div>`;
+      }
+      if (gr) {
+        const R = parseCSV(gr), h = R[0], sc = h.map((x, i) => [x, i]).filter(([x]) => /^Staple/i.test(x)).map(([x, i]) => [x.replace(/Staple\s*/i, ''), i]);
+        const cells = [];
+        R.slice(1).forEach(r => { if (!/^\d+$/.test(r[0]) || !/^\d+$/.test(r[1])) return; sc.forEach(([s, i]) => { const n = +r[i] || 0; if (n) cells.push({ c: r[0], l: r[1], s: s.replace('+', ''), n, p: pts(G, r[0], r[1], s) }); }); });
+        const n = cells.reduce((a, x) => a + x.n, 0), priced = cells.filter(x => x.p != null), np = priced.reduce((a, x) => a + x.n, 0);
+        const w = priced.reduce((a, x) => a + x.n * x.p, 0) / (np || 1);
+        const by = k => { const m = {}; priced.forEach(x => { (m[x[k]] = m[x[k]] || { n: 0, v: 0 }); m[x[k]].n += x.n; m[x[k]].v += x.n * x.p; }); return Object.entries(m).sort(); };
+        const cheap = [...priced].sort((a, b) => a.p - b.p).slice(0, 5);
+        const mkt = $('#ctPx')?.value;
+        html += `<h3 style="margin-top:14px">Quality of the certs on board <span class="note">grade/staple file, ${fmt(n, 0)} bales${np < n ? `, ${fmt(n - np, 0)} without a grid value` : ''}</span></h3>
+          <div class="grid g4">${kp('Average premium', sg(w) + ' pts', `${sg(w / 100, 2)}¢/lb against 41-4-34 at the ${D.date} grid`)}${kp('Per lot', '$' + fmt(w / 100 * 500, 0), '50,000 lb contract')}
+            ${kp('Cheapest to deliver', `${cheap[0]?.c}-${cheap[0]?.l}-${cheap[0]?.s}`, `${sg(cheap[0]?.p)} pts, ${fmt(cheap[0]?.n, 0)} bales`)}${kp('Base-grade cotton on board', fmt(priced.filter(x => x.p <= 0).reduce((a, x) => a + x.n, 0), 0) + ' bales', 'at or below 41-4-34 value')}</div>
+          <div class="grid g2" style="margin-top:8px"><div class="tbl"><table><tr><th class="l">Staple</th><th>Bales</th><th>Share</th><th>Avg pts</th></tr>${by('s').map(([k, v]) => `<tr><td class="l">${k}${k === '37' ? '+' : ''}</td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / np * 100, 1)}%</td><td class="n">${sg(v.v / v.n)}</td></tr>`).join('')}</table></div>
+            <div class="tbl"><table><tr><th class="l">Color</th><th>Bales</th><th>Share</th><th>Avg pts</th></tr>${by('c').map(([k, v]) => `<tr><td class="l">${k}</td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / np * 100, 1)}%</td><td class="n">${sg(v.v / v.n)}</td></tr>`).join('')}</table></div></div>
+          <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Cheapest qualities on board</th><th>Bales</th><th>Points</th><th>¢/lb</th></tr>${cheap.map(x => `<tr><td class="l">${x.c}-${x.l}-${x.s}</td><td class="n">${fmt(x.n, 0)}</td><td class="n">${sg(x.p)}</td><td class="n">${sg(x.p / 100, 2)}</td></tr>`).join('')}</table></div>
+          <p class="note">Values each bale in the file at today's grid (strength and micronaire are not in the file, so no strength discount is applied). A deliverer picks the cheapest qualities first, so the low end of this table sets the value of the spot month; a pile priced well above base means receivers pay the notice price plus that premium, and only new certification of lower grades would cheapen it.${st ? ' If the grade file total differs from the stock file, the two reports cover different dates or bale sets.' : ''}</p>`;
+      }
+      O.innerHTML = html || '<p class="note">No files loaded in this browser yet.</p>';
+    };
+    const hook = (id, key) => { const el = $('#' + id); if (el) el.onchange = e => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { LS.set(key, rd.result); analyse(); }; rd.readAsText(f); }; };
+    hook('ctFStock', 'ctIceStock'); hook('ctFGrade', 'ctIceGrade');
+    $('#ctFClear').onclick = e => { e.preventDefault(); LS.del('ctIceStock'); LS.del('ctIceGrade'); analyse(); };
+    analyse();
+  }
+
   async function outlook() {
     body().innerHTML = `<div id="ctOb" style="margin-bottom:12px"></div><div id="ctBal" style="margin-bottom:12px"></div><div id="ctPx" style="margin-bottom:12px"></div><div id="ctTech"></div>
       <div class="grid g2" style="margin-top:12px"><div class="card"><h2>WASDE outlook factors</h2><div id="ctFac"><p class="note">Loading…</p></div></div>
