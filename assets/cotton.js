@@ -153,7 +153,7 @@ const Cotton = (() => {
       <div class="card" style="margin-top:12px"><h2>Premium history, key qualities</h2><div style="position:relative;height:260px"><canvas id="ctDiffH"></canvas></div></div>
       <div class="card" style="margin-top:12px"><h2>Certs on board <span class="note">ICE Report Center files (Certified Stock Reports – Cotton)</span></h2>
         <p class="note">Shows the latest ICE files stored on the desk (data/cotton/ice). To look at a newer file before it is added, pick it below: it is read in this browser and replaces the stored one until you choose "Forget loaded files".</p>
-        <div class="grid g3"><label>Certified stock (by delivery point)<br><input type="file" id="ctFStock" accept=".csv,text/csv"></label><label>Stock by warehouse<br><input type="file" id="ctFWh" accept=".csv,text/csv"></label><label>Grade / staple (ICE updates the full detail on Mondays)<br><input type="file" id="ctFGrade" accept=".csv,text/csv"></label></div>
+        <div class="grid g3"><label>Certified stock (by delivery point)<br><input type="file" id="ctFStock" accept=".csv,text/csv"></label><label>Stock by warehouse<br><input type="file" id="ctFWh" accept=".csv,text/csv"></label><label>Strength (GPT) by delivery point<br><input type="file" id="ctFStr" accept=".csv,text/csv"></label><label>Year of growth<br><input type="file" id="ctFYog" accept=".csv,text/csv"></label><label>Grade / staple (ICE updates the full detail on Mondays)<br><input type="file" id="ctFGrade" accept=".csv,text/csv"></label></div>
         <p class="note" style="margin-top:6px"><a href="#" id="ctFClear">Forget loaded files (back to the stored ones)</a></p>
         <div id="ctCertOut" style="margin-top:10px"></div></div>`;
     const drawGrid = mode => {
@@ -174,7 +174,7 @@ const Cotton = (() => {
       const hd = L[0]; WM = { rows: L.slice(1).map(r => Object.fromEntries(hd.map((k, i) => [k, r[i] || '']))), rules: rules.owner_rules }; } catch (e) { WM = null; }
     const REPO = {};
     try { const Lt = await getJSON('data/cotton/ice/latest.json');
-      await Promise.all([['ctIceStock', 'stock'], ['ctIceGrade', 'grade'], ['ctIceWh', 'warehouse']].map(async ([k, f]) => { if (Lt[f]) { REPO[k] = await fetch(Lt[f]).then(r => r.ok ? r.text() : null); REPO[k + 'Date'] = Lt[f + '_date']; } })); } catch (e) {}
+      await Promise.all([['ctIceStock', 'stock'], ['ctIceGrade', 'grade'], ['ctIceWh', 'warehouse'], ['ctIceStr', 'strength'], ['ctIceYog', 'year_of_growth']].map(async ([k, f]) => { if (Lt[f]) { REPO[k] = await fetch(Lt[f]).then(r => r.ok ? r.text() : null); REPO[k + 'Date'] = Lt[f + '_date']; } })); } catch (e) {}
     const got = k => LS.get(k) ?? REPO[k] ?? null;
     const parseCSV = t => t.trim().split(/\r?\n/).map(line => { const out = []; let cur = '', q = false; for (const ch of line) { if (ch === '"') q = !q; else if (ch === ',' && !q) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map(x => x.trim()); });
     const analyse = () => {
@@ -187,12 +187,26 @@ const Cotton = (() => {
         html += `<div class="grid g4">${kp('Certificated stock', fmt(tot(iCur), 0) + ' bales', h[iCur].replace('Current Stock - ', ''))}${kp('New certs', fmt(tot(iNew), 0), h[iNew].replace('New Certs - ', ''))}${kp('Decerts', fmt(tot(iDec), 0), '')}${kp('Change', sg(tot(iCur) - tot(iPrev)) + ' bales', 'vs ' + h[iPrev].replace('Stock - ', ''))}</div>
           <div class="tbl" style="margin-top:8px"><table><tr>${h.map((x, i) => `<th class="${i ? '' : 'l'}">${x}</th>`).join('')}</tr>${rr.map(r => `<tr>${r.map((x, i) => `<td class="${i ? 'n' : 'l'}">${i ? fmt(+x, 0) : x}</td>`).join('')}</tr>`).join('')}</table></div>`;
       }
+      let strAdj = null;
+      const sr = got('ctIceStr');
+      if (sr) {
+        const R = parseCSV(sr), h = R[0], rr = R.slice(1).filter(r => r[0] && !/^totals?:?$/i.test(r[0]));
+        const cols = h.map((x, i) => [x, i]).filter(([x], i) => i > 0 && !/total/i.test(x));
+        const tc = cols.map(([, i]) => rr.reduce((a, r) => a + (+String(r[i]).replace(/,/g, '') || 0), 0)), T = tc.reduce((a, b) => a + b, 0);
+        const lowI = cols.findIndex(([x]) => /^25/.test(x)), low = lowI >= 0 ? tc[lowI] : 0, disc = D.strength[0]?.points || 0;
+        strAdj = { share: T ? low / T : 0, disc, low, T };
+        html += `<h3 style="margin-top:14px">Strength of the certs on board <span class="note">ICE GPT report ${got('ctIceStrDate') || ''}: ${fmt(T, 0)} bales</span></h3>
+          <div class="tbl"><table><tr><th class="l">GPT (g/tex)</th>${cols.map(([x]) => `<th>${x.replace(' AND ABOVE', '+')}</th>`).join('')}<th>Total</th></tr>
+          ${rr.filter(r => cols.some(([, i]) => +String(r[i]).replace(/,/g, ''))).map(r => `<tr><td class="l">${r[0]}</td>${cols.map(([, i]) => `<td class="n">${fmt(+String(r[i]).replace(/,/g, '') || 0, 0)}</td>`).join('')}<td class="n">${fmt(cols.reduce((a, [, i]) => a + (+String(r[i]).replace(/,/g, '') || 0), 0), 0)}</td></tr>`).join('')}
+          <tr><td class="l">Share</td>${tc.map(v => `<td class="n">${fmt(v / T * 100, 1)}%</td>`).join('')}<td class="n">100%</td></tr></table></div>
+          <p class="note">${low ? `${fmt(low, 0)} bales (${fmt(low / T * 100, 1)}%) are in 25.0–25.9 and take the ${sg(disc)}-point strength discount; the average premium below includes it.` : `No bales in 25.0–25.9, so no strength discount applies to the certs on board.`} ${fmt((tc.at(-1) || 0) / T * 100, 0)}% test 30 g/tex or stronger.</p>`;
+      }
       if (gr) {
         const R = parseCSV(gr), h = R[0], sc = h.map((x, i) => [x, i]).filter(([x]) => /^Staple/i.test(x)).map(([x, i]) => [x.replace(/Staple\s*/i, ''), i]);
         const cells = [];
         R.slice(1).forEach(r => { if (!/^\d+$/.test(r[0]) || !/^\d+$/.test(r[1])) return; sc.forEach(([s, i]) => { const n = +r[i] || 0; if (n) cells.push({ c: r[0], l: r[1], s: s.replace('+', ''), n, p: pts(G, r[0], r[1], s) }); }); });
         const n = cells.reduce((a, x) => a + x.n, 0), priced = cells.filter(x => x.p != null), np = priced.reduce((a, x) => a + x.n, 0);
-        const w = priced.reduce((a, x) => a + x.n * x.p, 0) / (np || 1);
+        const w = priced.reduce((a, x) => a + x.n * x.p, 0) / (np || 1) + (strAdj ? strAdj.share * strAdj.disc : 0);
         const by = k => { const m = {}; priced.forEach(x => { (m[x[k]] = m[x[k]] || { n: 0, v: 0 }); m[x[k]].n += x.n; m[x[k]].v += x.n * x.p; }); return Object.entries(m).sort(); };
         const cheap = [...priced].sort((a, b) => a.p - b.p).slice(0, 5);
         const mkt = $('#ctPx')?.value;
@@ -202,7 +216,23 @@ const Cotton = (() => {
           <div class="grid g2" style="margin-top:8px"><div class="tbl"><table><tr><th class="l">Staple</th><th>Bales</th><th>Share</th><th>Avg pts</th></tr>${by('s').map(([k, v]) => `<tr><td class="l">${k}${k === '37' ? '+' : ''}</td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / np * 100, 1)}%</td><td class="n">${sg(v.v / v.n)}</td></tr>`).join('')}</table></div>
             <div class="tbl"><table><tr><th class="l">Color</th><th>Bales</th><th>Share</th><th>Avg pts</th></tr>${by('c').map(([k, v]) => `<tr><td class="l">${k}</td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / np * 100, 1)}%</td><td class="n">${sg(v.v / v.n)}</td></tr>`).join('')}</table></div></div>
           <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Cheapest qualities on board</th><th>Bales</th><th>Points</th><th>¢/lb</th></tr>${cheap.map(x => `<tr><td class="l">${x.c}-${x.l}-${x.s}</td><td class="n">${fmt(x.n, 0)}</td><td class="n">${sg(x.p)}</td><td class="n">${sg(x.p / 100, 2)}</td></tr>`).join('')}</table></div>
-          <p class="note">Values each bale in the file at today's grid (strength and micronaire are not in the file, so no strength discount is applied). A deliverer picks the cheapest qualities first, so the low end of this table sets the value of the spot month; a pile priced well above base means receivers pay the notice price plus that premium, and only new certification of lower grades would cheapen it.${st ? ' The stock file is daily; ICE refreshes the full grade/staple detail on Mondays, so between Mondays the quality mix lags new certs and decerts.' : ''}</p>`;
+          <p class="note">Values each bale in the file at today's grid${strAdj ? `, with the strength discount applied to the share of bales in 25.0–25.9 (${fmt(strAdj.share * 100, 1)}%)` : ' (no strength report loaded, so no strength discount applied)'}; micronaire is not in the files. A deliverer picks the cheapest qualities first, so the low end of this table sets the value of the spot month; a pile priced well above base means receivers pay the notice price plus that premium, and only new certification of lower grades would cheapen it.${st ? ' The stock file is daily; ICE refreshes the full grade/staple detail on Mondays, so between Mondays the quality mix lags new certs and decerts.' : ''}</p>`;
+      }
+      const yg = got('ctIceYog');
+      if (yg) {
+        const R = parseCSV(yg), h = R[0].map(x => x.toLowerCase()), iP = h.findIndex(x => /delivery/.test(x)), iY = h.findIndex(x => /crop|year/.test(x)), iB = h.findIndex(x => /receipt|bales/.test(x));
+        const Y = R.slice(1).filter(r => /^\d{4}$/.test(r[iY])).map(r => ({ dp: r[iP].replace(/,\s*[A-Z]{2}$/, ''), y: +r[iY], n: +String(r[iB]).replace(/,/g, '') || 0 }));
+        const T = Y.reduce((a, x) => a + x.n, 0), yrs = [...new Set(Y.map(x => x.y))].sort(), dps = [...new Set(Y.map(x => x.dp))];
+        const now = new Date(), cy = now.getFullYear();
+        const pen = (crop, dy) => dy <= crop + 1 ? 0 : 2 * (dy - crop - 1);        // ¢/lb: free through 31 Dec of the year after the crop year
+        const months = [['Dec ' + String(cy).slice(2), cy], ['Mar ' + String(cy + 1).slice(2), cy + 1], ['Dec ' + String(cy + 1).slice(2), cy + 1], ['Mar ' + String(cy + 2).slice(2), cy + 2]];
+        const avgPen = dy => Y.reduce((a, x) => a + x.n * pen(x.y, dy), 0) / (T || 1);
+        html += `<h3 style="margin-top:14px">Year of growth <span class="note">ICE report ${got('ctIceYogDate') || ''}: ${fmt(T, 0)} bales</span></h3>
+          <div class="grid g2"><div class="tbl"><table><tr><th class="l">Crop year</th>${dps.map(d => `<th>${d}</th>`).join('')}<th>Total</th><th>Share</th></tr>
+            ${yrs.map(y => { const t = Y.filter(x => x.y === y).reduce((a, x) => a + x.n, 0); return `<tr><td class="l">${y}</td>${dps.map(d => `<td class="n">${fmt(Y.filter(x => x.y === y && x.dp === d).reduce((a, x) => a + x.n, 0), 0)}</td>`).join('')}<td class="n">${fmt(t, 0)}</td><td class="n">${fmt(t / T * 100, 1)}%</td></tr>`; }).join('')}</table></div>
+          <div class="tbl"><table><tr><th class="l">If delivered against</th>${yrs.map(y => `<th>${y} crop</th>`).join('')}<th>Avg on board</th></tr>
+            ${months.map(([l, dy]) => `<tr><td class="l">${l}</td>${yrs.map(y => `<td class="n">${pen(y, dy) ? '−' + fmt(pen(y, dy), 0) + '¢' : '0'}</td>`).join('')}<td class="n">${avgPen(dy) ? '−' + fmt(avgPen(dy), 2) + '¢' : '0'}</td></tr>`).join('')}</table></div></div>
+          <p class="note">Year-of-growth discount: none if delivered by 31 December of the year after the crop year, then 2¢/lb, plus 2¢/lb for each further year. Older-crop certs on board are free to deliver against December but lose 2¢/lb from the March contract, so they tend to be tendered in December or decertified and sold before year end.</p>`;
       }
       const wh = got('ctIceWh');
       if (wh && WM) {
@@ -227,8 +257,8 @@ const Cotton = (() => {
       O.innerHTML = html || '<p class="note">No files loaded in this browser yet.</p>';
     };
     const hook = (id, key) => { const el = $('#' + id); if (el) el.onchange = e => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { LS.set(key, rd.result); const m = f.name.match(/(\d{4}-\d{2}-\d{2})/); LS.set(key + 'Date', m ? m[1] : f.name); analyse(); }; rd.readAsText(f); }; };
-    hook('ctFStock', 'ctIceStock'); hook('ctFGrade', 'ctIceGrade'); hook('ctFWh', 'ctIceWh');
-    $('#ctFClear').onclick = e => { e.preventDefault(); ['ctIceStock', 'ctIceGrade', 'ctIceWh'].forEach(k => { LS.del(k); LS.del(k + 'Date'); }); analyse(); };
+    hook('ctFStock', 'ctIceStock'); hook('ctFGrade', 'ctIceGrade'); hook('ctFWh', 'ctIceWh'); hook('ctFStr', 'ctIceStr'); hook('ctFYog', 'ctIceYog');
+    $('#ctFClear').onclick = e => { e.preventDefault(); ['ctIceStock', 'ctIceGrade', 'ctIceWh', 'ctIceStr', 'ctIceYog'].forEach(k => { LS.del(k); LS.del(k + 'Date'); }); analyse(); };
     analyse();
   }
 
