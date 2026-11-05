@@ -1,0 +1,749 @@
+{
+ "requests": [
+  "https://www.ice.com/report/4",
+  "https://static.ice.com/cms/41.10.18/hydrate.js",
+  "https://static.ice.com/cms/41.10.18/chunks/__generated__/components/demos-DaYJYvU8.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/date-fns@2-30-0/node_modules/date-fns/addYears/index-js-commonjs-es-import-tWmb2mpN.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-pushpop@3-5-0_@types-express@4-17-25/node_modules/@theice/pushpop/build/array/replace-CBN_qJJL.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/utils/shouldUseProxy-Bv9cgI89.js",
+  "https://static.ice.com/cms/41.10.18/chunks//var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/feedback/Spinner-DFu-RSva.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/react-router@6-30-4_react@18-3-1/node_modules/react-router/dist/index-js-commonjs-proxy-FEXSjuAJ.js",
+  "https://static.ice.com/cms/41.10.18/chunks/__generated__/components/main-DPdnDY7I.js",
+  "https://static.ice.com/cms/41.10.18/chunks/__generated__/components/meta-DQQDYVep.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/breadcrumb-context/BreadCrumbContext-CbmCcs1o.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/utils/isCmsTemplateName-CHdGwdya.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/feedback/Spinner-DFu-RSva.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-templates/ice-page/Main-BsCbEzw3.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/renderer/CmsSpecialTags-BsxxvOsS.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/default-import@1-1-7/node_modules/default-import/dist/default-import-DtLHhLMW.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/google-tag-manager/GtmHeadCode-3CQaMO-b.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-layouts/layout-ice-page-2022/Main-CBR9PErg.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/contexts/global-state-context/GlobalStateContext-CmmuSec4.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/require-access-code/RequireAccessCode-Keigf4su.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/form/Textbox-C0o3--Nu.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/belt/Belt-BEJYM_Bh.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/utils/useIntegrationProps-k5cele5I.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/cms-component-config/fields/FixedBackground/FixedBackground-DOvNL7cs.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/ice-report-center/Main-Drn7Y03K.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/hooks/useDebounce-Bg_xxIIy.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/links/Link-DizYRt4S.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/utils/colorClasses-km2gpoeM.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/hooks/useWebStorage-CeOeZ8vF.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/hooks/useStableValue-C-QizNqd.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/hooks/useUpdateEffect-CBDwXfor.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/hooks/usePrevious-BJUaEVCs.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/apis/wmd/ice-report-center/utils/constants-BwRcF6-a.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/utils/objectToQuerystring-XZn8i5IX.js",
+  "https://static.ice.com/cms/41.10.18/chunks/backend/utils/safeParse-CA3rvEkB.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/apis/wmd/ice-report-center/useMeta-pmckbE5G.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/zod@3-25-76/node_modules/zod/index-BgA9xXAk.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/utils/isPermissionsError-YNYYaB0y.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-val@4-0-4_@types-express@4-17-25_eslint@9-39-4_jiti@2-6-1__typescript@5-9-3/node_modules/@theice/val/build/required-Dqmey6Jh.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-val@4-0-4_@types-express@4-17-25_eslint@9-39-4_jiti@2-6-1__typescript@5-9-3/node_modules/@theice/val/build/minDate-C3MoqMY6.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-val@4-0-4_@types-express@4-17-25_eslint@9-39-4_jiti@2-6-1__typescript@5-9-3/node_modules/@theice/val/build/maxDate-DlKeTmG9.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-val@4-0-4_@types-express@4-17-25_eslint@9-39-4_jiti@2-6-1__typescript@5-9-3/node_modules/@theice/val/build/date-BBeq74MY.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-val@4-0-4_@types-express@4-17-25_eslint@9-39-4_jiti@2-6-1__typescript@5-9-3/node_modules/@theice/val/build/composeValidators-C9n9veTE.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-val@4-0-4_@types-express@4-17-25_eslint@9-39-4_jiti@2-6-1__typescript@5-9-3/node_modules/@theice/val/build/provideLabel-CqwvoeBl.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-val@4-0-4_@types-express@4-17-25_eslint@9-39-4_jiti@2-6-1__typescript@5-9-3/node_modules/@theice/val/build/createStructuredValidator-D_a13C44.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/vsc/VscChevronRight-js-commonjs-es-import-DB87JGPt.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/md/MdRefresh-js-commonjs-es-import-D7QPXiLn.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/form/DateTime-QB9EsvEG.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/form/TypeAhead-D17d4bES.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/navigation/Menu-vv9gNMhp.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/navigation/MenuButton-B-a8TTnn.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/hooks/useIsMounted-DK20eTu9.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/render-context/useCmsProxyBaseUrl-BzaM00io.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/ice-report-center/components/RecaptchaDisclaimer-B_zODvNo.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/integrations/recaptcha2/Recaptcha2-CqXIURM4.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/text/Disclaimer-B_n4n-4y.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/form/Checkbox-dy5GR0Qh.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/md/MdCheck-js-commonjs-es-import-BOJM93Sq.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/lists/DefinitionList-BEXIlYB7.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/md/MdPrint-js-commonjs-es-import-Bj5ytnlQ.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/overlays/Dialog-BLsThH8q.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/overlays/Backdrop-C-uuFwWR.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/tables/DataTable-D-q3ei0R.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@tanstack-react-table@8-21-3_react-dom@18-3-1_react@18-3-1__react@18-3-1/node_modules/@tanstack/react-table/build/lib/index-BcohAgOs.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/links/Pagination-CIpbuSC3.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/tables/TableRow-BMPAeeYm.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/download-button/DownloadButton-BCoAsh0Y.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/icons/DownloadIcon-DZMPFJVb.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/md/MdAdd-js-commonjs-es-import-DiK1npTf.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/md/MdRemove-js-commonjs-es-import-Bju0DRlo.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/ice-report-center/constants-j5z2QWQU.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/partial/Partial-DUXLLMJ4.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@theice-sanitize-html@3-1-0/node_modules/@theice/sanitize-html/build/index-client-D2E2N1tK.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/rich-text/RichText-DsymfhgG.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/slate-history@0-66-0_slate@0-82-1/node_modules/slate-history/dist/index-es-RYN7_cGf.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/lodash@4-18-1/node_modules/lodash/throttle-js-commonjs-es-import-DdAi7niK.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/lists/List-CawerJW-.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/lists/ListItem-mdY9yr5I.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/text/Paragraph-C8B75ZSU.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/layout/HorizontalRule-e-nusSpD.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/tables/AdminTable-Dm7UxYbU.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/text/PreformattedText-DNo8EmUv.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/rich-text/deserializeRichText-DgnICx3L.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/ice-report-center/utils/replacePlaceholders-B5EWIUFi.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-templates/partial/Main-BAuPm6uC.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/banner/Main-DU8uZWM6.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/rich-text/Main-CGTnvWQX.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/report-center/Main-CuF0Yqz-.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/icons/IsOpenIcon-DZt6IEzg.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/utils/report-center/useReportId-utC_cXWp.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/raw-html/Main-D2wzCVbn.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/bighead/Main-C-hwuFRk.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/search/MobileSearchBox-Dwktb_pi.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/vsc/VscChevronLeft-js-commonjs-es-import-vGvnZjZs.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/md/MdKeyboardArrowRight-js-commonjs-es-import-DGybVZRg.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/controls/search/SearchBox-BappisZI.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/logos/NyseLogo-CaoR6V35.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/internal/utils/sizeProps-D885vY6X.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/logos/IceLogo-tPFDMr-T.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/constants-2PKu6elZ.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/icons/IceNutIcon-Bl0FOoMI.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/hamburger-react@2-5-2_react@18-3-1/node_modules/hamburger-react/dist-esm/Tilt-DebqjLoL.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/logos/MersLogo-BkrNDixQ.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/search-box/SearchBox-DoEGKIkG.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/search-box/getSearchBoxProps-NXpH3zz0.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/search-results/utils/api-BT_2C3TU.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/search-results/utils/resolveSearchTarget-C-HnCYk1.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/querystring-persistence/Main-bN-lTU5o.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/onetrust-blocker/OneTrustBlocker-CQ0Wynjh.js",
+  "https://static.ice.com/cms/41.10.18/chunks/shared/components/onetrust-blocker/constants-BzDJ8D2Y.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/bigfoot/Main-Bl44jkgh.js",
+  "https://static.ice.com/cms/41.10.18/chunks/var/opt/jenkins/workspace/ont-end-monorepo_release_2026-41/packages/website-components/build/components/logos/IceMortgageTechnologyLogo-C6ugWrI8.js",
+  "https://static.ice.com/cms/41.10.18/chunks/node_modules/-pnpm/@meronex-icons@4-0-0_react@18-3-1/node_modules/@meronex/icons/fa/FaFacebookF-js-commonjs-es-import-BY1ieXF1.js",
+  "https://static.ice.com/cms/41.10.18/chunks/cms-components/adhoc-styles/Main-F0ENq2Ze.js",
+  "https://www.ice.com/marketdata/api/reports/metadata/4",
+  "https://www.ice.com/marketdata/api/reports/4/criteria?offset=0&pageNumber=1",
+  "https://www.ice.com/marketdata/api/reports/metadata/multiple?reportIds=4",
+  "https://www.google-analytics.com/j/collect?v=1&_v=j102&a=619007847&t=pageview&_s=1&dl=https%3A%2F%2Fwww.ice.com%2Freport%2F4&ul=en-us&sr=1280x720&vp=1280x720&_u=IEBAAEABAAAAACAAI~&jid=1277865154&gjid=2065054390&cid=978554235.1793890117&tid=UA-97108014-1&_gid=1033865579.1793890117&_r=1&_slc=1&z=777926395"
+ ],
+ "links": [
+  [
+   "this URL",
+   "https://ice.com/unsupported-browser"
+  ],
+  [
+   "ICE Logo",
+   "https://www.ice.com/"
+  ],
+  [
+   "ICE",
+   "https://www.ice.com/index"
+  ],
+  [
+   "NYSE",
+   "https://www.nyse.com/index"
+  ],
+  [
+   "LOGIN",
+   "https://sso.ice.com/memberLogin"
+  ],
+  [
+   "WEBICE",
+   "https://www.ice.com/LaunchApp.shtml?exchange=&type=jnlp"
+  ],
+  [
+   "",
+   "https://www.ice.com/"
+  ],
+  [
+   "Learn more",
+   "https://www.ice.com/report-center/data-subscription"
+  ],
+  [
+   "Futures",
+   "https://www.ice.com/report/10"
+  ],
+  [
+   "Options",
+   "https://www.ice.com/report/166"
+  ],
+  [
+   "S2F Futures",
+   "https://www.ice.com/report/144"
+  ],
+  [
+   "S2F Options",
+   "https://www.ice.com/report/145"
+  ],
+  [
+   "EDSP - Commodities",
+   "https://www.ice.com/report/196"
+  ],
+  [
+   "EDSP - Equity Indices",
+   "https://www.ice.com/report/195"
+  ],
+  [
+   "EDSP - Financials",
+   "https://www.ice.com/report/197"
+  ],
+  [
+   "EDSP - MSCI Index Futures",
+   "https://www.ice.com/report/198"
+  ],
+  [
+   "EDSP - IFEU Japanese Power",
+   "https://www.ice.com/report/304"
+  ],
+  [
+   "Consolidated Options - Financials",
+   "https://www.ice.com/report/306"
+  ],
+  [
+   "Futures",
+   "https://www.ice.com/report/159"
+  ],
+  [
+   "Options",
+   "https://www.ice.com/report/160"
+  ],
+  [
+   "Futures",
+   "https://www.ice.com/report/266"
+  ],
+  [
+   "EDSP - IFAD MSCI Index Futures",
+   "https://www.ice.com/report/305"
+  ],
+  [
+   "Futures",
+   "https://www.ice.com/report/12"
+  ],
+  [
+   "Options",
+   "https://www.ice.com/report/13"
+  ],
+  [
+   "EDSP - IFUS MSCI Index Futures",
+   "https://www.ice.com/report/290"
+  ],
+  [
+   "Futures",
+   "https://www.ice.com/report/142"
+  ],
+  [
+   "Options",
+   "https://www.ice.com/report/143"
+  ],
+  [
+   "Futures",
+   "https://www.ice.com/report/200"
+  ],
+  [
+   "IST Commodities",
+   "https://www.ice.com/report/158"
+  ],
+  [
+   "IST Credit",
+   "https://www.ice.com/report/171"
+  ],
+  [
+   "IST Daily Market Data report",
+   "https://www.ice.com/report/303"
+  ],
+  [
+   "ICE Report Center Terms and Conditions",
+   "https://www.ice.com/publicdocs/data/ICE_Report_Center_Click_Through_Agreement.pdf"
+  ],
+  [
+   "",
+   "https://www.ice.com/"
+  ],
+  [
+   "",
+   "https://www.x.com/ICE_Markets"
+  ],
+  [
+   "",
+   "https://www.youtube.com/@ICE_Markets"
+  ],
+  [
+   "",
+   "https://www.linkedin.com/company/icemarkets/"
+  ],
+  [
+   "",
+   "https://www.instagram.com/icemarkets/"
+  ],
+  [
+   "Exchanges and Clearing",
+   "https://www.ice.com/about/exchanges-clearing"
+  ],
+  [
+   "Fixed Income and Data Services",
+   "https://www.ice.com/fixed-income-data-services"
+  ],
+  [
+   "Mortgage Technology",
+   "https://mortgagetech.ice.com/"
+  ],
+  [
+   "Benchmark Administration",
+   "https://www.ice.com/iba"
+  ],
+  [
+   "Markets",
+   "https://www.ice.com/solutions/markets"
+  ],
+  [
+   "Clearing",
+   "https://www.ice.com/solutions/clearing"
+  ],
+  [
+   "Product guide",
+   "https://www.ice.com/products"
+  ],
+  [
+   "Market reports",
+   "https://www.ice.com/report-center"
+  ],
+  [
+   "Expiry calendars",
+   "https://www.ice.com/expiry-calendar"
+  ],
+  [
+   "Margins",
+   "https://www.ice.com/clearing/margin-models"
+  ],
+  [
+   "Fees",
+   "https://www.ice.com/fees"
+  ],
+  [
+   "Trade and Clearing helpdesk",
+   "https://www.ice.com/contact"
+  ],
+  [
+   "ICE Data Services support",
+   "https://www.ice.com/contact"
+  ],
+  [
+   "ICE Education",
+   "https://www.ice.com/support/education"
+  ],
+  [
+   "ICE developer portal",
+   "https://developer.ice.com/"
+  ],
+  [
+   "Subscriptions",
+   "https://www.ice.com/subscriptions"
+  ],
+  [
+   "ICE Status Center",
+   "https://www.ice.com/status"
+  ],
+  [
+   "Media center",
+   "https://www.ice.com/media"
+  ],
+  [
+   "Investor Relations",
+   "https://ir.theice.com/home/default.aspx"
+  ],
+  [
+   "Contact",
+   "https://www.ice.com/contact"
+  ],
+  [
+   "Careers",
+   "https://www.ice.com/careers"
+  ],
+  [
+   "Sustainability",
+   "https://www.ice.com/about/corporate-responsibility"
+  ],
+  [
+   "Climate risk",
+   "https://www.ice.com/insights/sustainable-finance?tagIdGroups="
+  ],
+  [
+   "Energy markets",
+   "https://www.ice.com/insights/topic/energy-markets"
+  ],
+  [
+   "Fixed Income and Data",
+   "https://www.ice.com/insights?tagIdGroups=40550%2C45252"
+  ],
+  [
+   "Mortgage",
+   "https://www.ice.com/insights/topic/mortgage"
+  ],
+  [
+   "Privacy and Security Center",
+   "https://www.ice.com/privacy-security-center"
+  ],
+  [
+   "Your Privacy Choices",
+   "https://ice-privacy.my.onetrust.com/webform/cca3ac39-00b6-45f4-819b-bec660878b46/124d1692-407b-4384-9036-bef3ece530e3"
+  ],
+  [
+   "Terms of Use",
+   "https://www.ice.com/privacy-security-center/terms-of-use"
+  ],
+  [
+   "Modern Slavery Statement",
+   "https://www.ice.com/publicdocs/Modern_Slavery_Statement.pdf"
+  ],
+  [
+   "Exchanges and Clearing",
+   "https://www.ice.com/about/exchanges-clearing"
+  ],
+  [
+   "Fixed Income and Data Services",
+   "https://www.ice.com/fixed-income-data-services"
+  ],
+  [
+   "Mortgage Technology",
+   "https://mortgagetech.ice.com/index"
+  ],
+  [
+   "Exchanges and Clearing",
+   "https://www.ice.com/about/exchanges-clearing"
+  ],
+  [
+   "Asset classes",
+   "https://www.ice.com/asset-classes"
+  ],
+  [
+   "Product guide",
+   "https://www.ice.com/products"
+  ],
+  [
+   "Market reports",
+   "https://www.ice.com/report-center"
+  ],
+  [
+   "Data and analytics",
+   "https://www.ice.com/fixed-income-data-services/data-and-analytics"
+  ],
+  [
+   "Access and delivery",
+   "https://www.ice.com/fixed-income-data-services/access-and-delivery"
+  ],
+  [
+   "Fixed income solutions",
+   "https://www.ice.com/fixed-income-data-services/fixed-income"
+  ],
+  [
+   "Index solutions",
+   "https://www.ice.com/fixed-income-data-services/index-solutions"
+  ],
+  [
+   "Regulation compliance",
+   "https://www.ice.com/fixed-income-data-services/regulation-compliance"
+  ],
+  [
+   "Mortgage data solutions",
+   "https://www.ice.com/fixed-income-data-services/mortgage-data-solutions"
+  ],
+  [
+   "Climate data and analytics",
+   "https://www.ice.com/fixed-income-data-services/ice-climate-data-analytics"
+  ],
+  [
+   "Private credit intelligence",
+   "https://www.ice.com/private-credit"
+  ],
+  [
+   "Strategic alliances",
+   "https://www.ice.com/fixed-income-data-services/strategic-alliances"
+  ],
+  [
+   "Access online services",
+   "https://www.ice.com/fixed-income-data-services/data-and-analytics/login"
+  ],
+  [
+   "Real estate",
+   "https://mortgagetech.ice.com/solutions/real-estate"
+  ],
+  [
+   "Customer acquisition",
+   "https://mortgagetech.ice.com/solutions/customer-acquisition"
+  ],
+  [
+   "Loan manufacturing",
+   "https://mortgagetech.ice.com/solutions/loan-manufacturing"
+  ],
+  [
+   "Settlement and closing",
+   "https://mortgagetech.ice.com/solutions/closing-and-settlement-services"
+  ],
+  [
+   "Servicing",
+   "https://mortgagetech.ice.com/solutions/servicing"
+  ],
+  [
+   "Risk management",
+   "https://mortgagetech.ice.com/solutions/risk-management"
+  ],
+  [
+   "Valuations",
+   "https://mortgagetech.ice.com/solutions/valuations"
+  ],
+  [
+   "View more >",
+   "https://mortgagetech.ice.com/"
+  ],
+  [
+   "Benchmark Administration",
+   "https://www.ice.com/iba"
+  ],
+  [
+   "Non-qualified mortgage solutions",
+   "https://www.ice.com/fixed-income-data-services/mortgage-data-solutions/non-qualified-mortgage"
+  ],
+  [
+   "Energy Transition",
+   "https://www.ice.com/energy"
+  ],
+  [
+   "ICE Bonds",
+   "https://www.ice.com/fixed-income/ice-bonds"
+  ],
+  [
+   "ICE Connect",
+   "https://www.ice.com/fixed-income-data-services/access-and-delivery/desktop-web-platforms/ice-connect"
+  ],
+  [
+   "ICE Digital Trust",
+   "https://www.ice.com/digital-assets/ice-digital-trust"
+  ],
+  [
+   "Indexation and ETFs",
+   "https://www.ice.com/market-data/index-and-etf-data-solutions"
+  ],
+  [
+   "Municipal Market Ecosystem",
+   "https://www.ice.com/fixed-income-data-services/the-munis-ecosystem"
+  ],
+  [
+   "ICE for Hedge Funds",
+   "https://www.ice.com/fixed-income-data-services/hedge-funds"
+  ],
+  [
+   "Data Catalog",
+   "https://developer.ice.com/fixed-income-data-services/catalog"
+  ],
+  [
+   "Product Guide",
+   "https://www.ice.com/products"
+  ],
+  [
+   "Market Reports",
+   "https://www.ice.com/report-center"
+  ],
+  [
+   "Expiry Calendar",
+   "https://www.ice.com/marketdata/ExpiryCalendar.shtml?expiry"
+  ],
+  [
+   "Fees",
+   "https://www.ice.com/fees"
+  ],
+  [
+   "Margins",
+   "https://www.ice.com/clearing/margin-models"
+  ],
+  [
+   "Hours",
+   "https://www.ice.com/productguide/Search.shtml?tradingHours="
+  ],
+  [
+   "Repository and Confirmation Services",
+   "https://www.ice.com/technology/post-trade"
+  ],
+  [
+   "Evaluated Pricing Data",
+   "https://developer.ice.com/fixed-income-data-services/catalog?keywords=&categories%5B244%5D=244"
+  ],
+  [
+   "ICE Reference Data",
+   "https://developer.ice.com/fixed-income-data-services/catalog?keywords=&categories%5B243%5D=243"
+  ],
+  [
+   "Listed Market Exchange Data",
+   "https://developer.ice.com/fixed-income-data-services/catalog?keywords=&categories%5B94%5D=94"
+  ],
+  [
+   "ICE Data Derivatives",
+   "https://developer.ice.com/fixed-income-data-services/catalog?keywords=&categories%5B246%5D=246"
+  ],
+  [
+   "View all",
+   "https://developer.ice.com/fixed-income-data-services/catalog"
+  ],
+  [
+   "System Alerts",
+   "https://www.ice.com/alerts"
+  ],
+  [
+   "Subscriptions",
+   "https://www.ice.com/subscriptions"
+  ],
+  [
+   "Customer Support",
+   "https://www.ice.com/contact"
+  ],
+  [
+   "Data Resources",
+   "https://www.ice.com/data-services/resources"
+  ],
+  [
+   "ICE Education",
+   "https://www.ice.com/support/education"
+  ],
+  [
+   "Derivative Markets: 101",
+   "https://www.ice.com/support/education/trading-derivatives"
+  ],
+  [
+   "Block, EFP and EFS Trades",
+   "https://www.ice.com/support/education#trades"
+  ],
+  [
+   "An Introduction to the Brent market",
+   "https://www.ice.com/support/education#brentform"
+  ],
+  [
+   "ICE Developer Portal",
+   "https://developer.ice.com/"
+  ],
+  [
+   "Categories",
+   "https://www.ice.com/insights"
+  ],
+  [
+   "Climate Risk",
+   "https://www.ice.com/insights?tagIdGroups=154657"
+  ],
+  [
+   "Energy",
+   "https://www.ice.com/insights?tagIdGroups=40469"
+  ],
+  [
+   "Fixed Income",
+   "https://www.ice.com/insights?tagIdGroups=40550"
+  ],
+  [
+   "Data and Technology",
+   "https://www.ice.com/insights?tagIdGroups=45252"
+  ],
+  [
+   "Mortgage",
+   "https://www.ice.com/insights?tagIdGroups=40656"
+  ],
+  [
+   "Equities",
+   "https://www.ice.com/insights?tagIdGroups=45712"
+  ],
+  [
+   "Indices",
+   "https://www.ice.com/insights?tagIdGroups=40589"
+  ],
+  [
+   "Rates and Currencies",
+   "https://www.ice.com/insights?tagIdGroups=49958"
+  ],
+  [
+   "Inside the ICE House",
+   "https://www.ice.com/insights/conversations/inside-the-ice-house"
+  ],
+  [
+   "Mortgage Data Reports",
+   "https://mortgagetech.ice.com/resources/data-reports?tagIdGroups=&requiredTagIds=161812%2C161815&activeOnly=false"
+  ],
+  [
+   "Exchanges and Clearing",
+   "https://www.ice.com/about/exchanges-clearing"
+  ],
+  [
+   "Fixed Income and Data Services",
+   "https://www.ice.com/fixed-income-data-services"
+  ],
+  [
+   "Mortgage Technology",
+   "https://mortgagetech.ice.com/index"
+  ],
+  [
+   "Investor Relations",
+   "https://ir.theice.com/"
+  ],
+  [
+   "Media Center",
+   "https://www.ice.com/media"
+  ],
+  [
+   "The ICE Vox",
+   "https://www.ice.com/insights/ice-vox/archive"
+  ],
+  [
+   "Sustainability at ICE",
+   "https://www.ice.com/about/corporate-responsibility"
+  ],
+  [
+   "Careers",
+   "https://www.ice.com/careers"
+  ],
+  [
+   "",
+   "https://www.ice.com/report/4#"
+  ],
+  [
+   "ICE Report Center Terms and Conditions",
+   "https://www.ice.com/publicdocs/data/ICE_Report_Center_Click_Through_Agreement.pdf"
+  ],
+  [
+   "Privacy Policy",
+   "https://www.ice.com/privacy-security-center"
+  ],
+  [
+   "https://globalprivacycontrols.org",
+   "https://globalprivacycontrols.org/"
+  ],
+  [
+   "Privacy Policy",
+   "https://www.ice.com/privacy-security-center"
+  ],
+  [
+   "",
+   "https://www.onetrust.com/products/cookie-consent/"
+  ],
+  [
+   "Privacy Policy",
+   "https://www.ice.com/privacy-security-center"
+  ],
+  [
+   "Privacy Policy",
+   "https://www.ice.com/privacy-security-center"
+  ]
+ ],
+ "downloads": [
+  [
+   "text=/xls/i",
+   "Page.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"text=/xls/i\")\n"
+  ],
+  [
+   "text=/Download/i",
+   "Page.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"text=/Download/i\")\n"
+  ],
+  [
+   "a[href*='.xls']",
+   "Page.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"a[href*='.xls']\")\n"
+  ],
+  [
+   "a[href*='publicdocs']",
+   "Page.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"a[href*='publicdocs']\")\n    - locator resolved t"
+  ]
+ ],
+ "title": "",
+ "text": "ICE\nNYSE\nLOGIN\nWEBICE\nSolutions\nResources\nInsights\nAbout Us\nReport Center\nWelcome to the ICE Report Center\n\nTo view all report categories or recently viewed reports, please scroll down.\n\nReports\nCertified Stock Reports - Cotton\nEnd of day\nDaily futures and options reports from each exchange\nFutures U.S. commodity and indices data\nIndices\nDaily index reporting\nICE Benchmark Administration\nLIBOR, ICE Swap Rate, LBMA Gold and Silver prices and treasuries\nCommitments of Traders\nReport detailing trader positions\nVolumes & OI\nPreliminary, daily and historical volume & open interest data\nMarkers\nRepresentative weighted average of trades for specific contracts\nDeliveries & settlements\nDelivery summaries, daily settlement prices, and notices\nCommodity and certified stock reports\nSoft commodity reports\nOther reports\nIncluding UIC (Unique Instrument Codes), auctions, and options exercise\nRecently Viewed\n\nEnd of day report packages in .csv format are available for purchase on a subscription basis. Learn more\n\nICE Futures Europe\nFutures\nOptions\nS2F Futures\nS2F Options\nEDSP - Commodities\nEDSP - Equity Indices\nEDSP - Financials\nEDSP - MSCI Index Futures\nEDSP - IFEU Japanese Power\nConsolidated Options - Financials\nICE Endex\nFutures\nOptions\nICE Futures Abu Dhabi\nFutures\nEDSP - IFAD MSCI Index Futures\nICE Futures U.S.\nFutures\nOptions\nEDSP - IFUS MSCI Index Futures\nICE Futures U.S. - energy division\nFutures\nOptions\nICE Futures Singapore\nFutures\nICE Swap Trade\nIST Commodities\nIST Credit\nIST Daily Market Data report\nCATEGORY\nCERTIFIED STOCK\nMARKET\nICE FUTURES U.S.\nIn order to receive the proprietary data from this website, you acknowledge and agree that you shall not disclose, transmit, distribute or disseminate, either directly or indirectly through any third parties, the market data and information contained herein to any person or entity without the express written consent of ICE Data Services. The market data and information contained herein constitutes confidential information and valuable property owned by ICE Data Services, its affiliates, licensors and/or other relevant third parties. Furthermore, you acknowledge that you have read and agree to all terms presented in the following document:ICE Report Center Terms and Conditions.\nPlease click on the link above to read the ICE Report Center Terms and Conditions and click \"I Accept\" below in order to access the Report Center. By clicking this button or closing this window, you agree to all above terms.\nI ACCEPT\nSolutions\nExchanges and Clearing\nFixed Income and Data Services\nMortgage Technology\nBenchmark Administration\nTools and Sources\nMarkets\nClearing\nProduct guide\nMarket reports\nExpiry calendars\nMargins\nFees\nSupport\nTrade and Clearing helpdesk\nICE Data Services support\nICE Education\nICE developer portal\nSubscriptions\nICE Status Center\nAbout\nMedia center\nInvestor Relations\nContact\nCareers\nSustainability\nInsights\nClimate risk\nEnergy markets\nFixed Income and Data\nMortgage\nPrivacy and Security Center\nYour Privacy Choices\nTerms of Use\nModern Slavery Statement\nDo Not Sell or Share My Personal Information\n\u00a9 2026 Intercontinental Exchange, Inc.\nReport Center\n\nDisclaimer\n\nSubject to provisions as prescribed by applicable law or relevant regulatory requirements, your receipt of the proprietary data from this website is contingent upon your acknowledgement and agreement that you shall not disclose, transmit, distribute or disseminate, either directly or indirectly through any third parties, the market data and information contained herein to any person or entity without the express written consent of ICE Data Services. The market data and information contained herein constitutes confidential information and valuable property owned by ICE Data Services, its affiliates, licensors and/or other relevant third parties. Furthermore, you acknowledge that you have read and agree to all terms presented in the following document: ICE Report Center Terms and Conditions.\n\nPlease click on the link above to read the ICE Report Center Terms and Conditions and click \"I Accept\" below in order to access the Report Center. By clicking this button or closing this window, you agree to all above terms.\n\nI ACCEPT\nCookie Consent\n\nThis website uses cookies, chatbots, and similar technologies, some of which are provided by third parties. Some cookies enable us and these third parties to collect browsing and activity information, including limited personal information, and track your interactions with this website. We and these third parties use cookies, other technologies, and the information collected to enable certain website features and functionality, analyze, and improve website performance, personalize user experiences, and reach you with more relevant content and advertisements. Your interactions with this website will be recorded, tracked, analyzed, and shared with third parties using these cookies and other technologies such as chatbots. Anything you input to this website is subject to being recorded and stored by us or third parties for the purposes stated above. Click \u201cDo Not Sell or Share My Personal Information\u201d in the footer of the website to manage your cookie preferences. By interacting with this website, you also consent to the uses and disclosures as described in the Privacy Policy. You can learn more about our use of cookies and our privacy practices by reading the Privacy Policy.\n\nConfirm My Choices\nReject All Non-Essential Accept All Cookies",
+ "json": {
+  "https://www.ice.com/marketdata/api/reports/metadata/4": "{\n  \"id\" : 4,\n  \"name\" : \"Certified Stock Reports - Cotton\",\n  \"reportTemplateURL\" : \"/report/4\",\n  \"exchange\" : \"ICE Futures U.S.\",\n  \"categoryName\" : \"Certified Stock\",\n  \"active\" : true,\n  \"recaptchaRequired\" : true\n}",
+  "https://www.ice.com/marketdata/api/reports/metadata/multiple?reportIds=4": "[ {\n  \"id\" : 4,\n  \"name\" : \"Certified Stock Reports - Cotton\",\n  \"reportTemplateURL\" : \"/report/4\",\n  \"exchange\" : \"ICE Futures U.S.\",\n  \"categoryName\" : \"Certified Stock\",\n  \"active\" : true,\n  \"recaptchaRequired\" : true\n} ]",
+  "https://www.ice.com/marketdata/api/reports/4/criteria?offset=0&pageNumber=1": "{\n  \"timestamp\" : \"2026-11-05T09:48:37.199-05:00\",\n  \"status\" : 409,\n  \"error\" : \"Conflict\",\n  \"path\" : \"/api/icereportcenterservice/v1/reports/4/criteria\"\n}"
+ }
+}
