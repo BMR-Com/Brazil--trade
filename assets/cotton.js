@@ -179,7 +179,7 @@ const Cotton = (() => {
     const parseCSV = t => t.trim().split(/\r?\n/).map(line => { const out = []; let cur = '', q = false; for (const ch of line) { if (ch === '"') q = !q; else if (ch === ',' && !q) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map(x => x.trim()); });
     const analyse = () => {
       const st = got('ctIceStock'), gr = got('ctIceGrade'), O = $('#ctCertOut'); if (!O) return;
-      let html = '', stTot = 0;
+      let html = '', stTot = 0; const SUM = {};
       if (st) {
         const R = parseCSV(st), h = R[0], rr = R.slice(1).filter(r => r[0]);
         const iCur = h.findIndex(x => /^Current Stock/i.test(x)), iNew = h.findIndex(x => /^New Certs/i.test(x)), iDec = h.findIndex(x => /^Decerts/i.test(x)), iPrev = h.findIndex(x => /^Stock/i.test(x));
@@ -194,7 +194,7 @@ const Cotton = (() => {
         const cols = h.map((x, i) => [x, i]).filter(([x], i) => i > 0 && !/total/i.test(x));
         const tc = cols.map(([, i]) => rr.reduce((a, r) => a + (+String(r[i]).replace(/,/g, '') || 0), 0)), T = tc.reduce((a, b) => a + b, 0);
         const lowI = cols.findIndex(([x]) => /^25/.test(x)), low = lowI >= 0 ? tc[lowI] : 0, disc = D.strength[0]?.points || 0;
-        strAdj = { share: T ? low / T : 0, disc, low, T };
+        strAdj = { share: T ? low / T : 0, disc, low, T }; SUM.str = strAdj;
         html += `<h3 style="margin-top:14px">Strength of the certs on board <span class="note">ICE GPT report ${got('ctIceStrDate') || ''}: ${fmt(T, 0)} bales</span></h3>
           <div class="tbl"><table><tr><th class="l">GPT (g/tex)</th>${cols.map(([x]) => `<th>${x.replace(' AND ABOVE', '+')}</th>`).join('')}<th>Total</th></tr>
           ${rr.filter(r => cols.some(([, i]) => +String(r[i]).replace(/,/g, ''))).map(r => `<tr><td class="l">${r[0]}</td>${cols.map(([, i]) => `<td class="n">${fmt(+String(r[i]).replace(/,/g, '') || 0, 0)}</td>`).join('')}<td class="n">${fmt(cols.reduce((a, [, i]) => a + (+String(r[i]).replace(/,/g, '') || 0), 0), 0)}</td></tr>`).join('')}
@@ -208,7 +208,7 @@ const Cotton = (() => {
         const cells = [];
         R.slice(1).forEach(r => { const c = r[iCo], l = r[iLf]; if (!/^\d+$/.test(c) || !/^\d+$/.test(l)) return; sc.forEach(([s, i]) => { const n = +String(r[i]).replace(/,/g, '') || 0; if (n) cells.push({ c, l, s: s.replace('+', ''), n, p: pts(G, c, l, s) }); }); });
         const n = cells.reduce((a, x) => a + x.n, 0), priced = cells.filter(x => x.p != null), np = priced.reduce((a, x) => a + x.n, 0);
-        const w = priced.reduce((a, x) => a + x.n * x.p, 0) / (np || 1) + (strAdj ? strAdj.share * strAdj.disc : 0);
+        const w0 = priced.reduce((a, x) => a + x.n * x.p, 0) / (np || 1), w = w0 + (strAdj ? strAdj.share * strAdj.disc : 0); SUM.grade = w0; SUM.gradeN = n; SUM.gradeDate = got('ctIceGradeDate');
         const by = k => { const m = {}; priced.forEach(x => { (m[x[k]] = m[x[k]] || { n: 0, v: 0 }); m[x[k]].n += x.n; m[x[k]].v += x.n * x.p; }); return Object.entries(m).sort(); };
         const cheap = [...priced].sort((a, b) => a.p - b.p).slice(0, 5);
         const mkt = $('#ctPx')?.value;
@@ -228,7 +228,7 @@ const Cotton = (() => {
         const now = new Date(), cy = now.getFullYear();
         const pen = (crop, dy) => dy <= crop + 1 ? 0 : 2 * (dy - crop - 1);        // ¢/lb: free through 31 Dec of the year after the crop year
         const months = [['Dec ' + String(cy).slice(2), cy], ['Mar ' + String(cy + 1).slice(2), cy + 1], ['Dec ' + String(cy + 1).slice(2), cy + 1], ['Mar ' + String(cy + 2).slice(2), cy + 2]];
-        const avgPen = dy => Y.reduce((a, x) => a + x.n * pen(x.y, dy), 0) / (T || 1);
+        const avgPen = dy => Y.reduce((a, x) => a + x.n * pen(x.y, dy), 0) / (T || 1); SUM.yog = months.slice(0, 2).map(([l, dy]) => [l, -avgPen(dy) * 100]); SUM.yogOld = Y.filter(x => pen(x.y, cy + 1) > 0).reduce((a, x) => a + x.n, 0); SUM.yogT = T;
         html += `<h3 style="margin-top:14px">Year of growth <span class="note">ICE report ${got('ctIceYogDate') || ''}: ${fmt(T, 0)} bales</span></h3>
           <div class="grid g2"><div class="tbl"><table><tr><th class="l">Crop year</th>${dps.map(d => `<th>${d}</th>`).join('')}<th>Total</th><th>Share</th></tr>
             ${yrs.map(y => { const t = Y.filter(x => x.y === y).reduce((a, x) => a + x.n, 0); return `<tr><td class="l">${y}</td>${dps.map(d => `<td class="n">${fmt(Y.filter(x => x.y === y && x.dp === d).reduce((a, x) => a + x.n, 0), 0)}</td>`).join('')}<td class="n">${fmt(t, 0)}</td><td class="n">${fmt(t / T * 100, 1)}%</td></tr>`; }).join('')}</table></div>
@@ -255,6 +255,16 @@ const Cotton = (() => {
           <details style="margin-top:6px"><summary class="note">By warehouse (${W.length} listed, ${W.filter(x => x.n).length} holding certs)</summary><div class="tbl"><table><tr><th class="l">Code</th><th class="l">Warehouse</th><th class="l">Delivery point</th><th class="l">Merchant</th><th>Bales</th><th class="l">Matched by</th></tr>
           ${[...W].sort((a, b) => b.n - a.n).map(x => `<tr><td class="l">${x.code}</td><td class="l">${x.nm}</td><td class="l">${x.dp}</td><td class="l">${x.merchant}</td><td class="n">${x.n ? fmt(x.n, 0) : ''}</td><td class="l">${x.how}</td></tr>`).join('')}</table></div></details>
           ${stTot && Math.abs(stTot - tot) > 100 ? `<p class="note">The warehouse report (${rd}) totals ${fmt(tot, 0)} bales against ${fmt(stTot, 0)} in the latest delivery-point file; the two are from different dates, so certification in between is not yet assigned to merchants.</p>` : ''}`;
+      }
+      if (SUM.grade != null) {
+        const sp = SUM.str ? SUM.str.share * SUM.str.disc : 0, y = SUM.yog || [['Dec', 0], ['Mar', 0]];
+        const net = v => SUM.grade + sp + v, row = (lab, v, note) => `<tr><td class="l">${lab}</td>${y.map(([, yv]) => `<td class="n">${sg(v === 'yog' ? yv : v === 'net' ? net(yv) : v)}${v === 'net' ? '' : ''}</td>`).join('')}<td class="l note">${note}</td></tr>`;
+        html = `<h3>Premiums and discounts on the certs on board <span class="note">points vs 41-4-34 (100 = 1¢/lb); weekly reports ${SUM.gradeDate || ''}, grid ${D.date}</span></h3>
+          <div class="tbl"><table><tr><th class="l">Component</th>${y.map(([l]) => `<th>If delivered ${l}</th>`).join('')}<th class="l">Basis</th></tr>
+          ${row('Grade and staple', SUM.grade, `average of ${fmt(SUM.gradeN, 0)} bales at the USDA grid (invoicing staple)`)}
+          ${row('Strength', sp, SUM.str ? (SUM.str.low ? `${fmt(SUM.str.low, 0)} bales in 25.0–25.9 at ${sg(SUM.str.disc)} pts` : 'no bales in 25.0–25.9') : 'no strength report loaded')}
+          ${row('Year of growth', 'yog', SUM.yog ? `${fmt(SUM.yogOld, 0)} of ${fmt(SUM.yogT, 0)} bales are older crop: free in December, 2¢/lb discount from March` : 'no year-of-growth report loaded')}
+          <tr><td class="l"><b>Net average premium</b></td>${y.map(([, yv]) => `<td class="n"><b>${sg(net(yv))} pts</b><br><span class="note">${sg(net(yv) / 100, 2)}¢/lb · $${fmt(net(yv) * 5, 0)}/lot</span></td>`).join('')}<td class="l note">what a receiver pays over the notice price, on average</td></tr></table></div>` + html;
       }
       O.innerHTML = html || '<p class="note">No files loaded in this browser yet.</p>';
     };
