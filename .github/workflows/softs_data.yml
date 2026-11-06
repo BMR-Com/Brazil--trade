@@ -36,7 +36,9 @@ jobs:
         run: python -W ignore models/technicals.py && python models/vol.py && python -W ignore models/research.py
       - name: COT desk
         continue-on-error: true
-        run: python models/cot_backtest.py; python -W ignore models/cot_desk.py
+        run: |
+          python models/cot_backtest.py || echo "cot backtest skipped (needs symbols outside the softs desk)"
+          python -W ignore models/cot_desk.py
       - name: sugar flows (SECEX weekly, China imports)
         continue-on-error: true
         timeout-minutes: 10
