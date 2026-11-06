@@ -39,8 +39,28 @@ def fetch(ds, code):
         off += 50000
 
 
+def latest_ok():
+    """True when the CFTC has published this week's report (positions as of the latest Tuesday)."""
+    import datetime as dt
+    t = dt.date.today(); tue = t - dt.timedelta(days=(t.weekday() - 1) % 7)
+    u = (f"https://publicreporting.cftc.gov/resource/{SETS['fo']}.json?cftc_contract_market_code={CODES['CT']}"
+         "&$select=max(report_date_as_yyyy_mm_dd) as d")
+    try:
+        d = requests.get(u, headers=H, timeout=60).json()[0]["d"][:10]
+        print("CFTC latest", d, "expected", tue)
+        return d >= str(tue)
+    except Exception as e:
+        print("check failed", e); return False
+
+
 if __name__ == "__main__":
+    import datetime as dt, os
     OUT.mkdir(parents=True, exist_ok=True)
+    # Fridays (release 3:30 pm ET): wait up to COT_WAIT minutes for the new week before fetching
+    if dt.date.today().weekday() == 4:
+        end = time.time() + 60 * float(os.environ.get("COT_WAIT", "40"))
+        while not latest_ok() and time.time() < end:
+            time.sleep(120)
     for sym, code in CODES.items():
         for tag, ds in SETS.items():
             rows = fetch(ds, code)

@@ -10,6 +10,8 @@ on:
     - cron: '41 20 * * 1-5'   # ~3:40 pm CT weekdays, after the ICE cotton close (2:20 pm ET)
     - cron: '41 21 * * 1-5'   # same in standard time
     - cron: '47 20 * * 5'     # Friday after the 3:30 pm ET CFTC release
+    - cron: '13 21 * * 5'     # Friday backups (GitHub often starts scheduled runs hours late)
+    - cron: '29 19 * * 5'     # starts early in EDT and waits for the release (COT_WAIT)
 permissions: {contents: write}
 concurrency: {group: softs-data, cancel-in-progress: false}
 jobs:
@@ -23,7 +25,7 @@ jobs:
       - run: pip install -q requests pandas numpy scipy git+https://github.com/rongardF/tvdatafeed.git
       - name: CFTC COT (cotton, sugar, coffee)
         continue-on-error: true
-        timeout-minutes: 15
+        timeout-minutes: 50
         run: python pipelines/cot.py
       - name: active-contract closes
         continue-on-error: true
