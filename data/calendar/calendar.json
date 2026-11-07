@@ -1,163 +1,6 @@
 {
-"generated": "2026-11-03 17:35 UTC",
+"generated": "2026-11-07 12:58 UTC",
 "events": [
-{
-"date": "2026-10-27",
-"time": "3:30 PM CT",
-"event": "API weekly crude & product inventories (industry)",
-"cat": "Energy",
-"markets": [
-"CL",
-"HO",
-"RB"
-],
-"importance": 1,
-"link": null,
-"estimated": false
-},
-{
-"date": "2026-10-28",
-"time": "9:30 AM CT",
-"event": "EIA Weekly Petroleum Status Report (crude, gasoline, distillate stocks)",
-"cat": "Energy",
-"markets": [
-"CL",
-"HO",
-"RB"
-],
-"importance": 3,
-"link": "https://www.eia.gov/petroleum/supply/weekly/",
-"estimated": false
-},
-{
-"date": "2026-10-28",
-"time": "11:00 AM CT",
-"event": "USDA NDPSR dairy product prices (weekly)",
-"cat": "Dairy",
-"markets": [
-"DC",
-"GDK",
-"CSC",
-"CB",
-"GNF",
-"DY"
-],
-"importance": 2,
-"link": null,
-"estimated": false
-},
-{
-"date": "2026-10-29",
-"time": "9:30 AM CT",
-"event": "EIA Weekly Natural Gas Storage Report",
-"cat": "Energy",
-"markets": [
-"NG"
-],
-"importance": 3,
-"link": "https://ir.eia.gov/ngs/ngs.html",
-"estimated": false
-},
-{
-"date": "2026-10-29",
-"time": "7:30 AM CT",
-"event": "USDA weekly export sales",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZM",
-"ZL",
-"ZW",
-"KE",
-"HE",
-"LE",
-"CT"
-],
-"importance": 2,
-"link": null,
-"estimated": false
-},
-{
-"date": "2026-10-29",
-"time": "2:30 PM CT",
-"event": "CFTC cotton on-call report",
-"cat": "CFTC",
-"markets": [
-"CT"
-],
-"importance": 2,
-"link": null,
-"estimated": false
-},
-{
-"date": "2026-10-29",
-"time": "",
-"event": "Buenos Aires Grain Exchange crop progress (weekly)",
-"cat": "South America",
-"markets": [
-"ZS",
-"ZC",
-"ZW"
-],
-"importance": 1,
-"link": null,
-"estimated": false
-},
-{
-"date": "2026-10-30",
-"time": "12:00 PM CT",
-"event": "Baker Hughes rig count",
-"cat": "Energy",
-"markets": [
-"CL",
-"NG"
-],
-"importance": 2,
-"link": null,
-"estimated": false
-},
-{
-"date": "2026-10-30",
-"time": "2:30 PM CT",
-"event": "CFTC Commitments of Traders",
-"cat": "CFTC",
-"markets": [
-"ALL"
-],
-"importance": 1,
-"link": null,
-"estimated": false
-},
-{
-"date": "2026-11-02",
-"time": "3:00 PM CT",
-"event": "NASS Crop Progress",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE",
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=02&report_id=17011",
-"estimated": false
-},
-{
-"date": "2026-11-02",
-"time": "2:00 PM CT",
-"event": "NASS Fats & Oils",
-"cat": "USDA",
-"markets": [
-"ZL",
-"ZM"
-],
-"importance": 1,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=02&report_id=17214",
-"estimated": false
-},
 {
 "date": "2026-11-02",
 "time": "10:00 AM CT",
@@ -245,23 +88,6 @@
 },
 {
 "date": "2026-11-05",
-"time": "2:00 PM CT",
-"event": "NASS Dairy Products",
-"cat": "USDA",
-"markets": [
-"DC",
-"GDK",
-"CSC",
-"CB",
-"GNF",
-"DY"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=05&report_id=16001",
-"estimated": false
-},
-{
-"date": "2026-11-05",
 "time": "7:30 AM CT",
 "event": "USDA weekly export sales",
 "cat": "USDA",
@@ -333,22 +159,6 @@
 },
 {
 "date": "2026-11-09",
-"time": "3:00 PM CT",
-"event": "NASS Crop Progress",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE",
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=09&report_id=17011",
-"estimated": false
-},
-{
-"date": "2026-11-09",
 "time": "10:00 AM CT",
 "event": "USDA export inspections",
 "cat": "USDA",
@@ -360,22 +170,6 @@
 ],
 "importance": 1,
 "link": null,
-"estimated": false
-},
-{
-"date": "2026-11-10",
-"time": "11:00 AM CT",
-"event": "NASS Crop Production",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE",
-"CT"
-],
-"importance": 3,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=10&report_id=11001",
 "estimated": false
 },
 {
@@ -397,18 +191,6 @@
 ],
 "importance": 3,
 "link": "https://esmis.nal.usda.gov/publication/world-agricultural-supply-and-demand-estimates",
-"estimated": false
-},
-{
-"date": "2026-11-10",
-"time": "11:00 AM CT",
-"event": "NASS Cotton Ginnings",
-"cat": "USDA",
-"markets": [
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=10&report_id=17017",
 "estimated": false
 },
 {
@@ -597,22 +379,6 @@
 },
 {
 "date": "2026-11-16",
-"time": "3:00 PM CT",
-"event": "NASS Crop Progress",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE",
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=16&report_id=17011",
-"estimated": false
-},
-{
-"date": "2026-11-16",
 "time": "10:00 AM CT",
 "event": "USDA export inspections",
 "cat": "USDA",
@@ -717,19 +483,6 @@
 },
 {
 "date": "2026-11-19",
-"time": "2:00 PM CT",
-"event": "NASS Livestock Slaughter",
-"cat": "USDA",
-"markets": [
-"HE",
-"LE"
-],
-"importance": 1,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=19&report_id=13004",
-"estimated": false
-},
-{
-"date": "2026-11-19",
 "time": "",
 "event": "Buenos Aires Grain Exchange crop progress (weekly)",
 "cat": "South America",
@@ -740,32 +493,6 @@
 ],
 "importance": 1,
 "link": null,
-"estimated": false
-},
-{
-"date": "2026-11-20",
-"time": "2:00 PM CT",
-"event": "NASS Cattle on Feed",
-"cat": "USDA",
-"markets": [
-"LE",
-"GF"
-],
-"importance": 3,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=20&report_id=13001",
-"estimated": false
-},
-{
-"date": "2026-11-20",
-"time": "2:00 PM CT",
-"event": "NASS Milk Production",
-"cat": "USDA",
-"markets": [
-"DC",
-"GDK"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=20&report_id=16003",
 "estimated": false
 },
 {
@@ -795,34 +522,6 @@
 },
 {
 "date": "2026-11-23",
-"time": "11:00 AM CT",
-"event": "NASS Cotton Ginnings",
-"cat": "USDA",
-"markets": [
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=23&report_id=17017",
-"estimated": false
-},
-{
-"date": "2026-11-23",
-"time": "3:00 PM CT",
-"event": "NASS Crop Progress",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE",
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=23&report_id=17011",
-"estimated": false
-},
-{
-"date": "2026-11-23",
 "time": "",
 "event": "Cotton Dec 26: first notice day",
 "cat": "ICE contract",
@@ -846,21 +545,6 @@
 ],
 "importance": 1,
 "link": null,
-"estimated": false
-},
-{
-"date": "2026-11-24",
-"time": "2:00 PM CT",
-"event": "NASS Cold Storage",
-"cat": "USDA",
-"markets": [
-"HE",
-"LE",
-"CB",
-"CSC"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=24&report_id=17002",
 "estimated": false
 },
 {
@@ -993,36 +677,6 @@
 },
 {
 "date": "2026-11-30",
-"time": "3:00 PM CT",
-"event": "NASS Crop Progress",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE",
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=30&report_id=17011",
-"estimated": false
-},
-{
-"date": "2026-11-30",
-"time": "2:00 PM CT",
-"event": "NASS Agricultural Prices",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"DC"
-],
-"importance": 1,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=11&day=30&report_id=12001",
-"estimated": false
-},
-{
-"date": "2026-11-30",
 "time": "10:00 AM CT",
 "event": "USDA export inspections",
 "cat": "USDA",
@@ -1034,19 +688,6 @@
 ],
 "importance": 1,
 "link": null,
-"estimated": false
-},
-{
-"date": "2026-12-01",
-"time": "2:00 PM CT",
-"event": "NASS Fats & Oils",
-"cat": "USDA",
-"markets": [
-"ZL",
-"ZM"
-],
-"importance": 1,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=01&report_id=17214",
 "estimated": false
 },
 {
@@ -1117,23 +758,6 @@
 ],
 "importance": 3,
 "link": "https://ir.eia.gov/ngs/ngs.html",
-"estimated": false
-},
-{
-"date": "2026-12-03",
-"time": "2:00 PM CT",
-"event": "NASS Dairy Products",
-"cat": "USDA",
-"markets": [
-"DC",
-"GDK",
-"CSC",
-"CB",
-"GNF",
-"DY"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=03&report_id=16001",
 "estimated": false
 },
 {
@@ -1296,22 +920,6 @@
 },
 {
 "date": "2026-12-10",
-"time": "11:00 AM CT",
-"event": "NASS Crop Production",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE",
-"CT"
-],
-"importance": 3,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=10&report_id=11001",
-"estimated": false
-},
-{
-"date": "2026-12-10",
 "time": "9:30 AM CT",
 "event": "EIA Weekly Natural Gas Storage Report",
 "cat": "Energy",
@@ -1341,18 +949,6 @@
 ],
 "importance": 3,
 "link": "https://esmis.nal.usda.gov/publication/world-agricultural-supply-and-demand-estimates",
-"estimated": false
-},
-{
-"date": "2026-12-10",
-"time": "11:00 AM CT",
-"event": "NASS Cotton Ginnings",
-"cat": "USDA",
-"markets": [
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=10&report_id=17017",
 "estimated": false
 },
 {
@@ -1587,19 +1183,6 @@
 },
 {
 "date": "2026-12-18",
-"time": "2:00 PM CT",
-"event": "NASS Cattle on Feed",
-"cat": "USDA",
-"markets": [
-"LE",
-"GF"
-],
-"importance": 3,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=18&report_id=13001",
-"estimated": false
-},
-{
-"date": "2026-12-18",
 "time": "12:00 PM CT",
 "event": "Baker Hughes rig count",
 "cat": "Energy",
@@ -1640,31 +1223,6 @@
 },
 {
 "date": "2026-12-22",
-"time": "11:00 AM CT",
-"event": "NASS Cotton Ginnings",
-"cat": "USDA",
-"markets": [
-"CT"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=22&report_id=17017",
-"estimated": false
-},
-{
-"date": "2026-12-22",
-"time": "2:00 PM CT",
-"event": "NASS Milk Production",
-"cat": "USDA",
-"markets": [
-"DC",
-"GDK"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=22&report_id=16003",
-"estimated": false
-},
-{
-"date": "2026-12-22",
 "time": "3:30 PM CT",
 "event": "API weekly crude & product inventories (industry)",
 "cat": "Energy",
@@ -1679,18 +1237,6 @@
 },
 {
 "date": "2026-12-23",
-"time": "2:00 PM CT",
-"event": "NASS Hogs and Pigs",
-"cat": "USDA",
-"markets": [
-"HE"
-],
-"importance": 3,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=23&report_id=13002",
-"estimated": false
-},
-{
-"date": "2026-12-23",
 "time": "9:30 AM CT",
 "event": "EIA Weekly Petroleum Status Report (crude, gasoline, distillate stocks)",
 "cat": "Energy",
@@ -1701,21 +1247,6 @@
 ],
 "importance": 3,
 "link": "https://www.eia.gov/petroleum/supply/weekly/",
-"estimated": false
-},
-{
-"date": "2026-12-23",
-"time": "2:00 PM CT",
-"event": "NASS Cold Storage",
-"cat": "USDA",
-"markets": [
-"HE",
-"LE",
-"CB",
-"CSC"
-],
-"importance": 2,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=23&report_id=17002",
 "estimated": false
 },
 {
@@ -1777,19 +1308,6 @@
 ],
 "importance": 2,
 "link": null,
-"estimated": false
-},
-{
-"date": "2026-12-24",
-"time": "2:00 PM CT",
-"event": "NASS Livestock Slaughter",
-"cat": "USDA",
-"markets": [
-"HE",
-"LE"
-],
-"importance": 1,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=24&report_id=13004",
 "estimated": false
 },
 {
@@ -1888,20 +1406,6 @@
 ],
 "importance": 2,
 "link": null,
-"estimated": false
-},
-{
-"date": "2026-12-30",
-"time": "2:00 PM CT",
-"event": "NASS Agricultural Prices",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"DC"
-],
-"importance": 1,
-"link": "https://www.nass.usda.gov/Publications/Calendar/calendar-landing.php?source=n&year=26&month=12&day=30&report_id=12001",
 "estimated": false
 },
 {
@@ -2666,6 +2170,147 @@
 "ZS",
 "ZW",
 "KE"
+],
+"importance": 1,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-02",
+"time": "3:30 PM CT",
+"event": "API weekly crude & product inventories (industry)",
+"cat": "Energy",
+"markets": [
+"CL",
+"HO",
+"RB"
+],
+"importance": 1,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-03",
+"time": "9:30 AM CT",
+"event": "EIA Weekly Petroleum Status Report (crude, gasoline, distillate stocks)",
+"cat": "Energy",
+"markets": [
+"CL",
+"HO",
+"RB"
+],
+"importance": 3,
+"link": "https://www.eia.gov/petroleum/supply/weekly/",
+"estimated": false
+},
+{
+"date": "2027-02-03",
+"time": "11:00 AM CT",
+"event": "USDA class & component milk prices (DC/GDK settle)",
+"cat": "Dairy",
+"markets": [
+"DC",
+"GDK"
+],
+"importance": 3,
+"link": null,
+"estimated": true
+},
+{
+"date": "2027-02-03",
+"time": "11:00 AM CT",
+"event": "USDA NDPSR dairy product prices (weekly)",
+"cat": "Dairy",
+"markets": [
+"DC",
+"GDK",
+"CSC",
+"CB",
+"GNF",
+"DY"
+],
+"importance": 2,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-04",
+"time": "9:30 AM CT",
+"event": "EIA Weekly Natural Gas Storage Report",
+"cat": "Energy",
+"markets": [
+"NG"
+],
+"importance": 3,
+"link": "https://ir.eia.gov/ngs/ngs.html",
+"estimated": false
+},
+{
+"date": "2027-02-04",
+"time": "7:30 AM CT",
+"event": "USDA weekly export sales",
+"cat": "USDA",
+"markets": [
+"ZC",
+"ZS",
+"ZM",
+"ZL",
+"ZW",
+"KE",
+"HE",
+"LE",
+"CT"
+],
+"importance": 2,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-04",
+"time": "2:30 PM CT",
+"event": "CFTC cotton on-call report",
+"cat": "CFTC",
+"markets": [
+"CT"
+],
+"importance": 2,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-04",
+"time": "",
+"event": "Buenos Aires Grain Exchange crop progress (weekly)",
+"cat": "South America",
+"markets": [
+"ZS",
+"ZC",
+"ZW"
+],
+"importance": 1,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-05",
+"time": "12:00 PM CT",
+"event": "Baker Hughes rig count",
+"cat": "Energy",
+"markets": [
+"CL",
+"NG"
+],
+"importance": 2,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-05",
+"time": "2:30 PM CT",
+"event": "CFTC Commitments of Traders",
+"cat": "CFTC",
+"markets": [
+"ALL"
 ],
 "importance": 1,
 "link": null,
