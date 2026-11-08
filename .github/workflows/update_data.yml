@@ -2,7 +2,11 @@ name: Brazil Trade — Monthly Data Update
 
 on:
   schedule:
-    - cron: "0 8 * * 1"   # Every Monday 08:00 UTC
+    - cron: "0 8 * * 1"     # Every Monday 08:00 UTC
+    - cron: "37 21 3-12 * *" # daily around MDIC's monthly release (first business days of the month)
+  push:
+    branches: [main]
+    paths: [".github/workflows/update_data.yml", "scraper.py", "scheduler.py"]
   workflow_dispatch:
     inputs:
       years:
