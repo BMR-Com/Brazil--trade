@@ -174,9 +174,45 @@ const Cotton = (() => {
       const hd = L[0]; WM = { rows: L.slice(1).map(r => Object.fromEntries(hd.map((k, i) => [k, r[i] || '']))), rules: rules.owner_rules }; } catch (e) { WM = null; }
     const REPO = {};
     try { const Lt = await getJSON('data/cotton/ice/latest.json');
+      try { REPO.ewr = await getJSON('data/cotton/ewr/latest.json'); } catch (e) {}
+      try { REPO.tariffTxt = await fetch('data/cotton/ref/ice_tariffs_2026-27.csv').then(r => r.ok ? r.text() : null); } catch (e) {}
+      try { const T = await getJSON('data/technicals/CT.json'); REPO.px = Object.fromEntries((T.series || []).map(x => [x.ticker, { label: x.label, close: x.bars[x.bars.length - 1][4], date: x.bars[x.bars.length - 1][0] }])); } catch (e) {}
       await Promise.all([['ctIceStock', 'stock'], ['ctIceGrade', 'grade'], ['ctIceWh', 'warehouse'], ['ctIceWhPrev', 'warehouse_prev'], ['ctIceStr', 'strength'], ['ctIceYog', 'year_of_growth']].map(async ([k, f]) => { if (Lt[f]) { REPO[k] = await fetch(Lt[f]).then(r => r.ok ? r.text() : null); REPO[k + 'Date'] = Lt[f + '_date']; } })); } catch (e) {}
     const got = k => LS.get(k) ?? REPO[k] ?? null;
     const parseCSV = t => t.trim().split(/\r?\n/).map(line => { const out = []; let cur = '', q = false; for (const ch of line) { if (ch === '"') q = !q; else if (ch === ',' && !q) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map(x => x.trim()); });
+    // Stop December, hold, redeliver against March: what it costs, against the Mar/Dec spread (ICE Cotton No. 2 rules)
+    const CF = { st: LS.get('ctCarrySt') != null ? +LS.get('ctCarrySt') : null, ir: +(LS.get('ctCarryIr') || 5.0), bw: 500 };
+    // storage rate weighted by the certs each warehouse holds (ICE 2026/27 tariff sheet, cents per bale per month)
+    const stWeighted = () => { const tt = REPO.tariffTxt, wh = got('ctIceWh'); if (!tt || !wh) return null; const T = parseCSV(tt), th = T[0], iC = th.indexOf('code'), iS = th.indexOf('storage_c_per_bale_month');
+      const rate = Object.fromEntries(T.slice(1).map(r => [r[iC], +r[iS]])), R = parseCSV(wh), h = R[0].map(x => x.toLowerCase()), jC = h.findIndex(x => /number|code/.test(x)), jB = h.findIndex(x => /receipt|bales|stock/.test(x));
+      let n = 0, v = 0; R.slice(1).forEach(r => { const b = +r[jB] || 0, c = rate[r[jC]]; if (b && c) { n += b; v += b * c; } }); return n ? v / n / 100 : null; };
+    function carry(premPts, S) {
+      const px = REPO.px || {}, z = px.CTZ2026, h = px.CTH2027; if (!z || !h) return '';
+      const sw = stWeighted(), st = CF.st != null ? CF.st : (sw || 5.0);
+      const months = 3, dec = z.close, mar = h.close, spread = mar - dec, inv = dec + premPts / 100;
+      const storage = st * months / CF.bw * 100;                      // ¢/lb: $/bale/month x months / lb per bale
+      const interest = inv * CF.ir / 100 * months / 12;                    // financing the invoice (notice price + premium)
+      // ICE over-age allowance starts in the 4th month after the month of original certification: October certs carry
+      // 6 lb/bale on a March delivery, November certs 3 lb. Bales already on board at the previous weekly report are taken as October certs.
+      const wt = t => { if (!t) return 0; const R = parseCSV(t), h = R[0].map(x => x.toLowerCase()), j = h.findIndex(x => /receipt|bales|stock/.test(x)); return R.slice(1).reduce((a, r) => a + (+r[j] || 0), 0); };
+      const tNow = wt(got('ctIceWh')), tPrev = wt(got('ctIceWhPrev')), fOld = tNow ? Math.min(1, tPrev / tNow) : 1, ageLb = 6 * fOld + 3 * (1 - fOld);
+      const agePen = ageLb / CF.bw * (mar + premPts / 100);
+      const wda = 0.5 * months / CF.bw * (mar + premPts / 100);                              // weight-date allowance, 0.5 lb/bale/month later
+      const yog = S.yogT ? S.yogOld / S.yogT * 2 : 0;                      // 2¢/lb on older crop from 1 January
+      const tot = storage + interest + agePen + wda + yog, gap = spread - tot;
+      const r = (l, v, n) => `<tr><td class="l">${l}</td><td class="n">${v.toFixed(2)}</td><td class="l note">${n}</td></tr>`;
+      return `<h3 style="margin-top:14px">Stop December, redeliver against March: does the spread pay? <span class="note">futures ${z.date}: Dec ${dec.toFixed(2)}, Mar ${mar.toFixed(2)}</span></h3>
+        <div class="grid g3" style="margin:6px 0"><label>Storage, $ per bale per month <input id="ctCSt" type="number" step="0.05" value="${st.toFixed(2)}" style="width:80px"></label><label>Financing rate, % a year <input id="ctCIr" type="number" step="0.25" value="${CF.ir}" style="width:80px"></label><span class="note">${CF.st != null ? 'your rate (clear the box to go back to the tariff-weighted rate)' : sw ? `$${sw.toFixed(2)}/bale/month: ICE 2026/27 tariffs weighted by the certs each warehouse holds (insurance included)` : 'assumed rate'}</span></div>
+        <div class="tbl"><table><tr><th class="l">Cost of carrying the delivered certs ~3 months</th><th>¢/lb</th><th class="l">Basis</th></tr>
+        ${r('Storage', storage, `$${st.toFixed(2)}/bale/month × ${months} months ÷ ${CF.bw} lb`)}
+        ${r('Financing', interest, `${CF.ir}% on the invoice of ${inv.toFixed(2)}¢ (notice price + average premium ${(premPts / 100).toFixed(2)}¢)`)}
+        ${r('Over-age allowance at March delivery', agePen, `${ageLb.toFixed(1)} lb/bale: 6 lb on October certs (${fmt(fOld * 100, 0)}% of bales), 3 lb on November certs; starts the 4th month after the month of certification`)}
+        ${r('Weight-date allowance', wda, '½ lb/bale for each month after the month of weighing')}
+        ${r('Year of growth', yog, S.yogT ? `${fmt(S.yogOld / S.yogT * 100, 1)}% of bales are older crop: 2¢/lb from 1 January` : 'no year-of-growth report')}
+        <tr><td class="l"><b>Full carry</b></td><td class="n"><b>${tot.toFixed(2)}</b></td><td class="l note">what Mar has to pay over Dec for a stopper to break even</td></tr>
+        <tr><td class="l"><b>Mar − Dec spread</b></td><td class="n"><b>${spread.toFixed(2)}</b></td><td class="l note">${gap >= 0 ? `pays ${gap.toFixed(2)}¢ more than full carry: stopping and redelivering is profitable` : `${(-gap).toFixed(2)}¢ short of full carry: stopping December to redeliver in March loses money`}</td></tr></table></div>
+        <p class="note">The grade premium is paid on delivery and received back on redelivery only if the ICE grid is unchanged in March. A receiver who instead sells the cotton to mills recovers only what mills pay for these qualities, which for high grades is usually less than the exchange grid; that shortfall is an extra cost on top of full carry. Rules: ICE Cotton No. 2 (age penalty schedule, weight-date allowance, year-of-growth penalty; deliverer pays storage up to delivery, receiver after).</p>`;
+    }
     const analyse = () => {
       const st = got('ctIceStock'), gr = got('ctIceGrade'), O = $('#ctCertOut'); if (!O) return;
       let html = '', stTot = 0; const SUM = {};
@@ -265,6 +301,7 @@ const Cotton = (() => {
           <div class="tbl"><table><tr><th class="l">Merchant</th><th>Bales</th><th>Share</th>${dps.map(d => `<th>${d}</th>`).join('')}<th>Warehouses holding</th></tr>
           ${ms.map(([k, v]) => `<tr><td class="l"><b>${k}</b></td><td class="n">${fmt(v.n, 0)}</td><td class="n">${fmt(v.n / tot * 100, 1)}%</td>${dps.map(d => `<td class="n">${v.dp[d] ? fmt(v.dp[d], 0) : ''}</td>`).join('')}<td class="n">${v.w}</td></tr>`).join('')}
           <tr><td class="l">Total</td><td class="n">${fmt(tot, 0)}</td><td class="n">100%</td>${dps.map(d => `<td class="n">${fmt(W.filter(x => x.dp === d).reduce((a, x) => a + x.n, 0), 0)}</td>`).join('')}<td class="n">${W.filter(x => x.n).length}</td></tr></table></div>
+          <p class="note">Ownership changes: some licensed warehouses have changed hands since ICE's 2026/27 licence list; they are shown as "Ownership change" and not attributed to a merchant.</p>
           <details style="margin-top:6px"><summary class="note">By warehouse (${W.length} listed, ${W.filter(x => x.n).length} holding certs)</summary><div class="tbl"><table><tr><th class="l">Code</th><th class="l">Warehouse</th><th class="l">Delivery point</th><th class="l">Merchant</th><th>Bales</th><th class="l">Matched by</th></tr>
           ${[...W].sort((a, b) => b.n - a.n).map(x => `<tr><td class="l">${x.code}</td><td class="l">${x.nm}</td><td class="l">${x.dp}</td><td class="l">${x.merchant}</td><td class="n">${x.n ? fmt(x.n, 0) : ''}</td><td class="l">${x.how}</td></tr>`).join('')}</table></div></details>
           ${stTot && Math.abs(stTot - tot) > 100 ? `<p class="note">The warehouse report (${rd}) totals ${fmt(tot, 0)} bales against ${fmt(stTot, 0)} in the latest delivery-point file; the two are from different dates, so certification in between is not yet assigned to merchants.</p>` : ''}`;
@@ -277,9 +314,21 @@ const Cotton = (() => {
           ${row('Grade and staple', SUM.grade, `average of ${fmt(SUM.gradeN, 0)} bales at the USDA grid (invoicing staple)`)}
           ${row('Strength', sp, SUM.str ? (SUM.str.low ? `${fmt(SUM.str.low, 0)} bales in 25.0–25.9 at ${sg(SUM.str.disc)} pts` : 'no bales in 25.0–25.9') : 'no strength report loaded')}
           ${row('Year of growth', 'yog', SUM.yog ? `${fmt(SUM.yogOld, 0)} of ${fmt(SUM.yogT, 0)} bales are older crop: free in December, 2¢/lb discount from March` : 'no year-of-growth report loaded')}
-          <tr><td class="l"><b>Net average premium</b></td>${y.map(([, yv]) => `<td class="n"><b>${sg(net(yv))} pts</b><br><span class="note">${sg(net(yv) / 100, 2)}¢/lb · $${fmt(net(yv) * 5, 0)}/lot</span></td>`).join('')}<td class="l note">what a receiver pays over the notice price, on average</td></tr></table></div>` + html;
+          <tr><td class="l"><b>Net average premium</b></td>${y.map(([, yv]) => `<td class="n"><b>${sg(net(yv))} pts</b><br><span class="note">${sg(net(yv) / 100, 2)}¢/lb · $${fmt(net(yv) * 5, 0)}/lot</span></td>`).join('')}<td class="l note">what a receiver pays over the notice price, on average</td></tr></table></div>` + carry(net(y[0][1]), SUM) + html;
+      }
+      const E = REPO.ewr;
+      if (E && E.states) {
+        const T = E.states.find(x => x.state === 'TOTAL') || {}, TX = E.states.find(x => x.state === 'TX') || {}, Y = E.issued_same_date || { years: [], rows: [] };
+        const yt = Y.years.map((y, i) => [y, Y.rows.reduce((a, r) => a + (r[i + 1] || 0), 0)]), txr = Y.rows.find(r => r[0] === 'TX') || [];
+        html += `<h3 style="margin-top:14px">Warehouse receipts (EWR) <span class="note">EWR Inc. receipt statistics, ${E.asof}; daily, ahead of the ICE reports</span></h3>
+          <div class="grid g4">${kp('Tenderable certificated (open)', fmt(E.tenderable_cert, 0) + ' bales', 'EWR count of open certificated receipts')}${kp('Under shipping order', fmt(T.shipping_order, 0), fmt(T.shipping_order / (T.total_open || 1) * 100, 1) + '% of open receipts; Texas ' + fmt(TX.shipping_order, 0))}${kp('Held by CCC (loan)', fmt(T.ccc, 0), fmt(T.ccc / (T.open_cur || 1) * 100, 1) + '% of open ' + E.crop_year + ' crop')}${kp('Open older crops', fmt(T.open_prev + T.open_prev2 + T.open_older, 0), fmt(T.open_prev, 0) + ' of them ' + (E.crop_year - 1) + ' crop')}</div>
+          <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Receipts issued by this date</th>${yt.map(([y]) => `<th>${y}</th>`).join('')}</tr>
+          <tr><td class="l">United States</td>${yt.map(([, v]) => `<td class="n">${fmt(v, 0)}</td>`).join('')}</tr>
+          <tr><td class="l">Texas</td>${Y.years.map((y, i) => `<td class="n">${fmt(txr[i + 1] || 0, 0)}</td>`).join('')}</tr></table></div>
+          <p class="note">Receipts issued so far: ${fmt(E.new_issued_total, 0)} new ${E.crop_year}-crop receipts, ${fmt(E.new_issued_total / (E.crop_est || 1) * 100, 1)}% of the USDA crop estimate of ${fmt(E.crop_est, 0)}. Receipts under shipping order are bales sold and called for shipment, a lead indicator of what can physically ship in the coming weeks. History builds from daily snapshots kept in data/cotton/ewr/history.csv.</p>`;
       }
       O.innerHTML = html || '<p class="note">No files loaded in this browser yet.</p>';
+      const bindC = (id, k, key) => { const el = $('#' + id); if (el) el.onchange = () => { CF[k] = +el.value || 0; LS.set(key, String(CF[k])); analyse(); }; }; { const el = $('#ctCSt'); if (el) el.onchange = () => { if (el.value === '') { CF.st = null; LS.del('ctCarrySt'); } else { CF.st = +el.value; LS.set('ctCarrySt', String(CF.st)); } analyse(); }; } bindC('ctCIr', 'ir', 'ctCarryIr');
     };
     const hook = (id, key) => { const el = $('#' + id); if (el) el.onchange = e => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { LS.set(key, rd.result); const m = f.name.match(/(\d{4}-\d{2}-\d{2})/); LS.set(key + 'Date', m ? m[1] : f.name); analyse(); }; rd.readAsText(f); }; };
     hook('ctFStock', 'ctIceStock'); hook('ctFGrade', 'ctIceGrade'); hook('ctFWh', 'ctIceWh'); hook('ctFStr', 'ctIceStr'); hook('ctFYog', 'ctIceYog');
