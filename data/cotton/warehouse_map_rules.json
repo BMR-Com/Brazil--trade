@@ -60,6 +60,10 @@
   [
    "crittenden gin",
    "Chris Collins"
+  ],
+  [
+   "union compress",
+   "Independent"
   ]
  ],
  "open_questions": [
@@ -72,5 +76,6 @@
   "794505 Cotton Trade Warehouse (Cargill)",
   "794598 River City Warehouse (Sunbelt/Ecom)",
   "819292 Cargill Baytown Warehouse"
- ]
+ ],
+ "licence_list": "data/cotton/ref/ice_licensed_warehouses_2026-27.csv (from the ICE Cotton No. 2 licensed-warehouse list, term 1 Aug 2026 - 31 Jul 2027; PDF in data/cotton/ref). Contact email domains confirm LDC (ldc.com) = Allenberg, Olam, Bunge, Cofco, Staple and the independents."
 }
