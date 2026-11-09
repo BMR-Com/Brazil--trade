@@ -174,13 +174,26 @@ const Cotton = (() => {
       const hd = L[0]; WM = { rows: L.slice(1).map(r => Object.fromEntries(hd.map((k, i) => [k, r[i] || '']))), rules: rules.owner_rules }; } catch (e) { WM = null; }
     const REPO = {};
     try { const Lt = await getJSON('data/cotton/ice/latest.json');
-      await Promise.all([['ctIceStock', 'stock'], ['ctIceGrade', 'grade'], ['ctIceWh', 'warehouse'], ['ctIceStr', 'strength'], ['ctIceYog', 'year_of_growth']].map(async ([k, f]) => { if (Lt[f]) { REPO[k] = await fetch(Lt[f]).then(r => r.ok ? r.text() : null); REPO[k + 'Date'] = Lt[f + '_date']; } })); } catch (e) {}
+      await Promise.all([['ctIceStock', 'stock'], ['ctIceGrade', 'grade'], ['ctIceWh', 'warehouse'], ['ctIceWhPrev', 'warehouse_prev'], ['ctIceStr', 'strength'], ['ctIceYog', 'year_of_growth']].map(async ([k, f]) => { if (Lt[f]) { REPO[k] = await fetch(Lt[f]).then(r => r.ok ? r.text() : null); REPO[k + 'Date'] = Lt[f + '_date']; } })); } catch (e) {}
     const got = k => LS.get(k) ?? REPO[k] ?? null;
     const parseCSV = t => t.trim().split(/\r?\n/).map(line => { const out = []; let cur = '', q = false; for (const ch of line) { if (ch === '"') q = !q; else if (ch === ',' && !q) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map(x => x.trim()); });
     const analyse = () => {
       const st = got('ctIceStock'), gr = got('ctIceGrade'), O = $('#ctCertOut'); if (!O) return;
       let html = '', stTot = 0; const SUM = {};
-      if (st) {
+      // delivery points come from the warehouse file whenever it is newer than the delivery-point stock file
+      const whT = got('ctIceWh'), whD = got('ctIceWhDate') || '', stD = got('ctIceStockDate') || '';
+      const whDP = t => { if (!t || !WM) return null; const R = parseCSV(t), h = R[0].map(x => x.toLowerCase()), iC = h.findIndex(x => /number|code/.test(x)), iB = h.findIndex(x => /receipt|bales|stock/.test(x)), iN = h.findIndex(x => x === 'warehouse');
+        const byCode = Object.fromEntries(WM.rows.filter(r => r.code).map(r => [r.code, r])), o = {};
+        R.slice(1).filter(r => r[iN]).forEach(r => { const m = byCode[r[iC]] || {}, d = m.delivery_point || '?'; const x = o[d] = o[d] || { n: 0, cap: 0 }; x.n += +r[iB] || 0; x.cap += +m.capacity_bales || 0; }); return o; };
+      const DPn = whD > stD ? whDP(whT) : null;
+      if (DPn) {
+        const P = whDP(got('ctIceWhPrev')) || {}, pd = got('ctIceWhPrevDate') || '', ks = Object.keys(DPn).filter(k => DPn[k].n || (P[k] || {}).n).sort((a, b) => DPn[b].n - DPn[a].n);
+        const T = Object.values(DPn).reduce((a, x) => a + x.n, 0), TP = Object.values(P).reduce((a, x) => a + x.n, 0), C = Object.values(DPn).reduce((a, x) => a + x.cap, 0); stTot = T;
+        html += `<div class="grid g4">${kp('Certificated stock', fmt(T, 0) + ' bales', 'ICE stock by warehouse, ' + whD)}${kp('Change', pd ? sg(T - TP) + ' bales' : '–', pd ? 'vs ' + pd : '')}${kp('Share of licensed capacity', fmt(T / (C || 1) * 100, 1) + '%', fmt(C, 0) + ' bales licensed')}${kp('Delivery points holding', ks.filter(k => DPn[k].n).length, '')}</div>
+          <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Delivery point</th><th>Bales</th>${pd ? `<th>${pd}</th><th>Change</th>` : ''}<th>Licensed capacity</th><th>% full</th></tr>
+          ${ks.map(k => `<tr><td class="l">${k}</td><td class="n">${fmt(DPn[k].n, 0)}</td>${pd ? `<td class="n">${fmt((P[k] || {}).n || 0, 0)}</td><td class="n">${sg(DPn[k].n - ((P[k] || {}).n || 0))}</td>` : ''}<td class="n">${fmt(DPn[k].cap, 0)}</td><td class="n">${fmt(DPn[k].n / (DPn[k].cap || 1) * 100, 1)}%</td></tr>`).join('')}</table></div>
+          <p class="note">Delivery points are taken from each warehouse's location (ICE 2026/27 licensed-warehouse list), because the warehouse report (${whD}) is newer than the delivery-point stock file${stD ? ' (' + stD + ')' : ''}.</p>`;
+      } else if (st) {
         const R = parseCSV(st), h = R[0], rr = R.slice(1).filter(r => r[0]);
         const iCur = h.findIndex(x => /^Current Stock/i.test(x)), iNew = h.findIndex(x => /^New Certs/i.test(x)), iDec = h.findIndex(x => /^Decerts/i.test(x)), iPrev = h.findIndex(x => /^Stock/i.test(x));
         const tot = i => rr.reduce((a, r) => a + (+r[i] || 0), 0); stTot = tot(iCur);

@@ -2,6 +2,10 @@
  "about": "Merchant attribution for ICE Cotton No. 2 licensed warehouses. Match a certified-stock row by warehouse code first (warehouse_map.csv), then by normalised warehouse name, then by the owner-on-record rules below. Anything unmatched is reported as Unmapped, never guessed.",
  "owner_rules": [
   [
+   "anderson clayton dallas|anderson clayton ft|fort worth warehouse # ?1",
+   "Ex-Olam (sold)"
+  ],
+  [
    "memphis compress",
    "Allenberg"
   ],
@@ -20,10 +24,6 @@
   [
    "cargill",
    "Cargill"
-  ],
-  [
-   "anderson clayton|olam",
-   "Olam"
   ],
   [
    "staple cotton|staple coop",
@@ -64,6 +64,10 @@
   [
    "union compress",
    "Independent"
+  ],
+  [
+   "anderson clayton|olam",
+   "Olam"
   ]
  ],
  "open_questions": [
