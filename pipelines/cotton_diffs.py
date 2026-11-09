@@ -70,7 +70,8 @@ def market_grids(day):
         m, c, l, st = x.get("market"), str(x.get("color")), str(x.get("leaf")), str(x.get("staple"))
         if m and c not in ("N/A", "None") and l not in ("N/A", "None") and st not in ("N/A", "None"):
             try:
-                g.setdefault(m, {})[f"{c}|{l}|{st}"] = int(float(x.get("difference")))
+                # the base cell (41-4-34) carries the base price in this field, not a difference
+                g.setdefault(m, {})[f"{c}|{l}|{st}"] = 0 if (c, l, st) == ("41", "4", "34") else int(float(x.get("difference")))
             except (TypeError, ValueError):
                 pass
     return g
