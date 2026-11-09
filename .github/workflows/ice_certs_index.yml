@@ -1,0 +1,19 @@
+name: ice-certs-index
+# Any ICE certs file added to data/cotton/ice updates latest.json (newest files, previous warehouse report, history).
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['data/cotton/ice/*.csv', 'pipelines/ice_certs_index.py']
+permissions: {contents: write}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 pipelines/ice_certs_index.py
+      - run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/cotton/ice/latest.json; git diff --cached --quiet && exit 0
+          git commit -q -m "data: ICE certs index $(date -u +%F)"
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && break; sleep 5; done
