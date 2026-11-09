@@ -45,6 +45,37 @@ def fetch(a, b):
     return rows
 
 
+BASIS = os.path.join(OUT, "spot_basis.csv")
+MKT = ["East Texas - South Texas", "West Texas - Kansas - Oklahoma", "North Delta", "South Delta", "Southeast", "Desert Southwest", "San Joaquin Valley", "US Average"]
+
+
+def basis_rows(a, b):
+    out = []
+    for x in section("Basis and Bales", a, b):
+        if x.get("commodity") != "Upland":
+            continue
+        d = pd.to_datetime(x.get("report_Begin_Date") or x.get("report_begin_date")).date()
+        g = lambda k: x.get(k) if x.get(k) not in (None, "N/A", "") else None
+        out.append({"date": str(d), "market": x.get("spotMarket"), "basis_month": g("basis_Month"), "basis_41_4_34": g("basis_41_4_34"),
+                    "base_41_4_34": g("41_4_34_Base_Price"), "basis_31_3_36": g("basis_31_3_36"), "base_31_3_36": g("31_3_36_Base_Price"), "bales": g("bales_Reported")})
+    return out
+
+
+def market_grids(day):
+    """Commercial grade/leaf/staple differences by spot market on one day (points vs 41-4-34; micronaire etc. ignored)."""
+    g = {}
+    for x in section("Daily Spot Quotations Differences", day, day):
+        if x.get("commod") != "Upland" or x.get("mike") not in (None, "N/A") or x.get("strength") not in (None, "N/A"):
+            continue
+        m, c, l, st = x.get("market"), str(x.get("color")), str(x.get("leaf")), str(x.get("staple"))
+        if m and c not in ("N/A", "None") and l not in ("N/A", "None") and st not in ("N/A", "None"):
+            try:
+                g.setdefault(m, {})[f"{c}|{l}|{st}"] = int(float(x.get("difference")))
+            except (TypeError, ValueError):
+                pass
+    return g
+
+
 def main():
     if not KEY:
         print("cotton diffs: no AMS_API_KEY"); return
@@ -57,6 +88,15 @@ def main():
         got = fetch(a, b); rows += got
         print("cotton diffs", a, b, len(got))
         a = b + timedelta(days=1)
+    # spot basis history (same chunks)
+    ob = pd.read_csv(BASIS, dtype=str) if os.path.exists(BASIS) else pd.DataFrame()
+    lastb = pd.to_datetime(ob.date).max().date() if len(ob) else START - timedelta(days=1)
+    br, a = [], lastb + timedelta(days=1)
+    while a <= today:
+        b = min(a + timedelta(days=30), today); br += basis_rows(a, b); a = b + timedelta(days=1)
+    if br:
+        nb = pd.concat([ob, pd.DataFrame(br).astype(str)]).drop_duplicates(["date", "market"], keep="last").sort_values(["date", "market"])
+        nb.to_csv(BASIS, index=False); print("spot basis rows", len(br))
     if rows:
         new = pd.DataFrame(rows).astype({"date": str})
         allr = pd.concat([old.astype(str), new.astype(str)]).drop_duplicates(["date", "kind", "color", "leaf", "staple"], keep="last")
@@ -91,6 +131,16 @@ def main():
     out = {"date": lastd, "grid": grid, "colors": sorted(L.color.unique(), key=lambda x: (x[1], x[0])), "leaves": sorted(L.leaf.unique()),
            "staples": sorted(L.staple.unique()), "strength": [{"range": r.staple, "points": int(r.points)} for r in stl.itertuples()],
            "history": hist, "prev": chg, "source": "USDA AMS Daily Spot Cotton Quotations, tenderable differences (ICE Cotton No. 2)"}
+    try:
+        mg = market_grids(pd.to_datetime(lastd).date())
+        out["markets"] = {"date": lastd, "grids": mg}
+    except Exception as e:
+        print("market grids failed", e)
+    if os.path.exists(BASIS):
+        bb = pd.read_csv(BASIS, dtype=str); bl = bb[bb.date == bb.date.max()]
+        out["basis"] = {"date": bb.date.max(), "markets": {r.market: {"basis_month": r.basis_month, "basis_41_4_34": float(r.basis_41_4_34) if r.basis_41_4_34 not in ("nan", "None") else None,
+                        "basis_31_3_36": float(r.basis_31_3_36) if r.basis_31_3_36 not in ("nan", "None") else None, "base_41_4_34": float(r.base_41_4_34) if r.base_41_4_34 not in ("nan", "None") else None}
+                        for r in bl.itertuples()}}
     json.dump(out, open(os.path.join(OUT, "ice_diffs.json"), "w"), separators=(",", ":"))
     print("cotton diffs: latest", lastd, len(grid), "cells; history days", cls.date.nunique())
 
