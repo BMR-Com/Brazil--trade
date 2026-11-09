@@ -1,0 +1,21 @@
+name: ewr-ingest
+# Parses EWR receipt-statistics snapshots dropped into data/cotton/ewr/inbox/ (page CSV/Text export or copied text).
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['data/cotton/ewr/inbox/**', 'pipelines/ewr_ingest.py']
+permissions: {contents: write}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q pandas && python pipelines/ewr_ingest.py
+      - run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/cotton/ewr; git diff --cached --quiet && exit 0
+          git commit -q -m "data: EWR receipts $(date -u +%F)"
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && break; sleep 5; done
