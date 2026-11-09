@@ -1,12 +1,12 @@
 {
  "gacc": {
   "ok": false,
-  "at": "2026-11-07 02:46 UTC",
+  "at": "2026-11-09 19:07 UTC",
   "note": "Command '['/opt/hostedtoolcache/Python/3.11.18/x64/bin/python', '/home/runner/work/Brazil--trade/Brazil--trade/china/ingest.py', 'known']' returned non-zero exit status 2."
  },
  "cca": {
   "ok": false,
-  "at": "2026-11-07 02:46 UTC",
+  "at": "2026-11-09 19:07 UTC",
   "note": "Command '['/opt/hostedtoolcache/Python/3.11.18/x64/bin/python', '/home/runner/work/Brazil--trade/Brazil--trade/china/ingest.py', 'known']' returned non-zero exit status 2."
  }
 }
