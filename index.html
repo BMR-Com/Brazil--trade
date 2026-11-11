@@ -17,6 +17,7 @@
   <div class="meta" id="meta">Cotton, sugar, coffee and cocoa · USDA / CFTC / ICE / UNICA / Cecafé / ICO / ICCO data</div>
 </header>
 <nav class="comm">
+  <button data-c="optsig" title="Weekly trade ideas from options and open interest">Trade ideas</button>
   <button data-c="overview" title="One coloured tile per market: overall read, fundamentals, fair value, recent events, technicals and levels, vol, seasonality, COT">Overview</button>
   <button class="on" data-c="cotton">Cotton</button>
   <button data-c="sugar">Sugar</button>
@@ -30,6 +31,7 @@
 </nav>
 
 <section id="overview" style="display:none;padding:0"></section>
+<section id="optsig" style="display:none;padding:0"></section>
 <section id="cotton"></section>
 <section id="sugar" style="display:none"></section>
 <section id="coffee" style="display:none"></section>
@@ -53,7 +55,7 @@
 <script src="assets/geo.js?v=20261108f"></script>
 <script src="assets/options.js?v=20261101a"></script>
 <script src="assets/balance.js?v=20261101a"></script>
-<script src="assets/seasonal.js?v=20261111c"></script>
+<script src="assets/seasonal.js?v=20261111o"></script>
 <script src="assets/basis.js?v=20261101a"></script>
 <script src="assets/china.js?v=20261101a"></script>
 <script src="assets/price_outlook.js?v=20261101a"></script>
@@ -65,10 +67,11 @@
 <script src="assets/sugar.js?v=20261104b"></script>
 <script src="assets/coffee.js?v=20261104b"></script>
 <script src="assets/softs.js?v=20261103a"></script>
-<script src="assets/overview.js?v=20261111c"></script>
+<script src="assets/optsig.js?v=20261111a"></script>
+<script src="assets/overview.js?v=20261111o"></script>
 <script src="assets/cocoa.js?v=20261111a"></script>
 <script>
-const SECTIONS = ['overview', 'cotton', 'sugar', 'coffee', 'cocoa', 'markets', 'options', 'seasonal', 'cotfull', 'brexp'];
+const SECTIONS = ['overview', 'optsig', 'cotton', 'sugar', 'coffee', 'cocoa', 'markets', 'options', 'seasonal', 'cotfull', 'brexp'];
 const CotFull = {
   show() {
     const f = $('#cot-frame'), t = (location.hash.match(/^#cot\/(\w+)/) || [])[1];
@@ -83,6 +86,7 @@ $$('nav.comm button[data-c]').forEach(b => b.onclick = () => {
   const c = b.dataset.c;
   try {
     if (c === 'overview') Overview.show();
+    else if (c === 'optsig') OptSig.show();
     else if (c === 'cotton') Cotton.show();
     else if (c === 'sugar') Softs.show('sugar');
     else if (c === 'coffee') Softs.show('coffee');
@@ -95,7 +99,7 @@ $$('nav.comm button[data-c]').forEach(b => b.onclick = () => {
   } catch (e) { $('#' + c).innerHTML = '<div class="card"><p class="note">This section failed to load.</p></div>'; console.error(e); }
 });
 const h = location.hash;
-const pick = h === '#overview' ? 'overview' : h.startsWith('#su') ? 'sugar' : h.startsWith('#kc') ? 'coffee' : h.startsWith('#cc-') ? 'cocoa' : h.startsWith('#cot') ? 'cotfull' : h === '#markets' ? 'markets'
+const pick = h === '#overview' ? 'overview' : h === '#ideas' ? 'optsig' : h.startsWith('#su') ? 'sugar' : h.startsWith('#kc') ? 'coffee' : h.startsWith('#cc-') ? 'cocoa' : h.startsWith('#cot') ? 'cotfull' : h === '#markets' ? 'markets'
   : h.startsWith('#options') ? 'options' : h.startsWith('#seasonal') ? 'seasonal' : h === '#brexp' ? 'brexp' : 'cotton';
 $('nav.comm button[data-c="' + pick + '"]').click();
 </script>
