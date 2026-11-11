@@ -1,5 +1,8 @@
 name: preview-cocoa (branch only, remove before merge)
-on: {workflow_dispatch: {}}
+on:
+  push:
+    branches: [overview]
+    paths: ['.github/workflows/preview_cocoa.yml']
 permissions: {contents: write}
 jobs:
   run:
