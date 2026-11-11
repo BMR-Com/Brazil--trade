@@ -1,0 +1,36 @@
+{
+ "updated": "2026-11-11 20:44 UTC",
+ "views": {
+  "cotton": {
+   "view": "bullish",
+   "shade": "bull2",
+   "score": 0.21
+  },
+  "sugar": {
+   "view": "neutral",
+   "shade": "neutral",
+   "score": -0.01
+  },
+  "coffee": {
+   "view": "bearish",
+   "shade": "bear2",
+   "score": -0.29
+  },
+  "cocoa": {
+   "view": "mildly bearish",
+   "shade": "bear1",
+   "score": -0.16
+  }
+ },
+ "alerts": {
+  "cotton": [],
+  "sugar": [],
+  "coffee": [],
+  "cocoa": []
+ },
+ "news": [
+  "2026-11-11 Ivory Coast weather agency: El Nino could cut cocoa output up to 25%",
+  "2026-11-11 Screwworm resurgence in milder weather",
+  "2026-11-11 Orlen cancels QatarEnergy LNG deal"
+ ]
+}

@@ -11,30 +11,31 @@
     },
     "sugar": {
       "date": "2026-11-11",
-      "fund_score": -0.3,
-      "fundamental": "India's crush started unusually fast in October (Maharashtra harvested early for the festival season), a bearish surprise after months of El Niño and weak-monsoon worries.",
+      "fund_score": -0.25,
+      "fundamental": "Nothing new from Brazil's centre-south today; the fast start to India's crush still sets the tone. The bounce in March raws came from short covering on firmer crude, which nudges Brazilian mills toward ethanol at the margin, not from a change in the cane balance.",
       "events": [
-        "Early Indian production data triggered a sharp selloff in March raws early in the week; prices are holding near the low end of that move (ADMIS)."
+        "March raws rebounded about 2% as crude strength prompted short covering (Barchart).",
+        "India's early, quick crush remains the main bearish surprise for the new season (ADMIS, Barchart)."
       ]
     },
     "coffee": {
       "date": "2026-11-11",
-      "fund_score": -0.3,
-      "fundamental": "Brazilian coffee is reaching the exchange: ICE certified arabica has risen for several sessions after a long decline, and the volume pending grading jumped to its highest since March, all from Brazil — the deliverability that has made Brazil the price setter now weighs on the nearby. Brazil's October exports were up about a fifth on the year while Colombia's output fell after heavy rain. Rains in Brazil's coffee areas help next year's crop.",
+      "fund_score": -0.35,
+      "fundamental": "The deliverability story is strengthening: ICE certified arabica keeps climbing as Brazilian lots clear grading, and that exchange supply is what is pressing Dec and March lower. With Brazil shipping briskly and rains helping next year's crop, there is little on the supply side to slow the slide near term.",
       "events": [
-        "Brazil's October green coffee exports up ~23% y/y; Colombia's October production down ~8% (ADMIS).",
-        "ICE arabica pending grading at its highest since March, all Brazilian — a lead on further certified-stock builds (ADMIS).",
-        "March arabica is pressing toward its September low; Vietnam's robusta harvest weighs on robusta (ADMIS)."
+        "Arabica fell again as ICE certified stocks and wider global supply weigh on the nearby (ADMIS, Barchart).",
+        "Brazil-origin lots dominate the arabica grading queue, pointing to more certified-stock builds ahead (ADMIS).",
+        "Brazil's October exports ran well above last year while Colombia's output slipped (ADMIS)."
       ]
     },
     "cocoa": {
       "date": "2026-11-11",
-      "fund_score": -0.15,
-      "fundamental": "Two forces pull against each other. ICE certified cocoa stocks keep building to their highest since May 2024, a sign supply is outrunning grindings. Ivory Coast port arrivals are well behind last year and the 5-year average, and West Africa is drying as the rainy season ends with El Niño in play, though a leading forecaster says the risk is smaller than the hype. Near term the stock build dominates.",
+      "fund_score": -0.05,
+      "fundamental": "A new supply risk offsets part of the stock build: Ivory Coast's weather agency warned El Niño could cut national output by as much as a quarter, which lands as port arrivals already lag badly. Prices bounced about 4% on short covering, but ICE certified stocks are still at an 18-month high, so the bearish exchange picture has not gone away.",
       "events": [
-        "March cocoa broke out of a four-month range to its lowest since June and is testing the 200-day average (ADMIS).",
-        "ICE cocoa stocks at their highest since May 2024 and still rising (ADMIS).",
-        "Ivory Coast cumulative arrivals far below last year and the 5-year average despite an earlier season start; weekly arrivals improving (ADMIS, Reuters)."
+        "Ivory Coast's meteorological agency warned El Niño could reduce cocoa production by up to 25% (Reuters).",
+        "Dec cocoa jumped ~4% intraday on short covering after breaking to its lowest since June (Barchart, ADMIS).",
+        "ICE cocoa stocks keep building to their highest since May 2024 while Ivorian arrivals trail last year (ADMIS, Reuters)."
       ]
     }
   }
