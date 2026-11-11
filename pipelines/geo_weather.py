@@ -116,8 +116,19 @@ R = [
     ("et_jm", "Jimma, Ethiopia", "Ethiopia", 7.67, 36.83, ["coffee"], "03-01", "arabica: main rains Jun-Sep, harvest Oct-Jan"),
     ("id_lp", "Lampung, Sumatra", "Indonesia", -5.10, 104.90, ["coffee"], "10-01", "robusta: harvest Apr-Aug"),
     ("ug_ms", "Masaka, Uganda", "Uganda", -0.33, 31.73, ["coffee"], "03-01", "robusta: two rainy seasons, two harvests"),
+    # cocoa belt: main crop Oct-Mar grows on the Apr-Jul and Sep-Nov rains; mid crop Apr-Sep; harmattan Dec-Feb
+    ("ci_sb", "Soubré, Nawa (Côte d'Ivoire)", "Côte d'Ivoire", 5.78, -6.60, ["cocoa"], "04-01", "the largest cocoa region: south-west, ships via San-Pédro"),
+    ("ci_dl", "Daloa, Haut-Sassandra (Côte d'Ivoire)", "Côte d'Ivoire", 6.88, -6.45, ["cocoa"], "04-01", "centre-west cocoa; drier, harmattan-exposed"),
+    ("ci_dv", "Divo, Lôh-Djiboua (Côte d'Ivoire)", "Côte d'Ivoire", 5.84, -5.36, ["cocoa"], "04-01", "centre-south cocoa; ships via Abidjan"),
+    ("ci_ab", "Abengourou, Indénié (Côte d'Ivoire)", "Côte d'Ivoire", 6.73, -3.49, ["cocoa"], "04-01", "east: older trees, swollen-shoot affected"),
+    ("gh_sf", "Sefwi Wiawso, Western North (Ghana)", "Ghana", 6.21, -2.49, ["cocoa"], "04-01", "Ghana's top cocoa region; swollen shoot and galamsey losses"),
+    ("gh_ku", "Kumasi, Ashanti (Ghana)", "Ghana", 6.69, -1.62, ["cocoa"], "04-01", "Ashanti cocoa"),
+    ("gh_su", "Sunyani, Bono (Ghana)", "Ghana", 7.34, -2.33, ["cocoa"], "04-01", "northern edge of the belt; harmattan-exposed"),
+    ("cm_mb", "Mbalmayo, Centre (Cameroon)", "Cameroon", 3.52, 11.50, ["cocoa"], "03-01", "Cameroon cocoa (bimodal rains)"),
+    ("ng_ak", "Akure, Ondo (Nigeria)", "Nigeria", 7.25, 5.19, ["cocoa"], "04-01", "Nigeria's main cocoa state"),
+    ("ec_lr", "Quevedo, Los Ríos (Ecuador)", "Ecuador", -1.03, -79.46, ["cocoa"], "12-01", "CCN-51 and fine-flavour cocoa; rainy season Dec-May"),
 ]
-R = [r for r in R if set(r[5]) & {"cotton", "sugar", "coffee"}]   # softs desk: cotton, sugar and coffee regions only
+R = [r for r in R if set(r[5]) & {"cotton", "sugar", "coffee", "cocoa"}]   # softs desk: cotton, sugar, coffee and cocoa regions only
 
 
 LIMITED = {"hit": False}

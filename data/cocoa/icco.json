@@ -1,0 +1,27 @@
+{
+  "updated": "2026-11-11",
+  "about": "ICCO Quarterly Bulletin of Cocoa Statistics (QBCS) headline world balance, as published in ICCO's free press releases (thousand tonnes; cocoa year Oct-Sep). Surplus/deficit = production minus grindings minus a 1% loss-in-weight allowance. The full bulletin (by country) is paid. Update when a new bulletin is released (end of Feb, May, Aug/Sep, Nov).",
+  "source": "https://www.icco.org/statistics/",
+  "releases": [
+    {"release": "2025-11-28", "label": "Nov 2025 QBCS", "season": "2023/24", "production": 4365, "grindings": 4810, "surplus": -489, "stocks": 1275, "stocks_grind_pct": 26.5, "kind": "revised"},
+    {"release": "2025-11-28", "label": "Nov 2025 QBCS", "season": "2024/25", "production": 4698, "grindings": 4602, "surplus": 49, "stocks": 1324, "stocks_grind_pct": 28.8, "kind": "forecast"},
+    {"release": "2026-02-27", "label": "Feb 2026 QBCS", "season": "2024/25", "production": 4728, "grindings": 4606, "surplus": 75, "stocks": 1347, "stocks_grind_pct": 29.2, "kind": "revised"},
+    {"release": "2026-05-29", "label": "May 2026 QBCS", "season": "2024/25", "production": 4723, "grindings": 4628, "surplus": 48, "stocks": 1320, "stocks_grind_pct": 28.5, "kind": "revised"},
+    {"release": "2026-08", "label": "Aug 2026 QBCS", "season": "2024/25", "production": 4733, "grindings": 4649, "surplus": 37, "stocks": 1309, "stocks_grind_pct": 28.2, "kind": "revised", "note": "ICCO withheld its 2025/26 production and grindings figures in this bulletin"}
+  ],
+  "others": [
+    {"source": "StoneX", "season": "2025/26", "surplus": 247, "when": "2026", "note": "cut from 287"},
+    {"source": "StoneX", "season": "2026/27", "surplus": 149, "when": "2026"},
+    {"source": "Rabobank", "season": "2025/26", "surplus": 250, "when": "early 2026", "note": "cut from 328"},
+    {"source": "ING", "season": "2025/26", "surplus": 175, "when": "2026"},
+    {"source": "Transgraph", "season": "2025/26", "surplus": 415, "when": "2026"},
+    {"source": "Transgraph", "season": "2026/27", "surplus": 80, "when": "2026"}
+  ],
+  "origins": [
+    {"country": "Côte d'Ivoire", "role": "~35-40% of world beans; Conseil Café-Cacao (CCC) fixes the farmgate price each October and April and sells forward", "watch": "weekly port arrivals (Abidjan, San-Pédro) vs last season; main-crop farmgate price; forward sales pace"},
+    {"country": "Ghana", "role": "second in Africa; COCOBOD fixes farmgate prices and finances purchases with forward sales/syndicated loans", "watch": "COCOBOD purchases and financing; smuggling across borders when farmgate prices lag; swollen shoot and illegal mining (galamsey)"},
+    {"country": "Ecuador", "role": "fastest-growing origin (CCN-51 and fine flavour); now rivals Ghana", "watch": "export data; El Niño rains"},
+    {"country": "Cameroon / Nigeria", "role": "liberalised markets: farmers sell at world-linked prices", "watch": "exports; Nigeria's association forecasts"},
+    {"country": "Brazil / Indonesia", "role": "smaller origins; Brazil also a large grinder", "watch": "domestic grind and imports"}
+  ]
+}

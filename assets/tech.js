@@ -8,7 +8,7 @@ const Tech = (() => {
   let on = {}; Object.keys(OV).forEach(k => on[k] = !!OV[k][1]); Object.keys(OSC).forEach(k => on[k] = !!OSC[k][1]);
   try { const s = JSON.parse(localStorage.getItem('ags_tech_on') || 'null'); if (s) on = Object.assign(on, s); } catch (e) {}
   const save = () => { try { localStorage.setItem('ags_tech_on', JSON.stringify(on)); } catch (e) {} };
-  const NAMES = { ZC: 'Corn', ZS: 'Soybeans', ZW: 'Chicago wheat', KE: 'KC wheat', ZM: 'Meal', ZL: 'Oil', HE: 'Lean hogs', LE: 'Live cattle', GF: 'Feeder cattle', DC: 'Class III', GDK: 'Class IV', CSC: 'Cheese', CB: 'Butter', GNF: 'NFDM', DY: 'Dry whey' };
+  const NAMES = { CC: 'Cocoa', ZC: 'Corn', ZS: 'Soybeans', ZW: 'Chicago wheat', KE: 'KC wheat', ZM: 'Meal', ZL: 'Oil', HE: 'Lean hogs', LE: 'Live cattle', GF: 'Feeder cattle', DC: 'Class III', GDK: 'Class IV', CSC: 'Cheese', CB: 'Butter', GNF: 'NFDM', DY: 'Dry whey' };
   const cache = {};
   let uid = 0;
 

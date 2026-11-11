@@ -14,13 +14,14 @@
 <body>
 <header>
   <h1>BMR-Com · Softs Desk</h1>
-  <div class="meta" id="meta">Cotton, sugar and coffee · USDA / CFTC / ICE / UNICA / Cecafé / ICO data</div>
+  <div class="meta" id="meta">Cotton, sugar, coffee and cocoa · USDA / CFTC / ICE / UNICA / Cecafé / ICO / ICCO data</div>
 </header>
 <nav class="comm">
   <button data-c="overview" title="One coloured tile per market: overall read, fundamentals, fair value, recent events, technicals and levels, vol, seasonality, COT">Overview</button>
   <button class="on" data-c="cotton">Cotton</button>
   <button data-c="sugar">Sugar</button>
   <button data-c="coffee">Coffee</button>
+  <button data-c="cocoa">Cocoa</button>
   <button data-c="markets">Markets &amp; macro</button>
   <button data-c="options">Options pricer</button>
   <button data-c="seasonal" title="Seasonal trades, heat maps, spreads and seasonal charts">Seasonality</button>
@@ -32,6 +33,7 @@
 <section id="cotton"></section>
 <section id="sugar" style="display:none"></section>
 <section id="coffee" style="display:none"></section>
+<section id="cocoa" style="display:none"></section>
 <section id="markets" style="display:none"></section>
 <section id="options" style="display:none"></section>
 <section id="seasonal" style="display:none"></section>
@@ -41,8 +43,8 @@
 <script src="assets/lib.js?v=20261101a"></script>
 <script src="assets/specs.js?v=20261101a"></script>
 <script src="assets/playbook.js?v=20261101a"></script>
-<script src="assets/tech.js?v=20261101a"></script>
-<script src="assets/cotdesk.js?v=20261101a"></script>
+<script src="assets/tech.js?v=20261111c"></script>
+<script src="assets/cotdesk.js?v=20261111c"></script>
 <script src="assets/intel.js?v=20261111r"></script>
 <script src="assets/esr.js?v=20261101a"></script>
 <script src="assets/wasde.js?v=20261101a"></script>
@@ -51,7 +53,7 @@
 <script src="assets/geo.js?v=20261108f"></script>
 <script src="assets/options.js?v=20261101a"></script>
 <script src="assets/balance.js?v=20261101a"></script>
-<script src="assets/seasonal.js?v=20261101a"></script>
+<script src="assets/seasonal.js?v=20261111c"></script>
 <script src="assets/basis.js?v=20261101a"></script>
 <script src="assets/china.js?v=20261101a"></script>
 <script src="assets/price_outlook.js?v=20261101a"></script>
@@ -63,9 +65,10 @@
 <script src="assets/sugar.js?v=20261104b"></script>
 <script src="assets/coffee.js?v=20261104b"></script>
 <script src="assets/softs.js?v=20261103a"></script>
-<script src="assets/overview.js?v=20261111a"></script>
+<script src="assets/overview.js?v=20261111c"></script>
+<script src="assets/cocoa.js?v=20261111a"></script>
 <script>
-const SECTIONS = ['overview', 'cotton', 'sugar', 'coffee', 'markets', 'options', 'seasonal', 'cotfull', 'brexp'];
+const SECTIONS = ['overview', 'cotton', 'sugar', 'coffee', 'cocoa', 'markets', 'options', 'seasonal', 'cotfull', 'brexp'];
 const CotFull = {
   show() {
     const f = $('#cot-frame'), t = (location.hash.match(/^#cot\/(\w+)/) || [])[1];
@@ -83,6 +86,7 @@ $$('nav.comm button[data-c]').forEach(b => b.onclick = () => {
     else if (c === 'cotton') Cotton.show();
     else if (c === 'sugar') Softs.show('sugar');
     else if (c === 'coffee') Softs.show('coffee');
+    else if (c === 'cocoa') Cocoa.show();
     else if (c === 'markets') Markets.show();
     else if (c === 'options') Options.show();
     else if (c === 'seasonal') Seasonal.show();
@@ -91,7 +95,7 @@ $$('nav.comm button[data-c]').forEach(b => b.onclick = () => {
   } catch (e) { $('#' + c).innerHTML = '<div class="card"><p class="note">This section failed to load.</p></div>'; console.error(e); }
 });
 const h = location.hash;
-const pick = h === '#overview' ? 'overview' : h.startsWith('#su') ? 'sugar' : h.startsWith('#kc') ? 'coffee' : h.startsWith('#cot') ? 'cotfull' : h === '#markets' ? 'markets'
+const pick = h === '#overview' ? 'overview' : h.startsWith('#su') ? 'sugar' : h.startsWith('#kc') ? 'coffee' : h.startsWith('#cc-') ? 'cocoa' : h.startsWith('#cot') ? 'cotfull' : h === '#markets' ? 'markets'
   : h.startsWith('#options') ? 'options' : h.startsWith('#seasonal') ? 'seasonal' : h === '#brexp' ? 'brexp' : 'cotton';
 $('nav.comm button[data-c="' + pick + '"]').click();
 </script>
