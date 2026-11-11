@@ -1,35 +1,6 @@
 {
-"generated": "2026-11-08 00:36 UTC",
+"generated": "2026-11-11 17:55 UTC",
 "events": [
-{
-"date": "2026-11-02",
-"time": "10:00 AM CT",
-"event": "USDA export inspections",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE"
-],
-"importance": 1,
-"link": null,
-"estimated": false
-},
-{
-"date": "2026-11-03",
-"time": "3:30 PM CT",
-"event": "API weekly crude & product inventories (industry)",
-"cat": "Energy",
-"markets": [
-"CL",
-"HO",
-"RB"
-],
-"importance": 1,
-"link": null,
-"estimated": false
-},
 {
 "date": "2026-11-04",
 "time": "9:30 AM CT",
@@ -2311,6 +2282,67 @@
 "cat": "CFTC",
 "markets": [
 "ALL"
+],
+"importance": 1,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-08",
+"time": "10:00 AM CT",
+"event": "USDA export inspections",
+"cat": "USDA",
+"markets": [
+"ZC",
+"ZS",
+"ZW",
+"KE"
+],
+"importance": 1,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-09",
+"time": "11:00 AM CT",
+"event": "USDA WASDE (date estimated; USDA has not published the 2027 schedule here)",
+"cat": "USDA",
+"markets": [
+"ZC",
+"ZS",
+"ZM",
+"ZL",
+"ZW",
+"KE"
+],
+"importance": 3,
+"link": null,
+"estimated": true
+},
+{
+"date": "2027-02-09",
+"time": "11:00 AM CT",
+"event": "EIA Short-Term Energy Outlook (date estimated)",
+"cat": "Energy",
+"markets": [
+"CL",
+"NG",
+"HO",
+"RB"
+],
+"importance": 2,
+"link": "https://www.eia.gov/outlooks/steo/",
+"estimated": true
+},
+{
+"date": "2027-02-09",
+"time": "3:30 PM CT",
+"event": "API weekly crude & product inventories (industry)",
+"cat": "Energy",
+"markets": [
+"CL",
+"HO",
+"RB"
 ],
 "importance": 1,
 "link": null,
