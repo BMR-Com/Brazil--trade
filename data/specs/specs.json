@@ -452,20 +452,20 @@
 "quote": "\u00a2/lb",
 "tick": "0.01\u00a2 = $5",
 "usd": 500,
-"price": 78.6,
+"price": 78.67,
 "months": "Mar, May, Jul, Oct, Dec",
 "settle": "Physical (certificated cotton at ICE warehouses)",
 "options": "Yes",
 "margin_note": "ICE margin: see ICE Clear US (risk-based, not published as a flat rate)",
 "of": "CT",
 "front_contract": "Dec 26",
-"price_date": "2026-11-10",
-"notional": 39300,
-"day_move": 321,
+"price_date": "2026-11-11",
+"notional": 39335,
+"day_move": 320,
 "hv20": 12.9,
-"maint_est": 1058,
+"maint_est": 1054,
 "margin_pct": 2.7,
-"leverage": 37.1
+"leverage": 37.3
 }
 ],
 "sugar": [
