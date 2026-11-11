@@ -13,6 +13,7 @@ CODES = {  # CFTC contract market codes (softs desk)
     "CT": "033661",   # Cotton No. 2
     "SB": "080732",   # Sugar No. 11
     "KC": "083731",   # Coffee C
+    "CC": "073732",   # Cocoa
 }
 SETS = {"fo": "kh3c-gbw2", "fut": "72hh-3qpy"}
 

@@ -16,11 +16,11 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "technicals"
 CODES = "FGHJKMNQUVXZ"
 MNAME = dict(zip(CODES, ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]))
-UNITS = {"CT": ("¢/lb", 2), "SB": ("¢/lb", 2), "KC": ("¢/lb", 2), "ZC": ("¢/bu", 2), "ZS": ("¢/bu", 2), "ZW": ("¢/bu", 2), "KE": ("¢/bu", 2), "ZM": ("$/st", 1), "ZL": ("¢/lb", 2),
+UNITS = {"CT": ("¢/lb", 2), "SB": ("¢/lb", 2), "KC": ("¢/lb", 2), "CC": ("$/t", 0), "ZC": ("¢/bu", 2), "ZS": ("¢/bu", 2), "ZW": ("¢/bu", 2), "KE": ("¢/bu", 2), "ZM": ("$/st", 1), "ZL": ("¢/lb", 2),
          "HE": ("¢/lb", 3), "LE": ("¢/lb", 3), "GF": ("¢/lb", 3), "DC": ("$/cwt", 2), "GDK": ("$/cwt", 2),
          "CSC": ("$/lb", 3), "CB": ("¢/lb", 3), "GNF": ("¢/lb", 3), "DY": ("¢/lb", 3),
          "NG": ("$/MMBtu", 3), "CL": ("$/bbl", 2), "HO": ("$/gal", 4), "RB": ("$/gal", 4)}
-NAMES = {"CT": "Cotton", "SB": "Sugar No. 11", "KC": "Coffee C", "ZC": "Corn", "ZS": "Soybeans", "ZW": "Chicago wheat", "KE": "KC HRW wheat", "ZM": "Soybean meal", "ZL": "Soybean oil",
+NAMES = {"CT": "Cotton", "SB": "Sugar No. 11", "KC": "Coffee C", "CC": "Cocoa", "ZC": "Corn", "ZS": "Soybeans", "ZW": "Chicago wheat", "KE": "KC HRW wheat", "ZM": "Soybean meal", "ZL": "Soybean oil",
          "HE": "Lean hogs", "LE": "Live cattle", "GF": "Feeder cattle", "DC": "Class III milk", "GDK": "Class IV milk",
          "CSC": "Cheese", "CB": "Butter", "GNF": "Nonfat dry milk", "DY": "Dry whey",
          "NG": "Natural gas", "CL": "WTI crude", "HO": "ULSD (heating oil)", "RB": "RBOB gasoline"}

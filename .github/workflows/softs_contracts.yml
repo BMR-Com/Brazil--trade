@@ -22,6 +22,8 @@ jobs:
         continue-on-error: true
       - run: python pipelines/contracts.py KC
         continue-on-error: true
+      - run: python pipelines/contracts.py CC
+        continue-on-error: true
       - name: spreads, calendar, seasonality, specs, trader sheet
         continue-on-error: true
         run: |

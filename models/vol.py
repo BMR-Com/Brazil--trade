@@ -28,6 +28,7 @@ SPEC = {
     "ZW": ("Chicago wheat", "Grains & oilseeds", "¢/bu", 50, 5, 2, "grain"), "KE": ("KC HRW wheat", "Grains & oilseeds", "¢/bu", 50, 5, 2, "grain"),
     "CT": ("Cotton", "Softs", "¢/lb", 500, 1, 2, "cotton"),
     "SB": ("Sugar No. 11", "Softs", "¢/lb", 1120, 0.25, 2, "sugar"), "KC": ("Coffee C", "Softs", "¢/lb", 375, 5, 2, "coffee"),
+    "CC": ("Cocoa", "Softs", "$/t", 10, 50, 0, "coffee"),   # ICE cocoa options: same expiry rule as coffee
     "LE": ("Live cattle", "Livestock", "¢/lb", 400, 1, 3, "le"), "GF": ("Feeder cattle", "Livestock", "¢/lb", 500, 1, 3, "gf"),
     "HE": ("Lean hogs", "Livestock", "¢/lb", 400, 1, 3, "he"),
     "DC": ("Class III milk", "Dairy", "$/cwt", 2000, 0.25, 2, "dairy"), "GDK": ("Class IV milk", "Dairy", "$/cwt", 2000, 0.25, 2, "dairy"),

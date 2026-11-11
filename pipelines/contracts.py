@@ -17,6 +17,7 @@ SPEC = {  # sym: (exchange, TV root, months, first year) — softs desk
     "CT": ("ICEUS", "CT", "HKNZ", 2006),   # ICE cotton No. 2: Mar, May, Jul, Dec (October ignored)
     "SB": ("ICEUS", "SB", "HKNV", 2006),   # ICE sugar No. 11: Mar, May, Jul, Oct
     "KC": ("ICEUS", "KC", "HKNUZ", 2006),  # ICE coffee C: Mar, May, Jul, Sep, Dec
+    "CC": ("ICEUS", "CC", "HKNUZ", 2006),  # ICE cocoa (US$/t): Mar, May, Jul, Sep, Dec
 }
 
 
