@@ -48,7 +48,7 @@ jobs:
         if: steps.t.outputs.go == '1'
         run: |
           fail=""
-          for m in wasde_store wasde_cotton_brief grains_wasde grains_esr_brief grains_wasde_brief balance_sheets dairy_sd summary outlook_brief; do
+          for m in wasde_store wasde_cotton_brief grains_wasde grains_esr_brief grains_wasde_brief balance_sheets summary outlook_brief; do
             python -W ignore models/$m.py > /tmp/$m.log 2>&1 || { fail="$fail $m"; tail -20 /tmp/$m.log; }
           done
           echo "$fail" > /tmp/failed_models
