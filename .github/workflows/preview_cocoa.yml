@@ -1,0 +1,29 @@
+name: preview-cocoa (branch only, remove before merge)
+on: {workflow_dispatch: {}}
+permissions: {contents: write}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests pandas numpy scipy git+https://github.com/rongardF/tvdatafeed.git
+      - run: python pipelines/cot.py
+        continue-on-error: true
+      - run: python pipelines/ohlc.py CC
+        continue-on-error: true
+      - run: python pipelines/contracts.py CC
+        continue-on-error: true
+      - run: |
+          python -W ignore models/technicals.py CC || true
+          python -W ignore models/cot_desk.py || true
+          python -W ignore models/seasonal_desk.py CC || true
+          python models/vol.py || true
+          python -W ignore models/overview.py
+      - run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data
+          git commit -q -m "preview: cocoa data + overview" || exit 0
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin overview && git push -q origin HEAD:overview && break; sleep 5; done
