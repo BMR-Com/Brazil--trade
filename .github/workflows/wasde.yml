@@ -1,28 +1,67 @@
 name: wasde
-# WASDE day (USDA releases at 11 am CT around the 8th–14th). BMR-Com/wasde-analytics parses the release at 20:00 UTC;
-# this rebuilds the desk's grains balance sheets and WASDE briefs right after, with a later retry.
+# WASDE day (USDA releases at 12:00 ET around the 8th–14th). Same as BMR-Com/US-commodity-desk's wasde.yml: the desk
+# fetches USDA's report CSV itself (pipelines/wasde.py -> data/wasde/raw), rebuilds its WASDE JSONs
+# (models/wasde_store.py), the cotton WASDE brief and every model here that uses WASDE. BMR-Com/wasde-analytics stays
+# as a fallback only. This desk has no clock workflow, so the US desk's report-day times (12:05, 12:20 and 16:30 ET,
+# weekdays, days 8-14) are set as UTC crons for both EST and EDT; the "time" step drops the twin that is an hour off.
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '25 20 8-14 * *'
-    - cron: '50 21 8-14 * *'
-    - cron: '30 23 8-14 * *'
+    - cron: '5 17 8-14 * 1-5'    # 12:05 EST
+    - cron: '20 17 8-14 * 1-5'   # 12:20 EST
+    - cron: '30 21 8-14 * 1-5'   # 16:30 EST
+    - cron: '5 16 8-14 * 1-5'    # 12:05 EDT
+    - cron: '20 16 8-14 * 1-5'   # 12:20 EDT
+    - cron: '30 20 8-14 * 1-5'   # 16:30 EDT
 permissions: {contents: write}
 concurrency: {group: wasde, cancel-in-progress: false}
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 75
     steps:
+      - name: time (skip the DST twin of a scheduled run)
+        id: t
+        run: |
+          go=1
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            go=$(python3 -c "
+          from datetime import datetime; from zoneinfo import ZoneInfo
+          n = datetime.now(ZoneInfo('America/New_York')); m = n.hour * 60 + n.minute
+          print(1 if any(0 <= m - t <= 30 for t in (12*60+5, 12*60+20, 16*60+30)) else 0)")
+          fi
+          echo "go=$go" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
+        if: steps.t.outputs.go == '1'
       - uses: actions/setup-python@v5
+        if: steps.t.outputs.go == '1'
         with: {python-version: '3.11'}
-      - run: pip install -q requests pandas numpy
-      - run: python models/grains_wasde.py && python -W ignore models/grains_wasde_brief.py && python -W ignore models/summary.py && python -W ignore models/outlook_brief.py
+      - if: steps.t.outputs.go == '1'
+        run: pip install -q requests pandas numpy curl_cffi python-dateutil
+      - name: fetch the USDA report (waits up to 35 minutes for it on report day)
+        if: steps.t.outputs.go == '1'
+        continue-on-error: true
+        run: |
+          [ -n "$(ls data/wasde/raw/*.csv.gz 2>/dev/null)" ] || python pipelines/wasde.py seed
+          python -u pipelines/wasde.py fetch --wait 35
+      - name: rebuild WASDE models
+        if: steps.t.outputs.go == '1'
+        run: |
+          fail=""
+          for m in wasde_store wasde_cotton_brief grains_wasde grains_esr_brief grains_wasde_brief balance_sheets dairy_sd summary outlook_brief; do
+            python -W ignore models/$m.py > /tmp/$m.log 2>&1 || { fail="$fail $m"; tail -20 /tmp/$m.log; }
+          done
+          echo "$fail" > /tmp/failed_models
       - name: commit
+        if: always() && steps.t.outputs.go == '1'
         run: |
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
           git add data
           git diff --cached --quiet && exit 0
           git commit -q -m "data: WASDE $(date -u +%F)"
           for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: report failed models
+        if: always() && steps.t.outputs.go == '1'
+        run: |
+          f="$(cat /tmp/failed_models 2>/dev/null | xargs)"
+          [ -z "$f" ] || { echo "::error::models failed: $f"; exit 1; }

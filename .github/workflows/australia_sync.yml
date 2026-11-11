@@ -1,0 +1,30 @@
+name: australia-sync
+# Australian cotton (Cotton → Australia tab) is collected and modelled in BMR-Com/US-commodity-desk (australia.yml);
+# this copies its page data here so the softs desk shows the same numbers. No second collector runs.
+# Same pattern as the US desk's cotton_certs_sync.yml (which copies the other way).
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '47 22 * * *'
+permissions: {contents: write}
+concurrency: {group: australia-sync, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: copy from the US desk
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse https://github.com/BMR-Com/US-commodity-desk.git src
+          cd src && git sparse-checkout set --no-cone /data/australia/australia.json /data/australia/raw/forecasts_manual.json && cd ..
+          mkdir -p data/australia/raw
+          cp src/data/australia/australia.json data/australia/
+          cp src/data/australia/raw/forecasts_manual.json data/australia/raw/
+          rm -rf src
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/australia; git diff --cached --quiet && exit 0
+          git commit -q -m "data: Australia cotton sync from the US desk $(date -u +%F)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || exit 1
