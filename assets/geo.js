@@ -159,7 +159,7 @@ const Geo = (() => {
       <div class="tbl"><table class="geo-mini"><tr><th class="l">Weighted index</th><th>30 d</th><th>90 d</th><th>Season (${X.season_label})</th><th>Soil moist.</th><th>Max temp anom.</th><th>Next 16 d</th></tr>
         <tr><td class="l"><b>${c.country}</b></td><td class="${pnc(X.r30_pct_normal)}">${pn(X.r30_pct_normal)}</td><td class="${pnc(X.r90_pct_normal)}">${pn(X.r90_pct_normal)}</td><td class="${pnc(X.rstd_pct_normal)}">${pn(X.rstd_pct_normal)}</td>
         <td class="${pcol(X.sm100_p)}">${X.sm100_p != null ? ord(Math.round(X.sm100_p)) + ' pct' : '–'}</td><td>${tmp != null ? (tmp > 0 ? '+' : '') + tmp.toFixed(1) + '°C' : '–'}</td><td class="${pnc(X.f16_rain_pct_normal)}">${pn(X.f16_rain_pct_normal)}</td></tr></table></div>
-      <div class="tbl"><table class="geo-mini"><tr><th class="l">Region</th><th>Share</th><th>Rain 30 d</th><th>Rain 90 d</th><th>Season</th><th>Soil moist.</th><th>Next 16 d</th></tr>
+      <div class="tbl"><table class="geo-mini"><tr><th class="l">Region</th><th>Share of output</th><th>Rain 30 d</th><th>Rain 90 d</th><th>Season</th><th>Soil moist.</th><th>Next 16 d</th></tr>
         ${X.regions.map(r => { const q = (a, b) => a == null ? '–' : b ? pn(100 * a / b) : n0(a) + ' mm';
           return `<tr class="${r.has_weather ? '' : 'note'}"><td class="l">${r.label}${r.has_weather && !r.has_history ? ' <span class="note">(history pending)</span>' : ''}${r.has_weather ? '' : ' <span class="note">(loading)</span>'}</td><td>${r.share}%</td>
             <td class="${r.r30_n ? pnc(100 * r.r30 / r.r30_n) : ''}">${q(r.r30, r.r30_n)}</td><td class="${r.r90_n ? pnc(100 * r.r90 / r.r90_n) : ''}">${q(r.r90, r.r90_n)}</td><td>${q(r.rstd, r.rstd_n)}</td>

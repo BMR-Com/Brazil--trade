@@ -211,7 +211,7 @@ def main():
             regions = []
             for p, lab, s in wts:
                 r = wx.get(p, {})
-                regions.append({"id": p, "label": lab or r.get("name", p), "share": round(100 * s / tot, 1), "has_weather": p in dict(have),
+                regions.append({"id": p, "label": lab or r.get("name", p), "share": round(s, 1), "has_weather": p in dict(have),
                                 "has_history": bool(r.get("r30_n")), **{k: r.get(k) for k in REG_FIELDS}})
             out["commodities"][com][cty] = {"source": cfg["source"], "note": cfg["note"], "season_label": slab, "mapped_pct": round(tot, 1),
                                             "weather_share": round(100 * hw / tot, 1), "normal_share": round(100 * sum(s for _, s in normal) / tot, 1),
