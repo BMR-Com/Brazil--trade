@@ -75,7 +75,7 @@ const Options = (() => {
     el.innerHTML = `<main>
       <div class="card"><div class="mk-bar">${groups.map(g => `<span class="note" style="margin-left:6px">${g}:</span>` + Object.entries(V.markets).filter(([, x]) => x.group === g).map(([k, x]) => `<button data-s="${k}" class="${k === sym ? 'on' : ''}">${x.name}</button>`).join('')).join(' ')}</div>
         <h2>${m.name} options <span class="note">${m.unit}; 1 contract = $${m.mult.toLocaleString()} per 1 ${m.unit.split('/')[0]}; options expire ${m.expiry_rule}</span></h2></div>
-      ${deskCard()}
+      ${flowCard()}${deskCard()}
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Realized volatility</h2>
           <p>Front-month 20-day realized vol <b>${fx(m.hv20_front, 1)}%</b>: ${m.hv20_pct1y ?? '–'}th percentile of the last year, ${m.hv20_pct5y ?? '–'}th of 5 years. ${(() => { const mo = new Date().getMonth(); const sv = m.seasonal[mo]; return sv ? `Typical 20-day vol this month: ${fx(sv, 1)}%.` : ''; })()}</p>
@@ -119,13 +119,45 @@ const Options = (() => {
     el.querySelector('#opD').oninput = e => { S.days = +e.target.value; el.querySelector('#opDl').textContent = S.days; drawPay(); };
     el.querySelector('#opVs').oninput = e => { S.vshift = +e.target.value; el.querySelector('#opVsl').textContent = (S.vshift > 0 ? '+' : '') + S.vshift; drawPay(); };
     el.querySelector('#opG').onchange = () => drawPay();
-    legs(); drawVol(); drawPay(); drawDesk();
+    legs(); drawVol(); drawPay(); drawDesk(); drawFlow();
+  }
+  // softs: open-interest positioning from the ICE settlement files (softs--options-)
+  function flowCard() {
+    const O = OPT[sym]; if (!O || !O.flow) return '';
+    const F = O.flow, m = V.markets[sym], k = v => v == null ? '–' : (+v).toLocaleString(), sg = v => v == null ? '–' : (v > 0 ? '+' : '') + (+v).toLocaleString();
+    const cc = v => v > 0 ? 'up' : v < 0 ? 'dn' : '';
+    const line = x => `${x.exp} ${x.K.toLocaleString()} ${x.cp === 'C' ? 'call' : 'put'}${x.und !== x.exp ? ` <span class="note">(on ${x.und})</span>` : ''}`;
+    const mv = (arr, f, lb) => `<div><h3>${lb}</h3><div class="tbl"><table><tr><th class="l">Option</th><th>Change</th><th>OI now</th><th>Delta</th><th>IV</th><th>Settle</th></tr>
+      ${arr.length ? arr.map(x => `<tr><td class="l">${line(x)}</td><td class="${cc(x[f])}"><b>${sg(x[f])}</b></td><td>${k(x.oi)}</td><td>${x.delta ?? '–'}</td><td>${x.iv ?? '–'}</td><td>${x.settle ?? '–'}</td></tr>`).join('') : '<tr><td colspan="6" class="note">none</td></tr>'}</table></div></div>`;
+    const topT = t => `<div><h3>${t.exp} <span class="note">on ${t.und} futures ${t.F}</span></h3><div class="tbl"><table><tr><th class="l">Calls: strike</th><th>OI</th><th>1d</th><th>5 sess.</th><th class="l">Puts: strike</th><th>OI</th><th>1d</th><th>5 sess.</th></tr>
+      ${[0, 1, 2, 3, 4].map(i => { const c = t.calls[i], p = t.puts[i]; return `<tr><td class="l">${c ? '<b>' + c.K + '</b>' : ''}</td><td>${c ? k(c.oi) : ''}</td><td class="${c ? cc(c.chg1) : ''}">${c ? sg(c.chg1) : ''}</td><td class="${c ? cc(c.chg5) : ''}">${c ? sg(c.chg5) : ''}</td>
+        <td class="l">${p ? '<b>' + p.K + '</b>' : ''}</td><td>${p ? k(p.oi) : ''}</td><td class="${p ? cc(p.chg1) : ''}">${p ? sg(p.chg1) : ''}</td><td class="${p ? cc(p.chg5) : ''}">${p ? sg(p.chg5) : ''}</td></tr>`; }).join('')}</table></div></div>`;
+    const D = F.daily;
+    return `<div class="card" style="margin-top:12px"><h2>Options positioning: open interest and flow <span class="note">${O.source}, last good session ${O.date}${O.skipped && O.skipped.length ? `; incomplete files skipped: ${O.skipped.join(', ')}` : ''}</span></h2>
+      <p>${O.read}</p>
+      <h3>Strikes with the most open interest</h3><div class="grid g2">${F.top.map(topT).join('')}</div>
+      <div class="grid g2" style="margin-top:8px">${O.strike_maps.map((s, i) => `<div><canvas id="flOI${i}" height="190"></canvas></div>`).join('')}</div>
+      <h3 style="margin-top:8px">Last ${D.length} sessions</h3>
+      <div class="tbl"><table><tr><th class="l">Date</th><th>Front</th><th>Futures</th><th>Call OI</th><th>Δ</th><th>Put OI</th><th>Δ</th><th>P/C OI</th><th>Call vol</th><th>Put vol</th><th>P/C vol</th><th>Front ATM IV</th><th>25Δ RR</th><th>Delta added</th></tr>
+      ${D.slice().reverse().map(x => `<tr><td class="l">${x.date}</td><td>${x.front || '–'}</td><td>${x.F ?? '–'}</td><td>${k(x.cOI)}</td><td class="${cc(x.dcOI)}">${sg(x.dcOI)}</td><td>${k(x.pOI)}</td><td class="${cc(x.dpOI)}">${sg(x.dpOI)}</td><td>${x.pc_oi ?? '–'}</td>
+        <td>${k(x.cVol)}</td><td>${k(x.pVol)}</td><td>${x.pc_vol ?? '–'}</td><td>${x.atm ?? '–'}</td><td>${x.rr25 == null ? '–' : (x.rr25 > 0 ? '+' : '') + x.rr25}</td><td class="${cc(x.delta_added)}">${sg(x.delta_added)}</td></tr>`).join('')}</table></div>
+      <div class="grid g2" style="margin-top:8px">${mv(F.moves.build_5d, 'chg5', 'Largest OI builds, last 5 sessions')}${mv(F.moves.cut_5d, 'chg5', 'Largest OI cuts, last 5 sessions')}</div>
+      <div class="grid g2">${mv(F.moves.build_1d, 'chg1', `Largest OI builds on ${O.date}`)}${mv(F.moves.cut_1d, 'chg1', `Largest OI cuts on ${O.date}`)}</div>
+      ${mv(F.moves.volume.map(x => ({ ...x, v: x.vol })), 'v', `Most traded on ${O.date} (volume)`)}
+      <p class="note">OI change "1d" is the exchange's reported change; "5 sess." compares with five sessions earlier. Delta added = Σ(delta × OI change) across all strikes: futures-equivalent lots added on the option holders' side (positive = more long delta held through calls or fewer puts). Put/call above 1 means more puts than calls open. Rising OI at a strike with the futures moving toward it often marks hedging or speculative interest building there; walls with large OI can pin prices into expiry.</p></div>`;
+  }
+  function drawFlow() {
+    const O = OPT[sym]; if (!O || !O.flow) return;
+    O.strike_maps.forEach((sk, i) => chart(`flOI${i}`, { type: 'bar', data: { labels: sk.rows.map(r => r.K), datasets: [
+      { label: 'call OI', data: sk.rows.map(r => r.cOI), backgroundColor: 'rgba(58,138,90,.65)', stack: 'oi' }, { label: 'put OI', data: sk.rows.map(r => -r.pOI), backgroundColor: 'rgba(184,69,47,.65)', stack: 'oi' },
+      { label: 'call OI change (1d)', data: sk.rows.map(r => r.dc), backgroundColor: 'rgba(30,90,50,.9)', stack: 'ch' }, { label: 'put OI change (1d)', data: sk.rows.map(r => -r.dp), backgroundColor: 'rgba(120,30,20,.9)', stack: 'ch' }] },
+      options: { plugins: { title: { display: true, text: `${sk.label}: OI by strike (puts below zero) and day's change; futures ${sk.F}` } }, scales: { x: { stacked: true, ticks: { maxTicksLimit: 16 } }, y: { stacked: true } } } }));
   }
   function deskCard() {
     const O = OPT[sym], m = V.markets[sym];
     if (!O) return `<div class="card" style="margin-top:12px"><h2>Implied vol desk</h2><p class="note">CME option settlements for ${m.name} are not collected yet (they are added by the nightly CME download); the pricer uses realized vol until then.</p></div>`;
     const pc = v => v == null ? '–' : (v > 0 ? '+' : '') + v.toFixed(1);
-    return `<div class="card" style="margin-top:12px"><h2>Implied vol desk <span class="note">CME settlements ${O.date}${O.week_ago ? `, changes vs ${O.week_ago}` : ''}</span></h2>
+    return `<div class="card" style="margin-top:12px"><h2>Implied vol desk <span class="note">${O.source ? 'ICE' : 'CME'} settlements ${O.date}${O.week_ago ? `, changes vs ${O.week_ago}` : ''}</span></h2>
       <p>${O.read}</p>
       <div class="tbl"><table><tr><th class="l">Option</th><th class="l">On futures</th><th>Days</th><th>Futures</th><th>ATM IV</th><th>1d</th><th>1w</th><th>RV20</th><th>IV−RV</th><th>25Δ RR</th><th>RR 1w</th><th>25Δ fly</th><th>Exp. move</th><th>Call OI</th><th>Put OI</th><th>P/C</th><th>OI chg 1w C / P</th><th>Call wall</th><th>Put wall</th><th>Max pain</th><th>Max γ</th></tr>
       ${O.expiries.filter(e => e.atm != null).map(e => `<tr class="${e.contract === O.front ? 'mk-today' : ''}"><td class="l">${e.label}</td><td class="l">${e.underlying}</td><td>${e.dte}</td><td>${fx(e.F, m.dp)}</td><td><b>${fx(e.atm, 1)}</b></td>

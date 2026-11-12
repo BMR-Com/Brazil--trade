@@ -33,7 +33,7 @@ jobs:
         run: python pipelines/ohlc.py
       - name: technicals, vol, research
         continue-on-error: true
-        run: python -W ignore models/technicals.py && python models/vol.py && python -W ignore models/research.py
+        run: python -W ignore models/technicals.py && python models/vol.py && (python models/softs_options.py || true) && python -W ignore models/research.py
       - name: COT desk
         continue-on-error: true
         run: |

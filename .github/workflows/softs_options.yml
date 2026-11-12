@@ -1,0 +1,30 @@
+name: softs-options
+# Softs option desk (cotton, sugar, coffee, cocoa) from the ICE settlement CSVs in BMR-Com/softs--options-:
+# vol desk plus open-interest positioning. Runs a few times a day so new uploads show up soon after they land.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['models/softs_options.py', '.github/workflows/softs_options.yml']
+  schedule:
+    - cron: '17 13 * * 1-6'
+    - cron: '17 17 * * 1-5'
+permissions: {contents: write}
+concurrency: {group: softs-options, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests pandas numpy
+      - run: python models/softs_options.py
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/options
+          git diff --cached --quiet && exit 0
+          git commit -q -m "options: softs desk from ICE settlements $(date -u +%F)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
