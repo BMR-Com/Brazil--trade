@@ -121,37 +121,63 @@ const Options = (() => {
     el.querySelector('#opG').onchange = () => drawPay();
     legs(); drawVol(); drawPay(); drawDesk(); drawFlow();
   }
-  // softs: open-interest positioning from the ICE settlement files (softs--options-)
+  // softs: open-interest positioning from the ICE settlement files (softs--options-), one option month at a time
+  let FX = null;   // chosen option month
+  const kf = v => v == null ? '–' : (+v).toLocaleString(), sgf = v => v == null ? '–' : (v > 0 ? '+' : '') + (+v).toLocaleString(), ccf = v => v > 0 ? 'up' : v < 0 ? 'dn' : '';
   function flowCard() {
-    const O = OPT[sym]; if (!O || !O.flow) return '';
-    const F = O.flow, m = V.markets[sym], k = v => v == null ? '–' : (+v).toLocaleString(), sg = v => v == null ? '–' : (v > 0 ? '+' : '') + (+v).toLocaleString();
-    const cc = v => v > 0 ? 'up' : v < 0 ? 'dn' : '';
-    const line = x => `${x.exp} ${x.K.toLocaleString()} ${x.cp === 'C' ? 'call' : 'put'}${x.und !== x.exp ? ` <span class="note">(on ${x.und})</span>` : ''}`;
-    const mv = (arr, f, lb) => `<div><h3>${lb}</h3><div class="tbl"><table><tr><th class="l">Option</th><th>Change</th><th>OI now</th><th>Delta</th><th>IV</th><th>Settle</th></tr>
-      ${arr.length ? arr.map(x => `<tr><td class="l">${line(x)}</td><td class="${cc(x[f])}"><b>${sg(x[f])}</b></td><td>${k(x.oi)}</td><td>${x.delta ?? '–'}</td><td>${x.iv ?? '–'}</td><td>${x.settle ?? '–'}</td></tr>`).join('') : '<tr><td colspan="6" class="note">none</td></tr>'}</table></div></div>`;
-    const topT = t => `<div><h3>${t.exp} <span class="note">on ${t.und} futures ${t.F}</span></h3><div class="tbl"><table><tr><th class="l">Calls: strike</th><th>OI</th><th>1d</th><th>5 sess.</th><th class="l">Puts: strike</th><th>OI</th><th>1d</th><th>5 sess.</th></tr>
-      ${[0, 1, 2, 3, 4].map(i => { const c = t.calls[i], p = t.puts[i]; return `<tr><td class="l">${c ? '<b>' + c.K + '</b>' : ''}</td><td>${c ? k(c.oi) : ''}</td><td class="${c ? cc(c.chg1) : ''}">${c ? sg(c.chg1) : ''}</td><td class="${c ? cc(c.chg5) : ''}">${c ? sg(c.chg5) : ''}</td>
-        <td class="l">${p ? '<b>' + p.K + '</b>' : ''}</td><td>${p ? k(p.oi) : ''}</td><td class="${p ? cc(p.chg1) : ''}">${p ? sg(p.chg1) : ''}</td><td class="${p ? cc(p.chg5) : ''}">${p ? sg(p.chg5) : ''}</td></tr>`; }).join('')}</table></div></div>`;
-    const D = F.daily;
+    const O = OPT[sym]; if (!O || !O.by_expiry) return '';
+    if (!FX || !O.by_expiry.find(b => b.exp === FX)) FX = (O.by_expiry.find(b => b.exp === O.default_exp) || O.by_expiry[0]).exp;
+    const D = O.flow.daily, I = O.insights;
     return `<div class="card" style="margin-top:12px"><h2>Options positioning: open interest and flow <span class="note">${O.source}, last good session ${O.date}${O.skipped && O.skipped.length ? `; incomplete files skipped: ${O.skipped.join(', ')}` : ''}</span></h2>
       <p>${O.read}</p>
-      <h3>Strikes with the most open interest</h3><div class="grid g2">${F.top.map(topT).join('')}</div>
-      <div class="grid g2" style="margin-top:8px">${O.strike_maps.map((s, i) => `<div><canvas id="flOI${i}" height="190"></canvas></div>`).join('')}</div>
-      <h3 style="margin-top:8px">Last ${D.length} sessions</h3>
-      <div class="tbl"><table><tr><th class="l">Date</th><th>Front</th><th>Futures</th><th>Call OI</th><th>Δ</th><th>Put OI</th><th>Δ</th><th>P/C OI</th><th>Call vol</th><th>Put vol</th><th>P/C vol</th><th>Front ATM IV</th><th>25Δ RR</th><th>Delta added</th></tr>
-      ${D.slice().reverse().map(x => `<tr><td class="l">${x.date}</td><td>${x.front || '–'}</td><td>${x.F ?? '–'}</td><td>${k(x.cOI)}</td><td class="${cc(x.dcOI)}">${sg(x.dcOI)}</td><td>${k(x.pOI)}</td><td class="${cc(x.dpOI)}">${sg(x.dpOI)}</td><td>${x.pc_oi ?? '–'}</td>
-        <td>${k(x.cVol)}</td><td>${k(x.pVol)}</td><td>${x.pc_vol ?? '–'}</td><td>${x.atm ?? '–'}</td><td>${x.rr25 == null ? '–' : (x.rr25 > 0 ? '+' : '') + x.rr25}</td><td class="${cc(x.delta_added)}">${sg(x.delta_added)}</td></tr>`).join('')}</table></div>
-      <div class="grid g2" style="margin-top:8px">${mv(F.moves.build_5d, 'chg5', 'Largest OI builds, last 5 sessions')}${mv(F.moves.cut_5d, 'chg5', 'Largest OI cuts, last 5 sessions')}</div>
-      <div class="grid g2">${mv(F.moves.build_1d, 'chg1', `Largest OI builds on ${O.date}`)}${mv(F.moves.cut_1d, 'chg1', `Largest OI cuts on ${O.date}`)}</div>
-      ${mv(F.moves.volume.map(x => ({ ...x, v: x.vol })), 'v', `Most traded on ${O.date} (volume)`)}
-      <p class="note">OI change "1d" is the exchange's reported change; "5 sess." compares with five sessions earlier. Delta added = Σ(delta × OI change) across all strikes: futures-equivalent lots added on the option holders' side (positive = more long delta held through calls or fewer puts). Put/call above 1 means more puts than calls open. Rising OI at a strike with the futures moving toward it often marks hedging or speculative interest building there; walls with large OI can pin prices into expiry.</p></div>`;
+      <div class="mk-bar"><label>Option month <select id="flExp">${O.by_expiry.map(b => `<option value="${b.exp}" ${b.exp === FX ? 'selected' : ''}>${b.exp}${b.und !== b.exp ? ' (on ' + b.und + ')' : ''} · ${b.dte} d · OI ${kf(b.cOI + b.pOI)}</option>`).join('')}</select></label>
+        <span class="note">Implied vol is not read for options within ${O.min_iv_dte} days of expiry.</span></div>
+      <div id="flBody">${expBody(O)}</div>
+      <h3 style="margin-top:10px">All option months: last ${D.length} sessions</h3>
+      <div class="tbl"><table><tr><th class="l">Date</th><th>Front (≥${O.min_iv_dte} d)</th><th>Futures</th><th>Call OI</th><th>Δ</th><th>Put OI</th><th>Δ</th><th>P/C OI</th><th>Call vol</th><th>Put vol</th><th>P/C vol</th><th>Front ATM IV</th><th>25Δ RR</th><th>Delta added</th></tr>
+      ${D.slice().reverse().map(x => `<tr><td class="l">${x.date}</td><td>${x.front || '–'}</td><td>${x.F ?? '–'}</td><td>${kf(x.cOI)}</td><td class="${ccf(x.dcOI)}">${sgf(x.dcOI)}</td><td>${kf(x.pOI)}</td><td class="${ccf(x.dpOI)}">${sgf(x.dpOI)}</td><td>${x.pc_oi ?? '–'}</td>
+        <td>${kf(x.cVol)}</td><td>${kf(x.pVol)}</td><td>${x.pc_vol ?? '–'}</td><td>${x.atm ?? '–'}</td><td>${x.rr25 == null ? '–' : (x.rr25 > 0 ? '+' : '') + x.rr25}</td><td class="${ccf(x.delta_added)}">${sgf(x.delta_added)}</td></tr>`).join('')}</table></div>
+      <h3 style="margin-top:10px">Insights: rankings across all option months <span class="note">${O.date}</span></h3>
+      <div class="grid g2"><div><div class="tbl"><table><tr><th class="l">Month by open interest</th><th>Total</th><th>Calls</th><th>Puts</th><th>C/P</th><th>Calls Δ</th><th>Puts Δ</th></tr>
+        ${I.by_oi.map(e => `<tr><td class="l">${e.exp}${e.und !== e.exp ? ` <span class="note">on ${e.und}</span>` : ''}</td><td>${kf(e.tot)}</td><td>${kf(e.cOI)}</td><td>${kf(e.pOI)}</td><td>${e.pOI ? (e.cOI / e.pOI).toFixed(2) : '–'}</td><td class="${ccf(e.dc)}">${sgf(e.dc)}</td><td class="${ccf(e.dp)}">${sgf(e.dp)}</td></tr>`).join('')}</table></div></div>
+        <div><div class="tbl"><table><tr><th class="l">Strike (all months)</th><th>Total OI</th><th>Calls</th><th>Puts</th><th class="l">Biggest day change</th><th>Calls Δ</th><th>Puts Δ</th></tr>
+        ${I.strikes_oi.slice(0, 12).map((e, i) => { const c = I.strikes_change[i]; return `<tr><td class="l"><b>${e.K}</b></td><td>${kf(e.tot)}</td><td>${kf(e.cOI)}</td><td>${kf(e.pOI)}</td><td class="l">${c ? '<b>' + c.K + '</b>' : ''}</td><td class="${c ? ccf(c.dc) : ''}">${c ? sgf(c.dc) : ''}</td><td class="${c ? ccf(c.dp) : ''}">${c ? sgf(c.dp) : ''}</td></tr>`; }).join('')}</table></div></div></div>
+      <p class="note">"1d" is the exchange's reported OI change; "5 sess." compares with five sessions earlier. Who is behind the flow: OI up with premiums up = new longs (buyers paying up), OI up with premiums down = new shorts (writers), OI down = closing. Delta added = Σ(delta × OI change): futures-equivalent lots added on the option holders' side. Gamma profile: dollar gamma of the open interest per 1% futures move at each futures price, calls counted positive and puts negative (the usual convention that dealers are long the calls customers sell and short the puts customers buy); where the net line crosses zero is the "flip" — above it hedging dampens moves, below it hedging amplifies them; the gross peak is where pinning into expiry is strongest.</p></div>`;
+  }
+  function expBody(O) {
+    const B = O.by_expiry.find(b => b.exp === FX); if (!B) return '';
+    const line = x => `${x.K.toLocaleString()} ${x.cp === 'C' ? 'call' : 'put'}`;
+    const mv = (arr, f, lb) => `<div><h3>${lb}</h3><div class="tbl"><table><tr><th class="l">Strike</th><th>Change</th><th>OI now</th><th>Volume</th><th>Delta</th><th>IV</th><th>Settle</th></tr>
+      ${arr.length ? arr.map(x => `<tr><td class="l">${line(x)}</td><td class="${ccf(x[f])}"><b>${sgf(x[f])}</b></td><td>${kf(x.oi)}</td><td>${kf(x.vol)}</td><td>${x.delta ?? '–'}</td><td>${x.iv ?? '–'}</td><td>${x.settle ?? '–'}</td></tr>`).join('') : '<tr><td colspan="7" class="note">none</td></tr>'}</table></div></div>`;
+    const t = B.top;
+    return `<p><b>${B.exp}</b> options on ${B.und} futures ${B.F} · expire ${B.expiry} (${B.dte} days) · calls ${kf(B.cOI)} (${sgf(B.dcOI)}), puts ${kf(B.pOI)} (${sgf(B.dpOI)}), put/call ${B.pc_oi ?? '–'} · volume calls ${kf(B.cVol)}, puts ${kf(B.pVol)}
+      · gamma flip ${B.gamma.flip ?? '–'}, peak gamma ${B.gamma.peak ?? '–'}</p>
+      <div class="grid g2"><div><h3>Strikes with the most open interest</h3><div class="tbl"><table><tr><th class="l">Call strike</th><th>OI</th><th>1d</th><th>5 sess.</th><th class="l">Put strike</th><th>OI</th><th>1d</th><th>5 sess.</th></tr>
+        ${[0, 1, 2, 3, 4, 5].map(i => { const c = t.calls[i], p = t.puts[i]; return `<tr><td class="l">${c ? '<b>' + c.K + '</b>' : ''}</td><td>${c ? kf(c.oi) : ''}</td><td class="${c ? ccf(c.chg1) : ''}">${c ? sgf(c.chg1) : ''}</td><td class="${c ? ccf(c.chg5) : ''}">${c ? sgf(c.chg5) : ''}</td>
+          <td class="l">${p ? '<b>' + p.K + '</b>' : ''}</td><td>${p ? kf(p.oi) : ''}</td><td class="${p ? ccf(p.chg1) : ''}">${p ? sgf(p.chg1) : ''}</td><td class="${p ? ccf(p.chg5) : ''}">${p ? sgf(p.chg5) : ''}</td></tr>`; }).join('')}</table></div>
+        <h3>Flow by session: who is behind it</h3><div class="tbl"><table><tr><th class="l">Date</th><th>Fut.</th><th>Call vol</th><th>Call OI Δ</th><th class="l">Calls</th><th>Put vol</th><th>Put OI Δ</th><th class="l">Puts</th><th>P/C vol</th><th>ATM IV</th></tr>
+        ${B.flow.slice().reverse().map(x => `<tr><td class="l">${x.date}</td><td>${x.F}</td><td>${kf(x.cVol)}</td><td class="${ccf(x.cdOI)}">${sgf(x.cdOI)}</td><td class="l ${/new longs|covering/.test(x.csig) ? 'up' : /new shorts|closing/.test(x.csig) ? 'dn' : ''}">${x.csig}</td>
+          <td>${kf(x.pVol)}</td><td class="${ccf(x.pdOI)}">${sgf(x.pdOI)}</td><td class="l ${/new longs/.test(x.psig) ? 'dn' : /new shorts/.test(x.psig) ? 'up' : ''}">${x.psig}</td><td>${x.pc_vol ?? '–'}</td><td>${x.atm ?? '–'}</td></tr>`).join('')}</table></div></div>
+        <div><canvas id="flOI" height="220"></canvas><canvas id="flGam" height="200" style="margin-top:8px"></canvas></div></div>
+      <div class="grid g2" style="margin-top:8px">${mv(B.moves.build_5d, 'chg5', 'Largest OI builds, last 5 sessions')}${mv(B.moves.cut_5d, 'chg5', 'Largest OI cuts, last 5 sessions')}</div>
+      <div class="grid g2">${mv(B.moves.build_1d, 'chg1', `Largest OI builds on ${O.date}`)}${mv(B.moves.cut_1d, 'chg1', `Largest OI cuts on ${O.date}`)}</div>
+      ${mv(B.moves.volume, 'vol', `Most traded on ${O.date}`)}`;
   }
   function drawFlow() {
-    const O = OPT[sym]; if (!O || !O.flow) return;
-    O.strike_maps.forEach((sk, i) => chart(`flOI${i}`, { type: 'bar', data: { labels: sk.rows.map(r => r.K), datasets: [
-      { label: 'call OI', data: sk.rows.map(r => r.cOI), backgroundColor: 'rgba(58,138,90,.65)', stack: 'oi' }, { label: 'put OI', data: sk.rows.map(r => -r.pOI), backgroundColor: 'rgba(184,69,47,.65)', stack: 'oi' },
-      { label: 'call OI change (1d)', data: sk.rows.map(r => r.dc), backgroundColor: 'rgba(30,90,50,.9)', stack: 'ch' }, { label: 'put OI change (1d)', data: sk.rows.map(r => -r.dp), backgroundColor: 'rgba(120,30,20,.9)', stack: 'ch' }] },
-      options: { plugins: { title: { display: true, text: `${sk.label}: OI by strike (puts below zero) and day's change; futures ${sk.F}` } }, scales: { x: { stacked: true, ticks: { maxTicksLimit: 16 } }, y: { stacked: true } } } }));
+    const O = OPT[sym]; if (!O || !O.by_expiry) return;
+    const sel = document.getElementById('flExp');
+    if (sel) sel.onchange = e => { FX = e.target.value; document.getElementById('flBody').innerHTML = expBody(O); drawFlow(); };
+    const B = O.by_expiry.find(b => b.exp === FX); if (!B) return;
+    const R = B.rows.filter(r => r.cOI + r.pOI + Math.abs(r.dc) + Math.abs(r.dp) > 0 && r.K > B.F * 0.75 && r.K < B.F * 1.35);
+    chart('flOI', { type: 'bar', data: { labels: R.map(r => r.K), datasets: [
+      { label: 'call OI', data: R.map(r => r.cOI), backgroundColor: 'rgba(58,138,90,.6)', stack: 'oi' }, { label: 'put OI', data: R.map(r => -r.pOI), backgroundColor: 'rgba(184,69,47,.6)', stack: 'oi' },
+      { label: 'call OI Δ 5 sess.', data: R.map(r => r.dc5), backgroundColor: 'rgba(30,90,50,.95)', stack: 'ch' }, { label: 'put OI Δ 5 sess.', data: R.map(r => -r.dp5), backgroundColor: 'rgba(120,30,20,.95)', stack: 'ch' }] },
+      options: { plugins: { title: { display: true, text: `${B.exp}: open interest by strike (puts below zero) and 5-session change; futures ${B.F}` } }, scales: { x: { stacked: true, ticks: { maxTicksLimit: 18 } }, y: { stacked: true } } } });
+    const G = B.gamma.grid;
+    chart('flGam', { type: 'line', data: { labels: G.map(r => r[0]), datasets: [
+      { label: 'net gamma (calls − puts), $k per 1%', data: G.map(r => r[1]), borderColor: '#7a4fa0', borderWidth: 2, pointRadius: 0, fill: { target: 'origin', above: 'rgba(58,138,90,.12)', below: 'rgba(184,69,47,.12)' } },
+      { label: 'gross gamma', data: G.map(r => r[2]), borderColor: '#8a8984', borderDash: [4, 3], pointRadius: 0 }] },
+      options: { plugins: { title: { display: true, text: `${B.exp} gamma profile across futures prices (now ${B.F}${B.gamma.flip ? ', flip ' + B.gamma.flip : ''})` } }, scales: { x: { ticks: { maxTicksLimit: 9 } } } } });
   }
   function deskCard() {
     const O = OPT[sym], m = V.markets[sym];

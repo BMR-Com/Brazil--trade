@@ -27,6 +27,8 @@ RAW = "https://raw.githubusercontent.com/BMR-Com/softs--options-/main/data/csv/"
 NAMES = {"CT": "Cotton", "SB": "Sugar No. 11", "KC": "Coffee C", "CC": "Cocoa"}
 MON = {m: i + 1 for i, m in enumerate(["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"])}
 UNIT = {"CT": "¢/lb", "SB": "¢/lb", "KC": "¢/lb", "CC": "$/t"}
+MULT = {"CT": 500, "SB": 1120, "KC": 375, "CC": 10}   # $ per 1 price unit per lot
+MIN_IV_DTE = 15   # options this close to expiry are left out of implied-vol readings (pin and gamma noise)
 
 
 def read(sym, kind):
@@ -96,6 +98,114 @@ def prep(sym):
     return d, [x.date().isoformat() for x in bad]
 
 
+def b76_gamma(F, K, iv, T):
+    sig = np.clip(iv / 100, 0.01, 5)
+    T = max(T, 1 / 365)
+    d1 = (np.log(F / K) + sig ** 2 * T / 2) / (sig * np.sqrt(T))
+    return np.exp(-d1 ** 2 / 2) / np.sqrt(2 * np.pi) / (F * sig * np.sqrt(T))
+
+
+def sig_label(doi, dpx):
+    """who is behind a day's open-interest change on one side (calls or puts), from OI change and premium change"""
+    if abs(doi) < 50:
+        return "quiet"
+    if doi > 0:
+        return "new longs" if dpx > 0 else "new shorts" if dpx < 0 else "new positions"
+    return "longs closing" if dpx < 0 else "shorts covering" if dpx > 0 else "closing"
+
+
+def expiry_block(d, dates, con, sym):
+    """Everything the desk shows for one option month: OI by strike with changes, top strikes, builds/cuts,
+    flow by session (who is buying/selling), and the gamma profile across futures prices."""
+    last = dates[-1]
+    ds = [x for x in dates if len(d[(d.date == x) & (d.contract == con)])]
+    g = d[(d.date == last) & (d.contract == con)]
+    F, T, dte = float(g.F.iloc[0]), float(g["T"].iloc[0]), int(g.dte.iloc[0])
+    key = ["strike", "cp"]
+    d5 = ds[-6] if len(ds) >= 6 else ds[0]
+    b5 = d[(d.date == d5) & (d.contract == con)].set_index(key).oi
+    x = g.set_index(key)
+    x["chg5"] = x.oi - b5.reindex(x.index).fillna(0)
+    x = x.reset_index()
+    rows = []
+    for K, kk in x.groupby("strike"):
+        c, p = kk[kk.cp == "C"], kk[kk.cp == "P"]
+        if c.oi.sum() + p.oi.sum() + c.volume.sum() + p.volume.sum() == 0:
+            continue
+        rows.append({"K": float(K), "cOI": int(c.oi.sum()), "pOI": int(p.oi.sum()), "dc": int(c.oi_change.sum()), "dp": int(p.oi_change.sum()),
+                     "dc5": int(c.chg5.sum()), "dp5": int(p.chg5.sum()), "cVol": int(c.volume.sum()), "pVol": int(p.volume.sum()),
+                     "civ": r1(c.iv.mean(), 1) if len(c) else None, "piv": r1(p.iv.mean(), 1) if len(p) else None,
+                     "cs": r1(c.settle.mean(), 4) if len(c) else None, "ps": r1(p.settle.mean(), 4) if len(p) else None})
+    pick = lambda r: {"K": float(r.strike), "cp": r.cp, "oi": int(r.oi), "chg1": int(r.oi_change), "chg5": int(r.chg5), "vol": int(r.volume),
+                      "settle": r1(r.settle, 4), "delta": r1(r.delta, 2), "iv": r1(r.iv, 1)}
+    moves = {"build_1d": [pick(r) for r in x.nlargest(8, "oi_change").itertuples() if r.oi_change > 0],
+             "cut_1d": [pick(r) for r in x.nsmallest(8, "oi_change").itertuples() if r.oi_change < 0],
+             "build_5d": [pick(r) for r in x.nlargest(8, "chg5").itertuples() if r.chg5 > 0],
+             "cut_5d": [pick(r) for r in x.nsmallest(8, "chg5").itertuples() if r.chg5 < 0],
+             "volume": [pick(r) for r in x.nlargest(8, "volume").itertuples() if r.volume > 0]}
+    top = {"calls": [pick(r) for r in x[x.cp == "C"].nlargest(6, "oi").itertuples()], "puts": [pick(r) for r in x[x.cp == "P"].nlargest(6, "oi").itertuples()]}
+    # session-by-session flow: volume, OI change and who is behind it (premium change on volume-weighted strikes)
+    flow = []
+    prev = None
+    for dt in ds[-10:]:
+        y = d[(d.date == dt) & (d.contract == con)]
+        row = {"date": dt.date().isoformat(), "F": r1(float(y.F.iloc[0]), 2), "dte": int(y.dte.iloc[0])}
+        for side, nm in (("C", "c"), ("P", "p")):
+            z = y[y.cp == side]
+            vol, doi = int(z.volume.sum()), int(z.oi_change.sum())
+            dpx = 0.0
+            if prev is not None and vol > 0:
+                pz = prev[prev.cp == side].set_index("strike").settle
+                zz = z[z.volume > 0].set_index("strike")
+                ch = (zz.settle - pz.reindex(zz.index)).dropna()
+                w = zz.volume.reindex(ch.index)
+                dpx = float((ch * w).sum() / w.sum()) if w.sum() > 0 else 0.0
+            row.update({nm + "Vol": vol, nm + "dOI": doi, nm + "sig": sig_label(doi, dpx)})
+        row["atm"] = r1(atm_iv(y), 1) if row["dte"] >= MIN_IV_DTE else None
+        row["pc_vol"] = r1(row["pVol"] / row["cVol"]) if row["cVol"] else None
+        flow.append(row)
+        prev = y
+    # gamma profile: dollar gamma of open interest (per 1% futures move) across futures prices, calls + / puts - (dealer-short-puts convention)
+    grid = np.linspace(F * 0.8, F * 1.2, 41)
+    z = g[(g.oi > 0) & g.iv.notna() & (g.iv > 1)]
+    gp = []
+    for S in grid:
+        gm = b76_gamma(S, z.strike.values, z.iv.values, T) * z.oi.values * S * S * 0.01 * MULT[sym]
+        sign = np.where(z.cp.values == "C", 1, -1)
+        gp.append([round(float(S), 2), round(float((gm * sign).sum()) / 1e3, 1), round(float(gm.sum()) / 1e3, 1)])
+    flip = None
+    for (s1, a1, _), (s2, a2, _) in zip(gp, gp[1:]):
+        if a1 == 0 or (a1 < 0) != (a2 < 0):
+            flip = round(s1 + (s2 - s1) * (0 - a1) / ((a2 - a1) or 1), 2)
+            if abs(flip - F) < F * 0.1:
+                break
+    peak = max(gp, key=lambda r: r[2])[0] if gp else None
+    cOI, pOI = int(g[g.cp == "C"].oi.sum()), int(g[g.cp == "P"].oi.sum())
+    return {"exp": lab(con), "und": lab(g.und.iloc[0]), "F": F, "dte": dte, "expiry": g.expiry.iloc[0], "cOI": cOI, "pOI": pOI,
+            "dcOI": int(g[g.cp == "C"].oi_change.sum()), "dpOI": int(g[g.cp == "P"].oi_change.sum()),
+            "cVol": int(g[g.cp == "C"].volume.sum()), "pVol": int(g[g.cp == "P"].volume.sum()), "pc_oi": r1(pOI / cOI) if cOI else None,
+            "rows": [r for r in rows if F * 0.6 < r["K"] < F * 1.6], "top": top, "moves": moves, "flow": flow,
+            "gamma": {"grid": gp, "flip": flip, "peak": peak, "note": "$ thousand per 1% futures move; net = calls minus puts"}}
+
+
+def insights(d, dates):
+    """market-wide rankings: expiries by OI and by the day's change, strikes across all expiries"""
+    day = d[d.date == dates[-1]]
+    ex = []
+    for con, g in day.groupby("contract"):
+        c, p = g[g.cp == "C"], g[g.cp == "P"]
+        ex.append({"exp": lab(con), "und": lab(g.und.iloc[0]), "dte": int(g.dte.iloc[0]), "tot": int(g.oi.sum()), "cOI": int(c.oi.sum()), "pOI": int(p.oi.sum()),
+                   "dc": int(c.oi_change.sum()), "dp": int(p.oi_change.sum()), "cVol": int(c.volume.sum()), "pVol": int(p.volume.sum())})
+    st = day.groupby(["strike", "cp"]).agg(oi=("oi", "sum"), ch=("oi_change", "sum"), vol=("volume", "sum")).unstack(fill_value=0)
+    strikes = []
+    for K, r in st.iterrows():
+        cO, pO = int(r[("oi", "C")]) if ("oi", "C") in r else 0, int(r[("oi", "P")]) if ("oi", "P") in r else 0
+        cC, pC = int(r[("ch", "C")]) if ("ch", "C") in r else 0, int(r[("ch", "P")]) if ("ch", "P") in r else 0
+        strikes.append({"K": float(K), "tot": cO + pO, "cOI": cO, "pOI": pO, "dc": cC, "dp": pC, "net": cC + pC})
+    return {"by_oi": sorted(ex, key=lambda e: -e["tot"]), "by_change": sorted(ex, key=lambda e: -abs(e["dc"] + e["dp"])),
+            "strikes_oi": sorted(strikes, key=lambda e: -e["tot"])[:15], "strikes_change": sorted(strikes, key=lambda e: -abs(e["net"]))[:15]}
+
+
 def flow_tables(d, dates, front_cons, sym):
     """Positioning from open interest: top strikes, biggest builds/cuts, volume leaders, daily table."""
     last = dates[-1]
@@ -127,7 +237,7 @@ def flow_tables(d, dates, front_cons, sym):
     for dt in dates[-10:]:
         x = d[d.date == dt]
         c, p = x[x.cp == "C"], x[x.cp == "P"]
-        fr = x[x.dte >= 7]
+        fr = x[x.dte >= MIN_IV_DTE]
         fc = fr.loc[fr.dte == fr.dte.min(), "contract"].iloc[0] if len(fr) else None
         g = x[x.contract == fc] if fc else None
         a = atm_iv(g) if g is not None else None
@@ -199,12 +309,14 @@ def main():
             if dte < 1:
                 continue
             F, T = float(g.F.iloc[0]), float(g["T"].iloc[0])
-            a, c25, p25 = atm_iv(g), delta_iv(g, "C"), delta_iv(g, "P")
+            a, c25, p25 = (atm_iv(g), delta_iv(g, "C"), delta_iv(g, "P")) if dte >= MIN_IV_DTE else (None, None, None)
             def at(dt):
                 gg = d[(d.date == dt) & (d.contract == con)] if dt is not None else []
                 return (atm_iv(gg), gg) if len(gg) else (None, None)
             a_d, _ = at(prev)
             a_w, g_w = at(wk)
+            if dte < MIN_IV_DTE:
+                a_d = a_w = g_w = None
             rr = c25 - p25 if c25 is not None and p25 is not None else None
             rr_w = None
             if g_w is not None:
@@ -229,7 +341,8 @@ def main():
                          "put_wall": float(below.loc[below.oi.idxmax(), "strike"]) if len(below) and below.oi.max() > 0 else None,
                          "smile": [[float(k), round(float(v), 2)] for k, v in zip(sm.strike, sm.iv) if F * 0.6 < k < F * 1.5],
                          "max_pain": max_pain(g) if cOI + pOI > 0 else None, "gamma_peak": float(gam.idxmax()) if len(gam) and gam.max() > 0 else None})
-        liquid = [r for r in rows if r["cOI"] + r["pOI"] >= 500 and r["atm"] is not None and r["dte"] >= 5] or [r for r in rows if r["atm"] is not None]
+        big = max([r["cOI"] + r["pOI"] for r in rows] or [0])
+        liquid = [r for r in rows if r["cOI"] + r["pOI"] >= max(500, 0.25 * big) and r["atm"] is not None and r["dte"] >= MIN_IV_DTE] or [r for r in rows if r["atm"] is not None]
         if not liquid:
             continue
         front = liquid[0]
@@ -245,7 +358,7 @@ def main():
         def term(dt):
             out = []
             for con, gg in d[d.date == dt].groupby("contract"):
-                if int(gg.dte.iloc[0]) < 5:
+                if int(gg.dte.iloc[0]) < MIN_IV_DTE:
                     continue
                 a = atm_iv(gg)
                 if a is not None:
@@ -270,7 +383,7 @@ def main():
             x = d[d.date == dt]
             best = None
             for con, gg in sorted(x.groupby("contract"), key=lambda z: z[1].dte.iloc[0]):
-                if int(gg.dte.iloc[0]) >= 5 and gg.oi.sum() >= 500:
+                if int(gg.dte.iloc[0]) >= MIN_IV_DTE and gg.oi.sum() >= 500:
                     a = atm_iv(gg)
                     if a is not None:
                         best = [dt.date().isoformat(), round(a, 2), con]
@@ -288,6 +401,8 @@ def main():
                "smiles": [{"contract": c["contract"], "label": c["label"], "F": c["F"], "now": smile_pts(last, c["contract"]),
                            "week_ago": smile_pts(wk, c["contract"]) if wk is not None else []} for c in liquid[:2]],
                "strike_maps": [strike_map(c) for c in fc], "read": txt, "flow": {"top": top, "moves": moves, "daily": daily},
+               "by_expiry": [expiry_block(d, dates, r["contract"], sym) for r in rows if r["cOI"] + r["pOI"] >= 300],
+               "default_exp": front["label"], "insights": insights(d, dates), "min_iv_dte": MIN_IV_DTE,
                "pc_oi_all": r1(day[day.cp == "P"].oi.sum() / max(day[day.cp == "C"].oi.sum(), 1)),
                "pc_vol_all": r1(day[day.cp == "P"].volume.sum() / max(day[day.cp == "C"].volume.sum(), 1)),
                "iv_hist": ih, "iv_hist_days": len(ih),
