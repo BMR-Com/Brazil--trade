@@ -11,12 +11,20 @@ const OptSig = (() => {
   let VI = null;
   const loadVI = () => VI ? Promise.resolve(VI) : fetch('data/optsig/vol_ideas.json?v=' + Date.now().toString().slice(0, 8)).then(r => r.json()).then(d => (VI = d)).catch(() => null);
   const CONV = { high: ['#d7efd5', '#2e8b3e'], medium: ['#fff7d1', '#d4ac0d'], low: ['#eeeeea', '#8a8984'] };
+  let RO = null;
+  const loadRO = () => RO ? Promise.resolve(RO) : fetch('data/options/roll.json?v=' + Date.now().toString().slice(0, 8)).then(r => r.json()).then(d => (RO = d)).catch(() => ({ markets: {} }));
+  function rollRows(syms) {
+    const M = (RO && RO.markets) || {}, ks = Object.keys(M).filter(k => !syms || syms.includes(k));
+    if (!ks.length) return '';
+    return `<h3 style="margin-top:10px">Front-month roll &amp; delivery</h3>${ks.map(k => { const R = M[k], c = R.state === 'heavy' ? '#c0392b' : R.state === 'light' ? '#2e8b3e' : '#d4ac0d';
+      return `<div style="border:1px solid var(--line);border-left:6px solid ${c};border-radius:8px;padding:8px 12px;margin:6px 0"><b>${esc(R.name)} ${esc(R.label)}: ${esc(R.state)} roll</b> <span class="note">(${esc(R.T0_kind)} ${esc(R.T0)}, ${R.k} business days; ${R.rem}% of open interest left${R.pct != null ? ', ' + ord(R.pct) + ' pct of past rolls' : ''})</span><p style="margin:4px 0 0">${esc(R.idea.text)}</p></div>`; }).join('')}`;
+  }
   function volCard(V, syms) {
     if (!V) return '';
     const ids = V.ideas.filter(i => !syms || syms.includes(i.sym));
     const R = V.readings, rows = (syms || Object.keys(R)).filter(s => R[s]);
     return `<div class="card" style="margin-top:12px"><h2>Vol-structure trade ideas <span class="note">term structure, skew and seasonality; options data ${esc((ids[0] || {}).data_date || '')}</span></h2>
-      ${ids.length ? ids.map(i => { const [bg, bd] = CONV[i.conviction] || CONV.low; return `<div style="border:1px solid var(--line);border-left:6px solid ${bd};background:${bg};border-radius:8px;padding:8px 12px;margin:6px 0">
+      ${rollRows(syms)}${ids.length ? ids.map(i => { const [bg, bd] = CONV[i.conviction] || CONV.low; return `<div style="border:1px solid var(--line);border-left:6px solid ${bd};background:${bg};border-radius:8px;padding:8px 12px;margin:6px 0">
         <b>${esc(i.name)}: ${esc(i.title)}</b> <span class="note">(${i.conviction} conviction · ${esc(i.kind)})</span>
         <ul style="margin:4px 0 0 18px;padding:0">${i.legs.map(l => `<li>${esc(l)}</li>`).join('')}</ul>
         <p style="margin:4px 0 0">${i.why.map(esc).join(' · ')}</p><p class="note" style="margin:4px 0 0">${esc(i.risk)}</p></div>`; }).join('') : '<p class="note">No vol-structure idea passes the rules right now.</p>'}
@@ -51,7 +59,7 @@ const OptSig = (() => {
   async function card(el, syms) {
     const d = await load(); if (!d) return;
     const ms = syms.filter(s => d.markets[s]); if (!ms.length) return;
-    const V = await loadVI();
+    const V = await loadVI(); await loadRO();
     el.innerHTML = `<div class="card"><h2>Options &amp; open interest: weekly read and trade idea</h2>${ms.map(s => block(s, d.markets[s])).join('')}<p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${volCard(V, ms)}`;
   }
   async function show() {
@@ -63,7 +71,7 @@ const OptSig = (() => {
     el.innerHTML = `<div style="max-width:1200px;margin:0 auto;padding:12px 16px"><div class="card"><h2>Trade ideas from options and open interest</h2>
       <div class="tbl"><table><tr><th class="l">Market</th><th class="l">Lean</th><th class="l">Idea</th><th class="l">Active signals</th><th>Data to</th></tr>
       ${ks.map(s => { const m = d.markets[s]; return `<tr><td class="l"><b>${esc(m.name)}</b></td><td class="l ${m.idea.lean === 'bullish' ? 'up' : m.idea.lean === 'bearish' ? 'dn' : ''}">${m.idea.lean}</td><td class="l">${esc(m.idea.structure)}</td><td class="l note">${m.active.map(a => esc(a.text.split(':')[0])).join('; ') || '–'}</td><td>${m.asof}</td></tr>`; }).join('')}</table></div>
-      <p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${volCard(await loadVI(), null)}${ks.map(s => block(s, d.markets[s])).join('')}</div>`;
+      <p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${(await loadRO(), volCard(await loadVI(), null))}${ks.map(s => block(s, d.markets[s])).join('')}</div>`;
   }
   return { card, show, load };
 })();

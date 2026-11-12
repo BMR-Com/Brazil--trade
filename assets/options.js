@@ -1,8 +1,13 @@
 // Options pricer: Black-76 on futures, realized-vol stats, strategy builder, interactive payoff and Greeks.
 const Options = (() => {
   let V = null, built = false, sym = 'ZC', S = null, charts = {};
-  const OPT = {};   // CME option desk per market (implied vols), loaded on demand
-  async function loadOpt(k) { if (!(k in OPT)) OPT[k] = await getJSON(`data/options/${k}.json`).catch(() => null); return OPT[k]; }
+  const OPT = {};
+  let ROLL = null;   // front-month roll & delivery tracker (softs--options-)   // CME option desk per market (implied vols), loaded on demand
+  async function loadOpt(k) {
+    if (!(k in OPT)) OPT[k] = await getJSON(`data/options/${k}.json`).catch(() => null);
+    if (ROLL === null) ROLL = await getJSON('data/options/roll.json').catch(() => ({ markets: {} }));
+    return OPT[k];
+  }
   const series = () => OPT[sym] && OPT[sym].expiries.find(e => e.contract === S.series);
   function smileIV(K) { const e = series(); if (!e || !e.smile || e.smile.length < 2) return null; const s = e.smile;
     if (K <= s[0][0]) return s[0][1]; if (K >= s[s.length - 1][0]) return s[s.length - 1][1];
@@ -124,11 +129,20 @@ const Options = (() => {
   // softs: open-interest positioning from the ICE settlement files (softs--options-), one option month at a time
   let FX = null;   // chosen option month
   const kf = v => v == null ? '–' : (+v).toLocaleString(), sgf = v => v == null ? '–' : (v > 0 ? '+' : '') + (+v).toLocaleString(), ccf = v => v > 0 ? 'up' : v < 0 ? 'dn' : '';
+  function rollCard() {
+    const R = ROLL && ROLL.markets && ROLL.markets[sym]; if (!R) return '';
+    const P = R.path.slice(-8).reverse(), fm = v => v == null ? '–' : sym === 'CC' ? (v > 0 ? '+' : '') + Math.round(v).toLocaleString() : (v > 0 ? '+' : '') + v.toFixed(2);
+    return `<div class="card" style="margin-top:12px;border-left:6px solid ${R.state === 'heavy' ? 'var(--dn)' : R.state === 'light' ? 'var(--up)' : '#d4ac0d'}"><h2>Front-month roll &amp; delivery: ${R.label} <span class="note">${R.T0_kind} ${R.T0} · ${R.state}${R.pct != null ? ' (' + R.pct + 'th pct of past ' + R.label.slice(0, 3) + ' rolls)' : ''} · reports to ${R.asof}</span></h2>
+      <p>${R.read}</p><p><b>Spread idea:</b> ${R.idea.text}</p>
+      <div class="tbl"><table><tr><th class="l">Report</th><th>Days to ${R.T0_kind}</th><th>Open interest</th><th>Δ</th><th>Volume</th><th>EFP</th><th>% left</th><th>Past range at this day</th><th>Spread to ${R.next ? R.next.slice(0, 3).toLowerCase().replace(/^./, c => c.toUpperCase()) : 'next'}</th></tr>
+      ${P.map(r => { const b = R.band_path, i = b ? b.k.indexOf(r.k) : -1; return `<tr><td class="l">${r.date}</td><td>${r.k}</td><td>${kf(r.oi)}</td><td class="${ccf(r.doi)}">${sgf(r.doi)}</td><td>${kf(r.vol)}</td><td>${kf(r.efp)}</td><td><b>${r.rem ?? '–'}%</b></td><td class="note">${i >= 0 ? b.p10[i] + '–' + b.p90[i] + '% (med ' + b.p50[i] + ')' : '–'}</td><td>${fm(r.spread)}</td></tr>`; }).join('')}</table></div>
+      <p class="note">% left = open interest as a share of its level ${R.K0} business days before ${R.T0_kind}; past range = 10th–90th percentile of the same contract month since 2005. Index roll: GSCI 5th–9th, BCOM 6th–10th business day of the month before delivery. ICE report open interest is the previous business day's.</p></div>`;
+  }
   function flowCard() {
-    const O = OPT[sym]; if (!O || !O.by_expiry) return '';
+    const O = OPT[sym]; if (!O || !O.by_expiry) return rollCard();
     if (!FX || !O.by_expiry.find(b => b.exp === FX)) FX = (O.by_expiry.find(b => b.exp === O.default_exp) || O.by_expiry[0]).exp;
     const D = O.flow.daily, I = O.insights;
-    return `<div class="card" style="margin-top:12px"><h2>Options positioning: open interest and flow <span class="note">${O.source}, last good session ${O.date}${O.skipped && O.skipped.length ? `; incomplete files skipped: ${O.skipped.join(', ')}` : ''}</span></h2>
+    return rollCard() + `<div class="card" style="margin-top:12px"><h2>Options positioning: open interest and flow <span class="note">${O.source}, last good session ${O.date}${O.skipped && O.skipped.length ? `; incomplete files skipped: ${O.skipped.join(', ')}` : ''}</span></h2>
       <p>${O.read}</p>
       <div class="mk-bar"><label>Option month <select id="flExp">${O.by_expiry.map(b => `<option value="${b.exp}" ${b.exp === FX ? 'selected' : ''}>${b.exp}${b.und !== b.exp ? ' (on ' + b.und + ')' : ''} · ${b.dte} d · OI ${kf(b.cOI + b.pOI)}</option>`).join('')}</select></label>
         <span class="note">Implied vol is not read for options within ${O.min_iv_dte} days of expiry.</span></div>

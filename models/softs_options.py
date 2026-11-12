@@ -410,6 +410,18 @@ def main():
         (OUT / f"{sym}.json").write_text(json.dumps(out, default=lambda o: None))
         idx.setdefault("markets", {})[sym] = {"name": name, "date": out["date"], "front": front["label"], "atm": front["atm"], "rv20": front["rv20"], "vrp": front["vrp"], "rr25": front["rr25"]}
         print(sym, out["date"], front["label"], "ATM", front["atm"], "RR", front["rr25"], "| skipped", bad[-3:], "| expiries", len(rows))
+    # roll & delivery tracker built in softs--options- (analytics/roll_tracker.py)
+    try:
+        lp = LOCAL.parent / "web" / "roll.json"
+        if lp.exists():
+            txt = lp.read_text()
+        else:
+            import requests
+            txt = requests.get(RAW.replace("data/csv/", "data/web/") + "roll.json", timeout=60).text
+        json.loads(txt)
+        (OUT / "roll.json").write_text(txt)
+    except Exception as e:
+        print("roll tracker not copied:", e)
     idx["generated"] = date.today().isoformat()
     (OUT / "index.json").write_text(json.dumps(idx))
 
