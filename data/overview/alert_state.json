@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12 17:55 UTC",
+ "updated": "2026-11-12 20:43 UTC",
  "views": {
   "cotton": {
    "view": "bullish",
@@ -14,7 +14,7 @@
   "coffee": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.22
+   "score": -0.21
   },
   "cocoa": {
    "view": "mildly bearish",
@@ -24,18 +24,13 @@
  },
  "alerts": {
   "cotton": [],
-  "sugar": [
-   "Broke above R1 18.17",
-   "Broke above R2 18.35"
-  ],
-  "coffee": [
-   "Broke below S1 271.60",
-   "Broke below S2 269.75"
-  ],
+  "sugar": [],
+  "coffee": [],
   "cocoa": []
  },
  "news": [
   "2026-11-12 Oil sinks on Iran/Ukraine peace optimism",
-  "2026-11-12 Arabica Dec up ~4% intraday to ~280, through old resistance 276.5/278.15"
+  "2026-11-12 Arabica Dec up ~4% intraday to ~280, through old resistance 276.5/278.15",
+  "2026-11-12 Brent briefly hits $94 after Trump says US has no need for Iran deal; peace trade unwinds"
  ]
 }

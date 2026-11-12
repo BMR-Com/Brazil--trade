@@ -3,30 +3,31 @@
   "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
   "markets": {
     "cotton": {
-      "date": "2026-11-11",
+      "date": "2026-11-12",
       "events": [
-        "Weekly US export sales were the best in seven weeks (all 2026/27), led by Vietnam; shipments slowed. Commitments run ahead of last year but behind the 5-year pace vs USDA (ADMIS).",
-        "A weaker dollar after the midterms and hopes of lower tariffs helped early in the week; equity weakness capped mill-demand optimism (ADMIS)."
-      ]
+        "Trade deals in progress could lift US cotton and rice exports (Brownfield).",
+        "Last week's export sales were the best in seven weeks, led by Vietnam (ADMIS)."
+      ],
+      "fundamental": "A possible demand-side positive: new US trade deals could open more export room for cotton, which matters with commitments still behind the usual pace. Nothing new on old-crop supply or certs today."
     },
     "sugar": {
-      "fund_score": -0.25,
-      "fundamental": "No new centre-south crush figures yet, so India's quick start still sets the supply tone. Crude has turned back up at midday after the early peace-talk selloff, which keeps some ethanol-parity support under Brazilian mills rather than removing it.",
+      "fund_score": -0.3,
+      "fundamental": "The Brazilian real weakened more than 1% against the dollar, which encourages Brazilian mills to sell export sugar forward and knocked raw sugar back below 18.2. Firmer crude helps the ethanol side, but currency is the bigger driver today; India's fast start still sets the supply tone.",
       "events": [
-        "Raw sugar's midweek bounce came from crude-linked short covering, not a change in Brazil's cane outlook (Barchart).",
-        "Oil dropped early Thursday on Iran and Ukraine peace optimism before recovering into midday (OilPrice.com, Yahoo Finance).",
-        "India's early, fast crush remains the main bearish factor for the new season (ADMIS, Barchart)."
+        "Raw sugar fell as the real slid, raising the incentive for Brazilian export sales (Barchart).",
+        "Crude recovered sharply after Trump said the US does not need an Iran deal, supporting ethanol parity (OilPrice.com).",
+        "India's early, quick crush remains the main bearish factor (ADMIS, Barchart)."
       ],
       "date": "2026-11-12"
     },
     "coffee": {
-      "date": "2026-11-11",
-      "fund_score": -0.35,
-      "fundamental": "The deliverability story is strengthening: ICE certified arabica keeps climbing as Brazilian lots clear grading, and that exchange supply is what is pressing Dec and March lower. With Brazil shipping briskly and rains helping next year's crop, there is little on the supply side to slow the slide near term.",
+      "date": "2026-11-12",
+      "fund_score": -0.3,
+      "fundamental": "Dec arabica rallied about 4% to near 280 on short covering, with commentary pointing at the low absolute level of ICE stocks. The exchange data cut the other way: certified arabica rose again to about 250k bags on Nov 11, led by Brazilian lots in Antwerp, so deliverable supply is building, not tightening.",
       "events": [
-        "Arabica fell again as ICE certified stocks and wider global supply weigh on the nearby (ADMIS, Barchart).",
-        "Brazil-origin lots dominate the arabica grading queue, pointing to more certified-stock builds ahead (ADMIS).",
-        "Brazil's October exports ran well above last year while Colombia's output slipped (ADMIS)."
+        "Arabica jumped on short covering tied to ICE inventory talk (Barchart).",
+        "ICE certified arabica climbed to ~250k bags on Nov 11, Brazil/Antwerp-led (ICE).",
+        "A weaker real adds to Brazilian farmer selling incentive (Barchart)."
       ]
     },
     "cocoa": {
