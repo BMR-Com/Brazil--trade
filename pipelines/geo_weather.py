@@ -159,6 +159,7 @@ R = [r for r in R if set(r[5]) & {"cotton", "sugar", "coffee", "cocoa"}]   # sof
 
 
 LIMITED = {"hit": False}
+PRIORITY = ["br_spw", "br_mgc", "br_ms", "in_lk", "in_kol", "in_sl", "in_ah", "in_bg", "in_su", "in_er", "br_prs", "br_al", "br_pe"]
 
 
 def get(url, params, tries=3):
@@ -227,8 +228,14 @@ def main():
     out = []
     prev = {r["id"]: r for r in (json.loads((OUT / "weather.json").read_text()).get("regions", []) if (OUT / "weather.json").exists() else [])}
     # stalest regions first, so a run that hits the time limit still rotates through every region over a few days
-    order = sorted(R, key=lambda r: (prev.get(r[0], {}).get("history", False), prev.get(r[0], {}).get("data_through", "")))
+    # histories still missing are fetched in PRIORITY order first (Brazil cane top 5 states, then India cane states)
+    rank = {k: i for i, k in enumerate(PRIORITY)}
+    order = sorted(R, key=lambda r: (prev.get(r[0], {}).get("history", False), rank.get(r[0], 99), prev.get(r[0], {}).get("data_through", "")))
+    hold = [h for h in os.environ.get("GEO_WX_HOLD", "cn_").split(",") if h]
     for rid, name, country, lat, lon, comms, sstart, note in order:
+        if any(rid.startswith(h) for h in hold) and rid in prev:   # on hold to save Open-Meteo quota: keep last reading
+            out.append(prev[rid])
+            continue
         hp = HIST / f"{rid}.csv.gz"
         hist = None
         if hp.exists():
