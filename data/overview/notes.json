@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
   "markets": {
     "cotton": {
@@ -10,13 +10,14 @@
       ]
     },
     "sugar": {
-      "date": "2026-11-11",
       "fund_score": -0.25,
-      "fundamental": "Nothing new from Brazil's centre-south today; the fast start to India's crush still sets the tone. The bounce in March raws came from short covering on firmer crude, which nudges Brazilian mills toward ethanol at the margin, not from a change in the cane balance.",
+      "fundamental": "Still no fresh centre-south crush data; India's fast start remains the dominant supply signal. Yesterday's crude-led short covering looks fragile now that oil is sliding again on peace hopes, which trims the ethanol-parity cushion under Brazilian mills.",
       "events": [
-        "March raws rebounded about 2% as crude strength prompted short covering (Barchart).",
-        "India's early, quick crush remains the main bearish surprise for the new season (ADMIS, Barchart)."
-      ]
+        "Raw sugar's midweek bounce came from short covering tied to crude rather than any change in Brazil's cane outlook (Barchart).",
+        "Crude turned lower Thursday as Iran and Ukraine peace optimism grew, removing the prop behind sugar's rebound (OilPrice.com).",
+        "India's early and quick crush is still the main bearish factor for the new season (ADMIS, Barchart)."
+      ],
+      "date": "2026-11-12"
     },
     "coffee": {
       "date": "2026-11-11",

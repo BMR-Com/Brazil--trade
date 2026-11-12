@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11 20:44 UTC",
+ "updated": "2026-11-12 13:44 UTC",
  "views": {
   "cotton": {
    "view": "bullish",
@@ -7,14 +7,14 @@
    "score": 0.21
   },
   "sugar": {
-   "view": "neutral",
-   "shade": "neutral",
-   "score": -0.01
+   "view": "mildly bearish",
+   "shade": "bear1",
+   "score": -0.13
   },
   "coffee": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.29
+   "score": -0.26
   },
   "cocoa": {
    "view": "mildly bearish",
@@ -24,13 +24,14 @@
  },
  "alerts": {
   "cotton": [],
-  "sugar": [],
+  "sugar": [
+   "Broke above R1 18.17",
+   "Broke above R2 18.35"
+  ],
   "coffee": [],
   "cocoa": []
  },
  "news": [
-  "2026-11-11 Ivory Coast weather agency: El Nino could cut cocoa output up to 25%",
-  "2026-11-11 Screwworm resurgence in milder weather",
-  "2026-11-11 Orlen cancels QatarEnergy LNG deal"
+  "2026-11-12 Oil sinks on Iran/Ukraine peace optimism"
  ]
 }
