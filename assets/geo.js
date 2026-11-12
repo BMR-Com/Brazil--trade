@@ -2,7 +2,7 @@
 // crop-region weather vs history, US drought, and weather websites. Geo.mount(el, ['corn']) or several keys (picker).
 const Geo = (() => {
   const LIB = ['https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js', 'https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js'];
-  let libs = null, world = null, us = null, WX = null, WE = null;
+  let libs = null, world = null, us = null, WX = null, WE = null, WW = null;
   const cache = {};
   const load = src => new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = no; document.head.appendChild(s); });
   async function ready() {
@@ -12,6 +12,7 @@ const Geo = (() => {
     if (!us) us = await fetch('https://cdn.jsdelivr.net/npm/us-atlas@3.0.1/states-10m.json').then(r => r.json());
     if (!WX) WX = await getJSON('data/geo/weather.json').catch(() => ({ regions: [] }));
     if (!WE) WE = await getJSON('data/geo/wx_ensemble.json').catch(() => ({ regions: {} }));
+    if (!WW) WW = await getJSON('data/geo/weighted.json').catch(() => ({ commodities: {} }));
   }
   const n0 = v => v == null ? '–' : Math.round(v).toLocaleString();
   const n1 = v => v == null ? '–' : (+v).toLocaleString(undefined, { maximumFractionDigits: 1 });
@@ -135,6 +136,37 @@ const Geo = (() => {
           <td>${w && w.rain_normal != null && w.rain_normal < 5 ? `${n0(w.rain_p50)} mm<br><span class="note">dry season</span>` : w ? `${n0(w.rain_p50)} mm${w.rain_anom_pct != null ? ` (${w.rain_anom_pct > 0 ? '+' : ''}${w.rain_anom_pct}%)` : ''}<br><span class="note">dry ${pc(w.p_dry)} / wet ${pc(w.p_wet)}${w.tmax_anom != null ? ` · ${w.tmax_anom > 0 ? '+' : ''}${w.tmax_anom}°C` : ''}</span>` : '–'}</td></tr>`; }).join('')}</table></div>
       <p class="note">Each cell: median 15-day rain across members (vs the 2011–2025 average), the 10th–90th percentile range, and the share of members in the driest / wettest third of past years. "Dry" or "wet" means both ECMWF ensembles put at least 60% of members there; "split" means they point opposite ways. Frost = share of members with a day at or below 3°C (0°C in brackets); it is flagged red only for coffee and cane, where frost damages the crop (Brazil: June–August). Regions in their dry season show rain only. Weeks 3–4 come from GEFS alone and have little skill beyond broad direction. Source: Open-Meteo ensemble API (ECMWF ENS and AIFS ENS, NOAA GEFS); drivers from NOAA CPC.</p></div>`;
   }
+  // production-weighted rain for one country: index, regions with their shares, season curve
+  const pn = v => v == null ? '–' : `${Math.round(v)}%`;
+  const pnc = v => v == null ? '' : v < 75 ? 'dn' : v > 125 ? 'up' : '';
+  function curveSvg(sc) {
+    if (!sc || !sc.mean) return '';
+    const W = 300, H = 90, n = sc.labels.length, all = [...sc.p90, ...(sc.current || []), ...(sc.last || [])].filter(v => v != null), hi = Math.max(...all, 1);
+    const X = i => 4 + (W - 8) * i / (n - 1), Y = v => H - 12 - (H - 18) * v / hi;
+    const line = (a, st) => { const pts = a ? a.map((v, i) => v == null ? null : `${X(i)},${Y(v)}`).filter(Boolean) : []; return pts.length > 1 ? `<polyline points="${pts.join(' ')}" fill="none" ${st}/>` : ''; };
+    const band = sc.p90.map((v, i) => `${X(i)},${Y(v)}`).concat(sc.p10.map((v, i) => `${X(i)},${Y(v)}`).reverse()).join(' ');
+    const td = sc.to_date;
+    return `<svg width="${W}" height="${H}" class="mk-spark"><polygon points="${band}" fill="#9bb7d9" opacity=".3"/>${line(sc.mean, 'stroke="#6a86a8" stroke-dasharray="3,2"')}${line(sc.last, 'stroke="#aaa"')}${line(sc.current, 'stroke="#c48a1c" stroke-width="2"')}
+      <text x="4" y="${H - 1}" font-size="9" fill="#888">${sc.labels[0]}</text><text x="${W - 4}" y="${H - 1}" font-size="9" fill="#888" text-anchor="end">${sc.labels[n - 1]}</text></svg>
+      <p class="note">Season rain, weighted (${sc.season}, orange) vs ${sc.last_season} (grey) and the ${sc.years} average (dashed; band = 10th–90th pct)${td ? `: <b>${n0(td.mm)} mm</b> so far vs ${n0(td.mean)} mm average (${pn(td.pct_mean)}), ${ord(td.rank)} of ${td.n + 1} seasons` : ''}.${sc.points && sc.points.length ? ` Uses the ${sc.points.length} regions with history.` : ''}</p>`;
+  }
+  function weightedBlock(G, c) {
+    const X = WW && WW.commodities && (WW.commodities[G.key] || {})[c.country];
+    if (!X) return null;
+    const col = X.score < 0 ? 'var(--dn)' : X.score > 0 ? 'var(--up)' : '#555';
+    const tmp = X.tmax30_anom;
+    return `<p>Production-weighted rain: <b style="color:${col}">${X.read}</b></p>
+      <div class="tbl"><table class="geo-mini"><tr><th class="l">Weighted index</th><th>30 d</th><th>90 d</th><th>Season (${X.season_label})</th><th>Soil moist.</th><th>Max temp anom.</th><th>Next 16 d</th></tr>
+        <tr><td class="l"><b>${c.country}</b></td><td class="${pnc(X.r30_pct_normal)}">${pn(X.r30_pct_normal)}</td><td class="${pnc(X.r90_pct_normal)}">${pn(X.r90_pct_normal)}</td><td class="${pnc(X.rstd_pct_normal)}">${pn(X.rstd_pct_normal)}</td>
+        <td class="${pcol(X.sm100_p)}">${X.sm100_p != null ? ord(Math.round(X.sm100_p)) + ' pct' : '–'}</td><td>${tmp != null ? (tmp > 0 ? '+' : '') + tmp.toFixed(1) + '°C' : '–'}</td><td class="${pnc(X.f16_rain_pct_normal)}">${pn(X.f16_rain_pct_normal)}</td></tr></table></div>
+      <div class="tbl"><table class="geo-mini"><tr><th class="l">Region</th><th>Share</th><th>Rain 30 d</th><th>Rain 90 d</th><th>Season</th><th>Soil moist.</th><th>Next 16 d</th></tr>
+        ${X.regions.map(r => { const q = (a, b) => a == null ? '–' : b ? pn(100 * a / b) : n0(a) + ' mm';
+          return `<tr class="${r.has_weather ? '' : 'note'}"><td class="l">${r.label}${r.has_weather && !r.has_history ? ' <span class="note">(history pending)</span>' : ''}${r.has_weather ? '' : ' <span class="note">(loading)</span>'}</td><td>${r.share}%</td>
+            <td class="${r.r30_n ? pnc(100 * r.r30 / r.r30_n) : ''}">${q(r.r30, r.r30_n)}</td><td class="${r.r90_n ? pnc(100 * r.r90 / r.r90_n) : ''}">${q(r.r90, r.r90_n)}</td><td>${q(r.rstd, r.rstd_n)}</td>
+            <td class="${pcol(r.sm100_p)}">${r.sm100_p != null ? ord(r.sm100_p) + ' pct' : '–'}</td><td>${q(r.f16_rain, r.f16_rain_n)}</td></tr>`; }).join('')}</table></div>
+      ${curveSvg(X.season_curve)}
+      <p class="note">Rain as % of the 2011–2025 average for the same dates (green above 125%, red below 75%). Weights: ${X.source}; mapped regions cover ~${Math.min(100, Math.round(X.mapped_pct))}% of output, weather in for ${n0(X.weather_share)}% of that and history for ${n0(X.normal_share)}% (the rest drop out and the others are re-weighted). ${X.note}</p>`;
+  }
   const STC = { planting: '#9fd3a4', vegetative: '#5fae6b', critical: '#d9822b', harvest: '#a0743c' };
   function calendarCard(G, regs) {
     if (!G.calendar || !G.calendar.length) return '';
@@ -158,10 +190,10 @@ const Geo = (() => {
         return `<div class="geo-cty"><h3>${c.country} <span class="note">${c.share != null ? c.share + '% of world output' : ''}</span></h3>
           <p>${c.now ? `Stage now: <b>${c.now[0]}</b>${c.now[3] >= 3 ? ' (yield-setting)' : ''}: ${c.now[4]}.` : `Between seasons; next: <b>${c.next[0]}</b> (${M[c.next[1] - 1]}): ${c.next[4]}.`}</p>
           <p>Weather impact: <b style="color:${col}">${c.read}</b></p>
-          ${rr.length ? `<div class="tbl"><table class="geo-mini"><tr><th class="l">Region</th><th>Rain 60 d</th><th>Season rain</th><th>Soil moist.</th><th>Max temp anom.</th><th>Next 16 d</th></tr>${rr.map(r => `<tr><td class="l">${r.name}</td>
+          ${weightedBlock(G, c) || (rr.length ? `<div class="tbl"><table class="geo-mini"><tr><th class="l">Region</th><th>Rain 60 d</th><th>Season rain</th><th>Soil moist.</th><th>Max temp anom.</th><th>Next 16 d</th></tr>${rr.map(r => `<tr><td class="l">${r.name}</td>
             <td class="${pcol(r.r60_p)}">${r.r60_p != null ? ord(r.r60_p) + ' pct' : (r.r60 != null ? n0(r.r60) + ' mm' : '–')}</td><td>${r.rstd_n ? pct(r.rstd, r.rstd_n) : '–'}</td>
             <td class="${pcol(r.sm100_p)}">${r.sm100_p != null ? ord(r.sm100_p) + ' pct' : '–'}</td><td>${r.tmax30_n != null ? (r.tmax30 - r.tmax30_n > 0 ? '+' : '') + (r.tmax30 - r.tmax30_n).toFixed(1) + '°C' : '–'}</td>
-            <td>${r.f16_rain != null ? n0(r.f16_rain) + ' mm' + (r.f16_rain_n ? ' (' + pct(r.f16_rain, r.f16_rain_n) + ')' : '') : '–'}</td></tr>`).join('')}</table></div>` : '<p class="note">No weather region tracked for this country yet.</p>'}
+            <td>${r.f16_rain != null ? n0(r.f16_rain) + ' mm' + (r.f16_rain_n ? ' (' + pct(r.f16_rain, r.f16_rain_n) + ')' : '') : '–'}</td></tr>`).join('')}</table></div>` : '<p class="note">No weather region tracked for this country yet.</p>')}
           <p class="note">USDA estimate ${G.my}/${String(G.my + 1).slice(2)} — production: ${cmp(c.production)}${c.yield ? `; yield (${yu}): ${cmp(c.yield)}` : ''}</p>
           ${bars(c.yield)}${c.yield ? '<span class="note"> yield, last 10 years</span>' : ''}</div>`; }).join('')}</div></div>`;
   }

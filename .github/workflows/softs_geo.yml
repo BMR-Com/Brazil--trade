@@ -5,7 +5,7 @@ on:
       steps: {description: 'geo.py steps (psd comtrade nass usdm) and/or weather', required: false, default: 'all'}
   push:
     branches: [main]
-    paths: ['pipelines/geo.py', 'pipelines/geo_weather.py', 'models/geo.py', '.github/workflows/softs_geo.yml']
+    paths: ['pipelines/geo.py', 'pipelines/geo_weather.py', 'models/geo.py', 'models/crop_calendar.py', 'models/weighted_weather.py', '.github/workflows/softs_geo.yml']
   schedule:
     - cron: '20 10 * * *'    # daily: crop-region weather (Open-Meteo) + Drought Monitor, before the morning brief
     - cron: '40 15 * * 1'    # Mondays: PSD, Comtrade, NASS state data (PSD updates after WASDE)
@@ -37,6 +37,9 @@ jobs:
       - name: production-weighted coffee weather
         continue-on-error: true
         run: python models/coffee_weather.py
+      - name: production-weighted sugar and coffee weather by country
+        continue-on-error: true
+        run: python models/weighted_weather.py
       - name: commit
         run: |
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
