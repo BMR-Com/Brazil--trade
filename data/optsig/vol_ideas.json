@@ -1,0 +1,161 @@
+{
+ "generated": "2026-11-12",
+ "ideas": [
+  {
+   "sym": "KC",
+   "kind": "calendar",
+   "conviction": "high",
+   "title": "Sell Mar 27 vol, buy May 27 vol (vega-neutral)",
+   "legs": [
+    "Sell 4 Mar 27 272.5 straddle(s)",
+    "Buy 3 May 27 267.5 straddle(s)",
+    "Delta-hedge with futures; hold about a month or until the 3m–6m gap normalises"
+   ],
+   "why": [
+    "3-month implied vol is +3.8 pts over 6-month: 96th percentile since 2005, front unusually rich",
+    "Legs: Mar 27 (96 days, on Mar 27 futures 271.65, ATM vol 38.5%) vs May 27 (154 days, on May 27 futures 267.7, ATM vol 36.7%)",
+    "Nov is in coffee's upside-tail window: if short anything, be short puts rather than calls"
+   ],
+   "risk": "A spike in front-month vol (weather, a squeeze, inversion) hurts the short leg first; keep it vega-neutral and delta-hedged.",
+   "data_date": "2026-11-06",
+   "name": "Coffee"
+  },
+  {
+   "sym": "CT",
+   "kind": "calendar",
+   "conviction": "medium",
+   "title": "Buy Mar 27 vol, sell May 27 vol (vega-neutral)",
+   "legs": [
+    "Buy 3 Mar 27 83 straddle(s)",
+    "Sell 2 May 27 84 straddle(s)",
+    "Delta-hedge with futures"
+   ],
+   "why": [
+    "3-month implied vol is -0.5 pts vs 6-month: 7th percentile, front unusually cheap",
+    "Legs: Mar 27 (91 days, on Mar 27 futures 82.79, ATM vol 24.2%) vs May 27 (161 days, on May 27 futures 84.35, ATM vol 25.2%)"
+   ],
+   "risk": "Back-month vol can rise faster in a sustained rally; smaller payoff than the front-rich case.",
+   "data_date": "2026-11-06",
+   "name": "Cotton"
+  },
+  {
+   "sym": "KC",
+   "kind": "skew",
+   "conviction": "medium",
+   "title": "Buy cheap call skew: buy Mar 27 317.5 calls, sell 242.5 puts",
+   "legs": [
+    "Buy Mar 27 317.5 call (≈25-delta)",
+    "Sell Mar 27 242.5 put (≈25-delta)",
+    "Delta-hedge with futures"
+   ],
+   "why": [
+    "1-month 25-delta risk reversal -0.8: 4th percentile, puts unusually rich vs calls"
+   ],
+   "risk": "A sell-off makes puts richer still; delta-hedge and size small.",
+   "data_date": "2026-11-06",
+   "name": "Coffee"
+  },
+  {
+   "sym": "SB",
+   "kind": "structural",
+   "conviction": "medium",
+   "title": "Own long-dated vol: May 27 17.75 straddle, delta-hedged",
+   "legs": [
+    "Buy May 27 17.75 straddle",
+    "Delta-hedge weekly; fund part of the theta by selling the front month only when it is rich vs 3-month"
+   ],
+   "why": [
+    "Long-dated sugar no. 11 options have usually been priced below the volatility that followed",
+    "May 27 (160 days, on May 27 futures 17.71, ATM vol 25.4%)"
+   ],
+   "risk": "Bleeds theta in quiet markets; this is a position held through the season, not a quick trade.",
+   "data_date": "2026-11-06",
+   "name": "Sugar No. 11"
+  },
+  {
+   "sym": "CC",
+   "kind": "skew",
+   "conviction": "low",
+   "title": "Sell rich call skew: sell Mar 27 5,800 calls, buy 4,350 puts",
+   "legs": [
+    "Sell Mar 27 5,800 call (≈25-delta, vol 45.4%)",
+    "Buy Mar 27 4,350 put (≈25-delta, vol 38.3%)",
+    "Delta-hedge with futures (it is a skew trade, not a bearish bet)"
+   ],
+   "why": [
+    "1-month 25-delta risk reversal +3.7: 93th percentile, calls very rich vs puts",
+    "Caution: Nov is in the window where cocoa upside has paid in big years — keep it small"
+   ],
+   "risk": "A real upside breakout makes calls richer still; never run it un-hedged.",
+   "data_date": "2026-11-10",
+   "name": "Cocoa"
+  }
+ ],
+ "readings": {
+  "CT": {
+   "date": "2026-11-09",
+   "atm_1m": 21.52,
+   "atm_3m": 23.58,
+   "atm_6m": 24.08,
+   "atm_1m_pct": 35,
+   "atm_3m_pct": 55,
+   "rv20": 13.13,
+   "rr25": null,
+   "rr_pct": null,
+   "s13": -2.06,
+   "s13_pct": 6,
+   "s36": -0.5,
+   "s36_pct": 7,
+   "spr": -4.62
+  },
+  "KC": {
+   "date": "2026-11-09",
+   "atm_1m": 40.66,
+   "atm_3m": 38.39,
+   "atm_6m": 34.56,
+   "atm_1m_pct": 85,
+   "atm_3m_pct": 80,
+   "rv20": 31.03,
+   "rr25": -0.8,
+   "rr_pct": 4,
+   "s13": 2.27,
+   "s13_pct": 83,
+   "s36": 3.83,
+   "s36_pct": 96,
+   "spr": 2.38
+  },
+  "SB": {
+   "date": "2026-11-09",
+   "atm_1m": 24.68,
+   "atm_3m": 26.01,
+   "atm_6m": 23.91,
+   "atm_1m_pct": 32,
+   "atm_3m_pct": 51,
+   "rv20": 27.52,
+   "rr25": 3.09,
+   "rr_pct": 77,
+   "s13": -1.33,
+   "s13_pct": 7,
+   "s36": 2.1,
+   "s36_pct": 66,
+   "spr": 3.11
+  },
+  "CC": {
+   "date": "2026-11-10",
+   "atm_1m": 39.21,
+   "atm_3m": 40.33,
+   "atm_6m": 39.69,
+   "atm_1m_pct": 80,
+   "atm_3m_pct": 82,
+   "rv20": 35.34,
+   "rr25": 3.74,
+   "rr_pct": 93,
+   "s13": -1.11,
+   "s13_pct": 14,
+   "s36": 0.64,
+   "s36_pct": 42,
+   "spr": -2.65
+  }
+ },
+ "note": "Vol-structure ideas from implied-vol term structure, skew and seasonality (constant-maturity vols since 2005, extended with ICE settlements). Strikes are listed strikes from the latest ICE settlement file; vega-neutral ratios use ATM vega ≈ futures × √days. Not advice; size for the tail risk of short options."
+}

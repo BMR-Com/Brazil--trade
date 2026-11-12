@@ -8,6 +8,23 @@ const OptSig = (() => {
   const ord = v => v == null ? '–' : `${v}${v % 100 >= 10 && v % 100 <= 20 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[v % 10] || 'th')}`;
   const bar = p => p == null ? '' : `<span style="display:inline-block;width:64px;height:7px;background:#e6e6e0;border-radius:4px;vertical-align:middle;position:relative"><i style="position:absolute;left:0;top:0;height:7px;border-radius:4px;width:${Math.max(3, p)}%;background:${p >= 80 ? '#c0392b' : p <= 20 ? '#2e8b3e' : '#b59a2a'}"></i></span> <span class="note">${ord(p)}</span>`;
   const load = () => D ? Promise.resolve(D) : fetch('data/optsig/optsig.json?v=' + Date.now().toString().slice(0, 8)).then(r => r.json()).then(d => (D = d)).catch(() => null);
+  let VI = null;
+  const loadVI = () => VI ? Promise.resolve(VI) : fetch('data/optsig/vol_ideas.json?v=' + Date.now().toString().slice(0, 8)).then(r => r.json()).then(d => (VI = d)).catch(() => null);
+  const CONV = { high: ['#d7efd5', '#2e8b3e'], medium: ['#fff7d1', '#d4ac0d'], low: ['#eeeeea', '#8a8984'] };
+  function volCard(V, syms) {
+    if (!V) return '';
+    const ids = V.ideas.filter(i => !syms || syms.includes(i.sym));
+    const R = V.readings, rows = (syms || Object.keys(R)).filter(s => R[s]);
+    return `<div class="card" style="margin-top:12px"><h2>Vol-structure trade ideas <span class="note">term structure, skew and seasonality; options data ${esc((ids[0] || {}).data_date || '')}</span></h2>
+      ${ids.length ? ids.map(i => { const [bg, bd] = CONV[i.conviction] || CONV.low; return `<div style="border:1px solid var(--line);border-left:6px solid ${bd};background:${bg};border-radius:8px;padding:8px 12px;margin:6px 0">
+        <b>${esc(i.name)}: ${esc(i.title)}</b> <span class="note">(${i.conviction} conviction · ${esc(i.kind)})</span>
+        <ul style="margin:4px 0 0 18px;padding:0">${i.legs.map(l => `<li>${esc(l)}</li>`).join('')}</ul>
+        <p style="margin:4px 0 0">${i.why.map(esc).join(' · ')}</p><p class="note" style="margin:4px 0 0">${esc(i.risk)}</p></div>`; }).join('') : '<p class="note">No vol-structure idea passes the rules right now.</p>'}
+      <div class="tbl"><table><tr><th class="l">Market</th><th>Data</th><th>1m ATM</th><th>3m</th><th>6m</th><th>20d realized</th><th>1m − 3m</th><th>3m − 6m</th><th>25Δ RR (1m)</th><th>Front − 2nd fut.</th></tr>
+      ${rows.map(s => { const r = R[s]; return `<tr><td class="l"><b>${s}</b></td><td>${esc(r.date)}</td><td>${n(r.atm_1m)} <span class="note">${ord(r.atm_1m_pct)}</span></td><td>${n(r.atm_3m)}</td><td>${n(r.atm_6m)}</td><td>${n(r.rv20)}</td>
+        <td>${sg(r.s13)} <span class="note">${ord(r.s13_pct)}</span></td><td>${sg(r.s36)} <span class="note">${ord(r.s36_pct)}</span></td><td>${sg(r.rr25)} <span class="note">${ord(r.rr_pct)}</span></td><td>${r.spr == null ? '–' : sg(r.spr) + '%'}</td></tr>`; }).join('')}</table></div>
+      <p class="note">Percentiles (small figures) rank today against every day since 2005. ${esc(V.note)} Updated ${esc(V.generated)}.</p></div>`;
+  }
   const LEAN = { bullish: ['#d7efd5', '#2e8b3e'], bearish: ['#fbe1dc', '#c0392b'], neutral: ['#fff7d1', '#d4ac0d'] };
 
   function block(sym, m) {
@@ -34,7 +51,8 @@ const OptSig = (() => {
   async function card(el, syms) {
     const d = await load(); if (!d) return;
     const ms = syms.filter(s => d.markets[s]); if (!ms.length) return;
-    el.innerHTML = `<div class="card"><h2>Options &amp; open interest: weekly read and trade idea</h2>${ms.map(s => block(s, d.markets[s])).join('')}<p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>`;
+    const V = await loadVI();
+    el.innerHTML = `<div class="card"><h2>Options &amp; open interest: weekly read and trade idea</h2>${ms.map(s => block(s, d.markets[s])).join('')}<p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${volCard(V, ms)}`;
   }
   async function show() {
     const el = document.getElementById('optsig'); history.replaceState(null, '', '#ideas');
@@ -45,7 +63,7 @@ const OptSig = (() => {
     el.innerHTML = `<div style="max-width:1200px;margin:0 auto;padding:12px 16px"><div class="card"><h2>Trade ideas from options and open interest</h2>
       <div class="tbl"><table><tr><th class="l">Market</th><th class="l">Lean</th><th class="l">Idea</th><th class="l">Active signals</th><th>Data to</th></tr>
       ${ks.map(s => { const m = d.markets[s]; return `<tr><td class="l"><b>${esc(m.name)}</b></td><td class="l ${m.idea.lean === 'bullish' ? 'up' : m.idea.lean === 'bearish' ? 'dn' : ''}">${m.idea.lean}</td><td class="l">${esc(m.idea.structure)}</td><td class="l note">${m.active.map(a => esc(a.text.split(':')[0])).join('; ') || '–'}</td><td>${m.asof}</td></tr>`; }).join('')}</table></div>
-      <p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${ks.map(s => block(s, d.markets[s])).join('')}</div>`;
+      <p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${volCard(await loadVI(), null)}${ks.map(s => block(s, d.markets[s])).join('')}</div>`;
   }
   return { card, show, load };
 })();
