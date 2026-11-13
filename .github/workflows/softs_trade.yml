@@ -10,6 +10,8 @@ on:
     - cron: '31 12 * * 4'     # Thursday weekly export sales, 8:30 ET in daylight time
     - cron: '31 13 * * 4'     # same in standard time; exits at once if the week is already stored
     - cron: '43 12 * * 4'     # retries: GitHub delays or drops scheduled runs at busy times
+    - cron: '37 13 * * 5'     # Friday catch-up: USDA moves the release to Friday in holiday weeks (or publishes late);
+    - cron: '37 14 * * 5'     #   exits at once if the week is already stored
     - cron: '53 12 * * 4'
     - cron: '7 13 * * 4'
     - cron: '43 13 * * 4'
