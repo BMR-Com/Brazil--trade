@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13 17:55 UTC",
+ "updated": "2026-11-13 20:50 UTC",
  "by": "claude",
  "views": {
   "cotton": {
@@ -25,7 +25,10 @@
  },
  "alerts": {
   "cotton": [],
-  "sugar": [],
+  "sugar": [
+   "Broke above R1 18.35",
+   "Broke above R2 18.38"
+  ],
   "coffee": [],
   "cocoa": []
  },
@@ -34,6 +37,7 @@
   "2026-11-12 Arabica Dec up ~4% intraday to ~280, through old resistance 276.5/278.15",
   "2026-11-12 Brent briefly hits $94 after Trump says US has no need for Iran deal; peace trade unwinds",
   "2026-11-13 Sugar Mar back above 18.35/18.38 resistance at ~18.41 (TradingView)",
-  "2026-11-13 Cocoa: Ivory Coast rains slow arrivals; El Nino output warning"
+  "2026-11-13 Cocoa: Ivory Coast rains slow arrivals; El Nino output warning",
+  "2026-11-13 Cocoa: Ivory Coast rains now disrupting bean transport to port"
  ]
 }
