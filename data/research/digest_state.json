@@ -1,0 +1,14 @@
+{
+  "last_run_utc": "2026-11-13T17:30:00Z",
+  "note": "2026-11-13 run: ADMIS summarized from news.json teasers only (no browser); Rabobank and Czapp pages could not be fetched (WebFetch permission not granted in unattended run), so no Rabobank/Czapp URLs are marked as read.",
+  "urls": [
+    "https://www.admis.com/ag-market-view-for-nov-12-2026/",
+    "https://www.admis.com/beef-imports-pressuring-beef-prices/",
+    "https://www.admis.com/mideast-output-climbing/",
+    "https://www.admis.com/el-nino-threatens-cocoa-crop/",
+    "https://www.admis.com/natural-gas-prices-on-track-for-sizable-weekly-gains/",
+    "https://www.admis.com/ag-market-view-for-nov-11-2026/",
+    "https://www.admis.com/ice-stocks-weigh-on-coffee/",
+    "https://www.admis.com/live-cattle-traders-eye-cash-rebound/"
+  ]
+}
