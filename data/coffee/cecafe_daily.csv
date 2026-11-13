@@ -692,3 +692,63 @@ report,month,table,unit,col,arabica,conilon,soluble,total
 2026-11-11,2026-11,embarque,Vitória,day,0.0,0.0,0.0,0.0
 2026-11-11,2026-11,embarque,Vitória,mtd,1320.0,0.0,0.0,1320.0
 2026-11-11,2026-11,embarque,Vitória,prev,2200.0,2640.0,0.0,4840.0
+2026-11-12,2026-11,certificados,Outros,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,certificados,Outros,mtd,10196.0,2642.0,23571.0,36409.0
+2026-11-12,2026-11,certificados,Outros,prev,34063.0,5695.0,26897.0,66655.0
+2026-11-12,2026-11,certificados,Redex E Eadi (Minas Gerais),day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,certificados,Redex E Eadi (Minas Gerais),mtd,24718.0,0.0,0.0,24718.0
+2026-11-12,2026-11,certificados,Redex E Eadi (Minas Gerais),prev,68387.0,0.0,0.0,68387.0
+2026-11-12,2026-11,certificados,Rio De Janeiro,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,certificados,Rio De Janeiro,mtd,104714.0,15410.0,16812.0,136936.0
+2026-11-12,2026-11,certificados,Rio De Janeiro,prev,179241.0,49582.0,18299.0,247122.0
+2026-11-12,2026-11,certificados,Salvador,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,certificados,Salvador,mtd,5143.0,0.0,0.0,5143.0
+2026-11-12,2026-11,certificados,Salvador,prev,2867.0,0.0,0.0,2867.0
+2026-11-12,2026-11,certificados,Santos,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,certificados,Santos,mtd,804202.0,3093.0,45675.0,852970.0
+2026-11-12,2026-11,certificados,Santos,prev,1023099.0,48001.0,64967.0,1136067.0
+2026-11-12,2026-11,certificados,Totais,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,certificados,Totais,mtd,986518.0,158618.0,89077.0,1234213.0
+2026-11-12,2026-11,certificados,Totais,prev,1359900.0,397359.0,128975.0,1886234.0
+2026-11-12,2026-11,certificados,Vitória,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,certificados,Vitória,mtd,37545.0,137473.0,3019.0,178037.0
+2026-11-12,2026-11,certificados,Vitória,prev,52243.0,294081.0,18812.0,365136.0
+2026-11-12,2026-11,despacho,Outros,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,despacho,Outros,mtd,5544.0,879.0,19432.0,25855.0
+2026-11-12,2026-11,despacho,Outros,prev,24498.0,3833.0,14181.0,42512.0
+2026-11-12,2026-11,despacho,Redex E Eadi (Minas Gerais),day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,despacho,Redex E Eadi (Minas Gerais),mtd,18388.0,0.0,0.0,18388.0
+2026-11-12,2026-11,despacho,Redex E Eadi (Minas Gerais),prev,35961.0,0.0,0.0,35961.0
+2026-11-12,2026-11,despacho,Rio De Janeiro,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,despacho,Rio De Janeiro,mtd,37396.0,533.0,8407.0,46336.0
+2026-11-12,2026-11,despacho,Rio De Janeiro,prev,116161.0,24715.0,6998.0,147874.0
+2026-11-12,2026-11,despacho,Salvador,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,despacho,Salvador,mtd,4307.0,0.0,0.0,4307.0
+2026-11-12,2026-11,despacho,Salvador,prev,3187.0,0.0,0.0,3187.0
+2026-11-12,2026-11,despacho,Santos,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,despacho,Santos,mtd,439511.0,2293.0,37549.0,479353.0
+2026-11-12,2026-11,despacho,Santos,prev,814613.0,33001.0,48272.0,895886.0
+2026-11-12,2026-11,despacho,Totais,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,despacho,Totais,mtd,528828.0,73457.0,68407.0,670692.0
+2026-11-12,2026-11,despacho,Totais,prev,1022078.0,237960.0,75489.0,1335527.0
+2026-11-12,2026-11,despacho,Vitória,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,despacho,Vitória,mtd,23682.0,69752.0,3019.0,96453.0
+2026-11-12,2026-11,despacho,Vitória,prev,27658.0,176411.0,6038.0,210107.0
+2026-11-12,2026-11,embarque,Outros,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,embarque,Outros,mtd,5275.0,1212.0,19432.0,25919.0
+2026-11-12,2026-11,embarque,Outros,prev,22780.0,7673.0,14181.0,44634.0
+2026-11-12,2026-11,embarque,Rio De Janeiro,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,embarque,Rio De Janeiro,mtd,44317.0,45374.0,10802.0,100493.0
+2026-11-12,2026-11,embarque,Rio De Janeiro,prev,125641.0,177782.0,9262.0,312685.0
+2026-11-12,2026-11,embarque,Salvador,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,embarque,Salvador,mtd,640.0,0.0,0.0,640.0
+2026-11-12,2026-11,embarque,Salvador,prev,2867.0,0.0,0.0,2867.0
+2026-11-12,2026-11,embarque,Santos,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,embarque,Santos,mtd,477276.0,26871.0,38173.0,542320.0
+2026-11-12,2026-11,embarque,Santos,prev,867710.0,48985.0,52046.0,968741.0
+2026-11-12,2026-11,embarque,Totais,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,embarque,Totais,mtd,528828.0,73457.0,68407.0,670692.0
+2026-11-12,2026-11,embarque,Totais,prev,1022078.0,237960.0,75489.0,1335527.0
+2026-11-12,2026-11,embarque,Vitória,day,0.0,0.0,0.0,0.0
+2026-11-12,2026-11,embarque,Vitória,mtd,1320.0,0.0,0.0,1320.0
+2026-11-12,2026-11,embarque,Vitória,prev,3080.0,3520.0,0.0,6600.0
