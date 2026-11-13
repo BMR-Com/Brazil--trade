@@ -16,11 +16,11 @@
   "sugar": {
    "date": "2026-11-13",
    "by": "claude",
-   "time": "09:45 CT",
+   "time": "11:50 CT",
    "fundamental": "Brazil drives it: the post-election slide in the real raises mills' returns on exports in local currency and encourages sugar-heavy mixes, while raw sugar still pays above ethanol parity. Friday's bounce back over 18.4¢ is short covering on firmer crude, not a change in the Brazilian supply picture.",
    "events": [
     "Raw sugar dropped with the Brazilian real on Thursday (Barchart)",
-    "Short covering lifts Mar back above 18.35–18.38 resistance Friday (TradingView quote)",
+    "Mar holds around 18.39, near the 18.35–18.38 resistance, midday Friday (desk quote)",
     "Crude strength earlier in the week sparked short covering (Barchart)"
    ],
    "fund_score": -0.3
@@ -40,12 +40,12 @@
   "cocoa": {
    "date": "2026-11-13",
    "by": "claude",
-   "time": "09:45 CT",
+   "time": "11:50 CT",
    "fundamental": "Weather is back as a supply risk: excessive rain in Ivory Coast is slowing harvest and port arrivals, and the national weather agency warned El Niño could cut output by up to a quarter. Rising ICE stocks and industry estimates of a 2025/26 surplus keep the balance comfortable for now, so the risk is in next season's mid-crop.",
    "events": [
     "Heavy Ivory Coast rains disrupt cocoa flows and lift prices (Barchart)",
     "Ivory Coast weather agency warns El Niño could cut production ~25% (Reuters, ADMIS)",
-    "Dec cocoa up ~2% Friday at ~5,160 (TradingView quote)"
+    "Dec cocoa holds gains near 5,130 midday Friday (desk quote)"
    ],
    "fund_score": 0.15
   }
