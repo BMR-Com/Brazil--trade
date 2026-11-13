@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-13 02:08 UTC",
- "by": "bot",
+ "updated": "2026-11-13 15:50 UTC",
+ "by": "claude",
  "views": {
   "cotton": {
    "view": "bullish",
    "shade": "bull2",
-   "score": 0.22
+   "score": 0.21
   },
   "sugar": {
    "view": "mildly bearish",
@@ -15,12 +15,12 @@
   "coffee": {
    "view": "mildly bearish",
    "shade": "bear1",
-   "score": -0.17
+   "score": -0.12
   },
   "cocoa": {
    "view": "mildly bearish",
    "shade": "bear1",
-   "score": -0.1
+   "score": -0.08
   }
  },
  "alerts": {
@@ -32,6 +32,8 @@
  "news": [
   "2026-11-12 Oil sinks on Iran/Ukraine peace optimism",
   "2026-11-12 Arabica Dec up ~4% intraday to ~280, through old resistance 276.5/278.15",
-  "2026-11-12 Brent briefly hits $94 after Trump says US has no need for Iran deal; peace trade unwinds"
+  "2026-11-12 Brent briefly hits $94 after Trump says US has no need for Iran deal; peace trade unwinds",
+  "2026-11-13 Sugar Mar back above 18.35/18.38 resistance at ~18.41 (TradingView)",
+  "2026-11-13 Cocoa: Ivory Coast rains slow arrivals; El Nino output warning"
  ]
 }
