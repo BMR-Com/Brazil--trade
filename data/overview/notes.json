@@ -4,41 +4,54 @@
   "markets": {
     "cotton": {
       "date": "2026-11-12",
+      "by": "bot",
+      "time": "20:08 CT",
+      "claude_date": "2026-11-12",
+      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, price reports mixed (0 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
       "events": [
-        "Trade deals in progress could lift US cotton and rice exports (Brownfield).",
-        "Last week's export sales were the best in seven weeks, led by Vietnam (ADMIS)."
-      ],
-      "fundamental": "A possible demand-side positive: new US trade deals could open more export room for cotton, which matters with commitments still behind the usual pace. Nothing new on old-crop supply or certs today."
+        "Candid about cotton: What 2026 taught, what 2027 demands (Farm Progress, 2026-11-12)",
+        "High Fuel Costs And Low Yields Challenge Texas Cotton Growers (RFD-TV, 2026-11-12)",
+        "Trade deals could boost U.S. cotton and rice exports (Brownfield Ag News, 2026-11-12)"
+      ]
     },
     "sugar": {
-      "fund_score": -0.3,
-      "fundamental": "The Brazilian real weakened more than 1% against the dollar, which encourages Brazilian mills to sell export sugar forward and knocked raw sugar back below 18.2. Firmer crude helps the ethanol side, but currency is the bigger driver today; India's fast start still sets the supply tone.",
+      "date": "2026-11-12",
+      "by": "bot",
+      "time": "20:08 CT",
+      "claude_date": "2026-11-12",
+      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported lower (0 supply-tight, 0 supply-loose, 0 up, 1 down by keyword).",
       "events": [
-        "Raw sugar fell as the real slid, raising the incentive for Brazilian export sales (Barchart).",
-        "Crude recovered sharply after Trump said the US does not need an Iran deal, supporting ethanol parity (OilPrice.com).",
-        "India's early, quick crush remains the main bearish factor (ADMIS, Barchart)."
+        "Sugar Prices Tumble with the Brazilian Real (Barchart.com, 2026-11-12)"
       ],
-      "date": "2026-11-12"
+      "claude_fund_score": -0.3,
+      "fund_score": -0.3
     },
     "coffee": {
       "date": "2026-11-12",
-      "fund_score": -0.3,
-      "fundamental": "Dec arabica rallied about 4% to near 280 on short covering, with commentary pointing at the low absolute level of ICE stocks. The exchange data cut the other way: certified arabica rose again to about 250k bags on Nov 11, led by Brazilian lots in Antwerp, so deliverable supply is building, not tightening.",
+      "by": "bot",
+      "time": "20:08 CT",
+      "claude_date": "2026-11-12",
+      "fundamental": "2 headlines in the last 30 hours; the news flow leans supportive (supply risks or firm demand outnumber bearish supply news), prices mostly reported lower (1 supply-tight, 0 supply-loose, 0 up, 1 down by keyword).",
       "events": [
-        "Arabica jumped on short covering tied to ICE inventory talk (Barchart).",
-        "ICE certified arabica climbed to ~250k bags on Nov 11, Brazil/Antwerp-led (ICE).",
-        "A weaker real adds to Brazilian farmer selling incentive (Barchart)."
-      ]
+        "Keurig Is Paying Down Debt Ahead of Coffee Split. What That Means for the Stock. (Barron's, 2026-11-12)",
+        "Tightness in ICE Inventories Lifts Arabica Coffee Prices (Barchart.com, 2026-11-12)"
+      ],
+      "claude_fund_score": -0.3,
+      "fund_score": 0.0
     },
     "cocoa": {
-      "date": "2026-11-11",
-      "fund_score": -0.05,
-      "fundamental": "A new supply risk offsets part of the stock build: Ivory Coast's weather agency warned El Niño could cut national output by as much as a quarter, which lands as port arrivals already lag badly. Prices bounced about 4% on short covering, but ICE certified stocks are still at an 18-month high, so the bearish exchange picture has not gone away.",
+      "date": "2026-11-12",
+      "by": "bot",
+      "time": "20:08 CT",
+      "claude_date": "2026-11-11",
+      "fundamental": "2 headlines in the last 30 hours; the news flow leans supportive (supply risks or firm demand outnumber bearish supply news), price reports mixed (2 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
       "events": [
-        "Ivory Coast's meteorological agency warned El Niño could reduce cocoa production by up to 25% (Reuters).",
-        "Dec cocoa jumped ~4% intraday on short covering after breaking to its lowest since June (Barchart, ADMIS).",
-        "ICE cocoa stocks keep building to their highest since May 2024 while Ivorian arrivals trail last year (ADMIS, Reuters)."
-      ]
+        "El Niño Threatens Cocoa Crop (ADMIS, 2026-11-12)",
+        "Excessive Ivory Coast Rains Disrupt Cocoa Supplies and Boost Prices (Barchart.com, 2026-11-12)"
+      ],
+      "claude_fund_score": -0.05,
+      "fund_score": 0.12
     }
-  }
+  },
+  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-12 20:08 CT: Claude's desk read had not run for 5+ hours."
 }
