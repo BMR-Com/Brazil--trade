@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-16 13:58 UTC",
- "by": "claude",
+ "updated": "2026-11-16 23:02 UTC",
+ "by": "bot",
  "views": {
   "cotton": {
    "view": "bullish",
@@ -8,8 +8,8 @@
    "score": 0.22
   },
   "sugar": {
-   "view": "mildly bearish",
-   "shade": "bear1",
+   "view": "bearish",
+   "shade": "bear2",
    "score": -0.2
   },
   "coffee": {
@@ -20,14 +20,16 @@
   "cocoa": {
    "view": "mildly bearish",
    "shade": "bear1",
-   "score": -0.08
+   "score": -0.1
   }
  },
  "alerts": {
   "cotton": [],
   "sugar": [],
   "coffee": [],
-  "cocoa": []
+  "cocoa": [
+   "Broke below S1 5,111"
+  ]
  },
  "news": [
   "2026-11-12 Oil sinks on Iran/Ukraine peace optimism",

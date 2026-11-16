@@ -1,53 +1,59 @@
 {
- "updated": "2026-11-16",
- "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
- "markets": {
-  "cotton": {
-   "date": "2026-11-16",
-   "by": "claude",
-   "time": "07:50 CT",
-   "fundamental": "Old-crop Dec opened the week weaker at about 77.5 (-1.3¢), slipping under Friday's 77.73 support with no fresh supply news; the Texas short-crop story is unchanged. Mar holds roughly 3.9¢ over Dec, so the delivery carry still points to certificated cotton showing up against Dec longs.",
-   "events": [
-    "Dec cotton down ~1.3¢ early Monday, below 77.73 support (desk quote)",
-    "Cotton bulls held firm into Friday's close (Barchart)",
-    "Texas yields cut again in the November crop report (RFD-TV)"
-   ]
+  "updated": "2026-11-16",
+  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+  "markets": {
+    "cotton": {
+      "date": "2026-11-16",
+      "by": "bot",
+      "time": "17:02 CT",
+      "claude_date": "2026-11-16",
+      "fundamental": "1 headline in the last 76 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 1 up, 0 down by keyword).",
+      "events": [
+        "Breakthrough cotton yields with higher ROI (Farm Progress, 2026-11-15)"
+      ]
+    },
+    "sugar": {
+      "date": "2026-11-16",
+      "by": "bot",
+      "time": "17:02 CT",
+      "claude_date": "2026-11-16",
+      "fundamental": "No new headlines for this market in the last 76 hours.",
+      "events": [
+        "Mar raw sugar ~18.28, back below 18.35/18.38 (desk quote)",
+        "ISO deficit outlook lent support Friday (Barchart)",
+        "Crude lower Monday on supply-surplus worries (Reuters, OilPrice.com)"
+      ],
+      "claude_fund_score": -0.3,
+      "fund_score": -0.3
+    },
+    "coffee": {
+      "date": "2026-11-16",
+      "by": "bot",
+      "time": "17:02 CT",
+      "claude_date": "2026-11-16",
+      "fundamental": "5 headlines in the last 76 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 3 up, 2 down by keyword).",
+      "events": [
+        "Arabica Coffee Settles Higher as ICE Inventories Dwindle (Barchart.com, 2026-11-16)",
+        "Arabica Coffee Prices Rise as ICE Inventories Sink (Barchart.com, 2026-11-16)",
+        "Forced Labor Import Bans Are Reaching the Coffee Sector. Are Companies Ready? (Daily Coffee News by Roast Magazine, 2026-11-16)"
+      ],
+      "claude_fund_score": 0.05,
+      "fund_score": 0.05
+    },
+    "cocoa": {
+      "date": "2026-11-16",
+      "by": "bot",
+      "time": "17:02 CT",
+      "claude_date": "2026-11-16",
+      "fundamental": "3 headlines in the last 76 hours; the news flow leans supportive (supply risks or firm demand outnumber bearish supply news), price reports mixed (2 supply-tight, 1 supply-loose, 1 up, 1 down by keyword).",
+      "events": [
+        "Dry Weather Fuels Cocoa Concerns (ADMIS, 2026-11-16)",
+        "Cocoa Prices Fall on Abundant Supplies (Barchart.com, 2026-11-16)",
+        "Cocoa Prices Climb as Heavy Rains Disrupt Cocoa Transport in Ivory Coast (Barchart.com, 2026-11-13)"
+      ],
+      "claude_fund_score": 0.15,
+      "fund_score": 0.12
+    }
   },
-  "sugar": {
-   "date": "2026-11-16",
-   "by": "claude",
-   "time": "07:50 CT",
-   "fundamental": "No new Brazil data over the weekend; Mar is back near 18.28, giving up Friday's push over 18.35–18.38 as crude slips. A fresh global deficit call from the ISO (an industry estimate) helped Friday, but the weak real and Brazil mills' hedging remain the bigger weight.",
-   "events": [
-    "Mar raw sugar ~18.28, back below 18.35/18.38 (desk quote)",
-    "ISO deficit outlook lent support Friday (Barchart)",
-    "Crude lower Monday on supply-surplus worries (Reuters, OilPrice.com)"
-   ],
-   "fund_score": -0.3
-  },
-  "coffee": {
-   "date": "2026-11-16",
-   "by": "claude",
-   "time": "07:50 CT",
-   "fundamental": "Quiet start: Dec is steady near 279.5 and Mar near 273.6, so the Dec premium over Mar stays wide. That spread is consistent with ICE certified stocks still drawing, the factor that matters most for the front, while the weak real keeps Brazil selling pressure on deferreds.",
-   "events": [
-    "Dec arabica ~279.5, Mar ~273.6; Dec premium holds (desk quote)",
-    "Weak real weighed on coffee late last week (Barchart)",
-    "Brazil exports still running ahead of last year (ADMIS, Barchart)"
-   ],
-   "fund_score": 0.05
-  },
-  "cocoa": {
-   "date": "2026-11-16",
-   "by": "claude",
-   "time": "07:50 CT",
-   "fundamental": "Dec edged up to about 5,140, holding above 5,111 support as Ivory Coast rains keep slowing bean movement to port. Ghana's plan to stop raw-bean exports by 2030 is a long-run shift toward local grinding rather than a near-term supply change; ample ICE stocks still cap rallies.",
-   "events": [
-    "Ghana to ban raw cocoa bean exports by 2030 (Reuters)",
-    "Heavy Ivory Coast rains disrupt transport of beans to port (Barchart)",
-    "Dec cocoa ~5,140, up slightly early Monday (desk quote)"
-   ],
-   "fund_score": 0.15
-  }
- }
+  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-16 17:02 CT: Claude's desk read had not run for 5+ hours."
 }
