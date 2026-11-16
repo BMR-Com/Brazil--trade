@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-13 20:50 UTC",
+ "updated": "2026-11-16 13:58 UTC",
  "by": "claude",
  "views": {
   "cotton": {
    "view": "bullish",
    "shade": "bull2",
-   "score": 0.21
+   "score": 0.22
   },
   "sugar": {
    "view": "mildly bearish",
    "shade": "bear1",
-   "score": -0.13
+   "score": -0.2
   },
   "coffee": {
    "view": "mildly bearish",
    "shade": "bear1",
-   "score": -0.12
+   "score": -0.08
   },
   "cocoa": {
    "view": "mildly bearish",
@@ -25,10 +25,7 @@
  },
  "alerts": {
   "cotton": [],
-  "sugar": [
-   "Broke above R1 18.35",
-   "Broke above R2 18.38"
-  ],
+  "sugar": [],
   "coffee": [],
   "cocoa": []
  },
@@ -38,6 +35,8 @@
   "2026-11-12 Brent briefly hits $94 after Trump says US has no need for Iran deal; peace trade unwinds",
   "2026-11-13 Sugar Mar back above 18.35/18.38 resistance at ~18.41 (TradingView)",
   "2026-11-13 Cocoa: Ivory Coast rains slow arrivals; El Nino output warning",
-  "2026-11-13 Cocoa: Ivory Coast rains now disrupting bean transport to port"
+  "2026-11-13 Cocoa: Ivory Coast rains now disrupting bean transport to port",
+  "2026-11-16 Cotton Dec ~77.5 (-1.3) below 77.73 support",
+  "2026-11-16 Ghana plans raw cocoa bean export ban by 2030 (Reuters)"
  ]
 }

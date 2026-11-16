@@ -1,51 +1,51 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-16",
  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
  "markets": {
   "cotton": {
-   "date": "2026-11-13",
+   "date": "2026-11-16",
    "by": "claude",
-   "time": "14:50 CT",
-   "fundamental": "Little new since midday: Texas yields were cut again in the November forecast, which supports the short-crop story, and Dec held its Friday gains near 78.7. The roughly 4¢ Dec/Mar carry still signals that certificated cotton is expected at delivery, so Dec longs face that overhang.",
+   "time": "07:50 CT",
+   "fundamental": "Old-crop Dec opened the week weaker at about 77.5 (-1.3¢), slipping under Friday's 77.73 support with no fresh supply news; the Texas short-crop story is unchanged. Mar holds roughly 3.9¢ over Dec, so the delivery carry still points to certificated cotton showing up against Dec longs.",
    "events": [
-    "Texas cotton yield lowered again in November forecast (RFD-TV)",
-    "Cotton futures held onto Friday gains into the afternoon (Barchart)",
-    "Trade deals seen opening room for more US cotton exports (Brownfield)"
+    "Dec cotton down ~1.3¢ early Monday, below 77.73 support (desk quote)",
+    "Cotton bulls held firm into Friday's close (Barchart)",
+    "Texas yields cut again in the November crop report (RFD-TV)"
    ]
   },
   "sugar": {
-   "date": "2026-11-13",
+   "date": "2026-11-16",
    "by": "claude",
-   "time": "14:50 CT",
-   "fundamental": "Nothing new out of Brazil this afternoon; Mar is holding about 18.40, above the 18.35–18.38 band, on short covering with crude. The weak real still favours mill hedging and sugar-heavy mixes, so the bounce is technical rather than a tighter Brazil balance.",
+   "time": "07:50 CT",
+   "fundamental": "No new Brazil data over the weekend; Mar is back near 18.28, giving up Friday's push over 18.35–18.38 as crude slips. A fresh global deficit call from the ISO (an industry estimate) helped Friday, but the weak real and Brazil mills' hedging remain the bigger weight.",
    "events": [
-    "Mar holds ~18.40 above 18.35/18.38 resistance (desk quote)",
-    "Sugar holding key support after the real-driven drop (ADMIS)",
-    "Brazilian real slid again Friday (Barchart)"
+    "Mar raw sugar ~18.28, back below 18.35/18.38 (desk quote)",
+    "ISO deficit outlook lent support Friday (Barchart)",
+    "Crude lower Monday on supply-surplus worries (Reuters, OilPrice.com)"
    ],
    "fund_score": -0.3
   },
   "coffee": {
-   "date": "2026-11-13",
+   "date": "2026-11-16",
    "by": "claude",
-   "time": "14:50 CT",
-   "fundamental": "Arabica gave back its early gain as the real tumbled again, which loosens Brazil's farmer selling and export flow. The exchange side is unchanged: ICE certified stocks are still drawing, which keeps Dec firm relative to the Brazil-driven pressure on deferreds.",
+   "time": "07:50 CT",
+   "fundamental": "Quiet start: Dec is steady near 279.5 and Mar near 273.6, so the Dec premium over Mar stays wide. That spread is consistent with ICE certified stocks still drawing, the factor that matters most for the front, while the weak real keeps Brazil selling pressure on deferreds.",
    "events": [
-    "Coffee erased early gains as the Brazilian real fell (Barchart)",
-    "Dec back near 279 after probing 285.75 (desk quote)",
-    "Brazil coffee exports running well above last year (ADMIS, Barchart)"
+    "Dec arabica ~279.5, Mar ~273.6; Dec premium holds (desk quote)",
+    "Weak real weighed on coffee late last week (Barchart)",
+    "Brazil exports still running ahead of last year (ADMIS, Barchart)"
    ],
    "fund_score": 0.05
   },
   "cocoa": {
-   "date": "2026-11-13",
+   "date": "2026-11-16",
    "by": "claude",
-   "time": "14:50 CT",
-   "fundamental": "Afternoon flow adds to the weather story: heavy Ivory Coast rains are now hampering transport of beans to port, not just harvesting, which slows arrivals. Dec is up about 1% near 5,120; rising ICE stocks and industry surplus estimates still keep the near-term balance comfortable.",
+   "time": "07:50 CT",
+   "fundamental": "Dec edged up to about 5,140, holding above 5,111 support as Ivory Coast rains keep slowing bean movement to port. Ghana's plan to stop raw-bean exports by 2030 is a long-run shift toward local grinding rather than a near-term supply change; ample ICE stocks still cap rallies.",
    "events": [
-    "Heavy rains disrupt cocoa transport in Ivory Coast; prices climb (Barchart)",
-    "Ivorian weather agency warns El Niño could cut output ~25% (Reuters, ADMIS)",
-    "Dec cocoa ~5,120, up ~1% on the day (desk quote)"
+    "Ghana to ban raw cocoa bean exports by 2030 (Reuters)",
+    "Heavy Ivory Coast rains disrupt transport of beans to port (Barchart)",
+    "Dec cocoa ~5,140, up slightly early Monday (desk quote)"
    ],
    "fund_score": 0.15
   }
