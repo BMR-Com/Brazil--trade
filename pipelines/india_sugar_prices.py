@@ -5,7 +5,7 @@ no article text. Fills from the day after the last stored date (first run: 60 da
 data/sugar/india_prices_status.json with the result of each run. Exits 1 when every request failed (site blocked
 or down), so the workflow step shows red; the page then falls back to data/sugar/manual/india.csv.
 """
-import csv, json, re, sys, time
+import csv, html as htmlmod, json, re, sys, time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import requests
@@ -20,7 +20,7 @@ FIELDS = ["date", "state", "grade", "lo", "hi", "url"]
 
 def nums(cell):
     v = [int(x.replace(",", "")) for x in re.findall(r"\d[\d,]{2,}", cell)]
-    return (v[0], v[-1]) if v else (None, None)
+    return (min(v[0], v[-1]), max(v[0], v[-1])) if v else (None, None)
 
 
 def parse(html):
@@ -33,7 +33,7 @@ def parse(html):
     out = []
     for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", block, re.S | re.I):
         cells = [re.sub(r"<[^>]+>|&nbsp;", " ", c) for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S | re.I)]
-        cells = [re.sub(r"\s+", " ", c).strip() for c in cells]
+        cells = [re.sub(r"\s+", " ", htmlmod.unescape(c)).strip() for c in cells]
         if len(cells) < 3 or not cells[0] or cells[0].lower().startswith(("state", "(all")):
             continue
         for grade, cell in (("S/30", cells[1]), ("M/30", cells[2])):
