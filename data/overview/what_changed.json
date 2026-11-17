@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-17 11:11 UTC",
+ "generated": "2026-11-17 11:15 UTC",
  "asof": "2026-11-16",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
   "generated": "2026-11-17 04:23 UTC",
-  "prev_generated": "2026-11-16 01:56 UTC"
+  "prev_generated": null
  },
  "markets": [
   {
@@ -127,7 +127,7 @@
      "region": "us_tx",
      "name": "Lubbock, West Texas",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
      "rain_p50": 10.9,
@@ -139,7 +139,7 @@
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
      "rain_p50": 145.4,
@@ -151,7 +151,7 @@
      "region": "br_ba",
      "name": "LEM, western Bahia",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
      "rain_p50": 96.9,
@@ -163,7 +163,7 @@
      "region": "in_gj",
      "name": "Rajkot, Gujarat",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
      "rain_p50": 0.0,
@@ -175,7 +175,7 @@
      "region": "au_nsw",
      "name": "Moree, New South Wales",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
      "rain_p50": 51.9,
@@ -267,17 +267,14 @@
      "kind": "daily"
     }
    ],
-   "flags": [
-    "Weather Solapur, Maharashtra: next-15-day read turned wet (was near normal)",
-    "Weather Khon Kaen, upper Northeast Thailand: next-15-day read turned wet (was near normal)"
-   ],
+   "flags": [],
    "errors": [],
    "weather": [
     {
      "region": "br_sp",
      "name": "Ribeirão Preto, São Paulo",
      "read": "near normal",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
      "rain_p50": 124.4,
@@ -289,7 +286,7 @@
      "region": "br_spw",
      "name": "Araçatuba, western São Paulo",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 109.0,
@@ -301,7 +298,7 @@
      "region": "br_gos",
      "name": "Rio Verde, Goiás (cane)",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
      "rain_p50": 152.7,
@@ -313,7 +310,7 @@
      "region": "br_mgc",
      "name": "Uberaba, Triângulo Mineiro",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 161.9,
@@ -325,8 +322,8 @@
      "region": "in_sl",
      "name": "Solapur, Maharashtra",
      "read": "wet",
-     "prev": "near normal",
-     "flip": true,
+     "prev": null,
+     "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 17.6,
      "rain_normal": 8.8,
@@ -337,8 +334,8 @@
      "region": "th_kk",
      "name": "Khon Kaen, upper Northeast Thailand",
      "read": "wet",
-     "prev": "near normal",
-     "flip": true,
+     "prev": null,
+     "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 9.9,
      "rain_normal": 11.2,
@@ -346,7 +343,7 @@
      "window": "2026-11-17 to 2026-12-01"
     }
    ],
-   "summary": "Weather Solapur, Maharashtra: next-15-day read turned wet (was near normal); Weather Khon Kaen, upper Northeast Thailand: next-15-day read turned wet (was near normal)"
+   "summary": "No notable change."
   },
   {
    "sym": "KC",
@@ -431,8 +428,7 @@
    ],
    "flags": [
     "ICE certified arabica −24,907 bags on the day (normal within ±6,058)",
-    "ICE certified arabica −54,989 bags on the week (normal within ±39,322)",
-    "Weather Patrocínio, Cerrado Mineiro: next-15-day read turned wet (was near normal)"
+    "ICE certified arabica −54,989 bags on the week (normal within ±39,322)"
    ],
    "errors": [],
    "weather": [
@@ -440,7 +436,7 @@
      "region": "br_mg",
      "name": "Varginha, Sul de Minas",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 118.7,
@@ -452,8 +448,8 @@
      "region": "br_cer",
      "name": "Patrocínio, Cerrado Mineiro",
      "read": "wet",
-     "prev": "near normal",
-     "flip": true,
+     "prev": null,
+     "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 158.4,
      "rain_normal": 111.8,
@@ -464,7 +460,7 @@
      "region": "br_zm",
      "name": "Manhuaçu, Zona da Mata (MG)",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 182.6,
@@ -476,7 +472,7 @@
      "region": "br_es",
      "name": "Linhares, Espírito Santo",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 152.9,
@@ -488,7 +484,7 @@
      "region": "vn_dl",
      "name": "Buon Ma Thuot, Dak Lak",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 11.7,
@@ -497,7 +493,7 @@
      "window": "2026-11-17 to 2026-12-01"
     }
    ],
-   "summary": "ICE certified arabica −24,907 bags on the day (normal within ±6,058); ICE certified arabica −54,989 bags on the week (normal within ±39,322); Weather Patrocínio, Cerrado Mineiro: next-15-day read turned wet (was near normal)"
+   "summary": "ICE certified arabica −24,907 bags on the day (normal within ±6,058); ICE certified arabica −54,989 bags on the week (normal within ±39,322)"
   },
   {
    "sym": "CC",
@@ -589,7 +585,7 @@
      "region": "ci_sb",
      "name": "Soubré, Nawa (Côte d'Ivoire)",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 30.6,
@@ -601,7 +597,7 @@
      "region": "ci_dl",
      "name": "Daloa, Haut-Sassandra (Côte d'Ivoire)",
      "read": "dry",
-     "prev": "dry",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 9.2,
@@ -613,7 +609,7 @@
      "region": "gh_ku",
      "name": "Kumasi, Ashanti (Ghana)",
      "read": "dry",
-     "prev": "dry",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 2.9,

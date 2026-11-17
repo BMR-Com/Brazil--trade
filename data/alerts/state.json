@@ -1,0 +1,256 @@
+{
+ "generated": "2026-11-17 11:16 UTC",
+ "asof": "2026-11-16",
+ "today": "2026-11-17",
+ "active": [
+  {
+   "id": "KC_certs_week",
+   "market": "Coffee C",
+   "text": "ICE certified arabica −54,989 bags in a week to 2026-11-16 (threshold ±40,000 bags)",
+   "on": true,
+   "level": "±40,000 bags",
+   "date": "2026-11-16",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "CT_55lo",
+   "market": "Cotton",
+   "text": "Dec 26 settled 77.00 ¢/lb, a new 55-day low (below 77.04)",
+   "on": true,
+   "level": "77.04",
+   "date": "2026-11-16",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "SB_mm_hi",
+   "market": "Sugar No. 11",
+   "text": "Managed money net +193,196 lots (2026-11-10) above its 3-year 90th percentile (+144,549)",
+   "on": true,
+   "level": "+144,549",
+   "date": "2026-11-10",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "KC_mm_lo",
+   "market": "Coffee C",
+   "text": "Managed money net +4,972 lots (2026-11-10) below its 3-year 10th percentile (+16,070)",
+   "on": true,
+   "level": "+16,070",
+   "date": "2026-11-10",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "CC_mm_lo",
+   "market": "Cocoa",
+   "text": "Managed money net -21,830 lots (2026-11-10) below its 3-year 10th percentile (-15,365)",
+   "on": true,
+   "level": "-15,365",
+   "date": "2026-11-10",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_options_settlements__uploaded_ICE_files_",
+   "market": "Data",
+   "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-11, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_certs__strength__upload_",
+   "market": "Data",
+   "text": "ICE certs: strength (upload): late (latest 2026-11-02, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_certs__stock_by_delivery_point__upload_",
+   "market": "Data",
+   "text": "ICE certs: stock by delivery point (upload): late (latest 2026-11-04, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_EC_balance_sheet_and_EU_price__manual_",
+   "market": "Data",
+   "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  }
+ ],
+ "watch": [
+  {
+   "market": "Cotton",
+   "text": "Dec 26/Mar 27 80% of full carry at 4.26¢ Mar 27 over Dec 26 (now +3.92¢, 2026-11-16)"
+  },
+  {
+   "market": "Cotton",
+   "text": "Certs weekly change beyond ±10,000 bales (latest +9,009, 2026-11-09)"
+  },
+  {
+   "market": "Coffee C",
+   "text": "Certs weekly change beyond ±40,000 bags (latest −54,989, 2026-11-16)"
+  },
+  {
+   "market": "Cotton",
+   "text": "Dec 26: 55-day high 93.14, 55-day low 77.00 ¢/lb (settle 77.00 on 2026-11-16)"
+  },
+  {
+   "market": "Sugar No. 11",
+   "text": "Mar 27: 55-day high 21.13, 55-day low 18.09 ¢/lb (settle 18.10 on 2026-11-16)"
+  },
+  {
+   "market": "Coffee C",
+   "text": "Dec 26: 55-day high 316.15, 55-day low 269.00 ¢/lb (settle 280.70 on 2026-11-16)"
+  },
+  {
+   "market": "Cocoa",
+   "text": "Mar 27: 55-day high 6,905, 55-day low 4,871 $/t (settle 5,184 on 2026-11-16)"
+  },
+  {
+   "market": "Cotton",
+   "text": "Managed money net +55,382 lots (2026-11-10); 3-year band -66,475 to +68,503"
+  },
+  {
+   "market": "Sugar No. 11",
+   "text": "Managed money net +193,196 lots (2026-11-10); 3-year band -172,123 to +144,549"
+  },
+  {
+   "market": "Coffee C",
+   "text": "Managed money net +4,972 lots (2026-11-10); 3-year band +16,070 to +60,564"
+  },
+  {
+   "market": "Cocoa",
+   "text": "Managed money net -21,830 lots (2026-11-10); 3-year band -15,365 to +39,892"
+  },
+  {
+   "market": "Coffee C",
+   "text": "Brazil naturals vs KC −5.0¢/lb (latest -2.8¢, 2026-10)"
+  },
+  {
+   "market": "Sugar No. 11",
+   "text": "Ethanol parity 16.17¢/lb: No. 11 Mar 27 now 18.10¢ (2026-11-16)"
+  }
+ ],
+ "rules_checked": 121,
+ "pending_email": [
+  {
+   "id": "KC_certs_week",
+   "market": "Coffee C",
+   "text": "ICE certified arabica −54,989 bags in a week to 2026-11-16 (threshold ±40,000 bags)",
+   "on": true,
+   "level": "±40,000 bags",
+   "date": "2026-11-16",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "CT_55lo",
+   "market": "Cotton",
+   "text": "Dec 26 settled 77.00 ¢/lb, a new 55-day low (below 77.04)",
+   "on": true,
+   "level": "77.04",
+   "date": "2026-11-16",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "SB_mm_hi",
+   "market": "Sugar No. 11",
+   "text": "Managed money net +193,196 lots (2026-11-10) above its 3-year 90th percentile (+144,549)",
+   "on": true,
+   "level": "+144,549",
+   "date": "2026-11-10",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "KC_mm_lo",
+   "market": "Coffee C",
+   "text": "Managed money net +4,972 lots (2026-11-10) below its 3-year 10th percentile (+16,070)",
+   "on": true,
+   "level": "+16,070",
+   "date": "2026-11-10",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "CC_mm_lo",
+   "market": "Cocoa",
+   "text": "Managed money net -21,830 lots (2026-11-10) below its 3-year 10th percentile (-15,365)",
+   "on": true,
+   "level": "-15,365",
+   "date": "2026-11-10",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_options_settlements__uploaded_ICE_files_",
+   "market": "Data",
+   "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-11, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_certs__strength__upload_",
+   "market": "Data",
+   "text": "ICE certs: strength (upload): late (latest 2026-11-02, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_certs__stock_by_delivery_point__upload_",
+   "market": "Data",
+   "text": "ICE certs: stock by delivery point (upload): late (latest 2026-11-04, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_EC_balance_sheet_and_EU_price__manual_",
+   "market": "Data",
+   "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  }
+ ],
+ "last_email": null,
+ "errors": [],
+ "rules": [
+  "Cotton front spread at 80%, 90% and 100% of full carry",
+  "Certified stocks: weekly change beyond ±10,000 bales (cotton) or ±40,000 bags (coffee)",
+  "New 55-day closing high or low in the front contract",
+  "Managed-money net beyond its 3-year 10th or 90th percentile",
+  "ICO Brazilian naturals vs KC at or below −5¢/lb",
+  "No. 11 front below hydrous ethanol parity",
+  "Ensemble weather read turning dry or wet (stays on while the read holds) in a main crop region; frost odds (≤3 °C) above 30% in a Brazil coffee or cane region",
+  "A data source on the Data status tab late or missing"
+ ]
+}

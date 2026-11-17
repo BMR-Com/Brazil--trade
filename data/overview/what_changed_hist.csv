@@ -21,8 +21,8 @@ asof,sym,item,value,d1,d5,flag
 2026-11-16,SB,wx:br_spw,near normal,,,0
 2026-11-16,SB,wx:br_gos,near normal,,,0
 2026-11-16,SB,wx:br_mgc,wet,,,0
-2026-11-16,SB,wx:in_sl,wet,,,1
-2026-11-16,SB,wx:th_kk,wet,,,1
+2026-11-16,SB,wx:in_sl,wet,,,0
+2026-11-16,SB,wx:th_kk,wet,,,0
 2026-11-16,SB,cot_date,2026-11-10,,,0
 2026-11-16,KC,Flat price (Dec 26),280.7,2.05,7.1,0
 2026-11-16,KC,Front spread (Dec 26/Mar 27),5.8,0.65,-0.55,0
@@ -30,7 +30,7 @@ asof,sym,item,value,d1,d5,flag
 2026-11-16,KC,Managed money net,4972.0,,-4633.0,0
 2026-11-16,KC,Front implied vol (MAR27),36.7,,,0
 2026-11-16,KC,wx:br_mg,wet,,,0
-2026-11-16,KC,wx:br_cer,wet,,,1
+2026-11-16,KC,wx:br_cer,wet,,,0
 2026-11-16,KC,wx:br_zm,wet,,,0
 2026-11-16,KC,wx:br_es,wet,,,0
 2026-11-16,KC,wx:vn_dl,near normal,,,0
