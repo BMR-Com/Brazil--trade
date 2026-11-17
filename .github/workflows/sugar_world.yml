@@ -1,0 +1,44 @@
+name: Sugar — public panels and weekly inputs
+
+# Brazil cane weather / stoppage days / season range, India, Europe, deliveries, revisions, fuel policy (models/sugar_world.py)
+# and the weekly report input pack (models/sugar_weekly.py). Runs after each sugar data refresh (which picks up new MAPA/UNICA
+# fortnights), on Fridays after the ICE close, and on demand.
+on:
+  workflow_run:
+    workflows: ["Sugar — data refresh and model build"]
+    types: [completed]
+  schedule:
+    - cron: "40 22 * * 5"     # Friday after the close (backup if the sugar refresh did not run)
+    - cron: "20 11 * * 1-5"   # morning ensemble refresh (00z runs)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sugar-world
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -q requests pandas numpy
+      - name: Weather (ensembles, EU beet regions, extra cane point)
+        run: timeout 1500 python -u pipelines/sugar_wx.py || echo "weather fetch failed; building from last files"
+      - name: Build panels
+        run: python -u models/sugar_world.py
+      - name: Weekly inputs
+        run: python -u models/sugar_weekly.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/sugar/world.json data/sugar/weekly_inputs.json data/sugar/wx
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "sugar: public panels $(date -u +%F) [bot]"
+          for i in 1 2 3; do git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; sleep 10; done

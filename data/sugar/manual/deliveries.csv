@@ -1,0 +1,7 @@
+exchange,contract,expiry_date,tonnes,lots,status,deliverers,receivers,source,source_date,url
+ICE US,No. 11 Oct 2023,2023-09-29,2870000,56470,preliminary,"COFCO International 22,588 lots; Louis Dreyfus 14,398 lots","Wilmar 54,311 lots",India Sea Trade News,2023-10-02,https://indiaseatradenews.com/record-amount-of-sugar-delivered-on-the-expiry-of-ice-october-contract/
+ICE US,No. 11 Oct 2025,2025-09-30,1520000,30032,preliminary,"Louis Dreyfus 10,321 lots (largest)","COFCO International 13,977 lots (largest)",CropGPT (citing ChiniMandi),2025-10-01,https://cropgpt.ai/ice-reports-1-52-million-metric-tons-of-raw-sugar-delivered-in-october-contract-expiration
+ICE US,No. 11 Jul 2026,2026-06-30,796500,15678,preliminary,"Cofco (sole deliverer)","Sucden 7,209; Louis Dreyfus 4,181; Bunge 2,300; Wilmar 1,988 lots",NovaCana (Reuters),2026-07-01,https://www.novacana.com/noticias/entregas-de-acucar-bruto-na-ice-em-julho-totalizam-796-5-mil-t-dizem-operadores-010726
+ICE US,No. 11 Oct 2026,2026-09-30,1450000,,preliminary,"BTG Pactual Commodities (main deliverer)","Wilmar (sole receiver)",NovaCana,2026-10-01,https://www.novacana.com/noticias/precos-do-acucar-bruto-caem-com-vencimento-do-contrato-de-outubro-na-ice
+ICE Europe,No. 5 Oct 2026,2026-09-15,499350,,reported,,,Barchart via Nasdaq (+91% y/y),2026-09-18,https://www.nasdaq.com/articles/signs-weak-demand-undercut-sugar-prices-0
+ICE Europe,No. 5 Dec 2026,2026-11-13,,,awaiting public figure,,,ICE Futures Europe delivery report (not yet found in public news),,https://www.ice.com/products/37089080/White-Sugar
