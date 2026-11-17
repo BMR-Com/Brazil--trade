@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-17 05:20 UTC",
+ "generated": "2026-11-17 05:23 UTC",
  "today": "2026-11-16",
  "sources": [
   {
    "group": "Prices",
    "source": "Futures closes, all softs (Yahoo)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-16",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -401,7 +401,7 @@
   {
    "group": "Macro",
    "source": "Contract calendar (notice and roll dates)",
-   "latest": "2026-11-16",
+   "latest": "2026-11-17",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
