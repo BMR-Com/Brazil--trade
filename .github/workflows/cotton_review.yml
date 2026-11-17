@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '17 16,19,22 * * 5'   # Friday, three tries (UTC)
     - cron: '23 14 * * 6'         # Saturday catch-up
+    - cron: '37 15 * * 0'         # Sunday catch-up
     - cron: '41 14 * * 1'         # Monday catch-up (holiday weeks)
     - cron: '29 15 * * 2-4'       # Tue-Thu: daily classing, monthly price statistics
   workflow_dispatch:
@@ -27,7 +28,7 @@ jobs:
         run: |
           BF="${{ github.event.inputs.backfill_pages || '0' }}"
           if [ "$BF" != "0" ]; then python pipelines/ams_cotton_review.py --backfill $BF || true; fi
-          python pipelines/ams_cotton_review.py || true
+          python pipelines/ams_cotton_review.py || echo "::error::weekly cotton market review failed to parse or fetch (see log above)"
       - name: forward contracting, monthly prices, daily classing, release schedule
         env: {AMS_API_KEY: '${{ secrets.AMS_API_KEY }}'}
         run: |
