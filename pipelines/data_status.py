@@ -43,6 +43,15 @@ def oncall():
     return max(f"{y}-{m}-{d}" for m, d, y in ds) if ds else None
 
 
+_CP = {}
+def crop_projection(key=None):
+    """BMR-Com/cotton-crop-progress docs/data/crop_projection.json (shown on the Crop tab)."""
+    if not _CP:
+        import requests
+        _CP.update(requests.get("https://raw.githubusercontent.com/BMR-Com/cotton-crop-progress/main/docs/data/crop_projection.json", timeout=30).json())
+    return _CP.get("asof") if key is None else (_CP.get("inputs_through") or {}).get(key)
+
+
 def wasde_release():
     idx = J("data/grains/derived/wasde_brief/index.json")
     rep = idx["reports"][0]["report"]                       # e.g. 2026-11
@@ -76,6 +85,9 @@ SOURCES = [
     ("Cotton", "AMS weekly cotton market review", "weekly (Fri)", 9, C, False, lambda: J("data/cotton_review/latest.json")["date"], "AMS review tab"),
     ("Cotton", "AMS daily classing", "daily", 3, B, False, lambda: J("data/cotton_review/classing_daily.json").get("as_of"), "AMS review tab"),
     ("Cotton", "US export sales (week ending)", "weekly (Thu)", 15, C, False, lambda: next(c["week"] for c in J("data/grains/derived/esr_brief.json")["commodities"] if c.get("key") == "cotton"), "export sales tab"),
+    ("Cotton", "Crop projection (cotton-crop-progress)", "weekly, after crop progress / ginnings / drought", 9, C, False, crop_projection, "Crop tab"),
+    ("Cotton", "Crop projection input: NASS ginnings", "about twice a month", 20, C, False, lambda: crop_projection("ginnings"), "Crop tab"),
+    ("Cotton", "Crop projection input: crop progress", "weekly (Mon)", 9, C, False, lambda: crop_projection("crop_progress"), "Crop tab"),
     ("Cotton", "WASDE (latest report)", "monthly", 40, C, False, wasde_release, "WASDE tab, balance sheets"),
     ("Cotton", "WASDE brief, latest-data section", "daily", 2, B, False, lambda: d10(J("data/grains/derived/wasde_brief/index.json")["generated"]), "WASDE tab"),
     ("Cotton", "Cotton loan (FSA)", "weekly", 9, C, False, lambda: J("data/cotton_loan/loan.json")["state"]["as_of"], "loan tab"),
