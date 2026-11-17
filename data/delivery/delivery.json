@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-17 18:10 UTC",
- "asof": "2026-11-16",
+ "generated": "2026-11-17 21:06 UTC",
+ "asof": "2026-11-17",
  "markets": [
   {
    "sym": "CT",
@@ -13,17 +13,17 @@
     {
      "event": "First notice",
      "date": "2026-11-23",
-     "bd": 5
+     "bd": 4
     },
     {
      "event": "Last trading day",
      "date": "2026-12-08",
-     "bd": 15
+     "bd": 14
     },
     {
      "event": "Last notice",
      "date": "2026-12-17",
-     "bd": 22
+     "bd": 21
     }
    ],
    "index_roll": {
@@ -38,25 +38,25 @@
    },
    "spread": {
     "pair": "Dec 26/Mar 27",
-    "now": -3.92,
-    "date": "2026-11-16",
-    "chg_1w": -0.1,
-    "front": 77.0,
-    "next": 80.92,
+    "now": -4.11,
+    "date": "2026-11-17",
+    "chg_1w": -0.29,
+    "front": 77.31,
+    "next": 81.42,
     "unit": "¢/lb",
     "sign": "front minus next; negative = carry",
     "carry": {
-     "date": "2026-11-16",
-     "next_over_front": 3.92,
-     "full_carry": 5.33,
-     "pct_of_full_carry": 73.6,
+     "date": "2026-11-17",
+     "next_over_front": 4.02,
+     "full_carry": 5.47,
+     "pct_of_full_carry": 73.5,
      "pct_1w_ago": 71.2,
      "storage": 3.01,
      "financing": 1.04,
-     "penalties": 1.28,
-     "cert_premium_pts": 592.0,
+     "penalties": 1.41,
+     "cert_premium_pts": 560.0,
      "basis": "certs on board",
-     "shortfall": 1.41,
+     "shortfall": 1.45,
      "src": "data/cotton/carry_history.csv (certs tab)"
     }
    },
@@ -187,7 +187,7 @@
     "series": "Jan 27",
     "underlying": "Mar 27",
     "expiry": "2026-12-18",
-    "bd_to_expiry": 23,
+    "bd_to_expiry": 22,
     "F": 80.92,
     "call_oi": 9772,
     "put_oi": 11103,
@@ -252,10 +252,10 @@
    },
    "index_roll_past": true,
    "read": [
-    "34,513 lots still open in Dec 26 on 2026-11-16 (20.3% left; past Dec rolls at this stage 13.0–22.1%) with 5 business days to first notice (2026-11-23). At the last five reports' pace (about 12,969 lots a day) the contract clears before notice.",
-    "Dec 26/Mar 27 pays +3.92¢, 73.6% of full carry (5.33¢) on 2026-11-16, up from 71.2% a week earlier. Taking certs and redelivering does not cover storage, financing and penalties (1.41¢ short), and the certs on board carry an average ICE premium of +592 pts that a taker pays.",
+    "34,513 lots still open in Dec 26 on 2026-11-16 (20.3% left; past Dec rolls at this stage 13.0–22.1%) with 4 business days to first notice (2026-11-23). At the last five reports' pace (about 12,969 lots a day) the contract clears before notice.",
+    "Dec 26/Mar 27 pays +4.02¢, 73.5% of full carry (5.47¢) on 2026-11-17, up from 71.2% a week earlier. Taking certs and redelivering does not cover storage, financing and penalties (1.45¢ short), and the certs on board carry an average ICE premium of +560 pts that a taker pays.",
     "On-call against December 2026 (2026-11-06): 7,624 lots unfixed sales (mills still to buy futures to fix) and 14,340 lots unfixed purchases (sellers still to fix by selling); net -6,716 lots.",
-    "Read: longs must roll or sell with 5 business days left; delivery does not pay (see Certs) and net on-call fixing is selling (-6,716 lots) → liquidation pressure on Dec 26 against Mar 27 into first notice."
+    "Read: longs must roll or sell with 4 business days left; delivery does not pay (see Certs) and net on-call fixing is selling (-6,716 lots) → liquidation pressure on Dec 26 against Mar 27 into first notice."
    ]
   },
   {
@@ -269,17 +269,17 @@
     {
      "event": "First notice",
      "date": "2026-11-19",
-     "bd": 3
+     "bd": 2
     },
     {
      "event": "Last trading day",
      "date": "2026-12-18",
-     "bd": 23
+     "bd": 22
     },
     {
      "event": "Last notice",
      "date": "2026-12-21",
-     "bd": 24
+     "bd": 23
     }
    ],
    "index_roll": {
@@ -294,11 +294,11 @@
    },
    "spread": {
     "pair": "Dec 26/Mar 27",
-    "now": 5.8,
-    "date": "2026-11-16",
-    "chg_1w": -0.55,
-    "front": 280.7,
-    "next": 274.9,
+    "now": 5.05,
+    "date": "2026-11-17",
+    "chg_1w": -0.45,
+    "front": 285.0,
+    "next": 279.95,
     "unit": "¢/lb",
     "sign": "front minus next; negative = carry"
    },
@@ -420,7 +420,7 @@
     "series": "Mar 27",
     "underlying": "Mar 27",
     "expiry": "2027-02-10",
-    "bd_to_expiry": 58,
+    "bd_to_expiry": 57,
     "F": 274.9,
     "call_oi": 26856,
     "put_oi": 44628,
@@ -485,8 +485,8 @@
    },
    "index_roll_past": true,
    "read": [
-    "8,181 lots still open in Dec 26 on 2026-11-16 (11.2% left; past Dec rolls at this stage 10.1–23.8%) with 3 business days to first notice (2026-11-19). At the last five reports' pace (about 5,779 lots a day) the contract clears before notice.",
-    "Dec 26/Mar 27 +5.80¢ (inverted) on 2026-11-16; certified stock 186,414 bags on 2026-11-16, -54,989 on the week.",
+    "8,181 lots still open in Dec 26 on 2026-11-16 (11.2% left; past Dec rolls at this stage 10.1–23.8%) with 2 business days to first notice (2026-11-19). At the last five reports' pace (about 5,779 lots a day) the contract clears before notice.",
+    "Dec 26/Mar 27 +5.05¢ (inverted) on 2026-11-17; certified stock 186,414 bags on 2026-11-16, -54,989 on the week.",
     "Read: deliverable stock is falling while the front holds a premium: shorts without certs must buy back or roll, which supports Dec 26 against Mar 27 into notice."
    ]
   },
@@ -501,17 +501,17 @@
     {
      "event": "First notice",
      "date": "2026-11-16",
-     "bd": 0
+     "bd": -1
     },
     {
      "event": "Last trading day",
      "date": "2026-12-15",
-     "bd": 20
+     "bd": 19
     },
     {
      "event": "Last notice",
      "date": "2026-12-16",
-     "bd": 21
+     "bd": 20
     }
    ],
    "index_roll": {
@@ -526,10 +526,10 @@
    },
    "spread": {
     "pair": "Dec 26/Mar 27",
-    "now": -142.0,
-    "date": "2026-11-16",
-    "chg_1w": -26.0,
-    "front": 5042.0,
+    "now": -150.0,
+    "date": "2026-11-17",
+    "chg_1w": -21.0,
+    "front": 5034.0,
     "next": 5184.0,
     "unit": "$/t",
     "sign": "front minus next; negative = carry"
@@ -645,7 +645,7 @@
     "series": "Jan 27",
     "underlying": "Mar 27",
     "expiry": "2026-12-11",
-    "bd_to_expiry": 18,
+    "bd_to_expiry": 17,
     "F": 5184.0,
     "call_oi": 2887,
     "put_oi": 1138,
@@ -710,8 +710,8 @@
    },
    "index_roll_past": true,
    "read": [
-    "17,268 lots still open in Dec 26 on 2026-11-16 (28.4% left; past Dec rolls at this stage 0.4–16.8%) with 0 business days to first notice (2026-11-16). At the last five reports' pace (about 4,273 lots a day) the contract would not clear before notice.",
-    "Dec 26/Mar 27 -142 $/t on 2026-11-16 (carry). Certified stocks are not on the desk, so delivery economics cannot be read here."
+    "Dec 26 is in its delivery period (first notice was 2026-11-16); last trading day 2026-12-15 (19 business days).",
+    "Dec 26/Mar 27 -150 $/t on 2026-11-17 (carry). Certified stocks are not on the desk, so delivery economics cannot be read here."
    ]
   },
   {
@@ -725,7 +725,7 @@
     {
      "event": "Last trading day",
      "date": "2027-02-26",
-     "bd": 69
+     "bd": 68
     }
    ],
    "index_roll": {
@@ -740,11 +740,11 @@
    },
    "spread": {
     "pair": "Mar 27/May 27",
-    "now": 0.51,
-    "date": "2026-11-16",
-    "chg_1w": -0.04,
-    "front": 18.1,
-    "next": 17.59,
+    "now": 0.57,
+    "date": "2026-11-17",
+    "chg_1w": 0.03,
+    "front": 18.17,
+    "next": 17.6,
     "unit": "¢/lb",
     "sign": "front minus next; negative = carry"
    },
@@ -766,7 +766,7 @@
     "series": "Jan 27",
     "underlying": "Mar 27",
     "expiry": "2026-12-15",
-    "bd_to_expiry": 20,
+    "bd_to_expiry": 19,
     "F": 18.1,
     "call_oi": 49461,
     "put_oi": 51112,
@@ -831,7 +831,7 @@
    },
    "index_roll_past": false,
    "read": [
-    "Mar 27 expires 2027-02-26 (69 business days); No. 11 has no notice period and delivers FOB origin. Mar 27/May 27 +0.51¢ on 2026-11-16 (front premium). Index roll out of Mar 27: GSCI 2027-02-05 to 2027-02-11."
+    "Mar 27 expires 2027-02-26 (68 business days); No. 11 has no notice period and delivers FOB origin. Mar 27/May 27 +0.57¢ on 2026-11-17 (front premium). Index roll out of Mar 27: GSCI 2027-02-05 to 2027-02-11."
    ]
   }
  ]

@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-17 18:10 UTC",
- "asof": "2026-11-16",
+ "generated": "2026-11-17 21:06 UTC",
+ "asof": "2026-11-17",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
-  "generated": "2026-11-17 04:23 UTC",
+  "generated": "2026-11-17 19:03 UTC",
   "prev_generated": null
  },
  "markets": [
@@ -15,14 +15,14 @@
      "item": "Flat price (Dec 26)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 77.0,
-     "d1": -1.78,
-     "d5": -1.78,
+     "now": 77.31,
+     "d1": 0.31,
+     "d5": -1.38,
      "norm1": 1.12,
      "norm5": 3.07,
-     "flag1": true,
+     "flag1": false,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "",
      "kind": "daily"
     },
@@ -30,14 +30,14 @@
      "item": "Front spread (Dec 26/Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": -3.92,
-     "d1": -0.09,
-     "d5": -0.1,
+     "now": -4.11,
+     "d1": -0.19,
+     "d5": -0.29,
      "norm1": 0.15,
      "norm5": 0.36,
-     "flag1": false,
+     "flag1": true,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "Dec 26 minus Mar 27; negative = carry",
      "kind": "daily"
     },
@@ -83,9 +83,9 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-10",
-     "note": "new report; CFTC futures and options, positions as of 2026-11-10",
+     "note": "no new report since the last run; CFTC futures and options, positions as of 2026-11-10",
      "kind": "weekly",
-     "new": true
+     "new": false
     },
     {
      "item": "Front implied vol (JAN27)",
@@ -119,7 +119,7 @@
     }
    ],
    "flags": [
-    "Flat price (Dec 26) −1.78 ¢/lb on the day (normal within ±1.12)"
+    "Front spread (Dec 26/Mar 27) −0.19 ¢/lb on the day (normal within ±0.15)"
    ],
    "errors": [],
    "weather": [
@@ -130,19 +130,19 @@
      "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
-     "rain_p50": 10.9,
+     "rain_p50": 10.3,
      "rain_normal": 10.4,
      "frost": 1.0,
-     "window": "2026-11-17 to 2026-11-30"
+     "window": "2026-11-17 to 2026-12-01"
     },
     {
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
-     "rain_p50": 145.4,
+     "rain_p50": 166.7,
      "rain_normal": 93.4,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -154,7 +154,7 @@
      "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
-     "rain_p50": 96.9,
+     "rain_p50": 102.4,
      "rain_normal": 88.5,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -178,13 +178,13 @@
      "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
-     "rain_p50": 51.9,
-     "rain_normal": 44.7,
+     "rain_p50": 41.9,
+     "rain_normal": 43.5,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-01"
     }
    ],
-   "summary": "Flat price (Dec 26) −1.78 ¢/lb on the day (normal within ±1.12)"
+   "summary": "Front spread (Dec 26/Mar 27) −0.19 ¢/lb on the day (normal within ±0.15)"
   },
   {
    "sym": "SB",
@@ -194,14 +194,14 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 18.1,
-     "d1": -0.31,
-     "d5": -0.11,
+     "now": 18.17,
+     "d1": 0.07,
+     "d5": 0.08,
      "norm1": 0.33,
      "norm5": 0.75,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "",
      "kind": "daily"
     },
@@ -209,14 +209,14 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 0.51,
-     "d1": 0.01,
-     "d5": -0.04,
+     "now": 0.57,
+     "d1": 0.06,
+     "d5": 0.03,
      "norm1": 0.05,
      "norm5": 0.09,
-     "flag1": false,
+     "flag1": true,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "Mar 27 minus May 27; negative = carry",
      "kind": "daily"
     },
@@ -247,9 +247,9 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-10",
-     "note": "new report; CFTC futures and options, positions as of 2026-11-10",
+     "note": "no new report since the last run; CFTC futures and options, positions as of 2026-11-10",
      "kind": "weekly",
-     "new": true
+     "new": false
     },
     {
      "item": "Front implied vol (JAN27)",
@@ -267,7 +267,9 @@
      "kind": "daily"
     }
    ],
-   "flags": [],
+   "flags": [
+    "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05)"
+   ],
    "errors": [],
    "weather": [
     {
@@ -277,7 +279,7 @@
      "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
-     "rain_p50": 124.4,
+     "rain_p50": 151.2,
      "rain_normal": 84.9,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -288,8 +290,8 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 109.0,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 121.1,
      "rain_normal": 77.7,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -301,7 +303,7 @@
      "prev": null,
      "flip": false,
      "src": "ECMWF ENS + AIFS",
-     "rain_p50": 152.7,
+     "rain_p50": 150.5,
      "rain_normal": 89.3,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -309,11 +311,11 @@
     {
      "region": "br_mgc",
      "name": "Uberaba, Triângulo Mineiro",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 161.9,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 187.7,
      "rain_normal": 106.7,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -321,11 +323,11 @@
     {
      "region": "in_sl",
      "name": "Solapur, Maharashtra",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 17.6,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 0.0,
      "rain_normal": 8.8,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -333,17 +335,17 @@
     {
      "region": "th_kk",
      "name": "Khon Kaen, upper Northeast Thailand",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 9.9,
-     "rain_normal": 11.2,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 1.0,
+     "rain_normal": 10.0,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-01"
     }
    ],
-   "summary": "No notable change."
+   "summary": "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05)"
   },
   {
    "sym": "KC",
@@ -353,14 +355,14 @@
      "item": "Flat price (Dec 26)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 280.7,
-     "d1": 2.05,
-     "d5": 7.1,
+     "now": 285.0,
+     "d1": 4.3,
+     "d5": 13.6,
      "norm1": 8.45,
      "norm5": 18.5,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "",
      "kind": "daily"
     },
@@ -368,14 +370,14 @@
      "item": "Front spread (Dec 26/Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 5.8,
-     "d1": 0.65,
-     "d5": -0.55,
+     "now": 5.05,
+     "d1": -0.75,
+     "d5": -0.45,
      "norm1": 1.45,
      "norm5": 3.85,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "Dec 26 minus Mar 27; negative = carry",
      "kind": "daily"
     },
@@ -406,9 +408,9 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-10",
-     "note": "new report; CFTC futures and options, positions as of 2026-11-10",
+     "note": "no new report since the last run; CFTC futures and options, positions as of 2026-11-10",
      "kind": "weekly",
-     "new": true
+     "new": false
     },
     {
      "item": "Front implied vol (MAR27)",
@@ -438,8 +440,8 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 118.7,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 135.5,
      "rain_normal": 95.7,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -447,11 +449,11 @@
     {
      "region": "br_cer",
      "name": "Patrocínio, Cerrado Mineiro",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 158.4,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 156.4,
      "rain_normal": 111.8,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -462,8 +464,8 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 182.6,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 182.9,
      "rain_normal": 85.9,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -474,8 +476,8 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 152.9,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 138.2,
      "rain_normal": 85.3,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -486,11 +488,11 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 11.7,
-     "rain_normal": 45.1,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 10.1,
+     "rain_normal": 44.5,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-01"
     }
    ],
    "summary": "ICE certified arabica −24,907 bags on the day (normal within ±6,058); ICE certified arabica −54,989 bags on the week (normal within ±39,322)"
@@ -504,13 +506,13 @@
      "unit": "$/t",
      "dp": 0,
      "now": 5184.0,
-     "d1": -76.0,
-     "d5": 64.0,
+     "d1": 0.0,
+     "d5": 313.0,
      "norm1": 206.0,
-     "norm5": 570.0,
+     "norm5": 555.0,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "",
      "kind": "daily"
     },
@@ -518,14 +520,14 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "$/t",
      "dp": 0,
-     "now": -65.0,
+     "now": -61.0,
      "d1": 4.0,
-     "d5": -18.0,
-     "norm1": 10.0,
-     "norm5": 19.0,
+     "d5": -15.0,
+     "norm1": 9.0,
+     "norm5": 18.0,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "Mar 27 minus May 27; negative = carry",
      "kind": "daily"
     },
@@ -556,9 +558,9 @@
      "flag1": false,
      "flag5": true,
      "date": "2026-11-10",
-     "note": "new report; CFTC futures and options, positions as of 2026-11-10",
+     "note": "no new report since the last run; CFTC futures and options, positions as of 2026-11-10",
      "kind": "weekly",
-     "new": true
+     "new": false
     },
     {
      "item": "Front implied vol (JAN27)",
@@ -587,8 +589,8 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 30.6,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 34.5,
      "rain_normal": 38.3,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -599,8 +601,8 @@
      "read": "dry",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 9.2,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 8.8,
      "rain_normal": 23.8,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"
@@ -611,8 +613,8 @@
      "read": "dry",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 2.9,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 4.3,
      "rain_normal": 25.9,
      "frost": 0.0,
      "window": "2026-11-17 to 2026-12-01"

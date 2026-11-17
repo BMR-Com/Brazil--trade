@@ -14,3 +14,4 @@ date,id,market,event,text
 2026-11-17,data_ICE_certs__four_months_and_older__upload_,Data,triggered,"ICE certs: four months and older (upload): late (latest 2026-11-02, limit 9 days)"
 2026-11-17,data_ICE_options_settlements__uploaded_ICE_files_,Data,cleared,"ICE options settlements (uploaded ICE files): late (latest 2026-11-11, limit 2 business days)"
 2026-11-17,data_ICE_certs__strength__upload_,Data,cleared,"ICE certs: strength (upload): late (latest 2026-11-02, limit 9 days)"
+2026-11-17,CT_55lo,Cotton,cleared,"Dec 26 settled 77.00 ¢/lb, a new 55-day low (below 77.04)"

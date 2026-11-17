@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-17 18:10 UTC",
- "asof": "2026-11-16",
+ "generated": "2026-11-17 21:06 UTC",
+ "asof": "2026-11-17",
  "today": "2026-11-17",
  "active": [
   {
@@ -19,16 +19,6 @@
    "text": "ICE certified arabica −54,989 bags in a week to 2026-11-16 (threshold ±40,000 bags)",
    "on": true,
    "level": "±40,000 bags",
-   "date": "2026-11-16",
-   "new": false,
-   "since": "2026-11-17"
-  },
-  {
-   "id": "CT_55lo",
-   "market": "Cotton",
-   "text": "Dec 26 settled 77.00 ¢/lb, a new 55-day low (below 77.04)",
-   "on": true,
-   "level": "77.04",
    "date": "2026-11-16",
    "new": false,
    "since": "2026-11-17"
@@ -97,7 +87,7 @@
  "watch": [
   {
    "market": "Cotton",
-   "text": "Dec 26/Mar 27 80% of full carry at 4.26¢ Mar 27 over Dec 26 (now +3.92¢, 2026-11-16)"
+   "text": "Dec 26/Mar 27 80% of full carry at 4.38¢ Mar 27 over Dec 26 (now +4.02¢, 2026-11-17)"
   },
   {
    "market": "Cotton",
@@ -109,19 +99,19 @@
   },
   {
    "market": "Cotton",
-   "text": "Dec 26: 55-day high 93.14, 55-day low 77.00 ¢/lb (settle 77.00 on 2026-11-16)"
+   "text": "Dec 26: 55-day high 91.55, 55-day low 77.00 ¢/lb (settle 77.31 on 2026-11-17)"
   },
   {
    "market": "Sugar No. 11",
-   "text": "Mar 27: 55-day high 21.13, 55-day low 18.09 ¢/lb (settle 18.10 on 2026-11-16)"
+   "text": "Mar 27: 55-day high 21.13, 55-day low 18.09 ¢/lb (settle 18.17 on 2026-11-17)"
   },
   {
    "market": "Coffee C",
-   "text": "Dec 26: 55-day high 316.15, 55-day low 269.00 ¢/lb (settle 280.70 on 2026-11-16)"
+   "text": "Dec 26: 55-day high 316.15, 55-day low 269.00 ¢/lb (settle 285.00 on 2026-11-17)"
   },
   {
    "market": "Cocoa",
-   "text": "Mar 27: 55-day high 6,905, 55-day low 4,871 $/t (settle 5,184 on 2026-11-16)"
+   "text": "Mar 27: 55-day high 6,701, 55-day low 4,871 $/t (settle 5,184 on 2026-11-17)"
   },
   {
    "market": "Cotton",
@@ -145,10 +135,10 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.12¢/lb: No. 11 Mar 27 now 18.10¢ (2026-11-16)"
+   "text": "Ethanol parity 15.12¢/lb: No. 11 Mar 27 now 18.17¢ (2026-11-17)"
   }
  ],
- "rules_checked": 136,
+ "rules_checked": 139,
  "pending_email": [
   {
    "id": "KC_certs_week",
@@ -156,16 +146,6 @@
    "text": "ICE certified arabica −54,989 bags in a week to 2026-11-16 (threshold ±40,000 bags)",
    "on": true,
    "level": "±40,000 bags",
-   "date": "2026-11-16",
-   "new": true,
-   "since": "2026-11-17"
-  },
-  {
-   "id": "CT_55lo",
-   "market": "Cotton",
-   "text": "Dec 26 settled 77.00 ¢/lb, a new 55-day low (below 77.04)",
-   "on": true,
-   "level": "77.04",
    "date": "2026-11-16",
    "new": true,
    "since": "2026-11-17"
