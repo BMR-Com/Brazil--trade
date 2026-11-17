@@ -237,7 +237,7 @@ const Sugar = (() => {
     const Pa = S.parity, nw = Pa.now, Pu = S.pump, m = Pu.ratio.length - 1;
     const yrs = 5, cut = new Date(); cut.setFullYear(cut.getFullYear() - yrs); const c0 = cut.toISOString().slice(0, 10);
     const k0 = Pa.dates.findIndex(d => d >= c0);
-    body().innerHTML = `<div class="grid g4">
+    body().innerHTML = `<div id="suParRead"></div><div class="grid g4">
         ${kpi('Hydrous ethanol parity', f2(nw.parity) + ' ¢/lb', `B3 ethanol R$${fmt(nw.eth, 0)}/m³ at R$${fmt(nw.fx, 4)}/US$ (${nw.date})`)}
         ${kpi('Sugar No. 11 front', f2(nw.sb) + ' ¢/lb', `ethanol − sugar ${sgn(nw.eth_minus_sugar, 2)} ¢/lb`)}
         ${kpi('Parity vs last 5 years', ordn(nw.pct_rank_5y) + ' percentile', nw.eth_minus_sugar < 0 ? 'sugar pays more than ethanol: mills max sugar' : 'ethanol pays more: mills shift cane to ethanol')}
@@ -252,6 +252,7 @@ const Sugar = (() => {
           <p class="note">Share of cane ATR made into sugar, implied from MAPA fortnightly sugar and ethanol (corn ethanol removed where estimated).</p></div>
         <div class="card"><h2>Brent in reais</h2><div style="position:relative;height:240px"><canvas id="suBrl"></canvas></div>
           <p class="note">Brent × USD/BRL: what Petrobras' import parity for gasoline follows. Higher gasoline lets ethanol price higher and pulls cane away from sugar.</p></div></div>${asof()}`;
+    if (typeof DeskWatch !== 'undefined') DeskWatch.sugarCard(document.getElementById('suParRead')).catch(e => console.error(e));
     const sl = a => a.slice(k0);
     chart('suPar', { type: 'line', data: { labels: sl(Pa.dates), datasets: [
       { label: 'Sugar No. 11 front', data: sl(Pa.sb), borderColor: '#2f6b3a', pointRadius: 0, borderWidth: 1.6 },

@@ -1,0 +1,13 @@
+id,logged,source,market,kind,leg1,leg2,direction,entry,horizon,text,status,exit_date,exit,move
+brief-2026-10-22-CT,2026-10-22,Morning brief (Oct 2026),CT,outright,CTZ2026,,down,80.99,2026-10-29,Brief view mildly bearish (low); price in the brief,hit,2026-10-29,78.5,-2.49
+brief-2026-10-23-CT,2026-10-23,Morning brief (Oct 2026),CT,outright,CTZ2026,,down,80.63,2026-10-30,Brief view mildly bearish (low); price in the brief,hit,2026-10-30,77.83,-2.8
+brief-2026-10-26-CT,2026-10-26,Morning brief (Oct 2026),CT,outright,CTZ2026,,down,79.5,2026-11-02,Brief view bearish (medium); price in the brief,hit,2026-11-02,77.66,-1.84
+brief-2026-10-27-CT,2026-10-27,Morning brief (Oct 2026),CT,outright,CTZ2026,,down,78.75,2026-11-03,Brief view bearish (medium); price in the brief,hit,2026-11-03,77.04,-1.71
+brief-2026-10-28-CT,2026-10-28,Morning brief (Oct 2026),CT,outright,CTZ2026,,down,78.48,2026-11-04,Brief view bearish (medium); price in the brief,hit,2026-11-04,78.11,-0.37
+brief-2026-10-29-CT,2026-10-29,Morning brief (Oct 2026),CT,outright,CTZ2026,,down,78.28,2026-11-05,Brief view bearish (medium); price in the brief,miss,2026-11-05,78.71,+0.43
+brief-2026-10-30-CT,2026-10-30,Morning brief (Oct 2026),CT,outright,CTZ2026,,down,78.15,2026-11-06,Brief view bearish (medium); price in the brief,miss,2026-11-06,79.11,+0.96
+2026-11-16-Overview-CT,2026-11-16,Overview read,CT,outright,CTH2027,,up,80.92,2026-12-15,Overview mildly bullish (2026-11-17); measured on Mar 27,open,,,
+2026-11-16-Overview-SB,2026-11-16,Overview read,SB,outright,SBH2027,,down,18.1,2026-12-15,Overview bearish (2026-11-17); measured on Mar 27,open,,,
+2026-11-16-Overview-CC,2026-11-16,Overview read,CC,outright,CCH2027,,down,5184,2026-12-15,Overview mildly bearish (2026-11-17); measured on Mar 27,open,,,
+2026-11-16-Cottonp-CT,2026-11-16,Cotton price outlook,CT,outright,CTK2027,,up,82.53,2027-04-24,Base case May 27 90.2¢ at May option expiry (2026-11-17),open,,,
+2026-11-16-Delivery-CT,2026-11-16,Delivery read,CT,spread,CTZ2026,CTH2027,down,-3.92,2026-11-23,Delivery does not pay: Dec 26/Mar 27 under pressure into first notice,open,,,

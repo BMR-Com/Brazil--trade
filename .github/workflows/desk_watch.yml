@@ -1,0 +1,63 @@
+name: desk-watch
+# After the daily data runs: "What changed" strip, delivery-period dashboard, sugar ethanol-parity read, alerts (with
+# email through repository secrets when set) and the desk's call log. Reads only what the other workflows wrote, plus
+# the CEPEA hydrous ethanol page and the CFTC on-call file from BMR-Com/cotton-on-call.
+# A model that fails marks the run failed; the remaining steps still run and the outputs that were built are committed.
+on:
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ['softs-data', 'softs-contracts']
+    types: [completed]
+  push:
+    branches: [main]
+    paths: ['models/watch_common.py', 'models/what_changed.py', 'models/delivery_desk.py', 'models/alerts.py', 'models/desk_calls.py',
+            'models/sugar_parity.py', 'pipelines/cepea_ethanol.py', 'assets/desk_watch.js', '.github/workflows/desk_watch.yml']
+  schedule:
+    - cron: '52 23 * * 1-5'   # evening backup after the settlement runs
+    - cron: '23 3 * * 2-6'    # late backup (GitHub often starts scheduled runs late)
+permissions: {contents: write}
+concurrency: {group: desk-watch, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 60}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q pandas numpy requests
+      - name: CEPEA hydrous ethanol (warns and keeps the old file when CEPEA refuses)
+        run: python pipelines/cepea_ethanol.py
+      - name: what changed
+        if: always()
+        run: cd models && python -W ignore what_changed.py
+      - name: delivery-period dashboard
+        if: always()
+        run: cd models && python -W ignore delivery_desk.py
+      - name: sugar ethanol parity read
+        if: always()
+        run: cd models && python -W ignore sugar_parity.py
+      - name: alerts (email only when the SMTP secrets are set; at most one a day, new alerts only)
+        if: always()
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
+        run: cd models && python -W ignore alerts.py --email
+      - name: desk call log and track record
+        if: always()
+        run: cd models && python -W ignore desk_calls.py
+      - name: commit
+        if: always()
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/overview/what_changed.json data/overview/what_changed_hist.csv data/delivery data/alerts data/scorecard data/sugar/parity_read.json data/watch 2>/dev/null || true
+          [ -f sugar/data/cepea_hydrous.csv ] && git add sugar/data/cepea_hydrous.csv
+          git diff --cached --quiet && exit 0
+          git commit -q -m "desk watch: what changed, delivery, alerts, calls $(date -u +%F' '%H:%M)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q origin HEAD:main && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

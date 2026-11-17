@@ -1,0 +1,46 @@
+asof,sym,item,value,d1,d5,flag
+2026-11-16,CT,Flat price (Dec 26),77.0,-1.78,-1.78,1
+2026-11-16,CT,Front spread (Dec 26/Mar 27),-3.92,-0.09,-0.1,0
+2026-11-16,CT,ICE certificated cotton,75725.0,,9009.0,0
+2026-11-16,CT,Spot basis (US average),-321.0,,,0
+2026-11-16,CT,Managed money net,55382.0,,2234.0,0
+2026-11-16,CT,Front implied vol (JAN27),20.1,,,0
+2026-11-16,CT,"On-call sales, old crop",68228.0,,-1807.0,0
+2026-11-16,CT,wx:us_tx,near normal,,,0
+2026-11-16,CT,wx:br_mt,wet,,,0
+2026-11-16,CT,wx:br_ba,near normal,,,0
+2026-11-16,CT,wx:in_gj,near normal,,,0
+2026-11-16,CT,wx:au_nsw,near normal,,,0
+2026-11-16,CT,cot_date,2026-11-10,,,0
+2026-11-16,SB,Flat price (Mar 27),18.1,-0.31,-0.11,0
+2026-11-16,SB,Front spread (Mar 27/May 27),0.51,0.01,-0.04,0
+2026-11-16,SB,Certified stocks,,,,0
+2026-11-16,SB,Managed money net,193196.0,,-30699.0,0
+2026-11-16,SB,Front implied vol (JAN27),25.4,,,0
+2026-11-16,SB,wx:br_sp,near normal,,,0
+2026-11-16,SB,wx:br_spw,near normal,,,0
+2026-11-16,SB,wx:br_gos,near normal,,,0
+2026-11-16,SB,wx:br_mgc,wet,,,0
+2026-11-16,SB,wx:in_sl,wet,,,1
+2026-11-16,SB,wx:th_kk,wet,,,1
+2026-11-16,SB,cot_date,2026-11-10,,,0
+2026-11-16,KC,Flat price (Dec 26),280.7,2.05,7.1,0
+2026-11-16,KC,Front spread (Dec 26/Mar 27),5.8,0.65,-0.55,0
+2026-11-16,KC,ICE certified arabica,186414.0,-24907.0,-54989.0,1
+2026-11-16,KC,Managed money net,4972.0,,-4633.0,0
+2026-11-16,KC,Front implied vol (MAR27),36.7,,,0
+2026-11-16,KC,wx:br_mg,wet,,,0
+2026-11-16,KC,wx:br_cer,wet,,,1
+2026-11-16,KC,wx:br_zm,wet,,,0
+2026-11-16,KC,wx:br_es,wet,,,0
+2026-11-16,KC,wx:vn_dl,near normal,,,0
+2026-11-16,KC,cot_date,2026-11-10,,,0
+2026-11-16,CC,Flat price (Mar 27),5184.0,-76.0,64.0,0
+2026-11-16,CC,Front spread (Mar 27/May 27),-65.0,4.0,-18.0,0
+2026-11-16,CC,Certified stocks,,,,0
+2026-11-16,CC,Managed money net,-21830.0,,-7616.0,1
+2026-11-16,CC,Front implied vol (JAN27),40.1,,,0
+2026-11-16,CC,wx:ci_sb,near normal,,,0
+2026-11-16,CC,wx:ci_dl,dry,,,0
+2026-11-16,CC,wx:gh_ku,dry,,,0
+2026-11-16,CC,cot_date,2026-11-10,,,0

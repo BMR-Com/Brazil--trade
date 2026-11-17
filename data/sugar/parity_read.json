@@ -1,0 +1,42 @@
+{
+ "generated": "2026-11-17 11:11 UTC",
+ "now": {
+  "date": "2026-11-16",
+  "contract": "SBH2027",
+  "contract_label": "Mar 27",
+  "sb": 18.1,
+  "eth": 3151.5,
+  "eth_date": "2026-11-13",
+  "eth_src": "B3 hydrous ethanol futures, front month, R$/m³ (cash-settled on the CEPEA/ESALQ Paulínia index)",
+  "fx": 5.784,
+  "fx_date": "2026-11-16",
+  "parity": 16.17,
+  "gap": 1.93,
+  "sugar_pays": true,
+  "sb_level_ethanol_equal": 16.17,
+  "eth_level_sugar_equal": 3564.0,
+  "eth_age_bd": 1
+ },
+ "mix": {
+  "unica": {
+   "month": "2026-08",
+   "mix_sugar": 51.69,
+   "mix_sugar_ly": 54.63,
+   "season": "2026/2027",
+   "src": "UNICA Centre-South, monthly"
+  },
+  "fortnight": {
+   "end": "2026-10-31",
+   "mix_sugar": 50.4,
+   "src": "implied from MAPA fortnightly sugar and ethanol, corn ethanol estimated"
+  }
+ },
+ "constants": {
+  "atr_kg_per_kg_sugar": 1.0495,
+  "atr_kg_per_litre_hydrous": 1.6913,
+  "pol_premium": 0.0405,
+  "fob_logistics_brl_t": 190.0,
+  "lb_per_tonne_over_100": 22.0462
+ },
+ "cepea_file": false
+}
