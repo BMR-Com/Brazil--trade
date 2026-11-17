@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 22:59 UTC",
+ "generated": "2026-11-17 23:42 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -197,7 +197,7 @@
   {
    "group": "Cotton",
    "source": "AMS daily classing",
-   "latest": "2026-11-15",
+   "latest": "2026-11-16",
    "cadence": "daily",
    "age": 1,
    "age_unit": "business days",
@@ -797,7 +797,7 @@
  ],
  "late": 3,
  "inbox": {
-  "updated": "2026-11-17 22:53 UTC",
+  "updated": "2026-11-17 23:42 UTC",
   "last": [
    {
     "type": "CT_options",
