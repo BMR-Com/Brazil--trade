@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 11:16 UTC",
+ "generated": "2026-11-17 11:18 UTC",
  "asof": "2026-11-16",
  "today": "2026-11-17",
  "active": [
@@ -10,7 +10,7 @@
    "on": true,
    "level": "±40,000 bags",
    "date": "2026-11-16",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -20,7 +20,7 @@
    "on": true,
    "level": "77.04",
    "date": "2026-11-16",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -30,7 +30,7 @@
    "on": true,
    "level": "+144,549",
    "date": "2026-11-10",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -40,7 +40,7 @@
    "on": true,
    "level": "+16,070",
    "date": "2026-11-10",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -50,7 +50,7 @@
    "on": true,
    "level": "-15,365",
    "date": "2026-11-10",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -60,7 +60,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -70,7 +70,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -80,13 +80,23 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "data_EC_balance_sheet_and_EU_price__manual_",
    "market": "Data",
    "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": false,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_Alerts_check",
+   "market": "Data",
+   "text": "Alerts check: missing (latest –, limit 2 business days)",
    "on": true,
    "level": null,
    "date": "2026-11-17",
@@ -148,7 +158,7 @@
    "text": "Ethanol parity 16.17¢/lb: No. 11 Mar 27 now 18.10¢ (2026-11-16)"
   }
  ],
- "rules_checked": 121,
+ "rules_checked": 126,
  "pending_email": [
   {
    "id": "KC_certs_week",
@@ -234,6 +244,16 @@
    "id": "data_EC_balance_sheet_and_EU_price__manual_",
    "market": "Data",
    "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_Alerts_check",
+   "market": "Data",
+   "text": "Alerts check: missing (latest –, limit 2 business days)",
    "on": true,
    "level": null,
    "date": "2026-11-17",

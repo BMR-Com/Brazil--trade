@@ -8,3 +8,4 @@ date,id,market,event,text
 2026-11-17,data_ICE_certs__strength__upload_,Data,triggered,"ICE certs: strength (upload): late (latest 2026-11-02, limit 9 days)"
 2026-11-17,data_ICE_certs__stock_by_delivery_point__upload_,Data,triggered,"ICE certs: stock by delivery point (upload): late (latest 2026-11-04, limit 2 business days)"
 2026-11-17,data_EC_balance_sheet_and_EU_price__manual_,Data,triggered,"EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)"
+2026-11-17,data_Alerts_check,Data,triggered,"Alerts check: missing (latest –, limit 2 business days)"
