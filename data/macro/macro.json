@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 05:23 UTC",
+ "generated": "2026-11-17 05:36 UTC",
  "view": "headwind",
  "score": -6,
  "components": {
@@ -21,7 +21,7 @@
   {
    "title": "Dollar & farm currencies",
    "score": -2,
-   "text": "Dollar index 103.50 (+1.6% in a month, +5.3% YTD). A stronger dollar makes US grain, oilseeds, cotton and meat dearer abroad. USD/BRL 5.784 (+13.5% in a month): a weaker real encourages Brazilian farmer selling of soybeans, corn, sugar, coffee and cotton, pressuring world prices. USD/CNY 6.665 (-0.4%); USD/MXN 18.50 (+0.3%)."
+   "text": "Dollar index 103.49 (+1.6% in a month, +5.3% YTD). A stronger dollar makes US grain, oilseeds, cotton and meat dearer abroad. USD/BRL 5.784 (+13.5% in a month): a weaker real encourages Brazilian farmer selling of soybeans, corn, sugar, coffee and cotton, pressuring world prices. USD/CNY 6.665 (-0.4%); USD/MXN 18.50 (+0.3%)."
   },
   {
    "title": "Risk appetite",
@@ -31,17 +31,17 @@
   {
    "title": "Energy",
    "score": -1,
-   "text": "WTI 84.96 $/bbl (-14.2% in a month), Brent 91.64, ULSD 4.040 $/gal (-14.5%), natural gas 3.09 (-8.9%). Lower crude weighs on soybean oil and corn through biofuel margins and on cotton via cheaper polyester. "
+   "text": "WTI 84.98 $/bbl (-14.2% in a month), Brent 91.70, ULSD 4.039 $/gal (-14.5%), natural gas 3.08 (-8.9%). Lower crude weighs on soybean oil and corn through biofuel margins and on cotton via cheaper polyester. "
   },
   {
    "title": "China & industrial demand",
    "score": -1,
-   "text": "Copper -9.0% in a month, Shanghai Composite -3.3%, Hang Seng -2.5%, yuan +0.4% vs USD. Soft China/industrial signals point to weaker import demand. "
+   "text": "Copper -8.8% in a month, Shanghai Composite -3.2%, Hang Seng -2.4%, yuan +0.4% vs USD. Soft China/industrial signals point to weaker import demand. "
   },
   {
    "title": "Commodity breadth",
    "score": -1,
-   "text": "8 of 33 commodities trade above their 50-day average (24%); S&P GSCI -10.6% in a month; gold -7.3%. "
+   "text": "8 of 33 commodities trade above their 50-day average (24%); S&P GSCI -10.6% in a month; gold -7.1%. "
   }
  ],
  "caveat": "Directional channels from macro to ag prices are standard relationships, not signals tested on this desk; use as context.",
