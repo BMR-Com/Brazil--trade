@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 21:06 UTC",
+ "generated": "2026-11-17 21:08 UTC",
  "asof": "2026-11-17",
  "markets": [
   {
@@ -47,16 +47,16 @@
     "sign": "front minus next; negative = carry",
     "carry": {
      "date": "2026-11-17",
-     "next_over_front": 4.02,
-     "full_carry": 5.47,
-     "pct_of_full_carry": 73.5,
+     "next_over_front": 4.11,
+     "full_carry": 5.46,
+     "pct_of_full_carry": 75.3,
      "pct_1w_ago": 71.2,
      "storage": 3.01,
      "financing": 1.04,
      "penalties": 1.41,
      "cert_premium_pts": 560.0,
      "basis": "certs on board",
-     "shortfall": 1.45,
+     "shortfall": 1.35,
      "src": "data/cotton/carry_history.csv (certs tab)"
     }
    },
@@ -253,7 +253,7 @@
    "index_roll_past": true,
    "read": [
     "34,513 lots still open in Dec 26 on 2026-11-16 (20.3% left; past Dec rolls at this stage 13.0–22.1%) with 4 business days to first notice (2026-11-23). At the last five reports' pace (about 12,969 lots a day) the contract clears before notice.",
-    "Dec 26/Mar 27 pays +4.02¢, 73.5% of full carry (5.47¢) on 2026-11-17, up from 71.2% a week earlier. Taking certs and redelivering does not cover storage, financing and penalties (1.45¢ short), and the certs on board carry an average ICE premium of +560 pts that a taker pays.",
+    "Dec 26/Mar 27 pays +4.11¢, 75.3% of full carry (5.46¢) on 2026-11-17, up from 71.2% a week earlier. Taking certs and redelivering does not cover storage, financing and penalties (1.35¢ short), and the certs on board carry an average ICE premium of +560 pts that a taker pays.",
     "On-call against December 2026 (2026-11-06): 7,624 lots unfixed sales (mills still to buy futures to fix) and 14,340 lots unfixed purchases (sellers still to fix by selling); net -6,716 lots.",
     "Read: longs must roll or sell with 4 business days left; delivery does not pay (see Certs) and net on-call fixing is selling (-6,716 lots) → liquidation pressure on Dec 26 against Mar 27 into first notice."
    ]
