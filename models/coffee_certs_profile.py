@@ -558,7 +558,7 @@ out["gap"] = {"deliveries": gap_hist, "signal": sig, "current": cur["delivery"],
               "ico_note": "ICO group indicators: daily ex-dock prompt-shipment prices for named current-crop export grades in the USA and Europe (Germany, France), built as futures plus trade differentials, US cents/lb; the group price weights the two markets by export share. ICO's 'New York' is the average of the ICE 2nd and 3rd positions."}
 out["rules"] = {
     "source": P["source_url"], "read_on": P["read_on"],
-    "origin_now": version("origin_diff_versions", DLV_M), "origin_next": version("origin_diff_versions", "2027-05"),
+    "origin_now": version("origin_diff_versions", DLV_M), "origin_next": version("origin_diff_versions", "2027-05"), "origin_note": P.get("origin_diff_note"),
     "port_now": version("port_diff_versions", DLV_M), "age_bands": version("age_discount_versions", DLV_M),
     "changes": rules.fillna("").to_dict("records"),
 }
@@ -569,6 +569,132 @@ out["variables"] = [
     "ICE warehouse storage and load-out rates (2026-27)", "KC settlements by contract", "ICO group indicator prices by market (Europe / US) and the ICO New York average, monthly since 2000", "Past delivery pools: aging report two months before each KC delivery (2016 on) and origin-by-port snapshots where available (2024 on)",
     "Brazil export-quality prices (B3 arabica 4/5 good cup, co-op semi-washed, tipo 6)"]
 out["checks"] = {"cells_sum": rd(C.bags.sum(), 0), "certified": rd(tot_now, 0), "aging_total": rd(float(port_age.values.sum()), 0)}
+
+# ------------------------------------------ 5. old vs new contract: today's stock revalued under each rule set
+AC = json.load(open(need("data/coffee/ref/ac_rule_params.json")))
+CLB = 1e6 / 453.59237 / 100                                  # $/t per c/lb (22.0462)
+
+
+def age_ac(days):
+    if days <= AC["age_first_free_days"]:
+        return 0.0
+    if days <= 150:
+        return float(AC["age_first_step_usd"])
+    for lo, hi, base, st in AC["age_bands_usd"]:
+        if days <= hi:
+            return float(base + st * math.ceil((days - lo) / 30))
+    lo, hi, base, st = AC["age_bands_usd"][-1]
+    return float(base + st * math.ceil((days - lo) / 30))
+
+
+def eudr_kc(dm):
+    eu = P["eudr_transition"]
+    if dm < eu["from_contract"]:
+        return 0.0
+    y, m = int(dm[:4]), int(dm[5:])
+    return float(eu["pts_per_month_2027"] * m if y == 2027 else eu["pts_2028_base"] + eu["pts_per_month_2028"] * ((y - 2028) * 12 + m))
+
+
+def eudr_ac(dm):
+    e = AC["eudr_transition"]
+    if dm < e["from_contract"]:
+        return 0.0
+    k = (int(dm[:4]) - 2028) * 12 + int(dm[5:]) - 5
+    return (e["usd_t_first"] + e["usd_t_per_month"] * k) / CLB * 100
+
+
+RULESETS = {"kc_pre": ("KC before Mar 2026", "2016-05"), "kc_now": ("KC now (Mar 2026 – Mar 2027)", "2026-03"),
+            "kc_may27": ("KC May 2027 – Mar 2028", "2027-05"), "ac": ("AC metric, from May 2028", None)}
+
+
+def value(o, p, age_max, mid, rs, dm, tsh, with_eudr):
+    """c/lb components for one cell under rule set rs, delivered in month dm."""
+    if rs == "ac":
+        od = AC["origin_usd_t"].get(o); pdv = AC["port_usd_t"].get(p)
+        od = None if od is None else od / CLB * 100
+        pdv = None if pdv is None else pdv / CLB * 100
+        ag = age_ac(age_max) / CLB * 100
+        eu = eudr_ac(dm) if (with_eudr and p in AC["eudr_transition"]["ports"]) else 0.0
+    else:
+        od = P["origin_diff_versions"][[v["from_delivery"] for v in P["origin_diff_versions"]].index(RULESETS[rs][1])]["pts"].get(o)
+        pdv = version("port_diff_versions", "2026-03")["pts"].get(p, 0)
+        ag = age_pts(age_max, "2026-03")
+        eu = eudr_kc(dm) if (with_eudr and p in EU) else 0.0
+    wt = -weight_pct(mid) / 100 * F * 100
+    lb = bag_lb(o)
+    oca = rt.oca_usd_bag.get(p, 0.0) / lb * 1e4 if p in rt.index else 0.0
+    rca = rt.rca_usd_bag.get(p, 0.0) * P["rca"]["mult"].get(str(int(dm[5:])), 2) / lb * 1e4 if p in rt.index else 0.0
+    ok = od is not None and pdv is not None
+    c = {"odiff": od if ok else 0.0, "pdiff": pdv if ok else 0.0, "age": -ag, "weight": wt, "oca_rca": oca + rca, "eudr": -eu * tsh}
+    return ok, {k: v / 100 for k, v in c.items()}
+
+
+Y = X.copy()
+Y["mid"] = Y.apply(lambda r: (bmin[r.bucket] + bmax[r.bucket]) / 2 if r.bucket != B[0] else 60, axis=1)
+Y["tsh"] = [trans_share.get((r.origin, r.port), 0.0) for r in Y.itertuples()]
+
+
+def revalue(rs, dm, add_days, with_eudr):
+    rows_ = []
+    for r in Y.itertuples():
+        ok, c = value(r.origin, r.port, r.age_max + add_days, r.mid + add_days, rs, dm, r.tsh, with_eudr)
+        rows_.append({"origin": r.origin, "port": r.port, "lb": r.lb, "bags": r.bags, "ok": ok, **c, "total": sum(c.values())})
+    return pd.DataFrame(rows_)
+
+
+def agg(d):
+    g = d[d.ok]
+    w = lambda col: rd(float((g[col] * g.lb).sum() / g.lb.sum()), 2) if g.lb.sum() > 0 else None
+    return {"bags": rd(d.bags.sum(), 0), "bags_ok": rd(g.bags.sum(), 0), "total": w("total"), "odiff": w("odiff"), "pdiff": w("pdiff"),
+            "age": w("age"), "eudr": w("eudr"), "weight": w("weight"), "oca_rca": w("oca_rca")}
+
+
+same_day = {}
+for rs in RULESETS:
+    d = revalue(rs, DLV_M, 0, False)
+    same_day[rs] = {"all": agg(d), "by_origin": {o: agg(g) for o, g in d.groupby("origin")}}
+path = []
+for lab, rs, dm in [("Dec 2026 (KC now)", "kc_now", DLV_M), ("Mar 2027 (KC)", "kc_now", "2027-03"), ("May 2027 (KC)", "kc_may27", "2027-05"),
+                    ("Mar 2028 (last KC)", "kc_may27", "2028-03"), ("May 2028 (first AC)", "ac", "2028-05")]:
+    days = (pd.Timestamp(dm + "-01") - pd.Timestamp(DLV_M + "-01")).days
+    d = revalue(rs, dm, days, True)
+    eu_d = d[d.port.isin(EU)]
+    path.append({"label": lab, "rules": rs, "delivery": dm, "add_days": days, "all": agg(d), "eu": agg(eu_d), "non_eu": agg(d[~d.port.isin(EU)]),
+                 "by_origin": {o: agg(g) for o, g in d.groupby("origin")}})
+origins_all = sorted(set(P["origin_diff_versions"][-1]["pts"]) | set(AC["origin_usd_t"]))
+diff_table = []
+for o in origins_all:
+    vals = {rs: (P["origin_diff_versions"][[v["from_delivery"] for v in P["origin_diff_versions"]].index(RULESETS[rs][1])]["pts"].get(o)) for rs in ["kc_pre", "kc_now", "kc_may27"]}
+    a = AC["origin_usd_t"].get(o)
+    diff_table.append({"origin": o, "kc_pre": rd(vals["kc_pre"] / 100, 2) if vals["kc_pre"] is not None else None,
+                       "kc_now": rd(vals["kc_now"] / 100, 2) if vals["kc_now"] is not None else None,
+                       "kc_may27": rd(vals["kc_may27"] / 100, 2) if vals["kc_may27"] is not None else None,
+                       "ac_usd_t": a, "ac_clb": rd(a / CLB, 2) if a is not None else None,
+                       "in_stock_bags": rd(float(Y[Y.origin == o].bags.sum()), 0)})
+# the curve across the switch: live KC contracts (c/lb) and AC contracts ($/t, shown also in c/lb), same settlement day
+curve_sw = []
+for c in sorted([c for c in px.columns if px[c].dropna().index.max() == fdate], key=ckey):
+    curve_sw.append({"contract": c, "clb": rd(float(px[c].dropna().iloc[-1]), 2), "usd_t": None, "kind": "KC"})
+acp = os.path.join(ROOT, "data", "contracts", "AC.csv")
+ac_date = None
+if os.path.exists(acp):
+    acd = pd.read_csv(acp, parse_dates=["date"])
+    acd = acd[acd.date <= fdate]
+    if len(acd):
+        ac_date = acd.date.max()
+        for c, g in sorted(acd[acd.date == ac_date].groupby("contract"), key=lambda t: ckey(t[0])):
+            v = float(g.close.iloc[-1])
+            curve_sw.append({"contract": c, "clb": rd(v / CLB, 2), "usd_t": rd(v, 0), "kind": "AC",
+                             "volume_10d": rd(float(acd[(acd.contract == c) & (acd.date > ac_date - pd.Timedelta(days=14))].volume.sum()), 0)})
+sw = {"curve": curve_sw, "kc_date": fdate.strftime("%Y-%m-%d"), "ac_date": ac_date.strftime("%Y-%m-%d") if ac_date is not None else None}
+out["contract_compare"] = {
+    "delivery": DLV_M, "futures": dcode, "settle": rd(F, 2), "clb_per_usd_t": rd(1 / CLB, 5), "usd_t_per_clb": rd(CLB, 4),
+    "rulesets": {k: v[0] for k, v in RULESETS.items()}, "same_day": same_day, "path": path, "diff_table": diff_table,
+    "transition_bags": rd(float(dl.transition.sum()), 0), "eu_bags": rd(float(Y[Y.port.isin(EU)].bags.sum()), 0),
+    "switch_quote": sw, "ac": {k: AC[k] for k in ["port_usd_t", "age_bands_usd", "eudr_transition", "packaging", "certificates_note", "lot_t",
+                                                  "first_contract", "spot_month_limit_lots", "source_url", "filing_url", "read_on"]},
+    "kc_eudr": P["eudr_transition"], "origin_note": P.get("origin_diff_note"),
+}
 
 json.dump(out, open(OUT, "w"), separators=(",", ":"), allow_nan=False)
 print(f"certs profile: {tot_now:,.0f} bags ({S['lots']:,.0f} lots) on {D_DATE.date()}, avg invoice diff {S['total']:+.2f} c/lb vs {dcode} {F:.2f}")

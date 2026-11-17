@@ -4,7 +4,7 @@
 const Coffee = (() => {
   let built = false, tab = 'kc-primer', K = null;
   const TABS = [['kc-primer', 'Primer'], ['kc-geo', "Where it's grown, trade &amp; weather"], ['kc-bal', 'World balance'], ['kc-br', 'Brazil: basis ladder &amp; exports'], ['kc-cecafe', 'Cecafé daily registrations'], ['kc-wx', 'Brazil weather by production'],
-    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'],
+    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-newc', 'KC contract: old vs new'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'],
     ['kc-flows', 'Futures, options &amp; COT'], ['kc-rv', 'Spreads &amp; vol'], ['kc-outlook', 'Outlook'], ['kc-seas', 'Seasonality &amp; technicals']];
   const body = () => $('#kcBody');
   const f0 = v => fmt(v, 0), f1 = v => fmt(v, 1), f2 = v => fmt(v, 2);
@@ -23,7 +23,7 @@ const Coffee = (() => {
   function render() {
     history.replaceState(null, '', '#' + tab);
     body().innerHTML = '<div class="card"><p class="note">Loading…</p></div>';
-    ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs), 'kc-cprof': guard(cprof), 'kc-cecafe': guard(cecafe), 'kc-wx': guard(weather),
+    ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs), 'kc-cprof': guard(cprof), 'kc-newc': guard(kcnew), 'kc-cecafe': guard(cecafe), 'kc-wx': guard(weather),
       'kc-arb': guard(arb), 'kc-orig': guard(origins), 'kc-flows': guard(flows), 'kc-rv': () => RVView.mount(body(), 'KC'),
       'kc-outlook': guard(outlook), 'kc-seas': () => MktStudy.mount(body(), ['KC']) })[tab]();
   }
@@ -55,7 +55,7 @@ const Coffee = (() => {
         <tr><td class="l">Funds and trade hedging</td><td class="l">Managed money swings; producer/merchant short hedges fall when prices are high and margin calls hurt, which thins liquidity.</td><td class="l">Futures, options &amp; COT</td></tr></table></div></div></div>
       <div class="card" style="margin-top:12px"><h2>Delivery: grading, origin and port differentials, age discount</h2>
         <p>Coffee C delivers certified washed arabica held in ICE-licensed warehouses. Each lot is graded by the exchange (defects, bean size, cup); the invoice is the settlement price adjusted for the coffee's origin, the port it sits in, its grade and how long ago it was graded. 100 points = 1 ¢/lb.</p>
-        <div class="grid g2"><div><h3>Origin (growth) differentials</h3><div class="tbl"><table><tr><th class="l">Origin</th><th>Now</th><th>From May 2027</th></tr>
+        <div class="grid g2"><div><h3>Origin (growth) differentials</h3><div class="tbl"><table><tr><th class="l">Origin</th><th>Before Mar 2026</th><th>Now (from Mar 2026)</th></tr>
           <tr><td class="l">Mexico, El Salvador, Nicaragua, Panama, Papua New Guinea, Peru, Honduras, Tanzania, Uganda</td><td class="n">par</td><td class="n">par</td></tr>
           <tr><td class="l">Guatemala</td><td class="n">par</td><td class="n">+5.00¢</td></tr>
           <tr><td class="l">Costa Rica, Kenya</td><td class="n">par</td><td class="n">+10.00¢</td></tr>
@@ -63,7 +63,7 @@ const Coffee = (() => {
           <tr><td class="l">Venezuela, Burundi, Rwanda, India</td><td class="n">−1.00¢</td><td class="n">−1.00¢</td></tr>
           <tr><td class="l">Dominican Republic, Ecuador</td><td class="n">−4.00¢</td><td class="n">−4.00¢</td></tr>
           <tr><td class="l">Brazil (semi-washed)</td><td class="n">−6.00¢</td><td class="n">−6.00¢</td></tr>
-          <tr><td class="l">Vietnam (washed arabica, scheduled)</td><td class="n">–</td><td class="n">−6.00¢ (later schedule)</td></tr></table></div></div>
+          <tr><td class="l">Vietnam (washed arabica)</td><td class="n">–</td><td class="n">−6.00¢ from May 2027</td></tr></table></div></div>
           <div><h3>Port (warehouse) differentials</h3><div class="tbl"><table><tr><th class="l">Port district</th><th>Differential</th></tr>
           <tr><td class="l">New York, Virginia</td><td class="n">par</td></tr><tr><td class="l">New Orleans, Miami, Houston</td><td class="n">−0.50¢</td></tr>
           <tr><td class="l">Antwerp, Hamburg/Bremen, Barcelona</td><td class="n">−1.25¢</td></tr></table></div>
@@ -75,7 +75,7 @@ const Coffee = (() => {
           <tr><td class="l">721–1,080</td><td class="l">8.25¢ + 1.00¢ per 30 days</td></tr><tr><td class="l">1,081–1,440</td><td class="l">20.25¢ + 1.25¢ per 30 days</td></tr>
           <tr><td class="l">1,441–1,800</td><td class="l">35.25¢ + 1.50¢ per 30 days</td></tr><tr><td class="l">longer</td><td class="l">steps up by a further 0.25¢ per 30 days each year (no cap)</td></tr></table></div>
           <div><div class="grid g2"><label>Days since grading<br><input id="kcAge" type="number" value="400" step="30"></label>
-            <label>Origin<br><select id="kcOrg"><option value="0">par origin</option><option value="400">Colombia (+4¢)</option><option value="-100">Venezuela/Burundi/Rwanda/India (−1¢)</option><option value="-400">Dominican Rep./Ecuador (−4¢)</option><option value="-600">Brazil (−6¢)</option></select></label>
+            <label>Origin<br><select id="kcOrg"><option value="0">par origin</option><option value="1000">Colombia, Costa Rica, Kenya (+10¢)</option><option value="500">Guatemala (+5¢)</option><option value="-100">Venezuela/Burundi/Rwanda/India (−1¢)</option><option value="-400">Dominican Rep./Ecuador (−4¢)</option><option value="-600">Brazil (−6¢)</option></select></label>
             <label>Port<br><select id="kcPort"><option value="0">New York / Virginia</option><option value="-50">New Orleans / Miami / Houston</option><option value="-125">Antwerp / Hamburg-Bremen / Barcelona</option></select></label>
             <label>Imperfections below basis<br><input id="kcImp" type="number" value="0" min="0" max="15"></label></div>
             <div id="kcAgeOut" style="margin-top:8px"></div></div></div>
@@ -90,7 +90,7 @@ const Coffee = (() => {
           <tr><td class="l"><b>Differentials</b></td><td class="l">Physical coffee is priced as futures plus or minus a differential for origin and quality. Differentials usually move against the futures (growers ask more when futures are low; roasters pay less when futures are high). When they rise together with the futures, origin supply is genuinely short and the market tends to trend; when both fall together, the opposite. An inverted market pushes hedged exporters to discount nearby sales to avoid paying the roll, which is how an inversion starts to break itself.</td></tr>
           <tr><td class="l"><b>Origins that drink their own coffee</b></td><td class="l">Brazil drinks over 20m bags a year, about a third of its crop; Ethiopia keeps about 40%, Indonesia over 40% (mostly robusta). Exports are therefore a poor proxy for the crop in these countries, and a short crop hits exports first. Brazilian roasters switch toward conilon when arabica is expensive, so the same consumption can leave very different arabica and robusta volumes for export, one reason Brazil crop estimates differ by several million bags.</td></tr>
           <tr><td class="l"><b>Index rebalance</b></td><td class="l">Commodity index funds (BCOM, S&amp;P GSCI) reset weights once a year in early January, over about the 6th–10th business day. They sell what outperformed and buy what lagged; the size can be estimated from the CFTC index-trader (CIT) positions and the year's relative performance. Arabica's weight is small (about 3% in BCOM, about 2% in GSCI), so its rebalance flow is usually minor.</td></tr></table></div>
-        <p class="note">From the ICE Coffee "C" rules (Appendix IV differentials, Appendix V age adjustments, Rules 8.01–8.14). Several origin differentials change from the May 2027 delivery; check the current rulebook before acting.</p></div>`;
+        <p class="note">From the ICE Coffee "C" rules (Appendix IV differentials, Appendix V age adjustments, Rules 8.01–8.14). Premiums for Colombia, Costa Rica, Kenya (+10¢) and Guatemala (+5¢) apply from March 2026; Vietnam is deliverable from May 2027; KC ends with March 2028 and the metric contract (AC) starts May 2028 (see "KC contract: old vs new").</p></div>`;
     const kc = () => {
       const d = +$('#kcAge').value || 0, org = +$('#kcOrg').value, port = +$('#kcPort').value, imp = Math.max(0, +$('#kcImp').value || 0);
       const B = [[1800, 5325, 175], [1440, 3525, 150], [1080, 2025, 125], [720, 825, 100], [360, 225, 50], [150, 50, 25]];
@@ -297,7 +297,7 @@ const Coffee = (() => {
           <div class="tbl"><table>${(Ph.brazil_ladder || []).map(l => `<tr><td class="l">${l.name}</td><td class="n">${l.date}</td><td class="n"><b>${c2(l.basis)}</b></td></tr>`).join('')}</table></div>
           <p class="note">Brazil on the exchange (Antwerp, fresh) invoices at ${c2(braA?.fresh)}. The difference to the origin price has to cover freight, port and grading costs; it is what draws semi-washed Brazil to the exchange.</p></div></div>
       <div class="card" style="margin-top:12px"><h2>Rule changes: ICE Coffee "C"</h2><div class="tbl"><table><tr><th class="l">Effective</th><th class="l">First contract</th><th class="l">Area</th><th class="l">What changed</th><th class="l">Link</th></tr>${ruleRows}</table></div>
-        <p class="note">From the ICE rulebook amendment notes, ICE filings and notices. Origin and port differentials apply by delivery month to every lot delivered, whenever it was graded; the age discount runs from each lot's grading certificate. ICE's January 2024 notice announced the 10¢ premiums from March 2026; the rulebook now applies them from May 2027, which this page uses.</p></div>
+        <p class="note">From the ICE rulebook amendment notes, ICE filings and notices. Origin and port differentials apply by delivery month to every lot delivered, whenever it was graded; the age discount runs from each lot's grading certificate. The 10¢ premiums for Colombia, Costa Rica and Kenya and 5¢ for Guatemala apply from the March 2026 contract (ICE notice 16 Jan 2024; rulebook amendment note of 20 Dec 2023); May 2027 adds Vietnam. See the "KC contract: old vs new" tab.</p></div>
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Differentials in force</h2><div class="tbl"><table><tr><th class="l">Origin</th><th>${Cu.delivery} delivery, ¢/lb</th><th>From May 2027</th></tr>${oList.map(o => `<tr><td class="l">${o}</td><td class="n">${on[o] == null ? 'not deliverable' : sgn(on[o] / 100, 2)}</td><td class="n">${nx[o] == null ? '–' : sgn(nx[o] / 100, 2)}</td></tr>`).join('')}</table></div>
           <p class="note">Ports: ${Object.entries(pn).map(([k, v]) => `${k.toLowerCase().replace(/(^|[\s/])\w/g, s => s.toUpperCase())} ${v ? sgn(v / 100, 2) : 'basis'}`).join(', ')}.</p></div>
@@ -330,6 +330,89 @@ const Coffee = (() => {
     chart('cpC', { type: 'line', data: { labels: cv.map(p => f0(p.cum_lots)), datasets: [{ label: 'Invoice vs futures, ¢/lb (lots sorted lowest first)', data: cv.map(p => Math.max(p.diff, -60)), borderColor: '#7d3c98', stepped: true, pointRadius: 0 }] },
       options: { plugins: { tooltip: { callbacks: { label: c => { const p = cv[c.dataIndex]; return `${f2(p.diff)}¢ ${p.origin || ''} ${p.port || ''} ${p.age ? p.age + ' d' : ''}`; } } } },
         scales: { x: { title: { display: true, text: 'cumulative lots' } }, y: { title: { display: true, text: '¢/lb (floored at −60)' } } } } });
+  }
+  // KC contract: old vs new. Rules from the ICE rulebook (Ch. 8 Coffee "C", Ch. 14 Coffee "C" Metric) and notices;
+  // today's certified stock revalued under each rule set by models/coffee_certs_profile.py (contract_compare).
+  async function kcnew() {
+    await loadCP();
+    const D = CP, X = D.contract_compare, R = D.rules, Cu = D.current, Ph = D.physical;
+    const c2 = v => sgn(v, 2, '¢'), RS = ['kc_pre', 'kc_now', 'kc_may27', 'ac'], SD = X.same_day, P = X.path;
+    const RB = 'https://www.ice.com/publicdocs/rulebooks/futures_us/8_Coffee.pdf', RB14 = X.ac.source_url, F157 = X.ac.filing_url;
+    const N24 = 'https://www.ice.com/publicdocs/futures_us/exchange_notices/ICE_Futures_US_ExNotCoffeeFuturesAmendmentsJan20240116.pdf';
+    const NVN = 'https://www.ice.com/publicdocs/futures_us/exchange_notices/Exchange_Notice_Vietnam_Deliverable_Origin_Coffee_20250401.pdf';
+    const SPEC = 'https://www.ice.com/products/15/Coffee-C-Futures/specifications', R23 = 'https://www.ice.com/publicdocs/regulatory_filings/23-132_Amendments_to_Coffee_Rules.pdf';
+    const a = l => `<a href="${l}" target="_blank" rel="noopener">`;
+    const prem = ['Kenya', 'Colombia', 'Guatemala', 'Costa Rica'].map(o => [o, SD.kc_now.by_origin[o]]).filter(x => x[1]);
+    const premBags = prem.reduce((t, [, v]) => t + v.bags, 0);
+    const pth = Object.fromEntries(P.map(p => [p.delivery, p])), last = P.at(-2), first = P.at(-1), now = P[0];
+    const cv = X.switch_quote.curve || [], h28 = cv.find(c => c.contract === 'KCH2028'), k28 = cv.find(c => c.contract === 'ACK2028');
+    const steps = cv.slice(1).map((c, i) => ({ from: cv[i].contract, to: c.contract, d: c.clb - cv[i].clb }));
+    const sw = steps.find(s => s.to === 'ACK2028'), others = steps.filter(s => s.to !== 'ACK2028' && s.from !== 'KCZ2026');
+    const avgStep = others.length ? others.reduce((t, s) => t + s.d, 0) / others.length : null;
+    const colM = (Ph.groups || []).filter(g => g.group === 'Colombian Milds').map(g => g.vs_delivery), othM = (Ph.groups || []).filter(g => g.group === 'Other Milds').map(g => g.vs_delivery);
+    const rng = v => v.length ? `${sgn(Math.min(...v), 0, '¢')} to ${sgn(Math.max(...v), 0, '¢')}` : '–';
+    const tr = X.transition_bags, trSh = tr / Cu.total_bags * 100;
+    const brief = `<div class="card" style="margin:0 0 12px;border-left:4px solid var(--acc)"><h3 style="margin-top:0">The "new contract" is Coffee "C" Metric (AC) from May 2028; KC's own terms change first, in steps</h3><ul style="margin:0;padding-left:18px">
+      <li style="margin:4px 0"><b>What changes, when.</b> March 2028 is the last KC delivery. From May 2028 arabica is delivered on ${a(F157)}Coffee "C" Metric</a> (AC): 10 tonnes in US$/t, big bags (FIBCs) allowed, Barcelona dropped; differentials are KC's converted to $/t. Before that KC changes in steps: the 10¢ premiums for Colombia, Costa Rica and Kenya and 5¢ for Guatemala <b>already apply from the March 2026 contract</b> (not May 2027); Vietnam joins at −6¢ from May 2027; EUDR transition stock in European ports takes a growing discount from March 2027.</li>
+      <li style="margin:4px 0"><b>Same coffee, same day, different rules.</b> Today's ${f0(Cu.total_bags)} certified bags invoice at ${c2(SD.kc_pre.all.total)}/lb under the pre-March 2026 rules, ${c2(SD.kc_now.all.total)} under today's, and ${c2(SD.ac.all.total)} under AC (vs ${X.futures} ${f2(X.settle)}). The rule switch itself moves the whole stock by only ${sgn(SD.kc_now.all.total - SD.kc_pre.all.total, 2, '¢')}: the premium origins are ${f0(premBags)} bags (${prem.map(([o, v]) => `${o} ${sgn(v.total - SD.kc_pre.by_origin[o].total, 0, '¢')}`).join(', ')}). AC versus KC is rounding (${sgn(SD.ac.all.total - SD.kc_may27.all.total, 2, '¢')}).</li>
+      <li style="margin:4px 0"><b>What really cuts value is time plus EUDR.</b> If the same stock waits, it invoices at ${c2(pth['2027-03']?.all.total)} on Mar 27, ${c2(pth['2027-05']?.all.total)} on May 27, ${c2(last.all.total)} on Mar 28 (last KC) and ${c2(first.all.total)} on May 28 (first AC), of which EUDR ${c2(first.all.eudr)}. ${f0(tr)} bags (${f0(trSh)}%) are EUDR transition stock in European ports: their owners gain by delivering them before March 2027.</li>
+      <li style="margin:4px 0"><b>Deliverable supply.</b> More valuable on the invoice, but Colombian Milds still trade ${rng(colM)} over the delivery month physically and Other Milds ${rng(othM)} (ICO, ${Ph.ico_month}), far above +10¢ / par: the premiums do not bring Colombia, Kenya or Costa Rica to the exchange, they mainly make the few lots already graded dearer to receive. Vietnam from May 2027 adds a second cheap washed origin next to Brazil, and from 30 Dec 2026 new European gradings need EUDR due-diligence data, which slows new certs in Antwerp and Hamburg/Bremen.</li>
+      <li style="margin:4px 0"><b>Spreads across the switch.</b> ${h28 && k28 ? `ACK28 trades ${f0(k28.usd_t)} $/t = ${f2(k28.clb)}¢, ${sgn(sw?.d, 2, '¢')} against KCH28 (${f2(h28.clb)}¢), in line with the curve's ${sgn(avgStep, 2, '¢')} average per step (thin: ${f0(k28.volume_10d)} AC lots in two weeks).` : 'AC prices not yet in the desk data.'} Two things could change that: (1) ICE has not said whether KC certificates can be delivered on AC; if they cannot, May 2028 starts with no certified stock and the old KC pile must be delivered on March 2028 or sold, which would weaken H28 against K28; (2) the EUDR transition discount steps up between the two. Watch for an ICE notice.</li></ul>
+      <p class="note" style="margin-bottom:0">Certs ${Cu.daily_date}; futures ${X.switch_quote.kc_date}; AC ${X.switch_quote.ac_date || '–'}; rules read ${R.read_on}. Values hold the futures price at ${X.futures} ${f2(X.settle)}.</p></div>`;
+    const row = (k, cells) => `<tr><td class="l"><b>${k}</b></td>${cells.map(c => `<td class="l">${c}</td>`).join('')}</tr>`;
+    const side = `<div class="card"><h2>Main terms side by side</h2><div class="tbl"><table style="min-width:860px"><tr><th class="l" style="width:14%">Term</th><th class="l">KC before Mar 2026</th><th class="l">KC now (Mar 2026 – Mar 2027)</th><th class="l">KC May 2027 – Mar 2028 (last KC)</th><th class="l">AC Coffee "C" Metric (from May 2028)</th></tr>
+      ${row('Unit / size', ['37,500 lb (17.01 t) washed arabica', 'same', 'same', '<b>10 metric tons</b> (22,046 lb)'])}
+      ${row('Price quotation', ['¢/lb; 0.05¢ tick = $18.75/lot', 'same', 'same', '<b>US$ per tonne</b>; $1/t tick = $10/lot (1¢/lb = $22.05/t)'])}
+      ${row('Months', ['Mar, May, Jul, Sep, Dec', 'same', 'same; <b>no KC listed after Mar 2028</b>', 'Mar, May, Jul, Sep, Dec; first expiry <b>May 2028</b>; listed since Sep 2025'])}
+      ${row('Origins and differentials', ['Colombia +4¢; 12 origins at par (incl. Guatemala, Costa Rica, Kenya); Venezuela, Burundi, Rwanda, India −1¢; Dominican Rep., Ecuador −4¢; Brazil −6¢', '<b>Colombia, Costa Rica, Kenya +10¢; Guatemala +5¢</b>; rest unchanged', 'as now, <b>plus Vietnam −6¢</b>', 'same origins; $/t: +220 (Col, CR, Kenya), +110 (Guat), −22, −88, −132 (Brazil, Vietnam) = the KC values converted'])}
+      ${row('Delivery ports', ['NY, Virginia par; New Orleans, Miami, Houston −0.50¢; Antwerp, Hamburg/Bremen, Barcelona −1.25¢', 'same', 'same', 'NY, Virginia par; Gulf/Miami −$11/t (−0.50¢); Antwerp, Hamburg/Bremen −$28/t (−1.27¢); <b>Barcelona removed</b>'])}
+      ${row('Packaging', ['natural-fibre bags', 'same', 'same', 'bags <b>or FIBC big bags</b> up to 1 t (a lot is all one or the other); weight tolerance 2% bags, 3% FIBC'])}
+      ${row('Grading / cup', ['8 full imperfections basis (Colombia 13), 0.10¢ per imperfection below basis, max 15 below (Colombia 10); ≥50% screen 15; clean cup, no aged taste', 'same', 'same (Vietnam on the 8-imperfection basis)', 'same standard; $2/t per imperfection'])}
+      ${row('Age discount', ['none to 120 days; 0.50¢ at 121–150; then steps up to 18.25¢ at 3,600 days + 3¢ per 30 days', 'same', 'same', 'same schedule in $/t ($11 at 121 days … $4,150 at 3,600 + $66 per 30 days)'])}
+      ${row('Weight allowance', ['0.5% for the 2nd month after weighing + 0.125% per month after', 'same', 'same', 'same'])}
+      ${row('Rent / load-out', ['OCA (load-out vs NY average) and RCA (rent vs NY average × 2 or × 3)', 'same', 'same', 'same, worked out separately for bags and FIBCs'])}
+      ${row('Customs', ['EU ports: non-cleared only (Apr 2024); US ports duty paid (Apr 2025)', 'same', 'same', 'same'])}
+      ${row('EUDR', ['–', 'from 30 Dec 2026 new EU-port gradings need validated EUDR data; transition stock (B/L from 29 Jun 2023, no EUDR data) discounted <b>0.25¢ per month of 2027 from Mar 2027</b>', '2027 months 0.25¢/month; 2028 months 3¢ + 0.50¢/month (Mar 2028: 4.50¢)', 'transition stock: $121/t (5.49¢) on May 2028, + $11/t per month; Antwerp and Hamburg/Bremen'])}
+      ${row('Re-grading', ['barred since 1 Dec 2023 (appeals only)', 'same', 'same', 'same (Rule 14.10a). <b>Not stated</b> whether KC certificates are deliverable on AC'])}
+      ${row('Spot-month limit', ['500 lots (≈8,500 t)', 'same', 'same', '850 lots (8,500 t)'])}</table></div>
+      <p class="note">Sources: ${a(RB)}ICE rulebook Ch. 8 Coffee "C"</a> (Appendix IV Schedules C-2/C-3, Appendix V, VII, VIII), ${a(RB14)}Ch. 14 Coffee "C" Metric</a>, ${a(F157)}ICE Submission 25-157</a>, ${a(N24)}ICE notice 16 Jan 2024</a>, ${a(NVN)}ICE notice 1 Apr 2025 (Vietnam)</a>, ${a(R23)}ICE Submission 23-132 (re-grading)</a>, ${a(SPEC)}ICE product specification</a>.</p>
+      <p class="note"><b>March 2026 or May 2027?</b> ICE's 16 Jan 2024 notice set the premiums from the March 2026 expiry. The rulebook prints three Schedule C-2 tables, each "Effective with …" line sitting between two of them; its amendment notes tie the March 2026 schedule to the Board change of 20 Dec 2023 (the premiums) and the May 2027 schedule to 27 Mar 2025 (Vietnam, ICE notice 1 Apr 2025, which changes nothing else). ICE's product page lists the premiums as current and only Vietnam "commencing with the May 2027 expiry". So the premiums apply now, from March 2026; this page and the certs profile use that.</p></div>`;
+    const dt = X.diff_table.slice().sort((p, q) => (q.kc_may27 ?? -99) - (p.kc_may27 ?? -99) || p.origin.localeCompare(q.origin));
+    const nd = v => v == null ? '<span class="note">not deliverable</span>' : sgn(v, 2);
+    const diffT = `<div class="card"><h2>Origin differentials by rule set <span class="note">¢/lb vs futures; AC in $/t</span></h2><div class="tbl"><table><tr><th class="l">Origin</th><th>Before Mar 26</th><th>Now</th><th>May 27 – Mar 28</th><th>AC $/t</th><th>AC in ¢/lb</th><th>Bags certified now</th></tr>
+      ${dt.map(r => `<tr><td class="l">${r.origin}</td><td class="n">${nd(r.kc_pre)}</td><td class="n">${nd(r.kc_now)}</td><td class="n">${nd(r.kc_may27)}</td><td class="n">${r.ac_usd_t == null ? '–' : sgn(r.ac_usd_t, 0)}</td><td class="n">${nd(r.ac_clb)}</td><td class="n">${r.in_stock_bags ? f0(r.in_stock_bags) : '–'}</td></tr>`).join('')}</table></div></div>`;
+    const spec = `<div class="card" style="border-left:4px solid #17a589"><h2>Full spec of the new contract — main points</h2><ul style="margin:0;padding-left:18px">
+      <li><b>Name / symbol:</b> Coffee "C" Metric futures (AC), ICE Futures U.S.; options on it (monthly, weekly, calendar-spread).</li>
+      <li><b>Size and price:</b> 10 t washed arabica; US$/t, minimum move $1/t ($10 a lot); option strikes every $25/t.</li>
+      <li><b>Months:</b> Mar, May, Jul, Sep, Dec; first expiry May 2028 (KC's last is Mar 2028, so expiries never overlap). Last notice day 7 business days before the month's last business day; last trading day the business day before; notices from 7 business days before the first business day of the month; delivery 7 business days after notice.</li>
+      <li><b>Origins:</b> the 21 KC growths incl. Vietnam. Par: Mexico, El Salvador, Nicaragua, PNG, Tanzania, Uganda, Panama, Peru, Honduras. +$220/t Colombia, Costa Rica, Kenya; +$110 Guatemala; −$22 Venezuela, Burundi, Rwanda, India; −$88 Dominican Rep., Ecuador; −$132 Brazil, Vietnam.</li>
+      <li><b>Ports:</b> New York, Virginia par; New Orleans, Miami, Houston −$11/t; Antwerp, Hamburg/Bremen −$28/t. No Barcelona (no certified coffee there since Nov 2021).</li>
+      <li><b>Packaging:</b> natural-fibre bags (KC-standard bags stay deliverable) or new polypropylene FIBCs up to 1 t, filled in the licensed warehouse from the original lined container; a lot is all bags or all FIBCs; one FIBC counts as 15 bags for load-out.</li>
+      <li><b>Grade and age:</b> KC grading (8 imperfections basis, Colombia 13; $2/t per imperfection below basis; clean cup); age discount $11/t from 121 days rising to $4,150/t at 3,600 days + $66 per 30 days; weight allowance 0.5% + 0.125%/month; OCA and RCA as KC.</li>
+      <li><b>EUDR:</b> EU ports need validated EUDR due-diligence data for gradings from 30 Dec 2026; transition stock $121/t from May 2028 + $11/t a month; legacy stock (B/L before 29 Jun 2023) exempt.</li>
+      <li><b>Limits:</b> spot month 850 lots; positions aggregated with KC for accountability.</li>
+      <li><b>Open point:</b> ${X.ac.certificates_note}</li></ul>
+      <p class="note">${a(RB14)}ICE rulebook Chapter 14</a>; ${a(F157)}Submission 25-157 (21 Aug 2025)</a>; read ${X.ac.read_on}.</p></div>`;
+    const ruleRows = R.changes.slice().reverse().map(r => `<tr><td class="l" style="white-space:nowrap">${r.effective_date}</td><td class="l">${r.first_contract}</td><td class="l">${r.rule_area}</td><td class="l">${r.plain_english}</td><td class="l"><a href="${r.source_url}" target="_blank" rel="noopener">source</a></td></tr>`).join('');
+    const orgs = Object.keys(SD.kc_now.by_origin).sort((p, q) => SD.kc_now.by_origin[q].bags - SD.kc_now.by_origin[p].bags);
+    const sdT = `<div class="tbl"><table><tr><th class="l">Origin</th><th>Bags</th>${RS.map(k => `<th>${X.rulesets[k]}</th>`).join('')}<th>Now vs before</th></tr>
+      ${orgs.map(o => `<tr><td class="l">${o}</td><td class="n">${f0(SD.kc_now.by_origin[o].bags)}</td>${RS.map(k => `<td class="n">${f2(SD[k].by_origin[o]?.total)}</td>`).join('')}<td class="n">${sgn(SD.kc_now.by_origin[o].total - SD.kc_pre.by_origin[o].total, 2, '¢')}</td></tr>`).join('')}
+      <tr><td class="l"><b>All certs</b></td><td class="n"><b>${f0(SD.kc_now.all.bags)}</b></td>${RS.map(k => `<td class="n"><b>${f2(SD[k].all.total)}</b></td>`).join('')}<td class="n"><b>${sgn(SD.kc_now.all.total - SD.kc_pre.all.total, 2, '¢')}</b></td></tr></table></div>`;
+    const pT = `<div class="tbl"><table><tr><th class="l">Delivered on</th><th>Days older</th><th>All certs</th><th>EU ports</th><th>US ports</th><th>of which EUDR</th><th>of which age</th><th>Origin</th></tr>
+      ${P.map(p => `<tr><td class="l">${p.label}</td><td class="n">${f0(p.add_days)}</td><td class="n"><b>${c2(p.all.total)}</b></td><td class="n">${c2(p.eu.total)}</td><td class="n">${c2(p.non_eu.total)}</td><td class="n">${f2(p.all.eudr)}</td><td class="n">${f2(p.all.age)}</td><td class="n">${f2(p.all.odiff)}</td></tr>`).join('')}</table></div>`;
+    body().innerHTML = `${brief}${side}
+      <div class="grid g2" style="margin-top:12px">${spec}${diffT}</div>
+      <div class="card" style="margin-top:12px"><h2>What it means in ¢/lb: today's certified stock revalued</h2>
+        <h3>Same day, same ages, each rule set <span class="note">bag-weighted invoice vs futures, ¢/lb; delivery ${X.delivery}</span></h3>${sdT}
+        <p class="note">Each certified lot (origin, port, estimated age from the certs profile) is invoiced under each rule set with its ages and the futures price held at ${X.delivery}. Origin, port and age change by rule set; weight allowance and load-out/rent are the same in all. EUDR is left out here (it depends on the month; see below). AC $/t values are shown in ¢/lb (÷ 22.046).</p>
+        <div class="grid g2" style="margin-top:8px"><div><h3>The same stock if it waits to each switch month</h3>${pT}
+          <p class="note">Rules in force for each month; ages roll forward; EUDR transition discount applied to the transition share by origin and port. Mar 2028 is the last KC delivery; May 2028 the first AC.</p></div>
+          <div><h3>KC and AC curve, ${X.switch_quote.kc_date}</h3>${box('kcnC', 260)}<p class="note">Settlements: KC in ¢/lb; AC in $/t shown in ¢/lb. AC trades thinly (${k28 ? f0(k28.volume_10d) : '–'} lots in two weeks).</p></div></div></div>
+      <div class="card" style="margin-top:12px"><h2>Dated rule changes, KC to AC</h2><div class="tbl"><table><tr><th class="l">Effective</th><th class="l">First contract</th><th class="l">Rule</th><th class="l">What it means</th><th class="l">Source</th></tr>${ruleRows}</table></div></div>
+      <p class="note">Variables used: ICE Coffee "C" and Coffee "C" Metric rulebook values (origin, port, age, weight, OCA/RCA, EUDR); certified stock by origin, port and estimated age (certs profile); EUDR transition bags (ICE daily report); KC and AC settlements; ICO group prices. Built ${D.built}.</p>`;
+    chart('kcnC', { type: 'line', data: { labels: cv.map(c => c.contract.replace(/(\D+)(\D)(\d{2})(\d{2})/, '$1 $2$4')), datasets: [{ label: 'KC ¢/lb', data: cv.map(c => c.kind === 'KC' ? c.clb : null), borderColor: '#7d3c98', pointRadius: 3 },
+      { label: 'AC (in ¢/lb)', data: cv.map(c => c.kind === 'AC' ? c.clb : null), borderColor: '#17a589', backgroundColor: '#17a589', pointRadius: 5, showLine: false }] },
+      options: { scales: { y: { title: { display: true, text: '¢/lb' } } } } });
   }
   async function certs() {
     await load();

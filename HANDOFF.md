@@ -60,3 +60,9 @@ Key takeaways box (6-8 bullets: what changed and why it matters for price and sp
 - Method detail (stoppage-day rule, range method, calibration) stays out of the report and the page: show results and the variables used.
 - Czapp (Czarnikow) free articles may be cited by name; summarise in our own words.
 - Brazil focus for basis and premiums.
+
+## Coffee → "KC contract: old vs new" tab (2026-11-17)
+- Tab `#kc-newc` (`kcnew()` in `assets/coffee.js`), data in `data/coffee/certs_profile.json` → `contract_compare`, written by `models/coffee_certs_profile.py` (same runs as the certs profile).
+- "New contract" = Coffee "C" Metric (AC, ICE rulebook Ch. 14, Submission 25-157): 10 t, $/t, FIBCs, no Barcelona, first expiry May 2028; KC's last expiry is Mar 2028. AC parameters: `data/coffee/ref/ac_rule_params.json`.
+- Correction: the +10¢ Colombia/Costa Rica/Kenya and +5¢ Guatemala premiums apply from the **March 2026** contract (ICE notice 16 Jan 2024; rulebook amendment note 20 Dec 2023; ICE product spec page). The rulebook's "Effective with …" lines sit between schedules; May 2027 adds only Vietnam. `kc_rule_params.json` and `rule_changes.csv` fixed; certs-profile values for Dec 2026 changed for Kenya/Colombia/Guatemala lots.
+- AC prices: `pipelines/contracts.py AC` → `data/contracts/AC.csv` (seeded by hand with ACK2028 bars 3–16 Nov 2026; the softs-contracts workflow refreshes it). Same workflow backfills `KC_pre2006` / `CC_pre2006` (1996–2005 contracts) into separate files so the main KC/CC files keep their length.

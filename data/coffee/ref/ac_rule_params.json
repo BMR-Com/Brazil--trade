@@ -1,0 +1,138 @@
+{
+ "contract": "Coffee \"C\" Metric futures (ICE Futures U.S., symbol AC)",
+ "source": "ICE Futures U.S. Rulebook Chapter 14 Coffee \"C\" Metric Futures and Options (Appendix IV Schedules C-2/C-3, Appendix V, Appendix VI, Appendix VIII); ICE Submission 25-157 (Aug 21 2025)",
+ "source_url": "https://www.ice.com/publicdocs/rulebooks/futures_us/Chapter_14_Coffee_Metric_Futures_and_Options.pdf",
+ "filing_url": "https://www.ice.com/publicdocs/regulatory_filings/25-157_Coffee_C_Metric_Futures_.pdf",
+ "read_on": "2026-11-17",
+ "units": "US$ per metric ton; negative = discount to the futures price",
+ "lot_t": 10,
+ "first_contract": "2028-05",
+ "listed_from": "2025-09-08",
+ "spot_month_limit_lots": 850,
+ "origin_usd_t": {
+  "Mexico": 0,
+  "El Salvador": 0,
+  "Nicaragua": 0,
+  "Papua New Guinea": 0,
+  "Tanzania": 0,
+  "Uganda": 0,
+  "Panama": 0,
+  "Peru": 0,
+  "Honduras": 0,
+  "Colombia": 220,
+  "Costa Rica": 220,
+  "Kenya": 220,
+  "Guatemala": 110,
+  "Venezuela": -22,
+  "Burundi": -22,
+  "Rwanda": -22,
+  "India": -22,
+  "Dominican Republic": -88,
+  "Ecuador": -88,
+  "Brazil": -132,
+  "Vietnam": -132
+ },
+ "port_usd_t": {
+  "NEW YORK": 0,
+  "VIRGINIA": 0,
+  "NEW ORLEANS": -11,
+  "MIAMI": -11,
+  "HOUSTON": -11,
+  "ANTWERP": -28,
+  "HAMBURG / BREMEN": -28
+ },
+ "ports_not_deliverable": [
+  "BARCELONA"
+ ],
+ "age_first_free_days": 120,
+ "age_first_step_usd": 11,
+ "age_bands_usd": [
+  [
+   150,
+   360,
+   11,
+   6
+  ],
+  [
+   360,
+   720,
+   50,
+   11
+  ],
+  [
+   720,
+   1080,
+   182,
+   22
+  ],
+  [
+   1080,
+   1440,
+   446,
+   28
+  ],
+  [
+   1440,
+   1800,
+   777,
+   33
+  ],
+  [
+   1800,
+   2160,
+   1174,
+   39
+  ],
+  [
+   2160,
+   2520,
+   1637,
+   44
+  ],
+  [
+   2520,
+   2880,
+   2166,
+   50
+  ],
+  [
+   2880,
+   3240,
+   2761,
+   55
+  ],
+  [
+   3240,
+   3600,
+   3423,
+   61
+  ],
+  [
+   3600,
+   99999,
+   4150,
+   66
+  ]
+ ],
+ "imperfection_usd_t": -2,
+ "weight_allowance": {
+  "second_month_pct": 0.5,
+  "per_month_after_pct": 0.125
+ },
+ "weight_tolerance_pct": {
+  "bags": 2,
+  "fibc": 3
+ },
+ "eudr_transition": {
+  "ports": [
+   "ANTWERP",
+   "HAMBURG / BREMEN"
+  ],
+  "from_contract": "2028-05",
+  "usd_t_first": 121,
+  "usd_t_per_month": 11,
+  "note": "Appendix VIII: Transition Stocks discount from the May 2028 contract, $121/t plus $11/t per calendar month thereafter; not for Legacy Stocks or coffee graded on/after Dec 30 2026"
+ },
+ "packaging": "natural-fibre bags (as KC) or new woven polypropylene FIBCs up to 1 t (ISO 21898 class 3.1.3); a lot is all bags or all FIBCs; FIBC = 15 bags for load-out",
+ "certificates_note": "Neither Chapter 14 nor Submission 25-157 says whether coffee holding a Chapter 8 (KC) Certificate of Grade is deliverable on AC; a re-submission ban applies as in KC (Rule 14.10(a))."
+}

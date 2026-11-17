@@ -18,11 +18,16 @@ SPEC = {  # sym: (exchange, TV root, months, first year) — softs desk
     "SB": ("ICEUS", "SB", "HKNV", 2006),   # ICE sugar No. 11: Mar, May, Jul, Oct
     "KC": ("ICEUS", "KC", "HKNUZ", 2006),  # ICE coffee C: Mar, May, Jul, Sep, Dec
     "CC": ("ICEUS", "CC", "HKNUZ", 2006),  # ICE cocoa (US$/t): Mar, May, Jul, Sep, Dec
+    "AC": ("ICEUS", "AC", "HKNUZ", 2028),  # ICE Coffee "C" Metric (US$/t), first expiry May 2028 (KC ends Mar 2028)
+    # older expired contracts, kept in separate files so the main files (read by many models) do not change length
+    "KC_pre2006": ("ICEUS", "KC", "HKNUZ", 1996, 2005),
+    "CC_pre2006": ("ICEUS", "CC", "HKNUZ", 1996, 2005),
 }
 
 
 def run(sym):
-    ex, root, months, y0 = SPEC[sym]
+    ex, root, months, y0, *y1 = SPEC[sym]
+    y_end = y1[0] if y1 else None
     p = OUT / f"{sym}.csv"
     have = pd.read_csv(p) if p.exists() else pd.DataFrame(columns=["contract", "date", "close", "volume"])
     if len(have):   # one-time repair of rows stored before the trade-date fix (idempotent on corrected data)
@@ -31,7 +36,7 @@ def run(sym):
     today = pd.Timestamp.now()
     tv = TvDatafeed()
     frames = [have]
-    for y in range(y0, today.year + 3):
+    for y in range(y0, (y_end + 1) if y_end else today.year + 3):
         for m in months:
             c = f"{root}{m}{y}"
             mi = CODES.index(m) + 1

@@ -1,40 +1,340 @@
 {
-  "source": "ICE Futures U.S. Rulebook, Chapter 8 Coffee \"C\" (Appendix IV Schedules C-2/C-3, Appendix V, Appendix VIII), read 2026-11-17; earlier values from the NYBOT Coffee C rules and ICE notices listed in rule_changes.csv",
-  "source_url": "https://www.ice.com/publicdocs/rulebooks/futures_us/8_Coffee.pdf",
-  "read_on": "2026-11-17",
-  "units": "points = 1/100 cent per lb; negative = discount to the futures price",
-  "lot_lb": 37500,
-  "bag_kg_by_origin": {"default": 60, "Colombia": 70, "Mexico": 69, "Guatemala": 69, "Honduras": 69, "Nicaragua": 69, "El Salvador": 69, "Costa Rica": 69, "Panama": 69, "Peru": 69, "Ecuador": 69, "Dominican Republic": 69, "Venezuela": 69},
-  "origin_diff_versions": [
-    {"from_delivery": "2005-07", "rule": "Schedule C-2 (NYBOT, July 2005 and later)", "basis_note": "origins not listed are not deliverable",
-     "pts": {"Mexico": 0, "El Salvador": 0, "Guatemala": 0, "Costa Rica": 0, "Nicaragua": 0, "Kenya": 0, "Papua New Guinea": 0, "Tanzania": 0, "Uganda": 0, "Panama": 0, "Peru": 0, "Honduras": 0, "Colombia": 200, "Venezuela": -100, "India": -100, "Burundi": -300, "Rwanda": -300, "Dominican Republic": -400, "Ecuador": -400}},
-    {"from_delivery": "2013-03", "rule": "Schedule C-2 amended Dec 9 2010: Brazil added",
-     "pts": {"Mexico": 0, "El Salvador": 0, "Guatemala": 0, "Costa Rica": 0, "Nicaragua": 0, "Kenya": 0, "Papua New Guinea": 0, "Tanzania": 0, "Uganda": 0, "Panama": 0, "Peru": 0, "Honduras": 0, "Colombia": 200, "Venezuela": -100, "India": -100, "Burundi": -300, "Rwanda": -300, "Dominican Republic": -400, "Ecuador": -400, "Brazil": -900}},
-    {"from_delivery": "2016-05", "rule": "Schedule C-2 amended Feb 27 2014: Colombia +400, Brazil -600 (other values as before; not re-verified for 2016-2026)",
-     "pts": {"Mexico": 0, "El Salvador": 0, "Guatemala": 0, "Costa Rica": 0, "Nicaragua": 0, "Kenya": 0, "Papua New Guinea": 0, "Tanzania": 0, "Uganda": 0, "Panama": 0, "Peru": 0, "Honduras": 0, "Colombia": 400, "Venezuela": -100, "India": -100, "Burundi": -300, "Rwanda": -300, "Dominican Republic": -400, "Ecuador": -400, "Brazil": -600}},
-    {"from_delivery": "2026-03", "rule": "Schedule C-2 'Effective with the March 2026 contract' (current rulebook)",
-     "pts": {"Mexico": 0, "El Salvador": 0, "Guatemala": 0, "Costa Rica": 0, "Nicaragua": 0, "Kenya": 0, "Papua New Guinea": 0, "Tanzania": 0, "Uganda": 0, "Panama": 0, "Peru": 0, "Honduras": 0, "Colombia": 400, "Venezuela": -100, "Burundi": -100, "Rwanda": -100, "India": -100, "Dominican Republic": -400, "Ecuador": -400, "Brazil": -600}},
-    {"from_delivery": "2027-05", "rule": "Schedule C-2 'Effective with the May 2027 contract' (current rulebook; Vietnam per Submission 25-51)",
-     "pts": {"Mexico": 0, "El Salvador": 0, "Nicaragua": 0, "Papua New Guinea": 0, "Tanzania": 0, "Uganda": 0, "Panama": 0, "Peru": 0, "Honduras": 0, "Guatemala": 500, "Colombia": 1000, "Costa Rica": 1000, "Kenya": 1000, "Venezuela": -100, "Burundi": -100, "Rwanda": -100, "India": -100, "Dominican Republic": -400, "Ecuador": -400, "Brazil": -600, "Vietnam": -600}}
+ "source": "ICE Futures U.S. Rulebook, Chapter 8 Coffee \"C\" (Appendix IV Schedules C-2/C-3, Appendix V, Appendix VIII), read 2026-11-17 (re-checked same day for the March 2026 / May 2027 schedules); earlier values from the NYBOT Coffee C rules and ICE notices listed in rule_changes.csv",
+ "source_url": "https://www.ice.com/publicdocs/rulebooks/futures_us/8_Coffee.pdf",
+ "read_on": "2026-11-17",
+ "units": "points = 1/100 cent per lb; negative = discount to the futures price",
+ "lot_lb": 37500,
+ "bag_kg_by_origin": {
+  "default": 60,
+  "Colombia": 70,
+  "Mexico": 69,
+  "Guatemala": 69,
+  "Honduras": 69,
+  "Nicaragua": 69,
+  "El Salvador": 69,
+  "Costa Rica": 69,
+  "Panama": 69,
+  "Peru": 69,
+  "Ecuador": 69,
+  "Dominican Republic": 69,
+  "Venezuela": 69
+ },
+ "origin_diff_versions": [
+  {
+   "from_delivery": "2005-07",
+   "rule": "Schedule C-2 (NYBOT, July 2005 and later)",
+   "basis_note": "origins not listed are not deliverable",
+   "pts": {
+    "Mexico": 0,
+    "El Salvador": 0,
+    "Guatemala": 0,
+    "Costa Rica": 0,
+    "Nicaragua": 0,
+    "Kenya": 0,
+    "Papua New Guinea": 0,
+    "Tanzania": 0,
+    "Uganda": 0,
+    "Panama": 0,
+    "Peru": 0,
+    "Honduras": 0,
+    "Colombia": 200,
+    "Venezuela": -100,
+    "India": -100,
+    "Burundi": -300,
+    "Rwanda": -300,
+    "Dominican Republic": -400,
+    "Ecuador": -400
+   }
+  },
+  {
+   "from_delivery": "2013-03",
+   "rule": "Schedule C-2 amended Dec 9 2010: Brazil added",
+   "pts": {
+    "Mexico": 0,
+    "El Salvador": 0,
+    "Guatemala": 0,
+    "Costa Rica": 0,
+    "Nicaragua": 0,
+    "Kenya": 0,
+    "Papua New Guinea": 0,
+    "Tanzania": 0,
+    "Uganda": 0,
+    "Panama": 0,
+    "Peru": 0,
+    "Honduras": 0,
+    "Colombia": 200,
+    "Venezuela": -100,
+    "India": -100,
+    "Burundi": -300,
+    "Rwanda": -300,
+    "Dominican Republic": -400,
+    "Ecuador": -400,
+    "Brazil": -900
+   }
+  },
+  {
+   "from_delivery": "2016-05",
+   "rule": "Schedule C-2 amended Feb 27 2014: Colombia +400, Brazil -600; Burundi/Rwanda -100 as in the rulebook's schedule for contracts before March 2026 (date of the earlier -300 to -100 change not verified)",
+   "pts": {
+    "Mexico": 0,
+    "El Salvador": 0,
+    "Guatemala": 0,
+    "Costa Rica": 0,
+    "Nicaragua": 0,
+    "Kenya": 0,
+    "Papua New Guinea": 0,
+    "Tanzania": 0,
+    "Uganda": 0,
+    "Panama": 0,
+    "Peru": 0,
+    "Honduras": 0,
+    "Colombia": 400,
+    "Venezuela": -100,
+    "India": -100,
+    "Burundi": -100,
+    "Rwanda": -100,
+    "Dominican Republic": -400,
+    "Ecuador": -400,
+    "Brazil": -600
+   }
+  },
+  {
+   "from_delivery": "2026-03",
+   "rule": "Schedule C-2 'Effective with the March 2026 contract' (amended by the Board Dec 20 2023, eff. Feb 12 2024; ICE notice Jan 16 2024): Colombia, Costa Rica, Kenya +1000; Guatemala +500",
+   "pts": {
+    "Mexico": 0,
+    "El Salvador": 0,
+    "Guatemala": 500,
+    "Costa Rica": 1000,
+    "Nicaragua": 0,
+    "Kenya": 1000,
+    "Papua New Guinea": 0,
+    "Tanzania": 0,
+    "Uganda": 0,
+    "Panama": 0,
+    "Peru": 0,
+    "Honduras": 0,
+    "Colombia": 1000,
+    "Venezuela": -100,
+    "Burundi": -100,
+    "Rwanda": -100,
+    "India": -100,
+    "Dominican Republic": -400,
+    "Ecuador": -400,
+    "Brazil": -600
+   }
+  },
+  {
+   "from_delivery": "2027-05",
+   "rule": "Schedule C-2 'Effective with the May 2027 contract' (amended Mar 27 2025, eff. Apr 15 2025; Submission 25-51): Vietnam added at -600, premiums unchanged from March 2026",
+   "pts": {
+    "Mexico": 0,
+    "El Salvador": 0,
+    "Nicaragua": 0,
+    "Papua New Guinea": 0,
+    "Tanzania": 0,
+    "Uganda": 0,
+    "Panama": 0,
+    "Peru": 0,
+    "Honduras": 0,
+    "Guatemala": 500,
+    "Colombia": 1000,
+    "Costa Rica": 1000,
+    "Kenya": 1000,
+    "Venezuela": -100,
+    "Burundi": -100,
+    "Rwanda": -100,
+    "India": -100,
+    "Dominican Republic": -400,
+    "Ecuador": -400,
+    "Brazil": -600,
+    "Vietnam": -600
+   }
+  }
+ ],
+ "port_diff_versions": [
+  {
+   "from_delivery": "2005-03",
+   "rule": "Schedule C-3 (NYBOT, March 2005 and later); Virginia added at basis Jul 29 2014",
+   "pts": {
+    "NEW YORK": 0,
+    "VIRGINIA": 0,
+    "NEW ORLEANS": -125,
+    "MIAMI": -125,
+    "HOUSTON": -125,
+    "ANTWERP": -125,
+    "HAMBURG / BREMEN": -125,
+    "BARCELONA": -125
+   }
+  },
+  {
+   "from_delivery": "2019-05",
+   "rule": "Schedule C-3 amended Mar 23 2017, May 2019 delivery and later (current)",
+   "pts": {
+    "NEW YORK": 0,
+    "VIRGINIA": 0,
+    "NEW ORLEANS": -50,
+    "MIAMI": -50,
+    "HOUSTON": -50,
+    "ANTWERP": -125,
+    "HAMBURG / BREMEN": -125,
+    "BARCELONA": -125
+   }
+  }
+ ],
+ "age_discount_versions": [
+  {
+   "from_delivery": "2000-01",
+   "rule": "Appendix V (NYBOT) before March 2013",
+   "first_free_days": 120,
+   "first_step_pts": 50,
+   "bands": [
+    [
+     150,
+     360,
+     50,
+     25
+    ],
+    [
+     360,
+     720,
+     225,
+     50
+    ],
+    [
+     720,
+     1080,
+     825,
+     75
+    ],
+    [
+     1080,
+     99999,
+     1725,
+     100
+    ]
+   ]
+  },
+  {
+   "from_delivery": "2013-03",
+   "rule": "Appendix V items (1)-(12), March 2013 and later (current)",
+   "first_free_days": 120,
+   "first_step_pts": 50,
+   "bands": [
+    [
+     150,
+     360,
+     50,
+     25
+    ],
+    [
+     360,
+     720,
+     225,
+     50
+    ],
+    [
+     720,
+     1080,
+     825,
+     100
+    ],
+    [
+     1080,
+     1440,
+     2025,
+     125
+    ],
+    [
+     1440,
+     1800,
+     3525,
+     150
+    ],
+    [
+     1800,
+     2160,
+     5325,
+     175
+    ],
+    [
+     2160,
+     2520,
+     7425,
+     200
+    ],
+    [
+     2520,
+     2880,
+     9825,
+     225
+    ],
+    [
+     2880,
+     3240,
+     12525,
+     250
+    ],
+    [
+     3240,
+     3600,
+     15525,
+     275
+    ],
+    [
+     3600,
+     99999,
+     18825,
+     300
+    ]
+   ]
+  }
+ ],
+ "age_discount_note": "Days run from the Certificate of Grade date to delivery; each band = base pts at band start + step pts per additional 30 days or part. No grandfathering by grading date: the schedule in force for the delivery month applies to every lot. Before Dec 1 2023 a de-certified lot could be re-graded and get a new certificate date.",
+ "regrade_allowed_until": "2023-11-30",
+ "weight_allowance": {
+  "rule": "Appendix V item (14)",
+  "second_month_pct": 0.5,
+  "per_month_after_pct": 0.125,
+  "note": "% of Weight Note weight x invoice price, months counted from weighing to delivery"
+ },
+ "oca": {
+  "rule": "Appendix V item (15), from July 2017",
+  "note": "NY average load-out rate minus delivering warehouse load-out rate (per bag)"
+ },
+ "rca": {
+  "rule": "Appendix V item (16), from May 2019",
+  "mult": {
+   "3": 2,
+   "5": 2,
+   "7": 2,
+   "9": 3,
+   "12": 3
+  }
+ },
+ "imperfection_pts": {
+  "rule": "Appendix IV para 1",
+  "pts_per_full_imperfection_below_basis": -10,
+  "max_below_basis": 15,
+  "max_below_basis_colombia": 10,
+  "note": "not applied: grading results do not publish imperfection counts per lot"
+ },
+ "eudr_transition": {
+  "rule": "Appendix VIII",
+  "ports": [
+   "ANTWERP",
+   "BARCELONA",
+   "HAMBURG / BREMEN"
   ],
-  "port_diff_versions": [
-    {"from_delivery": "2005-03", "rule": "Schedule C-3 (NYBOT, March 2005 and later); Virginia added at basis Jul 29 2014",
-     "pts": {"NEW YORK": 0, "VIRGINIA": 0, "NEW ORLEANS": -125, "MIAMI": -125, "HOUSTON": -125, "ANTWERP": -125, "HAMBURG / BREMEN": -125, "BARCELONA": -125}},
-    {"from_delivery": "2019-05", "rule": "Schedule C-3 amended Mar 23 2017, May 2019 delivery and later (current)",
-     "pts": {"NEW YORK": 0, "VIRGINIA": 0, "NEW ORLEANS": -50, "MIAMI": -50, "HOUSTON": -50, "ANTWERP": -125, "HAMBURG / BREMEN": -125, "BARCELONA": -125}}
-  ],
-  "age_discount_versions": [
-    {"from_delivery": "2000-01", "rule": "Appendix V (NYBOT) before March 2013", "first_free_days": 120, "first_step_pts": 50,
-     "bands": [[150, 360, 50, 25], [360, 720, 225, 50], [720, 1080, 825, 75], [1080, 99999, 1725, 100]]},
-    {"from_delivery": "2013-03", "rule": "Appendix V items (1)-(12), March 2013 and later (current)", "first_free_days": 120, "first_step_pts": 50,
-     "bands": [[150, 360, 50, 25], [360, 720, 225, 50], [720, 1080, 825, 100], [1080, 1440, 2025, 125], [1440, 1800, 3525, 150], [1800, 2160, 5325, 175], [2160, 2520, 7425, 200], [2520, 2880, 9825, 225], [2880, 3240, 12525, 250], [3240, 3600, 15525, 275], [3600, 99999, 18825, 300]]}
-  ],
-  "age_discount_note": "Days run from the Certificate of Grade date to delivery; each band = base pts at band start + step pts per additional 30 days or part. No grandfathering by grading date: the schedule in force for the delivery month applies to every lot. Before Dec 1 2023 a de-certified lot could be re-graded and get a new certificate date.",
-  "regrade_allowed_until": "2023-11-30",
-  "weight_allowance": {"rule": "Appendix V item (14)", "second_month_pct": 0.5, "per_month_after_pct": 0.125, "note": "% of Weight Note weight x invoice price, months counted from weighing to delivery"},
-  "oca": {"rule": "Appendix V item (15), from July 2017", "note": "NY average load-out rate minus delivering warehouse load-out rate (per bag)"},
-  "rca": {"rule": "Appendix V item (16), from May 2019", "mult": {"3": 2, "5": 2, "7": 2, "9": 3, "12": 3}},
-  "imperfection_pts": {"rule": "Appendix IV para 1", "pts_per_full_imperfection_below_basis": -10, "max_below_basis": 15, "max_below_basis_colombia": 10, "note": "not applied: grading results do not publish imperfection counts per lot"},
-  "eudr_transition": {"rule": "Appendix VIII", "ports": ["ANTWERP", "BARCELONA", "HAMBURG / BREMEN"], "from_contract": "2027-03", "pts_per_month_2027": 25, "start_month": "2027-01", "pts_2028_base": 300, "pts_per_month_2028": 50},
-  "first_notice": {"2026-12": "2026-11-19"}
+  "from_contract": "2027-03",
+  "pts_per_month_2027": 25,
+  "start_month": "2027-01",
+  "pts_2028_base": 300,
+  "pts_per_month_2028": 50
+ },
+ "first_notice": {
+  "2026-12": "2026-11-19"
+ },
+ "origin_diff_note": "Date check (2026-11-17): the rulebook prints each 'Effective with ...' line between schedules; with the amendment notes (Dec 20 2023 -> March 2026; Mar 27 2025 -> May 2027), ICE's Jan 16 2024 notice and ICE's product specification page (premiums listed as current, only Vietnam 'commencing with the May 2027 expiry'), the premiums apply from March 2026 and May 2027 adds only Vietnam.",
+ "last_kc_contract": "2028-03"
 }
