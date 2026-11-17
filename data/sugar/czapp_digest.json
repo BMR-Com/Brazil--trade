@@ -1,12 +1,36 @@
 {
   "week_ending": "2026-11-17",
   "themes": [
-    "Raw sugar churned around the 18-cent area, briefly slipping below it for the first time since August on fund liquidation with no physical buyers stepping in, before small-trader buying lifted it into Friday's close.",
-    "Whites held up better than raws: a firm London December into expiry and a sizeable tender kept the white premium near two-month highs, a sign refined sugar is the tighter part of the market.",
-    "The US domestic market stays tight and walled off from the world price, with sellers holding back on crop doubts and buyers deferring purchases.",
-    "On ethanol, a US-Mexico deal and a possible reopening of Brazil's Northeast to US imports from January would put a lid on Brazilian ethanol prices in the inter-harvest, limiting how much ethanol parity can support raws."
+    "Raw sugar is stuck in a tight band around 18 cents and drifted to the bottom of it as the real weakened; speculators are trimming longs while producers lift hedges, so selling pressure from the trade is easing rather than building.",
+    "Whites remain the firmer leg: poor European beet crops tighten refined supply directly, and the white premium has held near recent highs even as raws soften.",
+    "The US domestic market keeps tightening after USDA cut both beet and cane output; buyers are deferring rather than sellers chasing, and it stays walled off from the world price.",
+    "Ethanol remains a cap rather than a floor: cheaper US ethanol access to Brazil's North/Northeast in the inter-harvest limits how much parity can support raws."
   ],
   "items": [
+    {
+      "date": "2026-11-17",
+      "title": "US Sugar Production Cuts Keep Domestic Prices Supported",
+      "url": "https://www.czapp.com/analyst-insights/us-sugar-production-cuts-keep-domestic-prices-supported/",
+      "takeaway": "USDA's November cuts to both US beet and cane output (pests hit Louisiana and Florida cane) tighten the US domestic balance despite higher imports; users are holding off at high domestic prices, but sellers are not under pressure."
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Futures and Market Data: 17th November 2026",
+      "url": "https://www.czapp.com/analyst-insights/futures-and-market-data-17th-november-2026/",
+      "takeaway": "Speculators trimmed their net long mostly by selling longs while producers lifted hedges; raws stayed in a narrow range near 18c and the March/May roll is under way, with no strong directional call."
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Understanding Sugar Production",
+      "url": "https://www.czapp.com/explainers/understanding-sugar-production/",
+      "takeaway": "Explainer on cane versus beet: cane is tropical, ratooned and milled to raws with bagasse as fuel; beet is temperate, harvested in autumn and processed straight to whites."
+    },
+    {
+      "date": "2026-11-16",
+      "title": "Daily Market Price Updates and Commentary 16th November 2026",
+      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-16th-november-2026/",
+      "takeaway": "Raws stayed in their 18-18.5c band but closed toward the bottom as the real weakened; London March held just above its recent low, leaving a retest open."
+    },
     {
       "date": "2026-11-13",
       "title": "Daily Market Price Updates and Commentary 13th November 2026",
@@ -36,18 +60,6 @@
       "title": "US Sugar Prices Hold Firm Amid Tight Supply Outlook",
       "url": "https://www.czapp.com/analyst-insights/us-sugar-prices-hold-firm-amid-tight-supply-outlook/",
       "takeaway": "US cash sugar stays firm because sellers are withholding tonnage on crop doubts (incl. pest damage in Florida cane) while buyers defer; the domestic market remains decoupled from the world slide."
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Daily Market Price Updates and Commentary 9th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-9th-november-2026/",
-      "takeaway": "Quiet, narrow raws session capped by spec long liquidation, while spot buying pulled the London December spread and lifted the white premium to its highest since mid-September."
-    },
-    {
-      "date": "2026-11-09",
-      "title": "US Ethanol Exports Poised for Growth in Mexico and Brazil",
-      "url": "https://www.czapp.com/analyst-insights/us-ethanol-exports-poised-for-growth-in-mexico-and-brazil/",
-      "takeaway": "A preliminary US-Mexico deal and talk of Brazil's Northeast resuming US ethanol imports from January point to more US exports; landed US ethanol after Brazil's tariff caps Northeast ethanol prices in the inter-harvest."
     }
   ]
 }

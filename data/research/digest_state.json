@@ -1,6 +1,6 @@
 {
-  "last_run_utc": "2026-11-17T00:32:54Z",
-  "note": "2026-11-17 run (completed on request): ADMIS posts read in full via WebFetch (works now); Czapp feed empty, articles found via search/homepage, 16 Nov daily page failed; Rabobank new market pieces Exclusive except Mexico animal protein outlook.",
+  "last_run_utc": "2026-11-17T17:26:43Z",
+  "note": "2026-11-17 PM run: 3 new ADMIS posts read in full via WebFetch; Czapp feed empty, used cz-insights listing (17 Nov daily not yet up); Rabobank: only new commodity piece (16 Nov livestock machinery) is Exclusive.",
   "urls": [
     "https://www.admis.com/ag-market-view-for-nov-12-2026/",
     "https://www.admis.com/beef-imports-pressuring-beef-prices/",
@@ -29,6 +29,13 @@
     "https://www.czapp.com/analyst-insights/container-rates-ease-as-capacity-returns/",
     "https://www.czapp.com/analyst-insights/supply-pressure-weaker-brl-accelerate-soybean-price-slide/",
     "https://www.czapp.com/analyst-insights/tight-powder-supplies-drive-us-dairy-price-gains/",
-    "https://www.czapp.com/analyst-insights/futures-and-market-data-9th-november-2026/"
+    "https://www.czapp.com/analyst-insights/futures-and-market-data-9th-november-2026/",
+    "https://www.admis.com/arabica-stocks-hit-1999-low/",
+    "https://www.admis.com/jan-crude-oil-higher-early-in-the-session/",
+    "https://www.admis.com/with-harvest-almost-over-fc-demand-should-increase/",
+    "https://www.czapp.com/analyst-insights/us-sugar-production-cuts-keep-domestic-prices-supported/",
+    "https://www.czapp.com/analyst-insights/futures-and-market-data-17th-november-2026/",
+    "https://www.czapp.com/explainers/understanding-sugar-production/",
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-16th-november-2026/"
   ]
 }
