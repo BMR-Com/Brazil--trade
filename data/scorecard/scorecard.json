@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 17:41 UTC",
+ "generated": "2026-11-17 18:10 UTC",
  "asof": "2026-11-16",
  "min_n": 10,
  "open": [
@@ -83,6 +83,23 @@
    "entry": "-3.92",
    "horizon": "2026-11-23",
    "text": "Delivery does not pay: Dec 26/Mar 27 under pressure into first notice",
+   "status": "open",
+   "exit_date": "",
+   "exit": "",
+   "move": ""
+  },
+  {
+   "id": "2026-11-16-Overview-KC",
+   "logged": "2026-11-16",
+   "source": "Overview read",
+   "market": "KC",
+   "kind": "outright",
+   "leg1": "KCH2027",
+   "leg2": "",
+   "direction": "up",
+   "entry": "274.9",
+   "horizon": "2026-12-15",
+   "text": "Overview mildly bullish (2026-11-17); measured on Mar 27",
    "status": "open",
    "exit_date": "",
    "exit": "",
