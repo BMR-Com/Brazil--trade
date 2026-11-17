@@ -27,9 +27,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
-      - run: pip install -q requests pandas numpy
+      - run: pip install -q requests pandas numpy pdfplumber
       - name: Weather (ensembles, EU beet regions, extra cane point)
         run: timeout 1500 python -u pipelines/sugar_wx.py || echo "weather fetch failed; building from last files"
+      - name: India ex-mill prices (ChiniMandi daily update)
+        continue-on-error: true
+        run: timeout 600 python -u pipelines/india_sugar_prices.py
+      - name: UNICA publication check
+        continue-on-error: true
+        run: timeout 600 python -u pipelines/unica_check.py
       - name: Build panels
         run: python -u models/sugar_world.py
       - name: Weekly inputs
@@ -38,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/sugar/world.json data/sugar/weekly_inputs.json data/sugar/wx
+          git add data/sugar
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "sugar: public panels $(date -u +%F) [bot]"
           for i in 1 2 3; do git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; sleep 10; done

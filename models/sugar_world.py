@@ -263,7 +263,8 @@ def scorecard(t, S):
     mix = (S.get("unica") or {}).get("implied_mix") or []
     mx = next((x for x in mix if x["end"] == str(E.date())), None)
     U = S.get("unica") or {}
-    return {"end": str(E.date()), "start": str((E - pd.Timedelta(days=14 if E.day > 15 else 14)).date()), "season": cur,
+    uc = jl(ROOT / "data/sugar/unica_check.json") or {}
+    return {"unica_last_published": uc.get("latest_position") or U.get("position"), "unica_checked": uc.get("checked"), "end": str(E.date()), "start": str((E - pd.Timedelta(days=14 if E.day > 15 else 14)).date()), "season": cur,
             "fortnight": fort, "cumulative": cum, "mix_corn_adjusted": mx["mix"] if mx else None,
             "seasons_in_avg": [p.safra for p in prev], "unica_position": U.get("position"),
             "note": "MAPA fortnightly data for all Centre-South mills. Ethanol includes corn ethanol; 'sugar share of ATR' uses all ethanol, so it understates the cane mix as corn ethanol grows; the desk's corn-adjusted mix is shown for this season only."}
@@ -431,12 +432,29 @@ def india(fri):
         par["white_zero_duty_rs_qtl"] = rd(wh * inr / 10, 0)
         if duty is not None:
             par["white_full_duty_rs_qtl"] = rd(wh * inr * (1 + duty / 100) / 10, 0)
-    if price:
+    prices = None
+    pp = ROOT / "data/sugar/india_prices.csv"
+    if pp.exists():
+        q = pd.read_csv(pp)
+        q = q[q.date <= str(fri)]
+        if len(q):
+            last = q.date.max()
+            lq = q[q.date == last]
+            prices = {"date": last, "url": lq.url.iloc[0], "source": "ChiniMandi daily sugar market update (Vizzie), ex-mill excl. GST",
+                      "latest": lq[["state", "grade", "lo", "hi"]].to_dict("records"),
+                      "series": {f"{st} {g}": {"dates": list(h.date), "mid": [rd((a + b) / 2, 0) for a, b in zip(h.lo, h.hi)]}
+                                 for (st, g), h in q[q.date >= str(pd.Timestamp(fri) - pd.Timedelta(days=90))].groupby(["state", "grade"])
+                                 if (st, g) in (("Maharashtra", "S/30"), ("Uttar Pradesh", "M/30"))}}
+            mh = lq[(lq.state == "Maharashtra") & (lq.grade == "S/30")]
+            if len(mh):
+                par["domestic"] = {"item": "Ex-mill price Maharashtra S/30", "value": float(mh.lo.iloc[0]), "date": last, "url": mh.url.iloc[0], "source": "ChiniMandi"}
+    st = jl(ROOT / "data/sugar/india_prices_status.json")
+    if "domestic" not in par and price:
         p = price[0]
-        par["domestic"] = {"item": p["item"], "value": float(p["value"]), "date": p["date"], "url": p["url"], "source": p["source"]}
+        par["domestic"] = {"item": p["item"], "value": float(p["value"]), "date": p["date"], "url": p["url"], "source": p["source"] + " (manual fallback)"}
     par["note"] = ("All parities are ex-freight and ex-port/handling (no public freight series); the raw parity is also before refining cost. "
                    "Raws under the duty-free TRQ (to 31 Dec 2026) must be refined and sold in India.")
-    return {"releases": rows.to_dict("records"), "parity": par}
+    return {"releases": rows.to_dict("records"), "parity": par, "prices": prices, "collector": st}
 
 
 def europe(fri):

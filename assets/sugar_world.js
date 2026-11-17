@@ -50,7 +50,7 @@ const SugarWorld = (() => {
           ${sc('Cane, mt', fn.cane_mt, 2)}${sc('Sugar, mt', fn.sugar_mt, 2)}${sc('Ethanol incl. corn, bn L', fn.eth_bnl, 2)}${sc('Sugar kg per t cane', fn.kgt, 1, false)}${sc('Sugar share of ATR, %', fn.mix_raw, 1, false)}
           <tr><td class="l" colspan="6"><b>Season to date</b></td></tr>
           ${sc('Cane, mt', cu.cane_mt, 1)}${sc('Sugar, mt', cu.sugar_mt, 2)}${sc('Ethanol incl. corn, bn L', cu.eth_bnl, 2)}${sc('Sugar kg per t cane', cu.kgt, 1, false)}</table></div>
-          <p class="note">5-yr average: ${K.seasons_in_avg.join(', ')}. ${K.mix_corn_adjusted != null ? `Cane sugar mix with corn ethanol taken out (desk estimate): <b>${f1(K.mix_corn_adjusted)}%</b>. ` : ''}${K.note} ATR is published by UNICA, not MAPA; the desk's UNICA file is at ${K.unica_position}.</p></div>
+          <p class="note">5-yr average: ${K.seasons_in_avg.join(', ')}. ${K.mix_corn_adjusted != null ? `Cane sugar mix with corn ethanol taken out (desk estimate): <b>${f1(K.mix_corn_adjusted)}%</b>. ` : ''}${K.note} ATR is published by UNICA, not MAPA. <b>UNICA last published: ${K.unica_last_published || K.unica_position}</b>${K.unica_checked ? ` (checked ${K.unica_checked})` : ''}; UNICA has not been publishing regularly this season, so MAPA is the main series here.</p></div>
         <div class="card"><h2>What the public data implies for the season</h2>
           <p>From the fortnight to ${R.from_fortnight} on, under three rain cases for the rest of the harvest:</p>
           <div class="tbl"><table><tr><th class="l">Case</th><th>Stoppage days to 31 Dec</th><th>Cane still to crush, mt</th><th>Season cane, mt</th><th>Season sugar, mt</th><th>Jan–Mar cane, mt</th></tr>
@@ -95,6 +95,10 @@ const SugarWorld = (() => {
           <tr><td class="l">Freight, port, refining</td><td class="n">not included</td><td class="l">no public series</td></tr></table></div>
           ${dom ? `<p>Raw sugar landed under the TRQ before freight and refining is Rs ${f0(P.raw_trq_rs_qtl)}/qtl against a domestic ex-mill quote of Rs ${f0(dom.value)}/qtl (${dom.date}). The gap, Rs ${f0(dom.value - P.raw_trq_rs_qtl)}/qtl, is what freight, refining and the mill margin must fit inside. Outside the TRQ, the 100% duty keeps white imports far above domestic prices.</p>` : ''}
           <p class="note">${esc(P.note)}</p></div></div>
+      ${I.prices ? `<div class="card" style="margin-top:12px"><h2>Ex-mill prices by state, ${I.prices.date} (Rs per quintal, excluding GST)</h2><div class="tbl"><table><tr><th class="l">State</th><th class="l">Grade</th><th>Low</th><th>High</th></tr>
+        ${I.prices.latest.map(r => `<tr><td class="l">${esc(r.state)}</td><td class="l">${r.grade}</td><td class="n">${f0(r.lo)}</td><td class="n">${f0(r.hi)}</td></tr>`).join('')}</table></div>
+        <p class="note">Source: ${link(I.prices.source, I.prices.url)}, collected daily by the desk.</p></div>`
+        : `<div class="card" style="margin-top:12px"><p class="note">Daily ex-mill price collector: ${I.collector ? `last run ${I.collector.run}, ${I.collector.pages_with_prices} pages with prices` : 'not run yet'}. Showing the last manual quote.</p></div>`}
       <div class="card" style="margin-top:12px"><h2>Policy and quotas</h2><div class="tbl"><table><tr><th class="l">Date</th><th class="l">Item</th><th>Value</th><th class="l">Detail</th><th class="l">Source</th></tr>
         ${pol.map(r => `<tr><td class="l">${r.date}</td><td class="l"><b>${esc(r.item)}</b></td><td class="n">${esc(r.value)} ${esc(r.unit === 'date' ? '' : r.unit)}</td><td class="l">${esc(r.note)}</td><td class="l">${link(r.source, r.url)}</td></tr>`).join('')}
         ${pr.map(r => `<tr><td class="l">${r.date}${age(r.date)}</td><td class="l">${esc(r.item)}</td><td class="n">${f0(+r.value)} ${esc(r.unit)}</td><td class="l">${esc(r.note)}</td><td class="l">${link(r.source, r.url)}</td></tr>`).join('')}</table></div>

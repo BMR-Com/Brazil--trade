@@ -106,6 +106,8 @@ SOURCES = [
     ("Sugar", "ICE expiry deliveries (manual, from news)", "per expiry", 75, C, True, lambda: max(r["source_date"] for r in J("data/sugar/world.json")["deliveries"] if r["source_date"]), "sugar deliveries tab"),
     ("Sugar", "Agency revisions: ISO, EC, Conab, USDA (manual)", "monthly", 45, C, True, lambda: max(r["release_date"] for r in J("data/sugar/world.json")["revisions"]), "sugar revisions table"),
     ("Sugar", "Brazil fuel-policy log (manual)", "as announced", 35, C, True, lambda: max(r["date"] for r in J("data/sugar/world.json")["fuel_policy"]), "sugar Brazil cane weather tab"),
+    ("Sugar", "India ex-mill prices (ChiniMandi daily update)", "daily", 4, B, False, lambda: J("data/sugar/india_prices_status.json")["latest"], "sugar India detail tab, import parity"),
+    ("Sugar", "UNICA Centre-South report (last published)", "irregular", 120, C, False, lambda: J("data/sugar/unica_check.json")["latest_position"] or J("sugar/data/sugar.json")["unica"]["position"], "crush tab ATR; MAPA is the main series"),
     ("Sugar", "Weekly report input pack", "daily", 3, B, False, lambda: J("data/sugar/weekly_inputs.json")["built"], "weekly sugar research"),
     ("Sugar", "Brazil sugar export line-up (weekly)", "weekly", 9, C, False, lambda: J("data/sugar/flows.json")["weekly"]["asof"], "exports tab"),
     ("Cocoa", "ICCO balance", "monthly", 40, C, False, lambda: J("data/cocoa/icco.json")["updated"], "cocoa balance tab"),
