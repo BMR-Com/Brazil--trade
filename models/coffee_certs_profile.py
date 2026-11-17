@@ -425,6 +425,137 @@ for gk in ["col", "oth", "bra"]:
                     "exchange_fresh": rd(wavg(fr, "total"), 2) if len(fr) else None, "physical": ph["vs_delivery"],
                     "gap": rd(ph["vs_delivery"] - wavg(d, "total"), 2), "gap_fresh": rd(ph["vs_delivery"] - wavg(fr, "total"), 2) if len(fr) else None})
 out["physical"]["vs_exchange"] = grp
+
+# ------------------------------------------------- 4b. exchange vs ICO, measured against its own history (by delivery)
+# ICO group prices by market (US / Europe) from the desk's ICO feed, with the ICE 2nd/3rd-position average computed here.
+kcm = kc.assign(m=kc.date.dt.strftime("%Y-%m"))
+cavg = kcm.groupby(["contract", "m"]).close.mean()
+cexp = kc.groupby("contract").date.max()
+ckey = lambda c: (int(c[-4:]), "HKNUZ".index(c[2]))
+
+
+def positions(m):
+    mid = pd.Timestamp(m + "-15")
+    live = sorted([c for c in cexp.index if cexp[c] >= mid and (c, m) in cavg.index], key=ckey)
+    return live
+
+
+hist_rows = []
+pub_ny = icop.set_index("price_month").new_york_ice
+for r in icog.itertuples():
+    pos = positions(r.month)
+    ny_calc = float(np.mean([cavg[(c, r.month)] for c in pos[1:3]])) if len(pos) >= 3 else float("nan")
+    hist_rows.append({"month": r.month, "col_us": r.col_ny, "col_eu": r.col_eu, "col_w": r.col_w, "oth_us": r.oth_ny, "oth_eu": r.oth_eu, "oth_w": r.oth_w,
+                      "bra_us": r.bra_ny, "bra_eu": r.bra_eu, "bra_w": r.bra_w, "ico_new_york_published": pub_ny.get(r.month, np.nan),
+                      "kc_2nd_3rd_avg_calc": ny_calc, "kc_2nd": pos[1] if len(pos) > 1 else "", "kc_3rd": pos[2] if len(pos) > 2 else "",
+                      "source": "ICO monthly group indicator prices (USA and Europe ex-dock, US cents/lb), via the FNC 'OIC mensual' table; KC averages from ICE settlements"})
+IH = pd.DataFrame(hist_rows)
+IH.round(3).to_csv(os.path.join(CF, "ico_groups_history.csv"), index=False)
+chkny = IH.dropna(subset=["ico_new_york_published", "kc_2nd_3rd_avg_calc"])
+ny_err = float((chkny.ico_new_york_published - chkny.kc_2nd_3rd_avg_calc).abs().median()) if len(chkny) else None
+IHi = IH.set_index("month")
+
+certs_od = pd.read_csv(need("data/coffee/ice_certs.csv"), parse_dates=["date"])
+certs_od = certs_od[certs_od.section == "certified"]
+certs_od["port"] = certs_od.port.map(lambda s: SHORT.get(s, s))
+eomt = tot.copy(); eomt.index = eomt.index.strftime("%Y-%m")
+GRP = {"col": ["Colombia"], "bra": ["Brazil"]}
+
+
+def fnd(dm):
+    first = pd.Timestamp(dm + "-01")
+    while first.weekday() >= 5:
+        first += pd.Timedelta(days=1)
+    return first - pd.offsets.BDay(7)
+
+
+gap_hist = []
+for R, g0 in aging.groupby("date"):
+    D = g0.delivery.iloc[0]; dm = D.strftime("%Y-%m"); M = R.strftime("%Y-%m")
+    if (D.year * 12 + D.month) - (R.year * 12 + R.month) != 2:
+        continue                                             # one observation per delivery: the report two months before
+    dc = f"KC{MCODE[D.month]}{D.year}"
+    if (dc, M) not in cavg.index or M not in IHi.index:
+        continue
+    Fm = float(cavg[(dc, M)])
+    pv = version("port_diff_versions", dm)["pts"]
+    g0 = g0.assign(pd_=g0.port.map(pv).fillna(0) / 100, ad=-g0.age_max.map(lambda d: age_pts(d, dm)) / 100,
+                   wt=-g0.apply(lambda r: weight_pct((r.age_min + r.age_max) / 2 if r.age_min > 0 else 60), axis=1) / 100 * Fm)
+    g0["paw"] = g0.pd_ + g0.ad + g0.wt
+    w = g0.bags; paw = float((g0.paw * w).sum() / w.sum())
+    eu_sh = float(g0[g0.port.isin(EU)].bags.sum() / w.sum())
+    port_paw = g0.groupby("port").apply(lambda d: (d.paw * d.bags).sum() / d.bags.sum(), include_groups=False)
+    od = version("origin_diff_versions", dm)["pts"]
+    # origin x port snapshot near the report date, where the automatic feed has one
+    near = certs_od[(certs_od.date - R).abs() <= pd.Timedelta(days=35)]
+    snap = near[near.date == near.date.iloc[(near.date - R).abs().argmin()]] if len(near) else None
+    if R >= det.date.min() and (det.date <= R).any():
+        dd = det[det.date == det[det.date <= R].date.max()]
+        snap = dd.rename(columns={"certified": "bags"})[["date", "origin", "port", "bags"]]
+    rec = {"delivery": dm, "contract": dc, "report": R.strftime("%Y-%m-%d"), "ico_month": M, "first_notice": fnd(dm).strftime("%Y-%m-%d"),
+           "pool_bags": rd(float(w.sum()), 0), "pool_lots": rd(float(w.sum()) / 265, 0), "eu_share": rd(eu_sh * 100, 0), "kc": rd(Fm, 2),
+           "pool_paw": rd(paw, 2), "regime": "post" if dm >= "2024-03" else "pre", "groups": {}}
+    for gk in ["oth", "bra", "col"]:
+        o_d = 0.0 if gk == "oth" else od.get(GRP[gk][0])
+        if o_d is None:
+            continue
+        o_d = o_d / 100
+        phys = eu_sh * IHi.loc[M, f"{gk}_eu"] + (1 - eu_sh) * IHi.loc[M, f"{gk}_us"] - Fm
+        inv = o_d + paw
+        e = {"ico": rd(phys, 2), "invoice": rd(inv, 2), "gap": rd(phys - inv, 2)}
+        if snap is not None and len(snap):
+            sg = snap[snap.origin.isin(GRP[gk])] if gk != "oth" else snap[~snap.origin.isin(GRP["col"] + GRP["bra"])]
+            sg = sg.groupby(["origin", "port"]).bags.sum()
+            sg = sg[sg > 0]
+            if sg.sum() > 0:
+                odv = np.array([(od.get(o, 0) or 0) / 100 for o, _ in sg.index])
+                ppv = np.array([port_paw.get(p, paw) for _, p in sg.index])
+                inv_b = float(((odv + ppv) * sg.values).sum() / sg.sum())
+                eu_b = float(sg[[p in EU for _, p in sg.index]].sum() / sg.sum())
+                phys_b = eu_b * IHi.loc[M, f"{gk}_eu"] + (1 - eu_b) * IHi.loc[M, f"{gk}_us"] - Fm
+                e.update({"bags_b": rd(float(sg.sum()), 0), "invoice_b": rd(inv_b, 2), "ico_b": rd(phys_b, 2), "gap_b": rd(phys_b - inv_b, 2),
+                          "snap": str(snap.date.iloc[0])[:10]})
+        rec["groups"][gk] = e
+    # outcomes (used in the Lab only): certs change through the delivery month, front spread into first notice
+    after = (D + pd.offsets.MonthEnd(0)).strftime("%Y-%m")
+    rec["certs_chg_pct"] = rd((eomt.get(after) / eomt.get(M) - 1) * 100, 1) if eomt.get(after) and eomt.get(M) else None
+    nxt_c = [c for c in cexp.index if ckey(c) > ckey(dc)]
+    if nxt_c:
+        n1 = sorted(nxt_c, key=ckey)[0]
+        sp = (px[dc] - px[n1]).dropna() if dc in px and n1 in px else pd.Series(dtype=float)
+        f_d = fnd(dm)
+        a, b = sp[sp.index <= pd.Timestamp(M + "-01") + pd.offsets.MonthEnd(0)], sp[sp.index <= f_d]
+        rec["spread_month"] = rd(float(a.iloc[-1]), 2) if len(a) else None
+        rec["spread_fnd"] = rd(float(b.iloc[-1]), 2) if len(b) else None
+        rec["spread_chg"] = rd(float(b.iloc[-1] - a.iloc[-1]), 2) if len(a) and len(b) else None
+    gap_hist.append(rec)
+
+if len(gap_hist) < 10:
+    raise SystemExit(f"only {len(gap_hist)} past deliveries for the gap history")
+cur, prev = gap_hist[-1], gap_hist[-2]
+norm = {}
+for gk, nm in ICO_NAME.items():
+    for reg in ["post", "pre", "all"]:
+        v = np.array([h["groups"][gk]["gap"] for h in gap_hist[:-1] if gk in h["groups"] and (reg == "all" or h["regime"] == reg)])
+        if len(v) == 0:
+            continue
+        norm.setdefault(gk, {})[reg] = {"n": int(len(v)), "median": rd(np.median(v)), "p10": rd(np.percentile(v, 10)), "p90": rd(np.percentile(v, 90)),
+                                        "mean": rd(v.mean())}
+sig = []
+for gk, nm in ICO_NAME.items():
+    if gk not in cur["groups"] or gk not in norm:
+        continue
+    pre, post = norm[gk].get("pre"), norm[gk].get("post")
+    shift = (post and pre and abs(post["median"] - pre["median"]) > max(5.0, 0.5 * ((pre["p90"] - pre["p10"]) / 2)))
+    use = "post" if shift and post and post["n"] >= 5 else "all"
+    nrm = norm[gk][use]
+    g_now = cur["groups"][gk]["gap"]
+    rank = float(np.mean([h["groups"][gk]["gap"] <= g_now for h in gap_hist[:-1] if gk in h["groups"] and (use == "all" or h["regime"] == use)]) * 100)
+    sig.append({"group": nm, "key": gk, "now": cur["groups"][gk], "prev": prev["groups"].get(gk), "normal": nrm, "basis": use,
+                "regime_shift": bool(shift), "pre": pre, "post": post, "adjusted": rd(g_now - nrm["median"]), "pctile": rd(rank, 0)})
+out["gap"] = {"deliveries": gap_hist, "signal": sig, "current": cur["delivery"], "previous": prev["delivery"], "n": len(gap_hist) - 1,
+              "first": gap_hist[0]["delivery"], "ico_ny_check_median_abs_err": rd(ny_err, 2),
+              "ico_note": "ICO group indicators: daily ex-dock prompt-shipment prices for named current-crop export grades in the USA and Europe (Germany, France), built as futures plus trade differentials, US cents/lb; the group price weights the two markets by export share. ICO's 'New York' is the average of the ICE 2nd and 3rd positions."}
 out["rules"] = {
     "source": P["source_url"], "read_on": P["read_on"],
     "origin_now": version("origin_diff_versions", DLV_M), "origin_next": version("origin_diff_versions", "2027-05"),
@@ -435,7 +566,7 @@ out["variables"] = [
     "ICE month-end certified stocks by port (1996 on)", "ICE monthly aging report by port and 30-day age bucket (2016 on)",
     "ICE daily certified-stock report by origin and port (certified, pending, passed, EUDR transition bags)",
     "ICE monthly grading results by origin (lots passed)", "ICE Coffee \"C\" rulebook: origin and port differentials, age discount, weight allowance, OCA/RCA, EUDR transition discount",
-    "ICE warehouse storage and load-out rates (2026-27)", "KC settlements by contract", "ICO group indicator prices by market (Europe / US) and the ICO New York average",
+    "ICE warehouse storage and load-out rates (2026-27)", "KC settlements by contract", "ICO group indicator prices by market (Europe / US) and the ICO New York average, monthly since 2000", "Past delivery pools: aging report two months before each KC delivery (2016 on) and origin-by-port snapshots where available (2024 on)",
     "Brazil export-quality prices (B3 arabica 4/5 good cup, co-op semi-washed, tipo 6)"]
 out["checks"] = {"cells_sum": rd(C.bags.sum(), 0), "certified": rd(tot_now, 0), "aging_total": rd(float(port_age.values.sum()), 0)}
 

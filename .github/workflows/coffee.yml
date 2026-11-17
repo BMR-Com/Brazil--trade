@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add coffee/data data/coffee/ice_certs.csv data/coffee/certs_profile.json 2>/dev/null || true
+          git add coffee/data data/coffee/ice_certs.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv 2>/dev/null || true
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "coffee: data refresh $(date -u +%F) [bot]"
           git pull --rebase origin "${GITHUB_REF_NAME}"

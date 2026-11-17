@@ -21,6 +21,7 @@
 ## Coffee → "Certs profile & delivery economics" tab (2026-11-17)
 - `models/coffee_certs_profile.py` → `data/coffee/certs_profile.json`, rendered by `cprof()` in `assets/coffee.js` (tab `#kc-cprof`). Runs in `ice_inbox.yml` after new ICE files and in `coffee.yml` (weekdays) after the coffee build; any missing input or failed check exits non-zero and fails the run. Registered in `pipelines/data_status.py`.
 - Rule parameters by version: `data/coffee/ref/kc_rule_params.json`; dated rule timeline with sources: `data/coffee/ref/rule_changes.csv` (both edited by hand when ICE amends Chapter 8). Physical comparison uses `coffee/data/ico_groups_monthly.csv` and the Brazil ladder in `coffee/data/coffee.json` (no manual file needed).
+- Exchange vs ICO is shown only relative to its own history: the model also writes `data/coffee/ico_groups_history.csv` (ICO group prices by market since 2000 with the computed ICE 2nd/3rd average) and a per-delivery gap history (`gap` in the JSON).
 - The method write-up is in the private Lab artifact only; the page shows outputs and variables used.
 - The existing certs tab note now describes "transition" bags as EUDR transition stock (Appendix VIII), not an earlier grading rule.
 

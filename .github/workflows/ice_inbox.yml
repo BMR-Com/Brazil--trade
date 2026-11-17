@@ -41,7 +41,7 @@ jobs:
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
           for p in inbox data/ice_staging data/ice_raw data/ice_inbox data/cotton/ice data/coffee/ice_certs.csv data/coffee/ice_certs_inbox.csv data/coffee/ice_certs_check.json \
                    data/coffee/ice_certs_daily_detail.csv data/coffee/ice_aging_history.csv data/coffee/ice_certs_eom_by_port.csv \
-                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/status.json; do
+                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/status.json; do
             git add -A -- "$p" 2>/dev/null || true
           done
           git diff --cached --quiet && exit 0
