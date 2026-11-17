@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-17 05:23 UTC",
+ "generated": "2026-11-17 05:37 UTC",
  "today": "2026-11-16",
  "sources": [
   {
    "group": "Prices",
    "source": "Futures closes, all softs (Yahoo)",
-   "latest": "2026-11-16",
+   "latest": "2026-11-17",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -389,12 +389,12 @@
   {
    "group": "Macro",
    "source": "Events calendar",
-   "latest": "2026-11-11",
+   "latest": "2026-11-17",
    "cadence": "daily",
-   "age": 3,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
-   "state": "late",
+   "state": "ok",
    "manual": false,
    "used_in": "calendars on each tab"
   },
@@ -423,5 +423,5 @@
    "used_in": "news sections"
   }
  ],
- "late": 5
+ "late": 4
 }
