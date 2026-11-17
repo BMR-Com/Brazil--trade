@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 15:06 UTC",
+ "generated": "2026-11-17 15:08 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -640,21 +640,52 @@
   },
   {
    "group": "ICE drop box",
-   "source": "Files not recognised (inbox/unrecognised): 0",
-   "latest": null,
+   "source": "Files not recognised (inbox/unrecognised): 1",
+   "latest": "2026-11-17",
    "cadence": "on upload",
    "age": null,
    "age_unit": "days",
    "limit": 0,
-   "state": "ok",
+   "state": "check",
    "manual": true,
    "used_in": "last file received per type is listed below the table"
   }
  ],
- "late": 4,
+ "late": 5,
  "inbox": {
-  "updated": "2026-11-17 15:06 UTC",
-  "last": [],
-  "unrecognised": []
+  "updated": "2026-11-17 15:08 UTC",
+  "last": [
+   {
+    "type": "CT_options",
+    "received": "2026-11-17 15:08 UTC",
+    "file": "ICE report (3).pdf",
+    "label": "Cotton options settlement (ICE daily market report)",
+    "report_date": "2026-11-11",
+    "stored": "data/ice_staging/pdfs/CT_2026_11_11.pdf"
+   },
+   {
+    "type": "CT_futures",
+    "received": "2026-11-17 15:08 UTC",
+    "file": "download.pdf",
+    "label": "Cotton futures settlement (ICE daily market report)",
+    "report_date": "2026-11-11",
+    "stored": "data/ice_staging/pdfs/CT_2026_11_11-2.pdf"
+   },
+   {
+    "type": "ct_grade",
+    "received": "2026-11-17 15:08 UTC",
+    "file": "CottonGradeAndStapleReport (copy).csv",
+    "label": "Cotton certs: grade / staple",
+    "report_date": "2026-11-09",
+    "stored": "data/cotton/ice/grade_staple_2026-11-09.csv"
+   }
+  ],
+  "unrecognised": [
+   {
+    "file": "test-not-an-ice-file.csv",
+    "reason": "table that is not one of the ICE cotton certificated-stock reports or the coffee certs report",
+    "received": "2026-11-17 15:08 UTC"
+   }
+  ]
  }
 }
