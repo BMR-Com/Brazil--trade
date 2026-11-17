@@ -1,23 +1,4 @@
 {
- "updated": "2026-11-17 15:08 UTC",
- "files": [
-  {
-   "file": "CT_2026_11_11-2.pdf",
-   "path": "data/ice_staging/pdfs/CT_2026_11_11-2.pdf",
-   "sym": "CT",
-   "kind": "futures",
-   "date": "2026-11-11",
-   "bytes": 13929,
-   "sha256": "b889784cc9289e89e465465ff6d110270bd714a04aebef483cd6a84796519716"
-  },
-  {
-   "file": "CT_2026_11_11.pdf",
-   "path": "data/ice_staging/pdfs/CT_2026_11_11.pdf",
-   "sym": "CT",
-   "kind": "options",
-   "date": "2026-11-11",
-   "bytes": 360578,
-   "sha256": "ee17b6fa1b53b6f9d6c345050eb92a0c7525256051fd5d61dfc50310af9a3fc2"
-  }
- ]
+ "updated": "2026-11-17 15:13 UTC",
+ "files": []
 }
