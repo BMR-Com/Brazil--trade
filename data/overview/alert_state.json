@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17 13:55 UTC",
+ "updated": "2026-11-17 17:44 UTC",
  "by": "claude",
  "views": {
   "cotton": {
@@ -13,9 +13,9 @@
    "score": -0.2
   },
   "coffee": {
-   "view": "neutral",
-   "shade": "neutral",
-   "score": -0.0
+   "view": "mildly bullish",
+   "shade": "bull1",
+   "score": 0.07
   },
   "cocoa": {
    "view": "bearish",
@@ -25,7 +25,9 @@
  },
  "alerts": {
   "cotton": [],
-  "sugar": [],
+  "sugar": [
+   "Broke below the fund sell trigger (100-day average) 18.13"
+  ],
   "coffee": [
    "Broke below S1 283.50",
    "Broke below the fund sell trigger (200-day average) 282.64"
@@ -46,6 +48,8 @@
   "2026-11-16 BRL -2.6% on Lula fiscal worries; sugar Mar 18.10 near 18.02 support",
   "2026-11-17 Coffee Dec ~284.6 (+3.9), back above 283.50/200-day after Monday's settle below; Dec/Mar inverse widening",
   "2026-11-17 Cocoa view to bearish (Mar ~5,222); rising ICE certified stocks",
-  "2026-11-17 Cotton view to mildly bullish; sugar to mildly bearish"
+  "2026-11-17 Cotton view to mildly bullish; sugar to mildly bearish",
+  "2026-11-17 Arabica ICE certified stocks at 1999 low; Dec ~286 back above 283.50/200-day; coffee view to mildly bullish",
+  "2026-11-17 Sugar Mar dipped to 17.97 (below 100-day 18.13), recovered to ~18.21"
  ]
 }
