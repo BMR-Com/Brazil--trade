@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 17:17 UTC",
+ "generated": "2026-11-17 17:41 UTC",
  "asof": "2026-11-16",
  "today": "2026-11-17",
  "active": [
@@ -10,7 +10,7 @@
    "on": true,
    "level": "±10,000 bales",
    "date": "2026-11-16",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -80,7 +80,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
