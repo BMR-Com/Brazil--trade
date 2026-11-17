@@ -9,13 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          mkdir s; cd s
-          for d in 20261116 20261113 20261112; do
-            curl -sSL -A "Mozilla/5.0" -o kc_$d.xls https://www.ice.com/publicdocs/futures_us_reports/coffee/coffee_cert_stock_$d.xls || true
-            for p in cotton/cotton_cert_stock_$d.xls cotton/cotton_cert_stock_$d.pdf cotton/certified_stock_$d.xls; do
-              curl -sSL -A "Mozilla/5.0" -o "ct_$(basename $p)" https://www.ice.com/publicdocs/futures_us_reports/$p || true
-            done
-          done
-          ls -la; file *
-      - uses: actions/upload-artifact@v4
-        with: {name: s, path: s}
+          curl -sSL -A "Mozilla/5.0" -o kc.xls https://www.ice.com/publicdocs/futures_us_reports/coffee/coffee_cert_stock_20261116.xls
+          echo "B64START"; base64 -w0 kc.xls; echo; echo "B64END"
