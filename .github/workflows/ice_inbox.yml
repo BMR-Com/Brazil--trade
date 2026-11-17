@@ -1,0 +1,47 @@
+name: ice-inbox
+# ICE drop box: files uploaded to inbox/ (any name) are identified by content and stored (pipelines/ice_inbox.py).
+# Settlement PDFs are staged in data/ice_staging/pdfs/ for BMR-Com/softs--options-, which collects them itself.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', '.github/workflows/ice_inbox.yml']
+  schedule:
+    - cron: '41 */4 * * *'      # backup, and daily clean-up of old staged PDFs
+permissions: {contents: write}
+concurrency: {group: ice-inbox, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: install
+        run: |
+          sudo apt-get install -y -qq poppler-utils >/dev/null
+          pip install -q pandas numpy requests xlrd openpyxl
+      - name: sort the inbox
+        id: inbox
+        run: |
+          set +e
+          python pipelines/ice_inbox.py; echo "rc=$?" >> "$GITHUB_OUTPUT"
+      - name: cotton certs index and data status
+        run: |
+          python pipelines/ice_certs_index.py > /dev/null
+          python pipelines/data_status.py > /dev/null || echo "::warning::data status refresh failed"
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          for p in inbox data/ice_staging data/ice_raw data/ice_inbox data/cotton/ice data/coffee/ice_certs.csv data/coffee/ice_certs_inbox.csv data/coffee/ice_certs_check.json data/status.json; do
+            git add -A -- "$p" 2>/dev/null || true
+          done
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: ICE drop box $(date -u +%F' '%H:%M)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: result
+        if: steps.inbox.outputs.rc != '0'
+        run: |
+          echo "::error::A recognised ICE file could not be read; it was moved to inbox/unrecognised/ (see the log above and the Data status tab)."
+          exit 1

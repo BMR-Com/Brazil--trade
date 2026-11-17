@@ -9,6 +9,7 @@ on:
   schedule:
     - cron: '17 13 * * 1-6'
     - cron: '17 17 * * 1-5'
+    - cron: '55 */2 * * 1-5'    # picks up drop-box settlements soon after softs--options- collects them (it runs at :25)
 permissions: {contents: write}
 concurrency: {group: softs-options, cancel-in-progress: false}
 jobs:

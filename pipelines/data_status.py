@@ -131,6 +131,21 @@ def age(d, unit):
     return max(0, int(np.busday_count(x, TODAY)) if unit == B else (TODAY - x).days)   # UTC-stamped files can be a day ahead of Chicago
 
 
+INBOX_ORDER = ["CT_options", "CT_futures", "KC_options", "KC_futures", "SB_options", "SB_futures", "CC_options", "CC_futures",
+               "ct_stock", "ct_grade", "ct_warehouse", "ct_yog", "ct_strength", "kc_certs"]
+
+
+def inbox():
+    """ICE drop box (pipelines/ice_inbox.py): last file received per type and the files it could not recognise."""
+    try:
+        L = J("data/ice_inbox/log.json")
+    except Exception:
+        return None
+    last = [dict(type=k, **v) for k, v in L.get("last", {}).items()]
+    last.sort(key=lambda r: INBOX_ORDER.index(r["type"]) if r["type"] in INBOX_ORDER else 99)
+    return {"updated": L.get("updated"), "last": last, "unrecognised": L.get("unrecognised", [])}
+
+
 def main():
     out = []
     for grp, name, cad, lim, unit, manual, get, used in SOURCES:
@@ -143,8 +158,16 @@ def main():
         out.append({"group": grp, "source": name, "latest": d, "cadence": cad, "age": a, "age_unit": "business days" if unit == B else "days",
                     "limit": lim, "state": state, "manual": manual, "used_in": used})
         print(f"{state:7s} {str(d):10s} age {a} ({lim}) {name}")
+    ib = inbox()
+    if ib is not None:
+        n = len(ib["unrecognised"])
+        lr = max((r["received"] for r in ib["last"]), default=None)
+        out.append({"group": "ICE drop box", "source": f"Files not recognised (inbox/unrecognised): {n}", "latest": d10(lr), "cadence": "on upload",
+                    "age": None, "age_unit": "days", "limit": 0, "state": "check" if n else "ok", "manual": True,
+                    "used_in": "last file received per type is listed below the table"})
+        print(f"inbox: {n} unrecognised file(s)")
     J_ = {"generated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "today": TODAY.isoformat(), "sources": out,
-          "late": sum(r["state"] != "ok" for r in out)}
+          "late": sum(r["state"] != "ok" for r in out), "inbox": ib}
     (D / "status.json").write_text(json.dumps(J_, indent=1))
 
 
