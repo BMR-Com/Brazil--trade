@@ -1,0 +1,17 @@
+{
+ "generated": "2026-11-17 05:59 UTC",
+ "beet": {
+  "eu_fr_b": "Picardie / Hauts-de-France (Amiens)",
+  "su_fr_ce": "Centre-Val de Loire / Beauce (Pithiviers)",
+  "su_de_ns": "Lower Saxony (Hildesheim)",
+  "su_de_ma": "Magdeburger Börde, Saxony-Anhalt",
+  "su_pl_ku": "Kujawy, Poland (Inowrocław)",
+  "su_nl_fl": "Flevoland, Netherlands",
+  "su_be_ti": "Hesbaye / Tienen, Belgium",
+  "su_cz_ha": "Haná, Czechia (Olomouc)"
+ },
+ "extra_cane": {
+  "su_pi": "Piracicaba / Jaú, central São Paulo"
+ },
+ "log": []
+}
