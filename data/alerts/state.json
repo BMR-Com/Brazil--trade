@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 11:20 UTC",
+ "generated": "2026-11-17 11:24 UTC",
  "asof": "2026-11-16",
  "today": "2026-11-17",
  "active": [
@@ -87,16 +87,6 @@
    "id": "data_EC_balance_sheet_and_EU_price__manual_",
    "market": "Data",
    "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-17",
-   "new": false,
-   "since": "2026-11-17"
-  },
-  {
-   "id": "data_Alerts_check",
-   "market": "Data",
-   "text": "Alerts check: missing (latest –, limit 2 business days)",
    "on": true,
    "level": null,
    "date": "2026-11-17",
@@ -244,16 +234,6 @@
    "id": "data_EC_balance_sheet_and_EU_price__manual_",
    "market": "Data",
    "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-17",
-   "new": true,
-   "since": "2026-11-17"
-  },
-  {
-   "id": "data_Alerts_check",
-   "market": "Data",
-   "text": "Alerts check: missing (latest –, limit 2 business days)",
    "on": true,
    "level": null,
    "date": "2026-11-17",
