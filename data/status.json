@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 06:11 UTC",
+ "generated": "2026-11-17 10:41 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -401,9 +401,9 @@
   {
    "group": "Sugar",
    "source": "India releases: ISMA, DGFT, quotas, prices (manual)",
-   "latest": "2026-11-05",
+   "latest": "2026-11-14",
    "cadence": "fortnightly",
-   "age": 12,
+   "age": 3,
    "age_unit": "days",
    "limit": 20,
    "state": "ok",
@@ -461,24 +461,24 @@
   {
    "group": "Sugar",
    "source": "India ex-mill prices (ChiniMandi daily update)",
-   "latest": null,
+   "latest": "2026-11-16",
    "cadence": "daily",
-   "age": null,
+   "age": 1,
    "age_unit": "business days",
    "limit": 4,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "sugar India detail tab, import parity"
   },
   {
    "group": "Sugar",
    "source": "UNICA Centre-South report (last published)",
-   "latest": null,
+   "latest": "2026-09-01",
    "cadence": "irregular",
-   "age": null,
+   "age": 77,
    "age_unit": "days",
    "limit": 120,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "crush tab ATR; MAPA is the main series"
   },
@@ -579,5 +579,5 @@
    "used_in": "news sections"
   }
  ],
- "late": 6
+ "late": 4
 }
