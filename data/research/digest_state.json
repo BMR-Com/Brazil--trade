@@ -1,6 +1,6 @@
 {
-  "last_run_utc": "2026-11-13T17:30:00Z",
-  "note": "2026-11-13 run: ADMIS summarized from news.json teasers only (no browser); Rabobank and Czapp pages could not be fetched (WebFetch permission not granted in unattended run), so no Rabobank/Czapp URLs are marked as read.",
+  "last_run_utc": "2026-11-17T00:21:56Z",
+  "note": "2026-11-17 run: ADMIS from news.json teasers only (no browser in this cloud run); Czapp feed returned no items, articles found via search; 16 Nov Czapp daily page failed to load; Rabobank pages read, all new market pieces were Exclusive except Mexico animal protein outlook.",
   "urls": [
     "https://www.admis.com/ag-market-view-for-nov-12-2026/",
     "https://www.admis.com/beef-imports-pressuring-beef-prices/",
@@ -9,6 +9,21 @@
     "https://www.admis.com/natural-gas-prices-on-track-for-sizable-weekly-gains/",
     "https://www.admis.com/ag-market-view-for-nov-11-2026/",
     "https://www.admis.com/ice-stocks-weigh-on-coffee/",
-    "https://www.admis.com/live-cattle-traders-eye-cash-rebound/"
+    "https://www.admis.com/live-cattle-traders-eye-cash-rebound/",
+    "https://www.admis.com/ag-market-view-for-nov-13-2026/",
+    "https://www.admis.com/dry-weather-fuels-cocoa-concerns/",
+    "https://www.admis.com/hogs-active-as-open-interest-is-large/",
+    "https://www.admis.com/iea-expects-a-global-surplus-in-q4/",
+    "https://www.admis.com/soybeans-traded-both-sides-of-unchanged/",
+    "https://www.admis.com/sugar-holds-key-support/",
+    "https://www.admis.com/spread-traders-extended-bear-spread/",
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-13th-november-2026/",
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-12th-november-2026/",
+    "https://www.czapp.com/analyst-insights/cs-brazil-sugar-or-ethanol-11th-november-2026/",
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-10th-november-2026/",
+    "https://www.czapp.com/analyst-insights/us-sugar-prices-hold-firm-amid-tight-supply-outlook/",
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-9th-november-2026/",
+    "https://www.czapp.com/analyst-insights/us-ethanol-exports-poised-for-growth-in-mexico-and-brazil/",
+    "https://www.rabobank.com/knowledge/q011558329-mexico-s-animal-protein-outlook-2027"
   ]
 }
