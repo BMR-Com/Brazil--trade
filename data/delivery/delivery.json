@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 11:23 UTC",
+ "generated": "2026-11-17 17:16 UTC",
  "asof": "2026-11-16",
  "markets": [
   {
@@ -61,56 +61,32 @@
     }
    },
    "oi": {
-    "asof": "2026-11-11",
-    "oi": 74925,
-    "pct_left": 44.0,
+    "asof": "2026-11-16",
+    "oi": 34513,
+    "pct_left": 20.3,
     "band": {
-     "lo": 29.6,
-     "mid": 38.0,
-     "hi": 45.8
+     "lo": 13.0,
+     "mid": 17.5,
+     "hi": 22.1
     },
     "lots_band": {
-     "lo": 33366.0,
-     "mid": 46778.0,
-     "hi": 56431.0
+     "lo": 14039.0,
+     "mid": 19076.0,
+     "hi": 27321.0
     },
-    "share_of_all_oi": 20.6,
+    "share_of_all_oi": 9.8,
     "state": "heavy",
-    "k": 8,
+    "k": 5,
     "K0": 30,
     "T0": "2026-11-23",
     "T0_kind": "first notice",
-    "pace_lots_per_day": 10397.0,
+    "pace_lots_per_day": 12969.0,
     "typical_at_notice": {
      "p10": 235.3,
      "p50": 479.0,
      "p90": 1234.7
     },
     "path": [
-     {
-      "date": "2026-11-02",
-      "bd_to_notice": 15,
-      "oi": 135993,
-      "chg": -6815,
-      "pct_left": 79.9,
-      "spread": -3.83
-     },
-     {
-      "date": "2026-11-03",
-      "bd_to_notice": 14,
-      "oi": 132803,
-      "chg": -3190,
-      "pct_left": 78.0,
-      "spread": -3.86
-     },
-     {
-      "date": "2026-11-04",
-      "bd_to_notice": 13,
-      "oi": 126912,
-      "chg": -5891,
-      "pct_left": 74.5,
-      "spread": -3.85
-     },
      {
       "date": "2026-11-05",
       "bd_to_notice": 12,
@@ -150,15 +126,39 @@
       "chg": -7589,
       "pct_left": 44.0,
       "spread": -3.87
+     },
+     {
+      "date": "2026-11-12",
+      "bd_to_notice": 7,
+      "oi": 65279,
+      "chg": -9646,
+      "pct_left": 38.3,
+      "spread": -3.84
+     },
+     {
+      "date": "2026-11-13",
+      "bd_to_notice": 6,
+      "oi": 43282,
+      "chg": -21997,
+      "pct_left": 25.4,
+      "spread": -3.83
+     },
+     {
+      "date": "2026-11-16",
+      "bd_to_notice": 5,
+      "oi": 34513,
+      "chg": -8769,
+      "pct_left": 20.3,
+      "spread": -3.92
      }
     ],
     "src": "ICE daily open interest by contract (exchange report, previous business day)"
    },
    "certs": {
-    "now": 75725,
-    "date": "2026-11-09",
+    "now": 83599,
+    "date": "2026-11-16",
     "unit": "bales",
-    "chg": 9009,
+    "chg": 16883,
     "chg_vs": "2026-11-04",
     "src": "ICE certificated stock (weekly warehouse report, uploaded)"
    },
@@ -188,73 +188,71 @@
     "underlying": "Mar 27",
     "expiry": "2026-12-18",
     "bd_to_expiry": 23,
-    "F": 82.39,
-    "call_oi": 5307,
-    "put_oi": 9181,
-    "pc_oi": 1.73,
-    "date": "2026-11-11",
+    "F": 80.92,
+    "call_oi": 9772,
+    "put_oi": 11103,
+    "pc_oi": 1.14,
+    "date": "2026-11-16",
     "top_calls": [
      {
+      "K": 90.0,
+      "oi": 1141,
+      "chg": 83
+     },
+     {
       "K": 85.0,
-      "oi": 1000,
-      "chg": 239
+      "oi": 1109,
+      "chg": 0
      },
      {
       "K": 87.0,
-      "oi": 932,
-      "chg": 0
-     },
-     {
-      "K": 84.0,
-      "oi": 630,
-      "chg": 15
+      "oi": 1096,
+      "chg": 10
      },
      {
       "K": 86.0,
-      "oi": 431,
-      "chg": 0
+      "oi": 1048,
+      "chg": 2
      },
      {
-      "K": 100.0,
-      "oi": 254,
-      "chg": 0
+      "K": 84.0,
+      "oi": 800,
+      "chg": 22
      }
     ],
     "top_puts": [
      {
       "K": 82.0,
-      "oi": 2086,
+      "oi": 2845,
       "chg": 200
      },
      {
       "K": 83.0,
-      "oi": 1559,
-      "chg": -2
-     },
-     {
-      "K": 81.0,
-      "oi": 1353,
+      "oi": 1579,
       "chg": 0
      },
      {
+      "K": 81.0,
+      "oi": 1504,
+      "chg": 129
+     },
+     {
       "K": 79.0,
-      "oi": 1321,
+      "oi": 1056,
       "chg": 0
      },
      {
       "K": 78.0,
-      "oi": 1062,
+      "oi": 1054,
       "chg": 0
      }
     ],
-    "expired": [
-     "Dec 26 options expired 2026-11-13"
-    ],
-    "src": "ICE option settlement files, last good session 2026-11-11"
+    "expired": [],
+    "src": "ICE option settlement files, last good session 2026-11-16"
    },
    "index_roll_past": true,
    "read": [
-    "74,925 lots still open in Dec 26 on 2026-11-11 (44.0% left; past Dec rolls at this stage 29.6–45.8%) with 5 business days to first notice (2026-11-23). At the last five reports' pace (about 10,397 lots a day) the contract clears before notice. Open-interest data is 3 business days old.",
+    "34,513 lots still open in Dec 26 on 2026-11-16 (20.3% left; past Dec rolls at this stage 13.0–22.1%) with 5 business days to first notice (2026-11-23). At the last five reports' pace (about 12,969 lots a day) the contract clears before notice.",
     "Dec 26/Mar 27 pays +3.92¢, 73.6% of full carry (5.33¢) on 2026-11-16, up from 71.2% a week earlier. Taking certs and redelivering does not cover storage, financing and penalties (1.41¢ short), and the certs on board carry an average ICE premium of +592 pts that a taker pays.",
     "On-call against December 2026 (2026-11-06): 7,624 lots unfixed sales (mills still to buy futures to fix) and 14,340 lots unfixed purchases (sellers still to fix by selling); net -6,716 lots.",
     "Read: longs must roll or sell with 5 business days left; delivery does not pay (see Certs) and net on-call fixing is selling (-6,716 lots) → liquidation pressure on Dec 26 against Mar 27 into first notice."
@@ -305,56 +303,32 @@
     "sign": "front minus next; negative = carry"
    },
    "oi": {
-    "asof": "2026-11-11",
-    "oi": 27167,
-    "pct_left": 37.2,
+    "asof": "2026-11-16",
+    "oi": 8181,
+    "pct_left": 11.2,
     "band": {
-     "lo": 29.7,
-     "mid": 35.6,
-     "hi": 54.1
+     "lo": 10.1,
+     "mid": 15.5,
+     "hi": 23.8
     },
     "lots_band": {
-     "lo": 22685.0,
-     "mid": 32664.0,
-     "hi": 43678.0
+     "lo": 7953.0,
+     "mid": 10502.0,
+     "hi": 20042.0
     },
-    "share_of_all_oi": 17.7,
+    "share_of_all_oi": 5.9,
     "state": "normal",
-    "k": 6,
+    "k": 3,
     "K0": 20,
     "T0": "2026-11-19",
     "T0_kind": "first notice",
-    "pace_lots_per_day": 6006.0,
+    "pace_lots_per_day": 5779.0,
     "typical_at_notice": {
      "p10": 717.7,
      "p50": 1297.0,
      "p90": 2397.6999999999994
     },
     "path": [
-     {
-      "date": "2026-11-02",
-      "bd_to_notice": 13,
-      "oi": 62082,
-      "chg": -1364,
-      "pct_left": 85.1,
-      "spread": 11.55
-     },
-     {
-      "date": "2026-11-03",
-      "bd_to_notice": 12,
-      "oi": 59976,
-      "chg": -2106,
-      "pct_left": 82.2,
-      "spread": 9.35
-     },
-     {
-      "date": "2026-11-04",
-      "bd_to_notice": 11,
-      "oi": 57196,
-      "chg": -2780,
-      "pct_left": 78.4,
-      "spread": 8.85
-     },
      {
       "date": "2026-11-05",
       "bd_to_notice": 10,
@@ -394,6 +368,30 @@
       "chg": -5220,
       "pct_left": 37.2,
       "spread": 4.35
+     },
+     {
+      "date": "2026-11-12",
+      "bd_to_notice": 5,
+      "oi": 17015,
+      "chg": -10152,
+      "pct_left": 23.3,
+      "spread": 5.65
+     },
+     {
+      "date": "2026-11-13",
+      "bd_to_notice": 4,
+      "oi": 12138,
+      "chg": -4877,
+      "pct_left": 16.6,
+      "spread": 5.15
+     },
+     {
+      "date": "2026-11-16",
+      "bd_to_notice": 3,
+      "oi": 8181,
+      "chg": -3957,
+      "pct_left": 11.2,
+      "spread": 5.8
      }
     ],
     "src": "ICE daily open interest by contract (exchange report, previous business day)"
@@ -423,73 +421,71 @@
     "underlying": "Mar 27",
     "expiry": "2027-02-10",
     "bd_to_expiry": 58,
-    "F": 264.65,
-    "call_oi": 25583,
-    "put_oi": 41914,
-    "pc_oi": 1.64,
-    "date": "2026-11-11",
+    "F": 274.9,
+    "call_oi": 26856,
+    "put_oi": 44628,
+    "pc_oi": 1.66,
+    "date": "2026-11-16",
     "top_calls": [
      {
       "K": 300.0,
-      "oi": 3252,
-      "chg": -64
-     },
-     {
-      "K": 330.0,
-      "oi": 1962,
-      "chg": -3
+      "oi": 2936,
+      "chg": 94
      },
      {
       "K": 320.0,
-      "oi": 1959,
-      "chg": 16
+      "oi": 1975,
+      "chg": -1
      },
      {
       "K": 310.0,
-      "oi": 1736,
-      "chg": 300
+      "oi": 1745,
+      "chg": 3
      },
      {
       "K": 370.0,
       "oi": 1716,
-      "chg": -155
+      "chg": 0
+     },
+     {
+      "K": 400.0,
+      "oi": 1594,
+      "chg": -5
      }
     ],
     "top_puts": [
      {
-      "K": 200.0,
-      "oi": 5162,
-      "chg": 495
+      "K": 250.0,
+      "oi": 4793,
+      "chg": 553
      },
      {
-      "K": 250.0,
-      "oi": 4176,
-      "chg": 251
+      "K": 200.0,
+      "oi": 4652,
+      "chg": -213
      },
      {
       "K": 220.0,
-      "oi": 3647,
-      "chg": -165
+      "oi": 3463,
+      "chg": -44
      },
      {
       "K": 260.0,
-      "oi": 3407,
-      "chg": 81
+      "oi": 3381,
+      "chg": 0
      },
      {
       "K": 275.0,
-      "oi": 2907,
-      "chg": -210
+      "oi": 2781,
+      "chg": -20
      }
     ],
-    "expired": [
-     "Dec 26 options expired 2026-11-12"
-    ],
-    "src": "ICE option settlement files, last good session 2026-11-11"
+    "expired": [],
+    "src": "ICE option settlement files, last good session 2026-11-16"
    },
    "index_roll_past": true,
    "read": [
-    "27,167 lots still open in Dec 26 on 2026-11-11 (37.2% left; past Dec rolls at this stage 29.7–54.1%) with 3 business days to first notice (2026-11-19). At the last five reports' pace (about 6,006 lots a day) the contract clears before notice. Open-interest data is 3 business days old.",
+    "8,181 lots still open in Dec 26 on 2026-11-16 (11.2% left; past Dec rolls at this stage 10.1–23.8%) with 3 business days to first notice (2026-11-19). At the last five reports' pace (about 5,779 lots a day) the contract clears before notice.",
     "Dec 26/Mar 27 +5.80¢ (inverted) on 2026-11-16; certified stock 186,414 bags on 2026-11-16, -54,989 on the week.",
     "Read: deliverable stock is falling while the front holds a premium: shorts without certs must buy back or roll, which supports Dec 26 against Mar 27 into notice."
    ]
@@ -539,40 +535,32 @@
     "sign": "front minus next; negative = carry"
    },
    "oi": {
-    "asof": "2026-11-11",
-    "oi": 30619,
-    "pct_left": 50.4,
+    "asof": "2026-11-16",
+    "oi": 17268,
+    "pct_left": 28.4,
     "band": {
-     "lo": 8.4,
-     "mid": 17.1,
-     "hi": 28.8
+     "lo": 0.4,
+     "mid": 1.1,
+     "hi": 16.8
     },
     "lots_band": {
-     "lo": 7716.0,
-     "mid": 10990.0,
-     "hi": 29794.0
+     "lo": 325.0,
+     "mid": 2356.0,
+     "hi": 19682.0
     },
-    "share_of_all_oi": 16.8,
+    "share_of_all_oi": 9.9,
     "state": "heavy",
-    "k": 3,
+    "k": 0,
     "K0": 20,
     "T0": "2026-11-16",
     "T0_kind": "first notice",
-    "pace_lots_per_day": 3883.0,
+    "pace_lots_per_day": 4273.0,
     "typical_at_notice": {
      "p10": 324.9,
      "p50": 2356.5,
      "p90": 19681.6
     },
     "path": [
-     {
-      "date": "2026-11-04",
-      "bd_to_notice": 8,
-      "oi": 50034,
-      "chg": -1038,
-      "pct_left": 82.3,
-      "spread": -100.0
-     },
      {
       "date": "2026-11-05",
       "bd_to_notice": 7,
@@ -612,6 +600,30 @@
       "chg": -4353,
       "pct_left": 50.4,
       "spread": -139.0
+     },
+     {
+      "date": "2026-11-12",
+      "bd_to_notice": 2,
+      "oi": 27666,
+      "chg": -2953,
+      "pct_left": 45.5,
+      "spread": -138.0
+     },
+     {
+      "date": "2026-11-13",
+      "bd_to_notice": 1,
+      "oi": 21366,
+      "chg": -6300,
+      "pct_left": 35.2,
+      "spread": -141.0
+     },
+     {
+      "date": "2026-11-16",
+      "bd_to_notice": 0,
+      "oi": 17268,
+      "chg": -4098,
+      "pct_left": 28.4,
+      "spread": -142.0
      }
     ],
     "src": "ICE daily open interest by contract (exchange report, previous business day)"
@@ -634,20 +646,25 @@
     "underlying": "Mar 27",
     "expiry": "2026-12-11",
     "bd_to_expiry": 18,
-    "F": 5046.0,
-    "call_oi": 2033,
-    "put_oi": 841,
-    "pc_oi": 0.41,
-    "date": "2026-11-11",
+    "F": 5184.0,
+    "call_oi": 2887,
+    "put_oi": 1138,
+    "pc_oi": 0.39,
+    "date": "2026-11-16",
     "top_calls": [
      {
       "K": 6800.0,
-      "oi": 420,
+      "oi": 450,
+      "chg": 0
+     },
+     {
+      "K": 5300.0,
+      "oi": 356,
       "chg": 0
      },
      {
       "K": 7450.0,
-      "oi": 225,
+      "oi": 229,
       "chg": 0
      },
      {
@@ -659,17 +676,17 @@
       "K": 5900.0,
       "oi": 200,
       "chg": 0
-     },
-     {
-      "K": 5250.0,
-      "oi": 135,
-      "chg": 15
      }
     ],
     "top_puts": [
      {
       "K": 4900.0,
       "oi": 412,
+      "chg": 0
+     },
+     {
+      "K": 5000.0,
+      "oi": 319,
       "chg": 0
      },
      {
@@ -683,24 +700,17 @@
       "chg": 0
      },
      {
-      "K": 5150.0,
-      "oi": 30,
-      "chg": 0
-     },
-     {
       "K": 4800.0,
-      "oi": 28,
-      "chg": 0
+      "oi": 30,
+      "chg": 2
      }
     ],
-    "expired": [
-     "Dec 26 options expired 2026-11-13"
-    ],
-    "src": "ICE option settlement files, last good session 2026-11-11"
+    "expired": [],
+    "src": "ICE option settlement files, last good session 2026-11-16"
    },
    "index_roll_past": true,
    "read": [
-    "30,619 lots still open in Dec 26 on 2026-11-11 (50.4% left; past Dec rolls at this stage 8.4–28.8%) with 0 business days to first notice (2026-11-16). At the last five reports' pace (about 3,883 lots a day) the contract would not clear before notice. Open-interest data is 3 business days old.",
+    "17,268 lots still open in Dec 26 on 2026-11-16 (28.4% left; past Dec rolls at this stage 0.4–16.8%) with 0 business days to first notice (2026-11-16). At the last five reports' pace (about 4,273 lots a day) the contract would not clear before notice.",
     "Dec 26/Mar 27 -142 $/t on 2026-11-16 (carry). Certified stocks are not on the desk, so delivery economics cannot be read here."
    ]
   },
@@ -757,21 +767,21 @@
     "underlying": "Mar 27",
     "expiry": "2026-12-15",
     "bd_to_expiry": 20,
-    "F": 18.48,
-    "call_oi": 47642,
-    "put_oi": 49475,
-    "pc_oi": 1.04,
-    "date": "2026-11-11",
+    "F": 18.1,
+    "call_oi": 49461,
+    "put_oi": 51112,
+    "pc_oi": 1.03,
+    "date": "2026-11-16",
     "top_calls": [
      {
       "K": 20.0,
-      "oi": 3611,
-      "chg": 382
+      "oi": 3612,
+      "chg": 1
      },
      {
-      "K": 19.0,
-      "oi": 3301,
-      "chg": 281
+      "K": 21.0,
+      "oi": 3052,
+      "chg": 1184
      },
      {
       "K": 17.0,
@@ -779,13 +789,13 @@
       "chg": 0
      },
      {
-      "K": 22.0,
-      "oi": 2687,
-      "chg": 0
+      "K": 19.0,
+      "oi": 2752,
+      "chg": -659
      },
      {
-      "K": 23.0,
-      "oi": 2460,
+      "K": 22.0,
+      "oi": 2732,
       "chg": 0
      }
     ],
@@ -797,8 +807,8 @@
      },
      {
       "K": 17.0,
-      "oi": 4949,
-      "chg": 0
+      "oi": 5500,
+      "chg": 552
      },
      {
       "K": 16.0,
@@ -807,17 +817,17 @@
      },
      {
       "K": 18.0,
-      "oi": 3718,
-      "chg": -34
+      "oi": 4125,
+      "chg": 215
      },
      {
       "K": 17.5,
-      "oi": 2692,
-      "chg": 45
+      "oi": 3380,
+      "chg": 727
      }
     ],
     "expired": [],
-    "src": "ICE option settlement files, last good session 2026-11-11"
+    "src": "ICE option settlement files, last good session 2026-11-16"
    },
    "index_roll_past": false,
    "read": [
