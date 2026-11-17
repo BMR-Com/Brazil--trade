@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-16 23:02 UTC",
- "by": "bot",
+ "updated": "2026-11-17 00:25 UTC",
+ "by": "claude",
  "views": {
   "cotton": {
    "view": "bullish",
@@ -10,17 +10,17 @@
   "sugar": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.2
+   "score": -0.21
   },
   "coffee": {
-   "view": "mildly bearish",
-   "shade": "bear1",
-   "score": -0.08
+   "view": "neutral",
+   "shade": "neutral",
+   "score": -0.06
   },
   "cocoa": {
    "view": "mildly bearish",
    "shade": "bear1",
-   "score": -0.1
+   "score": -0.18
   }
  },
  "alerts": {
@@ -39,6 +39,9 @@
   "2026-11-13 Cocoa: Ivory Coast rains slow arrivals; El Nino output warning",
   "2026-11-13 Cocoa: Ivory Coast rains now disrupting bean transport to port",
   "2026-11-16 Cotton Dec ~77.5 (-1.3) below 77.73 support",
-  "2026-11-16 Ghana plans raw cocoa bean export ban by 2030 (Reuters)"
+  "2026-11-16 Ghana plans raw cocoa bean export ban by 2030 (Reuters)",
+  "2026-11-16 Cotton Dec settles 76.95, below 77.05 S2 (TradingView)",
+  "2026-11-16 Coffee view to neutral as ICE certs keep falling",
+  "2026-11-16 BRL -2.6% on Lula fiscal worries; sugar Mar 18.10 near 18.02 support"
  ]
 }
