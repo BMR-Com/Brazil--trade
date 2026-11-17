@@ -141,8 +141,8 @@
   "Hampton Roads": 0
  },
  "port_note": "Rule 9.02(c): no price differential by delivery point; seller chooses",
- "certificate_validity": "Rule 9.18(d)(ii): a certificate issued in a delivery period is valid for the rest of it and the next; issued outside a delivery period, for the next two delivery periods. Growth, condition, waste and count stay valid while the lot is identifiable; grade must be renewed. Expired lots may be re-graded (unlike coffee); lots that failed cannot be re-graded.",
- "weight_loss_allowance": "Rule 9.23(b): late or redelivered cocoa, 0.25% of weight per 30 days for most growths (separate schedule for Sanchez, Haiti, Jamaica)",
+ "certificate_validity": "Rule 9.18(d)(ii)(1): a Certificate of Grade issued during a delivery period is valid for the rest of that period and the next one; issued outside a delivery period, for the next two delivery periods. Rule 9.18(d)(ii)(2): for redelivery, growth, description, condition, waste and count stay valid indefinitely while the lot is identifiable, but Grade only for the initial delivery month and the next delivery period (bags in good condition). Rule 9.18(c)(i): when Grade validity lapses the deliverer may have the cocoa completely or partially regraded; cocoa that failed Rule 9.18(b) cannot be regraded. There is no fixed one-year expiry.",
+ "weight_loss_allowance": "Rule 9.23(b)(i)-(ii): weights count as true only if weighed within 13 full business days before delivery; otherwise (and on redelivery) a loss-of-weight allowance applies: 0.25% per 30 calendar days or part from the Weight Return Date (Rule 9.23(b)(ii)(B)); Sanchez, Haiti, Jamaica tiered by arrival (1% / 2% in the first 30 / 60 days if arrived under 40 days before weighing, then +0.25% per 30 days) (Rule 9.23(b)(ii)(A)). Moving the cocoa voids the weights (9.23(f)(i)).",
  "weight": {
   "franchise_pct": 1,
   "partial_default_t": [
@@ -159,5 +159,18 @@
  "load_out": "Resolution No. 2 XI: 250 t/day (operator holding up to 30,000 t at a port) or 500 t/day; 60 days",
  "eudr": "None in the ICE Futures U.S. cocoa rules (US warehouses). ICE Futures Europe (London cocoa) has its own EUDR delivery rules; not modelled here.",
  "lid_usd_t": 400,
- "lid_note": "Living Income Differential set by Côte d'Ivoire and Ghana on forward sales from the 2020/21 crop; a physical premium, not an exchange rule (Bloomberg/Investing.com, 27 Jan 2020)"
+ "lid_note": "Living Income Differential set by Côte d'Ivoire and Ghana on forward sales from the 2020/21 crop; a physical premium, not an exchange rule (Bloomberg/Investing.com, 27 Jan 2020)",
+ "grade_validity_rule": {
+  "rule": "9.18(d)(ii)(1)-(2), 9.18(c)(i)",
+  "in_delivery_period": "rest of that period + next delivery period",
+  "outside": "next two delivery periods",
+  "redelivery_grade": "initial delivery month + next delivery period",
+  "regrade": "allowed after lapse (full or partial); not for cocoa that failed",
+  "delivery_period_assumption": "taken as the delivery month (Mar, May, Jul, Sep, Dec); the rulebook does not define the term"
+ },
+ "weight_loss_allowance_model": {
+  "pct_per_30d": 0.25,
+  "from": "Weight Return Date, taken as the first grading date",
+  "rule": "9.23(b)(ii)(B)"
+ }
 }

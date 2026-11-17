@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 21:08 UTC",
+ "generated": "2026-11-17 22:53 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -665,9 +665,9 @@
   {
    "group": "Desk watch",
    "source": "What changed strip (settlement date)",
-   "latest": "2026-11-16",
+   "latest": "2026-11-17",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -677,9 +677,9 @@
   {
    "group": "Desk watch",
    "source": "Delivery-period dashboard (settlement date)",
-   "latest": "2026-11-16",
+   "latest": "2026-11-17",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -701,9 +701,9 @@
   {
    "group": "Desk watch",
    "source": "Desk call log / track record",
-   "latest": "2026-11-16",
+   "latest": "2026-11-17",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",

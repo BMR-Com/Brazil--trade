@@ -123,6 +123,119 @@ known = AG[AG.days < 99999]
 avg_age = float((known.days * known.t).sum() / known.t.sum()) if len(known) else None
 regr12 = float(g12[g12.grade_type == "regrade"].tonnes.sum())
 
+# ------------------------------------------------ grade validity (Rule 9.18(d)(ii)), regrade, weight allowance (9.23(b))
+DM = [3, 5, 7, 9, 12]
+
+
+def dperiods_after(y, m, k):
+    """k-th delivery month strictly after (y, m)."""
+    out = []
+    while len(out) < k:
+        m += 1
+        if m > 12:
+            y, m = y + 1, 1
+        if m in DM:
+            out.append((y, m))
+    return out[-1]
+
+
+def valid_through(d):
+    """Grade validity of a certificate issued on date d: issued in a delivery month -> rest of it and the next delivery
+    period; issued outside -> the next two delivery periods. The delivery period is taken as the delivery month."""
+    y, m = d.year, d.month
+    yy, mm = dperiods_after(y, m, 1 if m in DM else 2)
+    return f"{yy}-{mm:02d}"
+
+
+# grading events (initial and regrade) by origin x port: monthly file, then daily passes after the last monthly period
+ev = grad.assign(d=pd.to_datetime(grad.period_end)).groupby(["origin", "port", "d"]).tonnes.sum().reset_index()
+last_m = pd.to_datetime(grad.period_end).max()
+pp = daily[daily.section == "passed_grading"].pivot_table(index="date", columns="origin", values="lots", aggfunc="sum").fillna(0).sort_index()
+pp = pp[pp.index >= last_m]
+dpass = pp.diff().clip(lower=0).iloc[1:] * P["lot_t"] if len(pp) > 1 else pd.DataFrame()
+port_share = (cur.groupby(["origin", "port"]).t.sum() / cur.groupby("origin").t.sum()).to_dict()
+extra = []
+for dt, r in dpass.iterrows():
+    for o, t in r.items():
+        if t > 0:
+            for (oo, pt), sh in port_share.items():
+                if oo == o:
+                    extra.append({"origin": o, "port": pt, "d": dt, "tonnes": t * sh})
+ev = pd.concat([ev, pd.DataFrame(extra)]) if extra else ev
+evg = ev.groupby(["origin", "port", "d"]).tonnes.sum()
+nxt_m = f"{front[-4:]}-{MC[front[-5]]:02d}"
+after_m = f"{second[-4:]}-{MC[second[-5]]:02d}"
+vrows = []
+for r in X.itertuples():
+    left = r.t
+    try:
+        es = evg.loc[(r.origin, r.port_code)].sort_index(ascending=False)
+    except KeyError:
+        es = pd.Series(dtype=float)
+    for d, t in es.items():
+        if left <= 0:
+            break
+        take = min(left, t)
+        vrows.append((r.origin, r.port, valid_through(d), d.strftime("%Y-%m"), take))
+        left -= take
+    if left > 0:
+        vrows.append((r.origin, r.port, "unknown (older)", "before file", left))
+V = pd.DataFrame(vrows, columns=["origin", "port", "valid_through", "graded", "t"])
+V["needs_regrade_front"] = V.valid_through < nxt_m
+V["needs_regrade_second"] = V.valid_through < after_m
+
+# regrade outcome: discount change on regrade vs first grading, same origin (last 3 years), and how much of the
+# lapsing stock comes back as regrades (cohort survival) by delivery period
+g3 = grad[grad.month >= (pd.Timestamp(grad.month.max() + "-01") - pd.DateOffset(years=3)).strftime("%Y-%m")]
+def chg(o):
+    d = g3[g3.origin == o] if g3[g3.origin == o].tonnes.sum() > 200 else g3
+    a, b = d[d.grade_type == "initial"], d[d.grade_type == "regrade"]
+    if a.tonnes.sum() == 0 or b.tonnes.sum() == 0:
+        d = g3; a, b = d[d.grade_type == "initial"], d[d.grade_type == "regrade"]
+    return (w(b, "avg_weight_disc_pct") - w(a, "avg_weight_disc_pct"), w(b, "group_premium_usd_t") - w(a, "group_premium_usd_t"))
+
+
+ge = grad.assign(d=pd.to_datetime(grad.period_end))
+ge["vt"] = ge.d.map(valid_through)
+periods = sorted({f"{y}-{m:02d}" for y in range(2016, 2028) for m in DM})
+surv = []
+for i in range(1, len(periods)):
+    prev, cur_p = periods[i - 1], periods[i]
+    lapsing = float(ge[ge.vt == prev].tonnes.sum())
+    win = ge[(ge.grade_type == "regrade") & (ge.month > prev) & (ge.month <= cur_p)]
+    if lapsing > 500 and cur_p <= grad.month.max():
+        surv.append({"period": cur_p, "lapsing_t": rd(lapsing, 0), "regraded_t": rd(float(win.tonnes.sum()), 0),
+                     "share": rd(float(win.tonnes.sum()) / lapsing * 100, 0)})
+sv = pd.DataFrame(surv)
+surv_med = float(sv.share.tail(8).clip(upper=100).median()) / 100 if len(sv) else float("nan")   # last 8 delivery periods
+
+days_to = (pd.Timestamp(nxt_m + "-15") - D).days
+wa = []
+for r in X.itertuples():
+    a = AG[(AG.origin == r.origin) & (AG.port == r.port)]
+    dd = a.days.where(a.days < 99999, 1200) + days_to             # days from the weight date (first grading) to delivery
+    pct = (0.25 * np.ceil(dd / 30) * a.t).sum() / a.t.sum() if a.t.sum() else 0.0
+    vv = V[(V.origin == r.origin) & (V.port == r.port)]
+    need = float(vv[vv.needs_regrade_front].t.sum() / vv.t.sum()) if vv.t.sum() else 0.0
+    dw, dprem = chg(r.origin)
+    rg = (dprem - dw / 100 * F) * need                               # expected value change for the share that must be regraded
+    wa.append((pct, -pct / 100 * F, need, rg))
+X["allow_pct"], X["allow_usd"], X["regrade_share"], X["regrade_usd"] = zip(*wa)
+X["value_before_allow"] = X.value
+X["value"] = X.value + X.allow_usd + X.regrade_usd
+validity = {
+    "front_month": nxt_m, "second_month": after_m, "days_to_front": days_to,
+    "by_cell": [{"origin": o, "port": pt, "valid_through": vt, "lots": rd(t / P["lot_t"], 0)}
+                for (o, pt, vt), t in V.groupby(["origin", "port", "valid_through"]).t.sum().items()],
+    "by_valid": {vt: rd(t / P["lot_t"], 0) for vt, t in V.groupby("valid_through").t.sum().items()},
+    "need_front_lots": rd(float(V[V.needs_regrade_front].t.sum()) / P["lot_t"], 0),
+    "need_second_lots": rd(float(V[V.needs_regrade_second].t.sum()) / P["lot_t"], 0),
+    "survival": surv, "survival_median_pct": rd(surv_med * 100, 0), "survival_basis": "median of the last 8 delivery periods",
+    "survival_range_last8": [rd(float(sv.share.tail(8).min()), 0), rd(float(sv.share.tail(8).max()), 0)],
+    "at_risk_lots": rd(float(V[V.needs_regrade_front].t.sum()) / P["lot_t"] * (1 - min(1.0, surv_med)), 0),
+    "regrade_change": {o: {"weight_pct": rd(chg(o)[0], 2), "premium": rd(chg(o)[1], 1)} for o in sorted(X.origin.unique())},
+}
+
 # cheapest to deliver order (lowest value first)
 X = X.sort_values("value").reset_index(drop=True)
 X["cum_lots"] = X.lots.cumsum()
@@ -139,7 +252,9 @@ by_origin = []
 for o, d in X.groupby("origin"):
     by_origin.append({"origin": o, "bags": rd(d.bags.sum(), 0), "lots": rd(d.lots.sum(), 0), "t": rd(d.t.sum(), 0),
                       "premium": rd(wl(d, "premium"), 0), "weight_pct": rd(wl(d, "weight_pct"), 2), "weight_usd": rd(wl(d, "weight_usd"), 1),
-                      "slate": rd(wl(d, "slate"), 1), "value": rd(wl(d, "value"), 1),
+                      "slate": rd(wl(d, "slate"), 1), "allow_pct": rd(wl(d, "allow_pct"), 2), "allow_usd": rd(wl(d, "allow_usd"), 1),
+                      "regrade_share": rd(wl(d, "regrade_share") * 100, 0), "regrade_usd": rd(wl(d, "regrade_usd"), 1),
+                      "value_before_allow": rd(wl(d, "value_before_allow"), 1), "value": rd(wl(d, "value"), 1),
                       "pending_bags": rd(float(pend[pend.origin == o].bags.sum()), 0),
                       "age": {a[2]: rd(float(age_tab.loc[o, a[2]]) if o in age_tab.index else 0, 0) for a in AGE},
                       "older_than_file_t": rd(float(AG[(AG.origin == o) & (AG.days == 99999)].t.sum()), 0)})
@@ -205,10 +320,14 @@ out["economics"] = {
     "futures": {"front": front, "front_settle": rd(F, 0), "spot": spot, "spot_settle": rd(Fs, 0), "date": fdate.strftime("%Y-%m-%d"),
                 "second": second, "second_settle": rd(float(px[second].dropna().iloc[-1]), 0)},
     "all": {"value": rd(wl(X, "value"), 1), "premium": rd(wl(X, "premium"), 1), "weight_usd": rd(wl(X, "weight_usd"), 1),
-            "weight_pct": rd(wl(X, "weight_pct"), 2), "slate": rd(wl(X, "slate"), 1), "value_spot": rd(wl(X, "value_spot"), 1)},
+            "weight_pct": rd(wl(X, "weight_pct"), 2), "slate": rd(wl(X, "slate"), 1), "value_spot": rd(wl(X, "value_spot"), 1),
+            "allow_usd": rd(wl(X, "allow_usd"), 1), "allow_pct": rd(wl(X, "allow_pct"), 2), "regrade_usd": rd(wl(X, "regrade_usd"), 1),
+            "value_before_allow": rd(wl(X, "value_before_allow"), 1)},
+    "validity": validity,
     "ctd": ctd, "by_origin": by_origin,
     "cells": [{"origin": r.origin, "port": r.port, "group": r.group, "lots": rd(r.lots, 0), "cum_lots": rd(r.cum_lots, 0),
                "premium": r.premium, "weight_pct": rd(r.weight_pct, 2), "weight_usd": rd(r.weight_usd, 1), "slate": rd(r.slate, 1),
+               "allow_usd": rd(r.allow_usd, 1), "regrade_usd": rd(r.regrade_usd, 1), "regrade_share": rd(r.regrade_share * 100, 0),
                "value": rd(r.value, 1), "basis": r.disc_basis} for r in X.itertuples()],
 }
 # physical comparison: what is defensible from public data
@@ -222,7 +341,7 @@ out["physical"] = {
 }
 out["rules"] = {"source": P["source_url"], "read_on": P["read_on"], "premiums": P["group_premium_usd_t"], "groups": P["groups"],
                 "count_classes": P["count_classes"], "count_disc_pct": P["count_disc_pct"], "slate": P["slate"], "defects": P["defects"],
-                "waste": P["waste"], "certificate_validity": P["certificate_validity"], "weight_loss_allowance": P["weight_loss_allowance"],
+                "waste": P["waste"], "certificate_validity": P["certificate_validity"], "grade_validity_rule": P["grade_validity_rule"], "weight_loss_allowance": P["weight_loss_allowance"],
                 "weight": P["weight"], "customs": P["customs"], "eudr": P["eudr"], "port_note": P["port_note"], "load_out": P["load_out"],
                 "changes": rules.to_dict("records")}
 out["variables"] = ["ICE daily cocoa certified stock by origin, growth group and port (from Oct 2026)",
