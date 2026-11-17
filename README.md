@@ -175,3 +175,14 @@ A separate tab for coffee physical prices and fundamentals, refreshed every week
 ## Brazil weather and USDA reports (`weather/`, `usda/`, `shared/brwx.js`)
 
 Daily rainfall and heat for Brazil's coffee (Minas Gerais by Conab region, Mogiana, Espírito Santo, Rondônia, Bahia), cane (Centre-South) and cotton (Mato Grosso, Bahia, Goiás) areas against the 1991–2020 normal, with the 16-day forecast and Niño 3.4 / ONI. History from NASA POWER, recent days and forecast from Open-Meteo, ENSO from NOAA CPC. `usda/reports.json` holds USDA attaché and outlook reports with their impact on cotton, coffee and sugar, updated weekly. The panel appears on the coffee and sugar desks and on the cotton site.
+
+
+---
+
+## Copyright
+
+© 2026 BMR-Com. All rights reserved.
+
+The code, models, data compilations, charts and written analysis in this repository are the property of BMR-Com. No licence is granted. You may view the published pages for your own information; you may not copy, modify, redistribute, republish or use any part of this work commercially without written permission from BMR-Com.
+
+Source data remains the property of its original publishers (USDA, CFTC, ICE, EIA, NOAA and others) and is subject to their terms. Nothing here is investment advice.
