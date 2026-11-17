@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', 'pipelines/ice_history.py', '.github/workflows/ice_inbox.yml']
+    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', 'pipelines/ice_history.py', 'models/coffee_certs_profile.py', 'data/coffee/ref/kc_rule_params.json', 'data/coffee/ref/rule_changes.csv', '.github/workflows/ice_inbox.yml']
   schedule:
     - cron: '41 */4 * * *'      # backup, and daily clean-up of old staged PDFs
 permissions: {contents: write}
@@ -28,6 +28,10 @@ jobs:
         run: |
           set +e
           python pipelines/ice_inbox.py; echo "rc=$?" >> "$GITHUB_OUTPUT"
+      - name: coffee certs profile and delivery economics
+        run: |
+          pip install -q pandas numpy >/dev/null
+          python -W ignore models/coffee_certs_profile.py
       - name: cotton certs index and data status
         run: |
           python pipelines/ice_certs_index.py > /dev/null
@@ -37,7 +41,7 @@ jobs:
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
           for p in inbox data/ice_staging data/ice_raw data/ice_inbox data/cotton/ice data/coffee/ice_certs.csv data/coffee/ice_certs_inbox.csv data/coffee/ice_certs_check.json \
                    data/coffee/ice_certs_daily_detail.csv data/coffee/ice_aging_history.csv data/coffee/ice_certs_eom_by_port.csv \
-                   data/coffee/ice_grading_monthly.csv data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/status.json; do
+                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/status.json; do
             git add -A -- "$p" 2>/dev/null || true
           done
           git diff --cached --quiet && exit 0

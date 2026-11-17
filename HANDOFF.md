@@ -18,6 +18,12 @@
 - Known: `pipelines/coffee_certs.py` counts "Flagged for Rebagging" bags as pending (no section break), so `ice_certs.csv` pending = true pending + rebagging; the daily detail file has them apart. Not changed here.
 - No desk panels read the new files yet.
 
+## Coffee → "Certs profile & delivery economics" tab (2026-11-17)
+- `models/coffee_certs_profile.py` → `data/coffee/certs_profile.json`, rendered by `cprof()` in `assets/coffee.js` (tab `#kc-cprof`). Runs in `ice_inbox.yml` after new ICE files and in `coffee.yml` (weekdays) after the coffee build; any missing input or failed check exits non-zero and fails the run. Registered in `pipelines/data_status.py`.
+- Rule parameters by version: `data/coffee/ref/kc_rule_params.json`; dated rule timeline with sources: `data/coffee/ref/rule_changes.csv` (both edited by hand when ICE amends Chapter 8). Physical comparison uses `coffee/data/ico_groups_monthly.csv` and the Brazil ladder in `coffee/data/coffee.json` (no manual file needed).
+- The method write-up is in the private Lab artifact only; the page shows outputs and variables used.
+- The existing certs tab note now describes "transition" bags as EUDR transition stock (Appendix VIII), not an earlier grading rule.
+
 ## Sugar tab: public-data panels and weekly input pack (2026-11-17)
 - New tabs in `assets/sugar.js` (rendered by `assets/sugar_world.js`): "Brazil cane weather & season range" (rain and estimated harvest-stoppage days by state vs 2011–2025, ECMWF ENS/GEFS 15-day forecast with run history, MAPA fortnight scorecard vs last year and 5-yr avg, season range under wet/normal/dry cases with a kg/t grid, Brazil fuel-policy log), "India detail", "Europe", "Deliveries & revisions".
 - Data: `models/sugar_world.py` → `data/sugar/world.json`; `models/sugar_weekly.py` → `data/sugar/weekly_inputs.json` (every input for the weekly note, with date and source); `pipelines/sugar_wx.py` → `data/sugar/wx/` (per-member ensemble rain for 7 cane points, EU beet-region ERA5 history + recent, extra cane point Piracicaba/Jaú). Workflow `.github/workflows/sugar_world.yml`: after each "Sugar — data refresh" run, Fridays 22:40 UTC, weekdays 11:20 UTC, and on demand.

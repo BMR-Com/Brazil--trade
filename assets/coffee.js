@@ -4,7 +4,7 @@
 const Coffee = (() => {
   let built = false, tab = 'kc-primer', K = null;
   const TABS = [['kc-primer', 'Primer'], ['kc-geo', "Where it's grown, trade &amp; weather"], ['kc-bal', 'World balance'], ['kc-br', 'Brazil: basis ladder &amp; exports'], ['kc-cecafe', 'Cecafé daily registrations'], ['kc-wx', 'Brazil weather by production'],
-    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'],
+    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'],
     ['kc-flows', 'Futures, options &amp; COT'], ['kc-rv', 'Spreads &amp; vol'], ['kc-outlook', 'Outlook'], ['kc-seas', 'Seasonality &amp; technicals']];
   const body = () => $('#kcBody');
   const f0 = v => fmt(v, 0), f1 = v => fmt(v, 1), f2 = v => fmt(v, 2);
@@ -23,7 +23,7 @@ const Coffee = (() => {
   function render() {
     history.replaceState(null, '', '#' + tab);
     body().innerHTML = '<div class="card"><p class="note">Loading…</p></div>';
-    ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs), 'kc-cecafe': guard(cecafe), 'kc-wx': guard(weather),
+    ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs), 'kc-cprof': guard(cprof), 'kc-cecafe': guard(cecafe), 'kc-wx': guard(weather),
       'kc-arb': guard(arb), 'kc-orig': guard(origins), 'kc-flows': guard(flows), 'kc-rv': () => RVView.mount(body(), 'KC'),
       'kc-outlook': guard(outlook), 'kc-seas': () => MktStudy.mount(body(), ['KC']) })[tab]();
   }
@@ -221,6 +221,110 @@ const Coffee = (() => {
       ['arabica_rstd_pct_normal', 'Arabica season rain % of avg', '#2c6fbb']].map(([k, l, c]) => ({ label: l, data: H.map(r => r[k]), borderColor: c, pointRadius: 0 })) } });
   }
 
+  // Certs profile and delivery economics: data/coffee/certs_profile.json (models/coffee_certs_profile.py).
+  let CP = null;
+  const loadCP = () => CP ? Promise.resolve(CP) : getJSON('data/coffee/certs_profile.json').then(d => (CP = d));
+  const ruleLines = (marks, labels) => ({ id: 'ruleLines', afterDatasetsDraw(ch) {
+    const { ctx, chartArea: a, scales: { x } } = ch; if (!a) return; ctx.save(); ctx.font = '10px system-ui,sans-serif';
+    const by = {}; marks.forEach(m => { (by[m.date] ||= []).push(m.label); });
+    Object.entries(by).forEach(([d, ls], k) => { const i = labels.indexOf(d); if (i < 0) return; const px = x.getPixelForValue(i);
+      if (px < a.left || px > a.right) return;
+      ctx.strokeStyle = 'rgba(192,57,43,.55)'; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(px, a.top); ctx.lineTo(px, a.bottom); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = '#a93226'; ctx.save(); ctx.translate(px + 3, a.top + 4); ctx.rotate(Math.PI / 2); ctx.fillText(ls.join(' · '), 0, 0); ctx.restore(); });
+    ctx.restore(); } });
+  async function cprof() {
+    await loadCP();
+    const D = CP, H = D.history, A = D.age_hist, S = D.seasonal, Cu = D.current, E = D.economics, Ph = D.physical, R = D.rules, al = E.all;
+    const c2 = v => sgn(v, 2, '¢'), kb = v => v == null ? '–' : f0(v / 1000) + 'k';
+    const sh1 = A.share_over_1y.at(-1), shAvg = A.share_over_1y.slice(0, -1).filter(v => v != null), shMean = shAvg.reduce((a, b) => a + b, 0) / shAvg.length;
+    const ctd100 = E.ctd_n.find(r => r.lots === 100), braA = E.by_origin_port.find(r => r.origin === 'Brazil' && r.port === 'Antwerp');
+    const G = Object.fromEntries(Ph.vs_exchange.map(r => [r.group + '|' + r.market, r]));
+    const om = G['Other Milds|Europe'], bm = G['Brazilian Naturals|Europe'], sw = (Ph.brazil_ladder || []).find(l => /Semi-washed/.test(l.name));
+    const spread = E.futures.settle - E.futures.next_settle;
+    const top3 = E.ctd_top.slice(0, 3).map(r => `${r.origin} in ${r.port}`).join(', ');
+    const brief = `<div class="card" style="margin:0 0 12px;border-left:4px solid var(--acc)"><h3 style="margin-top:0">Coffee certs: ${f0(Cu.total_lots)} lots on board, cheap against the physical market</h3><ul style="margin:0;padding-left:18px">
+      <li style="margin:4px 0"><b>Size and age.</b> ${f0(Cu.total_bags)} bags certified on ${Cu.daily_date} (about ${f0(Cu.total_lots)} lots), with ${f0(Cu.pending)} bags waiting for grading. The ${S.month} ${S.latest.slice(0, 4)} month-end (${kb(S.bags.at(-1))}) was the ${ordn(S.rank_low)} lowest ${S.month} of ${S.n} years, against a 10-year ${S.month} average of ${kb(S.avg10)}. ${f1(sh1)}% of the stock was over a year old at the ${A.delivery.at(-1)} delivery (2016–25 average ${f1(shMean)}%); the bag-weighted age is ${f0(al.avg_age)} days.</li>
+      <li style="margin:4px 0"><b>Cost to stop everything.</b> Taking the whole stock on ${E.futures.contract} delivery would cost on average <b>${c2(al.total)}/lb against the futures</b> (origin ${c2(al.odiff)}, port ${c2(al.pdiff)}, age ${c2(al.age)}, weight allowance ${c2(al.weight)}, load-out and rent ${c2(al.oca_rca)}). Half the lots sit between ${c2(E.dist.p25)} and ${c2(E.dist.p75)}. On ${E.futures.next} the same coffee is ${c2(al.total_n1)} (older, and the EUDR transition discount starts).</li>
+      <li style="margin:4px 0"><b>Cheapest to deliver.</b> Deliverers hand over the lowest-value lots first: the first 100 lots average ${c2(ctd100?.avg)}, mostly old washed coffee in Antwerp (${top3}). Fresh Brazil in Antwerp, the biggest block (${f0(braA?.lots)} lots), invoices at ${c2(braA?.total)}.</li>
+      <li style="margin:4px 0"><b>Exchange against physical.</b> ICO ${Ph.ico_month} prices, restated against ${E.futures.contract}: Other Milds in Europe ${c2(om?.physical)} against ${c2(om?.exchange)} for that coffee on the exchange (gap ${c2(om?.gap)}); Brazilian Naturals in Europe ${c2(bm?.physical)} against ${c2(bm?.exchange)} (gap ${c2(bm?.gap)}). Certs are cheaper than the physical averages, so a receiver has reason to stop and keep them; ICO groups are averages of current-crop coffee, so for old or EUDR-transition lots the true gap is smaller. Brazil semi-washed at origin is ${c2(sw?.basis)} (${sw?.date}), before freight, which is why Brazil keeps coming in for grading.</li>
+      <li style="margin:4px 0"><b>Rules now vs before.</b> Since 1 Dec 2023 a de-certified lot cannot be graded again, so the age discount and weight allowance stay with the coffee; before, old coffee could be re-graded as fresh, which kept the curve in carry and made stopping delivery risky.</li>
+      <li style="margin:4px 0"><b>For the front spread.</b> ${E.futures.contract} first notice is ${Cu.first_notice || 'in late November'}; ${E.futures.contract} is ${sgn(spread, 2, '¢')} over ${E.futures.next}. The pile is small and cheap to stop, which supports the nearby, but ${kb(Cu.pending)} bags pending grading (mostly Brazil in Antwerp) could add up to about ${f0(Cu.pending / 283.5)} lots if they pass, the main risk to the inversion.</li></ul>
+      <p class="note" style="margin-bottom:0">Certs ${Cu.daily_date}; age split ${Cu.aging_date} rolled forward to ${Cu.daily_date} (estimate); futures ${E.futures.date}; ICO ${Ph.ico_month}.</p></div>`;
+    const tAge = (rows, key) => `<table><tr><th class="l">${key === 'port' ? 'Port' : 'Origin'}</th>${Cu.port_age.groups.map(g => `<th>${g}</th>`).join('')}<th>Total</th><th>Over 1 yr</th></tr>
+      ${rows.map(r => `<tr><td class="l">${r[key]}</td>${r.bags.map(v => `<td class="n">${v ? f0(v) : '–'}</td>`).join('')}<td class="n"><b>${f0(r.total)}</b></td><td class="n">${f0((r.bags[2] + r.bags[3] + r.bags[4]) / r.total * 100)}%</td></tr>`).join('')}</table>`;
+    const ecoRows = E.by_origin_port.filter(r => r.lots >= 0.5).map(r => `<tr><td class="l">${r.origin}</td><td class="l">${r.port}</td><td class="n">${f0(r.bags)}</td><td class="n">${f0(r.lots)}</td><td class="n">${f0(r.avg_age)}</td>
+      <td class="n">${f2(r.odiff)}</td><td class="n">${f2(r.pdiff)}</td><td class="n">${f2(r.age)}</td><td class="n">${f2(r.weight)}</td><td class="n">${f2(r.oca_rca)}</td><td class="n"><b>${c2(r.total)}</b></td><td class="n">${c2(r.total_n1)}</td>
+      <td class="n">${c2(r.phys)}</td><td class="n">${c2(r.gap)}</td><td class="l" style="white-space:nowrap">${r.gap > 0 ? 'Stop / keep' : 'Deliver'}</td></tr>`).join('');
+    const ruleRows = R.changes.slice().reverse().map(r => `<tr><td class="l" style="white-space:nowrap">${r.effective_date}</td><td class="l">${r.first_contract}</td><td class="l">${r.rule_area}</td><td class="l">${r.plain_english}</td><td class="l"><a href="${r.source_url}" target="_blank" rel="noopener">source</a></td></tr>`).join('');
+    const on = R.origin_now.pts, nx = R.origin_next.pts, pn = R.port_now.pts;
+    const oList = Object.keys({ ...on, ...nx }).sort((a, b) => (on[b] ?? -9e9) - (on[a] ?? -9e9) || a.localeCompare(b));
+    body().innerHTML = `${brief}
+      <div class="grid g4">
+        ${kpi('Certified now', f0(Cu.total_bags) + ' bags', `${Cu.daily_date}; ~${f0(Cu.total_lots)} lots; ${kb(Cu.pending)} pending grading`)}
+        ${kpi(`${S.month} month-end vs history`, kb(S.bags.at(-1)), `${ordn(S.rank_low)} lowest of ${S.n}; 10-yr ${S.month} range ${kb(S.min10)}–${kb(S.max10)}`)}
+        ${kpi('Cost to stop all certs', c2(al.total) + '/lb', `bag-weighted, vs ${E.futures.contract} ${f2(E.futures.settle)}; ${E.futures.next}: ${c2(al.total_n1)}`)}
+        ${kpi('First 100 lots delivered', c2(ctd100?.avg) + '/lb', `cheapest to deliver; average age ${f0(al.avg_age)} days to delivery`)}</div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>ICE certified arabica since ${H.months[0].slice(0, 4)}</h2>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">${rngBar('cpH', ['10Y', 'All'], '10Y')}${rngBar('cpV', ['Total', 'By port'], 'Total')}</div>${box('cpH', 300)}
+          <p class="note">Month-end certified bags (ICE). Red dashed lines mark the main rule changes (table below). Stock levels before and after each line are not like for like: until December 2023 old coffee could be de-certified and graded again as fresh.</p></div>
+        <div class="card"><h2>Certified stock by age, all ports</h2>${box('cpA', 300)}
+          <p class="note">Monthly ICE aging report, bags by days since grading measured to the next delivery month, all ports combined; line = share older than one year (right axis).</p></div></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>${S.month} month-end certs, every year</h2>${box('cpS', 240)}<p class="note">Same calendar month each year; dashed line = average of the previous 10 years.</p></div>
+        <div class="card"><h2>Average invoice discount of the certified stock</h2>${box('cpV2', 240)}<p class="note">Bag-weighted, ¢/lb against the futures, from the monthly aging report with the port and age rules in force for each delivery month; the second line adds the weight allowance at the front-month price. Origin is not in the monthly file, so origin differentials are left out here.</p></div></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Current certs by port and age</h2><div class="tbl">${tAge(Cu.port_age.rows, 'port')}</div>
+          <p class="note">Age split estimated to ${Cu.daily_date}: ICE's ${Cu.aging_date} aging report rolled forward with the daily reports (new passes go into the youngest bucket; other falls are taken out of each origin and port in proportion). Ages are days since grading at the ${Cu.delivery} delivery.</p></div>
+        <div class="card"><h2>Current certs by origin and age <span class="note">(estimate)</span></h2><div class="tbl">${tAge(Cu.origin_age.rows, 'origin')}</div>
+          <p class="note">Origin by port is reported daily by ICE; the age split by origin is not published and is <b>estimated</b> from grading results by origin and the port aging report.</p></div></div>
+      <div class="card" style="margin-top:12px"><h2>Delivery economics by origin and port <span class="note">¢/lb against ${E.futures.contract} (${f2(E.futures.settle)}, ${E.futures.date}); negative = the receiver pays less than the futures</span></h2>
+        <div class="tbl"><table><tr><th class="l">Origin</th><th class="l">Port</th><th>Bags</th><th>Lots</th><th>Avg age (d)</th><th>Origin</th><th>Port</th><th>Age</th><th>Weight</th><th>Load-out + rent</th><th>Invoice vs ${E.futures.contract}</th><th>Same on ${E.futures.next}</th><th>Physical (ICO)</th><th>Gap</th><th class="l">Read</th></tr>
+        ${ecoRows}<tr><td class="l"><b>All certs</b></td><td></td><td class="n"><b>${f0(al.bags)}</b></td><td class="n"><b>${f0(al.lots)}</b></td><td class="n">${f0(al.avg_age)}</td><td class="n">${f2(al.odiff)}</td><td class="n">${f2(al.pdiff)}</td><td class="n">${f2(al.age)}</td><td class="n">${f2(al.weight)}</td><td class="n">${f2(al.oca_rca)}</td><td class="n"><b>${c2(al.total)}</b></td><td class="n">${c2(al.total_n1)}</td><td></td><td></td><td></td></tr></table></div>
+        <p class="note">Origin, port and age differentials, the weight allowance and the load-out (OCA) and rent (RCA) adjustments follow the ICE Coffee "C" rules for the delivery month (port averages of the posted warehouse rates). Grade (imperfection) differentials are not included: ICE does not publish them per lot. Lots ≈ bags × bag weight ÷ 37,500 lb. Physical = ICO group price in the same market (Europe or US) minus the ICO New York average, restated against ${E.futures.contract}. Gap = physical minus exchange. Read: "Stop / keep" when the gap is positive, "Deliver" when negative. Positive means the cert is cheaper than the physical average, so it is likely to be stopped and kept; negative means it is worth delivering. ICO prices are group averages for current-crop coffee; old certified lots, EUDR status, port and quality all matter.</p></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Cheapest to deliver: the order lots would be tendered</h2>${box('cpC', 260)}
+          <div class="tbl"><table><tr><th class="l">Lots delivered</th><th>Average ¢/lb</th><th>Range</th></tr>${E.ctd_n.map(r => `<tr><td class="l">${r.lots === 'all' ? `All (${f0(al.lots)})` : 'First ' + r.lots}</td><td class="n"><b>${c2(r.avg)}</b></td><td class="n">${f2(r.worst)} to ${f2(r.best)}</td></tr>`).join('')}</table></div>
+          <p class="note">Every certified lot sorted by its invoice value against the futures, lowest first: the deliverer gives up the lots worth least on the invoice first. The whole stock is only about ${f0(al.lots)} lots, so the usual 1,000 / 2,500-lot steps are not reached.</p>
+          <div class="tbl"><table><tr><th class="l">First 100 lots: origin</th><th class="l">Port</th><th>Lots</th><th>Days since grading</th><th>¢/lb</th></tr>${E.ctd_top.map(r => `<tr><td class="l">${r.origin}</td><td class="l">${r.port}</td><td class="n">${f1(r.lots)}</td><td class="n">${f0(r.age_from)}–${f0(r.age_to)}</td><td class="n">${f2(r.diff_from)} to ${f2(r.diff_to)}</td></tr>`).join('')}</table></div></div>
+        <div class="card"><h2>Exchange vs physical by ICO group</h2>
+          <div class="tbl"><table><tr><th class="l">ICO group</th><th class="l">Market</th><th>Certs, bags</th><th>Physical vs ${E.futures.contract}</th><th>Exchange, stock</th><th>Exchange, fresh</th><th>Gap</th></tr>
+          ${Ph.vs_exchange.map(r => `<tr><td class="l">${r.group}</td><td class="l">${r.market}</td><td class="n">${f0(r.bags)}</td><td class="n">${c2(r.physical)}</td><td class="n">${c2(r.exchange)}</td><td class="n">${r.exchange_fresh == null ? '–' : c2(r.exchange_fresh)}</td><td class="n"><b>${c2(r.gap)}</b></td></tr>`).join('')}</table></div>
+          <p class="note">ICO ${Ph.ico_month} averages, ¢/lb: ${Ph.groups.map(g => `${g.group} ${g.market} ${f2(g.price)}`).join('; ')}; ICO New York (2nd and 3rd positions) ${f2(Ph.ico_ny)}. ${E.futures.contract} averaged ${f2(Ph.delivery_avg)} that month against ${f2(Ph.second_third_avg)} for ${Ph.second_third.join('/')}, so ${sgn(Ph.roll_adj, 2, '¢')} restates the ICO differentials against ${E.futures.contract}. Mapping: Colombia → Colombian Milds; Brazil → Brazilian Naturals; Central America, Mexico, Peru, Venezuela, East Africa, India, PNG → Other Milds.</p>
+          <h3>Brazil by export quality <span class="note">(at origin, before freight, ¢/lb vs KC front)</span></h3>
+          <div class="tbl"><table>${(Ph.brazil_ladder || []).map(l => `<tr><td class="l">${l.name}</td><td class="n">${l.date}</td><td class="n"><b>${c2(l.basis)}</b></td></tr>`).join('')}</table></div>
+          <p class="note">Brazil on the exchange (Antwerp, fresh) invoices at ${c2(braA?.fresh)}. The difference to the origin price has to cover freight, port and grading costs; it is what draws semi-washed Brazil to the exchange.</p></div></div>
+      <div class="card" style="margin-top:12px"><h2>Rule changes: ICE Coffee "C"</h2><div class="tbl"><table><tr><th class="l">Effective</th><th class="l">First contract</th><th class="l">Area</th><th class="l">What changed</th><th class="l">Link</th></tr>${ruleRows}</table></div>
+        <p class="note">From the ICE rulebook amendment notes, ICE filings and notices. Origin and port differentials apply by delivery month to every lot delivered, whenever it was graded; the age discount runs from each lot's grading certificate. ICE's January 2024 notice announced the 10¢ premiums from March 2026; the rulebook now applies them from May 2027, which this page uses.</p></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Differentials in force</h2><div class="tbl"><table><tr><th class="l">Origin</th><th>${Cu.delivery} delivery, ¢/lb</th><th>From May 2027</th></tr>${oList.map(o => `<tr><td class="l">${o}</td><td class="n">${on[o] == null ? 'not deliverable' : sgn(on[o] / 100, 2)}</td><td class="n">${nx[o] == null ? '–' : sgn(nx[o] / 100, 2)}</td></tr>`).join('')}</table></div>
+          <p class="note">Ports: ${Object.entries(pn).map(([k, v]) => `${k.toLowerCase().replace(/(^|[\s/])\w/g, s => s.toUpperCase())} ${v ? sgn(v / 100, 2) : 'basis'}`).join(', ')}.</p></div>
+        <div class="card"><h2>Age discount and other adjustments</h2><div class="tbl"><table><tr><th class="l">Days since grading</th><th>Discount</th></tr><tr><td class="l">0–120</td><td class="n">none</td></tr><tr><td class="l">121–150</td><td class="n">0.50¢</td></tr>
+          ${R.age_bands.bands.map(([lo, hi, base, st]) => `<tr><td class="l">${lo + 1}–${hi > 9999 ? '' : hi}</td><td class="n">${f2(base / 100)}¢ + ${f2(st / 100)}¢ per 30 days</td></tr>`).join('')}</table></div>
+          <p class="note">Weight allowance: 0.5% of the weight for the second month after weighing plus 0.125% a month after that, at the invoice price. Load-out (OCA) and rent (RCA) adjustments: the delivering warehouse's posted rates against the New York average (rent × 2 for Mar/May/Jul, × 3 for Sep/Dec). EUDR: transition stock in European ports loses 0.25¢ a month from January 2027 (from the March 2027 contract). Source: <a href="${R.source}" target="_blank" rel="noopener">ICE rulebook, Coffee "C"</a>, read ${R.read_on}.</p></div></div>
+      <p class="note">Variables used: ${D.variables.join('; ')}. Built ${D.built}.</p>`;
+    // charts
+    const drawH = () => { const r = $('.rng[data-for=cpH] button.on').dataset.r, v = $('.rng[data-for=cpV] button.on').dataset.r;
+      const a = r === 'All' ? 0 : Math.max(0, H.months.length - 121), lab = H.months.slice(a);
+      const ds = v === 'Total' ? [{ label: 'Certified, bags', data: H.total.slice(a), borderColor: '#7d3c98', backgroundColor: 'rgba(125,60,152,.12)', fill: true, pointRadius: 0 }]
+        : Object.entries(H.by_port).map(([p, s], i) => ({ label: p, data: s.slice(a), backgroundColor: PAL[i % PAL.length], borderColor: PAL[i % PAL.length], fill: true, pointRadius: 0, borderWidth: 0, stack: 's' }));
+      chart('cpH', { type: 'line', data: { labels: lab, datasets: ds }, plugins: [ruleLines(H.markers, lab)],
+        options: { scales: { y: { stacked: v !== 'Total', beginAtZero: true, ticks: { callback: x => f1(x / 1e6) + 'm' } } } } }); };
+    drawH(); rngWire('cpH', drawH); rngWire('cpV', drawH);
+    const ac = ['#2c6fbb', '#17a589', '#d68910', '#c0392b', '#7d3c98'];
+    chart('cpA', { type: 'line', data: { labels: A.months, datasets: [...A.groups.map((g, i) => ({ label: g, data: A.bags[g], backgroundColor: ac[i], borderColor: ac[i], fill: true, pointRadius: 0, borderWidth: 0, stack: 's', yAxisID: 'y' })),
+      { label: 'Over 1 yr, %', data: A.share_over_1y, borderColor: '#222', borderWidth: 1.5, pointRadius: 0, fill: false, yAxisID: 'y1' }] }, plugins: [ruleLines(H.markers.filter(m => m.date >= A.months[0]), A.months)],
+      options: { scales: { y: { stacked: true, beginAtZero: true, ticks: { callback: x => f1(x / 1e6) + 'm' } }, y1: { position: 'right', min: 0, max: 100, grid: { display: false } } } } });
+    chart('cpS', { type: 'bar', data: { labels: S.years, datasets: [{ label: `${S.month} month-end, bags`, data: S.bags, backgroundColor: S.years.map((y, i) => i === S.years.length - 1 ? '#c0392b' : '#7d3c98') },
+      { type: 'line', label: '10-yr average', data: S.years.map((y, i) => i >= S.years.length - 11 ? S.avg10 : null), borderColor: '#333', borderDash: [4, 3], pointRadius: 0 }] },
+      options: { scales: { y: { beginAtZero: true, ticks: { callback: x => f1(x / 1e6) + 'm' } } } } });
+    chart('cpV2', { type: 'line', data: { labels: A.months, datasets: [{ label: 'Port + age, ¢/lb', data: A.port_age_disc, borderColor: '#2c6fbb', pointRadius: 0 },
+      { label: 'Port + age + weight allowance', data: A.port_age_weight, borderColor: '#c0392b', pointRadius: 0 }] }, plugins: [ruleLines(H.markers.filter(m => m.date >= A.months[0]), A.months)] });
+    const cv = E.ctd_curve;
+    chart('cpC', { type: 'line', data: { labels: cv.map(p => f0(p.cum_lots)), datasets: [{ label: 'Invoice vs futures, ¢/lb (lots sorted lowest first)', data: cv.map(p => Math.max(p.diff, -60)), borderColor: '#7d3c98', stepped: true, pointRadius: 0 }] },
+      options: { plugins: { tooltip: { callbacks: { label: c => { const p = cv[c.dataIndex]; return `${f2(p.diff)}¢ ${p.origin || ''} ${p.port || ''} ${p.age ? p.age + ' d' : ''}`; } } } },
+        scales: { x: { title: { display: true, text: 'cumulative lots' } }, y: { title: { display: true, text: '¢/lb (floored at −60)' } } } } });
+  }
   async function certs() {
     await load();
     const St = K.structure, C = K.certs_ice, sn = St.now;
@@ -234,7 +338,7 @@ const Coffee = (() => {
         ${kpi('Grading, last 30 days', gr ? f0(c.passed_30d / gr * 100) + '% passed' : '–', `${f0(c.passed_30d)} bags passed, ${f0(c.failed_30d)} failed`)}
         ${kpi('KC front spread', sgn(sn.spread, 1, '¢'), `front minus second, ${sn.date}; ${ord(sn.pct_regime ?? sn.pct5y)} since Dec 2023; full carry ${f2(sn.carry)}¢`)}</div>
       <div class="grid g2" style="margin-top:12px">
-        <div class="card"><h2>Certified stocks and bags pending grading</h2>${rngBar('kcSt', ['1M', '3M', '6M', '1Y', 'All'], '3M')}${box('kcSt', 260)}<p class="note">ICE daily certified-stock report, bags of arabica in licensed warehouses that passed grading, and bags waiting to be graded. Of the certified total, ${f0(c.transition)} bags were graded under the earlier rules (transition bags). Pending bags that pass will add to the total; they are the earliest public sign of new deliverable supply.</p></div>
+        <div class="card"><h2>Certified stocks and bags pending grading</h2>${rngBar('kcSt', ['1M', '3M', '6M', '1Y', 'All'], '3M')}${box('kcSt', 260)}<p class="note">ICE daily certified-stock report, bags of arabica in licensed warehouses that passed grading, and bags waiting to be graded. Of the certified total, ${f0(c.transition)} bags are EUDR transition stock (European ports, shipped from 29 June 2023 without EUDR due-diligence data; they take a discount from the March 2027 contract). Pending bags that pass will add to the total; they are the earliest public sign of new deliverable supply.</p></div>
         <div class="card"><h2>Front spread against certified stocks</h2>${box('kcSc', 280)}<p class="note">Each point is a month since 2020: certified stocks (x) against the KC front-month spread (y, ¢/lb, positive = inverted). The lines give the fair spread for each certs level, with a separate level since ICE barred re-grading of de-certified coffee in December 2023.${St.fair ? ` At ${f2(St.fair.certs)}m bags the fair spread is ${sgn(St.fair.fair, 1, '¢')}; today's ${sgn(sn.spread, 1, '¢')} is ${sgn(St.fair.resid, 1, '¢')} ${St.fair.resid >= 0 ? 'rich' : 'cheap'} to it (${ord(St.fair.resid_pct)} of gaps since Dec 2023). Certs explain about ${f0(St.fair.r2 * 100)}% of the monthly spread; the gap is a valuation, not a timing signal.` : ''} Certs before Sep 2026 are ICO monthly figures; from Sep 2026 ICE daily reports. Variables: ${(St.fair?.variables || []).join('; ')}.</p></div></div>
       <div class="card" style="margin-top:12px"><h2>Certification trigger: Brazil naturals against KC</h2>${rngBar('kcTp', ['2Y', '5Y', 'All'], '5Y')}${box('kcTp', 230)}<p class="note">ICO Brazilian naturals price minus the KC front month (monthly, ¢/lb, left) and certified stocks (million bags, right). Semi-washed Brazil to Antwerp is the cheapest coffee to certify, and it has come onto the exchange in size when Brazilian naturals traded about 5¢ or more under the futures: below that line certs have usually built over the following months, above it they have usually drawn. Latest (${K.ico.groups.month.at(-1)}): ${sgn(K.ico.groups.bra_d.at(-1), 1, '¢')}${K.ico.groups.bra_d.at(-1) <= -5 ? ', in the zone where new Brazil coffee tends to be certified' : ', above the level where new Brazil coffee is usually certified'}.</p></div>
       <div class="grid g2" style="margin-top:12px">

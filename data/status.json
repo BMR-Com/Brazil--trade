@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 16:42 UTC",
+ "generated": "2026-11-17 17:12 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -348,7 +348,7 @@
    "limit": 2,
    "state": "ok",
    "manual": true,
-   "used_in": "stored; no panel yet"
+   "used_in": "Certs profile tab"
   },
   {
    "group": "Coffee",
@@ -360,7 +360,7 @@
    "limit": 40,
    "state": "ok",
    "manual": true,
-   "used_in": "stored; no panel yet"
+   "used_in": "Certs profile tab"
   },
   {
    "group": "Coffee",
@@ -372,7 +372,7 @@
    "limit": 40,
    "state": "ok",
    "manual": true,
-   "used_in": "stored; no panel yet"
+   "used_in": "Certs profile tab"
   },
   {
    "group": "Coffee",
@@ -384,7 +384,31 @@
    "limit": 40,
    "state": "ok",
    "manual": true,
-   "used_in": "stored; no panel yet"
+   "used_in": "Certs profile tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Certs profile and delivery economics (built from the ICE files)",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Certs profile tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "ICO group prices for the certs physical comparison",
+   "latest": "2026-10-28",
+   "cadence": "monthly",
+   "age": 20,
+   "age_unit": "days",
+   "limit": 40,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Certs profile tab"
   },
   {
    "group": "Coffee",
