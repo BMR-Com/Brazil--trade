@@ -1,6 +1,416 @@
 {
- "last": {},
- "recent": [],
+ "last": {
+  "CC_futures": {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_16-2.pdf",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_16-2.pdf"
+  },
+  "CC_options": {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_16.pdf",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_16.pdf"
+  },
+  "CT_futures": {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_16-2.pdf",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_16-2.pdf"
+  },
+  "CT_options": {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_16.pdf",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_16.pdf"
+  },
+  "KC_futures": {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_16-2.pdf",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_16-2.pdf"
+  },
+  "KC_options": {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_16.pdf",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_16.pdf"
+  },
+  "SB_futures": {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_16-2.pdf",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_16-2.pdf"
+  },
+  "SB_options": {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_16.pdf",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_16.pdf"
+  }
+ },
+ "recent": [
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_16.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_16.pdf",
+   "note": "staged 687 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_16-2.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_16-2.pdf",
+   "note": "staged 12 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_13.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-13",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_13.pdf",
+   "note": "staged 693 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_13-2.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-13",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_13-2.pdf",
+   "note": "staged 12 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_12.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-12",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_12.pdf",
+   "note": "staged 695 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_12-2.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-12",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_12-2.pdf",
+   "note": "staged 12 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_11.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-11",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_11.pdf",
+   "note": "staged 693 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "SB_2026_11_11-2.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-11",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_11-2.pdf",
+   "note": "staged 12 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_16.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_16.pdf",
+   "note": "staged 487 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_16-2.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_16-2.pdf",
+   "note": "staged 7 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_13.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-13",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_13.pdf",
+   "note": "staged 483 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_13-2.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-13",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_13-2.pdf",
+   "note": "staged 7 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_12.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-12",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_12.pdf",
+   "note": "staged 646 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_12-2.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-12",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_12-2.pdf",
+   "note": "staged 7 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_11.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-11",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_11.pdf",
+   "note": "staged 641 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "KC_2026_11_11-2.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-11",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_11-2.pdf",
+   "note": "staged 7 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_16.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_16.pdf",
+   "note": "staged 391 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_16-2.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_16-2.pdf",
+   "note": "staged 15 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_13.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-13",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_13.pdf",
+   "note": "staged 497 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_13-2.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-13",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_13-2.pdf",
+   "note": "staged 15 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_12.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-12",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_12.pdf",
+   "note": "staged 497 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_12-2.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-12",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_12-2.pdf",
+   "note": "staged 15 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_11.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-11",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_11.pdf",
+   "note": "staged 498 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CT_2026_11_11-2.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-11",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_11-2.pdf",
+   "note": "staged 15 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_16.pdf",
+   "type": "CC_options",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_16.pdf",
+   "note": "staged 372 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_16-2.pdf",
+   "type": "CC_futures",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_16-2.pdf",
+   "note": "staged 10 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_13.pdf",
+   "type": "CC_options",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-13",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_13.pdf",
+   "note": "staged 542 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_13-2.pdf",
+   "type": "CC_futures",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-13",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_13-2.pdf",
+   "note": "staged 10 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_12.pdf",
+   "type": "CC_options",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-12",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_12.pdf",
+   "note": "staged 538 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_12-2.pdf",
+   "type": "CC_futures",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-12",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_12-2.pdf",
+   "note": "staged 10 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_11.pdf",
+   "type": "CC_options",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-11",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_11.pdf",
+   "note": "staged 525 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-17 16:29 UTC",
+   "file": "CC_2026_11_11-2.pdf",
+   "type": "CC_futures",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-11",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_11-2.pdf",
+   "note": "staged 10 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  }
+ ],
  "unrecognised": [],
- "updated": "2026-11-17 15:14 UTC"
+ "updated": "2026-11-17 16:29 UTC"
 }
