@@ -13,6 +13,7 @@ on:
     - cron: '5 16 8-14 * 1-5'    # 12:05 EDT
     - cron: '20 16 8-14 * 1-5'   # 12:20 EDT
     - cron: '30 20 8-14 * 1-5'   # 16:30 EDT
+    - cron: '53 23 * * 1-5'      # daily refresh: rebuild the briefs' "latest data" (COT, export sales, on-call, crop) without fetching USDA
 permissions: {contents: write}
 concurrency: {group: wasde, cancel-in-progress: false}
 jobs:
@@ -24,13 +25,15 @@ jobs:
         id: t
         run: |
           go=1
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          refresh=0
+          if [ "${{ github.event.schedule }}" = "53 23 * * 1-5" ]; then refresh=1
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
             go=$(python3 -c "
           from datetime import datetime; from zoneinfo import ZoneInfo
           n = datetime.now(ZoneInfo('America/New_York')); m = n.hour * 60 + n.minute
           print(1 if any(0 <= m - t <= 30 for t in (12*60+5, 12*60+20, 16*60+30)) else 0)")
           fi
-          echo "go=$go" >> "$GITHUB_OUTPUT"
+          echo "go=$go" >> "$GITHUB_OUTPUT"; echo "refresh=$refresh" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         if: steps.t.outputs.go == '1'
       - uses: actions/setup-python@v5
@@ -39,7 +42,7 @@ jobs:
       - if: steps.t.outputs.go == '1'
         run: pip install -q requests pandas numpy curl_cffi python-dateutil
       - name: fetch the USDA report (waits up to 35 minutes for it on report day)
-        if: steps.t.outputs.go == '1'
+        if: steps.t.outputs.go == '1' && steps.t.outputs.refresh != '1'
         continue-on-error: true
         run: |
           [ -n "$(ls data/wasde/raw/*.csv.gz 2>/dev/null)" ] || python pipelines/wasde.py seed

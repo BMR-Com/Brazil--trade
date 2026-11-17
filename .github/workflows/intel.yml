@@ -21,8 +21,9 @@ jobs:
         continue-on-error: true
       - name: weather, calendar, South America (about twice a day on the schedule; always on push/dispatch)
         run: |
-          H=$(date -u +%H)
-          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$H" != "12" ] && [ "$H" != "00" ]; then echo "skip heavy feeds"; exit 0; fi
+          # GitHub starts only some of the 3-hourly runs, at shifting hours: gate on the calendar file's age, not the clock hour
+          age=$(python3 -c "import json,datetime as d;g=json.load(open('data/calendar/calendar.json'))['generated'][:16];print(int((d.datetime.utcnow()-d.datetime.strptime(g,'%Y-%m-%d %H:%M')).total_seconds()//3600))" 2>/dev/null || echo 99)
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$age" -lt 10 ]; then echo "heavy feeds ${age}h old; skip"; exit 0; fi
           python pipelines/events_calendar.py || true
           timeout 900 python pipelines/weather.py || true
           python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || true

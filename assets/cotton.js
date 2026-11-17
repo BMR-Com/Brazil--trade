@@ -130,6 +130,22 @@ const Cotton = (() => {
   }
   // Certs & quality premiums. The ICE grid is public USDA data (data/cotton/ice_diffs.json). ICE certificated-stock files
   // are read in the viewer's browser only (file picker, kept in this browser's localStorage) and never stored in the repo.
+  // Daily spread vs full carry (models/cotton_carry.py -> data/cotton/carry_history.csv): same calculation as the table below
+  async function carryHist() {
+    const el = $('#ctCarryRead'); if (!el) return;
+    let R; try { const t = await fetch('data/cotton/carry_history.csv?' + Date.now()).then(r => r.ok ? r.text() : Promise.reject()); const L = t.trim().split(/\r?\n/), h = L[0].split(',');
+      R = L.slice(1).map(l => { const v = l.match(/("[^"]*"|[^,]*)(,|$)/g).map(x => x.replace(/,$/, '').replace(/^"|"$/g, '')); return Object.fromEntries(h.map((k, i) => [k, v[i]])); }); } catch (e) { $('#ctCarryCard').style.display = 'none'; return; }
+    R = R.filter(r => r.pct_of_full_carry !== ''); if (!R.length) { $('#ctCarryCard').style.display = 'none'; return; }
+    const MN = { H: 'Mar', K: 'May', N: 'Jul', Z: 'Dec' }, lb = c => MN[c[2]] + ' ' + c.slice(-2), last = R[R.length - 1];
+    const from = new Date(last.date); from.setMonth(from.getMonth() - 12); const W = R.filter(r => r.date >= from.toISOString().slice(0, 10));
+    const pc = W.map(r => +r.pct_of_full_carry), mo = Math.max(1, Math.round((new Date(last.date) - new Date(W[0].date)) / 2.63e9));
+    const base = W.some(r => r.carry_basis === 'base grade');
+    el.innerHTML = `<b>${MN[last.next[2]]}−${MN[last.front[2]]} is ${fmt(+last.pct_of_full_carry, 0)}% of full carry</b> (${mo}-month range ${fmt(Math.min(...pc), 0)}–${fmt(Math.max(...pc), 0)}%): ${lb(last.next)} ${fmt(+last.spread, 2)}¢ over ${lb(last.front)} against ${fmt(+last.full_carry, 2)}¢ to stop and redeliver, ${last.date}.`;
+    $('#ctCarryNote').innerHTML = `Spread as a share of the full carry (storage, financing, over-age, weight-date and year-of-growth) for the front contract and the next one (October skipped), one point per settlement day.${base ? ' Days before the first ICE certs file on the desk use base-grade cotton at the default storage rate, without over-age or year-of-growth, so their full carry is lower.' : ''} Past days use the ICE grid and certs files dated on or before that day.`;
+    const segs = [...new Set(W.map(r => r.front + '/' + r.next))];
+    chart('ctCarryH', { type: 'line', data: { labels: W.map(r => r.date), datasets: segs.map((k, i) => ({ label: `${lb(k.split('/')[1])}−${lb(k.split('/')[0])}`, data: W.map(r => r.front + '/' + r.next === k ? +r.pct_of_full_carry : null), borderColor: ['#2c6fbb', '#2f6b3a', '#d68910', '#7d3c98', '#c0392b'][i % 5], pointRadius: 0, borderWidth: 1.4, spanGaps: false })) },
+      options: { scales: { y: { title: { display: true, text: '% of full carry' } }, x: { ticks: { maxTicksLimit: 8 } } } } });
+  }
   async function certs() {
     const D = await getJSON('data/cotton/ice_diffs.json').catch(() => null);
     const kp = (lab, v, sub) => `<div class="kpi card" style="padding:10px"><div class="lbl">${lab}</div><div class="val" style="font-size:19px">${v}</div>${sub ? `<div class="sub">${sub}</div>` : ''}</div>`;
@@ -150,6 +166,7 @@ const Cotton = (() => {
         <div class="seg" style="display:flex;gap:6px;margin:0 0 8px"><label class="note">Show <select id="ctGridMode"><option value="lvl">level</option><option value="m">change, 1 month</option><option value="y">change, 1 year</option></select></label></div>
         <div class="tbl" id="ctGrid"></div>
         <p class="note">Each delivered bale is invoiced at the notice price plus or minus these differences for its color, leaf and staple (plus the strength discount if GPT is 25.0–25.9). They are the average of the designated spot markets' quoted differences, set on the sixth business day before delivery. Leaf 1 and 2 share one value; staple 37 covers 37 and longer.</p></div>
+      <div class="card" style="margin-top:12px" id="ctCarryCard"><h2>Spread vs full carry <span class="note">daily history</span></h2><p id="ctCarryRead" class="read">Loading…</p><div style="position:relative;height:220px"><canvas id="ctCarryH"></canvas></div><p class="note" id="ctCarryNote"></p></div>
       <div class="card" style="margin-top:12px"><h2>Premium history, key qualities</h2><div style="position:relative;height:260px"><canvas id="ctDiffH"></canvas></div></div>
       <div class="card" style="margin-top:12px"><h2>Certs on board <span class="note">ICE Report Center files (Certified Stock Reports – Cotton)</span></h2>
         <p class="note">Shows the latest ICE files stored on the desk (data/cotton/ice). To look at a newer file before it is added, pick it below: it is read in this browser and replaces the stored one until you choose "Forget loaded files".</p>
@@ -167,6 +184,7 @@ const Cotton = (() => {
     chart('ctDiffH', { type: 'line', data: { labels: lab, datasets: ks.map((k, i) => ({ label: k, data: lab.map(d => { const j = H[k].dates.indexOf(d); return j < 0 ? null : H[k].points[j]; }), borderColor: ['#7f8c8d', '#2c6fbb', '#2f6b3a', '#7d3c98', '#d68910', '#c0392b', '#16a085', '#34495e'][i % 8], pointRadius: 0, borderWidth: 1.4, spanGaps: true })) },
       options: { scales: { y: { title: { display: true, text: 'points vs 41-4-34' } } } } });
 
+    carryHist();
     // ----- private ICE files -----
     let WM = null;
     try { const [csv, rules] = await Promise.all([fetch('data/cotton/warehouse_map.csv').then(r => r.text()), getJSON('data/cotton/warehouse_map_rules.json')]);

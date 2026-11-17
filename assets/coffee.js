@@ -8,7 +8,7 @@ const Coffee = (() => {
     ['kc-flows', 'Futures, options &amp; COT'], ['kc-rv', 'Spreads &amp; vol'], ['kc-outlook', 'Outlook'], ['kc-seas', 'Seasonality &amp; technicals']];
   const body = () => $('#kcBody');
   const f0 = v => fmt(v, 0), f1 = v => fmt(v, 1), f2 = v => fmt(v, 2);
-  const ord = p => p == null ? '–' : `${f0(p)}th pct`;
+  const ord = p => p == null ? '–' : `${ordn(p)} pct`;
   const load = () => K ? Promise.resolve(K) : getJSON('coffee/data/coffee.json').then(d => (K = d));
   function shell() {
     $('#coffee').innerHTML = `<nav class="tabs" id="kcTabs">${TABS.map(([k, l], i) => `<button data-t="${k}" class="${k === tab ? 'on' : ''}">${i + 1} · ${l}</button>`).join('')}</nav><main><div id="kcBody"></div></main>`;
@@ -168,7 +168,7 @@ const Coffee = (() => {
     const T = [['arabica', 'Arabica'], ['conilon', 'Conilon'], ['soluble', 'Soluble'], ['total', 'Total']];
     const k = v => v == null ? '–' : fmt(v / 1000, 0) + 'k', S = C.same_point_prev_month, P = C.prev_month_total;
     const mn = m => { const [y, mo] = m.split('-'); return MON[+mo - 1] + ' ' + y; };
-    body().innerHTML = `<div class="grid g4">${T.map(([t, l]) => kpi(`${l}, ${mn(C.month)} to ${C.asof.slice(8)}th`, k(C.mtd[t]) + ' bags',
+    body().innerHTML = `<div class="grid g4">${T.map(([t, l]) => kpi(`${l}, ${mn(C.month)} to ${ordn(+C.asof.slice(8))}`, k(C.mtd[t]) + ' bags',
         `today ${k(C.day[t])}; ${S ? `same point of ${mn(C.prev_month)} ${k(S[t])} (${sgn(100 * (C.mtd[t] / S[t] - 1), 0, '%')})` : `all of ${mn(C.prev_month)} ${k(P[t])}`}`)).join('')}</div>
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Month-to-date registrations by type</h2><div style="position:relative;height:280px"><canvas id="kcCe"></canvas></div>
@@ -195,7 +195,7 @@ const Coffee = (() => {
       <div class="grid g3">${kpi('Last 30 days rain', pc(X.r30_pct_normal), 'of the 2011–25 average')}${kpi('Last 90 days', pc(X.r90_pct_normal), 'of average')}
         ${kpi('Since season start', pc(X.rstd_pct_normal), t === 'arabica' ? 'from Sep 1 (flowering)' : 'from Jul 1')}
         ${kpi('Next 16 days (forecast)', pc(X.f16_rain_pct_normal), 'of the usual rain for those dates')}
-        ${kpi('Root-zone soil moisture', X.sm100_p == null ? '–' : fmt(X.sm100_p, 0) + 'th pct', '28–100 cm, vs same week 2011–25')}
+        ${kpi('Root-zone soil moisture', X.sm100_p == null ? '–' : ordn(X.sm100_p) + ' pct', '28–100 cm, vs same week 2011–25')}
         ${kpi('Frost watch', X.f16_tmin == null ? '–' : fmt(X.f16_tmin, 1) + ' °C', X.coldest_forecast ? `coldest forecast night, weighted; lowest point ${X.coldest_forecast[1].toFixed(1)} °C; ${pc(X.frost_risk_share)} of output ≤3 °C` : '')}</div>
       <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Region (weather point)</th><th>Conab ${W.conab.season} output, k bags</th><th>Share</th><th>30d rain, mm</th><th>vs avg</th><th>Season rain</th><th>vs avg</th><th>Soil moisture pct</th><th>16-day rain</th><th>Coldest night ahead</th></tr>
         ${X.regions.map(r => `<tr><td class="l">${r.name}<br><span class="note">${r.conab_rows.join(', ')}</span></td><td class="n">${fmt(r.prod_k, 0)}</td><td class="n">${fmt(r.share, 1)}%</td>

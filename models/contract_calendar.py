@@ -206,7 +206,7 @@ def contracts_for(sym, start, n):
         if letters and CODES[m.month - 1] not in letters:
             continue
         d = rule(m)
-        out.append({"contract": f"{sym}{CODES[m.month - 1]}{m.year}", "month": str(m), **{k: str(v.date()) for k, v in d.items()}})
+        out.append({"contract": f"{sym}{CODES[m.month - 1]}{m.year}", "month": str(m), **{k: (str(v.date()) if v is not None else None) for k, v in d.items()}})
     return out
 
 

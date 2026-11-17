@@ -98,6 +98,43 @@ def get(tv, symbol, ex, n):
     return None
 
 
+def repair_cont(out):
+    """Yahoo's continuous (=F) bar for the latest session is sometimes broken (open 0, close not equal to any contract).
+    A continuous bar whose close matches no contract on that date is replaced by the bar of the contract that the
+    continuous series matched on the previous date; bars with a zero or missing open/high/low are repaired the same way."""
+    c = out[out.series == "cont"].set_index("date")
+    k = out[out.series != "cont"]
+    if c.empty or k.empty:
+        return out
+    by = {d: g.set_index("series") for d, g in k.groupby("date")}
+    dates = sorted(c.index)
+    fixed = 0
+    for i, d in enumerate(dates[-10:], start=len(dates) - 10):
+        if i < 1 or d not in by:
+            continue
+        row, kk = c.loc[d], by[d]
+        ok = (abs(kk.close - row.close) < 1e-6).any() and min(row.open, row.high, row.low) > 0
+        if ok:
+            continue
+        p, kp = dates[i - 1], by.get(dates[i - 1])
+        if kp is None:
+            continue
+        m = kp.index[abs(kp.close - c.loc[p].close) < 1e-6]
+        src = next((s for s in m if s in kk.index), None)
+        if src is None:
+            continue
+        b = kk.loc[src]
+        c.loc[d, ["open", "high", "low", "close"]] = [b.open, b.high, b.low, b.close]
+        if not row.volume and b.volume:
+            c.loc[d, "volume"] = b.volume
+        fixed += 1
+        print(f"  cont {d}: Yahoo bar did not match any contract, replaced with {src}")
+    if not fixed:
+        return out
+    c = c.reset_index()[out.columns]
+    return pd.concat([c, k])
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     tv = None
@@ -130,7 +167,7 @@ def main():
         if not frames:
             print(sym, "no data")
             continue
-        out = pd.concat(frames)
+        out = repair_cont(pd.concat(frames))
         for c in ("open", "high", "low", "close"):
             out[c] = out[c].round(4)
         out.to_csv(OUT / f"{sym}.csv", index=False)

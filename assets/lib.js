@@ -51,3 +51,6 @@ function tabs(root, onShow) {
     history.replaceState(null, '', '#' + b.dataset.tab); onShow && onShow(b.dataset.tab);
   });
 }
+
+// 1st, 2nd, 3rd, 11th... for percentile labels
+function ordn(v) { if (v == null || isNaN(v)) return '–'; const n = Math.round(v); return n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th')); }

@@ -273,7 +273,7 @@ const Sugar = (() => {
     const MON = { H: 'March', K: 'May', Q: 'August', V: 'October', Z: 'December' };
     body().innerHTML = `<div class="grid g2">
         <div class="card"><h2>White premium curve (${W.curve[0]?.date || ''})</h2><div class="tbl"><table><tr><th class="l">London / NY pair</th><th>White $/t</th><th>Raw ¢/lb</th><th>Premium $/t</th><th>1 week ago</th><th>Rank vs history</th></tr>
-          ${W.curve.map(r => `<tr><td class="l">${r.pair}</td><td class="n">${f1(r.white)}</td><td class="n">${f2(r.raw)}</td><td class="n"><b>${f1(r.prem)}</b></td><td class="n">${f1(r.prem_1w)}</td><td class="n">${r.pct_vs_hist != null ? fmt(r.pct_vs_hist, 0) + 'th pct' : '–'}</td></tr>`).join('')}</table></div>
+          ${W.curve.map(r => `<tr><td class="l">${r.pair}</td><td class="n">${f1(r.white)}</td><td class="n">${f2(r.raw)}</td><td class="n"><b>${f1(r.prem)}</b></td><td class="n">${f1(r.prem_1w)}</td><td class="n">${r.pct_vs_hist != null ? ordn(r.pct_vs_hist) + ' pct' : '–'}</td></tr>`).join('')}</table></div>
           <p class="note">Premium = London No. 5 white ($/t) − New York No. 11 raw (¢/lb × 22.046). A stand-alone refinery needs roughly $80–100/t to cover melting, energy and freight; above that, refiners bid for raws (supports No. 11); below it, raws back up at origin.</p></div>
         <div class="card"><h2>Front white premium</h2><div style="position:relative;height:300px"><canvas id="suWp"></canvas></div></div></div>
       <div class="card" style="margin-top:12px"><h2>Same pair in past years: average premium in the 30 days before expiry</h2><div class="grid g3">

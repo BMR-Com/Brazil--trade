@@ -160,7 +160,7 @@ const ChinaCotton = (() => {
       { label: 'Brent ($/bbl)', data: W.brent, borderColor: '#d68910', borderDash: [4, 3], borderWidth: 1.2, pointRadius: 0, yAxisID: 'y2' }] },
       options: { scales: { x: { ticks: { callback: function (v) { return this.getLabelForValue(v).slice(0, 7); } } }, y: { title: { display: true, text: 'yuan/t' } },
         y1: { position: 'right', grid: { display: false }, title: { display: true, text: 'cotton ÷ PSF' } }, y2: { display: false } } } });
-    $('#cnPolyNote').innerHTML = `Latest ${P.date}: cotton ${fmt(P.cf, 0)}, PSF ${fmt(P.pf, 0)} yuan/t (${fmt(P.pf_clb, 1)}¢/lb incl. VAT), ratio ${fmt(P.ratio, 2)} (${fmt(P.ratio_pctile, 0)}th percentile since Oct 2020, average ${fmt(P.ratio_avg, 2)}). Six-month change: Brent ${sgn(P.chg_26w.brent, 0, '%')}, PTA ${sgn(P.chg_26w.pta, 0, '%')}, PSF ${sgn(P.chg_26w.psf, 0, '%')}, cotton ${sgn(P.chg_26w.cotton, 0, '%')}. Zhengzhou front months and ICE Brent via TradingView.`;
+    $('#cnPolyNote').innerHTML = `Latest ${P.date}: cotton ${fmt(P.cf, 0)}, PSF ${fmt(P.pf, 0)} yuan/t (${fmt(P.pf_clb, 1)}¢/lb incl. VAT), ratio ${fmt(P.ratio, 2)} (${ordn(P.ratio_pctile)} percentile since Oct 2020, average ${fmt(P.ratio_avg, 2)}). Six-month change: Brent ${sgn(P.chg_26w.brent, 0, '%')}, PTA ${sgn(P.chg_26w.pta, 0, '%')}, PSF ${sgn(P.chg_26w.psf, 0, '%')}, cotton ${sgn(P.chg_26w.cotton, 0, '%')}. Zhengzhou front months and ICE Brent via TradingView.`;
   }
 
   function originDemand() {

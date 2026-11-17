@@ -82,7 +82,7 @@ const Cocoa = (() => {
     const rs = (W?.regions || []).filter(r => (r.commodities || []).includes('cocoa'));
     if (!rs.length) { body().innerHTML = '<div class="card"><p class="note">Cocoa-belt weather is collected with the next weather run (twice a day).</p></div>'; return; }
     const n = (v, d = 0) => v == null || v === '' ? '–' : (+v).toFixed(d);
-    const pct = p => p == null ? '' : `<span class="note">(${n(p)}th pct)</span>`;
+    const pct = p => p == null ? '' : `<span class="note">(${ordn(p)} pct)</span>`;
     const tone = p => p == null ? '' : p <= 20 ? 'dn' : p >= 80 ? 'up' : '';
     body().innerHTML = `<div class="card"><h2>Cocoa belt weather vs history</h2><div class="tbl"><table>
       <tr><th class="l">Region</th><th>Rain 30 d (mm)</th><th>Rain 90 d</th><th>Season to date (from)</th><th>Soil moisture 0-100 cm</th><th>Next 16 days rain</th><th>Max temp 30 d</th><th class="l">Flags</th></tr>

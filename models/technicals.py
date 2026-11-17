@@ -400,7 +400,15 @@ def build(sym):
     live = [s for s in order if s != "cont" and s in frames]
     # make the first live contract with real volume the default view
     vol = {s: frames[s].Volume.tail(10).mean() for s in live}
-    out["default"] = next((s for s in live if vol[s] >= 0.25 * max(vol.values())), live[0] if live else "cont") if live else "cont"
+    # ...but never a contract past the desk's roll date (business day before first notice), e.g. Dec cocoa on its notice day
+    try:
+        cal = json.loads((ROOT / "data" / "specs" / "calendar.json").read_text())["markets"][sym]["contracts"]
+        out_by = {c["contract"]: c["out_by"] for c in cal}
+    except Exception:
+        out_by = {}
+    today = pd.Timestamp.now().strftime("%Y-%m-%d")
+    pick = [s for s in live if out_by.get(s, "9999") >= today] or live
+    out["default"] = next((s for s in pick if vol[s] >= 0.25 * max(vol[x] for x in pick)), pick[0]) if pick else "cont"
     for a, b in zip(live, live[1:4]):
         j = frames[a].join(frames[b], how="inner", lsuffix="_a", rsuffix="_b")
         if len(j) < 60:

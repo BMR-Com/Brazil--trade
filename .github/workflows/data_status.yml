@@ -1,0 +1,29 @@
+name: data-status
+# Latest data date of every source the desk uses, with a late flag (data/status.json, shown on the Data status tab).
+# Also runs as the last step of softs-data. Reads only the repo (and the public on-call CSV), so it is cheap.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['pipelines/data_status.py', '.github/workflows/data_status.yml', 'data/cotton/ice/*.csv', 'data/cotton/ewr/**', 'data/cotton/cfr_compare.json']
+  schedule:
+    - cron: '13 */4 * * *'
+permissions: {contents: write}
+concurrency: {group: data-status, cancel-in-progress: true}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests numpy
+      - run: python pipelines/data_status.py
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/status.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: status $(date -u +%F' '%H:%M)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

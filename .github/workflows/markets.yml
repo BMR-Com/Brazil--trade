@@ -21,11 +21,12 @@ jobs:
       - run: python pipelines/markets.py
       - run: python pipelines/econ_calendar.py
         continue-on-error: true
-      - name: US economic snapshot (BLS, BEA, NY Fed, Treasury; twice a day, BLS no-key limit is 25 requests/day)
+      - name: US economic snapshot (BLS, BEA, NY Fed, Treasury; at most every 8 hours, BLS no-key limit is 25 requests/day)
         continue-on-error: true
         run: |
-          H=$(date -u +%H)
-          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$H" != "13" ] && [ "$H" != "19" ]; then echo "not this hour"; exit 0; fi
+          # GitHub starts only a few of the hourly runs, at random hours, so gate on the file's age rather than the clock hour
+          age=$(python3 -c "import json,datetime as d;g=json.load(open('data/macro/us_econ.json'))['generated'][:16];print(int((d.datetime.utcnow()-d.datetime.strptime(g,'%Y-%m-%d %H:%M')).total_seconds()//3600))" 2>/dev/null || echo 99)
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$age" -lt 8 ]; then echo "snapshot is ${age}h old; next refresh after 8h"; exit 0; fi
           python pipelines/us_macro.py
       - run: python models/macro.py
         continue-on-error: true

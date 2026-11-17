@@ -288,7 +288,9 @@ const Seasonal = (() => {
     const want = (location.hash.match(/^#seasonal\/(\w+)/) || [])[1];
     if (!V) { const el = document.getElementById('seasonal'); el.innerHTML = '<main></main>'; V = SeasonView($('main', el), { prefix: 'sz', full: true }); }
     let S = null; try { S = await SzData.summary(); } catch (e) {}
-    V.go(want && S && S.markets.some(m => m.sym === want) ? want : V.sym);
+    // the desk carries only some markets: fall back to the first one in the summary (CT here), not corn
+    const first = S && S.markets && S.markets[0] && S.markets[0].sym;
+    V.go(want && S && S.markets.some(m => m.sym === want) ? want : (V.cur || first || 'CT')); V.cur = want && S && S.markets.some(m => m.sym === want) ? want : (V.cur || first || 'CT');
   }
   return { show };
 })();

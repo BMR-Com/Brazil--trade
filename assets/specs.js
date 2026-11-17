@@ -8,7 +8,7 @@ const Specs = (() => {
     let rows = D.groups[group];
     if (only) rows = rows.filter(r => only.includes(r.of) || only.includes(r.sym));
     const anyEst = rows.some(r => r.maint_est != null);
-    return `<div class="card" style="margin-top:12px"><h2>Contracts, size and margin <span class="note">prices ${rows.find(r => r.price_date)?.price_date || ''}; exchange margins as of ${D.margins_asof}</span></h2>
+    return `<div class="card" style="margin-top:12px"><h2>Contracts, size and margin <span class="note">prices ${rows.find(r => r.price_date)?.price_date || ''}; ${rows.every(r => r.maint == null) ? 'margins estimated (see note)' : 'exchange margins as of ' + D.margins_asof}</span></h2>
       <div class="tbl"><table class="bt-t"><tr><th class="l">Contract</th><th class="l">Exchange · code</th><th class="l">Size</th><th class="l">Tick</th><th>Front month</th><th>Price</th><th>Contract value</th><th>Typical daily move</th><th>Maintenance margin</th><th>Initial (≈110%)</th><th>Margin % of value</th><th>Leverage</th><th class="l">Settlement</th><th class="l">Options</th></tr>
       ${rows.map(r => {
         const m = r.maint ?? r.maint_est, est = r.maint == null && r.maint_est != null;
@@ -17,7 +17,7 @@ const Specs = (() => {
           <td><b>${usd(r.notional)}</b></td><td>${usd(r.day_move)}</td><td>${m == null ? '–' : usd(m) + (est ? '*' : '')}${ls}</td><td>${m == null ? '–' : usd(m * 1.1) + (est ? '*' : '')}</td><td>${r.margin_pct ?? '–'}%</td><td>${r.leverage ? r.leverage + 'x' : '–'}</td>
           <td class="l note">${r.settle}</td><td class="l note">${r.options}</td></tr>`; }).join('')}</table></div>
       ${calHtml([...new Set(rows.map(r => r.of).filter(Boolean))])}
-      <p class="note">Contract value = front-month price × contract size. Typical daily move = one standard deviation of daily price changes over the last 20 days, in dollars per contract. Maintenance margin is the exchange minimum for the front month (CME Group, outright, speculative accounts); initial margin is 110% of it, and brokers often ask for more. Margins change with volatility and are higher close to expiry for some contracts.${anyEst ? ' *ICE does not publish a flat margin for cotton; the figure is an estimate (99% two-day move), so check ICE Clear US or your broker.' : ''}${rows.some(r => /Mini|Micro|E-mini/.test(r.name)) ? ' Mini, e-mini and micro contracts trade a half, a fifth or a tenth of the full size, with margin to match.' : ''}</p></div>`;
+      <p class="note">Contract value = front-month price × contract size. Typical daily move = one standard deviation of daily price changes over the last 20 days, in dollars per contract. Maintenance margin is the exchange minimum for the front month (CME Group, outright, speculative accounts); initial margin is 110% of it, and brokers often ask for more. Margins change with volatility and are higher close to expiry for some contracts.${anyEst ? ' *ICE does not publish a flat margin for its softs contracts; the figure is an estimate from recent volatility (99% two-day move) and is usually well below what ICE Clear US and brokers charge, so check them before sizing.' : ''}${rows.some(r => /Mini|Micro|E-mini/.test(r.name)) ? ' Mini, e-mini and micro contracts trade a half, a fifth or a tenth of the full size, with margin to match.' : ''}</p></div>`;
   }
   function calHtml(syms) {
     if (!CAL) return '';

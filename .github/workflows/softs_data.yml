@@ -55,6 +55,12 @@ jobs:
           python -W ignore models/sugar_signals.py || true
           python -W ignore models/sugar_flows.py || true
           python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || true
+      - name: contract calendar, cotton spread vs full carry, data status
+        continue-on-error: true
+        run: |
+          python -W ignore models/contract_calendar.py || true
+          python models/cotton_carry.py || true
+          python pipelines/data_status.py || true
       - name: commit
         run: |
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"

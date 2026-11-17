@@ -82,6 +82,10 @@ def crop_conditions():
     return p
 
 
+def ordn(x):
+    n = int(round(x)); return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
 def texas_drought():
     raw = remote("drought-monitor/main/data/state/TX.csv", "bmr-com/drought-monitor/data/state/TX.csv")
     d = pd.read_csv(io.BytesIO(raw), parse_dates=["Week"]).set_index("Week").sort_index()
@@ -367,7 +371,7 @@ def cotton_outlook(df, rd, prev, my, ch, hist, rep_, chk):
     if tx and txr and txr.get("prev_report") is not None:
         d = tx["D2_D4"] - txr["prev_report"]          # change across the window USDA had not yet priced in
         if abs(d) >= 8:
-            add("Texas drought", "bullish" if d > 0 else "bearish", f"Texas D2–D4 drought {tx['D2_D4']:.0f}% of area (week of {tx['week']}; {d:+.0f} pts since the previous report).")
+            add("Texas drought", "bullish" if d > 0 else "bearish", f"Texas D2–D4 drought {tx['D2_D4']:.0f}% of area ({'end-October reading, which sets abandonment; ' if tx.get('final') else ''}week of {tx['week']}; {d:+.0f} pts since the previous report).")
     ex = chk.get("export_sales")
     if ex and ex.get("pace_5y"):
         d = ex["pace"] - ex["pace_5y"]
@@ -388,7 +392,7 @@ def cotton_outlook(df, rd, prev, my, ch, hist, rep_, chk):
     if oc and cot and cot.get("ls_pct") is not None:
         n_old = oc["S_old"] - oc["P_old"]; lp = cot["ls_pct"]
         tilt = "bullish" if n_old > 0 and lp < 30 else "bearish" if lp > 70 else "neutral"
-        add("Mill fixation", tilt, f"On-call {oc['date']}: net old-crop {n_old/1000:+.1f}k contracts; commercials' old-crop long/short ratio at the {lp:.0f}th pct of 3 yrs — "
+        add("Mill fixation", tilt, f"On-call {oc['date']}: net old-crop {n_old/1000:+.1f}k contracts; commercials' old-crop long/short ratio at the {ordn(lp)} pct of 3 yrs — "
             + ("mills light on futures cover, fixing should add buying." if tilt == "bullish" else "commercials already long, fixing can pass by EFP." if tilt == "bearish" else "cover in its normal range."))
     score = sum(1 if f["tilt"] == "bullish" else -1 if f["tilt"] == "bearish" else 0 for f in F)
     label = "bullish" if score >= 2 else "modestly bullish" if score == 1 else "bearish" if score <= -2 else "modestly bearish" if score == -1 else "neutral"

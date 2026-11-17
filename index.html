@@ -28,7 +28,9 @@
   <button data-c="seasonal" title="Seasonal trades, heat maps, spreads and seasonal charts">Seasonality</button>
   <button data-c="cotfull" title="CFTC Commitments of Traders desk">COT (full)</button>
   <button data-c="brexp" title="Brazil agricultural exports (MDIC/SECEX)">Brazil exports</button>
+  <button data-c="status" title="Latest date of every data source and whether it is late">Data status</button>
 </nav>
+<div id="statusStrip" class="note" style="padding:4px 16px"></div>
 
 <section id="overview" style="display:none;padding:0"></section>
 <section id="optsig" style="display:none;padding:0"></section>
@@ -40,38 +42,40 @@
 <section id="options" style="display:none"></section>
 <section id="seasonal" style="display:none"></section>
 <section id="cotfull" style="display:none;padding:0"><iframe id="cot-frame" title="COT positioning desk" style="display:block;width:100%;height:calc(100vh - 92px);min-height:640px;border:0;background:#1e3c72"></iframe></section>
+<section id="status" style="display:none"></section>
 <section id="brexp" style="display:none;padding:0"><iframe id="brexp-frame" title="Brazil exports" style="display:block;width:100%;height:calc(100vh - 92px);min-height:640px;border:0"></iframe></section>
 <footer>Data: USDA (WASDE, PSD, FAS, NASS, AMS, FSA), CFTC, ICE, UNICA, Cecafé, ICO, MDIC/SECEX. Prices and positions as of the dates shown. Research use only; not investment advice.</footer>
-<script src="assets/lib.js?v=20261101a"></script>
-<script src="assets/specs.js?v=20261101a"></script>
+<script src="assets/lib.js?v=20261117a"></script>
+<script src="assets/specs.js?v=20261117a"></script>
 <script src="assets/playbook.js?v=20261101a"></script>
 <script src="assets/tech.js?v=20261111c"></script>
-<script src="assets/cotdesk.js?v=20261111c"></script>
+<script src="assets/cotdesk.js?v=20261117a"></script>
 <script src="assets/intel.js?v=20261111n"></script>
 <script src="assets/esr.js?v=20261101a"></script>
 <script src="assets/wasde.js?v=20261101a"></script>
 <script src="assets/rv.js?v=20261101a"></script>
 <script src="assets/markets.js?v=20261101a"></script>
 <script src="assets/geo.js?v=20261112x"></script>
-<script src="assets/options.js?v=20261112q"></script>
+<script src="assets/options.js?v=20261117a"></script>
 <script src="assets/balance.js?v=20261101a"></script>
-<script src="assets/seasonal.js?v=20261111o"></script>
+<script src="assets/seasonal.js?v=20261117a"></script>
 <script src="assets/basis.js?v=20261101a"></script>
-<script src="assets/china.js?v=20261101a"></script>
-<script src="assets/price_outlook.js?v=20261101a"></script>
+<script src="assets/china.js?v=20261117a"></script>
+<script src="assets/price_outlook.js?v=20261117a"></script>
 <script src="assets/india.js?v=20261101a"></script>
 <script src="assets/australia.js?v=20261111a"></script>
 <script src="assets/cotton_loan.js?v=20261101a"></script>
 <script src="assets/ams_review.js?v=20261101a"></script>
-<script src="assets/cotton.js?v=20261111a"></script>
-<script src="assets/sugar.js?v=20261104b"></script>
-<script src="assets/coffee.js?v=20261104b"></script>
+<script src="assets/cotton.js?v=20261117a"></script>
+<script src="assets/sugar.js?v=20261117a"></script>
+<script src="assets/coffee.js?v=20261117a"></script>
 <script src="assets/softs.js?v=20261103a"></script>
 <script src="assets/optsig.js?v=20261112r"></script>
 <script src="assets/overview.js?v=20261111o"></script>
-<script src="assets/cocoa.js?v=20261111a"></script>
+<script src="assets/cocoa.js?v=20261117a"></script>
+<script src="assets/status.js?v=20261117a"></script>
 <script>
-const SECTIONS = ['overview', 'optsig', 'cotton', 'sugar', 'coffee', 'cocoa', 'markets', 'options', 'seasonal', 'cotfull', 'brexp'];
+const SECTIONS = ['overview', 'optsig', 'cotton', 'sugar', 'coffee', 'cocoa', 'markets', 'options', 'seasonal', 'cotfull', 'brexp', 'status'];
 const CotFull = {
   show() {
     const f = $('#cot-frame'), t = (location.hash.match(/^#cot\/(\w+)/) || [])[1];
@@ -95,13 +99,15 @@ $$('nav.comm button[data-c]').forEach(b => b.onclick = () => {
     else if (c === 'options') Options.show();
     else if (c === 'seasonal') Seasonal.show();
     else if (c === 'cotfull') CotFull.show();
+    else if (c === 'status') Status.show();
     else if (c === 'brexp') { const f = $('#brexp-frame'); if (!f.src) f.src = 'brazil_exports.html'; history.replaceState(null, '', '#brexp'); }
   } catch (e) { $('#' + c).innerHTML = '<div class="card"><p class="note">This section failed to load.</p></div>'; console.error(e); }
 });
 const h = location.hash;
 const pick = h === '#overview' ? 'overview' : h === '#ideas' ? 'optsig' : h.startsWith('#su') ? 'sugar' : h.startsWith('#kc') ? 'coffee' : h.startsWith('#cc-') ? 'cocoa' : h.startsWith('#cot') ? 'cotfull' : h === '#markets' ? 'markets'
-  : h.startsWith('#options') ? 'options' : h.startsWith('#seasonal') ? 'seasonal' : h === '#brexp' ? 'brexp' : 'cotton';
+  : h.startsWith('#options') ? 'options' : h.startsWith('#seasonal') ? 'seasonal' : h === '#brexp' ? 'brexp' : h === '#status' ? 'status' : 'cotton';
 $('nav.comm button[data-c="' + pick + '"]').click();
+Status.strip($('#statusStrip'));
 </script>
 </body>
 </html>
