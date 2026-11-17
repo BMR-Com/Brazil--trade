@@ -10,4 +10,4 @@ jobs:
     steps:
       - run: |
           curl -sSL -A "Mozilla/5.0" -o kc.xls https://www.ice.com/publicdocs/futures_us_reports/coffee/coffee_cert_stock_20261116.xls
-          echo "B64START"; base64 -w0 kc.xls; echo; echo "B64END"
+          echo "B64START"; base64 -w 120 kc.xls; echo "B64END"
