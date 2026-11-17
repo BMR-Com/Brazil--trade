@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 11:10 UTC",
+ "generated": "2026-11-17 11:15 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -519,6 +519,66 @@
    "used_in": "cocoa balance tab"
   },
   {
+   "group": "Desk watch",
+   "source": "What changed strip (settlement date)",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "ok",
+   "manual": false,
+   "used_in": "overview what-changed strip"
+  },
+  {
+   "group": "Desk watch",
+   "source": "Delivery-period dashboard (settlement date)",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "ok",
+   "manual": false,
+   "used_in": "delivery tab"
+  },
+  {
+   "group": "Desk watch",
+   "source": "Alerts check",
+   "latest": null,
+   "cadence": "daily",
+   "age": null,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "missing",
+   "manual": false,
+   "used_in": "overview alerts card, email"
+  },
+  {
+   "group": "Desk watch",
+   "source": "Desk call log / track record",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "ok",
+   "manual": false,
+   "used_in": "overview track record"
+  },
+  {
+   "group": "Sugar",
+   "source": "Ethanol price used for parity (CEPEA, else B3 futures)",
+   "latest": "2026-11-13",
+   "cadence": "daily",
+   "age": 2,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "ethanol parity tab"
+  },
+  {
    "group": "Macro",
    "source": "Markets snapshot",
    "latest": "2026-11-17",
@@ -579,5 +639,5 @@
    "used_in": "news sections"
   }
  ],
- "late": 4
+ "late": 5
 }
