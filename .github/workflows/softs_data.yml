@@ -12,6 +12,8 @@ on:
     - cron: '47 20 * * 5'     # Friday after the 3:30 pm ET CFTC release
     - cron: '13 21 * * 5'     # Friday backups (GitHub often starts scheduled runs hours late)
     - cron: '29 19 * * 5'     # starts early in EDT and waits for the release (COT_WAIT)
+    - cron: '37 23 * * 1-5'   # evening catch-up: holiday weeks publish COT on Monday, and late-starting runs
+    - cron: '11 2 * * 2-6'    # second catch-up (evening US time)
 permissions: {contents: write}
 concurrency: {group: softs-data, cancel-in-progress: false}
 jobs:
