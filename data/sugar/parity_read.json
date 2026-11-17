@@ -1,19 +1,19 @@
 {
- "generated": "2026-11-17 11:19 UTC",
+ "generated": "2026-11-17 11:20 UTC",
  "now": {
   "date": "2026-11-16",
   "contract": "SBH2027",
   "contract_label": "Mar 27",
   "sb": 18.1,
-  "eth": 3151.5,
+  "eth": 2926.9,
   "eth_date": "2026-11-13",
-  "eth_src": "B3 hydrous ethanol futures, front month, R$/m³ (cash-settled on the CEPEA/ESALQ Paulínia index)",
+  "eth_src": "CEPEA/ESALQ: Indicador Semanal Do Etanol Hidratado Combustível Cepea/Esalq - São Paulo (R$/m³; week ending on the date shown)",
   "fx": 5.784,
   "fx_date": "2026-11-16",
-  "parity": 16.17,
-  "gap": 1.93,
+  "parity": 15.12,
+  "gap": 2.98,
   "sugar_pays": true,
-  "sb_level_ethanol_equal": 16.17,
+  "sb_level_ethanol_equal": 15.12,
   "eth_level_sugar_equal": 3564.0,
   "eth_age_bd": 1,
   "b3_eth": 3151.5,
@@ -41,5 +41,5 @@
   "fob_logistics_brl_t": 190.0,
   "lb_per_tonne_over_100": 22.0462
  },
- "cepea_file": false
+ "cepea_file": true
 }

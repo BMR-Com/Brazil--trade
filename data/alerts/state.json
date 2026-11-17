@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 11:19 UTC",
+ "generated": "2026-11-17 11:20 UTC",
  "asof": "2026-11-16",
  "today": "2026-11-17",
  "active": [
@@ -100,7 +100,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   }
  ],
@@ -155,7 +155,7 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 16.17¢/lb: No. 11 Mar 27 now 18.10¢ (2026-11-16)"
+   "text": "Ethanol parity 15.12¢/lb: No. 11 Mar 27 now 18.10¢ (2026-11-16)"
   }
  ],
  "rules_checked": 126,
