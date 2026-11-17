@@ -1,6 +1,6 @@
 {
-  "last_run_utc": "2026-11-17T00:21:56Z",
-  "note": "2026-11-17 run: ADMIS from news.json teasers only (no browser in this cloud run); Czapp feed returned no items, articles found via search; 16 Nov Czapp daily page failed to load; Rabobank pages read, all new market pieces were Exclusive except Mexico animal protein outlook.",
+  "last_run_utc": "2026-11-17T00:32:54Z",
+  "note": "2026-11-17 run (completed on request): ADMIS posts read in full via WebFetch (works now); Czapp feed empty, articles found via search/homepage, 16 Nov daily page failed; Rabobank new market pieces Exclusive except Mexico animal protein outlook.",
   "urls": [
     "https://www.admis.com/ag-market-view-for-nov-12-2026/",
     "https://www.admis.com/beef-imports-pressuring-beef-prices/",
@@ -24,6 +24,11 @@
     "https://www.czapp.com/analyst-insights/us-sugar-prices-hold-firm-amid-tight-supply-outlook/",
     "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-9th-november-2026/",
     "https://www.czapp.com/analyst-insights/us-ethanol-exports-poised-for-growth-in-mexico-and-brazil/",
-    "https://www.rabobank.com/knowledge/q011558329-mexico-s-animal-protein-outlook-2027"
+    "https://www.rabobank.com/knowledge/q011558329-mexico-s-animal-protein-outlook-2027",
+    "https://www.czapp.com/analyst-insights/grains-markets-fragment-below-surface-despite-plentiful-supply/",
+    "https://www.czapp.com/analyst-insights/container-rates-ease-as-capacity-returns/",
+    "https://www.czapp.com/analyst-insights/supply-pressure-weaker-brl-accelerate-soybean-price-slide/",
+    "https://www.czapp.com/analyst-insights/tight-powder-supplies-drive-us-dairy-price-gains/",
+    "https://www.czapp.com/analyst-insights/futures-and-market-data-9th-november-2026/"
   ]
 }
