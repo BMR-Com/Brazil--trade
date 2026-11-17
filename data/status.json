@@ -637,8 +637,24 @@
    "state": "ok",
    "manual": false,
    "used_in": "news sections"
+  },
+  {
+   "group": "ICE drop box",
+   "source": "Files not recognised (inbox/unrecognised): 0",
+   "latest": null,
+   "cadence": "on upload",
+   "age": null,
+   "age_unit": "days",
+   "limit": 0,
+   "state": "ok",
+   "manual": true,
+   "used_in": "last file received per type is listed below the table"
   }
  ],
  "late": 4,
- "inbox": null
+ "inbox": {
+  "updated": "2026-11-17 15:06 UTC",
+  "last": [],
+  "unrecognised": []
+ }
 }
