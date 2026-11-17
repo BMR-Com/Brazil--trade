@@ -240,7 +240,7 @@ const Sugar = (() => {
     body().innerHTML = `<div class="grid g4">
         ${kpi('Hydrous ethanol parity', f2(nw.parity) + ' ¢/lb', `B3 ethanol R$${fmt(nw.eth, 0)}/m³ at R$${fmt(nw.fx, 4)}/US$ (${nw.date})`)}
         ${kpi('Sugar No. 11 front', f2(nw.sb) + ' ¢/lb', `ethanol − sugar ${sgn(nw.eth_minus_sugar, 2)} ¢/lb`)}
-        ${kpi('Parity vs last 5 years', fmt(nw.pct_rank_5y, 0) + 'th percentile', nw.eth_minus_sugar < 0 ? 'sugar pays more than ethanol: mills max sugar' : 'ethanol pays more: mills shift cane to ethanol')}
+        ${kpi('Parity vs last 5 years', ordn(nw.pct_rank_5y) + ' percentile', nw.eth_minus_sugar < 0 ? 'sugar pays more than ethanol: mills max sugar' : 'ethanol pays more: mills shift cane to ethanol')}
         ${kpi('Pump ratio hydrous/gasoline', f1(Pu.ratio[m]) + '%', `São Paulo, week to ${Pu.dates[m]}; under ~70% drivers choose ethanol`)}</div>
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Sugar against hydrous ethanol parity</h2><div style="position:relative;height:300px"><canvas id="suPar"></canvas></div>
@@ -359,7 +359,7 @@ const Sugar = (() => {
       ['World balance', tilt(-(W.prod[n] - W.cons[n]), 1.5), `USDA has world production ${f1(W.prod[n])} mt against consumption ${f1(W.cons[n])} mt, a ${W.prod[n] >= W.cons[n] ? 'surplus' : 'deficit'} of ${f1(Math.abs(W.prod[n] - W.cons[n]))} mt; stocks/use ${f1(W.stu[n])}%.`],
       ['Centre-South crop', tilt(34.5 - Pj.sugar.mid, 0.5), `At past-season pace the Centre-South makes ${f2(Pj.sugar.mid)} mt of sugar this season (middle range ${f1(Pj.sugar.lo)}–${f1(Pj.sugar.hi)}), from ${f1(Pj.cane.mid)} mt of cane.`],
       ['Ethanol parity', tilt(-Pa.eth_minus_sugar, 1), `Sugar ${f2(Pa.sb)} ¢/lb against hydrous parity ${f2(Pa.parity)} ¢/lb: ${Pa.eth_minus_sugar < 0 ? 'sugar still pays more, so mills keep the mix high. Below parity mills shift cane to ethanol, but that changes the mix over a season, not the price week to week' : 'ethanol pays more, so mills cut the sugar mix'}.`],
-      ['Refining demand', tilt((wp?.prem || 90) - 90, 10), wp ? `Front white premium $${f1(wp.prem)}/t (${wp.pair}), ${fmt(wp.pct_vs_hist, 0)}th percentile of past years.` : 'No white premium data.'],
+      ['Refining demand', tilt((wp?.prem || 90) - 90, 10), wp ? `Front white premium $${f1(wp.prem)}/t (${wp.pair}), ${ordn(wp.pct_vs_hist)} percentile of past years.` : 'No white premium data.'],
     ];
     body().innerHTML = `<div class="card"><h2>Sugar outlook factors</h2><div class="tbl"><table>${F.map(([a, t, x]) => `<tr><td class="l"><b>${a}</b></td><td>${t}</td><td class="l sv-w">${x}</td></tr>`).join('')}</table></div>
         <p class="note">Rule-of-thumb read of the data on these tabs; not a forecast.</p></div>
@@ -372,8 +372,8 @@ const Sugar = (() => {
     getJSON('data/sugar/signals.json').then(G => {
       const N = G.now, H = G.history, k = v => v == null ? '–' : fmt(v, 0);
       $('#suSig').innerHTML = `<div class="card"><h2>Positioning, reais and parity <span class="note">CFTC ${G.cot_date}</span></h2>
-        <div class="grid g4">${kpi('Managed money net', sgn(N.mm_net, 0) + ' lots', `${f1(N.mm_pct_oi)}% of open interest; ${k(N.mm_pctile_3y)}th percentile of 3 years; ${sgn(N.mm_chg_1w, 0)} on the week`)}
-        ${kpi('Sugar in reais', 'R$ ' + k(N.brl_t) + '/t', `${k(N.brl_t_pctile_5y)}th percentile of 5 years: the price mills see when they fix`)}
+        <div class="grid g4">${kpi('Managed money net', sgn(N.mm_net, 0) + ' lots', `${f1(N.mm_pct_oi)}% of open interest; ${ordn(N.mm_pctile_3y)} percentile of 3 years; ${sgn(N.mm_chg_1w, 0)} on the week`)}
+        ${kpi('Sugar in reais', 'R$ ' + k(N.brl_t) + '/t', `${ordn(N.brl_t_pctile_5y)} percentile of 5 years: the price mills see when they fix`)}
         ${kpi('Over hydrous parity', sgn(N.parity_premium, 2) + ' ¢/lb', N.parity_premium > 0 ? 'sugar pays more than ethanol: mix stays at maximum sugar' : 'ethanol pays more: mills shift cane to ethanol')}
         ${kpi('Market depth', k(N.lots_per_point_last) + ' lots/pt', `fund lots per point of price last week; median ${k(N.lots_per_point_median)} since 2021`)}</div>
         <div style="position:relative;height:220px;margin-top:8px"><canvas id="suSigC"></canvas></div>

@@ -67,7 +67,7 @@ def more_cards(cards):
         sea = t.get("seasonal") or []
         if sea:
             x = sea[0]
-            L.append(f"Seasonal: {x.get('label')} at the {x.get('pct_same_time')}th percentile of past years at this point of the contract.")
+            L.append(f"Seasonal: {x.get('label')} at the {x.get('pct_same_time')} percentile (rank) of past years at this point of the contract.")
         c = J(D / "cot_desk" / f"{sym}.json")
         if c and c.get("series", {}).get("date"):
             ser = c["series"]
