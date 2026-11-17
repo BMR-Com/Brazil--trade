@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 06:01 UTC",
+ "generated": "2026-11-17 06:09 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -460,6 +460,30 @@
   },
   {
    "group": "Sugar",
+   "source": "India ex-mill prices (ChiniMandi daily update)",
+   "latest": null,
+   "cadence": "daily",
+   "age": null,
+   "age_unit": "business days",
+   "limit": 4,
+   "state": "missing",
+   "manual": false,
+   "used_in": "sugar India detail tab, import parity"
+  },
+  {
+   "group": "Sugar",
+   "source": "UNICA Centre-South report (last published)",
+   "latest": null,
+   "cadence": "irregular",
+   "age": null,
+   "age_unit": "days",
+   "limit": 120,
+   "state": "missing",
+   "manual": false,
+   "used_in": "crush tab ATR; MAPA is the main series"
+  },
+  {
+   "group": "Sugar",
    "source": "Weekly report input pack",
    "latest": "2026-11-17",
    "cadence": "daily",
@@ -555,5 +579,5 @@
    "used_in": "news sections"
   }
  ],
- "late": 4
+ "late": 6
 }
