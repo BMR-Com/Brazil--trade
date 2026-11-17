@@ -1,0 +1,163 @@
+{
+ "source": "ICE Futures U.S. Rulebook, Chapter 9 Cocoa (Rules 9.00-9.27, Resolutions 1-4), read 2026-11-17; earlier values from ICE Submission 20-10 (Jan 14 2020) and Submission 24-137 (Sep 13 2024)",
+ "source_url": "https://www.ice.com/publicdocs/rulebooks/futures_us/9_Cocoa.pdf",
+ "read_on": "2026-11-17",
+ "units": "US$ per metric ton",
+ "lot_t": 10,
+ "months": "HKNUZ",
+ "tick_usd_t": 1,
+ "fnd_rule": "10 business days before the first business day of the delivery month; last notice day 10 business days before the last business day; deliveries from the 6th to the last business day",
+ "group_premium_usd_t": {
+  "A": 160,
+  "B": 80,
+  "C": 0
+ },
+ "groups": {
+  "A": [
+   "Ghana",
+   "Ivory Coast",
+   "Nigeria",
+   "Sierra Leone",
+   "Togo"
+  ],
+  "B": [
+   "Arriba (Ecuador)",
+   "Ecuador",
+   "Brazil",
+   "Cameroon",
+   "Colombia",
+   "Costa Rica",
+   "Sanchez",
+   "Hispaniolas",
+   "Honduras",
+   "Jamaica",
+   "Indonesia-Java",
+   "Mexico",
+   "Peru",
+   "Venezuela",
+   "Tanzania",
+   "Uganda",
+   "Papua New Guinea",
+   "New Guinea",
+   "Nicaragua",
+   "Panama",
+   "Madagascar",
+   "Solomon Island",
+   "Vanuatu",
+   "Suriname"
+  ],
+  "C": [
+   "Bolivia",
+   "Haiti",
+   "Indonesia-Sulawesi",
+   "Indonesia",
+   "Malaysia",
+   "all other growths"
+  ]
+ },
+ "groups_note": "Group A and C lists from Rule 9.18(b)(i) as read; Group B list as read (includes 'and others'); origins seen in ICE grading files but not named in the read text are put in Group B only where ICE's grading results show the $80 premium.",
+ "count_classes": {
+  "A": [
+   1000,
+   1200
+  ],
+  "B": [
+   1100,
+   1300
+  ],
+  "C": [
+   1200,
+   1400
+  ]
+ },
+ "count_note": "beans per kg: standard / maximum; a lot over its class maximum but within the next class is delivered at that class's premium; over 1,400 not deliverable; since the May 2020 contract the class is set by the count at grading (Submission 20-10)",
+ "count_disc_pct": [
+  [
+   1,
+   25,
+   0.5
+  ],
+  [
+   26,
+   50,
+   1.0
+  ],
+  [
+   51,
+   75,
+   1.5
+  ],
+  [
+   76,
+   100,
+   2.0
+  ],
+  [
+   101,
+   125,
+   2.5
+  ],
+  [
+   126,
+   150,
+   3.0
+  ],
+  [
+   151,
+   175,
+   3.5
+  ],
+  [
+   176,
+   200,
+   4.0
+  ]
+ ],
+ "slate": {
+  "standard_pct": 10,
+  "usd_t_per_pct": 2.2,
+  "exempt": [
+   "Indonesia-Sulawesi",
+   "Sanchez",
+   "Haiti"
+  ]
+ },
+ "defects": {
+  "mould_pct": 4,
+  "insect_pct": 4,
+  "combined_pct": 6,
+  "note": "over these limits not deliverable; smoky or hammy cocoa not deliverable"
+ },
+ "waste": {
+  "par_pct": 1.0,
+  "max_pct": 5.0,
+  "note": "1.01-2.50%: deduction = waste - 1.0; 2.51-5.00%: 1.5 + 1.5 x (waste - 2.5); deducted from invoice weight"
+ },
+ "ports": {
+  "New York": 0,
+  "Delaware River": 0,
+  "Albany": 0,
+  "Baltimore": 0,
+  "Hampton Roads": 0
+ },
+ "port_note": "Rule 9.02(c): no price differential by delivery point; seller chooses",
+ "certificate_validity": "Rule 9.18(d)(ii): a certificate issued in a delivery period is valid for the rest of it and the next; issued outside a delivery period, for the next two delivery periods. Growth, condition, waste and count stay valid while the lot is identifiable; grade must be renewed. Expired lots may be re-graded (unlike coffee); lots that failed cannot be re-graded.",
+ "weight_loss_allowance": "Rule 9.23(b): late or redelivered cocoa, 0.25% of weight per 30 days for most growths (separate schedule for Sanchez, Haiti, Jamaica)",
+ "weight": {
+  "franchise_pct": 1,
+  "partial_default_t": [
+   9.5,
+   9.9
+  ],
+  "max_invoiced_t": 10.3,
+  "bag_kg": [
+   45,
+   75
+  ]
+ },
+ "customs": "Resolution No. 1 (Apr 8 2025): cocoa submitted for grading must be customs cleared and free of duties, taxes and tariffs",
+ "load_out": "Resolution No. 2 XI: 250 t/day (operator holding up to 30,000 t at a port) or 500 t/day; 60 days",
+ "eudr": "None in the ICE Futures U.S. cocoa rules (US warehouses). ICE Futures Europe (London cocoa) has its own EUDR delivery rules; not modelled here.",
+ "lid_usd_t": 400,
+ "lid_note": "Living Income Differential set by Côte d'Ivoire and Ghana on forward sales from the 2020/21 crop; a physical premium, not an exchange rule (Bloomberg/Investing.com, 27 Jan 2020)"
+}

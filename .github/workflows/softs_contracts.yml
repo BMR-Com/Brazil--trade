@@ -26,6 +26,11 @@ jobs:
         continue-on-error: true
       - run: python pipelines/contracts.py AC KC_pre2006 CC_pre2006
         continue-on-error: true
+      - name: coffee and cocoa spread history, certs profiles
+        run: |
+          python -W ignore models/softs_spreads_history.py
+          python -W ignore models/cocoa_certs_profile.py
+          python -W ignore models/coffee_certs_profile.py
       - name: spreads, calendar, seasonality, specs, trader sheet
         continue-on-error: true
         run: |

@@ -600,7 +600,7 @@
    "limit": 2,
    "state": "ok",
    "manual": true,
-   "used_in": "stored; no panel yet"
+   "used_in": "Certs profile tab"
   },
   {
    "group": "Cocoa",
@@ -612,7 +612,43 @@
    "limit": 40,
    "state": "ok",
    "manual": true,
-   "used_in": "stored; no panel yet"
+   "used_in": "Certs profile tab"
+  },
+  {
+   "group": "Cocoa",
+   "source": "Certs profile and delivery value (built from the ICE files)",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Certs profile tab"
+  },
+  {
+   "group": "Cocoa",
+   "source": "CC calendar-spread history (per-contract closes)",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Certs profile tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "KC calendar-spread history (per-contract closes)",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Certs profile tab"
   },
   {
    "group": "Cocoa",

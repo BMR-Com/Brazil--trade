@@ -304,8 +304,14 @@ const Coffee = (() => {
         <div class="card"><h2>Age discount and other adjustments</h2><div class="tbl"><table><tr><th class="l">Days since grading</th><th>Discount</th></tr><tr><td class="l">0–120</td><td class="n">none</td></tr><tr><td class="l">121–150</td><td class="n">0.50¢</td></tr>
           ${R.age_bands.bands.map(([lo, hi, base, st]) => `<tr><td class="l">${lo + 1}–${hi > 9999 ? '' : hi}</td><td class="n">${f2(base / 100)}¢ + ${f2(st / 100)}¢ per 30 days</td></tr>`).join('')}</table></div>
           <p class="note">Weight allowance: 0.5% of the weight for the second month after weighing plus 0.125% a month after that, at the invoice price. Load-out (OCA) and rent (RCA) adjustments: the delivering warehouse's posted rates against the New York average (rent × 2 for Mar/May/Jul, × 3 for Sep/Dec). EUDR: transition stock in European ports loses 0.25¢ a month from January 2027 (from the March 2027 contract). Source: <a href="${R.source}" target="_blank" rel="noopener">ICE rulebook, Coffee "C"</a>, read ${R.read_on}.</p></div></div>
-      <p class="note">Variables used: ${D.variables.join('; ')}. Built ${D.built}.</p>`;
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Front / second spread since ${D.spreads.first.slice(0, 4)} (% of price)</h2>${box('cpSp', 260)}<p class="note">Monthly average of front minus second (positive = inverted), front rolled at first notice; per-contract ICE settlements. Red lines: rule changes. Before Dec 2023 old coffee could be re-graded as fresh, so the earlier curve is not like for like.</p></div>
+        <div class="card"><h2>${D.spreads.now.pair} at the same point, every year</h2>${box('cpSy', 260)}<p class="note">${D.spreads.now.pair} now ${sgn(D.spreads.now.s12, 2, '¢')} (${sgn(D.spreads.now.pct, 2, '%')} of price), ${D.spreads.now.bd_to_fnd} business days before first notice; bars = the same spread at the same distance in earlier years (red = now).</p></div></div>
+      <p class="note">Variables used: ${D.variables.join('; ')}; KC calendar spreads from per-contract settlements (${D.spreads.first.slice(0, 4)} on). Built ${D.built}.</p>`;
     // charts
+    const SPk = D.spreads;
+    chart('cpSp', { type: 'line', data: { labels: SPk.months, datasets: [{ label: 'Front − second, % of price', data: SPk.s12_pct, borderColor: '#7d3c98', pointRadius: 0 }] }, plugins: [ruleLines(SPk.markers, SPk.months)] });
+    chart('cpSy', { type: 'bar', data: { labels: SPk.same_point.map(r => r.year), datasets: [{ label: `${SPk.now.pair}, % of price`, data: SPk.same_point.map(r => r.pct), backgroundColor: SPk.same_point.map((r, i) => i === SPk.same_point.length - 1 ? '#c0392b' : '#7d3c98') }] } });
     const drawH = () => { const r = $('.rng[data-for=cpH] button.on').dataset.r, v = $('.rng[data-for=cpV] button.on').dataset.r;
       const a = r === 'All' ? 0 : Math.max(0, H.months.length - 121), lab = H.months.slice(a);
       const ds = v === 'Total' ? [{ label: 'Certified, bags', data: H.total.slice(a), borderColor: '#7d3c98', backgroundColor: 'rgba(125,60,152,.12)', fill: true, pointRadius: 0 }]

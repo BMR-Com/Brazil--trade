@@ -696,5 +696,20 @@ out["contract_compare"] = {
     "kc_eudr": P["eudr_transition"], "origin_note": P.get("origin_diff_note"),
 }
 
+# ------------------------------------------------ 6. calendar spreads vs history (models/softs_spreads_history.py)
+spr = pd.read_csv(need("data/coffee/kc_spreads_history.csv"), parse_dates=["date"])
+sm = spr.assign(m=spr.date.dt.strftime("%Y-%m")).groupby("m").agg(s12=("s12", "mean"), f1=("f1", "mean"))
+nw = spr.iloc[-1]
+same = spr[(spr.pair12 == nw.pair12) & ((spr.bd_to_fnd - int(nw.bd_to_fnd)).abs() <= 2)]
+same = same.assign(y=same.front.str[-4:]).groupby("y").agg(s12=("s12", "mean"), f1=("f1", "mean")).reset_index()
+out["spreads"] = {"months": list(sm.index), "s12": [rd(v, 2) for v in sm.s12], "s12_pct": [rd(v, 2) for v in sm.s12 / sm.f1 * 100],
+                  "now": {"date": nw.date.strftime("%Y-%m-%d"), "pair": nw.pair12, "front": nw.front, "second": nw.second, "s12": rd(nw.s12, 2),
+                          "pct": rd(nw.s12 / nw.f1 * 100, 2), "bd_to_fnd": int(nw.bd_to_fnd), "s23": rd(nw.s23, 2), "pair23": nw.pair23},
+                  "same_point": [{"year": r.y, "s12": rd(r.s12, 2), "pct": rd(r.s12 / r.f1 * 100, 2)} for r in same.itertuples()],
+                  "first": spr.date.min().strftime("%Y-%m-%d"),
+                  "markers": [{"date": r.effective_date[:7], "label": r.short} for r in rules.itertuples()
+                              if r.effective_date[:7] >= spr.date.min().strftime("%Y-%m") and r.effective_date <= date.today().isoformat()
+                              and r.short not in ("Rent cost adjustment", "Origin schedule 2005")]}
+
 json.dump(out, open(OUT, "w"), separators=(",", ":"), allow_nan=False)
 print(f"certs profile: {tot_now:,.0f} bags ({S['lots']:,.0f} lots) on {D_DATE.date()}, avg invoice diff {S['total']:+.2f} c/lb vs {dcode} {F:.2f}")
