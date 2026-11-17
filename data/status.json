@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 05:37 UTC",
+ "generated": "2026-11-17 05:50 UTC",
  "today": "2026-11-16",
  "sources": [
   {
@@ -340,6 +340,102 @@
   },
   {
    "group": "Sugar",
+   "source": "Cane-belt weather, stoppage days, season range (ERA5)",
+   "latest": "2026-11-15",
+   "cadence": "daily",
+   "age": 0,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "sugar Brazil cane weather tab"
+  },
+  {
+   "group": "Sugar",
+   "source": "Cane-belt ensemble forecast (ECMWF ENS, GEFS)",
+   "latest": null,
+   "cadence": "daily",
+   "age": null,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "missing",
+   "manual": false,
+   "used_in": "sugar Brazil cane weather tab"
+  },
+  {
+   "group": "Sugar",
+   "source": "India releases: ISMA, DGFT, quotas, prices (manual)",
+   "latest": "2026-11-05",
+   "cadence": "fortnightly",
+   "age": 11,
+   "age_unit": "days",
+   "limit": 20,
+   "state": "ok",
+   "manual": true,
+   "used_in": "sugar India tab"
+  },
+  {
+   "group": "Sugar",
+   "source": "EC balance sheet and EU price (manual)",
+   "latest": "2026-08-27",
+   "cadence": "monthly",
+   "age": 81,
+   "age_unit": "days",
+   "limit": 45,
+   "state": "late",
+   "manual": true,
+   "used_in": "sugar Europe tab"
+  },
+  {
+   "group": "Sugar",
+   "source": "ICE expiry deliveries (manual, from news)",
+   "latest": "2026-10-01",
+   "cadence": "per expiry",
+   "age": 46,
+   "age_unit": "days",
+   "limit": 75,
+   "state": "ok",
+   "manual": true,
+   "used_in": "sugar deliveries tab"
+  },
+  {
+   "group": "Sugar",
+   "source": "Agency revisions: ISO, EC, Conab, USDA (manual)",
+   "latest": "2026-11-13",
+   "cadence": "monthly",
+   "age": 3,
+   "age_unit": "days",
+   "limit": 45,
+   "state": "ok",
+   "manual": true,
+   "used_in": "sugar revisions table"
+  },
+  {
+   "group": "Sugar",
+   "source": "Brazil fuel-policy log (manual)",
+   "latest": "2026-11-09",
+   "cadence": "as announced",
+   "age": 7,
+   "age_unit": "days",
+   "limit": 35,
+   "state": "ok",
+   "manual": true,
+   "used_in": "sugar Brazil cane weather tab"
+  },
+  {
+   "group": "Sugar",
+   "source": "Weekly report input pack",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 0,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "weekly sugar research"
+  },
+  {
+   "group": "Sugar",
    "source": "Brazil sugar export line-up (weekly)",
    "latest": "2026-11-17",
    "cadence": "weekly",
@@ -423,5 +519,5 @@
    "used_in": "news sections"
   }
  ],
- "late": 3
+ "late": 5
 }
