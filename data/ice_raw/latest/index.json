@@ -1,0 +1,22 @@
+{
+ "cc_certs": {
+  "report_date": "2026-11-16",
+  "file": "data/ice_raw/latest/cc_certs.xls",
+  "original_name": "cocoa_cert_stock_20261116.xls"
+ },
+ "cc_grading": {
+  "report_date": "2026-10",
+  "file": "data/ice_raw/latest/cc_grading.xls",
+  "original_name": "Cocoa_Grading_Results_with_Discounts_EOM_OCTOBER_2026.xls"
+ },
+ "kc_aging": {
+  "report_date": "2026-10-30",
+  "file": "data/ice_raw/latest/kc_aging.xls",
+  "original_name": "coffee_aging_20261030.xls"
+ },
+ "kc_grading": {
+  "report_date": "2026-10",
+  "file": "data/ice_raw/latest/kc_grading.pdf",
+  "original_name": "Coffee_Grading_Analysis_October_2026.pdf"
+ }
+}

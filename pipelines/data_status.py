@@ -79,6 +79,7 @@ SOURCES = [
     ("Cotton", "ICE certs: year of growth (upload)", "weekly (Mon)", 9, C, True, lambda: J("data/cotton/ice/latest.json").get("year_of_growth_date"), "certs tab"),
     ("Cotton", "ICE certs: strength (upload)", "weekly (Mon)", 9, C, True, lambda: J("data/cotton/ice/latest.json").get("strength_date"), "certs tab"),
     ("Cotton", "ICE certs: stock by delivery point (upload)", "daily", 2, B, True, lambda: J("data/cotton/ice/latest.json").get("stock_date"), "certs tab"),
+    ("Cotton", "ICE certs: four months and older (upload)", "weekly (Mon)", 9, C, True, lambda: J("data/cotton/ice/latest.json").get("four_months_older_date"), "stored for the certs tab over-age allowance"),
     ("Cotton", "EWR receipts (upload)", "weekly", 9, C, True, lambda: J("data/cotton/ewr/latest.json").get("asof"), "certs tab"),
     ("Cotton", "CFR Far East quotes (upload)", "weekly", 9, C, True, lambda: J("data/cotton/cfr_compare.json").get("asof"), "certs tab export comparison"),
     ("Cotton", "Spread vs full carry history", "daily", 2, B, False, lambda: max_csv_date("data/cotton/carry_history.csv"), "certs tab"),
@@ -95,6 +96,10 @@ SOURCES = [
     ("Cotton", "India", "daily", 2, B, False, lambda: d10(J("data/india/india.json")["built"]), "India tab"),
     ("Cotton", "Australia (synced from US desk)", "daily", 2, B, False, lambda: d10(J("data/australia/australia.json")["built"]), "Australia tab"),
     ("Coffee", "Coffee desk (ICE certs, basis, origins)", "daily", 2, B, False, lambda: d10(J("coffee/data/coffee.json")["built"]), "coffee tabs"),
+    ("Coffee", "ICE certs detail: pending, transition, passed/failed, rebagging (upload)", "daily", 2, B, True, lambda: max_csv_date("data/coffee/ice_certs_daily_detail.csv"), "stored; no panel yet"),
+    ("Coffee", "ICE certs aging by port (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/coffee/ice_aging_history.csv"), "stored; no panel yet"),
+    ("Coffee", "ICE end-of-month certs by port since 1996 (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/coffee/ice_certs_eom_by_port.csv"), "stored; no panel yet"),
+    ("Coffee", "ICE grading summary by origin (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/coffee/ice_grading_monthly.csv", "period_end"), "stored; no panel yet"),
     ("Coffee", "Cecafé daily registrations", "daily", 2, B, False, lambda: J("data/coffee/cecafe.json")["asof"], "Cecafé tab"),
     ("Coffee", "Brazil coffee weather (weighted)", "daily", 2, B, False, lambda: d10(J("data/coffee/weather_weighted.json")["generated"]), "weather tab"),
     ("Sugar", "Sugar desk", "daily", 2, B, False, lambda: d10(J("sugar/data/sugar.json")["built"]), "sugar tabs"),
@@ -110,6 +115,8 @@ SOURCES = [
     ("Sugar", "UNICA Centre-South report (last published)", "irregular", 120, C, False, lambda: J("data/sugar/unica_check.json")["latest_position"] or J("sugar/data/sugar.json")["unica"]["position"], "crush tab ATR; MAPA is the main series"),
     ("Sugar", "Weekly report input pack", "daily", 3, B, False, lambda: J("data/sugar/weekly_inputs.json")["built"], "weekly sugar research"),
     ("Sugar", "Brazil sugar export line-up (weekly)", "weekly", 9, C, False, lambda: J("data/sugar/flows.json")["weekly"]["asof"], "exports tab"),
+    ("Cocoa", "ICE cocoa certs and grading (upload)", "daily", 2, B, True, lambda: max_csv_date("data/cocoa/ice_certs_daily.csv"), "stored; no panel yet"),
+    ("Cocoa", "ICE cocoa grading results with discounts (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/cocoa/ice_grading_monthly.csv", "period_end"), "stored; no panel yet"),
     ("Cocoa", "ICCO balance", "monthly", 40, C, False, lambda: J("data/cocoa/icco.json")["updated"], "cocoa balance tab"),
     ("Desk watch", "What changed strip (settlement date)", "daily", 2, B, False, lambda: J("data/overview/what_changed.json")["asof"], "overview what-changed strip"),
     ("Desk watch", "Delivery-period dashboard (settlement date)", "daily", 2, B, False, lambda: J("data/delivery/delivery.json")["asof"], "delivery tab"),
@@ -132,7 +139,8 @@ def age(d, unit):
 
 
 INBOX_ORDER = ["CT_options", "CT_futures", "KC_options", "KC_futures", "SB_options", "SB_futures", "CC_options", "CC_futures",
-               "ct_stock", "ct_grade", "ct_warehouse", "ct_yog", "ct_strength", "kc_certs"]
+               "ct_stock", "ct_grade", "ct_warehouse", "ct_yog", "ct_strength", "ct_four_months", "kc_certs", "kc_aging", "kc_eom",
+               "kc_grading", "cc_certs", "cc_grading", "kc_warehouses", "kc_rates"]
 
 
 def inbox():

@@ -9,6 +9,11 @@ and the original archived or removed.
   ICE coffee "C" certified warehouse stock report (Excel) -> data/coffee/ice_certs_inbox.csv (same long layout as
       data/coffee/ice_certs.csv); days missing from the automatic series are added to it, days present are compared
       (data/coffee/ice_certs_check.json). The automatic series is never overwritten.
+  ICE cotton "four months and older" report -> data/cotton/ice/four_months_older_YYYY-MM-DD.csv.
+  Coffee aging, coffee end-of-month stocks by port, coffee grading summary (PDF), cocoa certified stock (daily),
+      cocoa grading results with discounts (monthly), coffee licensed-warehouse list and storage/handling rates (PDF)
+      -> one combined history file each (pipelines/ice_history.py). The daily coffee certs report also adds every
+      section (pending, transition, passed/failed, rebagging) to data/coffee/ice_certs_daily_detail.csv.
   A .zip is opened and each file in it handled as above.
   Anything else -> inbox/unrecognised/ with the reason (run shows a warning; listed on the Data status tab).
   A file that is recognised but cannot be read -> inbox/unrecognised/ too, and the run fails.
@@ -40,7 +45,11 @@ MON = {m: i + 1 for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun",
 LABEL = {"options": "{} options settlement (ICE daily market report)", "futures": "{} futures settlement (ICE daily market report)",
          "ct_stock": "Cotton certs: stock by delivery point", "ct_grade": "Cotton certs: grade / staple",
          "ct_warehouse": "Cotton certs: stock by warehouse", "ct_yog": "Cotton certs: year of growth",
-         "ct_strength": "Cotton certs: strength", "kc_certs": "Coffee certs: certified warehouse stock"}
+         "ct_strength": "Cotton certs: strength", "ct_four_months": "Cotton certs: four months and older",
+         "kc_certs": "Coffee certs: certified warehouse stock"}
+sys.path.insert(0, str(ROOT / "pipelines"))
+import ice_history  # noqa: E402
+LABEL.update(ice_history.LABEL)
 NAMES = {"CT": "Cotton", "KC": "Coffee", "SB": "Sugar No 11", "CC": "Cocoa"}
 
 
@@ -135,6 +144,9 @@ def classify_pdf(p):
     head = pdf_text(p, first_page=True)[:1500]
     m = re.search(r"(Options|Futures) Daily Market Report for ([A-Za-z0-9 .\"]+?)\s*\n", head)
     if not m:
+        h = ice_history.classify_pdf(p, pdf_text(p))
+        if h:
+            return h
         title = next((l.strip() for l in head.splitlines() if l.strip()), "no text")
         raise Unrecognised(f"PDF that is not an ICE options/futures daily market report (starts: {title[:70]!r})")
     kind, mk = m.group(1).lower(), re.sub(r"[^a-z0-9 ]", "", m.group(2).lower()).strip()
@@ -221,7 +233,10 @@ def classify_ct(rows, fname):
     i = header_at(rows, lambda h: any(re.search(r"crop\s*year|year of growth", x) for x in h) and any("delivery" in x for x in h))
     if i is not None:
         return {"kind": "ct_yog", "sym": "CT", "i": i}
-    i = header_at(rows, lambda h: sum(bool(re.match(r"^\d{2}\.\d\s*-\s*\d{2}\.\d$|^\d{2}\.\d and above$", x)) for x in h) >= 3)
+    i = header_at(rows, lambda h: any(x == "month" for x in h) and sum(bool(re.search(r", [a-z]{2}$", x)) for x in h) >= 2)
+    if i is not None:
+        return {"kind": "ct_four_months", "sym": "CT", "i": i}
+    i = header_at(rows, lambda h: sum(bool(re.search(r"\d{2}\.\d\s*-\s*\d{2}\.\d$|\d{2}\.\d and above$", x)) for x in h) >= 3)
     if i is not None:
         return {"kind": "ct_strength", "sym": "CT", "i": i}
     raise Unrecognised("table that is not one of the ICE cotton certificated-stock reports or the coffee certs report")
@@ -284,14 +299,27 @@ def convert_ct(rows, info, fname):
             name = f"year_of_growth_{d}.csv"
         elif k == "ct_strength":
             jp = col(h, r"delivery")
-            sc = [j for j, x in enumerate(h) if re.match(r"(?i)^\d{2}\.\d\s*(-\s*\d{2}\.\d|and above)$", x.strip())]
-            hdr = ["Delivery Point"] + [h[j] for j in sc] + ["Totals"]
+            sc = [j for j, x in enumerate(h) if re.search(r"(?i)\d{2}\.\d\s*(-\s*\d{2}\.\d|and above)$", x.strip())]
+            hdr = ["Delivery Point"] + [re.sub(r"(?i)^gpt range\s*", "", h[j]).upper() for j in sc] + ["Totals"]
             for r in body:
                 if not r[jp].strip() or is_total(r[jp]):
                     continue
                 v = [num(r[j]) for j in sc]
                 out.append([r[jp].strip()] + v + [sum(v)])
             name = f"strength_{d}.csv"
+        elif k == "ct_four_months":
+            jm = col(h, r"^month$")
+            pts = [(j, x) for j, x in enumerate(h) if j != jm and x and not re.search(r"(?i)report\s*date|^totals?$", x)]
+            hdr = ["Report Date", "Month"] + [x for _, x in pts] + ["Total"]
+            jt = col(h, r"^totals?$")
+            for r in body:
+                if not r[jm].strip() or is_total(r[jm]):
+                    continue
+                v = [num(r[j]) for j, _ in pts]
+                if jt is not None and r[jt].strip() and num(r[jt]) != sum(v):
+                    raise ParseError(f"four-months report: month {r[jm]} total {r[jt]} is not the sum of its delivery points {sum(v)}")
+                out.append([d, r[jm].strip()] + v + [sum(v)])
+            name = f"four_months_older_{d}.csv"
     except (ValueError, IndexError, TypeError) as e:
         raise ParseError(f"{LABEL[k]} {d}: a row could not be read ({e})")
     if not out:
@@ -346,7 +374,11 @@ def handle_kc(data, info):
         if not diff.empty:
             print(f"::warning::coffee certs {d}: upload differs from the automatic ICE series ({len(diff)} cells); see data/coffee/ice_certs_check.json")
     KC_CHECK.write_text(json.dumps(dict(sorted(chk.items())), indent=1))
-    return {"stored": "data/coffee/ice_certs_inbox.csv", "note": note}
+    try:
+        cert, pend = ice_history.kc_daily(data, d)
+    except Exception as e:
+        raise ParseError(f"coffee certs report {d}: detail could not be read ({e})")
+    return {"stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv", "note": note + f"; detail: {pend:,} bags pending grading"}
 
 
 # ---------------- driver ----------------
@@ -362,6 +394,9 @@ def identify(p):
             if not any(n.lower().endswith((".xlsx", ".xlsm")) for n in z.namelist()) and "[Content_Types].xml" not in z.namelist():
                 return {"kind": "zip"}, "zip"
     rows = table_rows(p, data)
+    h = ice_history.classify_table(rows)
+    if h:
+        return h, "hist"
     kc = classify_kc(rows)
     if kc:
         return kc, "kc"
@@ -370,7 +405,12 @@ def identify(p):
 
 def process(p, info, how, now):
     """Handle one identified file. Returns (log entry, keep original in the raw archive)."""
-    if how == "pdf":
+    if how == "pdf" and info["kind"] not in ("options", "futures"):
+        how = "hist"
+    if how == "hist":
+        d, res = ice_history.handle(p, info)
+        keep = False   # the newest original of each kind is kept in data/ice_raw/latest/
+    elif how == "pdf":
         res, keep = handle_settlement(p, info)
         d = info["date"]
     elif how == "kc":
@@ -380,7 +420,10 @@ def process(p, info, how, now):
         keep = True
     label = LABEL[info["kind"]].format(NAMES.get(info.get("sym"), "")) if info["kind"] in ("options", "futures") else LABEL[info["kind"]]
     key = f"{info['sym']}_{info['kind']}" if info["kind"] in ("options", "futures") else info["kind"]
-    e = {"received": now, "file": p.name, "type": key, "label": label, "market": info.get("sym"), "report_date": d, **res}
+    e = {"received": now, "file": p.name, "type": key, "label": label, "market": info.get("sym"), "report_date": d,
+         **{k: v for k, v in res.items() if k != "original"}}
+    if res.get("original"):
+        e["kept_copy"] = res["original"]
     return e, keep
 
 
@@ -449,8 +492,8 @@ def main(argv):
                     archive(p, today.isoformat())
                 continue
             e, keep = process(p, info, how, now)
-        except (Unrecognised, ParseError) as x:
-            bad = isinstance(x, ParseError)
+        except (Unrecognised, ParseError, ice_history.Bad) as x:
+            bad = not isinstance(x, Unrecognised)
             msg = ("could not be read: " if bad else "") + str(x)
             name = p.name + (f" (in {parent})" if parent else "")
             print(f"::{'error' if bad else 'warning'}::{name}: {'recognised but ' if bad else 'not recognised - '}{msg}. Moved to inbox/unrecognised/")
@@ -465,7 +508,7 @@ def main(argv):
             if keep:
                 e["original"] = archive(p, today.isoformat())
             else:
-                p.unlink(); e["original"] = "removed (the staged copy is the record)"
+                p.unlink(); e["original"] = e.get("kept_copy") or ("removed (the staged copy is the record)" if how == "pdf" else "removed (stored in the combined file)")
         log["last"][e["type"]] = {k: e[k] for k in ("received", "file", "label", "report_date", "stored")}
         log["recent"] = ([e] + log.get("recent", []))[:200]
     shutil.rmtree(tmp, ignore_errors=True)

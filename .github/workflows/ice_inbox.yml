@@ -1,11 +1,12 @@
 name: ice-inbox
 # ICE drop box: files uploaded to inbox/ (any name) are identified by content and stored (pipelines/ice_inbox.py).
 # Settlement PDFs are staged in data/ice_staging/pdfs/ for BMR-Com/softs--options-, which collects them itself.
+# Other ICE history files (coffee/cocoa certs, aging, grading) are appended to combined CSVs (pipelines/ice_history.py).
 on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', '.github/workflows/ice_inbox.yml']
+    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', 'pipelines/ice_history.py', '.github/workflows/ice_inbox.yml']
   schedule:
     - cron: '41 */4 * * *'      # backup, and daily clean-up of old staged PDFs
 permissions: {contents: write}
@@ -20,8 +21,8 @@ jobs:
         with: {python-version: '3.11'}
       - name: install
         run: |
-          sudo apt-get install -y -qq poppler-utils >/dev/null
-          pip install -q pandas numpy requests xlrd openpyxl
+          sudo apt-get install -y -qq poppler-utils tesseract-ocr >/dev/null
+          pip install -q pandas numpy requests xlrd openpyxl scipy pillow
       - name: sort the inbox
         id: inbox
         run: |
@@ -34,7 +35,9 @@ jobs:
       - name: commit
         run: |
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
-          for p in inbox data/ice_staging data/ice_raw data/ice_inbox data/cotton/ice data/coffee/ice_certs.csv data/coffee/ice_certs_inbox.csv data/coffee/ice_certs_check.json data/status.json; do
+          for p in inbox data/ice_staging data/ice_raw data/ice_inbox data/cotton/ice data/coffee/ice_certs.csv data/coffee/ice_certs_inbox.csv data/coffee/ice_certs_check.json \
+                   data/coffee/ice_certs_daily_detail.csv data/coffee/ice_aging_history.csv data/coffee/ice_certs_eom_by_port.csv \
+                   data/coffee/ice_grading_monthly.csv data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/status.json; do
             git add -A -- "$p" 2>/dev/null || true
           done
           git diff --cached --quiet && exit 0

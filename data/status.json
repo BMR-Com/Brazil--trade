@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 15:14 UTC",
+ "generated": "2026-11-17 16:40 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -77,9 +77,9 @@
   {
    "group": "Cotton",
    "source": "ICE certs: stock by warehouse (upload)",
-   "latest": "2026-11-09",
+   "latest": "2026-11-16",
    "cadence": "weekly (Mon)",
-   "age": 8,
+   "age": 1,
    "age_unit": "days",
    "limit": 9,
    "state": "ok",
@@ -89,9 +89,9 @@
   {
    "group": "Cotton",
    "source": "ICE certs: grade / staple (upload)",
-   "latest": "2026-11-09",
+   "latest": "2026-11-16",
    "cadence": "weekly (Mon)",
-   "age": 8,
+   "age": 1,
    "age_unit": "days",
    "limit": 9,
    "state": "ok",
@@ -101,9 +101,9 @@
   {
    "group": "Cotton",
    "source": "ICE certs: year of growth (upload)",
-   "latest": "2026-11-09",
+   "latest": "2026-11-16",
    "cadence": "weekly (Mon)",
-   "age": 8,
+   "age": 1,
    "age_unit": "days",
    "limit": 9,
    "state": "ok",
@@ -113,12 +113,12 @@
   {
    "group": "Cotton",
    "source": "ICE certs: strength (upload)",
-   "latest": "2026-11-02",
+   "latest": "2026-11-16",
    "cadence": "weekly (Mon)",
-   "age": 15,
+   "age": 1,
    "age_unit": "days",
    "limit": 9,
-   "state": "late",
+   "state": "ok",
    "manual": true,
    "used_in": "certs tab"
   },
@@ -133,6 +133,18 @@
    "state": "late",
    "manual": true,
    "used_in": "certs tab"
+  },
+  {
+   "group": "Cotton",
+   "source": "ICE certs: four months and older (upload)",
+   "latest": "2026-11-02",
+   "cadence": "weekly (Mon)",
+   "age": 15,
+   "age_unit": "days",
+   "limit": 9,
+   "state": "late",
+   "manual": true,
+   "used_in": "stored for the certs tab over-age allowance"
   },
   {
    "group": "Cotton",
@@ -328,6 +340,54 @@
   },
   {
    "group": "Coffee",
+   "source": "ICE certs detail: pending, transition, passed/failed, rebagging (upload)",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "ok",
+   "manual": true,
+   "used_in": "stored; no panel yet"
+  },
+  {
+   "group": "Coffee",
+   "source": "ICE certs aging by port (upload)",
+   "latest": "2026-10-30",
+   "cadence": "monthly",
+   "age": 18,
+   "age_unit": "days",
+   "limit": 40,
+   "state": "ok",
+   "manual": true,
+   "used_in": "stored; no panel yet"
+  },
+  {
+   "group": "Coffee",
+   "source": "ICE end-of-month certs by port since 1996 (upload)",
+   "latest": "2026-10-30",
+   "cadence": "monthly",
+   "age": 18,
+   "age_unit": "days",
+   "limit": 40,
+   "state": "ok",
+   "manual": true,
+   "used_in": "stored; no panel yet"
+  },
+  {
+   "group": "Coffee",
+   "source": "ICE grading summary by origin (upload)",
+   "latest": "2026-10-30",
+   "cadence": "monthly",
+   "age": 18,
+   "age_unit": "days",
+   "limit": 40,
+   "state": "ok",
+   "manual": true,
+   "used_in": "stored; no panel yet"
+  },
+  {
+   "group": "Coffee",
    "source": "Cecaf\u00e9 daily registrations",
    "latest": "2026-11-16",
    "cadence": "daily",
@@ -508,6 +568,30 @@
   },
   {
    "group": "Cocoa",
+   "source": "ICE cocoa certs and grading (upload)",
+   "latest": "2026-11-16",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 2,
+   "state": "ok",
+   "manual": true,
+   "used_in": "stored; no panel yet"
+  },
+  {
+   "group": "Cocoa",
+   "source": "ICE cocoa grading results with discounts (upload)",
+   "latest": "2026-10-30",
+   "cadence": "monthly",
+   "age": 18,
+   "age_unit": "days",
+   "limit": 40,
+   "state": "ok",
+   "manual": true,
+   "used_in": "stored; no panel yet"
+  },
+  {
+   "group": "Cocoa",
    "source": "ICCO balance",
    "latest": "2026-11-11",
    "cadence": "monthly",
@@ -641,7 +725,7 @@
   {
    "group": "ICE drop box",
    "source": "Files not recognised (inbox/unrecognised): 0",
-   "latest": null,
+   "latest": "2026-11-17",
    "cadence": "on upload",
    "age": null,
    "age_unit": "days",
@@ -653,8 +737,177 @@
  ],
  "late": 4,
  "inbox": {
-  "updated": "2026-11-17 15:14 UTC",
-  "last": [],
+  "updated": "2026-11-17 16:39 UTC",
+  "last": [
+   {
+    "type": "CT_options",
+    "received": "2026-11-17 16:29 UTC",
+    "file": "CT_2026_11_16.pdf",
+    "label": "Cotton options settlement (ICE daily market report)",
+    "report_date": "2026-11-16",
+    "stored": "data/ice_staging/pdfs/CT_2026_11_16.pdf"
+   },
+   {
+    "type": "CT_futures",
+    "received": "2026-11-17 16:29 UTC",
+    "file": "CT_2026_11_16-2.pdf",
+    "label": "Cotton futures settlement (ICE daily market report)",
+    "report_date": "2026-11-16",
+    "stored": "data/ice_staging/pdfs/CT_2026_11_16-2.pdf"
+   },
+   {
+    "type": "KC_options",
+    "received": "2026-11-17 16:29 UTC",
+    "file": "KC_2026_11_16.pdf",
+    "label": "Coffee options settlement (ICE daily market report)",
+    "report_date": "2026-11-16",
+    "stored": "data/ice_staging/pdfs/KC_2026_11_16.pdf"
+   },
+   {
+    "type": "KC_futures",
+    "received": "2026-11-17 16:29 UTC",
+    "file": "KC_2026_11_16-2.pdf",
+    "label": "Coffee futures settlement (ICE daily market report)",
+    "report_date": "2026-11-16",
+    "stored": "data/ice_staging/pdfs/KC_2026_11_16-2.pdf"
+   },
+   {
+    "type": "SB_options",
+    "received": "2026-11-17 16:29 UTC",
+    "file": "SB_2026_11_16.pdf",
+    "label": "Sugar No 11 options settlement (ICE daily market report)",
+    "report_date": "2026-11-16",
+    "stored": "data/ice_staging/pdfs/SB_2026_11_16.pdf"
+   },
+   {
+    "type": "SB_futures",
+    "received": "2026-11-17 16:29 UTC",
+    "file": "SB_2026_11_16-2.pdf",
+    "label": "Sugar No 11 futures settlement (ICE daily market report)",
+    "report_date": "2026-11-16",
+    "stored": "data/ice_staging/pdfs/SB_2026_11_16-2.pdf"
+   },
+   {
+    "type": "CC_options",
+    "received": "2026-11-17 16:29 UTC",
+    "file": "CC_2026_11_16.pdf",
+    "label": "Cocoa options settlement (ICE daily market report)",
+    "report_date": "2026-11-16",
+    "stored": "data/ice_staging/pdfs/CC_2026_11_16.pdf"
+   },
+   {
+    "type": "CC_futures",
+    "received": "2026-11-17 16:29 UTC",
+    "file": "CC_2026_11_16-2.pdf",
+    "label": "Cocoa futures settlement (ICE daily market report)",
+    "report_date": "2026-11-16",
+    "stored": "data/ice_staging/pdfs/CC_2026_11_16-2.pdf"
+   },
+   {
+    "type": "ct_grade",
+    "received": "2026-11-17 16:34 UTC",
+    "file": "CottonGradeAndStapleReport-3.csv",
+    "label": "Cotton certs: grade / staple",
+    "report_date": "2026-11-16",
+    "stored": "data/cotton/ice/grade_staple_2026-11-16.csv"
+   },
+   {
+    "type": "ct_warehouse",
+    "received": "2026-11-17 16:34 UTC",
+    "file": "CottonStockByWarehouseReport-3.csv",
+    "label": "Cotton certs: stock by warehouse",
+    "report_date": "2026-11-16",
+    "stored": "data/cotton/ice/warehouse_2026-11-16.csv"
+   },
+   {
+    "type": "ct_yog",
+    "received": "2026-11-17 16:34 UTC",
+    "file": "CottonYearOfGrowthReport-2.csv",
+    "label": "Cotton certs: year of growth",
+    "report_date": "2026-11-16",
+    "stored": "data/cotton/ice/year_of_growth_2026-11-16.csv"
+   },
+   {
+    "type": "ct_strength",
+    "received": "2026-11-17 16:34 UTC",
+    "file": "CottonStrengthReport.csv",
+    "label": "Cotton certs: strength",
+    "report_date": "2026-11-16",
+    "stored": "data/cotton/ice/strength_2026-11-16.csv"
+   },
+   {
+    "type": "ct_four_months",
+    "received": "2026-11-17 16:34 UTC",
+    "file": "FourMonthsAndOlderReport.csv",
+    "label": "Cotton certs: four months and older",
+    "report_date": "2026-11-02",
+    "stored": "data/cotton/ice/four_months_older_2026-11-02.csv"
+   },
+   {
+    "type": "kc_certs",
+    "received": "2026-11-17 16:36 UTC",
+    "file": "coffee_cert_stock_20261116.xls",
+    "label": "Coffee certs: certified warehouse stock",
+    "report_date": "2026-11-16",
+    "stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv"
+   },
+   {
+    "type": "kc_aging",
+    "received": "2026-11-17 16:35 UTC",
+    "file": "coffee_aging_20261030.xls",
+    "label": "Coffee certs: aging profile (monthly)",
+    "report_date": "2026-10-30",
+    "stored": "data/coffee/ice_aging_history.csv"
+   },
+   {
+    "type": "kc_eom",
+    "received": "2026-11-17 16:34 UTC",
+    "file": "EOM_KC_cert_stox_by_port_nov96-present.xls",
+    "label": "Coffee certs: end-of-month stocks by port since 1996",
+    "report_date": "2026-10-30",
+    "stored": "data/coffee/ice_certs_eom_by_port.csv"
+   },
+   {
+    "type": "kc_grading",
+    "received": "2026-11-17 16:39 UTC",
+    "file": "September_2023_Grading_Summary_Analysis.pdf",
+    "label": "Coffee grading summary (monthly)",
+    "report_date": "2023-09",
+    "stored": "data/coffee/ice_grading_monthly.csv"
+   },
+   {
+    "type": "cc_certs",
+    "received": "2026-11-17 16:36 UTC",
+    "file": "cocoa_cert_stock_20261116.xls",
+    "label": "Cocoa certs: certified stock and grading (daily)",
+    "report_date": "2026-11-16",
+    "stored": "data/cocoa/ice_certs_daily.csv"
+   },
+   {
+    "type": "cc_grading",
+    "received": "2026-11-17 16:36 UTC",
+    "file": "Cocoa_Grading_Results_with_Discounts_EOM_Septmeber2017.xls",
+    "label": "Cocoa grading results with discounts (monthly)",
+    "report_date": "2017-09",
+    "stored": "data/cocoa/ice_grading_monthly.csv"
+   },
+   {
+    "type": "kc_warehouses",
+    "received": "2026-11-17 16:34 UTC",
+    "file": "Coffee__Licensed_Warehouses.pdf",
+    "label": "Coffee licensed warehouses list",
+    "report_date": "2026-11-11",
+    "stored": "data/coffee/ref/licensed_warehouses.csv"
+   },
+   {
+    "type": "kc_rates",
+    "received": "2026-11-17 16:34 UTC",
+    "file": "Coffee_'C'_Warehouse_Storage,_OCA,_RCA_By_Warehouse_and_Handling_Rates_2026-2027_June_1_2026.pdf",
+    "label": "Coffee warehouse storage and handling rates",
+    "report_date": "2026-06-01",
+    "stored": "data/coffee/ref/warehouse_rates.csv"
+   }
+  ],
   "unrecognised": []
  }
 }

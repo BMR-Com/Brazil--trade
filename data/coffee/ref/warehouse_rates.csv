@@ -1,0 +1,25 @@
+effective_from,effective_to,port,warehouse,storage_usd_bag_month,rca_usd_bag,load_out_usd_bag,oca_usd_bag,rebagging_usd_bag
+2026-06-01,2027-05-31,ANTWERP,4STOX NV (AN),1.24,0.2,5.18,-2.59,21.74
+2026-06-01,2027-05-31,ANTWERP,ACCL (AN),1.23,0.21,4.26,-1.67,19.39
+2026-06-01,2027-05-31,ANTWERP,C. Steinweg Belgium NV (AN),0.92,0.52,4.2,-1.61,15.89
+2026-06-01,2027-05-31,ANTWERP,Commodity Centre Limited (AN),1.25,0.19,4.68,-2.09,22.19
+2026-06-01,2027-05-31,ANTWERP,Durme-Natie CVBA (AN),0.91,0.53,3.7,-1.11,21.5
+2026-06-01,2027-05-31,ANTWERP,Molenbergnatie NV (AN),1.29,0.15,3.65,-1.06,20.48
+2026-06-01,2027-05-31,ANTWERP,Pacorini Antwerp NV (AN),1.23,0.21,4.26,-1.67,19.39
+2026-06-01,2027-05-31,ANTWERP,Vollers Belgium NV (AN),0.77,0.67,1.61,0.98,17.4
+2026-06-01,2027-05-31,BARCELONA,"Barcelona International Terminal, SA (BC)",1.18,0.26,1.51,1.08,12.45
+2026-06-01,2027-05-31,BARCELONA,Molenbergnatie Espana S.L. (BC),1.27,0.17,2.44,0.15,14.68
+2026-06-01,2027-05-31,HAMBURG/BREMEN,Berthold Vollers Bremen (BR),0.77,0.67,1.61,0.98,13.0
+2026-06-01,2027-05-31,HAMBURG/BREMEN,C. Steinweg (HA),1.15,0.29,1.9,0.69,10.93
+2026-06-01,2027-05-31,HAMBURG/BREMEN,Schwarze and Cons. (HA),1.25,0.19,2.05,0.54,11.2
+2026-06-01,2027-05-31,HAMBURG/BREMEN,Vollers Hamburg GmbH (HA),0.77,0.67,1.61,0.98,13.1
+2026-06-01,2027-05-31,HOUSTON,"Cadeco Industries, Inc. (HO)",0.9,0.54,1.15,1.44,14.5
+2026-06-01,2027-05-31,HOUSTON,"Dupuy Storage Houston, L.L.C. (HO)",1.05,0.39,1.3,1.29,23.8
+2026-06-01,2027-05-31,HOUSTON,RPM Warehouse Texas LLC (HO),1.1,0.34,1.7,0.89,23.0
+2026-06-01,2027-05-31,MIAMI,"Superium Coffee Warehouse, LLC (MI)",0.8,0.64,0.85,1.74,9.0
+2026-06-01,2027-05-31,NEW ORLEANS,"Dupuy Storage and Forwarding, L.L.C. (NO)",1.05,0.39,1.5,1.09,23.8
+2026-06-01,2027-05-31,NEW ORLEANS,Port Cargo Service Inc. (NO),1.2,0.24,1.52,1.07,22.0
+2026-06-01,2027-05-31,NEW YORK,Continental Terminals Inc. (NY),1.55,-0.11,2.75,-0.16,23.0
+2026-06-01,2027-05-31,NEW YORK,Florence Warehouse (NY),1.22,0.22,2.28,0.31,20.0
+2026-06-01,2027-05-31,NEW YORK,RPM Warehouse NJ LLC (NY),1.55,-0.11,2.75,-0.16,23.0
+2026-06-01,2027-05-31,VIRGINIA,Continental Terminals Inc. (VA),1.05,0.39,1.6,0.99,16.0

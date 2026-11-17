@@ -1,0 +1,200 @@
+{
+ "2026-10-01": {
+  "status": "match",
+  "certified": 260364,
+  "certified_auto": 260364,
+  "differences": []
+ },
+ "2026-10-02": {
+  "status": "match",
+  "certified": 260239,
+  "certified_auto": 260239,
+  "differences": []
+ },
+ "2026-10-05": {
+  "status": "match",
+  "certified": 259989,
+  "certified_auto": 259989,
+  "differences": []
+ },
+ "2026-10-06": {
+  "status": "match",
+  "certified": 254527,
+  "certified_auto": 254527,
+  "differences": []
+ },
+ "2026-10-07": {
+  "status": "match",
+  "certified": 253251,
+  "certified_auto": 253251,
+  "differences": []
+ },
+ "2026-10-08": {
+  "status": "match",
+  "certified": 252256,
+  "certified_auto": 252256,
+  "differences": []
+ },
+ "2026-10-09": {
+  "status": "match",
+  "certified": 252006,
+  "certified_auto": 252006,
+  "differences": []
+ },
+ "2026-10-12": {
+  "status": "match",
+  "certified": 250171,
+  "certified_auto": 250171,
+  "differences": []
+ },
+ "2026-10-13": {
+  "status": "match",
+  "certified": 246856,
+  "certified_auto": 246856,
+  "differences": []
+ },
+ "2026-10-14": {
+  "status": "match",
+  "certified": 241947,
+  "certified_auto": 241947,
+  "differences": []
+ },
+ "2026-10-15": {
+  "status": "match",
+  "certified": 238976,
+  "certified_auto": 238976,
+  "differences": []
+ },
+ "2026-10-16": {
+  "status": "match",
+  "certified": 240767,
+  "certified_auto": 240767,
+  "differences": []
+ },
+ "2026-10-19": {
+  "status": "match",
+  "certified": 239852,
+  "certified_auto": 239852,
+  "differences": []
+ },
+ "2026-10-20": {
+  "status": "match",
+  "certified": 234901,
+  "certified_auto": 234901,
+  "differences": []
+ },
+ "2026-10-21": {
+  "status": "match",
+  "certified": 239748,
+  "certified_auto": 239748,
+  "differences": []
+ },
+ "2026-10-22": {
+  "status": "match",
+  "certified": 234433,
+  "certified_auto": 234433,
+  "differences": []
+ },
+ "2026-10-23": {
+  "status": "match",
+  "certified": 227978,
+  "certified_auto": 227978,
+  "differences": []
+ },
+ "2026-10-26": {
+  "status": "match",
+  "certified": 225610,
+  "certified_auto": 225610,
+  "differences": []
+ },
+ "2026-10-27": {
+  "status": "match",
+  "certified": 224822,
+  "certified_auto": 224822,
+  "differences": []
+ },
+ "2026-10-28": {
+  "status": "match",
+  "certified": 222035,
+  "certified_auto": 222035,
+  "differences": []
+ },
+ "2026-10-29": {
+  "status": "match",
+  "certified": 225068,
+  "certified_auto": 225068,
+  "differences": []
+ },
+ "2026-10-30": {
+  "status": "match",
+  "certified": 225068,
+  "certified_auto": 225068,
+  "differences": []
+ },
+ "2026-11-02": {
+  "status": "match",
+  "certified": 220917,
+  "certified_auto": 220917,
+  "differences": []
+ },
+ "2026-11-03": {
+  "status": "match",
+  "certified": 220379,
+  "certified_auto": 220379,
+  "differences": []
+ },
+ "2026-11-04": {
+  "status": "match",
+  "certified": 220379,
+  "certified_auto": 220379,
+  "differences": []
+ },
+ "2026-11-05": {
+  "status": "match",
+  "certified": 224771,
+  "certified_auto": 224771,
+  "differences": []
+ },
+ "2026-11-06": {
+  "status": "match",
+  "certified": 232456,
+  "certified_auto": 232456,
+  "differences": []
+ },
+ "2026-11-09": {
+  "status": "match",
+  "certified": 241403,
+  "certified_auto": 241403,
+  "differences": []
+ },
+ "2026-11-10": {
+  "status": "match",
+  "certified": 241368,
+  "certified_auto": 241368,
+  "differences": []
+ },
+ "2026-11-11": {
+  "status": "match",
+  "certified": 250241,
+  "certified_auto": 250241,
+  "differences": []
+ },
+ "2026-11-12": {
+  "status": "match",
+  "certified": 228586,
+  "certified_auto": 228586,
+  "differences": []
+ },
+ "2026-11-13": {
+  "status": "match",
+  "certified": 211321,
+  "certified_auto": 211321,
+  "differences": []
+ },
+ "2026-11-16": {
+  "status": "match",
+  "certified": 186414,
+  "certified_auto": 186414,
+  "differences": []
+ }
+}
