@@ -1,49 +1,48 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
   "markets": {
     "cotton": {
-      "date": "2026-11-16",
-      "time": "18:20 CT",
-      "fundamental": "Dec settled 76.95 on its low (-1.83), through both 77.73 and 77.05 supports, with Mar 80.88; a firm dollar and a broad commodity sell-off did the damage, not new supply news. Old-crop focus stays on Dec/Mar: the short Texas crop is unchanged news-wise, but with funds still net long a break this clean invites liquidation, and high-grade certified stocks would not be benign for longs into Dec delivery.",
+      "date": "2026-11-17",
+      "time": "07:50 CT",
+      "fundamental": "Dec is steadying at ~77.06 overnight, sitting right on Monday's broken 77.05 level with Mar ~81.06; nothing new on supply, and a still-firm dollar (DXY ~103.6) keeps the bounce shallow. For old-crop Dec/Mar the issue is whether funds keep liquidating into first notice; high-grade certs heading into Dec delivery remain a risk for longs, not a comfort.",
       "events": [
-        "Dec cotton settles 76.95, below 77.73/77.05 support; Mar 80.88 (ICE via TradingView)",
-        "Dollar index up ~1.9% on the week, broad risk-off in equities and metals (Yahoo Finance)",
-        "Growers weigh 2027 plans after a drought-hit 2026 (Farm Progress)"
+        "Dec cotton ~77.06 early Tuesday, back at the 77.05 level after Monday's 76.95 settle; Mar ~81.06 (ICE via TradingView)",
+        "Dollar index holds near 103.6 after last week's jump (ICE via TradingView)"
       ]
     },
     "sugar": {
-      "date": "2026-11-16",
-      "time": "18:20 CT",
-      "fundamental": "Brazil drives this: the real slid about 2.6% Monday on post-election worries about Lula's fiscal course, which raises mill returns in local terms and encourages Centre-South hedge selling. Crude's 4% drop also trims the ethanol pull on cane. Mar settled 18.10, back below 18.35/18.38 and close to 18.02 support; industry estimates of a global deficit have not been enough to offset the currency.",
+      "date": "2026-11-17",
+      "time": "07:50 CT",
+      "fund_score": -0.35,
+      "fundamental": "Brazil still sets the tone: the real's slide on fiscal worries keeps Centre-South mills keen to hedge in local-currency terms, and Mar dipped to 17.97 overnight, briefly under 18.02 support, before steadying at ~18.07. Crude's rebound is a small help for the ethanol pull on cane, but not yet enough to change the mill-mix picture.",
       "events": [
-        "Brazilian real drops ~2.6% vs USD on Lula fiscal worries (Bloomberg)",
-        "Crude -4% on IEA surplus outlook and Iran/Ukraine peace hopes (Reuters, ADMIS)",
-        "Mar raw sugar 18.10 (-0.31), near 18.02 support (ICE via TradingView)"
-      ],
-      "fund_score": -0.35
+        "Mar sugar trades 17.97-18.22 early, ~18.07, testing 18.02 support (ICE via TradingView)",
+        "Brazilian real weakness on Lula fiscal concerns keeps hedge pressure on (Bloomberg)",
+        "Crude rebounds ~1.5% on Middle East shipping risk, a modest ethanol offset (Dow Jones)"
+      ]
     },
     "coffee": {
-      "date": "2026-11-16",
-      "time": "18:20 CT",
-      "fundamental": "Supply at the exchange keeps tightening: ICE-certified arabica stocks fell again, which matters more for Dec/Mar than anything else right now and kept Dec higher (280.40) despite the weaker real. The currency drop is the offsetting risk because it makes Brazilian growers keener sellers, but deliverable coffee is the binding constraint for nearby contracts.",
+      "date": "2026-11-17",
+      "time": "07:50 CT",
+      "fund_score": 0.2,
+      "fundamental": "The exchange-stock squeeze is still driving nearby arabica: Dec is up ~3.85 at ~284.55 (high 288.30) as the market keeps pricing a shrinking ICE-certified pile, with Mar lagging at ~278.65, so the Dec/Mar inverse is widening. That spread says deliverable coffee, not Brazil's next crop, is the constraint; a weaker real remains the main brake on further gains.",
       "events": [
-        "ICE certified arabica inventories fall further, Dec settles higher (Barchart)",
-        "Brazilian real weakens sharply on Lula concerns, a headwind for prices (Bloomberg, Barchart)",
-        "Forced-labour import bans start to reach the coffee trade (Daily Coffee News)"
-      ],
-      "fund_score": 0.15
+        "Dec arabica ~284.55 (+3.85), high 288.30; Mar ~278.65, Dec/Mar inverse widening (ICE via TradingView)",
+        "ICE-certified arabica inventories keep falling (Barchart)",
+        "Weaker Brazilian real encourages grower selling (Bloomberg)"
+      ]
     },
     "cocoa": {
-      "date": "2026-11-16",
-      "time": "18:20 CT",
-      "fundamental": "The signals are mixed: dry weather in West Africa is starting to raise questions about the mid-crop, but reports of ample supply and steady Ivory Coast port arrivals weighed. Dec fell 58 to 5,061, below the 5,111 support and just over 5,051. Ghana's plan to ban raw-bean exports by 2030 is a long-term structural story, not a near-term supply change.",
+      "date": "2026-11-17",
+      "time": "07:50 CT",
+      "fund_score": -0.15,
+      "fundamental": "The tile now follows Mar (~5,222, +38) after the roll; the small overnight bounce does not change the supply story. Rising ICE-certified cocoa stocks add to the ample-supply picture from steady Ivory Coast arrivals, and that outweighs early talk of dry weather hurting the mid-crop for now.",
       "events": [
-        "Dec cocoa 5,061 (-58), below 5,111 support (ICE via TradingView)",
-        "Dry weather in West Africa raises mid-crop concerns (ADMIS)",
-        "Ample-supply talk and Ivory Coast arrivals weigh on prices (Barchart)"
-      ],
-      "fund_score": -0.1
+        "Mar cocoa ~5,222 (+38), Dec ~5,078 in early trade (ICE via TradingView)",
+        "Rising ICE cocoa inventories pressure prices (Barchart)",
+        "Dry West African weather keeps mid-crop questions open (ADMIS)"
+      ]
     }
   }
 }
