@@ -39,9 +39,11 @@ def main():
     if cp.exists():
         c = pd.read_csv(cp, parse_dates=["date"]).dropna(subset=["brl_m3"]).sort_values("date")
         if len(c) and bd_between(c.date.iloc[-1], asof) <= 5:
-            eth, eth_date, eth_src = float(c.brl_m3.iloc[-1]), c.date.iloc[-1], "CEPEA/ESALQ hydrous ethanol indicator, R$/m³"
+            eth, eth_date, eth_src = float(c.brl_m3.iloc[-1]), c.date.iloc[-1], f"CEPEA/ESALQ: {c.series.iloc[-1].title()} (R$/m³; week ending on the date shown)"
+    e = w["ETH1!"][w["ETH1!"] > 0].dropna()
+    b3_date = last_change(e)
+    b3 = float(e.loc[b3_date])
     if eth is None:
-        e = w["ETH1!"][w["ETH1!"] > 0].dropna()
         eth_date = last_change(e)
         eth, eth_src = float(e.loc[eth_date]), "B3 hydrous ethanol futures, front month, R$/m³ (cash-settled on the CEPEA/ESALQ Paulínia index)"
     fxs = w["USDBRL"].dropna()
@@ -68,7 +70,8 @@ def main():
                    "eth": rd(eth, 1), "eth_date": str(eth_date.date()), "eth_src": eth_src, "fx": rd(fx, 4), "fx_date": str(fx_date.date()),
                    "parity": rd(par, 2), "gap": rd(L.px - par, 2), "sugar_pays": bool(L.px > par),
                    "sb_level_ethanol_equal": rd(par, 2), "eth_level_sugar_equal": rd(eth_be, 0),
-                   "eth_age_bd": bd_between(eth_date, asof)},
+                   "eth_age_bd": bd_between(eth_date, asof),
+                   "b3_eth": rd(b3, 1), "b3_date": str(b3_date.date()), "b3_parity": rd(parity(b3, fx), 2)},
            "mix": mix,
            "constants": {"atr_kg_per_kg_sugar": K["atr"]["sugar"], "atr_kg_per_litre_hydrous": K["atr"]["hyd"], "pol_premium": K["pol"],
                          "fob_logistics_brl_t": K["logistics_brl"], "lb_per_tonne_over_100": K["lb_t"]},

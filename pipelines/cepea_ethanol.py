@@ -22,16 +22,22 @@ def parse(html):
     hydrous ethanol (hidratado). Values below 50 are per litre and are converted to per m³."""
     tables = list(re.finditer(r"(?is)<table.*?</table>", html))
     for t in tables:
-        before = re.sub(r"(?s)<[^>]+>", " ", html[max(0, t.start() - 1500):t.start()])
-        if "idratado" not in before:
+        before = re.sub(r"(?s)<[^>]+>", " ", html[max(0, t.start() - 400):t.start()])
+        heads = re.findall(r"(?i)indicador[^|]*?(?=indicador|$)", " ".join(before.split()))
+        head = heads[-1] if heads else before
+        if "hidratado" not in head.lower() or "outros fins" in head.lower():
             continue
+        before = head
         series = " ".join(before.split())[-140:]
         rows = []
         for tr in re.findall(r"(?is)<tr.*?</tr>", t.group(0)):
             cells = [" ".join(re.sub(r"(?s)<[^>]+>", " ", c).split()) for c in re.findall(r"(?is)<t[dh][^>]*>(.*?)</t[dh]>", tr)]
-            if len(cells) >= 2 and re.fullmatch(r"\d{2}/\d{2}/\d{4}", cells[0]) and re.fullmatch(r"[\d\.,]+", cells[1]):
-                x = float(cells[1].replace(".", "").replace(",", "."))
-                rows.append((datetime.strptime(cells[0], "%d/%m/%Y").date().isoformat(), round(x * 1000 if x < 50 else x, 2), series))
+            ds = re.findall(r"\d{2}/\d{2}/\d{4}", cells[0]) if cells else []
+            num = re.search(r"\d[\d\.]*,\d+|\d+\.\d+", cells[1]) if len(cells) >= 2 else None
+            if ds and num:
+                v = num.group(0)
+                x = float(v.replace(".", "").replace(",", ".")) if "," in v else float(v)
+                rows.append((datetime.strptime(ds[-1], "%d/%m/%Y").date().isoformat(), round(x * 1000 if x < 50 else x, 2), series))
         if rows:
             return rows
     print(f"CEPEA page: {len(tables)} tables; headings near tables: " + " | ".join(" ".join(re.sub(r'(?s)<[^>]+>', ' ', html[max(0, t.start() - 300):t.start()]).split())[-80:] for t in tables[:6]))
