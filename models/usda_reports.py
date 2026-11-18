@@ -1,27 +1,25 @@
-"""USDA reports for the Reports tabs (probe stage 2)."""
+"""USDA reports for the Reports tabs (probe stage 3)."""
 import re, sys, json, requests
 H = {"User-Agent": "Mozilla/5.0 (research desk; github actions)", "Accept": "application/json, text/plain, */*"}
 
 def probe():
     t = requests.get("https://gain.fas.usda.gov/main-es2018.js", headers=H, timeout=60).text
-    for m in re.finditer(r'(Lookup/|Report/|lookupUrl|reportUrl|apiUrl)', t):
-        pass
-    seen = set()
-    for m in re.finditer(r'[A-Za-z_.]*(?:Url|URL|url)\s*\+\s*["\']([A-Za-z/]+)', t):
-        seen.add(m.group(1))
-    print("URLPARTS", sorted(seen))
-    for kw in ["SearchReport", "GetReport", "GetCommod", "GetCountr", "GetReportType", "Download", "keyword", "Lookup/"]:
-        for m in list(re.finditer(kw, t))[:6]:
-            print("CTX", kw, "|", t[max(0, m.start() - 250): m.end() + 250].replace("\n", " "))
-    for u in ["https://esmis.nal.usda.gov/api-documentation", "https://esmis.nal.usda.gov/publication/cotton-and-wool-outlook?page=1",
-              "https://esmis.nal.usda.gov/publication/cotton-and-wool-outlook/2025-09-16",
-              "https://www.ers.usda.gov/topics/crops/cotton-and-wool/market-outlook", "https://www.ers.usda.gov/topics/crops/sugar-and-sweeteners/market-outlook"]:
+    for m in re.finditer(r'(\w+Service) = class \1', t):
+        name = m.group(1)
+        body = t[m.start(): m.start() + 6000]
+        calls = re.findall(r'this\.http(?:Client)?\.(get|post|put)\(([^;]{0,220})', body)
+        if calls:
+            print("SVC", name)
+            for c in calls:
+                print("   ", c[0], c[1].replace("\n", " ")[:220])
+    m = t.find("apps.fas.usda.gov/newgainapi/api")
+    print("ENV", t[m - 600: m + 600].replace("\n", " "))
+    m = t.find("SearchFilter = class")
+    print("FILTER", t[m: m + 1500].replace("\n", " ") if m > 0 else None)
+    for u in ["https://www.ers.usda.gov/publications?series=CWS", "https://www.ers.usda.gov/publications?series=SSSM"]:
         r = requests.get(u, headers=H, timeout=60)
         print("==", u, r.status_code)
-        links = sorted(set(re.findall(r'href="([^"]+)"', r.text)))
-        print("  ", [l for l in links if any(k in l.lower() for k in ("pdf", "outlook", "publication", "api", "pub-details", "cws", "sss", "page="))][:80])
-        if "api-documentation" in u:
-            print(re.sub(r"<[^>]+>", " ", r.text)[:6000])
+        print("  ", sorted(set(l for l in re.findall(r'href="([^"]+)"', r.text) if "pub" in l or "pdf" in l.lower()))[:60])
 
 if __name__ == "__main__":
     probe()
