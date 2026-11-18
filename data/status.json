@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:22 UTC",
+ "generated": "2026-11-18 03:25 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -329,7 +329,7 @@
   {
    "group": "Coffee",
    "source": "Coffee desk (ICE certs, basis, origins)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -449,12 +449,12 @@
   {
    "group": "Coffee",
    "source": "USD/BRL PTAX (Banco Central do Brasil)",
-   "latest": null,
+   "latest": "2026-11-17",
    "cadence": "daily",
-   "age": null,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "Brazil physical in US cents/lb"
   },
@@ -855,9 +855,9 @@
    "used_in": "last file received per type is listed below the table"
   }
  ],
- "late": 5,
+ "late": 4,
  "inbox": {
-  "updated": "2026-11-18 03:16 UTC",
+  "updated": "2026-11-18 03:25 UTC",
   "last": [
    {
     "type": "CT_options",
