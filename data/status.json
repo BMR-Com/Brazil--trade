@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 02:26 UTC",
+ "generated": "2026-11-18 02:35 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -65,9 +65,9 @@
   {
    "group": "Cotton",
    "source": "ICE quality grid (AMS daily spot quotes)",
-   "latest": "2026-11-16",
+   "latest": "2026-11-17",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -809,7 +809,7 @@
  ],
  "late": 3,
  "inbox": {
-  "updated": "2026-11-18 02:15 UTC",
+  "updated": "2026-11-18 02:35 UTC",
   "last": [
    {
     "type": "CT_options",
