@@ -19,13 +19,13 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - run: pip install -q pandas numpy requests beautifulsoup4 playwright git+https://github.com/rongardF/tvdatafeed.git
-      - name: sync China raw files collected by the Mac browser task into the US desk (public repo, new files only)
+      - name: sync China raw files collected by the Mac browser task into the US desk (public repo, overwrite updated files)
         continue-on-error: true
         timeout-minutes: 5
         run: |
           git clone -q --depth 1 --filter=blob:none --sparse https://github.com/BMR-Com/us-commodity-desk /tmp/desk
           git -C /tmp/desk sparse-checkout set data/china/raw
-          rsync -a --ignore-existing /tmp/desk/data/china/raw/ data/china/raw/
+          rsync -a --exclude collect_status.json /tmp/desk/data/china/raw/ data/china/raw/
       - name: China customs monthly bulletin and China Cotton Association pages (new data only)
         continue-on-error: true
         timeout-minutes: 25
