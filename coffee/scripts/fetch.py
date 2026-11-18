@@ -171,8 +171,12 @@ def fetch_brazil(full=False, only=None):
             u = NA + slug + (f"/{d:%Y-%m-%d}" if d else "")
             r = get(u)
             if r is None or not r.ok:
+                log("NA", name, "HTTP", None if r is None else r.status_code, u)
                 continue
-            rows += parse_na(r.text, name)
+            got = parse_na(r.text, name)
+            if not got:
+                log("NA", name, "page fetched but no rows parsed (layout change or block page?)", len(r.text), "bytes")
+            rows += got
             if d:
                 time.sleep(0.4)
         log("NA", name, len(rows))

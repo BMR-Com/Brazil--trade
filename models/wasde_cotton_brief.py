@@ -121,7 +121,7 @@ def cot_cotton():
 
 
 def oncall():
-    raw = remote("cotton-on-call/main/data/cotton_oncall.csv", "cotton-on-call/data/cotton_oncall.csv")
+    raw = (Path(__file__).resolve().parent.parent / "data" / "cotton" / "oncall" / "cotton_oncall.csv").read_bytes()
     d = pd.read_csv(io.BytesIO(raw)); d["date"] = pd.to_datetime(d["Report Date"])
     d = d[(d["Futures Based On"].astype(str).str.strip() != "Totals") & ~d["Futures Based On"].astype(str).str.contains("October") & (d["Old/New"] == "old")]
     g = d.groupby("date")[["Unfixed Call Sales", "Unfixed Call Purchases"]].sum()

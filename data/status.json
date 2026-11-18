@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 17:34 UTC",
+ "generated": "2026-11-18 17:40 UTC",
  "today": "2026-11-18",
  "sources": [
   {
@@ -939,19 +939,103 @@
    "used_in": "news sections"
   },
   {
-   "group": "ICE drop box",
-   "source": "Files not recognised (inbox/unrecognised): 0",
-   "latest": "2026-11-17",
-   "cadence": "on upload",
-   "age": null,
+   "group": "Embedded dashboards",
+   "source": "COT positioning dashboard (BMR-Com/cftc-cot-full), positions date",
+   "latest": "2026-11-10",
+   "cadence": "weekly (Tue, out Fri)",
+   "age": 8,
    "age_unit": "days",
-   "limit": 0,
+   "limit": 10,
    "state": "ok",
-   "manual": true,
-   "used_in": "last file received per type is listed below the table"
+   "manual": false,
+   "used_in": "Cotton: Futures, options & COT (COT desk link)"
+  },
+  {
+   "group": "Embedded dashboards",
+   "source": "Export sales dashboard (BMR-Com/usd-export-sales-email), week ending",
+   "latest": "2026-11-05",
+   "cadence": "weekly (Thu)",
+   "age": 13,
+   "age_unit": "days",
+   "limit": 15,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Cotton: Export sales tab"
+  },
+  {
+   "group": "Embedded dashboards",
+   "source": "Crop progress dashboard: crop conditions (BMR-Com/cotton-crop-progress)",
+   "latest": "2026-11-15",
+   "cadence": "weekly (Mon, Apr-Nov)",
+   "age": 3,
+   "age_unit": "days",
+   "limit": 9,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Cotton: Crop progress tab"
+  },
+  {
+   "group": "Embedded dashboards",
+   "source": "US Drought Monitor, cotton area (BMR-Com/cotton-crop-progress)",
+   "latest": "2026-11-10",
+   "cadence": "weekly (Thu, as of Tue)",
+   "age": 8,
+   "age_unit": "days",
+   "limit": 10,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Cotton: Crop progress tab"
+  },
+  {
+   "group": "Embedded dashboards",
+   "source": "Spot basis dashboard (BMR-Com/cotton-crop-progress)",
+   "latest": "2026-11-17",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Cotton: Basis & ideas tab"
+  },
+  {
+   "group": "Embedded dashboards",
+   "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
+   "latest": "2026-11-13",
+   "cadence": "monthly",
+   "age": 5,
+   "age_unit": "days",
+   "limit": 40,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Cotton: WASDE tab (full dashboard)"
+  },
+  {
+   "group": "Embedded dashboards",
+   "source": "Options terminal, cotton (BMR-Com/softs--options-)",
+   "latest": "2026-11-12",
+   "cadence": "daily",
+   "age": 4,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "late",
+   "manual": false,
+   "used_in": "options terminal, Delivery tab options"
+  },
+  {
+   "group": "Embedded dashboards",
+   "source": "Options terminal, coffee (BMR-Com/softs--options-)",
+   "latest": "2026-11-11",
+   "cadence": "daily",
+   "age": 5,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "late",
+   "manual": false,
+   "used_in": "options terminal"
   }
  ],
- "late": 6,
+ "late": 8,
  "inbox": {
   "updated": "2026-11-18 17:33 UTC",
   "last": [

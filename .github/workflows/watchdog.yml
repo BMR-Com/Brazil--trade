@@ -1,0 +1,47 @@
+name: catch-up
+# Catch-up job for every report on the desk (pipelines/watchdog.py, data/release_calendar.json).
+# Finds reports whose newest release should be in by now but is not, and workflows whose last run failed; reruns the
+# desk workflow responsible (reports collected by other BMR-Com repos are rerun by that repo's own catch-up job), waits,
+# rechecks and writes data/watchdog.json (kept in the repo, not shown on the site).
+# Ends red when something collected automatically is still late or a rerun failed; one e-mail a day at most, and only when
+# the SMTP_*/EMAIL_* secrets exist. Uploads and manual entries that are late are listed as "needs Ma" but do not turn it red.
+# A lighter check (no waiting, no red) also runs at the end of every data-status run.
+on:
+  schedule:
+    - cron: '17 9 * * *'    # 04:17/05:17 ET, quiet hour: catches anything missed the day before
+    - cron: '47 17 * * *'   # 12:47/13:47 ET, after the morning USDA/Drought Monitor releases
+    - cron: '43 2 * * *'    # 21:43/22:43 ET, after the afternoon CFTC/ICE releases (same-day catch-up)
+  workflow_dispatch: {}
+permissions: {contents: write, actions: write}
+concurrency: {group: catch-up, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests numpy
+      - name: data status
+        run: python pipelines/data_status.py
+      - name: catch up (rerun, wait, recheck)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          python pipelines/watchdog.py --wait --strict
+      - name: commit log
+        if: always()
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/watchdog.json data/status.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "catch-up: check $(date -u +%F' '%H:%M)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

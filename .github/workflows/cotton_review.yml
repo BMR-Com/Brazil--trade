@@ -32,8 +32,8 @@ jobs:
       - name: forward contracting, monthly prices, daily classing, release schedule
         env: {AMS_API_KEY: '${{ secrets.AMS_API_KEY }}'}
         run: |
-          python pipelines/ams_cotton_fc.py || true
-          python pipelines/ams_cotton_extra.py || true
+          python pipelines/ams_cotton_fc.py || { echo "::error::failed: python pipelines/ams_cotton_fc.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python pipelines/ams_cotton_extra.py || { echo "::error::failed: python pipelines/ams_cotton_extra.py"; echo x >> "$RUNNER_TEMP/failed"; }
       - name: refresh the cotton outlook brief
         run: python -W ignore models/outlook_brief.py || true
       - name: commit
@@ -43,3 +43,8 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -q -m "data: AMS cotton market review $(date -u +%F)"
           for i in 1 2 3; do git pull -q --rebase -X theirs origin ${{ github.ref_name }} && git push -q origin HEAD:${{ github.ref_name }} && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 5; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: fail the run if any step above failed (steps keep going so the other data still updates, but failures are not hidden)
+        if: always()
+        run: |
+          o="${{ join(steps.*.outcome, ' ') }}"
+          if echo "$o" | grep -q failure || [ -s "$RUNNER_TEMP/failed" ]; then echo "::error::one or more steps failed (see the errors above): $o"; exit 1; fi

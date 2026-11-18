@@ -3,7 +3,7 @@
 const Cotton = (() => {
   let built = false, tab = 'ct-primer';
   const ORG = location.hostname === 'bmr-com.github.io' ? '' : 'https://bmr-com.github.io';   // sibling Pages sites (same origin when live)
-  const SITE = { wasde: ORG + '/wasde-analytics/', esr: ORG + '/usd-export-sales-email/', crop: ORG + '/cotton-crop-progress/', oncall: ORG + '/cotton-on-call/',
+  const SITE = { wasde: ORG + '/wasde-analytics/', esr: ORG + '/usd-export-sales-email/', crop: ORG + '/cotton-crop-progress/', oncall: 'cotton_oncall.html',
     cot: ORG + '/cftc-cot-full/', opts: ORG + '/softs--options-/' };
   const TABS = [['ct-primer', 'Primer'], ['ct-geo', "Where it's grown, trade &amp; weather"], ['ct-wasde', 'WASDE'], ['ct-esr', 'Export sales'], ['ct-crop', 'Crop progress'], ['ct-ams', 'AMS market review'], ['ct-china', 'China'], ['ct-india', 'India'], ['ct-aus', 'Australia'], ['ct-loan', 'Loan'], ['ct-certs', 'Certs &amp; quality premiums'], ['ct-oncall', 'On-call'], ['ct-basis', 'Basis &amp; ideas'],
     ['ct-flows', 'Futures, options &amp; COT'], ['ct-rv', 'Spreads &amp; vol'], ['ct-outlook', 'Outlook'], ['ct-seas', 'Seasonality &amp; technicals']];

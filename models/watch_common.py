@@ -175,26 +175,14 @@ def index_roll_windows(sym, c):
     return {"gsci": [str(days[4].date()), str(days[8].date())], "bcom": [str(days[5].date()), str(days[9].date())]}
 
 
-def cotton_oncall(cache=D / "watch" / "oncall_ct.csv"):
-    """CFTC cotton on-call by contract month (BMR-Com/cotton-on-call); refreshed from GitHub, cached in the repo."""
-    url = "https://raw.githubusercontent.com/BMR-Com/cotton-on-call/main/data/cotton_oncall.csv"
-    df = None
-    try:
-        import requests
-        r = requests.get(url, timeout=40)
-        if r.ok and "Unfixed Call Sales" in r.text[:400]:
-            from io import StringIO
-            df = pd.read_csv(StringIO(r.text))
-            df["Report Date"] = pd.to_datetime(df["Report Date"], format="%m/%d/%Y", errors="coerce")
-            keep = df[df["Report Date"] >= df["Report Date"].max() - pd.Timedelta(days=4 * 366)]
-            cache.parent.mkdir(parents=True, exist_ok=True)
-            keep.to_csv(cache, index=False)
-            df = keep
-    except Exception as e:  # offline: use the cache
-        print("on-call fetch failed:", str(e)[:120])
-    if df is None and cache.exists():
-        df = pd.read_csv(cache, parse_dates=["Report Date"])
-    return df
+def cotton_oncall(src=D / "cotton" / "oncall" / "cotton_oncall.csv"):
+    """CFTC cotton on-call by contract month (pipelines/oncall/scrape.py -> data/cotton/oncall/cotton_oncall.csv), last 4 years."""
+    if not src.exists():
+        print("on-call file missing:", src)
+        return None
+    df = pd.read_csv(src)
+    df["Report Date"] = pd.to_datetime(df["Report Date"], format="%m/%d/%Y", errors="coerce")
+    return df[df["Report Date"] >= df["Report Date"].max() - pd.Timedelta(days=4 * 366)].copy()
 
 
 def oncall_old_crop(df):

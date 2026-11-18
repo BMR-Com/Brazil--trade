@@ -26,43 +26,50 @@ jobs:
         with: {python-version: '3.11'}
       - run: pip install -q requests pandas numpy scipy git+https://github.com/rongardF/tvdatafeed.git
       - name: CFTC COT (cotton, sugar, coffee)
+        id: step1
         continue-on-error: true
         timeout-minutes: 50
         run: python pipelines/cot.py
       - name: active-contract closes
+        id: step2
         continue-on-error: true
         timeout-minutes: 15
         run: python pipelines/ohlc.py
       - name: technicals, vol, research
+        id: step3
         continue-on-error: true
         run: python -W ignore models/technicals.py && python models/vol.py && (python models/softs_options.py || true) && python -W ignore models/research.py
       - name: COT desk
+        id: step4
         continue-on-error: true
         run: |
           python models/cot_backtest.py || echo "cot backtest skipped (needs symbols outside the softs desk)"
           python -W ignore models/cot_desk.py
       - name: sugar flows (SECEX weekly, China imports)
+        id: step5
         continue-on-error: true
         timeout-minutes: 10
         run: pip install -q openpyxl && python pipelines/sugar_flows_fetch.py
       - name: balance sheets, price outlook, briefs
+        id: step6
         continue-on-error: true
         run: |
-          python -W ignore models/grains_esr_brief.py || true
-          python -W ignore models/balance_sheets.py || true
-          python -W ignore models/cotton_price_outlook.py || true
-          python -W ignore models/trader_sheet.py || true
-          python -W ignore models/sugar_signals.py || true
-          python -W ignore models/sugar_flows.py || true
-          python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || true
+          python -W ignore models/grains_esr_brief.py || { echo "::error::failed: python -W ignore models/grains_esr_brief.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/balance_sheets.py || { echo "::error::failed: python -W ignore models/balance_sheets.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/cotton_price_outlook.py || { echo "::error::failed: python -W ignore models/cotton_price_outlook.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/trader_sheet.py || { echo "::error::failed: python -W ignore models/trader_sheet.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/sugar_signals.py || { echo "::error::failed: python -W ignore models/sugar_signals.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/sugar_flows.py || { echo "::error::failed: python -W ignore models/sugar_flows.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || { echo "::error::failed: python -W ignore models/summary.py && python -W ignore models/outlook_brief.py"; echo x >> "$RUNNER_TEMP/failed"; }
       - name: contract calendar, cotton spread vs full carry, coffee/sugar spreads & arbs, data status
+        id: step7
         continue-on-error: true
         run: |
-          python -W ignore models/contract_calendar.py || true
-          python models/cotton_carry.py || true
+          python -W ignore models/contract_calendar.py || { echo "::error::failed: python -W ignore models/contract_calendar.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python models/cotton_carry.py || { echo "::error::failed: python models/cotton_carry.py"; echo x >> "$RUNNER_TEMP/failed"; }
           python models/softs_spread_tables.py || echo "::warning::spread tables failed"
-          python models/reports_store.py prune || true
-          python pipelines/data_status.py || true
+          python models/reports_store.py prune || { echo "::error::failed: python models/reports_store.py prune"; echo x >> "$RUNNER_TEMP/failed"; }
+          python pipelines/data_status.py || { echo "::error::failed: python pipelines/data_status.py"; echo x >> "$RUNNER_TEMP/failed"; }
       - name: commit
         run: |
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
@@ -70,3 +77,8 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -q -m "data: softs COT, closes, briefs $(date -u +%F)"
           for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: fail the run if any step above failed (steps keep going so the other data still updates, but failures are not hidden)
+        if: always()
+        run: |
+          o="${{ join(steps.*.outcome, ' ') }}"
+          if echo "$o" | grep -q failure || [ -s "$RUNNER_TEMP/failed" ]; then echo "::error::one or more steps failed (see the errors above): $o"; exit 1; fi

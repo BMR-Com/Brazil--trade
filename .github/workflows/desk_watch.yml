@@ -1,7 +1,7 @@
 name: desk-watch
 # After the daily data runs: "What changed" strip, delivery-period dashboard, sugar ethanol-parity read, alerts (with
 # email through repository secrets when set) and the desk's call log. Reads only what the other workflows wrote, plus
-# the CEPEA hydrous ethanol page and the CFTC on-call file from BMR-Com/cotton-on-call.
+# the CEPEA hydrous ethanol page and the CFTC on-call file (data/cotton/oncall, built by oncall.yml).
 # A model that fails marks the run failed; the remaining steps still run and the outputs that were built are committed.
 on:
   workflow_dispatch: {}

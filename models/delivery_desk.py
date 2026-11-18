@@ -6,7 +6,7 @@ expiring option series, the index-roll windows, and a short rule-based read of t
 
 Inputs (all already on the desk): data/contracts/<SYM>.csv, data/specs/calendar.json rules (models/contract_calendar.py),
 data/options/roll.json (ICE open interest by contract), data/options/<SYM>.json, data/cotton/carry_history.csv,
-data/cotton/ice/*, data/coffee/ice_certs.csv, data/cot/<SYM>_fut.csv, BMR-Com/cotton-on-call.
+data/cotton/ice/*, data/coffee/ice_certs.csv, data/cot/<SYM>_fut.csv, data/cotton/oncall/cotton_oncall.csv.
 Writes data/delivery/delivery.json.
 """
 from datetime import datetime, timezone

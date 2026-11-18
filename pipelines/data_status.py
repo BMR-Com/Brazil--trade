@@ -1,5 +1,6 @@
 """Data freshness for the softs desk: data/status.json, one row per source with its latest data date, expected cadence and
-a late flag. Reads only files in this repo (plus the on-call CSV from BMR-Com/cotton-on-call when reachable).
+a late flag. Reads files in this repo (on-call: data/cotton/oncall/cotton_oncall.csv) plus a few public files of the
+BMR-Com source repos whose dashboards the desk embeds.
 
 Ages are counted in business days for daily sources and calendar days for the rest. A source is "late" when its age is
 over the limit for its cadence (daily > 2 business days, weekly > 9 days, fortnightly > 20, monthly > 40 days; some
@@ -37,10 +38,27 @@ def tech_last(sym):
 
 
 def oncall():
-    import requests
-    t = requests.get("https://raw.githubusercontent.com/BMR-Com/cotton-on-call/main/data/cotton_oncall.csv", timeout=30).text
+    t = (D / "cotton" / "oncall" / "cotton_oncall.csv").read_text()
     ds = re.findall(r"(\d{2})/(\d{2})/(\d{4})", t[-20000:])
     return max(f"{y}-{m}-{d}" for m, d, y in ds) if ds else None
+
+
+_RJ = {}
+def RJ(repo_path):
+    """Public JSON file of a BMR-Com source repo (raw.githubusercontent.com), cached per run."""
+    if repo_path not in _RJ:
+        import requests
+        r = requests.get("https://raw.githubusercontent.com/BMR-Com/" + repo_path, timeout=60); r.raise_for_status()
+        _RJ[repo_path] = r.json()
+    return _RJ[repo_path]
+
+
+def last_commit(repo, path):
+    """Date of the last commit touching a file in a BMR-Com repo (for big files not worth downloading)."""
+    import requests
+    r = requests.get(f"https://api.github.com/repos/BMR-Com/{repo}/commits", params={"path": path, "per_page": 1}, timeout=30)
+    r.raise_for_status()
+    return r.json()[0]["commit"]["committer"]["date"]
 
 
 _CP = {}
@@ -160,6 +178,14 @@ SOURCES = [
     ("Macro", "Events calendar", "daily", 2, B, False, lambda: d10(J("data/calendar/calendar.json")["generated"]), "calendars on each tab"),
     ("Macro", "Contract calendar (notice and roll dates)", "daily", 2, B, False, lambda: J("data/specs/calendar.json")["generated"], "primers, certs delivery pair"),
     ("Macro", "News", "every few hours", 1, B, False, lambda: d10(J("data/news/news.json")["generated"]), "news sections"),
+    ("Embedded dashboards", "COT positioning dashboard (BMR-Com/cftc-cot-full), positions date", "weekly (Tue, out Fri)", 10, C, False, lambda: RJ("cftc-cot-full/main/data/latest_summary.json")["report_date"], "Cotton: Futures, options & COT (COT desk link)"),
+    ("Embedded dashboards", "Export sales dashboard (BMR-Com/usd-export-sales-email), week ending", "weekly (Thu)", 15, C, False, lambda: RJ("usd-export-sales-email/main/data/brief.json")["commodities"][0]["week"], "Cotton: Export sales tab"),
+    ("Embedded dashboards", "Crop progress dashboard: crop conditions (BMR-Com/cotton-crop-progress)", "weekly (Mon, Apr-Nov)", 9, C, False, lambda: RJ("cotton-crop-progress/main/docs/data/crop.json")["asof"]["conditions"], "Cotton: Crop progress tab"),
+    ("Embedded dashboards", "US Drought Monitor, cotton area (BMR-Com/cotton-crop-progress)", "weekly (Thu, as of Tue)", 10, C, False, lambda: RJ("cotton-crop-progress/main/docs/data/crop.json")["asof"]["drought"], "Cotton: Crop progress tab"),
+    ("Embedded dashboards", "Spot basis dashboard (BMR-Com/cotton-crop-progress)", "daily", 3, B, False, lambda: RJ("cotton-crop-progress/main/docs/data/basis.json")["as_of"], "Cotton: Basis & ideas tab"),
+    ("Embedded dashboards", "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update", "monthly", 40, C, False, lambda: last_commit("wasde-analytics", "data/Cotton.json"), "Cotton: WASDE tab (full dashboard)"),
+    ("Embedded dashboards", "Options terminal, cotton (BMR-Com/softs--options-)", "daily", 3, B, False, lambda: RJ("softs--options-/main/data/web/CT_desk.json")["date"], "options terminal, Delivery tab options"),
+    ("Embedded dashboards", "Options terminal, coffee (BMR-Com/softs--options-)", "daily", 3, B, False, lambda: RJ("softs--options-/main/data/web/KC_desk.json")["date"], "options terminal"),
 ]
 
 
@@ -198,14 +224,9 @@ def main():
         out.append({"group": grp, "source": name, "latest": d, "cadence": cad, "age": a, "age_unit": "business days" if unit == B else "days",
                     "limit": lim, "state": state, "manual": manual, "used_in": used})
         print(f"{state:7s} {str(d):10s} age {a} ({lim}) {name}")
-    ib = inbox()
+    ib = inbox()            # kept in status.json for the repo; not shown on the site
     if ib is not None:
-        n = len(ib["unrecognised"])
-        lr = max((r["received"] for r in ib["last"]), default=None)
-        out.append({"group": "ICE drop box", "source": f"Files not recognised (inbox/unrecognised): {n}", "latest": d10(lr), "cadence": "on upload",
-                    "age": None, "age_unit": "days", "limit": 0, "state": "check" if n else "ok", "manual": True,
-                    "used_in": "last file received per type is listed below the table"})
-        print(f"inbox: {n} unrecognised file(s)")
+        print(f"inbox: {len(ib['unrecognised'])} unrecognised file(s)")
     J_ = {"generated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "today": TODAY.isoformat(), "sources": out,
           "late": sum(r["state"] != "ok" for r in out), "inbox": ib}
     (D / "status.json").write_text(json.dumps(J_, indent=1))

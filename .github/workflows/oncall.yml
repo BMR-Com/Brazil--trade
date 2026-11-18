@@ -1,0 +1,68 @@
+name: cotton-on-call
+# CFTC Cotton On-Call (as of Friday, released Thursday 15:30 ET): pipelines/oncall/scrape.py -> data/cotton/oncall/cotton_oncall.csv,
+# then the weekly brief (pipelines/oncall/weekly_brief.py -> data/cotton/oncall/brief.json), shown on Cotton > On-call (cotton_oncall.html).
+# GitHub starts scheduled runs late or drops them at busy times, so there are many tries on Thursday evening and catch-ups on
+# Friday and Monday (holiday weeks). Each try first checks (standard library only, a few seconds) whether a report is out that is
+# not stored, and stops there if not. The catch-up job (watchdog.yml) reruns this workflow if a report is still missing.
+# The scrape fails the run (red) when the report is past its late limit and still not stored, or CFTC cannot be reached.
+on:
+  schedule:
+    - cron: '37 19 * * 4'    # Thu 15:37 EDT
+    - cron: '7 20 * * 4'
+    - cron: '37 20 * * 4'    # Thu 15:37 EST
+    - cron: '9 21 * * 4'
+    - cron: '43 21 * * 4'
+    - cron: '17 22 * * 4'
+    - cron: '23 23 * * 4'
+    - cron: '19 0 * * 5'     # Thu evening ET
+    - cron: '11 2 * * 5'
+    - cron: '13 13 * * 5'    # Friday catch-ups (holiday-shifted release, or a missed Thursday)
+    - cron: '41 17 * * 5'
+    - cron: '47 21 * * 5'
+    - cron: '13 13 * * 1'    # Monday catch-ups
+    - cron: '29 21 * * 1'
+    - cron: '31 23 * * 1-6'  # daily: rebuild the brief with the latest COT, export sales and prices (no scrape)
+  push:
+    branches: [main]
+    paths: ['pipelines/oncall/**', '.github/workflows/oncall.yml']
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Scrape even if the newest report looks stored (1 = yes)'
+        required: false
+        default: '0'
+permissions: {contents: write}
+concurrency: {group: cotton-oncall, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: is a report due?
+        id: due
+        env: {FORCE_SCRAPE: "${{ github.event.inputs.force }}"}
+        run: |
+          python3 pipelines/oncall/due.py
+          if [ "${{ github.event.schedule }}" = "31 23 * * 1-6" ]; then echo "brief=1" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-python@v5
+        if: steps.due.outputs.due == '1' || steps.due.outputs.brief == '1' || github.event_name != 'schedule'
+        with: {python-version: '3.11'}
+      - name: install
+        if: steps.due.outputs.due == '1' || steps.due.outputs.brief == '1' || github.event_name != 'schedule'
+        run: pip install -q requests beautifulsoup4 matplotlib fpdf2 pandas numpy
+      - name: scrape CFTC on-call (fails when the report is overdue)
+        if: steps.due.outputs.due == '1'
+        env: {ONCALL_RETRIES: "4", FORCE_SCRAPE: "${{ github.event.inputs.force == '1' && '1' || '' }}"}
+        run: python pipelines/oncall/scrape.py
+      - name: weekly brief
+        if: always() && (steps.due.outputs.due == '1' || steps.due.outputs.brief == '1' || github.event_name != 'schedule')
+        run: python -W ignore pipelines/oncall/weekly_brief.py && python pipelines/data_status.py
+      - name: commit
+        if: always() && (steps.due.outputs.due == '1' || steps.due.outputs.brief == '1' || github.event_name != 'schedule')
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/cotton/oncall data/status.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: cotton on-call $(date -u +%F' '%H:%M)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

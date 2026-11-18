@@ -38,13 +38,16 @@ jobs:
             python coffee/scripts/fetch.py
           fi
       - name: Brazil physical history (CEPEA files from inbox/, Notícias Agrícolas co-op and CEPEA copies if robots allow, BCB PTAX)
+        id: step1
         continue-on-error: true
         timeout-minutes: 50
         run: pip install -q xlrd && python pipelines/brazil_physical.py
       - name: Brazil tender parity (blend cost in Antwerp vs exchange value)
+        id: step2
         continue-on-error: true
         run: python -W ignore models/brazil_tender_parity.py
       - name: ICE certified stocks (daily report; first run backfills history)
+        id: step3
         continue-on-error: true
         timeout-minutes: 40
         run: pip install -q xlrd && python pipelines/coffee_certs.py
@@ -63,3 +66,8 @@ jobs:
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "coffee: data refresh $(date -u +%F) [bot]"
           for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: fail the run if any step above failed (steps keep going so the other data still updates, but failures are not hidden)
+        if: always()
+        run: |
+          o="${{ join(steps.*.outcome, ' ') }}"
+          if echo "$o" | grep -q failure || [ -s "$RUNNER_TEMP/failed" ]; then echo "::error::one or more steps failed (see the errors above): $o"; exit 1; fi

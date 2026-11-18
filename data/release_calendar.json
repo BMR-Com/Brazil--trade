@@ -1,0 +1,1845 @@
+{
+ "about": "Release calendar for every source on the softs desk. Read by pipelines/watchdog.py (desk catch-up job and the source repos' own catch-up jobs). Times are US Eastern. 'release' rules are explained in pipelines/release_rules.py. 'late_after_hours': how long after the release the data may still be missing before it counts as late; rules of type 'age' use the data-status limit instead. 'manual': the source needs an upload or entry by Ma, so the catch-up job reports it but never reruns anything for it. 'workflow': the GitHub Actions workflow that collects it (its repo's catch-up job reruns it).",
+ "timezone": "America/New_York",
+ "holidays": {
+  "us_federal": [
+   "2026-01-01",
+   "2026-01-19",
+   "2026-02-16",
+   "2026-05-25",
+   "2026-06-19",
+   "2026-07-03",
+   "2026-09-07",
+   "2026-10-12",
+   "2026-11-11",
+   "2026-11-26",
+   "2026-12-25",
+   "2027-01-01",
+   "2027-01-18",
+   "2027-02-15",
+   "2027-05-31",
+   "2027-06-18",
+   "2027-07-05",
+   "2027-09-06",
+   "2027-10-11",
+   "2027-11-11",
+   "2027-11-25",
+   "2027-12-24",
+   "2027-12-31"
+  ],
+  "ice_us_softs": [
+   "2026-01-01",
+   "2026-01-19",
+   "2026-02-16",
+   "2026-04-03",
+   "2026-05-25",
+   "2026-06-19",
+   "2026-07-03",
+   "2026-09-07",
+   "2026-11-26",
+   "2026-12-25",
+   "2027-01-01",
+   "2027-01-18",
+   "2027-02-15",
+   "2027-03-26",
+   "2027-05-31",
+   "2027-06-18",
+   "2027-07-05",
+   "2027-09-06",
+   "2027-11-25",
+   "2027-12-24"
+  ],
+  "note": "Extend both lists each December (OPM federal holidays; ICE US holiday notice)."
+ },
+ "catch_up": {
+  "desk_runs_utc": [
+   "09:17",
+   "17:47",
+   "and at the end of every data-status run"
+  ],
+  "rerun_cooldown_hours": 6,
+  "wait_minutes": 40
+ },
+ "reports": [
+  {
+   "id": "cftc_oncall",
+   "status_source": "CFTC cotton on-call (as of Fri, out next Thu)",
+   "age_limit": 13,
+   "age_unit": "days",
+   "tab": "Cotton > On-call; Delivery; What changed; WASDE brief",
+   "report": "CFTC Cotton On-Call (as of Friday)",
+   "publisher": "CFTC",
+   "release_et": "Thu 15:30 (holiday on Thu: next business day)",
+   "release": {
+    "type": "weekly",
+    "weekday": 3,
+    "time": "15:30",
+    "data_offset_days": -6,
+    "shift": "on_day"
+   },
+   "late_after_hours": 6,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "oncall.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "cftc_cot",
+   "status_source": "CFTC COT, positions date",
+   "age_limit": 10,
+   "age_unit": "days",
+   "tab": "COT sections, Overview, Cotton > Futures, options & COT",
+   "report": "CFTC Commitments of Traders (Tuesday positions)",
+   "publisher": "CFTC",
+   "release_et": "Fri 15:30 (federal holiday in the week: following Monday)",
+   "release": {
+    "type": "weekly",
+    "weekday": 4,
+    "time": "15:30",
+    "data_offset_days": -3,
+    "shift": "week_to_monday"
+   },
+   "late_after_hours": 6,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_data.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "cot_dashboard",
+   "status_source": "COT positioning dashboard (BMR-Com/cftc-cot-full), positions date",
+   "age_limit": 10,
+   "age_unit": "days",
+   "tab": "Cotton > Futures, options & COT (COT desk link)",
+   "report": "CFTC COT (disaggregated, CIT)",
+   "publisher": "CFTC",
+   "release_et": "Fri 15:30 (holiday week: Monday)",
+   "release": {
+    "type": "weekly",
+    "weekday": 4,
+    "time": "15:30",
+    "data_offset_days": -3,
+    "shift": "week_to_monday"
+   },
+   "late_after_hours": 8,
+   "workflow": {
+    "repo": "BMR-Com/cftc-cot-full",
+    "file": "cot_data_update.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "data/latest_summary.json",
+    "key": [
+     "report_date"
+    ]
+   }
+  },
+  {
+   "id": "usda_esr",
+   "status_source": "US export sales (week ending)",
+   "age_limit": 15,
+   "age_unit": "days",
+   "tab": "Cotton > Export sales; briefs",
+   "report": "USDA FAS weekly export sales (week ending Thursday)",
+   "publisher": "USDA FAS",
+   "release_et": "Thu 08:30 (holiday Mon-Thu that week: Friday 08:30)",
+   "release": {
+    "type": "weekly",
+    "weekday": 3,
+    "time": "08:30",
+    "data_offset_days": -7,
+    "shift": "week_to_friday"
+   },
+   "late_after_hours": 6,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_trade.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "esr_dashboard",
+   "status_source": "Export sales dashboard (BMR-Com/usd-export-sales-email), week ending",
+   "age_limit": 15,
+   "age_unit": "days",
+   "tab": "Cotton > Export sales (full dashboard)",
+   "report": "USDA FAS weekly export sales",
+   "publisher": "USDA FAS",
+   "release_et": "Thu 08:30 (holiday week: Friday)",
+   "release": {
+    "type": "weekly",
+    "weekday": 3,
+    "time": "08:30",
+    "data_offset_days": -7,
+    "shift": "week_to_friday"
+   },
+   "late_after_hours": 8,
+   "workflow": {
+    "repo": "BMR-Com/usd-export-sales-email",
+    "file": "esr_data.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "data/brief.json",
+    "key": [
+     "commodities",
+     0,
+     "week"
+    ]
+   }
+  },
+  {
+   "id": "nass_crop_progress",
+   "status_source": "Crop projection input: crop progress",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Crop progress (projection)",
+   "report": "USDA NASS Crop Progress (week ending Sunday)",
+   "publisher": "USDA NASS",
+   "release_et": "Mon 16:00, April-November (Monday holiday: Tuesday)",
+   "release": {
+    "type": "weekly",
+    "weekday": 0,
+    "time": "16:00",
+    "data_offset_days": -1,
+    "shift": "on_day",
+    "months": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   "late_after_hours": 8,
+   "workflow": {
+    "repo": "BMR-Com/cotton-crop-progress",
+    "file": "update-data.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "docs/data/crop_projection.json",
+    "key": [
+     "inputs_through",
+     "crop_progress"
+    ]
+   }
+  },
+  {
+   "id": "crop_progress_dashboard",
+   "status_source": "Crop progress dashboard: crop conditions (BMR-Com/cotton-crop-progress)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Crop progress",
+   "report": "USDA NASS Crop Progress conditions",
+   "publisher": "USDA NASS",
+   "release_et": "Mon 16:00, April-November",
+   "release": {
+    "type": "weekly",
+    "weekday": 0,
+    "time": "16:00",
+    "data_offset_days": -1,
+    "shift": "on_day",
+    "months": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   "late_after_hours": 8,
+   "workflow": {
+    "repo": "BMR-Com/cotton-crop-progress",
+    "file": "update-data.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "docs/data/crop.json",
+    "key": [
+     "asof",
+     "conditions"
+    ]
+   }
+  },
+  {
+   "id": "crop_projection",
+   "status_source": "Crop projection (cotton-crop-progress)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Crop progress (projection)",
+   "report": "BMR-Com crop projection (built after crop progress, ginnings, drought)",
+   "publisher": "BMR-Com",
+   "release_et": "after each input; Tue 11:40 rebuild",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/cotton-crop-progress",
+    "file": "crop-projection.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "docs/data/crop_projection.json",
+    "key": [
+     "asof"
+    ]
+   }
+  },
+  {
+   "id": "nass_ginnings",
+   "status_source": "Crop projection input: NASS ginnings",
+   "age_limit": 20,
+   "age_unit": "days",
+   "tab": "Cotton > Crop progress",
+   "report": "USDA NASS Cotton Ginnings",
+   "publisher": "USDA NASS",
+   "release_et": "about twice a month at 12:00 (Aug-Mar); dates per NASS calendar",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/cotton-crop-progress",
+    "file": "ginning-data.yml"
+   },
+   "manual": false,
+   "note": "Late = older than the data-status limit (20 days). Add NASS's release dates as a 'dates' rule for an exact check.",
+   "probe": {
+    "path": "docs/data/crop_projection.json",
+    "key": [
+     "inputs_through",
+     "ginnings"
+    ]
+   }
+  },
+  {
+   "id": "usdm_drought",
+   "status_source": "US Drought Monitor, cotton area (BMR-Com/cotton-crop-progress)",
+   "age_limit": 10,
+   "age_unit": "days",
+   "tab": "Cotton > Crop progress; projection",
+   "report": "US Drought Monitor (as of Tuesday)",
+   "publisher": "NDMC/USDA/NOAA",
+   "release_et": "Thu 08:30",
+   "release": {
+    "type": "weekly",
+    "weekday": 3,
+    "time": "08:30",
+    "data_offset_days": -2,
+    "shift": "on_day"
+   },
+   "late_after_hours": 8,
+   "workflow": {
+    "repo": "BMR-Com/cotton-crop-progress",
+    "file": "agdrought.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "docs/data/crop.json",
+    "key": [
+     "asof",
+     "drought"
+    ]
+   }
+  },
+  {
+   "id": "ams_spot_basis",
+   "status_source": "Spot basis dashboard (BMR-Com/cotton-crop-progress)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Cotton > Basis & ideas",
+   "report": "USDA AMS daily spot cotton quotations",
+   "publisher": "USDA AMS",
+   "release_et": "each business day after the ICE close (~16:00)",
+   "release": {
+    "type": "business_daily",
+    "time": "17:00",
+    "data_offset_bd": 0,
+    "calendar": "ice"
+   },
+   "late_after_hours": 30,
+   "workflow": {
+    "repo": "BMR-Com/cotton-crop-progress",
+    "file": "build.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "docs/data/basis.json",
+    "key": [
+     "as_of"
+    ]
+   }
+  },
+  {
+   "id": "ice_quality_grid",
+   "status_source": "ICE quality grid (AMS daily spot quotes)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "USDA AMS daily spot quotes (ICE quality grid)",
+   "publisher": "USDA AMS",
+   "release_et": "each business day ~16:00",
+   "release": {
+    "type": "business_daily",
+    "time": "17:00",
+    "data_offset_bd": 0,
+    "calendar": "ice"
+   },
+   "late_after_hours": 30,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "cotton_diffs.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "carry_history",
+   "status_source": "Spread vs full carry history",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "Desk build from ICE closes",
+   "publisher": "BMR-Com",
+   "release_et": "after the ICE close",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "cotton_diffs.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "ams_weekly_review",
+   "status_source": "AMS weekly cotton market review",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > AMS market review",
+   "report": "USDA AMS Cotton Market News weekly review",
+   "publisher": "USDA AMS",
+   "release_et": "Fri afternoon (holiday Friday: Saturday/next business day)",
+   "release": {
+    "type": "weekly",
+    "weekday": 4,
+    "time": "14:00",
+    "data_offset_days": 0,
+    "shift": "on_day"
+   },
+   "late_after_hours": 24,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "cotton_review.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "ams_classing",
+   "status_source": "AMS daily classing",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Cotton > AMS market review",
+   "report": "USDA AMS daily classing",
+   "publisher": "USDA AMS",
+   "release_et": "each business day",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "cotton_review.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "wasde",
+   "status_source": "WASDE (latest report)",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Cotton > WASDE; balance sheets",
+   "report": "USDA WASDE",
+   "publisher": "USDA OCE",
+   "release_et": "12:00 on the published dates",
+   "release": {
+    "type": "dates",
+    "time": "12:00",
+    "dates": [
+     "2026-01-12",
+     "2026-02-10",
+     "2026-03-10",
+     "2026-04-09",
+     "2026-05-12",
+     "2026-06-11",
+     "2026-07-10",
+     "2026-08-12",
+     "2026-09-11",
+     "2026-10-09",
+     "2026-11-10",
+     "2026-12-10"
+    ],
+    "note": "USDA's 2027 dates are not published yet: add them here when USDA posts the schedule (the watchdog then checks each one)."
+   },
+   "late_after_hours": 6,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "wasde.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "wasde_dashboard",
+   "status_source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Cotton > WASDE (full dashboard)",
+   "report": "USDA WASDE",
+   "publisher": "USDA OCE",
+   "release_et": "12:00 on the published dates",
+   "release": {
+    "type": "dates",
+    "time": "12:00",
+    "dates": [
+     "2026-01-12",
+     "2026-02-10",
+     "2026-03-10",
+     "2026-04-09",
+     "2026-05-12",
+     "2026-06-11",
+     "2026-07-10",
+     "2026-08-12",
+     "2026-09-11",
+     "2026-10-09",
+     "2026-11-10",
+     "2026-12-10"
+    ],
+    "note": "USDA's 2027 dates are not published yet: add them here when USDA posts the schedule (the watchdog then checks each one)."
+   },
+   "late_after_hours": 10,
+   "workflow": {
+    "repo": "BMR-Com/wasde-analytics",
+    "file": "update.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "data/Cotton.json",
+    "key": [
+     "lastUpdated"
+    ]
+   }
+  },
+  {
+   "id": "wasde_brief",
+   "status_source": "WASDE brief, latest-data section",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Cotton > WASDE",
+   "report": "Desk brief (latest COT, export sales, on-call, crop)",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays 18:53",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "wasde.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "fsa_loan",
+   "status_source": "Cotton loan (FSA)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Loan",
+   "report": "USDA FSA cotton loan reports (weekly, as of Monday)",
+   "publisher": "USDA FSA",
+   "release_et": "weekly, Friday pickup",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "cotton_loan.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "china",
+   "status_source": "China",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Cotton > China",
+   "report": "Zhengzhou, China cotton indices and customs",
+   "publisher": "ZCE / CCF / customs",
+   "release_et": "daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "china.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "india",
+   "status_source": "India",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Cotton > India",
+   "report": "CAI, Agmarknet, CCI",
+   "publisher": "CAI / Agmarknet",
+   "release_et": "daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "india.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "australia",
+   "status_source": "Australia (synced from US desk)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Cotton > Australia",
+   "report": "Australian cotton (copied from BMR-Com/US-commodity-desk)",
+   "publisher": "ABARES / Cotton Australia",
+   "release_et": "daily 17:47 sync",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "australia_sync.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "yahoo_closes",
+   "status_source": "Futures closes, all softs (Yahoo)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Technicals, Overview",
+   "report": "ICE futures closes (Yahoo)",
+   "publisher": "ICE via Yahoo",
+   "release_et": "each ICE business day after the close",
+   "release": {
+    "type": "business_daily",
+    "time": "16:00",
+    "data_offset_bd": 0,
+    "calendar": "ice"
+   },
+   "late_after_hours": 30,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_data.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "tv_settles",
+   "status_source": "Per-contract settlements (TradingView)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Spreads, seasonality, carry",
+   "report": "ICE per-contract settlements (TradingView)",
+   "publisher": "ICE via TradingView",
+   "release_et": "each ICE business day evening",
+   "release": {
+    "type": "business_daily",
+    "time": "16:00",
+    "data_offset_bd": 0,
+    "calendar": "ice"
+   },
+   "late_after_hours": 34,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_contracts.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "ice_options",
+   "status_source": "ICE options settlements (uploaded ICE files)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Options pricer, vol, trade ideas",
+   "report": "ICE daily market report PDFs (Ma uploads)",
+   "publisher": "ICE (manual upload)",
+   "release_et": "each ICE business day; upload by Ma",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_options.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "options_terminal_ct",
+   "status_source": "Options terminal, cotton (BMR-Com/softs--options-)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Options terminal",
+   "report": "ICE cotton options (from uploaded ICE reports)",
+   "publisher": "ICE (manual upload)",
+   "release_et": "after each upload; every 2 h on weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/softs--options-",
+    "file": "daily_options_archive.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "data/web/CT_desk.json",
+    "key": [
+     "date"
+    ]
+   }
+  },
+  {
+   "id": "options_terminal_kc",
+   "status_source": "Options terminal, coffee (BMR-Com/softs--options-)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Options terminal",
+   "report": "ICE coffee options (from uploaded ICE reports)",
+   "publisher": "ICE (manual upload)",
+   "release_et": "after each upload; every 2 h on weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/softs--options-",
+    "file": "daily_options_archive.yml"
+   },
+   "manual": false,
+   "probe": {
+    "path": "data/web/KC_desk.json",
+    "key": [
+     "date"
+    ]
+   }
+  },
+  {
+   "id": "ct_ice_warehouse",
+   "status_source": "ICE certs: stock by warehouse (upload)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "ICE certs: stock by warehouse",
+   "publisher": "ICE / EWR / Cotlook (manual upload)",
+   "release_et": "ICE daily/weekly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "ct_ice_grade",
+   "status_source": "ICE certs: grade / staple (upload)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "ICE certs: grade / staple",
+   "publisher": "ICE / EWR / Cotlook (manual upload)",
+   "release_et": "ICE daily/weekly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "ct_ice_yog",
+   "status_source": "ICE certs: year of growth (upload)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "ICE certs: year of growth",
+   "publisher": "ICE / EWR / Cotlook (manual upload)",
+   "release_et": "ICE daily/weekly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "ct_ice_strength",
+   "status_source": "ICE certs: strength (upload)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "ICE certs: strength",
+   "publisher": "ICE / EWR / Cotlook (manual upload)",
+   "release_et": "ICE daily/weekly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "ct_ice_stock",
+   "status_source": "ICE certs: stock by delivery point (upload)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "ICE certs: stock by delivery point",
+   "publisher": "ICE / EWR / Cotlook (manual upload)",
+   "release_et": "ICE daily/weekly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "ct_ice_four_months",
+   "status_source": "ICE certs: four months and older (upload)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "ICE certs: four months and older",
+   "publisher": "ICE / EWR / Cotlook (manual upload)",
+   "release_et": "ICE daily/weekly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "ct_ewr",
+   "status_source": "EWR receipts (upload)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "EWR receipts",
+   "publisher": "ICE / EWR / Cotlook (manual upload)",
+   "release_et": "ICE daily/weekly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "ct_cfr",
+   "status_source": "CFR Far East quotes (upload)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Cotton > Certs & quality premiums",
+   "report": "CFR Far East quotes",
+   "publisher": "ICE / EWR / Cotlook (manual upload)",
+   "release_et": "ICE daily/weekly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "kc_certs_detail",
+   "status_source": "ICE certs detail: pending, transition, passed/failed, rebagging (upload)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Coffee/Cocoa > Certs profile",
+   "report": "ICE certs detail: pending, transition, passed/failed, rebagging",
+   "publisher": "ICE (manual upload)",
+   "release_et": "ICE daily/monthly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "kc_aging",
+   "status_source": "ICE certs aging by port (upload)",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Coffee/Cocoa > Certs profile",
+   "report": "ICE certs aging by port",
+   "publisher": "ICE (manual upload)",
+   "release_et": "ICE daily/monthly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "kc_eom",
+   "status_source": "ICE end-of-month certs by port since 1996 (upload)",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Coffee/Cocoa > Certs profile",
+   "report": "ICE end-of-month certs by port since 1996",
+   "publisher": "ICE (manual upload)",
+   "release_et": "ICE daily/monthly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "kc_grading",
+   "status_source": "ICE grading summary by origin (upload)",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Coffee/Cocoa > Certs profile",
+   "report": "ICE grading summary by origin",
+   "publisher": "ICE (manual upload)",
+   "release_et": "ICE daily/monthly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "cc_certs",
+   "status_source": "ICE cocoa certs and grading (upload)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Coffee/Cocoa > Certs profile",
+   "report": "ICE cocoa certs and grading",
+   "publisher": "ICE (manual upload)",
+   "release_et": "ICE daily/monthly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "cc_grading",
+   "status_source": "ICE cocoa grading results with discounts (upload)",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Coffee/Cocoa > Certs profile",
+   "report": "ICE cocoa grading results with discounts",
+   "publisher": "ICE (manual upload)",
+   "release_et": "ICE daily/monthly; upload by Ma to inbox/",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "cepea_arabica",
+   "status_source": "CEPEA/ESALQ arabica index (Ma's cepea.org.br download, inbox/)",
+   "age_limit": 10,
+   "age_unit": "days",
+   "tab": "Coffee > Brazil basis",
+   "report": "CEPEA/ESALQ arabica",
+   "publisher": "CEPEA (manual download)",
+   "release_et": "daily; Ma uploads weekly",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "cepea_robusta",
+   "status_source": "CEPEA/ESALQ robusta index (Ma's cepea.org.br download, inbox/)",
+   "age_limit": 10,
+   "age_unit": "days",
+   "tab": "Coffee > Brazil conilon",
+   "report": "CEPEA/ESALQ robusta",
+   "publisher": "CEPEA (manual download)",
+   "release_et": "daily; Ma uploads weekly",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "ice_inbox.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "coffee_desk",
+   "status_source": "Coffee desk (ICE certs, basis, origins)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Coffee tabs",
+   "report": "ICE certs, basis, origins",
+   "publisher": "ICE / origins",
+   "release_et": "weekdays 17:35",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "coffee_certs_profile",
+   "status_source": "Certs profile and delivery economics (built from the ICE files)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Coffee > Certs profile",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "ico_groups",
+   "status_source": "ICO group prices for the certs physical comparison",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Coffee > Certs profile",
+   "report": "ICO composite and group prices (monthly)",
+   "publisher": "ICO",
+   "release_et": "monthly, early in the month",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "na_coop",
+   "status_source": "Brazil co-op semi-washed / tipo 6 quotes (Notícias Agrícolas)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Coffee > Brazil basis ladder",
+   "report": "Brazil co-op quotes (Notícias Agrícolas)",
+   "publisher": "Notícias Agrícolas",
+   "release_et": "each Brazil business day",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "ptax",
+   "status_source": "USD/BRL PTAX (Banco Central do Brasil)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Coffee > Brazil physical",
+   "report": "BCB PTAX",
+   "publisher": "Banco Central do Brasil",
+   "release_et": "each Brazil business day 13:00 BRT",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "tender_parity",
+   "status_source": "Brazil tender parity (blend cost in Antwerp vs exchange value)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Coffee > Brazil tender parity",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "br_export_diffs",
+   "status_source": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv)",
+   "age_limit": 120,
+   "age_unit": "days",
+   "tab": "Coffee > tender parity calibration",
+   "report": "Public Brazil export diff quotes",
+   "publisher": "manual entry",
+   "release_et": "as found",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": true
+  },
+  {
+   "id": "cecafe",
+   "status_source": "Cecafé daily registrations",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Coffee > Cecafé",
+   "report": "Cecafé daily export registrations",
+   "publisher": "Cecafé",
+   "release_et": "each Brazil business day (evening BRT)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "coffee_weather",
+   "status_source": "Brazil coffee weather (weighted)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Coffee > Weather",
+   "report": "Open-Meteo / ECMWF",
+   "publisher": "Open-Meteo",
+   "release_et": "daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "kc_spread_model",
+   "status_source": "KC spread model: fair front spread from certified stocks",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Coffee > Certified stocks & structure",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "kc_spreads_hist",
+   "status_source": "KC calendar-spread history (per-contract closes)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Coffee > Certs profile",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_contracts.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "kc_spread_tables",
+   "status_source": "Spreads & arbs table (KC/RC switches, arabica-robusta arb, B3 arb)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Coffee/Sugar > Spreads & vol",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_data.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "sb_spread_tables",
+   "status_source": "Spreads & arbs table (No. 11 / No. 5 switches, white premium)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Sugar > Spreads & vol",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_data.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "sucden_coffee",
+   "status_source": "Reports: Sucden coffee outlook (balance sheet and revisions)",
+   "age_limit": 200,
+   "age_unit": "days",
+   "tab": "Coffee > Reports",
+   "report": "Sucden Financial coffee outlook",
+   "publisher": "Sucden (manual read)",
+   "release_et": "irregular (quarterly-ish)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "cic_png",
+   "status_source": "Reports: CIC PNG weekly differential indications",
+   "age_limit": 10,
+   "age_unit": "days",
+   "tab": "Coffee > Reports",
+   "report": "CIC PNG weekly market report",
+   "publisher": "CIC (manual read)",
+   "release_et": "weekly",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "coffee_weekly_reads",
+   "status_source": "Reports: Sucafina / StoneX / Rabobank key points (weekly read)",
+   "age_limit": 10,
+   "age_unit": "days",
+   "tab": "Coffee > Reports",
+   "report": "Sucafina, StoneX, Rabobank",
+   "publisher": "manual read",
+   "release_et": "weekly",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "sugar_monthly_reads",
+   "status_source": "Reports: ED&F Man monthly note, Sucden technicals (monthly read)",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Sugar > Reports",
+   "report": "ED&F Man sugar, Sucden technicals",
+   "publisher": "manual read",
+   "release_et": "monthly",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "sugar_desk",
+   "status_source": "Sugar desk",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Sugar tabs",
+   "report": "Sugar fetch and build",
+   "publisher": "various",
+   "release_et": "weekdays 17:15",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "sugar.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "mapa",
+   "status_source": "Centre-South crush (MAPA fortnightly)",
+   "age_limit": 25,
+   "age_unit": "days",
+   "tab": "Sugar > Crush",
+   "report": "MAPA/SAPCANA fortnightly crush",
+   "publisher": "MAPA",
+   "release_et": "fortnightly, irregular days",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "sugar.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "cane_weather",
+   "status_source": "Cane-belt weather, stoppage days, season range (ERA5)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Sugar > Brazil cane weather",
+   "report": "ERA5 / Open-Meteo",
+   "publisher": "Open-Meteo",
+   "release_et": "daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "sugar_world.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "cane_ensemble",
+   "status_source": "Cane-belt ensemble forecast (ECMWF ENS, GEFS)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Sugar > Brazil cane weather",
+   "report": "ECMWF ENS, GEFS",
+   "publisher": "Open-Meteo",
+   "release_et": "twice daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "sugar_world.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "chinimandi",
+   "status_source": "India ex-mill prices (ChiniMandi daily update)",
+   "age_limit": 4,
+   "age_unit": "business days",
+   "tab": "Sugar > India detail",
+   "report": "ChiniMandi daily ex-mill prices",
+   "publisher": "ChiniMandi",
+   "release_et": "each Indian business day",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "sugar_world.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "unica",
+   "status_source": "UNICA Centre-South report (last published)",
+   "age_limit": 120,
+   "age_unit": "days",
+   "tab": "Sugar > Crush",
+   "report": "UNICA fortnightly report",
+   "publisher": "UNICA",
+   "release_et": "irregular (UNICA does not publish regularly)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "sugar_world.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "sugar_weekly_pack",
+   "status_source": "Weekly report input pack",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Sugar weekly research",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "sugar_world.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "sugar_lineup",
+   "status_source": "Brazil sugar export line-up (weekly)",
+   "age_limit": 9,
+   "age_unit": "days",
+   "tab": "Sugar > Exports",
+   "report": "SECEX weekly exports / line-up",
+   "publisher": "SECEX",
+   "release_et": "weekly (Mon)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_data.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "isma",
+   "status_source": "India releases: ISMA, DGFT, quotas, prices (manual)",
+   "age_limit": 20,
+   "age_unit": "days",
+   "tab": "Sugar > India",
+   "report": "India releases: ISMA, DGFT, quotas, prices",
+   "publisher": "manual entry from dated releases",
+   "release_et": "as released",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "ec_sugar",
+   "status_source": "EC balance sheet and EU price (manual)",
+   "age_limit": 45,
+   "age_unit": "days",
+   "tab": "Sugar > Europe",
+   "report": "EC balance sheet and EU price",
+   "publisher": "manual entry from dated releases",
+   "release_et": "as released",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "sugar_deliveries",
+   "status_source": "ICE expiry deliveries (manual, from news)",
+   "age_limit": 75,
+   "age_unit": "days",
+   "tab": "Sugar > Deliveries",
+   "report": "ICE expiry deliveries (manual, from news)",
+   "publisher": "manual entry from dated releases",
+   "release_et": "as released",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "agency_revisions",
+   "status_source": "Agency revisions: ISO, EC, Conab, USDA (manual)",
+   "age_limit": 45,
+   "age_unit": "days",
+   "tab": "Sugar > Revisions",
+   "report": "Agency revisions: ISO, EC, Conab, USDA",
+   "publisher": "manual entry from dated releases",
+   "release_et": "as released",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "fuel_policy",
+   "status_source": "Brazil fuel-policy log (manual)",
+   "age_limit": 35,
+   "age_unit": "days",
+   "tab": "Sugar > Brazil cane weather",
+   "report": "Brazil fuel-policy log",
+   "publisher": "manual entry from dated releases",
+   "release_et": "as released",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": null,
+   "manual": true
+  },
+  {
+   "id": "cc_certs_profile",
+   "status_source": "Certs profile and delivery value (built from the ICE files)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Cocoa > Certs profile",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_contracts.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "cc_spreads_hist",
+   "status_source": "CC calendar-spread history (per-contract closes)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Cocoa > Certs profile",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_contracts.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "icco",
+   "status_source": "ICCO balance",
+   "age_limit": 40,
+   "age_unit": "days",
+   "tab": "Cocoa > Balance",
+   "report": "ICCO quarterly bulletin",
+   "publisher": "ICCO",
+   "release_et": "quarterly / monthly report",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "intel.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "what_changed",
+   "status_source": "What changed strip (settlement date)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Overview",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "after the settlement runs",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "desk_watch.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "delivery",
+   "status_source": "Delivery-period dashboard (settlement date)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Delivery",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "after the settlement runs",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "desk_watch.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "alerts",
+   "status_source": "Alerts check",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Overview alerts",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "after the settlement runs",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "desk_watch.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "calls",
+   "status_source": "Desk call log / track record",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Overview track record",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "after the settlement runs",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "desk_watch.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "ethanol",
+   "status_source": "Ethanol price used for parity (CEPEA, else B3 futures)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Sugar > Ethanol parity",
+   "report": "CEPEA hydrous ethanol / B3",
+   "publisher": "CEPEA / B3",
+   "release_et": "daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "desk_watch.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "markets",
+   "status_source": "Markets snapshot",
+   "age_limit": 1,
+   "age_unit": "business days",
+   "tab": "Markets",
+   "report": "Yahoo snapshot",
+   "publisher": "Yahoo",
+   "release_et": "hourly in trading hours",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "markets.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "us_econ",
+   "status_source": "US economic data (BLS, BEA, Fed)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Markets",
+   "report": "BLS, BEA, Fed",
+   "publisher": "US agencies",
+   "release_et": "per release calendar",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "markets.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "events_calendar",
+   "status_source": "Events calendar",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Calendars on each tab",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "intel.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "contract_calendar",
+   "status_source": "Contract calendar (notice and roll dates)",
+   "age_limit": 2,
+   "age_unit": "business days",
+   "tab": "Primers, delivery",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "daily",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "softs_data.yml"
+   },
+   "manual": false
+  },
+  {
+   "id": "news",
+   "status_source": "News",
+   "age_limit": 1,
+   "age_unit": "business days",
+   "tab": "News sections",
+   "report": "Bloomberg, Reuters, WSJ, boards",
+   "publisher": "news feeds",
+   "release_et": "every few hours",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "intel.yml"
+   },
+   "manual": false
+  }
+ ]
+}

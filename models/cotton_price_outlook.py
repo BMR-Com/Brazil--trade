@@ -211,7 +211,7 @@ def main():
     hedge["net_bull_avg"] = round(float(np.mean([nets[m_] for m_ in bull_eps])), 1) if bull_eps else None
     hedge["bull_eps"] = [{"my": m_, "net_pct": nets[m_], "may_chg": round(float(H.loc[m_, "Kchg"]), 1)} for m_ in bull_eps]
     oc = None
-    for src in ("https://bmr-com.github.io/cotton-on-call/data/intel/brief.json", str(ROOT.parent / "bmr-com" / "cotton-on-call" / "data" / "intel" / "brief.json")):
+    for src in (str(ROOT / "data" / "cotton" / "oncall" / "brief.json"),):
         try:
             if src.startswith("http"):
                 import requests
@@ -321,7 +321,7 @@ def main():
     # downside: who sells on the way down? Mills' net unfixed on-call book at end-October vs May's worst drawdown to mid-March
     downside = None
     try:
-        ocsrc = [ROOT.parent / "bmr-com" / "cotton-on-call" / "data" / "cotton_oncall.csv", "https://raw.githubusercontent.com/BMR-Com/cotton-on-call/main/data/cotton_oncall.csv"]
+        ocsrc = [ROOT / "data" / "cotton" / "oncall" / "cotton_oncall.csv"]
         ocd = None
         for s_ in ocsrc:
             try:

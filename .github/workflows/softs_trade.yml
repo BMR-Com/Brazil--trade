@@ -30,18 +30,20 @@ jobs:
         with: {python-version: '3.11'}
       - run: pip install -q requests pandas numpy scipy
       - name: cotton export sales
+        id: step1
         continue-on-error: true
         timeout-minutes: 30
         run: python pipelines/grains_trade.py export_sales_release
         env: {FAS_API_KEY: '${{ secrets.FAS_API_KEY }}', ESR_WAIT: '45'}
       - name: export sales brief, balance sheet, price outlook
+        id: step2
         continue-on-error: true
         run: |
-          python -W ignore models/grains_esr_brief.py || true
-          python -W ignore models/balance_sheets.py || true
-          python -W ignore models/cotton_price_outlook.py || true
-          python -W ignore models/trader_sheet.py || true
-          python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || true
+          python -W ignore models/grains_esr_brief.py || { echo "::error::failed: python -W ignore models/grains_esr_brief.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/balance_sheets.py || { echo "::error::failed: python -W ignore models/balance_sheets.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/cotton_price_outlook.py || { echo "::error::failed: python -W ignore models/cotton_price_outlook.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/trader_sheet.py || { echo "::error::failed: python -W ignore models/trader_sheet.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || { echo "::error::failed: python -W ignore models/summary.py && python -W ignore models/outlook_brief.py"; echo x >> "$RUNNER_TEMP/failed"; }
       - name: commit
         run: |
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
@@ -49,3 +51,8 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -q -m "data: cotton export sales $(date -u +%F)"
           for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: fail the run if any step above failed (steps keep going so the other data still updates, but failures are not hidden)
+        if: always()
+        run: |
+          o="${{ join(steps.*.outcome, ' ') }}"
+          if echo "$o" | grep -q failure || [ -s "$RUNNER_TEMP/failed" ]; then echo "::error::one or more steps failed (see the errors above): $o"; exit 1; fi
