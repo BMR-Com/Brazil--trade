@@ -1,0 +1,234 @@
+{
+ "checked": "2026-11-18 17:40 UTC",
+ "repo": "BMR-Com/Brazil--trade",
+ "mode": "check",
+ "late_or_failed_at_start": [
+  {
+   "id": "options_terminal_ct",
+   "report": "ICE cotton options (from uploaded ICE reports)",
+   "tab": "Options terminal",
+   "latest": "2026-11-12",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-12 is older than the 3 business days limit",
+   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
+   "manual": false,
+   "owner": "BMR-Com/softs--options-",
+   "action": "rerun by BMR-Com/softs--options-'s own catch-up job"
+  },
+  {
+   "id": "options_terminal_kc",
+   "report": "ICE coffee options (from uploaded ICE reports)",
+   "tab": "Options terminal",
+   "latest": "2026-11-11",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-11 is older than the 3 business days limit",
+   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
+   "manual": false,
+   "owner": "BMR-Com/softs--options-",
+   "action": "rerun by BMR-Com/softs--options-'s own catch-up job"
+  },
+  {
+   "id": "ct_ice_stock",
+   "report": "ICE certs: stock by delivery point",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-04",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-04 is older than the 2 business days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "ct_ice_four_months",
+   "report": "ICE certs: four months and older",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-02",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-02 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "na_coop",
+   "report": "Brazil co-op quotes (Notícias Agrícolas)",
+   "tab": "Coffee > Brazil basis ladder",
+   "latest": "2026-11-11",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-11 is older than the 3 business days limit",
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "tender_parity",
+   "report": "Brazil tender parity (blend cost in Antwerp vs exchange value)",
+   "tab": "Coffee > Brazil tender parity",
+   "latest": "2026-11-11",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-11 is older than the 3 business days limit",
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "br_export_diffs",
+   "report": "Public Brazil export diff quotes",
+   "tab": "Coffee > tender parity calibration",
+   "latest": "2026-04-07",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-04-07 is older than the 120 days limit",
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "ec_sugar",
+   "report": "EC balance sheet and EU price",
+   "tab": "Sugar > Europe",
+   "latest": "2026-08-27",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-08-27 is older than the 45 days limit",
+   "workflow": null,
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  }
+ ],
+ "reruns": [
+  {
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "file": "coffee.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-18T17:40+00:00",
+   "ok": true,
+   "for": "na_coop"
+  }
+ ],
+ "still_late": [
+  {
+   "id": "options_terminal_ct",
+   "report": "ICE cotton options (from uploaded ICE reports)",
+   "tab": "Options terminal",
+   "latest": "2026-11-12",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-12 is older than the 3 business days limit",
+   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
+   "manual": false,
+   "owner": "BMR-Com/softs--options-",
+   "action": "rerun by BMR-Com/softs--options-'s own catch-up job"
+  },
+  {
+   "id": "options_terminal_kc",
+   "report": "ICE coffee options (from uploaded ICE reports)",
+   "tab": "Options terminal",
+   "latest": "2026-11-11",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-11 is older than the 3 business days limit",
+   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
+   "manual": false,
+   "owner": "BMR-Com/softs--options-",
+   "action": "rerun by BMR-Com/softs--options-'s own catch-up job"
+  },
+  {
+   "id": "na_coop",
+   "report": "Brazil co-op quotes (Notícias Agrícolas)",
+   "tab": "Coffee > Brazil basis ladder",
+   "latest": "2026-11-11",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-11 is older than the 3 business days limit",
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "tender_parity",
+   "report": "Brazil tender parity (blend cost in Antwerp vs exchange value)",
+   "tab": "Coffee > Brazil tender parity",
+   "latest": "2026-11-11",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-11 is older than the 3 business days limit",
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  }
+ ],
+ "last_run_failed": [],
+ "needs_ma": [
+  {
+   "id": "ct_ice_stock",
+   "report": "ICE certs: stock by delivery point",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-04",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-04 is older than the 2 business days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "ct_ice_four_months",
+   "report": "ICE certs: four months and older",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-02",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-11-02 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "br_export_diffs",
+   "report": "Public Brazil export diff quotes",
+   "tab": "Coffee > tender parity calibration",
+   "latest": "2026-04-07",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-04-07 is older than the 120 days limit",
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "ec_sugar",
+   "report": "EC balance sheet and EU price",
+   "tab": "Sugar > Europe",
+   "latest": "2026-08-27",
+   "expected": null,
+   "late": true,
+   "reason": "data 2026-08-27 is older than the 45 days limit",
+   "workflow": null,
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  }
+ ],
+ "result": "red",
+ "dispatch_log": [
+  {
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "file": "coffee.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-18T17:40+00:00",
+   "ok": true,
+   "for": "na_coop"
+  }
+ ],
+ "last_email": null
+}
