@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18 13:43 UTC",
+ "updated": "2026-11-18 17:55 UTC",
  "by": "claude",
  "views": {
   "cotton": {
@@ -10,7 +10,7 @@
   "sugar": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.31
+   "score": -0.3
   },
   "coffee": {
    "view": "neutral",
@@ -20,11 +20,13 @@
   "cocoa": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.3
+   "score": -0.33
   }
  },
  "alerts": {
-  "cotton": [],
+  "cotton": [
+   "Broke below S2 76.47 (Dec ~75.83 intraday)"
+  ],
   "sugar": [
    "Broke above R1 18.11",
    "Broke above the fund buy trigger (100-day average) 18.15"
@@ -56,6 +58,9 @@
   "2026-11-18 Cocoa Mar ~5,150, below 5,160 support",
   "2026-11-18 Cocoa Mar -3% to ~5,024 toward 4,978 support on rising ICE stocks",
   "2026-11-18 Cotton Dec ~76.95 back below 77.05 support into first notice week",
-  "2026-11-18 Coffee Dec -6.4 to ~280.2 after failing at 284.65"
+  "2026-11-18 Coffee Dec -6.4 to ~280.2 after failing at 284.65",
+  "2026-11-18 Cotton Dec ~75.8 below 76.47 S2 in FND week",
+  "2026-11-18 Cocoa Mar ~5,035 tests 4,978 support (low 4,984)",
+  "2026-11-18 Crude -4% on US stock builds"
  ]
 }
