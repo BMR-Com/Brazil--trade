@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-18 03:11 UTC",
+ "generated": "2026-11-18 03:22 UTC",
  "asof": "2026-11-17",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
-  "generated": "2026-11-17 19:03 UTC",
-  "prev_generated": null
+  "generated": "2026-11-18 03:21 UTC",
+  "prev_generated": "2026-11-17 04:23 UTC"
  },
  "markets": [
   {
@@ -127,61 +127,61 @@
      "region": "us_tx",
      "name": "Lubbock, West Texas",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 10.3,
-     "rain_normal": 10.4,
-     "frost": 1.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "src": "ECMWF ENS only",
+     "rain_p50": 9.2,
+     "rain_normal": 9.3,
+     "frost": 0.98,
+     "window": "2026-11-18 to 2026-12-01"
     },
     {
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
-     "read": "near normal",
-     "prev": null,
+     "read": "wet",
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 166.7,
-     "rain_normal": 93.4,
+     "src": "ECMWF ENS only",
+     "rain_p50": 119.2,
+     "rain_normal": 88.8,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-01"
     },
     {
      "region": "br_ba",
      "name": "LEM, western Bahia",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 102.4,
-     "rain_normal": 88.5,
+     "src": "ECMWF ENS only",
+     "rain_p50": 83.8,
+     "rain_normal": 85.4,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "in_gj",
      "name": "Rajkot, Gujarat",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
+     "src": "ECMWF ENS only",
      "rain_p50": 0.0,
      "rain_normal": 2.0,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "au_nsw",
      "name": "Moree, New South Wales",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 41.9,
-     "rain_normal": 43.5,
+     "src": "ECMWF ENS only",
+     "rain_p50": 56.9,
+     "rain_normal": 44.7,
      "frost": 0.0,
-     "window": "2026-11-18 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     }
    ],
    "summary": "Front spread (Dec 26/Mar 27) −0.19 ¢/lb on the day (normal within ±0.15)"
@@ -268,84 +268,86 @@
     }
    ],
    "flags": [
-    "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05)"
+    "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05)",
+    "Weather Ribeirão Preto, São Paulo: next-15-day read turned wet (was near normal)",
+    "Weather Rio Verde, Goiás (cane): next-15-day read turned wet (was near normal)"
    ],
    "errors": [],
    "weather": [
     {
      "region": "br_sp",
      "name": "Ribeirão Preto, São Paulo",
-     "read": "near normal",
-     "prev": null,
-     "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 151.2,
-     "rain_normal": 84.9,
+     "read": "wet",
+     "prev": "near normal",
+     "flip": true,
+     "src": "ECMWF ENS only",
+     "rain_p50": 127.3,
+     "rain_normal": 86.3,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "br_spw",
      "name": "Araçatuba, western São Paulo",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 121.1,
-     "rain_normal": 77.7,
+     "src": "ECMWF ENS only",
+     "rain_p50": 92.4,
+     "rain_normal": 78.3,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "br_gos",
      "name": "Rio Verde, Goiás (cane)",
-     "read": "near normal",
-     "prev": null,
-     "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 150.5,
-     "rain_normal": 89.3,
+     "read": "wet",
+     "prev": "near normal",
+     "flip": true,
+     "src": "ECMWF ENS only",
+     "rain_p50": 129.2,
+     "rain_normal": 94.6,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "br_mgc",
      "name": "Uberaba, Triângulo Mineiro",
-     "read": "near normal",
-     "prev": null,
+     "read": "wet",
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 187.7,
-     "rain_normal": 106.7,
+     "src": "ECMWF ENS only",
+     "rain_p50": 162.3,
+     "rain_normal": 113.3,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "in_sl",
      "name": "Solapur, Maharashtra",
-     "read": "near normal",
-     "prev": null,
+     "read": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 0.0,
-     "rain_normal": 8.8,
-     "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     },
     {
      "region": "th_kk",
      "name": "Khon Kaen, upper Northeast Thailand",
-     "read": "near normal",
-     "prev": null,
+     "read": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 1.0,
-     "rain_normal": 10.0,
-     "frost": 0.0,
-     "window": "2026-11-18 to 2026-12-01"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     }
    ],
-   "summary": "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05)"
+   "summary": "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05); Weather Ribeirão Preto, São Paulo: next-15-day read turned wet (was near normal); Weather Rio Verde, Goiás (cane): next-15-day read turned wet (was near normal)"
   },
   {
    "sym": "KC",
@@ -438,61 +440,61 @@
      "region": "br_mg",
      "name": "Varginha, Sul de Minas",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 135.5,
-     "rain_normal": 95.7,
+     "src": "ECMWF ENS only",
+     "rain_p50": 124.6,
+     "rain_normal": 99.8,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "br_cer",
      "name": "Patrocínio, Cerrado Mineiro",
-     "read": "near normal",
-     "prev": null,
+     "read": "wet",
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 156.4,
-     "rain_normal": 111.8,
+     "src": "ECMWF ENS only",
+     "rain_p50": 148.4,
+     "rain_normal": 116.1,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "br_zm",
      "name": "Manhuaçu, Zona da Mata (MG)",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 182.9,
-     "rain_normal": 85.9,
+     "src": "ECMWF ENS only",
+     "rain_p50": 171.0,
+     "rain_normal": 89.5,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "br_es",
      "name": "Linhares, Espírito Santo",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 138.2,
-     "rain_normal": 85.3,
+     "src": "ECMWF ENS only",
+     "rain_p50": 131.9,
+     "rain_normal": 92.3,
      "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     },
     {
      "region": "vn_dl",
      "name": "Buon Ma Thuot, Dak Lak",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 10.1,
-     "rain_normal": 44.5,
+     "src": "ECMWF ENS only",
+     "rain_p50": 10.0,
+     "rain_normal": 46.4,
      "frost": 0.0,
-     "window": "2026-11-18 to 2026-12-01"
+     "window": "2026-11-18 to 2026-12-02"
     }
    ],
    "summary": "ICE certified arabica −24,907 bags on the day (normal within ±6,058); ICE certified arabica −54,989 bags on the week (normal within ±39,322)"
@@ -586,38 +588,38 @@
     {
      "region": "ci_sb",
      "name": "Soubré, Nawa (Côte d'Ivoire)",
-     "read": "near normal",
-     "prev": null,
+     "read": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 34.5,
-     "rain_normal": 38.3,
-     "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     },
     {
      "region": "ci_dl",
      "name": "Daloa, Haut-Sassandra (Côte d'Ivoire)",
-     "read": "dry",
-     "prev": null,
+     "read": null,
+     "prev": "dry",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 8.8,
-     "rain_normal": 23.8,
-     "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     },
     {
      "region": "gh_ku",
      "name": "Kumasi, Ashanti (Ghana)",
-     "read": "dry",
-     "prev": null,
+     "read": null,
+     "prev": "dry",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 4.3,
-     "rain_normal": 25.9,
-     "frost": 0.0,
-     "window": "2026-11-17 to 2026-12-01"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     }
    ],
    "summary": "Managed money net −7,616 lots in the week to 2026-11-10 (normal within ±4,557)"

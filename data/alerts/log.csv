@@ -15,3 +15,7 @@ date,id,market,event,text
 2026-11-17,data_ICE_options_settlements__uploaded_ICE_files_,Data,cleared,"ICE options settlements (uploaded ICE files): late (latest 2026-11-11, limit 2 business days)"
 2026-11-17,data_ICE_certs__strength__upload_,Data,cleared,"ICE certs: strength (upload): late (latest 2026-11-02, limit 9 days)"
 2026-11-17,CT_55lo,Cotton,cleared,"Dec 26 settled 77.00 ¢/lb, a new 55-day low (below 77.04)"
+2026-11-17,wx_br_sp_wet,Sugar No. 11,triggered,"Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-18 to 2026-12-02; ECMWF ENS only)"
+2026-11-17,wx_br_gos_wet,Sugar No. 11,triggered,"Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-18 to 2026-12-02; ECMWF ENS only)"
+2026-11-17,data_Brazil_co_op_semi_washed___tipo_6_quotes__Notícias_Agrícolas,Data,triggered,"Brazil co-op semi-washed / tipo 6 quotes (Notícias Agrícolas): late (latest 2026-11-11, limit 3 business days)"
+2026-11-17,data_USD_BRL_PTAX__Banco_Central_do_Brasil_,Data,triggered,"USD/BRL PTAX (Banco Central do Brasil): missing (latest –, limit 3 business days)"
