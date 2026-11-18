@@ -44,6 +44,7 @@ MC = {"H": 3, "K": 5, "N": 7, "U": 9, "Z": 12}
 MN = {3: "Mar", 5: "May", 7: "Jul", 9: "Sep", 12: "Dec"}
 R19, R23 = pd.Timestamp("2019-05-01"), pd.Timestamp("2023-12-01")
 LAB_MODE = "--lab" in sys.argv
+TENDER_BUILD = float(sys.argv[sys.argv.index("--tender-build") + 1]) if "--tender-build" in sys.argv else 0.0
 
 
 def rd(v, n=2):
@@ -103,6 +104,27 @@ def brb(name, d, adj=False, min_obs=5):
         return v
     h = s_[(s_.index < d) & (s_.index >= d - pd.DateOffset(years=3))]
     return v - float(h.median()) if len(h) >= 250 else np.nan
+
+
+# Brazil tender parity (models/brazil_tender_parity.py; research only): margin of a 30% semi-washed / 70% fine-cup blend tendered
+# in Antwerp, and semi-washed minus fine cup, at each co-op quote date (2018 on)
+TPH = os.path.join(ROOT, "data", "coffee", "tender_parity_history.csv")
+TPD = pd.read_csv(TPH, parse_dates=["date"]).set_index("date").sort_index() if os.path.exists(TPH) else pd.DataFrame()
+
+
+def tp(col, d, chg_days=0):
+    """Last tender-parity value quoted before d (within 30 days); chg_days > 0: change against the value about that many days before."""
+    if TPD.empty or col not in TPD:
+        return np.nan
+    s_ = TPD[col].dropna()
+    a = s_[(s_.index < d) & (s_.index >= d - pd.Timedelta(days=30))]
+    if not len(a):
+        return np.nan
+    if not chg_days:
+        return float(a.iloc[-1])
+    d0 = a.index[-1] - pd.Timedelta(days=chg_days)
+    b = s_[(s_.index <= d0) & (s_.index >= d0 - pd.Timedelta(days=30))]
+    return float(a.iloc[-1] - b.iloc[-1]) if len(b) else np.nan
 
 
 def ico_adj(s_, d):
@@ -275,6 +297,9 @@ def features(d, certs_override=None, fnd_d=None):
     f["ico_oth_adj"] = ico_adj(ico_oth, d)
     f["cep_b"] = brb("cepea_basis_2nd3rd", d)
     f["cep_b_adj"] = brb("cepea_basis_2nd3rd", d, True)
+    f["tp_m"] = tp("margin_w30", d)
+    f["tp_chg"] = tp("margin_w30", d, 90)
+    f["tp_swfc"] = tp("sw_minus_fc", d)
     f["cd_b"] = brb("cd_basis_2nd3rd", d, min_obs=1)        # co-op quotes are sampled about fortnightly before late 2026
     # flows: net change in the pile over 1-3 months (log and bags), gradings passed and bags that left (Oct 2022 on)
     cm = mk(t0)
@@ -812,7 +837,7 @@ if LAB_MODE:                                  # research only: written to the --
     # where it exists), each minus the ICE 2nd/3rd average; levels and "vs own 3-yr median". By regime, then walk-forward by
     # delivery (training = deliveries whose first notice came before the target's bd 21; no look-ahead). Each candidate is
     # compared with the chosen drivers ON THE SAME deliveries (those where the candidate exists).
-    BXS = ["ico_bra", "ico_bra_adj", "ico_oth", "ico_oth_adj", "cep_b", "cep_b_adj", "cd_b"]
+    BXS = ["ico_bra", "ico_bra_adj", "ico_oth", "ico_oth_adj", "cep_b", "cep_b_adj", "cd_b", "tp_m", "tp_chg", "tp_swfc"]
     BL = {"depth": {x: (H.loc[H[f"{x}@21"].notna(), "contract"].iloc[0] if H[f"{x}@21"].notna().any() else None) for x in BXS},
           "n": {x: int(H[f"{x}@21"].notna().sum()) for x in BXS}, "regimes": {}, "oos": {}}
     for rn, m in REG3 + [("all", H.fnd > "1900")]:
@@ -858,6 +883,11 @@ if LAB_MODE:                                  # research only: written to the --
                         "avg, certs + regimes (2010 on)": wf_on(col, "avg_p", col, "2010-01-01", ["lc@21", "r19@21", "r23@21"]),
                         "change, spread + certs + regimes (2010 on)": wf_on(col, "chg_p", col, "2010-01-01", ["p21", "lc@21", "r19@21", "r23@21"]),
                         "bd10 level, chosen (2021 on)": wf_on(f"{x}@10", "p10", f"{x}@10", "2021-01-01", [f"{v}@10" for v in XS + REGS])}
+    # tender margin as a predictor of certs added between bd 21 and first notice (log change), and fed into the chosen model
+    H["dlc_fnd"] = [math.log(asof(tot, r.fnd)[1] / math.exp(r["lc@21"])) if asof(tot, r.fnd)[0] is not None and r["lc@21"] == r["lc@21"] else np.nan
+                    for _, r in H.iterrows()]
+    BL["certs_to_fnd"] = {x: wf_on(f"{x}@21", "dlc_fnd", f"{x}@21", "2021-01-01", []) for x in ("tp_m", "tp_chg", "tp_swfc", "cep_b")}
+    BL["certs_to_fnd_rho"] = {x: spear(H[f"{x}@21"], H.dlc_fnd)[0] for x in ("tp_m", "tp_chg", "tp_swfc", "cep_b")}
     LAB["brazil_leg"] = BL
 
     # 3. fundamentals: USDA PSD (final estimates, i.e. with hindsight) by marketing year; Brazil MY Y runs Jul Y - Jun Y+1
@@ -990,6 +1020,11 @@ for i, c in enumerate(cons[:-1]):
         rec["gap_pct"] = rd(rec["spread_pct"] - fr["pct"]["mid"], 2)
         rec["gap_c"] = rd(s - fr["c"]["mid"], 2)
         rec["read"] = "rich" if rec["spread_pct"] > hi else "cheap" if rec["spread_pct"] < lo else "in range"
+    if LAB_MODE and TENDER_BUILD:
+        lv3 = dict(lv)
+        lv3["lpendf"] = math.log(math.exp(lv["lpendf"]) + TENDER_BUILD)
+        LAB.setdefault("tender_build_fair", {})[rec["pair"]] = {"build_bags": TENDER_BUILD, "compare_at": None,
+            **{str(k): {"base": rd(fair(lv, k)["mid"], 2), "with_build": rd(fair(lv3, k)["mid"], 2)} for k in KS if fair(lv, k)}}
     upcoming.append(rec)
     if len(upcoming) >= 3:
         break

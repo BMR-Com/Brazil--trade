@@ -86,7 +86,7 @@ const Coffee = (() => {
           <tr><td class="l"><b>How the structure changed</b></td><td class="l">Until about 2019 the KC curve sat in carry almost all the time. Old coffee that had been de-certified could be graded again and come back as fresh, escaping the age discount, so whoever took delivery risked receiving stale coffee: there was little reason to stand for delivery or bid up the front month. The spot-month position limit (500 lots unless the exchange grants an exemption) also capped squeezes. Brazil semi-washed became deliverable with the March 2013 contract but entered the certified pile in size only from late 2020. ICE then sped up the age discount and, from 1 December 2023, barred re-grading coffee that had been certified and de-certified. Since then the front month has been inverted almost continuously. Before Brazil, most washed origins went straight into the roasting pipeline and little was graded; now Brazil is the marginal deliverable coffee, so its price relative to other origins sets the value of the spot month and the differentials of Central American, Colombian and East African coffees are judged against it. Spread history before 2021, and especially before 2019, describes a different market.</td></tr>
           <tr><td class="l"><b>Why only washed arabica</b></td><td class="l">Coffee C is a benchmark for washed (mild) arabica, not for arabica as a whole. The seller chooses what to deliver and is paid the same futures price plus or minus a fixed differential, so the cheapest coffee that passes grading sets the tone: for years that was Honduras, and since the early 2020s Brazil semi-washed. Naturals (mostly Brazil and Ethiopia) are kept out because they would swamp the certified pile with the lowest-value arabica, make each certificate less predictable and dull the contract's volatility, pushing price risk into the differentials that hedgers of washed coffee carry. Naturals are priced through differentials to Coffee C and on B3's arabica contract. Washed Vietnamese arabica joins the deliverable list from 2027.</td></tr>
           <tr><td class="l"><b>Inversion and stocks</b></td><td class="l">A hedged importer rolls short futures every two to three months. In an inverted market each roll costs the spread: 1¢ × 37,500 lb = $375 per lot, so a 10¢ inversion costs $3,750 a lot and a 30¢ one $11,250, on top of financing. That makes holding hedged stock expensive, so roasters buy hand to mouth and destination and certified stocks stay low even when world exports rise. Stocks rebuild only when the curve returns to carry, and certification only pays when washed differentials fall to the deliverable parity: low stocks keep the curve inverted and the inversion keeps stocks low until a big crop or a price fall breaks the loop. Low producer/merchant shorts in the COT are the same story seen from the hedge side.</td></tr>
-          <tr><td class="l"><b>Tenderable parity</b></td><td class="l">New coffee is certified only when selling it to the exchange beats selling it physically. For semi-washed Brazil, the cheapest route, the cost stack is roughly the 6¢ origin discount, 1.25¢ for an Antwerp warehouse, 3–4¢ ocean freight, about 2¢ to the warehouse and about 1¢ of fees and grading: around 14¢ under level money. In practice Brazil has been certified in size when the ICO Brazilian naturals price traded about 5¢ under the futures, cheaper than the official semi-washed math implies, which suggests blending of cheaper or older coffee (pass rates for new submissions have at times been very low). When differentials are high the flow reverses: certified past-crop washed coffee is cheap to take up and is used as a replacement for Brazil in roaster blends, so certs draw.</td></tr>
+          <tr><td class="l"><b>Tenderable parity</b></td><td class="l">New coffee is certified only when selling it to the exchange beats selling it physically. Certs are rarely pure semi-washed: exporters blend fine or good cup with a smaller share of semi-washed (about 70/30 or less) so the lot passes grading. The exchange pays the futures less 6¢ for Brazil and 1.25¢ for Antwerp; the blend costs its origin price (about FOB) plus all-in shipping to the European warehouse of roughly 8–10¢, about 1¢ of in-charges and grading fees, finance, storage to notice and the cost of failed lots, so Brazil coffee at origin has to trade roughly 20–27¢ under the futures (estimate) before tendering pays (see "Brazil tender parity" on the Brazil tab). In practice Brazil has been certified in size when the ICO Brazilian naturals price traded about 5¢ under the futures, cheaper than the official semi-washed math implies, which suggests blending of cheaper or older coffee (pass rates for new submissions have at times been very low). When differentials are high the flow reverses: certified past-crop washed coffee is cheap to take up and is used as a replacement for Brazil in roaster blends, so certs draw.</td></tr>
           <tr><td class="l"><b>Differentials</b></td><td class="l">Physical coffee is priced as futures plus or minus a differential for origin and quality. Differentials usually move against the futures (growers ask more when futures are low; roasters pay less when futures are high). When they rise together with the futures, origin supply is genuinely short and the market tends to trend; when both fall together, the opposite. An inverted market pushes hedged exporters to discount nearby sales to avoid paying the roll, which is how an inversion starts to break itself.</td></tr>
           <tr><td class="l"><b>Origins that drink their own coffee</b></td><td class="l">Brazil drinks over 20m bags a year, about a third of its crop; Ethiopia keeps about 40%, Indonesia over 40% (mostly robusta). Exports are therefore a poor proxy for the crop in these countries, and a short crop hits exports first. Brazilian roasters switch toward conilon when arabica is expensive, so the same consumption can leave very different arabica and robusta volumes for export, one reason Brazil crop estimates differ by several million bags.</td></tr>
           <tr><td class="l"><b>Index rebalance</b></td><td class="l">Commodity index funds (BCOM, S&amp;P GSCI) reset weights once a year in early January, over about the 6th–10th business day. They sell what outperformed and buy what lagged; the size can be estimated from the CFTC index-trader (CIT) positions and the year's relative performance. Arabica's weight is small (about 3% in BCOM, about 2% in GSCI), so its rebalance flow is usually minor.</td></tr></table></div>
@@ -153,9 +153,40 @@ const Coffee = (() => {
       options: { scales: { y: { title: { display: true, text: '¢/lb vs KC' } } } } });
   }
 
+  // Brazil tender parity (data/coffee/tender_parity.json, models/brazil_tender_parity.py): cost of a blended lot in the
+  // Antwerp warehouse vs what the exchange pays; semi-washed vs fine/good cup differential history
+  function TPh(T) {
+    if (!T || !T.stack) return '';
+    const N = T.now, W = [['w15', '15% semi-washed'], ['w30', '30% semi-washed']], keys = Object.keys(T.stack.w30.costs);
+    const row = (l, f, b) => `<tr><td class="l">${b ? '<b>' + l + '</b>' : l}</td>${W.map(([k]) => `<td class="n">${b ? '<b>' + f(T.stack[k]) + '</b>' : f(T.stack[k])}</td>`).join('')}</tr>`;
+    return `<div class="grid g2" style="margin-top:12px">
+      <div class="card"><h2>Brazil tender parity</h2>
+        <p class="note" style="margin-top:0">${T.reading.join(' ')}</p>${box('kcTP', 230)}
+        <p class="note">Semi-washed (co-op cereja descascado) minus fine/good cup (CEPEA tipo 6), ¢/lb, with the tender margin of a 30% semi-washed blend. Dashed: the usual ~10¢ semi-washed premium. Prices at origin, treated as about FOB.</p></div>
+      <div class="card"><h2>Cost to tender in Antwerp vs exchange value <span class="note">${N.date}, ¢/lb</span></h2>
+        <div class="tbl"><table><tr><th class="l">Item</th>${W.map(([, l]) => `<th>${l}</th>`).join('')}</tr>
+        ${row('Blend at origin (semi-washed + CEPEA fine/good cup)', x => fmt(x.blend, 1))}
+        ${keys.map(k => row(T.cost_labels[k] || k, x => fmt(x.costs[k], 2))).join('')}
+        ${row('Cost in the Antwerp warehouse', x => fmt(x.cost_total, 1), 1)}
+        ${row(`Exchange value: ${N.kc2_contract.replace(/^KC/, '')} ${fmt(N.kc2, 1)} − 6 Brazil − 1.25 Antwerp`, x => fmt(x.exchange_value, 1))}
+        ${row('Tender margin', x => sgn(x.margin, 1, '¢'), 1)}
+        ${row('Margin across the cost ranges', x => `${sgn(x.margin_high_cost, 0)} to ${sgn(x.margin_low_cost, 0)}`)}</table></div>
+        <p class="note">Blend shares and the 8–10¢ all-in shipping are trading estimates; other items are listed with their source or as assumptions in the data file. Brazil pass rate ${T.pass_rate}% (ICE grading files). From 30 Dec 2026 new EU-port gradings need EUDR due-diligence data.</p></div></div>`;
+  }
+  function TPc(T) {
+    if (!T || !T.history) return;
+    const H = T.history;
+    chart('kcTP', { type: 'line', data: { labels: H.dates, datasets: [
+      { label: 'Semi-washed − fine/good cup', data: H.sw_minus_fc, borderColor: '#7d3c98', pointRadius: 0, borderWidth: 1.4, spanGaps: true },
+      { label: 'Usual (~10¢)', data: H.dates.map(() => T.now.ma_normal), borderColor: '#95a5a6', borderDash: [5, 4], pointRadius: 0, borderWidth: 1 },
+      { label: 'Tender margin, 30% semi-washed', data: H.margin_w30, borderColor: '#d68910', pointRadius: 0, borderWidth: 1.2, spanGaps: true }] },
+      options: { scales: { y: { title: { display: true, text: '¢/lb' } } } } });
+  }
+
   async function brazil() {
     await load();
     const BP = await getJSON('data/coffee/brazil_physical_meta.json').catch(() => null);
+    const TP = await getJSON('data/coffee/tender_parity.json').catch(() => null);
     const B = K.brazil, L = B.ladder, LH = B.ladder_hist, E = K.br_exports, BE = E.belgium, Q = B.quotes, cy = E.cy[E.cur_cy], py = E.cy[E.cur_cy - 1], m = cy.n - 1;
     const qtab = (t, q, cur) => q ? `<h3>${t} <span class="note">${q.date}</span></h3><div class="tbl"><table><tr><th class="l">Place</th><th>R$/bag</th><th>1 week ago</th><th>${cur}</th></tr>
       ${q.rows.map(r => `<tr><td class="l">${r.place}</td><td class="n">${f0(r.brl)}</td><td class="n">${f0(r.brl_1w)}</td><td class="n">${fmt(r.usd, 1)}</td></tr>`).join('')}</table></div>` : '';
@@ -166,6 +197,7 @@ const Coffee = (() => {
           ${L.map(x => `<tr><td class="l">${x.name}</td><td>${x.date}</td><td class="n">${f1(x.c_lb)}</td><td class="n"><b>${sgn(x.basis, 1, '¢')}</b></td><td class="n">${sgn(x.avg1y, 1, '¢')}</td><td class="n">${ord(x.pct)}</td></tr>`).join('')}</table></div>
           <p class="note">Local prices (R$ per 60-kg bag) converted to ¢/lb at the day's real. Basis = physical minus the KC front month. A low rank (wide discount) means Brazilian physical is plentiful or farmers are selling; a high rank means origin is tight. Fine-cup export differentials are not published freely; B3's 4/5 good-cup contract is the closest public benchmark.</p></div>
         <div class="card"><h2>Basis history</h2>${box('kcLad', 300)}</div></div>
+      ${TPh(TP)}
       ${BPh(BP)}
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Brazil coffee exports by crop year (Jul–Jun)</h2>${box('kcEx', 260)}
@@ -179,7 +211,7 @@ const Coffee = (() => {
     const i0 = since(LH.dates, 4);
     chart('kcLad', { type: 'line', data: { labels: LH.dates.slice(i0), datasets: [['icf', 'B3 4/5 good cup'], ['cd', 'Semi-washed'], ['t6', 'Tipo 6'], ['cepea', 'CEPEA tipo 6']]
       .map(([k, l], q) => ({ label: l, data: LH[k].slice(i0), borderColor: PAL[q], pointRadius: 0, borderWidth: 1.4, spanGaps: true })) }, options: { scales: { y: { title: { display: true, text: '¢/lb vs KC' } } } } });
-    BPc(BP);
+    BPc(BP); TPc(TP);
     const ys = Object.keys(E.cy).map(Number).sort().slice(-5), ML = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
     chart('kcEx', { type: 'line', data: { labels: ML, datasets: ys.map((y, q) => ({ label: `${y}/${String(y + 1).slice(2)}`, data: E.cy[y].cum, borderColor: PAL[q], borderWidth: y === E.cur_cy ? 2.6 : 1.2, pointRadius: 0 })) } });
     const j0 = Math.max(0, BE.ym.length - 36);

@@ -33,6 +33,9 @@ jobs:
         run: |
           pip install -q pandas numpy >/dev/null
           python -W ignore models/coffee_certs_profile.py
+      - name: Brazil tender parity (pass rates from the grading files)
+        continue-on-error: true
+        run: python -W ignore models/brazil_tender_parity.py
       - name: KC spread model against certified stocks
         run: python -W ignore models/kc_spread_model.py
       - name: cocoa certs profile and delivery value
@@ -48,7 +51,7 @@ jobs:
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
           for p in inbox data/ice_staging data/ice_raw data/ice_inbox data/cotton/ice data/coffee/ice_certs.csv data/coffee/ice_certs_inbox.csv data/coffee/ice_certs_check.json \
                    data/coffee/ice_certs_daily_detail.csv data/coffee/ice_aging_history.csv data/coffee/ice_certs_eom_by_port.csv \
-                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json data/coffee/brazil_physical_raw.csv data/coffee/brazil_physical_history.csv data/coffee/brazil_physical_meta.json data/coffee/cepea_robusta_history.csv data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/cocoa/certs_profile.json data/cocoa/cc_spreads_history.csv data/cocoa/ref data/status.json; do
+                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json data/coffee/brazil_physical_raw.csv data/coffee/brazil_physical_history.csv data/coffee/brazil_physical_meta.json data/coffee/cepea_robusta_history.csv data/coffee/cepea_arabica_history.csv data/coffee/tender_parity.json data/coffee/tender_parity_history.csv data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/cocoa/certs_profile.json data/cocoa/cc_spreads_history.csv data/cocoa/ref data/status.json; do
             git add -A -- "$p" 2>/dev/null || true
           done
           git diff --cached --quiet && exit 0
