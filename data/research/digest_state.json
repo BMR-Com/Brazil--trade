@@ -1,6 +1,6 @@
 {
-  "last_run_utc": "2026-11-17T17:26:43Z",
-  "note": "2026-11-17 PM run: 3 new ADMIS posts read in full via WebFetch; Czapp feed empty, used cz-insights listing (17 Nov daily not yet up); Rabobank: only new commodity piece (16 Nov livestock machinery) is Exclusive.",
+  "last_run_utc": "2026-11-18T17:45:00Z",
+  "note": "2026-11-18 run: 7 new ADMIS posts read via WebFetch (Wkly Futures Summary 11.16 failed to load); Czapp feed empty, used cz-insights listing; Rabobank: no new non-Exclusive commodity piece.",
   "urls": [
     "https://www.admis.com/ag-market-view-for-nov-12-2026/",
     "https://www.admis.com/beef-imports-pressuring-beef-prices/",
@@ -36,6 +36,16 @@
     "https://www.czapp.com/analyst-insights/us-sugar-production-cuts-keep-domestic-prices-supported/",
     "https://www.czapp.com/analyst-insights/futures-and-market-data-17th-november-2026/",
     "https://www.czapp.com/explainers/understanding-sugar-production/",
-    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-16th-november-2026/"
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-16th-november-2026/",
+    "https://www.admis.com/lower-trade-with-soymeal-the-outlier/",
+    "https://www.admis.com/ag-market-view-for-nov-17-2026/",
+    "https://www.admis.com/lean-hogs-make-new-contract-lows/",
+    "https://www.admis.com/industrial-metals-sell-off/",
+    "https://www.admis.com/hawkish-fed-comments-reinforce-hike-expectations/",
+    "https://www.admis.com/looking-to-eia-report-amid-ongoing-gulf-strife/",
+    "https://www.admis.com/usda-projects-lower-global-sugar-production/",
+    "https://www.czapp.com/analyst-insights/whey-strengthens-as-usda-lifts-dairy-price-outlook/",
+    "https://www.czapp.com/analyst-insights/brazil-weather-widens-the-near-term-deficit/",
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-17th-november-2026/"
   ]
 }

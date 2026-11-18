@@ -1,12 +1,24 @@
 {
-  "week_ending": "2026-11-17",
+  "week_ending": "2026-11-18",
   "themes": [
-    "Raw sugar is stuck in a tight band around 18 cents and drifted to the bottom of it as the real weakened; speculators are trimming longs while producers lift hedges, so selling pressure from the trade is easing rather than building.",
-    "Whites remain the firmer leg: poor European beet crops tighten refined supply directly, and the white premium has held near recent highs even as raws soften.",
-    "The US domestic market keeps tightening after USDA cut both beet and cane output; buyers are deferring rather than sellers chasing, and it stays walled off from the world price.",
-    "Ethanol remains a cap rather than a floor: cheaper US ethanol access to Brazil's North/Northeast in the inter-harvest limits how much parity can support raws."
+    "Raws slipped below 18 cents on 18 Nov after USDA's biennial outlook and a weak real; producer hedging stays light, but speculative length is still large, so the band's floor is being tested rather than defended.",
+    "Czarnikow's Brazil revision is a shift in timing, not lost cane: rain stoppages push cane into 2027/28, tightening the old-crop balance into March while enlarging next season's start, which argues for a firmer March/May but a heavier deferred curve.",
+    "Whites remain the firmer leg on weak EU beet output, and the US domestic market keeps tightening after USDA's beet and cane cuts, walled off from the world price.",
+    "Ethanol is a cap rather than a floor: sugar still pays well above hydrous parity, and cheaper US ethanol into Brazil's North/Northeast in the inter-harvest limits support."
   ],
   "items": [
+    {
+      "date": "2026-11-18",
+      "title": "Brazil Weather Widens the Near-Term Deficit",
+      "url": "https://www.czapp.com/analyst-insights/brazil-weather-widens-the-near-term-deficit/",
+      "takeaway": "Czarnikow cut its Centre-South and US crops and widened its 2026/27 world deficit, but frames the Brazil change as timing: rain-stopped cane stays in the field and lifts next season's start, so the 2027/28 crop was raised and the old-crop drawdown is cushioned by earlier surpluses."
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Daily Market Price Updates and Commentary 17th November 2026",
+      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-17th-november-2026/",
+      "takeaway": "Raws edged up but stayed in the 18c area; consumers would not chase strength and Brazilian growers priced only lightly with the real weak, so trade flow on both sides was thin."
+    },
     {
       "date": "2026-11-17",
       "title": "US Sugar Production Cuts Keep Domestic Prices Supported",
@@ -48,18 +60,6 @@
       "title": "CS Brazil: Sugar or Ethanol? 11th November 2026",
       "url": "https://www.czapp.com/analyst-insights/cs-brazil-sugar-or-ethanol-11th-november-2026/",
       "takeaway": "Weekly chart-only tracker of Centre-South mill sugar-versus-ethanol pay; no readable commentary on the free page."
-    },
-    {
-      "date": "2026-11-10",
-      "title": "Daily Market Price Updates and Commentary 10th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-10th-november-2026/",
-      "takeaway": "Raws briefly traded below 18c for the first time since August on long liquidation with no physical buying; firm December white spreads kept London's lows intact."
-    },
-    {
-      "date": "2026-11-10",
-      "title": "US Sugar Prices Hold Firm Amid Tight Supply Outlook",
-      "url": "https://www.czapp.com/analyst-insights/us-sugar-prices-hold-firm-amid-tight-supply-outlook/",
-      "takeaway": "US cash sugar stays firm because sellers are withholding tonnage on crop doubts (incl. pest damage in Florida cane) while buyers defer; the domestic market remains decoupled from the world slide."
     }
   ]
 }
