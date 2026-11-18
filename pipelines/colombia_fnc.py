@@ -386,13 +386,15 @@ def fx_update():
                         old[d] = {"date": d, "cop_per_usd": f"{c:.2f}", "source": "Yahoo COP=X"}; got += 1
         except Exception as e:
             log("Yahoo COP=X fail:", str(e)[:160])
+    if not got and old and (date.today() - date.fromisoformat(max(old))).days <= 1:
+        return 0         # already up to date
     if not got:      # last resort: the desk's own USDCOP series (TradingView feed, coffee/data/prices_cont.csv)
         p = ROOT / "coffee" / "data" / "prices_cont.csv"
         if p.exists():
             for r in csv.DictReader(open(p)):
                 if r["symbol"] == "USDCOP" and r["close"] and r["date"] >= start and r["date"] not in old:
                     old[r["date"]] = {"date": r["date"], "cop_per_usd": r["close"], "source": "TradingView USDCOP"}; got += 1
-        if not got:
+        if not got and (not old or (date.today() - date.fromisoformat(max(old))).days > 5):
             raise RuntimeError("USD/COP: neither the TRM, Yahoo nor the desk's USDCOP series could be read")
         log("USD/COP: TRM and Yahoo unreachable, used the desk's TradingView series")
     wcsv("usdcop.csv", ["date", "cop_per_usd", "source"], [[r["date"], r["cop_per_usd"], r["source"]] for _, r in sorted(old.items())])
