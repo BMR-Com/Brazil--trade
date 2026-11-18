@@ -1257,12 +1257,12 @@
   {
    "id": "tender_parity",
    "status_source": "Brazil tender parity (blend cost in Antwerp vs exchange value)",
-   "age_limit": 3,
-   "age_unit": "business days",
+   "age_limit": 9999,
+   "age_unit": "days",
    "tab": "Coffee > Brazil tender parity",
    "report": "Desk build",
    "publisher": "BMR-Com",
-   "release_et": "weekdays",
+   "release_et": "frozen at the last co-op semi-washed quote (Notícias Agrícolas blocks runners since Nov 2026)",
    "release": {
     "type": "age"
    },
@@ -2021,6 +2021,69 @@
    },
    "manual": false,
    "season": null
+  },
+  {
+   "id": "fnc_production",
+   "status_source": "Colombia production, FNC (monthly; out early next month)",
+   "age_limit": 45,
+   "age_unit": "days",
+   "report": "FNC registered production (Precios, área y producción xlsx)",
+   "release_et": "monthly, usually first week of the next month",
+   "tab": "Coffee > Centrals & Col",
+   "publisher": "FNC (Federación Nacional de Cafeteros)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "colombia_fnc.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "monthly"
+  },
+  {
+   "id": "fnc_exports",
+   "status_source": "Colombia exports, FNC (monthly; out mid next month)",
+   "age_limit": 60,
+   "age_unit": "days",
+   "report": "FNC exports (Exportaciones xlsx)",
+   "release_et": "monthly, usually mid next month",
+   "tab": "Coffee > Centrals & Col",
+   "publisher": "FNC (Federación Nacional de Cafeteros)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "colombia_fnc.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "monthly"
+  },
+  {
+   "id": "fnc_internal",
+   "status_source": "Colombia internal reference price, FNC (daily)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "report": "FNC precio interno de referencia (precio_cafe.pdf)",
+   "release_et": "each Colombian business day after the NY close",
+   "tab": "Coffee > Centrals & Col",
+   "publisher": "FNC (Federación Nacional de Cafeteros)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "colombia_fnc.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "daily"
   }
  ]
 }

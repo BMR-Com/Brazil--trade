@@ -30,7 +30,7 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 LB_PER_CARGA = 125 * 70 / 94 * 2.20462     # 125 kg dry parchment -> excelso green at yield factor 94, in lb (FNC table: 93.09 kg)
 TYPES = {"Café Verde": "green", "Tostados": "roasted", "Soluble": "soluble", "Extractos": "extracts"}
-COUNTRY_EN = {"Estados Unidos": "United States", "Alemania": "Germany", "Japón": "Japan", "Bélgica": "Belgium", "Canadá": "Canada",
+COUNTRY_EN = {"Estados Unidos": "United States", "EE.UU.": "United States", "EE. UU.": "United States", "Alemania": "Germany", "Japón": "Japan", "Bélgica": "Belgium", "Canadá": "Canada",
               "Corea del Sur": "South Korea", "Italia": "Italy", "Países Bajos": "Netherlands", "Paises Bajos": "Netherlands",
               "Reino Unido": "United Kingdom", "España": "Spain", "Francia": "France", "Suecia": "Sweden", "Australia": "Australia",
               "Ecuador": "Ecuador", "Perú": "Peru", "Rusia": "Russia", "Polonia": "Poland", "Finlandia": "Finland", "Taiwán": "Taiwan",

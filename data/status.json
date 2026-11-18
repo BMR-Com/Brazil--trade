@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 22:24 UTC",
+ "generated": "2026-11-18 22:26 UTC",
  "today": "2026-11-18",
  "sources": [
   {
@@ -450,11 +450,11 @@
    "group": "Coffee",
    "source": "Brazil tender parity (blend cost in Antwerp vs exchange value)",
    "latest": "2026-11-11",
-   "cadence": "daily",
-   "age": 5,
-   "age_unit": "business days",
-   "limit": 3,
-   "state": "late",
+   "cadence": "frozen at the last co-op quote (11 Nov 2026)",
+   "age": 7,
+   "age_unit": "days",
+   "limit": 9999,
+   "state": "ok",
    "manual": false,
    "used_in": "Brazil tender parity card"
   },
@@ -469,6 +469,42 @@
    "state": "late",
    "manual": true,
    "used_in": "fine-cup proxy calibration (tender parity)"
+  },
+  {
+   "group": "Coffee",
+   "source": "Colombia production, FNC (monthly; out early next month)",
+   "latest": "2026-10-28",
+   "cadence": "monthly",
+   "age": 21,
+   "age_unit": "days",
+   "limit": 45,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Centrals & Col tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Colombia exports, FNC (monthly; out mid next month)",
+   "latest": "2026-09-28",
+   "cadence": "monthly",
+   "age": 51,
+   "age_unit": "days",
+   "limit": 60,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Centrals & Col tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Colombia internal reference price, FNC (daily)",
+   "latest": "2026-11-17",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Centrals & Col tab"
   },
   {
    "group": "Coffee",
@@ -1035,7 +1071,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 5,
+ "late": 4,
  "inbox": {
   "updated": "2026-11-18 22:24 UTC",
   "last": [

@@ -45,4 +45,5 @@ jobs:
           for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q origin HEAD:main && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
       - name: fail the run if the FNC step failed
         if: steps.col.outcome == 'failure'
-        run: { echo "::error::Colombia FNC step failed (see its log)"; exit 1; }
+        run: |
+          echo "::error::Colombia FNC step failed (see its log)"; exit 1

@@ -4,7 +4,7 @@
 const Coffee = (() => {
   let built = false, tab = 'kc-primer', K = null;
   const TABS = [['kc-primer', 'Primer'], ['kc-geo', "Where it's grown, trade &amp; weather"], ['kc-bal', 'World balance'], ['kc-br', 'Brazil: basis ladder &amp; exports'], ['kc-cecafe', 'Cecafé daily registrations'], ['kc-wx', 'Brazil weather by production'],
-    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-newc', 'KC contract: old vs new'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'],
+    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-newc', 'KC contract: old vs new'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'], ['kc-col', 'Centrals &amp; Col'],
     ['kc-flows', 'Futures, options &amp; COT'], ['kc-rv', 'Spreads &amp; vol'], ['kc-outlook', 'Outlook'], ['kc-reports', 'Reports'], ['kc-seas', 'Seasonality &amp; technicals']];
   const body = () => $('#kcBody');
   const f0 = v => fmt(v, 0), f1 = v => fmt(v, 1), f2 = v => fmt(v, 2);
@@ -24,7 +24,7 @@ const Coffee = (() => {
     history.replaceState(null, '', '#' + tab);
     body().innerHTML = '<div class="card"><p class="note">Loading…</p></div>';
     ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs), 'kc-cprof': guard(cprof), 'kc-newc': guard(kcnew), 'kc-cecafe': guard(cecafe), 'kc-wx': guard(weather),
-      'kc-arb': guard(arb), 'kc-orig': guard(origins), 'kc-flows': guard(flows), 'kc-rv': guard(async () => { body().innerHTML = '<div id="kcSA"></div><div id="kcRV" style="margin-top:12px"></div>'; await SpreadTables.mount($('#kcSA'), 'coffee'); await RVView.mount($('#kcRV'), 'KC'); }), 'kc-reports': guard(() => ReportsView.mount(body(), 'coffee')),
+      'kc-arb': guard(arb), 'kc-orig': guard(origins), 'kc-col': guard(centrals), 'kc-flows': guard(flows), 'kc-rv': guard(async () => { body().innerHTML = '<div id="kcSA"></div><div id="kcRV" style="margin-top:12px"></div>'; await SpreadTables.mount($('#kcSA'), 'coffee'); await RVView.mount($('#kcRV'), 'KC'); }), 'kc-reports': guard(() => ReportsView.mount(body(), 'coffee')),
       'kc-outlook': guard(outlook), 'kc-seas': () => MktStudy.mount(body(), ['KC']) })[tab]();
   }
   const kpi = (lab, v, sub) => `<div class="kpi card" style="padding:10px"><div class="lbl">${lab}</div><div class="val" style="font-size:19px">${v}</div>${sub ? `<div class="sub">${sub}</div>` : ''}</div>`;
@@ -670,6 +670,46 @@ const Coffee = (() => {
     const g0 = Math.max(0, G.month.length - 72);
     chart('kcIco', { type: 'line', data: { labels: G.month.slice(g0), datasets: [['col_d', 'Colombian milds'], ['oth_d', 'Other milds'], ['bra_d', 'Brazilian naturals'], ['rob_d', 'Robustas']].map(([k, l], q) => ({ label: l, data: G[k].slice(g0), borderColor: PAL[q], pointRadius: 0 })) } });
     chart('kcIx', { type: 'line', data: { labels: r.month, datasets: [{ label: 'Total', data: r.total, borderColor: '#2f6b3a', pointRadius: 0 }, { label: 'Arabicas', data: r.arabicas, borderColor: '#7d3c98', pointRadius: 0 }, { label: 'Robustas', data: r.robustas, borderColor: '#d68910', pointRadius: 0 }] } });
+  }
+
+  // Coffee > Centrals & Col (data/coffee/colombia/colombia.json, pipelines/colombia_fnc.py; FNC public files)
+  async function centrals() {
+    const C = await getJSON('data/coffee/colombia/colombia.json'), P = C.production, E = C.exports, I = C.internal;
+    const CYM = ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
+    const lab = m => new Date(m + '-15').toLocaleString('en', { month: 'short', year: 'numeric' });
+    const cmp = X => `${f2(X.value / 1000)}m bags · ${sgn(X.vs_prev_pct, 0, '%')} y/y · ${sgn(X.vs_avg5_pct, 0, '%')} vs 5-yr avg`;
+    const D = C.destinations, src = C.sources || {}, MR = C.monthly_report || {};
+    body().innerHTML = `<div class="card"><h2>Colombia: what the FNC numbers say</h2><ul>${C.brief.map(b => `<li>${b}</li>`).join('')}</ul>
+        <p class="note">Colombia is deliverable on KC at a premium; how Colombian lots rank against other origins is on <a href="#kc-cprof" onclick="document.querySelector('#kcTabs button[data-t=kc-cprof]').click();return false">Certs profile &amp; delivery economics</a>. Harvest months: main crop Oct–Jan, mitaca Apr–Jun/Jul (see <a href="#kc-geo" onclick="document.querySelector('#kcTabs button[data-t=kc-geo]').click();return false">Where it's grown</a>).</p></div>
+      <div class="grid g4" style="margin-top:12px">
+        ${kpi('Production ' + lab(P.latest.month), f2(P.latest.value / 1000) + 'm bags', `${sgn(P.latest.vs_prev_pct, 0, '%')} y/y; 12 months ${f2(P.roll12_now)}m`)}
+        ${kpi('Exports ' + lab(E.latest.month), f2(E.latest.value / 1000) + 'm bags', `${sgn(E.latest.vs_prev_pct, 0, '%')} y/y; 12 months ${f2(E.roll12_now)}m`)}
+        ${I ? kpi('Internal price, ¢/lb green', f1(I.now.c_lb) + '¢', `${f0(I.now.cop / 1000)}k COP/carga at ${f0(I.now.fx)} COP/US$ (${I.now.date})`) : ''}
+        ${I ? kpi('Internal minus KC front', sgn(I.now.diff, 1, '¢'), `KC ${f1(I.now.kc)}¢${MR.differential_c_lb != null ? `; FNC differential ${f1(MR.differential_c_lb)}¢ (${lab(MR.month)})` : ''}`) : ''}</div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Production by month, coffee year Oct–Sep</h2>${box('coP', 260)}<p class="note">FNC registered production, thousand 60-kg bags. ${cmp(P.latest)}.</p></div>
+        <div class="card"><h2>Exports by month, coffee year Oct–Sep</h2>${box('coE', 260)}<p class="note">All types, thousand 60-kg bags. ${cmp(E.latest)}.</p></div></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>12-month totals</h2>${box('coR', 260)}<p class="note">Rolling 12-month production and exports, million bags.</p></div>
+        <div class="card"><h2>Internal price against KC front</h2>${box('coI', 260)}<p class="note">FNC internal reference price (COP per 125-kg carga of dry parchment) converted to ¢/lb of green (93.1 kg excelso per carga at yield factor 94) at the daily USD/COP rate (${I ? I.now.fx_source || '' : ''}); right axis: internal price minus KC front. The internal price is a farm-gate buying price, so it sits below the export differential.</p></div></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Exports by destination <span class="note">${D.period}</span></h2><div class="tbl"><table><tr><th class="l">Destination</th><th>k bags</th><th>Share</th><th>vs prior 12 m</th></tr>
+          ${D.top.map(r => `<tr><td class="l">${r.country}</td><td class="n">${f0(r.k_bags)}</td><td class="n">${f1(r.share)}%</td><td class="n">${sgn(r.chg_pct, 0, '%')}</td></tr>`).join('')}
+          <tr><td class="l">Others</td><td class="n">${f0(D.rest)}</td><td class="n">${f1(D.rest / D.total * 100)}%</td><td></td></tr><tr><td class="l"><b>Total</b></td><td class="n"><b>${f0(D.total)}</b></td><td></td><td></td></tr></table></div></div>
+        <div class="card"><h2>Exports by type, last 12 months</h2><div class="tbl"><table><tr><th class="l">Type</th><th>k bags</th><th>vs prior 12 m</th></tr>
+          ${Object.entries(E.by_type).map(([k, v]) => `<tr><td class="l">${k}</td><td class="n">${f0(v.last12)}</td><td class="n">${sgn(v.chg_pct, 0, '%')}</td></tr>`).join('')}</table></div>
+          <p class="note">Honduras (ADECAFEH) is not shown: see the Data status tab.</p></div></div>
+      <p class="note">Source: Federación Nacional de Cafeteros (FNC), <a href="https://federaciondecafeteros.org/estadisticas-cafeteras/" target="_blank" rel="noopener">estadísticas cafeteras</a>: ${Object.entries(src).map(([k, v]) => `${k.replace('_', ' ')} (${v.latest_data || 'read'}, read ${(v.read || '').slice(0, 10)})`).join('; ')}. Production history from ${P.history_from}, exports from ${E.history_from}. USD/COP: TRM (datos.gov.co), fallbacks Yahoo / TradingView. Built ${C.built}.</p>`;
+    const seas = (id, S) => { const ks = Object.keys(S).filter(k => !k.startsWith('avg5')).slice(-3);
+      chart(id, { type: 'bar', data: { labels: CYM, datasets: [...ks.map((k, q) => ({ type: q === ks.length - 1 ? 'bar' : 'line', label: k, data: S[k], backgroundColor: PAL[0], borderColor: PAL[q === ks.length - 1 ? 0 : q + 1], borderWidth: 1.5, pointRadius: 0 })),
+        { type: 'line', label: '5-yr avg ' + S.avg5_years, data: S.avg5, borderColor: '#7f8c8d', borderDash: [4, 3], pointRadius: 0, borderWidth: 1.2 }] } }); };
+    seas('coP', P.seasonal); seas('coE', E.seasonal);
+    const r0 = P.roll12.month.findIndex(m => m >= '2012-01'), e0 = E.roll12.month.indexOf(P.roll12.month[r0]);
+    chart('coR', { type: 'line', data: { labels: P.roll12.month.slice(r0), datasets: [{ label: 'Production', data: P.roll12.v.slice(r0), borderColor: PAL[0], pointRadius: 0 },
+      { label: 'Exports', data: P.roll12.month.slice(r0).map(m => { const i = E.roll12.month.indexOf(m); return i < 0 ? null : E.roll12.v[i]; }), borderColor: PAL[2], pointRadius: 0 }] } });
+    if (I) { const i0 = since(I.dates, 5);
+      chart('coI', { type: 'line', data: { labels: I.dates.slice(i0), datasets: [{ label: 'Internal, ¢/lb', data: I.c_lb.slice(i0), borderColor: PAL[0], pointRadius: 0 }, { label: 'KC front', data: I.kc.slice(i0), borderColor: PAL[4], pointRadius: 0 },
+        { label: 'Internal − KC', data: I.diff.slice(i0), borderColor: '#7f8c8d', borderDash: [4, 3], pointRadius: 0, yAxisID: 'y1' }] }, options: { scales: { y1: { position: 'right', grid: { display: false } } } } }); }
   }
 
   async function flows() {
