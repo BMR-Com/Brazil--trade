@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-18 03:22 UTC",
+ "generated": "2026-11-18 03:55 UTC",
  "asof": "2026-11-17",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
   "generated": "2026-11-18 03:21 UTC",
-  "prev_generated": "2026-11-17 04:23 UTC"
+  "prev_generated": null
  },
  "markets": [
   {
@@ -127,7 +127,7 @@
      "region": "us_tx",
      "name": "Lubbock, West Texas",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 9.2,
@@ -139,7 +139,7 @@
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 119.2,
@@ -151,7 +151,7 @@
      "region": "br_ba",
      "name": "LEM, western Bahia",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 83.8,
@@ -163,7 +163,7 @@
      "region": "in_gj",
      "name": "Rajkot, Gujarat",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 0.0,
@@ -175,7 +175,7 @@
      "region": "au_nsw",
      "name": "Moree, New South Wales",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 56.9,
@@ -268,9 +268,7 @@
     }
    ],
    "flags": [
-    "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05)",
-    "Weather Ribeirão Preto, São Paulo: next-15-day read turned wet (was near normal)",
-    "Weather Rio Verde, Goiás (cane): next-15-day read turned wet (was near normal)"
+    "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05)"
    ],
    "errors": [],
    "weather": [
@@ -278,8 +276,8 @@
      "region": "br_sp",
      "name": "Ribeirão Preto, São Paulo",
      "read": "wet",
-     "prev": "near normal",
-     "flip": true,
+     "prev": null,
+     "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 127.3,
      "rain_normal": 86.3,
@@ -290,7 +288,7 @@
      "region": "br_spw",
      "name": "Araçatuba, western São Paulo",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 92.4,
@@ -302,8 +300,8 @@
      "region": "br_gos",
      "name": "Rio Verde, Goiás (cane)",
      "read": "wet",
-     "prev": "near normal",
-     "flip": true,
+     "prev": null,
+     "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 129.2,
      "rain_normal": 94.6,
@@ -314,7 +312,7 @@
      "region": "br_mgc",
      "name": "Uberaba, Triângulo Mineiro",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 162.3,
@@ -326,7 +324,7 @@
      "region": "in_sl",
      "name": "Solapur, Maharashtra",
      "read": null,
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": null,
      "rain_p50": null,
@@ -338,7 +336,7 @@
      "region": "th_kk",
      "name": "Khon Kaen, upper Northeast Thailand",
      "read": null,
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": null,
      "rain_p50": null,
@@ -347,7 +345,7 @@
      "window": null
     }
    ],
-   "summary": "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05); Weather Ribeirão Preto, São Paulo: next-15-day read turned wet (was near normal); Weather Rio Verde, Goiás (cane): next-15-day read turned wet (was near normal)"
+   "summary": "Front spread (Mar 27/May 27) +0.06 ¢/lb on the day (normal within ±0.05)"
   },
   {
    "sym": "KC",
@@ -387,14 +385,14 @@
      "item": "ICE certified arabica",
      "unit": "bags",
      "dp": 0,
-     "now": 186414.0,
-     "d1": -24907.0,
-     "d5": -54989.0,
-     "norm1": 6058.0,
-     "norm5": 39322.0,
+     "now": 194523.0,
+     "d1": 8109.0,
+     "d5": -46845.0,
+     "norm1": 6947.0,
+     "norm5": 40483.0,
      "flag1": true,
      "flag5": true,
-     "date": "2026-11-16",
+     "date": "2026-11-17",
      "note": "ICE daily certified-stock report",
      "kind": "daily"
     },
@@ -431,8 +429,8 @@
     }
    ],
    "flags": [
-    "ICE certified arabica −24,907 bags on the day (normal within ±6,058)",
-    "ICE certified arabica −54,989 bags on the week (normal within ±39,322)"
+    "ICE certified arabica +8,109 bags on the day (normal within ±6,947)",
+    "ICE certified arabica −46,845 bags on the week (normal within ±40,483)"
    ],
    "errors": [],
    "weather": [
@@ -440,7 +438,7 @@
      "region": "br_mg",
      "name": "Varginha, Sul de Minas",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 124.6,
@@ -452,7 +450,7 @@
      "region": "br_cer",
      "name": "Patrocínio, Cerrado Mineiro",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 148.4,
@@ -464,7 +462,7 @@
      "region": "br_zm",
      "name": "Manhuaçu, Zona da Mata (MG)",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 171.0,
@@ -476,7 +474,7 @@
      "region": "br_es",
      "name": "Linhares, Espírito Santo",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 131.9,
@@ -488,7 +486,7 @@
      "region": "vn_dl",
      "name": "Buon Ma Thuot, Dak Lak",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 10.0,
@@ -497,7 +495,7 @@
      "window": "2026-11-18 to 2026-12-02"
     }
    ],
-   "summary": "ICE certified arabica −24,907 bags on the day (normal within ±6,058); ICE certified arabica −54,989 bags on the week (normal within ±39,322)"
+   "summary": "ICE certified arabica +8,109 bags on the day (normal within ±6,947); ICE certified arabica −46,845 bags on the week (normal within ±40,483)"
   },
   {
    "sym": "CC",
@@ -589,7 +587,7 @@
      "region": "ci_sb",
      "name": "Soubré, Nawa (Côte d'Ivoire)",
      "read": null,
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": null,
      "rain_p50": null,
@@ -601,7 +599,7 @@
      "region": "ci_dl",
      "name": "Daloa, Haut-Sassandra (Côte d'Ivoire)",
      "read": null,
-     "prev": "dry",
+     "prev": null,
      "flip": false,
      "src": null,
      "rain_p50": null,
@@ -613,7 +611,7 @@
      "region": "gh_ku",
      "name": "Kumasi, Ashanti (Ghana)",
      "read": null,
-     "prev": "dry",
+     "prev": null,
      "flip": false,
      "src": null,
      "rain_p50": null,

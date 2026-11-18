@@ -62,16 +62,16 @@ asof,sym,item,value,d1,d5,flag
 2026-11-17,SB,Certified stocks,,,,0
 2026-11-17,SB,Managed money net,193196.0,,-30699.0,0
 2026-11-17,SB,Front implied vol (JAN27),24.8,0.3,-0.2,0
-2026-11-17,SB,wx:br_sp,wet,,,1
+2026-11-17,SB,wx:br_sp,wet,,,0
 2026-11-17,SB,wx:br_spw,near normal,,,0
-2026-11-17,SB,wx:br_gos,wet,,,1
+2026-11-17,SB,wx:br_gos,wet,,,0
 2026-11-17,SB,wx:br_mgc,wet,,,0
 2026-11-17,SB,wx:in_sl,,,,0
 2026-11-17,SB,wx:th_kk,,,,0
 2026-11-17,SB,cot_date,2026-11-10,,,0
 2026-11-17,KC,Flat price (Dec 26),285.0,4.3,13.6,0
 2026-11-17,KC,Front spread (Dec 26/Mar 27),5.05,-0.75,-0.45,0
-2026-11-17,KC,ICE certified arabica,186414.0,-24907.0,-54989.0,1
+2026-11-17,KC,ICE certified arabica,194523.0,8109.0,-46845.0,1
 2026-11-17,KC,Managed money net,4972.0,,-4633.0,0
 2026-11-17,KC,Front implied vol (MAR27),35.8,0.0,-2.8,0
 2026-11-17,KC,wx:br_mg,wet,,,0

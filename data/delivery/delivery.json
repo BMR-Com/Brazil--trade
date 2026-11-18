@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:22 UTC",
+ "generated": "2026-11-18 03:55 UTC",
  "asof": "2026-11-17",
  "markets": [
   {
@@ -397,11 +397,11 @@
     "src": "ICE daily open interest by contract (exchange report, previous business day)"
    },
    "certs": {
-    "now": 186414,
-    "date": "2026-11-16",
+    "now": 194523,
+    "date": "2026-11-17",
     "unit": "bags",
-    "chg_1w": -54989,
-    "pending": 198476,
+    "chg_1w": -46845,
+    "pending": 214483,
     "src": "ICE daily certified arabica report"
    },
    "oncall": null,
@@ -486,7 +486,7 @@
    "index_roll_past": true,
    "read": [
     "8,181 lots still open in Dec 26 on 2026-11-16 (11.2% left; past Dec rolls at this stage 10.1–23.8%) with 2 business days to first notice (2026-11-19). At the last five reports' pace (about 5,779 lots a day) the contract clears before notice.",
-    "Dec 26/Mar 27 +5.05¢ (inverted) on 2026-11-17; certified stock 186,414 bags on 2026-11-16, -54,989 on the week.",
+    "Dec 26/Mar 27 +5.05¢ (inverted) on 2026-11-17; certified stock 194,523 bags on 2026-11-17, -46,845 on the week.",
     "Read: deliverable stock is falling while the front holds a premium: shorts without certs must buy back or roll, which supports Dec 26 against Mar 27 into notice."
    ]
   },

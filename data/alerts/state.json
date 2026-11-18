@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:23 UTC",
+ "generated": "2026-11-18 03:55 UTC",
  "asof": "2026-11-17",
  "today": "2026-11-17",
  "active": [
@@ -16,10 +16,10 @@
   {
    "id": "KC_certs_week",
    "market": "Coffee C",
-   "text": "ICE certified arabica −54,989 bags in a week to 2026-11-16 (threshold ±40,000 bags)",
+   "text": "ICE certified arabica −46,845 bags in a week to 2026-11-17 (threshold ±40,000 bags)",
    "on": true,
    "level": "±40,000 bags",
-   "date": "2026-11-16",
+   "date": "2026-11-17",
    "new": false,
    "since": "2026-11-17"
   },
@@ -60,7 +60,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-18",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -70,7 +70,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-18",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -100,13 +100,23 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
+   "new": false,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_Brazil_tender_parity__blend_cost_in_Antwerp_vs_exchange_valu",
+   "market": "Data",
+   "text": "Brazil tender parity (blend cost in Antwerp vs exchange value): late (latest 2026-11-11, limit 3 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
    "new": true,
    "since": "2026-11-17"
   },
   {
-   "id": "data_USD_BRL_PTAX__Banco_Central_do_Brasil_",
+   "id": "data_Brazil_export_differentials__public_quotes__manual__data_cof",
    "market": "Data",
-   "text": "USD/BRL PTAX (Banco Central do Brasil): missing (latest –, limit 3 business days)",
+   "text": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv): late (latest 2026-04-07, limit 120 days)",
    "on": true,
    "level": null,
    "date": "2026-11-17",
@@ -135,7 +145,7 @@
   },
   {
    "market": "Coffee C",
-   "text": "Certs weekly change beyond ±40,000 bags (latest −54,989, 2026-11-16)"
+   "text": "Certs weekly change beyond ±40,000 bags (latest −46,845, 2026-11-17)"
   },
   {
    "market": "Cotton",
@@ -175,10 +185,10 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.12¢/lb: No. 11 Mar 27 now 18.17¢ (2026-11-17)"
+   "text": "Ethanol parity 15.14¢/lb: No. 11 Mar 27 now 18.17¢ (2026-11-17)"
   }
  ],
- "rules_checked": 144,
+ "rules_checked": 146,
  "pending_email": [
   {
    "id": "KC_certs_week",
@@ -291,9 +301,19 @@
    "since": "2026-11-17"
   },
   {
-   "id": "data_USD_BRL_PTAX__Banco_Central_do_Brasil_",
+   "id": "data_Brazil_tender_parity__blend_cost_in_Antwerp_vs_exchange_valu",
    "market": "Data",
-   "text": "USD/BRL PTAX (Banco Central do Brasil): missing (latest –, limit 3 business days)",
+   "text": "Brazil tender parity (blend cost in Antwerp vs exchange value): late (latest 2026-11-11, limit 3 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-17",
+   "new": true,
+   "since": "2026-11-17"
+  },
+  {
+   "id": "data_Brazil_export_differentials__public_quotes__manual__data_cof",
+   "market": "Data",
+   "text": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv): late (latest 2026-04-07, limit 120 days)",
    "on": true,
    "level": null,
    "date": "2026-11-17",
