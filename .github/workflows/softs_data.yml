@@ -55,11 +55,13 @@ jobs:
           python -W ignore models/sugar_signals.py || true
           python -W ignore models/sugar_flows.py || true
           python -W ignore models/summary.py && python -W ignore models/outlook_brief.py || true
-      - name: contract calendar, cotton spread vs full carry, data status
+      - name: contract calendar, cotton spread vs full carry, coffee/sugar spreads & arbs, data status
         continue-on-error: true
         run: |
           python -W ignore models/contract_calendar.py || true
           python models/cotton_carry.py || true
+          python models/softs_spread_tables.py || echo "::warning::spread tables failed"
+          python models/reports_store.py prune || true
           python pipelines/data_status.py || true
       - name: commit
         run: |

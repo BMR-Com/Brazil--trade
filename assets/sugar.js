@@ -5,7 +5,7 @@ const Sugar = (() => {
   let built = false, tab = 'su-primer', S = null;
   const TABS = [['su-primer', 'Primer'], ['su-geo', "Where it's grown, trade &amp; weather"], ['su-bal', 'World balance'], ['su-cs', 'Brazil Centre-South crush'], ['su-wx', 'Brazil cane weather &amp; season range'],
     ['su-eth', 'Ethanol parity &amp; mix'], ['su-white', 'White premium'], ['su-exp', 'Brazil exports'], ['su-asia', 'India &amp; Thailand'], ['su-india', 'India detail'], ['su-eu', 'Europe'], ['su-deliv', 'Deliveries &amp; revisions'],
-    ['su-flows', 'Futures, options &amp; COT'], ['su-rv', 'Spreads &amp; vol'], ['su-outlook', 'Outlook'], ['su-seas', 'Seasonality &amp; technicals']];
+    ['su-flows', 'Futures, options &amp; COT'], ['su-rv', 'Spreads &amp; vol'], ['su-outlook', 'Outlook'], ['su-reports', 'Reports'], ['su-seas', 'Seasonality &amp; technicals']];
   const body = () => $('#suBody');
   const f1 = v => fmt(v, 1), f2 = v => fmt(v, 2);
   const load = () => S ? Promise.resolve(S) : getJSON('sugar/data/sugar.json').then(d => (S = d));
@@ -23,7 +23,7 @@ const Sugar = (() => {
     history.replaceState(null, '', '#' + tab);
     body().innerHTML = '<div class="card"><p class="note">Loading…</p></div>';
     ({ 'su-primer': primer, 'su-geo': () => Geo.mount(body(), 'sugar'), 'su-bal': guard(balance), 'su-cs': guard(crush), 'su-eth': guard(ethanol),
-      'su-white': guard(white), 'su-exp': guard(exportsTab), 'su-asia': guard(asia), 'su-wx': guard(() => SugarWorld.mount(body(), 'cane')), 'su-india': guard(() => SugarWorld.mount(body(), 'india')), 'su-eu': guard(() => SugarWorld.mount(body(), 'europe')), 'su-deliv': guard(() => SugarWorld.mount(body(), 'deliveries')), 'su-flows': flows, 'su-rv': () => RVView.mount(body(), 'SB'),
+      'su-white': guard(white), 'su-exp': guard(exportsTab), 'su-asia': guard(asia), 'su-wx': guard(() => SugarWorld.mount(body(), 'cane')), 'su-india': guard(() => SugarWorld.mount(body(), 'india')), 'su-eu': guard(() => SugarWorld.mount(body(), 'europe')), 'su-deliv': guard(() => SugarWorld.mount(body(), 'deliveries')), 'su-flows': flows, 'su-rv': guard(async () => { body().innerHTML = '<div id="suSA"></div><div id="suRV" style="margin-top:12px"></div>'; await SpreadTables.mount($('#suSA'), 'sugar'); await RVView.mount($('#suRV'), 'SB'); }), 'su-reports': guard(() => ReportsView.mount(body(), 'sugar')),
       'su-outlook': guard(outlook), 'su-seas': () => MktStudy.mount(body(), ['SB']) })[tab]();
   }
   const kpi = (lab, v, sub) => `<div class="kpi card" style="padding:10px"><div class="lbl">${lab}</div><div class="val" style="font-size:19px">${v}</div>${sub ? `<div class="sub">${sub}</div>` : ''}</div>`;

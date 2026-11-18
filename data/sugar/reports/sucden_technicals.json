@@ -1,0 +1,19 @@
+{
+ "source": "Sucden Financial",
+ "name": "Sucden Financial: Soft Commodity Technical Charts (sugar)",
+ "home": "https://www.sucdenfinancial.com/en/market-insights/soft-commodities-outlook/soft-commodity-technical-charts/",
+ "cadence": "published three times a week; desk reads monthly",
+ "access": "browser (dated pages, e.g. …/soft-commodity-technical-charts/2026-11-18/)",
+ "window_start": "2026-04-01",
+ "entries": [
+  {
+   "date": "2026-11-18",
+   "title": "Soft Commodity Technical Charts – 18 Nov 2026",
+   "url": "https://www.sucdenfinancial.com/en/market-insights/soft-commodities-outlook/soft-commodity-technical-charts/2026-11-18/",
+   "key_points": [
+    "NY No. 11: held between the 100-day average and 17.50 support; 10- and 200-day averages (≈17.76/17.89) form a ceiling; a break of 17.50 opens 17.00 (August low).",
+    "London No. 5 (2nd month): sitting on the 100-day average near 512.7; needs a close above the 10-day (~516) to target the 40-day (~537)."
+   ]
+  }
+ ]
+}

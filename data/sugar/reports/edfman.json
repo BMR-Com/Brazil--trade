@@ -1,0 +1,21 @@
+{
+ "source": "ED&F Man",
+ "name": "ED&F Man Sugar: Monthly Sugar Note",
+ "home": "https://www.edfmansugar.com/sugar-reports/",
+ "cadence": "monthly read",
+ "access": "WebFetch (direct PDF links)",
+ "window_start": "2026-04-01",
+ "entries": [
+  {
+   "date": "2026-10-28",
+   "title": "Monthly Sugar Note – October 2026",
+   "url": "https://www.edfmansugar.com/wp-content/uploads/2026/10/Monthly-Sugar-Note-Oct-2026.pdf",
+   "key_points": [
+    "Speculators drive the near term: net long ~223k lots on 20 Oct, near a 5-year high; expected to hold until the February roll.",
+    "Brazil CS to end-September: cane −1.6% y/y, sugar −13.6%, mix 47% vs 52%; October rain ~34% above normal and many lost crushing days; 2026/27 cane ~630 Mt, sugar ~37 Mt.",
+    "India 2026/27 ~27 Mt vs 28.5 Mt use after poor Maharashtra/Karnataka rain → import need; EU beet sharply lower (France lowest since 1980).",
+    "White premium flat at about $108/t Mar/Mar; main bearish risk is a weaker real pushing maximum sugar."
+   ]
+  }
+ ]
+}

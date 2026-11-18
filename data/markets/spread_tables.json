@@ -1,0 +1,429 @@
+{
+ "built": "2026-11-18 10:59 UTC",
+ "asof": "2026-11-17",
+ "coffee": [
+  {
+   "group": "Settlements: ICE arabica",
+   "label": "Dec26",
+   "legs": [
+    "KCZ2026"
+   ],
+   "unit": "c/lb",
+   "value": 286.6,
+   "chg": 5.9,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Settlements: ICE arabica",
+   "label": "Mar27",
+   "legs": [
+    "KCH2027"
+   ],
+   "unit": "c/lb",
+   "value": 281.4,
+   "chg": 6.5,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Settlements: ICE robusta",
+   "label": "Jan27",
+   "legs": [
+    "RCF2027"
+   ],
+   "unit": "$/t",
+   "value": 3071.0,
+   "chg": -73.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Settlements: ICE robusta",
+   "label": "Mar27",
+   "legs": [
+    "RCH2027"
+   ],
+   "unit": "$/t",
+   "value": 3037.0,
+   "chg": -86.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Arabica switches",
+   "label": "Dec26/Mar27",
+   "legs": [
+    "KCZ2026",
+    "KCH2027"
+   ],
+   "position": "1/2",
+   "unit": "c/lb",
+   "value": 5.2,
+   "pct_of_deferred": 1.85,
+   "chg": -0.6,
+   "pctile_1y": 15.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Arabica switches",
+   "label": "Mar27/May27",
+   "legs": [
+    "KCH2027",
+    "KCK2027"
+   ],
+   "position": "2/3",
+   "unit": "c/lb",
+   "value": 6.05,
+   "pct_of_deferred": 2.2,
+   "chg": 1.7,
+   "pctile_1y": 40.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Arabica switches",
+   "label": "May27/Jul27",
+   "legs": [
+    "KCK2027",
+    "KCN2027"
+   ],
+   "position": "3/4",
+   "unit": "c/lb",
+   "value": 4.2,
+   "pct_of_deferred": 1.55,
+   "chg": 0.95,
+   "pctile_1y": 58.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Arabica switches",
+   "label": "Jul27/Sep27",
+   "legs": [
+    "KCN2027",
+    "KCU2027"
+   ],
+   "position": "4/5",
+   "unit": "c/lb",
+   "value": 3.5,
+   "pct_of_deferred": 1.31,
+   "chg": 0.45,
+   "pctile_1y": 67.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Arabica switches",
+   "label": "Sep27/Dec27",
+   "legs": [
+    "KCU2027",
+    "KCZ2027"
+   ],
+   "position": "5/6",
+   "unit": "c/lb",
+   "value": 4.0,
+   "pct_of_deferred": 1.52,
+   "chg": 0.45,
+   "pctile_1y": 92.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Robusta switches",
+   "label": "Jan27/Mar27",
+   "legs": [
+    "RCF2027",
+    "RCH2027"
+   ],
+   "position": "1/2",
+   "unit": "$/t",
+   "value": 34.0,
+   "pct_of_deferred": 1.12,
+   "chg": 13.0,
+   "pctile_1y": 35.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Robusta switches",
+   "label": "Mar27/May27",
+   "legs": [
+    "RCH2027",
+    "RCK2027"
+   ],
+   "position": "2/3",
+   "unit": "$/t",
+   "value": 14.0,
+   "pct_of_deferred": 0.46,
+   "chg": -2.0,
+   "pctile_1y": 9.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Robusta switches",
+   "label": "May27/Jul27",
+   "legs": [
+    "RCK2027",
+    "RCN2027"
+   ],
+   "position": "3/4",
+   "unit": "$/t",
+   "value": 14.0,
+   "pct_of_deferred": 0.47,
+   "chg": -3.0,
+   "pctile_1y": 15.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Robusta switches",
+   "label": "Jul27/Sep27",
+   "legs": [
+    "RCN2027",
+    "RCU2027"
+   ],
+   "position": "4/5",
+   "unit": "$/t",
+   "value": 17.0,
+   "pct_of_deferred": 0.57,
+   "chg": -4.0,
+   "pctile_1y": 18.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Arabica / robusta arb",
+   "label": "KC Mar27 \u2212 RC Mar27",
+   "legs": [
+    "KCH2027",
+    "RCH2027"
+   ],
+   "unit": "c/lb",
+   "value": 143.64,
+   "chg": 10.4,
+   "pctile_1y": 60.0,
+   "date": "2026-11-17",
+   "ratio": 2.043,
+   "ratio_pctile_1y": 95.0
+  },
+  {
+   "group": "Arabica / robusta arb",
+   "label": "KC May27 \u2212 RC May27",
+   "legs": [
+    "KCK2027",
+    "RCK2027"
+   ],
+   "unit": "c/lb",
+   "value": 138.23,
+   "chg": 8.61,
+   "pctile_1y": 66.0,
+   "date": "2026-11-17",
+   "ratio": 2.008,
+   "ratio_pctile_1y": 99.0
+  },
+  {
+   "group": "Brazil arb",
+   "label": "B3 arabica 4/5 front \u2212 KC Dec26",
+   "legs": [
+    "ICF1!",
+    "KCZ2026"
+   ],
+   "unit": "c/lb",
+   "value": -17.99,
+   "chg": -1.56,
+   "pctile_1y": 86.0,
+   "date": "2026-11-16",
+   "note": "B3 US$/bag converted at 132.277 lb/bag; B3 front month may differ from the KC month"
+  }
+ ],
+ "sugar": [
+  {
+   "group": "Settlements: ICE No. 11",
+   "label": "Mar27",
+   "legs": [
+    "SBH2027"
+   ],
+   "unit": "c/lb",
+   "value": 18.17,
+   "chg": 0.07,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Settlements: ICE No. 11",
+   "label": "May27",
+   "legs": [
+    "SBK2027"
+   ],
+   "unit": "c/lb",
+   "value": 17.6,
+   "chg": 0.01,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Settlements: ICE No. 5",
+   "label": "Mar27",
+   "legs": [
+    "WH2027"
+   ],
+   "unit": "$/t",
+   "value": 511.0,
+   "chg": 0.5,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "Settlements: ICE No. 5",
+   "label": "May27",
+   "legs": [
+    "WK2027"
+   ],
+   "unit": "$/t",
+   "value": 512.7,
+   "chg": -0.3,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "No. 11 switches",
+   "label": "Mar27/May27",
+   "legs": [
+    "SBH2027",
+    "SBK2027"
+   ],
+   "position": "1/2",
+   "unit": "c/lb",
+   "value": 0.57,
+   "pct_of_deferred": 3.24,
+   "chg": 0.06,
+   "pctile_1y": 93.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "No. 11 switches",
+   "label": "May27/Jul27",
+   "legs": [
+    "SBK2027",
+    "SBN2027"
+   ],
+   "position": "2/3",
+   "unit": "c/lb",
+   "value": 0.36,
+   "pct_of_deferred": 2.09,
+   "chg": 0.03,
+   "pctile_1y": 79.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "No. 11 switches",
+   "label": "Jul27/Oct27",
+   "legs": [
+    "SBN2027",
+    "SBV2027"
+   ],
+   "position": "3/4",
+   "unit": "c/lb",
+   "value": -0.02,
+   "pct_of_deferred": -0.12,
+   "chg": 0.01,
+   "pctile_1y": 46.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "No. 11 switches",
+   "label": "Oct27/Mar28",
+   "legs": [
+    "SBV2027",
+    "SBH2028"
+   ],
+   "position": "4/5",
+   "unit": "c/lb",
+   "value": -0.37,
+   "pct_of_deferred": -2.1,
+   "chg": 0.01,
+   "pctile_1y": 31.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "No. 5 switches",
+   "label": "Mar27/May27",
+   "legs": [
+    "WH2027",
+    "WK2027"
+   ],
+   "position": "1/2",
+   "unit": "$/t",
+   "value": -1.7,
+   "pct_of_deferred": -0.33,
+   "chg": 0.8,
+   "pctile_1y": 33.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "No. 5 switches",
+   "label": "May27/Aug27",
+   "legs": [
+    "WK2027",
+    "WQ2027"
+   ],
+   "position": "2/3",
+   "unit": "$/t",
+   "value": 3.6,
+   "pct_of_deferred": 0.71,
+   "chg": 0.4,
+   "pctile_1y": 81.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "No. 5 switches",
+   "label": "Aug27/Oct27",
+   "legs": [
+    "WQ2027",
+    "WV2027"
+   ],
+   "position": "3/4",
+   "unit": "$/t",
+   "value": 4.7,
+   "pct_of_deferred": 0.93,
+   "chg": 0.5,
+   "pctile_1y": 92.0,
+   "date": "2026-11-17"
+  },
+  {
+   "group": "White premium",
+   "label": "No.5 Mar27 \u2212 No.11 Mar27",
+   "legs": [
+    "WH2027",
+    "SBH2027"
+   ],
+   "unit": "$/t",
+   "value": 110.4,
+   "chg": -1.0,
+   "pctile_1y": 58.0,
+   "date": "2026-11-17",
+   "pct_of_deferred": 27.6
+  },
+  {
+   "group": "White premium",
+   "label": "No.5 May27 \u2212 No.11 May27",
+   "legs": [
+    "WK2027",
+    "SBK2027"
+   ],
+   "unit": "$/t",
+   "value": 124.7,
+   "chg": -0.5,
+   "pctile_1y": 93.0,
+   "date": "2026-11-17",
+   "pct_of_deferred": 32.1
+  },
+  {
+   "group": "White premium",
+   "label": "No.5 Aug27 \u2212 No.11 Jul27",
+   "legs": [
+    "WQ2027",
+    "SBN2027"
+   ],
+   "unit": "$/t",
+   "value": 129.0,
+   "chg": -0.3,
+   "pctile_1y": 93.0,
+   "date": "2026-11-17",
+   "pct_of_deferred": 33.9
+  }
+ ],
+ "notes": [
+  "Spread = nearby minus deferred; positive = inverted (nearby premium), negative = carry.",
+  "Day change uses the same two contracts on the previous session; the 1-year percentile ranks today's value against the same position (1st/2nd month etc.) over the last 252 sessions, so it rolls with the curve.",
+  "Arabica/robusta arb: KC c/lb minus robusta $/t \u00f7 22.0462; ratio = KC \u00f7 robusta in c/lb.",
+  "White premium: No. 5 $/t minus No. 11 c/lb \u00d7 22.0462 (Mar/Mar, May/May, Aug/Jul, Oct/Oct, Dec/Mar).",
+  "Sources: ICE settlements and B3 front month via the desk's price files (TradingView feed)."
+ ]
+}

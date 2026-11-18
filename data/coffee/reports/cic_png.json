@@ -1,0 +1,601 @@
+{
+ "source": "CIC PNG",
+ "name": "Coffee Industry Corporation (PNG): Weekly Market Report",
+ "home": "https://www.cic.org.pg/category/weekly-market-report/",
+ "cadence": "weekly (Sunday-dated)",
+ "access": "WebFetch or browser; archive since Jan 2021 (32 list pages)",
+ "window_start": "2026-01-01",
+ "caveat": "The author says no reliable published differential series is available to him; figures are indications and the PNG Y1 level is his inference from the other origins.",
+ "entries": [
+  {
+   "date": "2026-11-15",
+   "title": "Weekly Market Report – 15 November 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-15-november-2026/",
+   "diffs": {
+    "Brazil 3/4": -18.0,
+    "Colombia UGQ": 72.0,
+    "Honduras HG": 22.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 6.0
+   },
+   "kc_second": 273.5,
+   "key_points": [
+    "Arabica +1.85¢ on the week (Mar 273.50¢); robusta down every day (Jan $3,196/t).",
+    "NY certified stocks fell another ~21k bags to ~211k despite heavy Brazil shipments (Oct exports ~4.79m bags, +23% m/m) — the author flags it as a concern.",
+    "Diffs steady; PNG Y1 put at about +6; outlook still bearish on good Brazil rain.",
+    "PNG roadside parchment expected ~10 toea/kg lower."
+   ]
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Weekly Market Report – 08 November 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-08-november-2026/",
+   "diffs": {
+    "Brazil 3/4": -18.0,
+    "Colombia UGQ": 72.0,
+    "Honduras HG": 22.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 6.0
+   },
+   "kc_second": 271.65,
+   "key_points": [
+    "Arabica −5.15¢ (Mar 271.65¢); robusta +$66/t (Jan $3,270/t).",
+    "Diffs eased: Brazil 3/4 −18 (up ~3), Honduras HG +22, Kenya AB +55/60, Colombia UGQ +72, PNG Y1 ~+6.",
+    "Vietnam ten-month exports ~26.2m bags (+17.5%); India Coffee Board cut 2026/27 to 6.3m bags on weak monsoon.",
+    "Parchment expected 45–50 toea/kg lower."
+   ]
+  },
+  {
+   "date": "2026-11-01",
+   "title": "Weekly Market Report – 01 November 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-01-november-2026/",
+   "diffs": {
+    "Brazil 3/4": -21.0,
+    "Colombia UGQ": 77.0,
+    "Honduras HG": 24.0,
+    "Kenya AB FAQ": 72.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 276.8,
+   "key_points": [
+    "Arabica −16.60¢ (Mar 276.80¢) on a weaker real; robusta −$38/t.",
+    "Diffs unchanged: Brazil 3/4 −21, Honduras HG +24, Kenya AB +70/75, Colombia UGQ +77, PNG Y1 ~+8.",
+    "Early Brazil flowering uneven — more a quality than a volume issue for next year (author).",
+    "Parchment expected 150–155 toea/kg lower."
+   ]
+  },
+  {
+   "date": "2026-10-25",
+   "title": "Weekly Market Report – 25 October 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-25-october-2026/",
+   "diffs": {
+    "Brazil 3/4": -21.0,
+    "Colombia UGQ": 77.0,
+    "Honduras HG": 24.0,
+    "Kenya AB FAQ": 72.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 293.4,
+   "key_points": [
+    "Arabica −1.10¢ (Mar 293.40¢); robusta −$212/t.",
+    "Market weighing super El Niño risk to the next crop against near-term supply growth; Colombia Jan–Sep exports 8.45m bags (−14%).",
+    "Diffs: Brazil 3/4 −21, Honduras HG +24, Kenya AB +70/75, Colombia UGQ +77 (slightly firmer), PNG Y1 ~+8."
+   ]
+  },
+  {
+   "date": "2026-10-18",
+   "title": "Weekly Market Report – 18 October 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-18-october-2026/",
+   "diffs": {
+    "Brazil 3/4": -21.0,
+    "Colombia UGQ": 76.0,
+    "Honduras HG": 24.0,
+    "Kenya AB FAQ": 72.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 294.5,
+   "key_points": []
+  },
+  {
+   "date": "2026-10-11",
+   "title": "Weekly Market Report – 11 October 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-11-october-2026/",
+   "diffs": {
+    "Brazil 3/4": -22.0,
+    "Colombia UGQ": 76.0,
+    "Honduras HG": 23.0,
+    "Kenya AB FAQ": 72.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 279.8,
+   "key_points": []
+  },
+  {
+   "date": "2026-10-04",
+   "title": "Weekly Market Report – 04 October 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-04-october-2026/",
+   "diffs": {
+    "Brazil 3/4": -22.0,
+    "Colombia UGQ": 75.0,
+    "Honduras HG": 23.0,
+    "Kenya AB FAQ": 72.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 280.5,
+   "key_points": []
+  },
+  {
+   "date": "2026-09-27",
+   "title": "Weekly Market Report – 27 September 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-27-september-2026/",
+   "diffs": {
+    "Brazil 3/4": -25.0,
+    "Colombia UGQ": 73.0,
+    "Honduras HG": 22.0,
+    "Kenya AB FAQ": 72.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 271.25,
+   "key_points": []
+  },
+  {
+   "date": "2026-09-20",
+   "title": "Weekly Market Report – 20 September 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-20-september-2026/",
+   "diffs": {
+    "Brazil 3/4": -28.0,
+    "Colombia UGQ": 72.0,
+    "Honduras HG": 20.0,
+    "Kenya AB FAQ": 72.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 280.5,
+   "key_points": []
+  },
+  {
+   "date": "2026-08-23",
+   "title": "Weekly Market Report – 23 August 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-23-august-2026/",
+   "diffs": {
+    "Brazil 3/4": -26.0,
+    "Colombia UGQ": 65.0,
+    "Honduras HG": 25.0,
+    "Kenya AB FAQ": 72.5,
+    "PNG Y1": 11.0
+   },
+   "kc_second": 322.65,
+   "key_points": []
+  },
+  {
+   "date": "2026-08-16",
+   "title": "Weekly Market Report – 16 August 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-16-august-2026/",
+   "diffs": {
+    "Brazil 3/4": -24.0,
+    "Colombia UGQ": 65.0,
+    "Honduras HG": 25.0,
+    "Kenya AB FAQ": 62.5,
+    "PNG Y1": 11.0
+   },
+   "kc_second": 314.3,
+   "key_points": []
+  },
+  {
+   "date": "2026-08-09",
+   "title": "Weekly Market Report – 09 August 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-09-august-2026/",
+   "diffs": {
+    "Brazil 3/4": -23.0,
+    "Colombia UGQ": 65.0,
+    "Honduras HG": 25.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 11.0
+   },
+   "kc_second": 315.9,
+   "key_points": []
+  },
+  {
+   "date": "2026-08-02",
+   "title": "Weekly Market Report – 02 August 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-02-august-2026/",
+   "diffs": {
+    "Brazil 3/4": -22.0,
+    "Honduras HG": 25.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 11.0
+   },
+   "kc_second": 314.65,
+   "key_points": []
+  },
+  {
+   "date": "2026-07-26",
+   "title": "Weekly Market Report – 26 July 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-26-july-2026/",
+   "diffs": {
+    "Brazil 3/4": -22.0,
+    "Colombia UGQ": 64.0,
+    "Honduras HG": 25.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 11.0
+   },
+   "kc_second": 298.05,
+   "key_points": []
+  },
+  {
+   "date": "2026-07-19",
+   "title": "Weekly Market Report – 19 July 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-19-july-2026/",
+   "diffs": {
+    "Brazil 3/4": -22.0,
+    "Colombia UGQ": 65.0,
+    "Honduras HG": 25.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 11.0
+   },
+   "kc_second": 320.3,
+   "key_points": []
+  },
+  {
+   "date": "2026-07-12",
+   "title": "Weekly Market Report – 12 July 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-12-july-2026/",
+   "diffs": {
+    "Brazil 3/4": -20.0,
+    "Colombia UGQ": 60.0,
+    "Honduras HG": 25.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 11.0
+   },
+   "kc_second": 334.25,
+   "key_points": []
+  },
+  {
+   "date": "2026-07-05",
+   "title": "Weekly Market Report – 05 July 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-05-july-2026/",
+   "diffs": {
+    "Brazil 3/4": -18.0,
+    "Colombia UGQ": 65.0,
+    "Honduras HG": 25.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 11.0
+   },
+   "kc_second": 301.2,
+   "key_points": []
+  },
+  {
+   "date": "2026-06-28",
+   "title": "Weekly Market Report – 28 June 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-28-june-2026/",
+   "diffs": {
+    "Brazil 3/4": -18.0,
+    "Colombia UGQ": 55.0,
+    "Honduras HG": 24.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 10.0
+   },
+   "kc_second": 275.95,
+   "key_points": []
+  },
+  {
+   "date": "2026-06-21",
+   "title": "Weekly Market Report – 21 June 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-21-june-2026/",
+   "diffs": {
+    "Brazil 3/4": -14.0,
+    "Colombia UGQ": 55.0,
+    "Honduras HG": 23.0,
+    "Kenya AB FAQ": 57.5,
+    "PNG Y1": 10.0
+   },
+   "kc_second": 267.8,
+   "key_points": []
+  },
+  {
+   "date": "2026-06-14",
+   "title": "Weekly Market Report – 14 June 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-14-june-2026/",
+   "diffs": {
+    "Brazil 3/4": -18.0,
+    "Colombia UGQ": 35.0,
+    "Honduras HG": 16.0,
+    "Kenya AB FAQ": 42.5,
+    "PNG Y1": 4.0
+   },
+   "kc_second": 253.4,
+   "key_points": []
+  },
+  {
+   "date": "2026-05-31",
+   "title": "Weekly Market Report – 31 May 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-31-may-2026/",
+   "diffs": {
+    "Brazil 3/4": -10.0,
+    "Colombia UGQ": 39.0,
+    "Honduras HG": 18.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 7.0
+   },
+   "kc_second": 258.7,
+   "key_points": []
+  },
+  {
+   "date": "2026-05-24",
+   "title": "Weekly Market Report – 24 May 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-24-may-2026/",
+   "diffs": {
+    "Brazil 3/4": -10.0,
+    "Colombia UGQ": 39.0,
+    "Honduras HG": 18.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 7.0
+   },
+   "kc_second": 264.8,
+   "key_points": []
+  },
+  {
+   "date": "2026-05-17",
+   "title": "Weekly Market Report – 17 May 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-17-may-2026/",
+   "diffs": {
+    "Brazil 3/4": -10.0,
+    "Colombia UGQ": 38.0,
+    "Honduras HG": 18.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 7.0
+   },
+   "kc_second": 266.9,
+   "key_points": []
+  },
+  {
+   "date": "2026-05-10",
+   "title": "Weekly Market Report – 10 May 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-10-may-2026/",
+   "diffs": {
+    "Brazil 3/4": -10.0,
+    "Colombia UGQ": 38.0,
+    "Honduras HG": 18.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 7.0
+   },
+   "kc_second": 274.8,
+   "key_points": []
+  },
+  {
+   "date": "2026-05-03",
+   "title": "Weekly Market Report – 03 May 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-03-may-2026/",
+   "diffs": {
+    "Brazil 3/4": -10.0,
+    "Colombia UGQ": 37.0,
+    "Honduras HG": 18.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 7.0
+   },
+   "kc_second": 286.9,
+   "key_points": []
+  },
+  {
+   "date": "2026-04-26",
+   "title": "Weekly Market Report – 26 April 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-26-april-2026/",
+   "diffs": {
+    "Brazil 3/4": -10.0,
+    "Colombia UGQ": 40.0,
+    "Honduras HG": 19.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 294.9,
+   "key_points": []
+  },
+  {
+   "date": "2026-04-19",
+   "title": "Weekly Market Report – 19 April 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-19-april-2026/",
+   "diffs": {
+    "Brazil 3/4": -10.0,
+    "Colombia UGQ": 40.0,
+    "Honduras HG": 19.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 284.25,
+   "key_points": []
+  },
+  {
+   "date": "2026-04-12",
+   "title": "Weekly Market Report – 12 April 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-12-april-2026/",
+   "diffs": {
+    "Brazil 3/4": 22.0,
+    "Colombia UGQ": 40.0,
+    "Honduras HG": 19.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 295.9,
+   "key_points": []
+  },
+  {
+   "date": "2026-04-05",
+   "title": "Weekly Market Report – 05 April 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-05-april-2026/",
+   "diffs": {
+    "Brazil 3/4": 222.0,
+    "Colombia UGQ": 40.0,
+    "Honduras HG": 19.0,
+    "Kenya AB FAQ": 48.5,
+    "PNG Y1": 8.0
+   },
+   "kc_second": 289.4,
+   "key_points": []
+  },
+  {
+   "date": "2026-03-29",
+   "title": "Weekly Market Report – 29 March 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-29-march-2026/",
+   "diffs": {
+    "Brazil 3/4": 20.0,
+    "Colombia UGQ": 40.0,
+    "Honduras HG": 17.0,
+    "Kenya AB FAQ": 47.5,
+    "PNG Y1": 6.0
+   },
+   "kc_second": 295.9,
+   "key_points": []
+  },
+  {
+   "date": "2026-03-22",
+   "title": "Weekly Market Report – 22 March 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-22-march-2026/",
+   "diffs": {
+    "Brazil 3/4": 15.0,
+    "Colombia UGQ": 37.0,
+    "Honduras HG": 17.0,
+    "Kenya AB FAQ": 47.5,
+    "PNG Y1": 5.0
+   },
+   "kc_second": 302.35,
+   "key_points": []
+  },
+  {
+   "date": "2026-03-15",
+   "title": "Weekly Market Report – 15 March 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-15-march-2026/",
+   "diffs": {
+    "Brazil 3/4": 15.0,
+    "Colombia UGQ": 30.0,
+    "Honduras HG": 8.0,
+    "Kenya AB FAQ": 42.5,
+    "PNG Y1": -1.0
+   },
+   "kc_second": 285.15,
+   "key_points": []
+  },
+  {
+   "date": "2026-03-08",
+   "title": "Weekly Market Report – 08 March 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-08-march-2026/",
+   "diffs": {
+    "Colombia UGQ": 31.0,
+    "Honduras HG": 8.0,
+    "Kenya AB FAQ": 47.5
+   },
+   "kc_second": 293.3,
+   "key_points": []
+  },
+  {
+   "date": "2026-03-01",
+   "title": "Weekly Market Report – 01 March 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-01-march-2026/",
+   "diffs": {
+    "Brazil 3/4": -13.0,
+    "Colombia UGQ": 30.0,
+    "Honduras HG": 5.0,
+    "Kenya AB FAQ": 47.5,
+    "PNG Y1": -4.0
+   },
+   "kc_second": 280.75,
+   "key_points": []
+  },
+  {
+   "date": "2026-02-22",
+   "title": "Weekly Market Report – 22 February 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-22-february-2026/",
+   "diffs": {
+    "Brazil 3/4": -14.0,
+    "Colombia UGQ": 30.0,
+    "Honduras HG": 5.0,
+    "Kenya AB FAQ": 47.5,
+    "PNG Y1": -4.0
+   },
+   "kc_second": 285.7,
+   "key_points": []
+  },
+  {
+   "date": "2026-02-15",
+   "title": "Weekly Market Report – 15 February 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-15-february-2026/",
+   "diffs": {
+    "Brazil 3/4": -11.0,
+    "Colombia UGQ": 27.0,
+    "Honduras HG": 1.0,
+    "Kenya AB FAQ": 42.5,
+    "PNG Y1": -7.0
+   },
+   "kc_second": 298.3,
+   "key_points": []
+  },
+  {
+   "date": "2026-02-08",
+   "title": "Weekly Market Report – 08 February 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-08-february-2026/",
+   "diffs": {
+    "Brazil 3/4": -11.0,
+    "Colombia UGQ": 27.0,
+    "Honduras HG": 1.0,
+    "Kenya AB FAQ": 42.5,
+    "PNG Y1": -7.0
+   },
+   "kc_second": 289.3,
+   "key_points": []
+  },
+  {
+   "date": "2026-02-01",
+   "title": "Weekly Market Report – 01 February 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-01-february-2026/",
+   "diffs": {
+    "Brazil 3/4": -13.0,
+    "Colombia UGQ": 26.0,
+    "Honduras HG": 40.0,
+    "Kenya AB FAQ": 40.0,
+    "PNG Y1": -9.0
+   },
+   "kc_second": 315.35,
+   "key_points": []
+  },
+  {
+   "date": "2026-01-25",
+   "title": "Weekly Market Report – 25 January 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-25-january-2026/",
+   "diffs": {
+    "Brazil 3/4": -15.0,
+    "Colombia UGQ": 25.0,
+    "Honduras HG": 40.0,
+    "Kenya AB FAQ": 40.0,
+    "PNG Y1": -9.0
+   },
+   "kc_second": 333.0,
+   "key_points": []
+  },
+  {
+   "date": "2026-01-18",
+   "title": "Weekly Market Report – 18 January 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-18-january-2026/",
+   "diffs": {
+    "Brazil 3/4": -17.0,
+    "Colombia UGQ": 20.0,
+    "Honduras HG": 9.0,
+    "Kenya AB FAQ": 35.0,
+    "PNG Y1": -7.0
+   },
+   "kc_second": 337.4,
+   "key_points": []
+  },
+  {
+   "date": "2026-01-04",
+   "title": "Weekly Market Report – 04 January 2026",
+   "url": "https://www.cic.org.pg/weekly-market-report-04-january-2026/",
+   "diffs": {
+    "Brazil 3/4": -23.0,
+    "Colombia UGQ": 18.0,
+    "Honduras HG": 5.0,
+    "Kenya AB FAQ": 35.0,
+    "PNG Y1": -9.0
+   },
+   "kc_second": 341.45,
+   "key_points": []
+  }
+ ]
+}

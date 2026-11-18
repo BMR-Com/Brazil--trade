@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 10:09 UTC",
+ "generated": "2026-11-18 11:08 UTC",
  "today": "2026-11-18",
  "sources": [
   {
@@ -721,6 +721,78 @@
    "state": "ok",
    "manual": false,
    "used_in": "Certified stocks & structure tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Spreads & arbs table (KC/RC switches, arabica-robusta arb, B3 arb)",
+   "latest": "2026-11-17",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Coffee and sugar Spreads & vol tabs"
+  },
+  {
+   "group": "Sugar",
+   "source": "Spreads & arbs table (No. 11 / No. 5 switches, white premium)",
+   "latest": "2026-11-17",
+   "cadence": "daily",
+   "age": 1,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Sugar Spreads & vol tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Reports: Sucden coffee outlook (balance sheet and revisions)",
+   "latest": "2026-06-12",
+   "cadence": "monthly",
+   "age": 159,
+   "age_unit": "days",
+   "limit": 200,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Coffee Reports tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Reports: CIC PNG weekly differential indications",
+   "latest": "2026-11-15",
+   "cadence": "weekly",
+   "age": 3,
+   "age_unit": "days",
+   "limit": 10,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Coffee Reports tab, png_diffs.csv"
+  },
+  {
+   "group": "Coffee",
+   "source": "Reports: Sucafina / StoneX / Rabobank key points (weekly read)",
+   "latest": "2026-11-16",
+   "cadence": "weekly",
+   "age": 2,
+   "age_unit": "days",
+   "limit": 10,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Coffee Reports tab"
+  },
+  {
+   "group": "Sugar",
+   "source": "Reports: ED&F Man monthly note, Sucden technicals (monthly read)",
+   "latest": "2026-11-18",
+   "cadence": "monthly",
+   "age": 0,
+   "age_unit": "days",
+   "limit": 40,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Sugar Reports tab"
   },
   {
    "group": "Coffee",

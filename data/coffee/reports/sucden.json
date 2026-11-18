@@ -1,0 +1,418 @@
+{
+ "source": "Sucden Financial",
+ "name": "Sucden Financial: Coffee Market Outlook / Coffee Crop Update",
+ "home": "https://www.sucdenfinancial.com/en/market-insights/soft-commodities-outlook/coffee-market-outlook/",
+ "cadence": "about three outlooks a year plus crop updates; checked weekly",
+ "access": "browser or WebFetch on the report page (archive list loads 9 per page via ?page=N)",
+ "window_start": "2026-01-01",
+ "reports_seen": [
+  "2025-06-05",
+  "2026-01-23",
+  "2026-06-12"
+ ],
+ "latest": {
+  "date": "2026-06-12",
+  "title": "Coffee Crop Update – Grounds for Caution",
+  "url": "https://www.sucdenfinancial.com/en/market-insights/soft-commodities-outlook/coffee-market-outlook/coffee-crop-update-grounds-for-caution/",
+  "headline": {
+   "brazil_total": {
+    "2025/26": 64,
+    "2026/27": 76.5
+   },
+   "brazil_robusta": {
+    "2026/27": 25
+   },
+   "vietnam": {
+    "2025/26": 29.5
+   },
+   "colombia": {
+    "2025/26": 12.5
+   },
+   "world_production": {
+    "2025/26": 172.189
+   },
+   "world_consumption": {
+    "2025/26": 176
+   },
+   "world_balance": {
+    "2025/26": -3.8
+   },
+   "brazil_carryover": {
+    "2025/26": 4.8,
+    "2026/27": 17.8
+   }
+  },
+  "this_report": {
+   "brazil_total": {
+    "2025/26": 64,
+    "2026/27": 76.5
+   },
+   "brazil_robusta": {
+    "2026/27": 25
+   },
+   "vietnam": {
+    "2025/26": 29.5
+   },
+   "colombia": {
+    "2025/26": 12.5
+   },
+   "world_production": {
+    "2025/26": 172.189
+   },
+   "world_consumption": {
+    "2025/26": 176
+   },
+   "world_balance": {
+    "2025/26": -3.8
+   },
+   "brazil_carryover": {
+    "2025/26": 4.8,
+    "2026/27": 17.8
+   }
+  },
+  "balance_lines": [
+   {
+    "line": "World production",
+    "season": "2025/26",
+    "value": "172.2m bags"
+   },
+   {
+    "line": "World consumption",
+    "season": "2025/26",
+    "value": "~176m bags"
+   },
+   {
+    "line": "Balance",
+    "season": "2025/26",
+    "value": "≈ −3.8m bags (implied; 'tight')"
+   },
+   {
+    "line": "Brazil crop",
+    "season": "2026/27",
+    "value": "76–77m bags (conilon ~25m)"
+   },
+   {
+    "line": "Brazil crop",
+    "season": "2025/26",
+    "value": "~64m bags; exports ~38.2m"
+   },
+   {
+    "line": "Stocks: Brazil carryover",
+    "season": "end-Jun 2026 / end-Jun 2027",
+    "value": "~4.8m / ~17.8m bags"
+   },
+   {
+    "line": "Stocks: ICE arabica certified",
+    "season": "10 Jun 2026",
+    "value": "~410k bags (453k at start of 2026)"
+   },
+   {
+    "line": "Vietnam / Colombia crop",
+    "season": "2025/26",
+    "value": "29.5m / 12.5m bags"
+   }
+  ]
+ },
+ "revisions": [
+  {
+   "report_date": "2026-06-12",
+   "metric": "world_production",
+   "label": "World production",
+   "season": "2025/26",
+   "previous": null,
+   "new": 172.189,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "world_consumption",
+   "label": "World consumption",
+   "season": "2025/26",
+   "previous": 176,
+   "new": 176,
+   "change": 0,
+   "kind": "maintained"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "world_balance",
+   "label": "World balance (+ surplus / − deficit)",
+   "season": "2025/26",
+   "previous": -3.2,
+   "new": -3.8,
+   "change": -0.6,
+   "kind": "revised",
+   "note": "implied: 172.2m production vs ~176m consumption; the report calls the balance tight"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "vietnam",
+   "label": "Vietnam crop",
+   "season": "2025/26",
+   "previous": 29,
+   "new": 29.5,
+   "change": 0.5,
+   "kind": "revised"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "colombia",
+   "label": "Colombia crop",
+   "season": "2025/26",
+   "previous": null,
+   "new": 12.5,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "brazil_total",
+   "label": "Brazil crop",
+   "season": "2026/27",
+   "previous": 72.5,
+   "new": 76.5,
+   "change": 4.0,
+   "kind": "revised",
+   "note": "stated as 76–77m bags (midpoint shown); earlier talk of 72–73m"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "brazil_total",
+   "label": "Brazil crop",
+   "season": "2025/26",
+   "previous": 64,
+   "new": 64,
+   "change": 0,
+   "kind": "maintained"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "brazil_robusta",
+   "label": "Brazil conilon (robusta)",
+   "season": "2026/27",
+   "previous": 25,
+   "new": 25,
+   "change": 0,
+   "kind": "maintained"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "brazil_carryover",
+   "label": "Brazil carryover, end-June",
+   "season": "2026/27",
+   "previous": null,
+   "new": 17.8,
+   "change": null,
+   "kind": "new",
+   "note": "if exports recover to ~43m bags"
+  },
+  {
+   "report_date": "2026-06-12",
+   "metric": "brazil_carryover",
+   "label": "Brazil carryover, end-June",
+   "season": "2025/26",
+   "previous": 1.0,
+   "new": 4.8,
+   "change": 3.8,
+   "kind": "revised"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "world_consumption",
+   "label": "World consumption",
+   "season": "2025/26",
+   "previous": null,
+   "new": 176,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "world_balance",
+   "label": "World balance (+ surplus / − deficit)",
+   "season": "2026/27",
+   "previous": null,
+   "new": 5.0,
+   "change": null,
+   "kind": "new",
+   "note": "stated as a 4.7–5.3m bag surplus (midpoint shown)"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "world_balance",
+   "label": "World balance (+ surplus / − deficit)",
+   "season": "2025/26",
+   "previous": null,
+   "new": -3.2,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "vietnam",
+   "label": "Vietnam crop",
+   "season": "2025/26",
+   "previous": 29,
+   "new": 29,
+   "change": 0,
+   "kind": "maintained"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "brazil_total",
+   "label": "Brazil crop",
+   "season": "2026/27",
+   "previous": null,
+   "new": 72.5,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "brazil_total",
+   "label": "Brazil crop",
+   "season": "2025/26",
+   "previous": 63,
+   "new": 64,
+   "change": 1,
+   "kind": "revised"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "brazil_robusta",
+   "label": "Brazil conilon (robusta)",
+   "season": "2026/27",
+   "previous": null,
+   "new": 25,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "brazil_robusta",
+   "label": "Brazil conilon (robusta)",
+   "season": "2025/26",
+   "previous": 24,
+   "new": 25,
+   "change": 1,
+   "kind": "revised"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "brazil_carryover",
+   "label": "Brazil carryover, end-June",
+   "season": "2025/26",
+   "previous": null,
+   "new": 1.0,
+   "change": null,
+   "kind": "new",
+   "note": "modest carry ~1m bags into 2026/27"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "brazil_arabica",
+   "label": "Brazil arabica",
+   "season": "2026/27",
+   "previous": null,
+   "new": 47.5,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2026-01-23",
+   "metric": "brazil_arabica",
+   "label": "Brazil arabica",
+   "season": "2025/26",
+   "previous": 39,
+   "new": 39,
+   "change": 0,
+   "kind": "maintained"
+  },
+  {
+   "report_date": "2025-06-05",
+   "metric": "world_consumption",
+   "label": "World consumption",
+   "season": "2024/25",
+   "previous": null,
+   "new": 169,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2025-06-05",
+   "metric": "vietnam",
+   "label": "Vietnam crop",
+   "season": "2025/26",
+   "previous": null,
+   "new": 29,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2025-06-05",
+   "metric": "vietnam",
+   "label": "Vietnam crop",
+   "season": "2024/25",
+   "previous": null,
+   "new": 27,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2025-06-05",
+   "metric": "brazil_total",
+   "label": "Brazil crop",
+   "season": "2025/26",
+   "previous": null,
+   "new": 63,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2025-06-05",
+   "metric": "brazil_robusta",
+   "label": "Brazil conilon (robusta)",
+   "season": "2025/26",
+   "previous": null,
+   "new": 24,
+   "change": null,
+   "kind": "new"
+  },
+  {
+   "report_date": "2025-06-05",
+   "metric": "brazil_arabica",
+   "label": "Brazil arabica",
+   "season": "2025/26",
+   "previous": null,
+   "new": 39,
+   "change": null,
+   "kind": "new"
+  }
+ ],
+ "entries": [
+  {
+   "date": "2026-06-12",
+   "title": "Coffee Crop Update – Grounds for Caution",
+   "url": "https://www.sucdenfinancial.com/en/market-insights/soft-commodities-outlook/coffee-market-outlook/coffee-crop-update-grounds-for-caution/",
+   "key_points": [
+    "Brazil 2026/27 raised to 76–77m bags (from 72–73m), conilon ~25m; good-cup prices near BRL 1,700 keep growers slow sellers, so the crop reaches the market gradually.",
+    "2025/26 Brazil exports ~38.2m bags, below the 3- and 6-year averages; carryover ~4.8m at end-June 2026, possibly ~17.8m a year later if exports recover to ~43m.",
+    "World 2025/26 still tight (production ~172m vs use ~176m); demand growth led by Asia and a shift toward robusta in blends.",
+    "Arb expected to keep narrowing toward 70–80¢ if robusta demand holds and Brazil arabica flows freely.",
+    "Risks: El Niño for Vietnam/Indonesia and Brazil's Aug–Oct flowering, fertiliser costs (urea ~+50%), freight and energy."
+   ]
+  },
+  {
+   "date": "2026-01-23",
+   "title": "Coffee Crop Update – Walking a Fine Line",
+   "url": "https://www.sucdenfinancial.com/en/market-insights/soft-commodities-outlook/coffee-market-outlook/coffee-crop-update-walking-a-fine-line/",
+   "key_points": [
+    "Brazil 2025/26 held at 64m bags (39 arabica / 25 conilon) with only ~1m bags carried into 2026/27.",
+    "First 2026/27 Brazil view ~72.5m bags (47.5 arabica): would turn a ~3.2m-bag world deficit (2025/26, 176m demand) into a ~5m surplus.",
+    "Vietnam ~29m bags with ~10m sold early; Ethiopia shipping ~7.3m bags a year, output possibly ~11m.",
+    "Roasters' modest commercial length suggests they are not extending cover at current flat prices."
+   ]
+  }
+ ]
+}

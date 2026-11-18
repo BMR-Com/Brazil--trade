@@ -1,0 +1,31 @@
+{
+ "source": "StoneX",
+ "name": "StoneX: Daily Coffee Report (free insights)",
+ "home": "https://www.stonex.com/en-us/insights/",
+ "cadence": "weekly read",
+ "access": "browser; pages are named daily-coffee-report-M-D-YY; the site rate-limits (Cloudflare) fast reads",
+ "window_start": "2026-01-01",
+ "note": "Their daily carries charts of arabica/robusta/B3 settlements, arabica switches, robusta switches, the arabica–robusta arb and the arabica–Brazil arb; the desk rebuilds that layout from its own settlements in the Spreads & arbs table.",
+ "sugar_line": "No free StoneX sugar daily found after August 2026: older sugar & ethanol daily pages now return not-found and the sugar reports page offers a subscription trial.",
+ "entries": [
+  {
+   "date": "2026-11-16",
+   "title": "Daily Coffee Report 11/16/26",
+   "url": "https://www.stonex.com/en-us/insights/daily-coffee-report-11-16-26/",
+   "key_points": [
+    "Arabica capped below 277 (Mar) as the real weakened (USD/BRL up to about 5.79).",
+    "Falling certified stocks (about 186k bags) and Dec open interest of ~12k lots two sessions before first notice supported Dec/Mar, which made new highs (settled near 6¢).",
+    "Robusta Jan slid toward the 3,000 support while the Mar/Mar arb widened to new highs."
+   ]
+  },
+  {
+   "date": "2026-10-27",
+   "title": "Daily Coffee Report 10/27/26",
+   "url": "https://www.stonex.com/en-us/insights/daily-coffee-report-10-27-26/",
+   "key_points": [
+    "Sellers led arabica despite a firmer real; Z/H was offered down from the mid-13s with some short covering lower.",
+    "Robusta F/H traded mostly at one level, sellers in control below it."
+   ]
+  }
+ ]
+}

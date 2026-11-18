@@ -1,0 +1,30 @@
+{
+ "source": "Rabobank",
+ "name": "Rabobank RaboResearch: coffee",
+ "home": "https://www.rabobank.com/knowledge/tag/011085190/coffee",
+ "cadence": "weekly read",
+ "access": "WebFetch (GitHub runners are blocked); 'Exclusive' items need a login and are skipped",
+ "window_start": "2026-01-01",
+ "entries": [
+  {
+   "date": "2026-11-11",
+   "title": "Brazil coffee survey: higher inventories, advancing traceability and AI adoption",
+   "url": "https://www.rabobank.com/knowledge/q011558845-brazil-coffee-survey-higher-inventories-advancing-traceability-and-ai-adoption",
+   "key_points": [
+    "Six exporters held 1.97m bags at end-May 2026, 25.5% more than a year earlier; large producers' stocks up 49%.",
+    "Surveyed producers had sold about 56% of their 2026/27 crop by May, leaving a lot to sell through the season.",
+    "Record 2026/27 Brazil crop; 2027/28 expected harder on the biennial cycle."
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "title": "Brazilian coffee monthly update: September 2026",
+   "url": "https://www.rabobank.com/knowledge/q011332980-brazilian-coffee-monthly-update-september-2026",
+   "key_points": [
+    "Brazil shipped 4.15m bags in August (+31% y/y); January–July was 2.2% below 2025.",
+    "Arabica fell about 15% in September while robusta was flat, so the arb narrowed.",
+    "September rain well above normal in South Minas, Matas de Minas and Espírito Santo helps flowering; the market story is turning to surplus and stock rebuilding, though weather and logistics still matter."
+   ]
+  }
+ ]
+}

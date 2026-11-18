@@ -1,0 +1,168 @@
+{
+ "source": "Sucafina",
+ "name": "Sucafina: origin pages, From the Field and Resources for Roasters",
+ "home": "https://sucafina.com/na/news",
+ "cadence": "weekly read",
+ "access": "browser (news lists load by script); article pages also via WebFetch",
+ "window_start": "2026-01-01",
+ "entries": [
+  {
+   "date": "2026-11-18",
+   "title": "Origin pages: Honduras, Brazil, Colombia (read 18 Nov 2026)",
+   "url": "https://sucafina.com/na/origins/honduras",
+   "tag": "Origin",
+   "key_points": [
+    "Honduras: harvest November–April; IHCAFE regions Copán, Opalaca, Montecillos, Comayagua, El Paraíso, Agalta; almost all farms above 1,000 m; ~95% smallholders.",
+    "Brazil: Sul de Minas, Mogiana and Matas de Minas pick April–September, Cerrado May–September; Santos 17/18 and Rio Minas 17/18 named as main types.",
+    "Colombia: fresh coffee most of the year, with the mitaca about six months after the main crop; southern departments (Huila, Cauca, Nariño, south Tolima) are the largest by volume.",
+    "No offer lists with differentials were shown publicly on the origin pages."
+   ]
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Vietnam 2026/2027 Harvest Update",
+   "url": "https://sucafina.com/na/news/vietnam-2026-2027-harvest-update",
+   "tag": "From the field",
+   "key_points": [
+    "Robusta seen above 32m bags (+3%) and arabica above 1.5m bags (+15%).",
+    "Northern arabica picking runs mid-September to December; Lam Dong from late November into early February.",
+    "Drier, El Niño-type weather is helping harvest pace and quality; higher fertiliser prices lift growers' costs."
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "title": "Central America and Mexico 2026/27 Harvest Update",
+   "url": "https://sucafina.com/na/news/central-america-and-mexico-2026-27-harvest-update",
+   "tag": "From the field",
+   "key_points": [
+    "Region seen below 18m bags (−9.3%) after a 19.68m-bag 2025/26 crop; off-year arabica plus a hot, dry Q3.",
+    "Honduras and Mexico fall most, then Guatemala; bean-filling problems at low altitudes in western Honduras.",
+    "Early picking from October, peak December–February; quality is the main uncertainty (more stock lots, fewer exportable grades)."
+   ]
+  },
+  {
+   "date": "2026-10-27",
+   "title": "Kenya – Tanzania Harvest Update",
+   "url": "https://sucafina.com/na/news/kenya-tanzania-harvest-update",
+   "tag": "From the field",
+   "key_points": [
+    "Kenya's 2026/27 main crop is expected larger, led by Kiambu and Kirinyaga, with consistent quality; Tanzania also up."
+   ]
+  },
+  {
+   "date": "2026-09-15",
+   "title": "Colombia 2026/27 Main Crop Update",
+   "url": "https://sucafina.com/na/news/colombia-2026-27-main-crop-update",
+   "tag": "From the field",
+   "key_points": [
+    "Heavy rain at February–March flowering, then dryness in June–July: main crop expected no bigger than the already small 2025/26 crop.",
+    "Main-crop flow from October, heaviest through December."
+   ]
+  },
+  {
+   "date": "2026-08-04",
+   "title": "Tanzania 2026 Harvest Update",
+   "url": "https://sucafina.com/na/news/tanzania-2026-harvest-update-for-arabica-and-robusta",
+   "tag": "From the field",
+   "key_points": [
+    "Crop seen 4–5% larger as new plantings come in; arabica ~40% picked, robusta 80–90%."
+   ]
+  },
+  {
+   "date": "2026-07-28",
+   "title": "Indonesia & Timor-Leste 2026 Harvest Update",
+   "url": "https://sucafina.com/na/news/indonesia-timor-leste-2026-harvest-update",
+   "tag": "From the field",
+   "key_points": [
+    "Indonesia 20–40% smaller after excess rain at flowering; ripening is longer and uneven, which makes crop sizing harder.",
+    "Robusta ~80% picked with over 60% already sold; Sumatra arabica runs into Q1 2027."
+   ]
+  },
+  {
+   "date": "2026-07-08",
+   "title": "Brazil 2026/27 Late Harvest Update",
+   "url": "https://sucafina.com/na/news/brazil-2026-27-late-harvest-update",
+   "tag": "From the field",
+   "key_points": [
+    "Crop kept at 75.4m bags with arabica +27%; robusta about 4% lower.",
+    "Harvest slow after May–June rains: 45.2% done on 26 June vs 52.1% a year earlier and a 51% average; arabica picking into September.",
+    "Bean size good: about 25% of arabica on screen 17+, about 70% of robusta on screen 13+."
+   ]
+  },
+  {
+   "date": "2026-06-24",
+   "title": "Peru Harvest Update 2026",
+   "url": "https://sucafina.com/na/news/peru-harvest-update-2026",
+   "tag": "From the field",
+   "key_points": [
+    "Volume about 7% lower (off-year plus rain >20% above normal at flowering); fewer low grades and borer, good quality."
+   ]
+  },
+  {
+   "date": "2026-06-17",
+   "title": "East Africa Mid-Year Harvest Update 2026",
+   "url": "https://sucafina.com/na/news/east-africa-mid-year-harvest-update-2026",
+   "tag": "From the field",
+   "key_points": [
+    "Rwanda about 35% smaller (poor flowering, less fertiliser subsidy).",
+    "Uganda's main robusta harvest 4–6 weeks late, tightening nearby supply; volume broadly stable."
+   ]
+  },
+  {
+   "date": "2026-05-06",
+   "title": "Colombia 2026 Harvest Update (mitaca)",
+   "url": "https://sucafina.com/na/news/colombia-2026-harvest-update",
+   "tag": "From the field",
+   "key_points": [
+    "Mitaca from mid-April, lower altitudes peak late May–June, higher zones June–July, done by mid-September.",
+    "Volume about 4.5% below last year's mitaca; good quality and low borer; heavy Q1 rain a risk for main-crop flowering."
+   ]
+  },
+  {
+   "date": "2026-04-29",
+   "title": "Indonesia Harvest Update 2026",
+   "url": "https://sucafina.com/na/news/indonesia-harvest-update-2026",
+   "tag": "From the field",
+   "key_points": [
+    "Second straight year of lower output on excess rain; quality held by careful processing."
+   ]
+  },
+  {
+   "date": "2026-04-08",
+   "title": "Uganda's Arabica Crop Outlook",
+   "url": "https://sucafina.com/na/news/uganda-s-arabica-crop-outlook",
+   "tag": "From the field",
+   "key_points": [
+    "National arabica output about 100,000 bags lower on late and poor rains."
+   ]
+  },
+  {
+   "date": "2026-03-18",
+   "title": "Brazil 2026/27 Harvest Update",
+   "url": "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
+   "tag": "From the field",
+   "key_points": [
+    "Record 75.4m bags (+15.5%): arabica 49.4m (+26%), robusta 26m (flat).",
+    "Robusta picked March–July, arabica April–October by region; uniform ripening and larger beans expected."
+   ]
+  },
+  {
+   "date": "2026-02-25",
+   "title": "Burundi and Rwanda Harvest Update 2026",
+   "url": "https://sucafina.com/na/news/burundi-and-rwanda-harvest-update-2026",
+   "tag": "From the field",
+   "key_points": [
+    "Burundi up over 60% to about 24,000 t, harvest a month early (from ~10 March); Rwanda about 16,000 t."
+   ]
+  },
+  {
+   "date": "2026-01-28",
+   "title": "Central America Crop Progression Update 2025/26",
+   "url": "https://sucafina.com/na/news/cam-crop-progression-update-2025-26",
+   "tag": "From the field",
+   "key_points": [
+    "2025/26 region crop near 18m bags (+4.5%) on better plant health after record 2024/25 revenues; harvest ends late March–April."
+   ]
+  }
+ ]
+}
