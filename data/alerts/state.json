@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:55 UTC",
+ "generated": "2026-11-18 04:17 UTC",
  "asof": "2026-11-17",
  "today": "2026-11-17",
  "active": [
@@ -110,7 +110,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -120,7 +120,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
-   "new": true,
+   "new": false,
    "since": "2026-11-17"
   },
   {
@@ -149,7 +149,7 @@
   },
   {
    "market": "Cotton",
-   "text": "Dec 26: 55-day high 91.55, 55-day low 77.00 ¢/lb (settle 77.31 on 2026-11-17)"
+   "text": "Dec 26: 55-day high 91.55, 55-day low 77.00 ¢/lb (settle 77.32 on 2026-11-17)"
   },
   {
    "market": "Sugar No. 11",
@@ -157,11 +157,11 @@
   },
   {
    "market": "Coffee C",
-   "text": "Dec 26: 55-day high 316.15, 55-day low 269.00 ¢/lb (settle 285.00 on 2026-11-17)"
+   "text": "Dec 26: 55-day high 316.15, 55-day low 269.00 ¢/lb (settle 286.60 on 2026-11-17)"
   },
   {
    "market": "Cocoa",
-   "text": "Mar 27: 55-day high 6,701, 55-day low 4,871 $/t (settle 5,184 on 2026-11-17)"
+   "text": "Mar 27: 55-day high 6,701, 55-day low 4,871 $/t (settle 5,177 on 2026-11-17)"
   },
   {
    "market": "Cotton",

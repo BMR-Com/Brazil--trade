@@ -44,8 +44,8 @@ asof,sym,item,value,d1,d5,flag
 2026-11-16,CC,wx:ci_dl,dry,,,0
 2026-11-16,CC,wx:gh_ku,dry,,,0
 2026-11-16,CC,cot_date,2026-11-10,,,0
-2026-11-17,CT,Flat price (Dec 26),77.31,0.31,-1.38,0
-2026-11-17,CT,Front spread (Dec 26/Mar 27),-4.11,-0.19,-0.29,1
+2026-11-17,CT,Flat price (Dec 26),77.32,0.32,-1.37,0
+2026-11-17,CT,Front spread (Dec 26/Mar 27),-4.08,-0.16,-0.26,1
 2026-11-17,CT,ICE certificated cotton,83599.0,,16883.0,0
 2026-11-17,CT,Spot basis (US average),-321.0,0.0,,0
 2026-11-17,CT,Managed money net,55382.0,,2234.0,0
@@ -69,8 +69,8 @@ asof,sym,item,value,d1,d5,flag
 2026-11-17,SB,wx:in_sl,,,,0
 2026-11-17,SB,wx:th_kk,,,,0
 2026-11-17,SB,cot_date,2026-11-10,,,0
-2026-11-17,KC,Flat price (Dec 26),285.0,4.3,13.6,0
-2026-11-17,KC,Front spread (Dec 26/Mar 27),5.05,-0.75,-0.45,0
+2026-11-17,KC,Flat price (Dec 26),286.6,5.9,15.2,0
+2026-11-17,KC,Front spread (Dec 26/Mar 27),5.2,-0.6,-0.3,0
 2026-11-17,KC,ICE certified arabica,194523.0,8109.0,-46845.0,1
 2026-11-17,KC,Managed money net,4972.0,,-4633.0,0
 2026-11-17,KC,Front implied vol (MAR27),35.8,0.0,-2.8,0
@@ -80,8 +80,8 @@ asof,sym,item,value,d1,d5,flag
 2026-11-17,KC,wx:br_es,wet,,,0
 2026-11-17,KC,wx:vn_dl,near normal,,,0
 2026-11-17,KC,cot_date,2026-11-10,,,0
-2026-11-17,CC,Flat price (Mar 27),5184.0,0.0,313.0,0
-2026-11-17,CC,Front spread (Mar 27/May 27),-61.0,4.0,-15.0,0
+2026-11-17,CC,Flat price (Mar 27),5177.0,-7.0,306.0,0
+2026-11-17,CC,Front spread (Mar 27/May 27),-59.0,6.0,-13.0,0
 2026-11-17,CC,Certified stocks,,,,0
 2026-11-17,CC,Managed money net,-21830.0,,-7616.0,1
 2026-11-17,CC,Front implied vol (JAN27),43.0,0.8,3.0,0

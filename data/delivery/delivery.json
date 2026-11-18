@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:55 UTC",
+ "generated": "2026-11-18 04:17 UTC",
  "asof": "2026-11-17",
  "markets": [
   {
@@ -38,11 +38,11 @@
    },
    "spread": {
     "pair": "Dec 26/Mar 27",
-    "now": -4.11,
+    "now": -4.08,
     "date": "2026-11-17",
-    "chg_1w": -0.29,
-    "front": 77.31,
-    "next": 81.42,
+    "chg_1w": -0.26,
+    "front": 77.32,
+    "next": 81.4,
     "unit": "¢/lb",
     "sign": "front minus next; negative = carry",
     "carry": {
@@ -294,11 +294,11 @@
    },
    "spread": {
     "pair": "Dec 26/Mar 27",
-    "now": 5.05,
+    "now": 5.2,
     "date": "2026-11-17",
-    "chg_1w": -0.45,
-    "front": 285.0,
-    "next": 279.95,
+    "chg_1w": -0.3,
+    "front": 286.6,
+    "next": 281.4,
     "unit": "¢/lb",
     "sign": "front minus next; negative = carry"
    },
@@ -486,7 +486,7 @@
    "index_roll_past": true,
    "read": [
     "8,181 lots still open in Dec 26 on 2026-11-16 (11.2% left; past Dec rolls at this stage 10.1–23.8%) with 2 business days to first notice (2026-11-19). At the last five reports' pace (about 5,779 lots a day) the contract clears before notice.",
-    "Dec 26/Mar 27 +5.05¢ (inverted) on 2026-11-17; certified stock 194,523 bags on 2026-11-17, -46,845 on the week.",
+    "Dec 26/Mar 27 +5.20¢ (inverted) on 2026-11-17; certified stock 194,523 bags on 2026-11-17, -46,845 on the week.",
     "Read: deliverable stock is falling while the front holds a premium: shorts without certs must buy back or roll, which supports Dec 26 against Mar 27 into notice."
    ]
   },
@@ -526,11 +526,11 @@
    },
    "spread": {
     "pair": "Dec 26/Mar 27",
-    "now": -150.0,
+    "now": -147.0,
     "date": "2026-11-17",
-    "chg_1w": -21.0,
-    "front": 5034.0,
-    "next": 5184.0,
+    "chg_1w": -18.0,
+    "front": 5030.0,
+    "next": 5177.0,
     "unit": "$/t",
     "sign": "front minus next; negative = carry"
    },
@@ -711,7 +711,7 @@
    "index_roll_past": true,
    "read": [
     "Dec 26 is in its delivery period (first notice was 2026-11-16); last trading day 2026-12-15 (19 business days).",
-    "Dec 26/Mar 27 -150 $/t on 2026-11-17 (carry). Certified stocks are not on the desk, so delivery economics cannot be read here."
+    "Dec 26/Mar 27 -147 $/t on 2026-11-17 (carry). Certified stocks are not on the desk, so delivery economics cannot be read here."
    ]
   },
   {
