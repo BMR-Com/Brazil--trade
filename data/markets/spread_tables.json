@@ -1,6 +1,6 @@
 {
- "built": "2026-11-18 17:55 UTC",
- "asof": "2026-11-17",
+ "built": "2026-11-18 18:02 UTC",
+ "asof": "2026-11-18",
  "coffee": [
   {
    "group": "Settlements: ICE arabica",
@@ -31,9 +31,9 @@
     "RCF2027"
    ],
    "unit": "$/t",
-   "value": 3071.0,
-   "chg": -73.0,
-   "date": "2026-11-17"
+   "value": 3020.0,
+   "chg": -51.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Settlements: ICE robusta",
@@ -42,9 +42,9 @@
     "RCH2027"
    ],
    "unit": "$/t",
-   "value": 3037.0,
-   "chg": -86.0,
-   "date": "2026-11-17"
+   "value": 2989.0,
+   "chg": -48.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Arabica switches",
@@ -130,11 +130,11 @@
    ],
    "position": "1/2",
    "unit": "$/t",
-   "value": 34.0,
-   "pct_of_deferred": 1.12,
-   "chg": 13.0,
-   "pctile_1y": 35.0,
-   "date": "2026-11-17"
+   "value": 31.0,
+   "pct_of_deferred": 1.04,
+   "chg": -3.0,
+   "pctile_1y": 33.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Robusta switches",
@@ -145,11 +145,11 @@
    ],
    "position": "2/3",
    "unit": "$/t",
-   "value": 14.0,
-   "pct_of_deferred": 0.46,
-   "chg": -2.0,
-   "pctile_1y": 9.0,
-   "date": "2026-11-17"
+   "value": 15.0,
+   "pct_of_deferred": 0.5,
+   "chg": 1.0,
+   "pctile_1y": 10.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Robusta switches",
@@ -160,11 +160,11 @@
    ],
    "position": "3/4",
    "unit": "$/t",
-   "value": 14.0,
-   "pct_of_deferred": 0.47,
-   "chg": -3.0,
-   "pctile_1y": 15.0,
-   "date": "2026-11-17"
+   "value": 16.0,
+   "pct_of_deferred": 0.54,
+   "chg": 2.0,
+   "pctile_1y": 19.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Robusta switches",
@@ -175,11 +175,11 @@
    ],
    "position": "4/5",
    "unit": "$/t",
-   "value": 17.0,
-   "pct_of_deferred": 0.57,
-   "chg": -4.0,
-   "pctile_1y": 18.0,
-   "date": "2026-11-17"
+   "value": 32.0,
+   "pct_of_deferred": 1.09,
+   "chg": 15.0,
+   "pctile_1y": 51.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Arabica / robusta arb",
@@ -219,10 +219,10 @@
     "KCZ2026"
    ],
    "unit": "c/lb",
-   "value": -17.99,
-   "chg": -1.56,
-   "pctile_1y": 86.0,
-   "date": "2026-11-16",
+   "value": -32.59,
+   "chg": -14.59,
+   "pctile_1y": 32.0,
+   "date": "2026-11-17",
    "note": "B3 US$/bag converted at 132.277 lb/bag; B3 front month may differ from the KC month"
   }
  ],
