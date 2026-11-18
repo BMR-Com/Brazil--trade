@@ -1,0 +1,1432 @@
+{
+ "source": "usda",
+ "name": "USDA: attaché (GAIN) reports, World Markets and Trade, ERS outlook",
+ "home": "https://gain.fas.usda.gov/",
+ "cadence": "on release (checked every weekday afternoon)",
+ "access": "public: GAIN API and PDFs, FAS PSD circulars, ERS publications",
+ "note": "GAIN reports are written by USDA's overseas posts and are not official USDA estimates; the official number is the one in the report's own table (USDA Official). Following the desk's rule, the points show how far Post is from USDA and how Post changed its own numbers, not the levels alone.",
+ "entries": [
+  {
+   "date": "2026-11-17",
+   "title": "Indonesia: Coffee Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Jakarta_Indonesia_ID2026-0044.pdf",
+   "kind": "gain",
+   "country": "Indonesia",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: arabica 1.35m bags vs 1.38m bags (−30k bags); exports 8.33m bags vs 8.05m bags (+280k bags); ending stocks 479k bags vs 671k bags (−192k bags).",
+    "MY 2025/26, Post vs USDA: production 12.37m bags vs 12.45m bags.",
+    "Post's own revision since its Coffee Annual (May 2026), MY 2026/27: production 11.35m bags from 11.38m bags (−0.3%); exports 8.33m bags from 8.05m bags (+3.5%); consumption 4.82m bags from 4.83m bags (−0.2%); ending stocks 479k bags from 671k bags (−28.6%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 11380.0,
+      "post": 11350.0,
+      "diff": -30.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 1380.0,
+      "post": 1350.0,
+      "diff": -30.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 10000.0,
+      "post": 10000.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 8050.0,
+      "post": 8330.0,
+      "diff": 280.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 4830.0,
+      "post": 4820.0,
+      "diff": -10.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 671.0,
+      "post": 479.0,
+      "diff": -192.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-11-17",
+   "title": "India: Coffee Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_New%20Delhi_India_IN2026-0062.pdf",
+   "kind": "gain",
+   "country": "India",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: arabica 1.42m bags vs 1.56m bags (−140k bags); robusta 4.75m bags vs 4.58m bags (+170k bags); exports 6.39m bags vs 6.22m bags (+170k bags); consumption 1.30m bags vs 1.58m bags (−280k bags); ending stocks 389k bags vs 216k bags (+173k bags).",
+    "MY 2025/26, Post vs USDA: production 6.62m bags vs 6.43m bags; exports 7.02m bags vs 6.03m bags; ending stocks 235k bags vs 485k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 6140.0,
+      "post": 6170.0,
+      "diff": 30.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 1560.0,
+      "post": 1420.0,
+      "diff": -140.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 4580.0,
+      "post": 4750.0,
+      "diff": 170.0
+     },
+     {
+      "line": "Exports",
+      "usda": 6219.0,
+      "post": 6389.0,
+      "diff": 170.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 1580.0,
+      "post": 1300.0,
+      "diff": -280.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 216.0,
+      "post": 389.0,
+      "diff": 173.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Brazil: Coffee Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Brasilia_Brazil_BR2026-0050.pdf",
+   "kind": "gain",
+   "country": "Brazil",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 72.50m bags vs 71.90m bags (+600k bags); arabica 49.20m bags vs 47.50m bags (+1.70m bags); robusta 23.30m bags vs 24.40m bags (−1.10m bags); ending stocks 3.42m bags vs 4.42m bags (−1.00m bags).",
+    "MY 2025/26, Post vs USDA: exports 39.02m bags vs 37.87m bags; ending stocks 2.29m bags vs 3.90m bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 71900.0,
+      "post": 72500.0,
+      "diff": 600.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 47500.0,
+      "post": 49200.0,
+      "diff": 1700.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 24400.0,
+      "post": 23300.0,
+      "diff": -1100.0
+     },
+     {
+      "line": "Exports",
+      "usda": 49070.0,
+      "post": 49070.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 22390.0,
+      "post": 22390.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 4425.0,
+      "post": 3420.0,
+      "diff": -1005.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "title": "Brazil: Bracing for Impact - How the 2026 El Nino Affects Brazil's Agriculture",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Bracing%20for%20Impact%20-%20How%20the%202026%20El%20Nino%20Affects%20Brazil%27s%20Agriculture_Brasilia_Brazil_BR2026-0040.pdf",
+   "kind": "gain",
+   "country": "Brazil",
+   "tag": "FAS attaché",
+   "key_points": [],
+   "auto": true
+  },
+  {
+   "date": "2026-07-15",
+   "title": "FAS Coffee: World Markets and Trade, July 2026 — Record Brazil Production Driven by Rebounding Arabica Crop",
+   "url": "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
+   "kind": "wmt",
+   "tag": "FAS WMT",
+   "key_points": [
+    "Robusta production is forecast to retreat 600,000 bags to 24.4 million following last year’s  record harvest.",
+    "Production  increased again in 2023/24 but yields lagged expectations because of excessive rainfall during fruit  development.",
+    "These gains were followed by 2 consecutive years of declines as drought and heat  again lowered yields."
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-06-01",
+   "title": "Brazil: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Brasilia_Brazil_BR2026-0025.pdf",
+   "kind": "gain",
+   "country": "Brazil",
+   "tag": "FAS attaché",
+   "key_points": [],
+   "auto": true
+  },
+  {
+   "date": "2026-05-20",
+   "title": "Vietnam: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Ho%20Chi%20Minh%20City_Vietnam_VM2026-0016.pdf",
+   "kind": "gain",
+   "country": "Vietnam",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 32.50m bags; arabica 1.10m bags; robusta 31.40m bags; exports 28.95m bags; consumption 5.00m bags; ending stocks 489k bags.",
+    "MY 2025/26, Post vs USDA: production 31.70m bags vs 30.80m bags; exports 28.50m bags vs 27.90m bags; ending stocks 689k bags vs 389k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 32500.0,
+      "diff": 32500.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 1100.0,
+      "diff": 1100.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 31400.0,
+      "diff": 31400.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 28950.0,
+      "diff": 28950.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 5000.0,
+      "diff": 5000.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 489.0,
+      "diff": 489.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "title": "Uganda: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Nairobi_Uganda_UG2026-0001.pdf",
+   "kind": "gain",
+   "country": "Uganda",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 7.16m bags; arabica 1.14m bags; robusta 6.03m bags; exports 6.83m bags; consumption 335k bags; ending stocks 329k bags.",
+    "MY 2025/26, Post vs USDA: production 7.09m bags vs 6.88m bags; exports 6.70m bags vs 6.51m bags; ending stocks 334k bags vs 299k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 7160.0,
+      "diff": 7160.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 1135.0,
+      "diff": 1135.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 6025.0,
+      "diff": 6025.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 6830.0,
+      "diff": 6830.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 335.0,
+      "diff": 335.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 329.0,
+      "diff": 329.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "title": "Peru: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Lima_Peru_PE2026-0008.pdf",
+   "kind": "gain",
+   "country": "Peru",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 4.78m bags; arabica 4.78m bags; exports 4.55m bags; consumption 305k bags; ending stocks 26k bags.",
+    "MY 2025/26, Post vs USDA: production 4.76m bags vs 4.20m bags; exports 4.55m bags vs 4.38m bags; ending stocks 21k bags vs 26k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 4780.0,
+      "diff": 4780.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 4780.0,
+      "diff": 4780.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 4554.0,
+      "diff": 4554.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 305.0,
+      "diff": 305.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 26.0,
+      "diff": 26.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "title": "Nicaragua: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Managua_Nicaragua_NU2026-0003.pdf",
+   "kind": "gain",
+   "country": "Nicaragua",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 2.44m bags; arabica 2.30m bags; robusta 140k bags; exports 2.25m bags; consumption 160k bags; ending stocks 85k bags.",
+    "MY 2025/26, Post vs USDA: production 2.56m bags vs 2.58m bags; ending stocks 55k bags vs 130k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 2440.0,
+      "diff": 2440.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 2300.0,
+      "diff": 2300.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 140.0,
+      "diff": 140.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 2250.0,
+      "diff": 2250.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 160.0,
+      "diff": 160.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 85.0,
+      "diff": 85.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "title": "Ethiopia: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Addis%20Ababa_Ethiopia_ET2026-0005.pdf",
+   "kind": "gain",
+   "country": "Ethiopia",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 12.10m bags; arabica 12.10m bags; exports 7.13m bags; consumption 5.00m bags; ending stocks 145k bags.",
+    "MY 2025/26, Post vs USDA: exports 6.96m bags vs 7.80m bags; ending stocks 175k bags vs 140k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 12100.0,
+      "diff": 12100.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 12100.0,
+      "diff": 12100.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 7130.0,
+      "diff": 7130.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 5000.0,
+      "diff": 5000.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 145.0,
+      "diff": 145.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "title": "Costa Rica: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_San%20Jose_Costa%20Rica_CS2026-0004.pdf",
+   "kind": "gain",
+   "country": "Costa Rica",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 1.20m bags; arabica 1.20m bags; exports 1.06m bags; consumption 320k bags; ending stocks 68k bags.",
+    "MY 2025/26, Post vs USDA: production 1.16m bags vs 1.17m bags; exports 1.02m bags vs 1.06m bags; ending stocks 133k bags vs 105k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 1200.0,
+      "diff": 1200.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 1200.0,
+      "diff": 1200.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 1060.0,
+      "diff": 1060.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 320.0,
+      "diff": 320.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 68.0,
+      "diff": 68.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "title": "Colombia: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Bogota_Colombia_CO2026-0008.pdf",
+   "kind": "gain",
+   "country": "Colombia",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 13.40m bags; arabica 13.40m bags; exports 13.40m bags; consumption 2.20m bags; ending stocks 670k bags.",
+    "MY 2025/26, Post vs USDA: production 12.50m bags vs 13.80m bags; exports 12.81m bags vs 12.55m bags; ending stocks 866k bags vs 963k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 13400.0,
+      "diff": 13400.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 13400.0,
+      "diff": 13400.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 13400.0,
+      "diff": 13400.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 2200.0,
+      "diff": 2200.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 670.0,
+      "diff": 670.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-18",
+   "title": "Kenya: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Nairobi_Kenya_KE2026-0011.pdf",
+   "kind": "gain",
+   "country": "Kenya",
+   "tag": "FAS attaché",
+   "key_points": [],
+   "auto": true
+  },
+  {
+   "date": "2026-05-15",
+   "title": "Indonesia: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Jakarta_Indonesia_ID2026-0021.pdf",
+   "kind": "gain",
+   "country": "Indonesia",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 11.38m bags; arabica 1.38m bags; robusta 10.00m bags; exports 8.05m bags; consumption 4.83m bags; ending stocks 671k bags.",
+    "MY 2025/26, Post vs USDA: production 12.37m bags vs 12.45m bags; exports 8.84m bags vs 8.87m bags; ending stocks 751k bags vs 657k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 11380.0,
+      "diff": 11380.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 1380.0,
+      "diff": 1380.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 10000.0,
+      "diff": 10000.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 8050.0,
+      "diff": 8050.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 4830.0,
+      "diff": 4830.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 671.0,
+      "diff": 671.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-13",
+   "title": "Mexico: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Mexico%20City_Mexico_MX2026-0026.pdf",
+   "kind": "gain",
+   "country": "Mexico",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 4.13m bags; arabica 3.58m bags; robusta 560k bags; exports 3.41m bags; consumption 3.17m bags; ending stocks 5k bags.",
+    "MY 2025/26, Post vs USDA: production 4.08m bags vs 3.90m bags; exports 3.45m bags vs 3.35m bags; ending stocks 20k bags vs 111k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 4135.0,
+      "diff": 4135.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 3575.0,
+      "diff": 3575.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 560.0,
+      "diff": 560.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 3410.0,
+      "diff": 3410.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 3170.0,
+      "diff": 3170.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 5.0,
+      "diff": 5.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-05-12",
+   "title": "India: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_New%20Delhi_India_IN2026-0026.pdf",
+   "kind": "gain",
+   "country": "India",
+   "tag": "FAS attaché",
+   "key_points": [],
+   "auto": true
+  },
+  {
+   "date": "2026-04-29",
+   "title": "Honduras: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Tegucigalpa_Honduras_HO2026-0002.pdf",
+   "kind": "gain",
+   "country": "Honduras",
+   "tag": "FAS attaché",
+   "key_points": [],
+   "auto": true
+  },
+  {
+   "date": "2026-04-20",
+   "title": "El Salvador: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_San%20Salvador_El%20Salvador_ES2026-0004.pdf",
+   "kind": "gain",
+   "country": "El Salvador",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 542k bags; arabica 542k bags; exports 543k bags; consumption 339k bags; ending stocks 79k bags.",
+    "MY 2025/26, Post vs USDA: production 586k bags vs 670k bags; exports 535k bags vs 610k bags; ending stocks 147k bags vs 10k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 542.0,
+      "diff": 542.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 542.0,
+      "diff": 542.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 543.0,
+      "diff": 543.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 339.0,
+      "diff": 339.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 79.0,
+      "diff": 79.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-16",
+   "title": "Guatemala: Coffee Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Guatemala%20City_Guatemala_GT2026-0003.pdf",
+   "kind": "gain",
+   "country": "Guatemala",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 3.26m bags; arabica 3.13m bags; robusta 130k bags; exports 3.20m bags; consumption 900k bags; ending stocks 16k bags.",
+    "MY 2025/26, Post vs USDA: production 3.15m bags vs 3.54m bags; exports 2.98m bags vs 3.27m bags; ending stocks 11k bags vs 29k bags."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 3260.0,
+      "diff": 3260.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 3130.0,
+      "diff": 3130.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 130.0,
+      "diff": 130.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 3200.0,
+      "diff": 3200.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 900.0,
+      "diff": 900.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 16.0,
+      "diff": 16.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-03-06",
+   "title": "Brazil: Brewing Opportunity - Brazil's Specialty Coffee Sector Shows Strong Potential",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Brewing%20Opportunity%20-%20Brazil%27s%20Specialty%20Coffee%20Sector%20Shows%20Strong%20Potential_Brasilia_Brazil_BR2026-0008.pdf",
+   "kind": "gain",
+   "country": "Brazil",
+   "tag": "FAS attaché",
+   "key_points": [],
+   "auto": true
+  }
+ ],
+ "window_start": "2026-01-01",
+ "summary": {
+  "unit": "thousand 60-kg bags",
+  "rows": [
+   {
+    "country": "Indonesia",
+    "date": "2026-11-17",
+    "report": "Coffee Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Jakarta_Indonesia_ID2026-0044.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 11380.0,
+      "post": 11350.0,
+      "diff": -30.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 1380.0,
+      "post": 1350.0,
+      "diff": -30.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 10000.0,
+      "post": 10000.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 8050.0,
+      "post": 8330.0,
+      "diff": 280.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 4830.0,
+      "post": 4820.0,
+      "diff": -10.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 671.0,
+      "post": 479.0,
+      "diff": -192.0
+     }
+    ]
+   },
+   {
+    "country": "India",
+    "date": "2026-11-17",
+    "report": "Coffee Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_New%20Delhi_India_IN2026-0062.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 6140.0,
+      "post": 6170.0,
+      "diff": 30.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 1560.0,
+      "post": 1420.0,
+      "diff": -140.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 4580.0,
+      "post": 4750.0,
+      "diff": 170.0
+     },
+     {
+      "line": "Exports",
+      "usda": 6219.0,
+      "post": 6389.0,
+      "diff": 170.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 1580.0,
+      "post": 1300.0,
+      "diff": -280.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 216.0,
+      "post": 389.0,
+      "diff": 173.0
+     }
+    ]
+   },
+   {
+    "country": "Brazil",
+    "date": "2026-11-16",
+    "report": "Coffee Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Brasilia_Brazil_BR2026-0050.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 71900.0,
+      "post": 72500.0,
+      "diff": 600.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 47500.0,
+      "post": 49200.0,
+      "diff": 1700.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 24400.0,
+      "post": 23300.0,
+      "diff": -1100.0
+     },
+     {
+      "line": "Exports",
+      "usda": 49070.0,
+      "post": 49070.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 22390.0,
+      "post": 22390.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 4425.0,
+      "post": 3420.0,
+      "diff": -1005.0
+     }
+    ]
+   },
+   {
+    "country": "Colombia",
+    "date": "2026-05-20",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Bogota_Colombia_CO2026-0008.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 13400.0,
+      "diff": 13400.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 13400.0,
+      "diff": 13400.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 13400.0,
+      "diff": 13400.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 2200.0,
+      "diff": 2200.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 670.0,
+      "diff": 670.0
+     }
+    ]
+   },
+   {
+    "country": "Costa Rica",
+    "date": "2026-05-20",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_San%20Jose_Costa%20Rica_CS2026-0004.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 1200.0,
+      "diff": 1200.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 1200.0,
+      "diff": 1200.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 1060.0,
+      "diff": 1060.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 320.0,
+      "diff": 320.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 68.0,
+      "diff": 68.0
+     }
+    ]
+   },
+   {
+    "country": "Ethiopia",
+    "date": "2026-05-20",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Addis%20Ababa_Ethiopia_ET2026-0005.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 12100.0,
+      "diff": 12100.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 12100.0,
+      "diff": 12100.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 7130.0,
+      "diff": 7130.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 5000.0,
+      "diff": 5000.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 145.0,
+      "diff": 145.0
+     }
+    ]
+   },
+   {
+    "country": "Nicaragua",
+    "date": "2026-05-20",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Managua_Nicaragua_NU2026-0003.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 2440.0,
+      "diff": 2440.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 2300.0,
+      "diff": 2300.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 140.0,
+      "diff": 140.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 2250.0,
+      "diff": 2250.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 160.0,
+      "diff": 160.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 85.0,
+      "diff": 85.0
+     }
+    ]
+   },
+   {
+    "country": "Peru",
+    "date": "2026-05-20",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Lima_Peru_PE2026-0008.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 4780.0,
+      "diff": 4780.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 4780.0,
+      "diff": 4780.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 4554.0,
+      "diff": 4554.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 305.0,
+      "diff": 305.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 26.0,
+      "diff": 26.0
+     }
+    ]
+   },
+   {
+    "country": "Uganda",
+    "date": "2026-05-20",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Nairobi_Uganda_UG2026-0001.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 7160.0,
+      "diff": 7160.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 1135.0,
+      "diff": 1135.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 6025.0,
+      "diff": 6025.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 6830.0,
+      "diff": 6830.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 335.0,
+      "diff": 335.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 329.0,
+      "diff": 329.0
+     }
+    ]
+   },
+   {
+    "country": "Vietnam",
+    "date": "2026-05-20",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Ho%20Chi%20Minh%20City_Vietnam_VM2026-0016.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 32500.0,
+      "diff": 32500.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 1100.0,
+      "diff": 1100.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 31400.0,
+      "diff": 31400.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 28950.0,
+      "diff": 28950.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 5000.0,
+      "diff": 5000.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 489.0,
+      "diff": 489.0
+     }
+    ]
+   },
+   {
+    "country": "Mexico",
+    "date": "2026-05-13",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Mexico%20City_Mexico_MX2026-0026.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 4135.0,
+      "diff": 4135.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 3575.0,
+      "diff": 3575.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 560.0,
+      "diff": 560.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 3410.0,
+      "diff": 3410.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 3170.0,
+      "diff": 3170.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 5.0,
+      "diff": 5.0
+     }
+    ]
+   },
+   {
+    "country": "El Salvador",
+    "date": "2026-04-20",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_San%20Salvador_El%20Salvador_ES2026-0004.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 542.0,
+      "diff": 542.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 542.0,
+      "diff": 542.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 543.0,
+      "diff": 543.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 339.0,
+      "diff": 339.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 79.0,
+      "diff": 79.0
+     }
+    ]
+   },
+   {
+    "country": "Guatemala",
+    "date": "2026-04-16",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Guatemala%20City_Guatemala_GT2026-0003.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 3260.0,
+      "diff": 3260.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0.0,
+      "post": 3130.0,
+      "diff": 3130.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0.0,
+      "post": 130.0,
+      "diff": 130.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 3200.0,
+      "diff": 3200.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 900.0,
+      "diff": 900.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 16.0,
+      "diff": 16.0
+     }
+    ]
+   }
+  ]
+ },
+ "built": "2026-11-18 17:54 UTC"
+}

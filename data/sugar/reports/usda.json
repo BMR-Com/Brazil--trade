@@ -1,0 +1,1440 @@
+{
+ "source": "usda",
+ "name": "USDA: attaché (GAIN) reports, World Markets and Trade, ERS outlook",
+ "home": "https://gain.fas.usda.gov/",
+ "cadence": "on release (checked every weekday afternoon)",
+ "access": "public: GAIN API and PDFs, FAS PSD circulars, ERS publications",
+ "note": "GAIN reports are written by USDA's overseas posts and are not official USDA estimates; the official number is the one in the report's own table (USDA Official). Following the desk's rule, the points show how far Post is from USDA and how Post changed its own numbers, not the levels alone.",
+ "entries": [
+  {
+   "date": "2026-11-18",
+   "title": "FAS Sugar: World Markets and Trade, November 2026 — China Sugar Deficit Falls to 10-Year Low, Curbing Imports",
+   "url": "https://apps.fas.usda.gov/psdonline/circulars/sugar.pdf",
+   "kind": "wmt",
+   "tag": "FAS WMT",
+   "key_points": [
+    "With ample stocks, the forecast for sugar imports is revised down to about 4.2  million metric tons, raw value (tons) in 2025/26 and even lower in 2026/27 to 3.6 million tons.",
+    "China’s sugar deﬁcit is estimated at 2.4 million tons in 2025/26, 42 percent lower than in 2024/25  and the lowest ﬁgure in a decade",
+    "With crop production greatly outpacing demand, stocks are expected to swell"
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Brazil: Sugar November Update",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20November%20Update_Brasilia_Brazil_BR2026-0049.pdf",
+   "kind": "gain",
+   "country": "Brazil",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 40.50 Mt vs 42.50 Mt (−2.00 Mt); exports 31.72 Mt vs 33.60 Mt (−1.88 Mt); consumption 8.80 Mt vs 9.00 Mt (−200 kt); ending stocks 300 kt vs 221 kt (+79 kt).",
+    "MY 2025/26, Post vs USDA: production 43.30 Mt vs 43.80 Mt; exports 34.05 Mt vs 34.10 Mt.",
+    "Post's own revision since its Sugar Semi-annual (Oct 2026), MY 2026/27: production 40.50 Mt from 42.20 Mt (−4.0%); exports 31.72 Mt from 33.30 Mt (−4.7%); consumption 8.80 Mt from 9.00 Mt (−2.2%); ending stocks 300 kt from 221 kt (+35.7%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 42500.0,
+      "post": 40500.0,
+      "diff": -2000.0
+     },
+     {
+      "line": "Exports",
+      "usda": 33600.0,
+      "post": 31721.0,
+      "diff": -1879.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 9000.0,
+      "post": 8800.0,
+      "diff": -200.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 221.0,
+      "post": 300.0,
+      "diff": 79.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-16",
+   "title": "Thailand: Sugar Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Bangkok_Thailand_TH2026-0038.pdf",
+   "kind": "gain",
+   "country": "Thailand",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: exports 7.00 Mt vs 6.00 Mt (+1.00 Mt); ending stocks 10.90 Mt vs 13.45 Mt (−2.56 Mt).",
+    "MY 2025/26, Post vs USDA: production 12.00 Mt vs 11.26 Mt; exports 8.30 Mt vs 6.00 Mt; ending stocks 11.70 Mt vs 13.25 Mt.",
+    "Post's own revision since its Sugar Annual (Apr 2026), MY 2026/27: exports 7.00 Mt from 6.00 Mt (+16.7%); ending stocks 10.90 Mt from 12.45 Mt (−12.5%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 9500.0,
+      "post": 9500.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 6000.0,
+      "post": 7000.0,
+      "diff": 1000.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 3300.0,
+      "post": 3300.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 13454.0,
+      "post": 10896.0,
+      "diff": -2558.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-16",
+   "title": "ERS Sugar and Sweeteners Outlook: October 2026",
+   "url": "https://www.ers.usda.gov/publications/115636",
+   "kind": "ers",
+   "tag": "ERS outlook",
+   "key_points": [
+    "Sugar production is down 71,000 STRV to 8.768 million STRV, the  lowest since 2019/20’s 8.149 million.",
+    "Sugar imports are lowered 8,000 STRV to 3.388 million  but almost 10 percent higher than the revised 2025/26 estimate.",
+    "In line with the change for  2025/26, sugar deliveries for domestic food and beverage use are reduced 50,000 STRV to  12.392 million."
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-10-13",
+   "title": "Brazil: Bracing for Impact - How the 2026 El Nino Affects Brazil's Agriculture",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Bracing%20for%20Impact%20-%20How%20the%202026%20El%20Nino%20Affects%20Brazil%27s%20Agriculture_Brasilia_Brazil_BR2026-0040.pdf",
+   "kind": "gain",
+   "country": "Brazil",
+   "tag": "FAS attaché",
+   "key_points": [],
+   "auto": true
+  },
+  {
+   "date": "2026-10-08",
+   "title": "Philippines: Sugar Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Manila_Philippines_RP2026-0032.pdf",
+   "kind": "gain",
+   "country": "Philippines",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 1.70 Mt vs 1.93 Mt (−230 kt); ending stocks 376 kt vs 704 kt (−328 kt).",
+    "MY 2025/26, Post vs USDA: production 1.85 Mt vs 1.95 Mt; exports 99 kt vs 100 kt; ending stocks 655 kt vs 753 kt.",
+    "Post's own revision since its Sugar Annual (Apr 2026), MY 2026/27: production 1.70 Mt from 1.93 Mt (−11.9%); ending stocks 376 kt from 704 kt (−46.6%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 1930.0,
+      "post": 1700.0,
+      "diff": -230.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Imports",
+      "usda": 321.0,
+      "post": 321.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 2300.0,
+      "post": 2300.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 704.0,
+      "post": 376.0,
+      "diff": -328.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "title": "Pakistan: Sugar Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Islamabad_Pakistan_PK2026-0013.pdf",
+   "kind": "gain",
+   "country": "Pakistan",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: exports 500 kt vs 300 kt (+200 kt); ending stocks 2.07 Mt vs 1.97 Mt (+100 kt).",
+    "MY 2025/26, Post vs USDA: exports 200 kt vs 500 kt; ending stocks 2.46 Mt vs 2.16 Mt.",
+    "Post's own revision since its Sugar Annual (Apr 2026), MY 2026/27: exports 500 kt from 300 kt (+66.7%); ending stocks 2.07 Mt from 1.97 Mt (+5.1%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 6910.0,
+      "post": 6910.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 300.0,
+      "post": 500.0,
+      "diff": 200.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 6800.0,
+      "post": 6800.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 1972.0,
+      "post": 2072.0,
+      "diff": 100.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "title": "European Union: Sugar Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Brussels%20USEU_European%20Union_E42026-0076.pdf",
+   "kind": "gain",
+   "country": "European Union",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 13.15 Mt vs 14.35 Mt (−1.20 Mt); exports 658 kt vs 858 kt (−200 kt); imports 2.15 Mt vs 2.55 Mt (−400 kt); consumption 15.70 Mt vs 15.90 Mt (−200 kt); ending stocks 266 kt vs 656 kt (−390 kt).",
+    "MY 2025/26, Post vs USDA: production 16.26 Mt vs 15.52 Mt; exports 1.77 Mt vs 1.26 Mt; ending stocks 1.32 Mt vs 511 kt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 14353.0,
+      "post": 13154.0,
+      "diff": -1199.0
+     },
+     {
+      "line": "Exports",
+      "usda": 858.0,
+      "post": 658.0,
+      "diff": -200.0
+     },
+     {
+      "line": "Imports",
+      "usda": 2550.0,
+      "post": 2150.0,
+      "diff": -400.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 15900.0,
+      "post": 15700.0,
+      "diff": -200.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 656.0,
+      "post": 266.0,
+      "diff": -390.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "title": "Brazil: Sugar Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Brasilia_Brazil_BR2026-0039.pdf",
+   "kind": "gain",
+   "country": "Brazil",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 42.20 Mt vs 42.50 Mt (−300 kt); exports 33.30 Mt vs 33.60 Mt (−300 kt).",
+    "MY 2025/26, Post vs USDA: production 43.30 Mt vs 43.80 Mt; exports 34.05 Mt vs 34.10 Mt.",
+    "Post's own revision since its Sugar Annual (Apr 2026), MY 2026/27: production 42.20 Mt from 42.50 Mt (−0.7%); exports 33.30 Mt from 33.60 Mt (−0.9%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 42500.0,
+      "post": 42200.0,
+      "diff": -300.0
+     },
+     {
+      "line": "Exports",
+      "usda": 33600.0,
+      "post": 33300.0,
+      "diff": -300.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 9000.0,
+      "post": 9000.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 221.0,
+      "post": 221.0,
+      "diff": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "title": "Australia: Sugar Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Canberra_Australia_AS2026-0021.pdf",
+   "kind": "gain",
+   "country": "Australia",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 4.00 Mt vs 4.18 Mt (−180 kt); exports 3.51 Mt vs 3.61 Mt (−101 kt).",
+    "MY 2025/26, Post vs USDA: exports 2.63 Mt vs 2.71 Mt; ending stocks 1.35 Mt vs 1.27 Mt.",
+    "Post's own revision since its Sugar Annual (Apr 2026), MY 2026/27: production 4.00 Mt from 4.18 Mt (−4.3%); exports 3.51 Mt from 3.61 Mt (−2.8%); ending stocks 913 kt from 911 kt (+0.2%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 4180.0,
+      "post": 4000.0,
+      "diff": -180.0
+     },
+     {
+      "line": "Exports",
+      "usda": 3607.0,
+      "post": 3506.0,
+      "diff": -101.0
+     },
+     {
+      "line": "Imports",
+      "usda": 12.0,
+      "post": 12.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 940.0,
+      "post": 940.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 911.0,
+      "post": 913.0,
+      "diff": 2.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "title": "Mexico: Sugar Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Mexico%20City_Mexico_MX2026-0049.pdf",
+   "kind": "gain",
+   "country": "Mexico",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 5.70 Mt vs 5.45 Mt (+249 kt); exports 1.50 Mt vs 949 kt (+551 kt); ending stocks 1.03 Mt vs 1.18 Mt (−152 kt).",
+    "MY 2025/26, Post vs USDA: production 5.64 Mt vs 5.49 Mt; exports 1.06 Mt vs 1.05 Mt; ending stocks 1.30 Mt vs 1.13 Mt.",
+    "Post's own revision since its Sugar Annual (Apr 2026), MY 2026/27: production 5.70 Mt from 5.45 Mt (+4.6%); exports 1.50 Mt from 1.12 Mt (+33.9%); consumption 4.18 Mt from 4.15 Mt (+0.7%); ending stocks 1.03 Mt from 948 kt (+8.9%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 5451.0,
+      "post": 5700.0,
+      "diff": 249.0
+     },
+     {
+      "line": "Exports",
+      "usda": 949.0,
+      "post": 1500.0,
+      "diff": 551.0
+     },
+     {
+      "line": "Imports",
+      "usda": 30.0,
+      "post": 30.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 4165.0,
+      "post": 4180.0,
+      "diff": 15.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 1184.0,
+      "post": 1032.0,
+      "diff": -152.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "title": "India: Sugar Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_New%20Delhi_India_IN2026-0051.pdf",
+   "kind": "gain",
+   "country": "India",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 29.50 Mt vs 33.60 Mt (−4.10 Mt); exports 3.10 Mt vs 3.60 Mt (−500 kt); consumption 30.83 Mt vs 31.00 Mt (−170 kt); ending stocks 4.00 Mt vs 6.51 Mt (−2.51 Mt).",
+    "MY 2025/26, Post vs USDA: exports 3.30 Mt vs 3.50 Mt; ending stocks 6.00 Mt vs 5.08 Mt.",
+    "Post's own revision since its Sugar Annual (Apr 2026), MY 2026/27: production 29.50 Mt from 33.60 Mt (−12.2%); exports 3.10 Mt from 3.60 Mt (−13.9%); consumption 30.83 Mt from 31.00 Mt (−0.5%); ending stocks 4.00 Mt from 6.51 Mt (−38.5%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 33600.0,
+      "post": 29500.0,
+      "diff": -4100.0
+     },
+     {
+      "line": "Exports",
+      "usda": 3600.0,
+      "post": 3100.0,
+      "diff": -500.0
+     },
+     {
+      "line": "Imports",
+      "usda": 2430.0,
+      "post": 2430.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 31000.0,
+      "post": 30830.0,
+      "diff": -170.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 6506.0,
+      "post": 4000.0,
+      "diff": -2506.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "title": "China: Sugar Semi-Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-Annual_Guangzhou%20ATO_China%20-%20People%27s%20Republic%20of_CH2026-0125.pdf",
+   "kind": "gain",
+   "country": "China",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: production 13.37 Mt vs 12.70 Mt (+670 kt); imports 3.80 Mt vs 5.45 Mt (−1.65 Mt); consumption 15.80 Mt vs 16.75 Mt (−950 kt); ending stocks 4.58 Mt vs 4.02 Mt (+556 kt).",
+    "MY 2025/26, Post vs USDA: production 12.95 Mt vs 12.60 Mt; exports 133 kt vs 160 kt; ending stocks 3.37 Mt vs 2.78 Mt.",
+    "Post's own revision since its Sugar Annual (Apr 2026), MY 2026/27: production 13.37 Mt from 12.70 Mt (+5.3%); imports 3.80 Mt from 4.50 Mt (−15.6%); ending stocks 4.58 Mt from 4.02 Mt (+13.8%)."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 12700.0,
+      "post": 13370.0,
+      "diff": 670.0
+     },
+     {
+      "line": "Exports",
+      "usda": 160.0,
+      "post": 160.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Imports",
+      "usda": 5450.0,
+      "post": 3800.0,
+      "diff": -1650.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 16750.0,
+      "post": 15800.0,
+      "diff": -950.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 4023.0,
+      "post": 4579.0,
+      "diff": 556.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-09-17",
+   "title": "ERS Sugar and Sweeteners Outlook: September 2026",
+   "url": "https://www.ers.usda.gov/publications/115588",
+   "kind": "ers",
+   "tag": "ERS outlook",
+   "key_points": [
+    "Sugar production is down to 8.839 million STRV, the lowest since 2019/20’s 8.149 million.",
+    "Sugar imports from Mexico are revised downwards by 158,000 STRV to 1,188,085, a volume  which reflects the U.S.-Mexico sugar suspension agreements’ U.S.",
+    "Needs) is about 832,000 STRV, up 159,000 STRV from the July Export Limit  and sets a new minimum level of access for Mexico’s sugar into the U.S. market."
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-08-18",
+   "title": "ERS Sugar and Sweeteners Outlook: August 2026",
+   "url": "https://www.ers.usda.gov/publications/115137",
+   "kind": "ers",
+   "tag": "ERS outlook",
+   "key_points": [
+    "Beginning stocks are raised 219,000 STRV on  upward adjustments to the 2025/26 beet sugar production and imports.",
+    "U.S. sugar use is  unchanged at 12.571 million STRV.",
+    "Thus, ending stocks are at 1.865 million STRV (up  169,000) and the stocks-to-use ratio is 14.8 percent (up 1.3 percentage points from last  month’s 13.5 percent)."
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-07-16",
+   "title": "ERS Sugar and Sweeteners Outlook: July 2026",
+   "url": "https://www.ers.usda.gov/publications/115093",
+   "kind": "ers",
+   "tag": "ERS outlook",
+   "key_points": [
+    "The revisions ultimately result in a lower 2026/27 beginning stocks and larger projected  deliveries.",
+    "Sugar supply is forecast at 14.268 million short tons, raw value (STRV), up 94,000  STRV from last month as the decreases in beginning stocks and beet sugar production are  more than offset by increases in cane sugar production and imports mostly from Mexico.",
+    "Sugar use is raised  56,000 STRV to 12.571 million, solely on increased deliveries for human consumption"
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-06-17",
+   "title": "ERS Sugar and Sweeteners Outlook: June 2026",
+   "url": "https://www.ers.usda.gov/publications/115037",
+   "kind": "ers",
+   "tag": "ERS outlook",
+   "key_points": [
+    "Sugar use is raised 126,000 STRV to 12.515 million  STRV, solely on increased deliveries for human consumption.",
+    "The resulting 2026/27  ending stocks are 1.660 million STRV, down 13,000 STRV from last month, and the  corresponding stocks-to-use ratio is 13.3 percent.",
+    "Mexico’s 2026/27 sugar production is raised 141,000 metric tons, actual weight to 5.283 million  metric tons based on USDA, Foreign Agricultural Service’s Mexico City Post."
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-05-18",
+   "title": "ERS Sugar and Sweeteners Outlook: May 2026",
+   "url": "https://www.ers.usda.gov/publications/114172",
+   "kind": "ers",
+   "tag": "ERS outlook",
+   "key_points": [
+    "Sugar use is unchanged from 2025/26 at 12.389 million  STRV.",
+    "The resulting ending stocks are 1.673 million STRV, down about 300,000 STRV.",
+    "Mexico’s 2026/27 sugar production is forecast at 5.142 million metric tons (MT), slightly below  2025/26, based on USDA, Foreign Agricultural Service’s Mexico City Post."
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-04-29",
+   "title": "Philippines: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Manila_Philippines_RP2026-0013.pdf",
+   "kind": "gain",
+   "country": "Philippines",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 1.93 Mt; imports 321 kt; consumption 2.30 Mt; ending stocks 704 kt.",
+    "MY 2025/26, Post vs USDA: production 1.95 Mt vs 2.08 Mt; ending stocks 753 kt vs 1.05 Mt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 1930.0,
+      "diff": 1930.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 321.0,
+      "diff": 321.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 2300.0,
+      "diff": 2300.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 704.0,
+      "diff": 704.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-29",
+   "title": "India: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_New%20Delhi_India_IN2026-0024.pdf",
+   "kind": "gain",
+   "country": "India",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 33.60 Mt; exports 3.60 Mt; imports 2.43 Mt; consumption 31.00 Mt; ending stocks 6.51 Mt.",
+    "MY 2025/26, Post vs USDA: production 30.00 Mt vs 35.25 Mt; exports 3.30 Mt vs 4.50 Mt; ending stocks 5.08 Mt vs 8.55 Mt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 33600.0,
+      "diff": 33600.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 3600.0,
+      "diff": 3600.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 2430.0,
+      "diff": 2430.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 31000.0,
+      "diff": 31000.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 6506.0,
+      "diff": 6506.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-21",
+   "title": "Mexico: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Mexico%20City_Mexico_MX2026-0025.pdf",
+   "kind": "gain",
+   "country": "Mexico",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 5.45 Mt; exports 1.12 Mt; imports 30 kt; consumption 4.15 Mt; ending stocks 948 kt.",
+    "MY 2025/26, Post vs USDA: exports 1.10 Mt vs 848 kt; ending stocks 1.04 Mt vs 1.15 Mt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 5450.0,
+      "diff": 5450.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 1120.0,
+      "diff": 1120.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 30.0,
+      "diff": 30.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 4150.0,
+      "diff": 4150.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 948.0,
+      "diff": 948.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-20",
+   "title": "Thailand: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Bangkok_Thailand_TH2026-0011.pdf",
+   "kind": "gain",
+   "country": "Thailand",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 9.50 Mt; exports 6.00 Mt; consumption 3.30 Mt; ending stocks 12.45 Mt.",
+    "MY 2025/26, Post vs USDA: production 11.26 Mt vs 10.25 Mt; ending stocks 12.25 Mt vs 10.00 Mt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 9500.0,
+      "diff": 9500.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 6000.0,
+      "diff": 6000.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 3300.0,
+      "diff": 3300.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 12454.0,
+      "diff": 12454.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-20",
+   "title": "Pakistan: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Islamabad_Pakistan_PK2026-0005.pdf",
+   "kind": "gain",
+   "country": "Pakistan",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 6.91 Mt; exports 300 kt; consumption 6.80 Mt; ending stocks 1.97 Mt.",
+    "MY 2025/26, Post vs USDA: production 7.06 Mt vs 6.21 Mt; exports 500 kt vs 50 kt; ending stocks 2.16 Mt vs 2.31 Mt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 6910.0,
+      "diff": 6910.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 300.0,
+      "diff": 300.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 6800.0,
+      "diff": 6800.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 1972.0,
+      "diff": 1972.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-20",
+   "title": "Indonesia: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Jakarta_Indonesia_ID2026-0014.pdf",
+   "kind": "gain",
+   "country": "Indonesia",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 2.50 Mt; exports 100 kt; imports 4.20 Mt; consumption 7.25 Mt; ending stocks 430 kt.",
+    "MY 2025/26, Post vs USDA: production 2.70 Mt vs 2.60 Mt; exports 100 kt vs 150 kt; ending stocks 1.08 Mt vs 1.60 Mt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 2500.0,
+      "diff": 2500.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 100.0,
+      "diff": 100.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 4200.0,
+      "diff": 4200.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 7250.0,
+      "diff": 7250.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 430.0,
+      "diff": 430.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-20",
+   "title": "European Union: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Brussels%20USEU_European%20Union_E42026-0032.pdf",
+   "kind": "gain",
+   "country": "European Union",
+   "tag": "FAS attaché",
+   "key_points": [],
+   "auto": true
+  },
+  {
+   "date": "2026-04-20",
+   "title": "China: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Guangzhou%20ATO_China%20-%20People%27s%20Republic%20of_CH2026-0051.pdf",
+   "kind": "gain",
+   "country": "China",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 12.70 Mt; exports 160 kt; imports 4.50 Mt; consumption 15.80 Mt; ending stocks 4.02 Mt.",
+    "MY 2025/26, Post vs USDA: production 12.60 Mt vs 11.50 Mt; exports 160 kt vs 220 kt; ending stocks 2.78 Mt vs 2.42 Mt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 12700.0,
+      "diff": 12700.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 160.0,
+      "diff": 160.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 4500.0,
+      "diff": 4500.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 15800.0,
+      "diff": 15800.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 4023.0,
+      "diff": 4023.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-20",
+   "title": "Brazil: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Brasilia_Brazil_BR2026-0020.pdf",
+   "kind": "gain",
+   "country": "Brazil",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 42.50 Mt; exports 33.60 Mt; consumption 9.00 Mt; ending stocks 221 kt.",
+    "MY 2025/26, Post vs USDA: production 43.80 Mt vs 44.39 Mt; exports 34.10 Mt vs 35.70 Mt; ending stocks 321 kt vs 256 kt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 42500.0,
+      "diff": 42500.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 33600.0,
+      "diff": 33600.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 9000.0,
+      "diff": 9000.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 221.0,
+      "diff": 221.0
+     }
+    ]
+   }
+  },
+  {
+   "date": "2026-04-15",
+   "title": "ERS Sugar and Sweeteners Outlook: April 2026",
+   "url": "https://www.ers.usda.gov/publications/114070",
+   "kind": "ers",
+   "tag": "ERS outlook",
+   "key_points": [
+    "Sugar use is raised 69,000  STRV",
+    "With sugar  supply and use raised by nearly equal volumes, ending stocks are up 2,000 STRV to 1.880  million, and the resulting sugar stocks-to-use ratio is unchanged at 15.2 percent.",
+    "The  increase in production leads to an equal increase in Mexico’s sugar exports to other countries  (outside of the suspension agreements)"
+   ],
+   "auto": true
+  },
+  {
+   "date": "2026-04-15",
+   "title": "Australia: Sugar Annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Canberra_Australia_AS2026-0009.pdf",
+   "kind": "gain",
+   "country": "Australia",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27: Post's first forecast (no USDA official number yet): production 4.18 Mt; exports 3.61 Mt; imports 12 kt; consumption 940 kt; ending stocks 911 kt.",
+    "MY 2025/26, Post vs USDA: production 3.83 Mt vs 4.00 Mt; exports 2.71 Mt vs 3.19 Mt; ending stocks 1.27 Mt vs 992 kt."
+   ],
+   "auto": true,
+   "post_vs_usda": {
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 4180.0,
+      "diff": 4180.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 3607.0,
+      "diff": 3607.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 12.0,
+      "diff": 12.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 940.0,
+      "diff": 940.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 911.0,
+      "diff": 911.0
+     }
+    ]
+   }
+  }
+ ],
+ "window_start": "2026-04-01",
+ "summary": {
+  "unit": "thousand t, raw value",
+  "rows": [
+   {
+    "country": "Brazil",
+    "date": "2026-11-06",
+    "report": "Sugar November Update",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20November%20Update_Brasilia_Brazil_BR2026-0049.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 42500.0,
+      "post": 40500.0,
+      "diff": -2000.0
+     },
+     {
+      "line": "Exports",
+      "usda": 33600.0,
+      "post": 31721.0,
+      "diff": -1879.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 9000.0,
+      "post": 8800.0,
+      "diff": -200.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 221.0,
+      "post": 300.0,
+      "diff": 79.0
+     }
+    ]
+   },
+   {
+    "country": "Thailand",
+    "date": "2026-10-16",
+    "report": "Sugar Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Bangkok_Thailand_TH2026-0038.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 9500.0,
+      "post": 9500.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 6000.0,
+      "post": 7000.0,
+      "diff": 1000.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 3300.0,
+      "post": 3300.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 13454.0,
+      "post": 10896.0,
+      "diff": -2558.0
+     }
+    ]
+   },
+   {
+    "country": "Philippines",
+    "date": "2026-10-08",
+    "report": "Sugar Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Manila_Philippines_RP2026-0032.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 1930.0,
+      "post": 1700.0,
+      "diff": -230.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 0.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Imports",
+      "usda": 321.0,
+      "post": 321.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 2300.0,
+      "post": 2300.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 704.0,
+      "post": 376.0,
+      "diff": -328.0
+     }
+    ]
+   },
+   {
+    "country": "Australia",
+    "date": "2026-10-06",
+    "report": "Sugar Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Canberra_Australia_AS2026-0021.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 4180.0,
+      "post": 4000.0,
+      "diff": -180.0
+     },
+     {
+      "line": "Exports",
+      "usda": 3607.0,
+      "post": 3506.0,
+      "diff": -101.0
+     },
+     {
+      "line": "Imports",
+      "usda": 12.0,
+      "post": 12.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 940.0,
+      "post": 940.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 911.0,
+      "post": 913.0,
+      "diff": 2.0
+     }
+    ]
+   },
+   {
+    "country": "Pakistan",
+    "date": "2026-10-06",
+    "report": "Sugar Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Islamabad_Pakistan_PK2026-0013.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 6910.0,
+      "post": 6910.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 300.0,
+      "post": 500.0,
+      "diff": 200.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 6800.0,
+      "post": 6800.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 1972.0,
+      "post": 2072.0,
+      "diff": 100.0
+     }
+    ]
+   },
+   {
+    "country": "European Union",
+    "date": "2026-10-06",
+    "report": "Sugar Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Brussels%20USEU_European%20Union_E42026-0076.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 14353.0,
+      "post": 13154.0,
+      "diff": -1199.0
+     },
+     {
+      "line": "Exports",
+      "usda": 858.0,
+      "post": 658.0,
+      "diff": -200.0
+     },
+     {
+      "line": "Imports",
+      "usda": 2550.0,
+      "post": 2150.0,
+      "diff": -400.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 15900.0,
+      "post": 15700.0,
+      "diff": -200.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 656.0,
+      "post": 266.0,
+      "diff": -390.0
+     }
+    ]
+   },
+   {
+    "country": "China",
+    "date": "2026-10-05",
+    "report": "Sugar Semi-Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-Annual_Guangzhou%20ATO_China%20-%20People%27s%20Republic%20of_CH2026-0125.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 12700.0,
+      "post": 13370.0,
+      "diff": 670.0
+     },
+     {
+      "line": "Exports",
+      "usda": 160.0,
+      "post": 160.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Imports",
+      "usda": 5450.0,
+      "post": 3800.0,
+      "diff": -1650.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 16750.0,
+      "post": 15800.0,
+      "diff": -950.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 4023.0,
+      "post": 4579.0,
+      "diff": 556.0
+     }
+    ]
+   },
+   {
+    "country": "Mexico",
+    "date": "2026-10-05",
+    "report": "Sugar Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_Mexico%20City_Mexico_MX2026-0049.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 5451.0,
+      "post": 5700.0,
+      "diff": 249.0
+     },
+     {
+      "line": "Exports",
+      "usda": 949.0,
+      "post": 1500.0,
+      "diff": 551.0
+     },
+     {
+      "line": "Imports",
+      "usda": 30.0,
+      "post": 30.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 4165.0,
+      "post": 4180.0,
+      "diff": 15.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 1184.0,
+      "post": 1032.0,
+      "diff": -152.0
+     }
+    ]
+   },
+   {
+    "country": "India",
+    "date": "2026-10-05",
+    "report": "Sugar Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Semi-annual_New%20Delhi_India_IN2026-0051.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 33600.0,
+      "post": 29500.0,
+      "diff": -4100.0
+     },
+     {
+      "line": "Exports",
+      "usda": 3600.0,
+      "post": 3100.0,
+      "diff": -500.0
+     },
+     {
+      "line": "Imports",
+      "usda": 2430.0,
+      "post": 2430.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 31000.0,
+      "post": 30830.0,
+      "diff": -170.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 6506.0,
+      "post": 4000.0,
+      "diff": -2506.0
+     }
+    ]
+   },
+   {
+    "country": "Indonesia",
+    "date": "2026-04-20",
+    "report": "Sugar Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Sugar%20Annual_Jakarta_Indonesia_ID2026-0014.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0.0,
+      "post": 2500.0,
+      "diff": 2500.0
+     },
+     {
+      "line": "Exports",
+      "usda": 0.0,
+      "post": 100.0,
+      "diff": 100.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0.0,
+      "post": 4200.0,
+      "diff": 4200.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0.0,
+      "post": 7250.0,
+      "diff": 7250.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0.0,
+      "post": 430.0,
+      "diff": 430.0
+     }
+    ]
+   }
+  ]
+ },
+ "built": "2026-11-18 17:54 UTC"
+}
