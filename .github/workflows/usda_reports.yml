@@ -1,0 +1,17 @@
+name: usda-reports
+# USDA reports for the cotton/coffee/sugar Reports tabs (probe stage)
+on:
+  workflow_dispatch:
+    inputs:
+      args: {description: 'arguments for models/usda_reports.py', required: false, default: ''}
+permissions: {contents: write}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests
+      - run: python -u models/usda_reports.py ${{ github.event.inputs.args }}
