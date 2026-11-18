@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 11:08 UTC",
+ "generated": "2026-11-18 11:11 UTC",
  "today": "2026-11-18",
  "sources": [
   {
@@ -773,9 +773,9 @@
   {
    "group": "Coffee",
    "source": "Reports: Sucafina / StoneX / Rabobank key points (weekly read)",
-   "latest": "2026-11-16",
+   "latest": "2026-11-18",
    "cadence": "weekly",
-   "age": 2,
+   "age": 0,
    "age_unit": "days",
    "limit": 10,
    "state": "ok",
