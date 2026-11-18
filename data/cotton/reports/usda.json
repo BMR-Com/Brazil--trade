@@ -7,17 +7,17 @@
  "note": "GAIN reports are written by USDA's overseas posts and are not official USDA estimates; the official number is the one in the report's own table (USDA Official). Following the desk's rule, the points show how far Post is from USDA and how Post changed its own numbers, not the levels alone.",
  "entries": [
   {
-   "date": "2026-11-18",
-   "title": "FAS Cotton: World Markets and Trade, November 2026",
+   "date": "2026-11-10",
+   "title": "FAS Cotton: World Markets and Trade, November 2026 — 2026 China State Reserve Sales Total Nearly 2 Million Bales",
    "url": "https://apps.fas.usda.gov/psdonline/circulars/cotton.pdf",
    "kind": "wmt",
    "tag": "FAS WMT",
    "key_points": [
-    "Following that sales program, the state reserve bought an estimated 5.5  million bales of imported cotton to replenish stocks, pushing overall cotton imports to 15.0 million  bales in 2023/24, the highest level in a decade.",
-    "China cotton consumption is forecast at 42.0 million bales in 2026/27, up less than 1 percent from  2025/26 and below the average level of global growth forecast in 2026/27.",
-    "Still, consumption is  forecast to reach the highest level in 15 years."
+    "Lead story: China sold ~1.9m bales from state reserves in Jul–Sep 2026 (about 60% US-origin), the first sales since 2023; USDA thinks ~13m bales remain and the trade expects the reserve to buy imports later in the season.",
+    "World 2026/27 revisions this month: production cut ~0.5m bales to 117.5m (India −0.5m to 23.5m; Australia +0.5m to 3.5m; China +0.5m to 34.0m); trade +0.1m to 44.8m; mill use −0.3m to 122.7m; ending stocks −0.1m to 70.6m.",
+    "US season-average farm price lowered 1¢ to 76¢/lb."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-11-06",
@@ -27,45 +27,49 @@
    "country": "Bangladesh",
    "tag": "FAS attaché",
    "key_points": [
+    "Policy support lifts 2026/27 imports; 2025/26 imports cut on high prices and freight. 2025/26 suppliers: Brazil 33%, India 15%, US 12%.",
     "MY 2026/27, Post vs USDA official: imports 7.50m bales vs 7.40m bales (+100k bales); mill use 7.70m bales vs 7.60m bales (+100k bales).",
     "Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: imports 7.50m bales from 7.70m bales (−2.6%); mill use 7.70m bales from 7.80m bales (−1.3%); ending stocks 1.62m bales from 1.82m bales (−11.0%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 153.0,
-      "post": 153.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Imports",
-      "usda": 7400.0,
-      "post": 7500.0,
-      "diff": 100.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 7600.0,
-      "post": 7700.0,
-      "diff": 100.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 1620.0,
-      "post": 1620.0,
-      "diff": 0.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 153.0,
+       "post": 153.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Imports",
+       "usda": 7400.0,
+       "post": 7500.0,
+       "diff": 100.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 7600.0,
+       "post": 7700.0,
+       "diff": 100.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 1620.0,
+       "post": 1620.0,
+       "diff": 0.0
+      }
+     ],
+     "country": "Bangladesh"
+    }
+   ]
   },
   {
    "date": "2026-10-14",
@@ -74,73 +78,153 @@
    "kind": "ers",
    "tag": "ERS outlook",
    "key_points": [
-    "Economic Research Service | Situation and Outlook Report   CWS-26j | October 14, 2026 Next release is December 14, 2026    Cotton and Wool Outlook: October 2026 Leslie Meyer and Taylor Dew   Global 2026/27 Cotton Ending Stocks Forecast at Lowest Level in 15 Years The latest U.S.",
-    "Department of Agriculture (USDA) cotton projections for 2026/27 (August–July) indicate that global ending stocks are forecast to decrease 5.0 million bales from the year before to their lowest level since 2011/12 (figure 1).",
-    "All major producing countries’ stocks are forecast lower in 2026/27"
+    "US crop raised 0.24m to 13.4m bales; Southwest abandonment ~34% and yield 517 lb/acre, lowest since 2003/04.",
+    "World 2026/27 stocks −5.0m y/y to the lowest since 2011/12; crop 118.0m, mill use 123.1m; India's imports −1.9m to 3.3m."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-09-17",
-   "title": "Senegal: Cotton and Products Update",
+   "title": "West Africa (Mali, Burkina Faso, Senegal): Cotton and Products Update",
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Dakar_Senegal_SG2026-0004.pdf",
    "kind": "gain",
    "country": "Senegal",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27, Post vs USDA official: production 975k bales vs 935k bales (+40k bales); exports 950k bales vs 900k bales (+50k bales); ending stocks 179k bales vs 314k bales (−135k bales).",
-    "MY 2025/26, Post vs USDA: production 765k bales vs 820k bales; exports 970k bales vs 900k bales; ending stocks 179k bales vs 304k bales.",
-    "Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 975k bales from 1.23m bales (−20.7%); exports 950k bales from 1.20m bales (−21.1%); ending stocks 179k bales from 180k bales (−0.6%)."
+    "Late rains delayed planting in all three countries and Mali got fertiliser late: area −4% and crop −7.7% versus the April report.",
+    "Mali: MY 2026/27, Post vs USDA official: production 975k bales vs 935k bales (+40k bales); exports 950k bales vs 900k bales (+50k bales); ending stocks 179k bales vs 314k bales (−135k bales).",
+    "Mali: MY 2025/26, Post vs USDA: production 765k bales vs 820k bales; exports 970k bales vs 900k bales; ending stocks 179k bales vs 304k bales.",
+    "Mali: Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 975k bales from 1.23m bales (−20.7%); exports 950k bales from 1.20m bales (−21.1%); ending stocks 179k bales from 180k bales (−0.6%).",
+    "Burkina: MY 2026/27, Post vs USDA official: production 750k bales vs 635k bales (+115k bales); exports 725k bales vs 625k bales (+100k bales); mill use 25k bales vs 15k bales (+10k bales); ending stocks 26k bales vs 81k bales (−55k bales).",
+    "Burkina: MY 2025/26, Post vs USDA: production 602k bales vs 635k bales; exports 575k bales vs 600k bales; ending stocks 26k bales vs 86k bales.",
+    "Burkina: Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 750k bales from 660k bales (+13.6%); exports 725k bales from 634k bales (+14.4%); ending stocks 26k bales from 25k bales (+4.0%).",
+    "Senegal: MY 2026/27, Post vs USDA official: production 70k bales vs 40k bales (+30k bales); exports 68k bales vs 40k bales (+28k bales); ending stocks 2k bales vs 21k bales (−19k bales).",
+    "Senegal: MY 2025/26, Post vs USDA: production 48k bales vs 49k bales; exports 46k bales vs 35k bales; ending stocks 2k bales vs 23k bales.",
+    "Senegal: Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 70k bales from 55k bales (+27.3%); exports 68k bales from 53k bales (+28.3%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 935.0,
-      "post": 975.0,
-      "diff": 40.0
-     },
-     {
-      "line": "Exports",
-      "usda": 900.0,
-      "post": 950.0,
-      "diff": 50.0
-     },
-     {
-      "line": "Imports",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 25.0,
-      "post": 25.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 314.0,
-      "post": 179.0,
-      "diff": -135.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 935.0,
+       "post": 975.0,
+       "diff": 40.0
+      },
+      {
+       "line": "Exports",
+       "usda": 900.0,
+       "post": 950.0,
+       "diff": 50.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Mill use",
+       "usda": 25.0,
+       "post": 25.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 314.0,
+       "post": 179.0,
+       "diff": -135.0
+      }
+     ],
+     "country": "Mali"
+    },
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 635.0,
+       "post": 750.0,
+       "diff": 115.0
+      },
+      {
+       "line": "Exports",
+       "usda": 625.0,
+       "post": 725.0,
+       "diff": 100.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Mill use",
+       "usda": 15.0,
+       "post": 25.0,
+       "diff": 10.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 81.0,
+       "post": 26.0,
+       "diff": -55.0
+      }
+     ],
+     "country": "Burkina"
+    },
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 40.0,
+       "post": 70.0,
+       "diff": 30.0
+      },
+      {
+       "line": "Exports",
+       "usda": 40.0,
+       "post": 68.0,
+       "diff": 28.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Mill use",
+       "usda": 2.0,
+       "post": 2.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 21.0,
+       "post": 2.0,
+       "diff": -19.0
+      }
+     ],
+     "country": "Senegal"
+    }
+   ]
   },
   {
    "date": "2026-09-15",
-   "title": "ERS Cotton and Wool Outlook: September 2026 — Special Article: U.S. Hemp Fiber Market Outlook Global Cotton Mill Use Projected To Rise for Fourth Consecutive Year in 2026/27",
+   "title": "ERS Cotton and Wool Outlook: September 2026 — Global Cotton Mill Use Projected To Rise for Fourth Consecutive Year in 2026/27",
    "url": "https://www.ers.usda.gov/publications/115566",
    "kind": "ers",
    "tag": "ERS outlook",
    "key_points": [
-    "Hemp Fiber Market Outlook   Global Cotton Mill Use Projected To Rise for Fourth Consecutive Year in 2026/27 The latest U.S.",
-    "Department of Agriculture (USDA) cotton projections for 2026/27 (August–July) indicate that global mill use is forecast to increase 1.8 million bales (1.5 percent) from the previous year to 122.9 million bales, the highest in 6 years (figure 1).",
-    "All major spinning countries’ mill use is projected to increase or remain unchanged in 2026/27, led by India and China."
+    "US crop cut 0.4m to 13.2m bales on Southwest yields; US mill use trimmed.",
+    "World crop 117.3m (−4.6m y/y); trade 44.2m with Brazil 15.5m (35% share) and the US 12.3m (28%)."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-09-03",
@@ -150,45 +234,50 @@
    "country": "China",
    "tag": "FAS attaché",
    "key_points": [
+    "Xinjiang policy shrinks area and weather is less favourable: crop 7.12 Mt (−5.6% y/y). Post raises 2025/26 imports on trade data and the domestic/imported price gap.",
     "MY 2026/27, Post vs USDA official: production 32.70m bales vs 33.50m bales (−798k bales); exports 46k bales vs 75k bales (−29k bales); imports 6.89m bales vs 7.00m bales (−110k bales); mill use 39.96m bales vs 42.00m bales (−2.04m bales); ending stocks 38.53m bales vs 34.69m bales (+3.84m bales).",
-    "MY 2025/26, Post vs USDA: production 34.63m bales vs 35.80m bales; exports 35k bales vs 75k bales; ending stocks 38.94m bales vs 36.26m bales."
+    "MY 2025/26, Post vs USDA: production 34.63m bales vs 35.80m bales; exports 35k bales vs 75k bales; ending stocks 38.94m bales vs 36.26m bales.",
+    "Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 32.70m bales from 33.07m bales (−1.1%); ending stocks 38.53m bales from 40.61m bales (−5.1%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 33500.0,
-      "post": 32702.0,
-      "diff": -798.0
-     },
-     {
-      "line": "Exports",
-      "usda": 75.0,
-      "post": 46.0,
-      "diff": -29.0
-     },
-     {
-      "line": "Imports",
-      "usda": 7000.0,
-      "post": 6890.0,
-      "diff": -110.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 42000.0,
-      "post": 39960.0,
-      "diff": -2040.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 34687.0,
-      "post": 38526.0,
-      "diff": 3839.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 33500.0,
+       "post": 32702.0,
+       "diff": -798.0
+      },
+      {
+       "line": "Exports",
+       "usda": 75.0,
+       "post": 46.0,
+       "diff": -29.0
+      },
+      {
+       "line": "Imports",
+       "usda": 7000.0,
+       "post": 6890.0,
+       "diff": -110.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 42000.0,
+       "post": 39960.0,
+       "diff": -2040.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 34687.0,
+       "post": 38526.0,
+       "diff": 3839.0
+      }
+     ],
+     "country": "China"
+    }
+   ]
   },
   {
    "date": "2026-09-02",
@@ -197,8 +286,50 @@
    "kind": "gain",
    "country": "Turkey",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Smaller planting (275,000 ha) cuts the crop to ~2.27m bales; imports up to ~5.05m bales, with the US losing first place as supplier.",
+    "MY 2026/27, Post vs USDA official: production 2.27m bales vs 2.65m bales (−376k bales); exports 919k bales vs 600k bales (+319k bales); imports 5.05m bales vs 4.80m bales (+252k bales); mill use 6.89m bales vs 6.80m bales (+89k bales); ending stocks 1.69m bales vs 1.13m bales (+556k bales).",
+    "MY 2025/26, Post vs USDA: exports 1.08m bales vs 950k bales; ending stocks 2.17m bales vs 1.08m bales."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 2650.0,
+       "post": 2274.0,
+       "diff": -376.0
+      },
+      {
+       "line": "Exports",
+       "usda": 600.0,
+       "post": 919.0,
+       "diff": 319.0
+      },
+      {
+       "line": "Imports",
+       "usda": 4800.0,
+       "post": 5052.0,
+       "diff": 252.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 6800.0,
+       "post": 6889.0,
+       "diff": 89.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 1132.0,
+       "post": 1688.0,
+       "diff": 556.0
+      }
+     ],
+     "country": "Turkey"
+    }
+   ]
   },
   {
    "date": "2026-09-02",
@@ -208,45 +339,50 @@
    "country": "Pakistan",
    "tag": "FAS attaché",
    "key_points": [
+    "Punjab area falls as cotton earns less than other crops: area 1.85m ha, crop cut to 4.9m bales, imports raised to 5.2m.",
     "MY 2026/27, Post vs USDA official: production 4.90m bales vs 5.10m bales (−200k bales); imports 5.20m bales vs 5.00m bales (+200k bales); mill use 10.00m bales vs 10.20m bales (−200k bales); ending stocks 2.20m bales vs 1.90m bales (+300k bales).",
-    "MY 2025/26, Post vs USDA: ending stocks 2.15m bales vs 2.05m bales."
+    "MY 2025/26, Post vs USDA: ending stocks 2.15m bales vs 2.05m bales.",
+    "Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 4.90m bales from 5.05m bales (−3.0%); mill use 10.00m bales from 10.20m bales (−2.0%); ending stocks 2.20m bales from 2.25m bales (−2.2%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 5100.0,
-      "post": 4900.0,
-      "diff": -200.0
-     },
-     {
-      "line": "Exports",
-      "usda": 50.0,
-      "post": 50.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Imports",
-      "usda": 5000.0,
-      "post": 5200.0,
-      "diff": 200.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 10200.0,
-      "post": 10000.0,
-      "diff": -200.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 1900.0,
-      "post": 2200.0,
-      "diff": 300.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 5100.0,
+       "post": 4900.0,
+       "diff": -200.0
+      },
+      {
+       "line": "Exports",
+       "usda": 50.0,
+       "post": 50.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Imports",
+       "usda": 5000.0,
+       "post": 5200.0,
+       "diff": 200.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 10200.0,
+       "post": 10000.0,
+       "diff": -200.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 1900.0,
+       "post": 2200.0,
+       "diff": 300.0
+      }
+     ],
+     "country": "Pakistan"
+    }
+   ]
   },
   {
    "date": "2026-09-02",
@@ -256,44 +392,49 @@
    "country": "Brazil",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27, Post vs USDA official: production 18.40m bales vs 18.25m bales (+150k bales); exports 15.50m bales vs 15.30m bales (+200k bales); ending stocks 3.11m bales vs 3.16m bales (−50k bales)."
+    "Slightly less area but record yields: crop only a little lower; strong end-season exports; stocks to fall, which Post sees as price-supportive.",
+    "MY 2026/27, Post vs USDA official: production 18.40m bales vs 18.25m bales (+150k bales); exports 15.50m bales vs 15.30m bales (+200k bales); ending stocks 3.11m bales vs 3.16m bales (−50k bales).",
+    "Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 18.40m bales from 18.00m bales (+2.2%); exports 15.50m bales from 15.00m bales (+3.3%); imports 5k bales from 6k bales (−16.7%); mill use 3.40m bales from 3.50m bales (−2.9%); ending stocks 3.11m bales from 3.97m bales (−21.7%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 18250.0,
-      "post": 18400.0,
-      "diff": 150.0
-     },
-     {
-      "line": "Exports",
-      "usda": 15300.0,
-      "post": 15500.0,
-      "diff": 200.0
-     },
-     {
-      "line": "Imports",
-      "usda": 5.0,
-      "post": 5.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 3400.0,
-      "post": 3400.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 3159.0,
-      "post": 3109.0,
-      "diff": -50.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 18250.0,
+       "post": 18400.0,
+       "diff": 150.0
+      },
+      {
+       "line": "Exports",
+       "usda": 15300.0,
+       "post": 15500.0,
+       "diff": 200.0
+      },
+      {
+       "line": "Imports",
+       "usda": 5.0,
+       "post": 5.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 3400.0,
+       "post": 3400.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 3159.0,
+       "post": 3109.0,
+       "diff": -50.0
+      }
+     ],
+     "country": "Brazil"
+    }
+   ]
   },
   {
    "date": "2026-08-27",
@@ -303,46 +444,50 @@
    "country": "Mexico",
    "tag": "FAS attaché",
    "key_points": [
+    "Good prices pull Chihuahua area up ~37%: crop raised to ~0.87m bales (+32% y/y); imports trimmed.",
     "MY 2026/27, Post vs USDA official: production 869k bales vs 650k bales (+219k bales); exports 120k bales vs 100k bales (+20k bales); imports 600k bales vs 650k bales (−50k bales); mill use 1.30m bales vs 1.20m bales (+100k bales); ending stocks 133k bales vs 177k bales (−44k bales).",
     "MY 2025/26, Post vs USDA: production 656k bales vs 565k bales; exports 110k bales vs 100k bales; ending stocks 104k bales vs 177k bales.",
     "Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 869k bales from 657k bales (+32.3%); exports 120k bales from 110k bales (+9.1%); imports 600k bales from 750k bales (−20.0%); ending stocks 133k bales from 77k bales (+72.7%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 650.0,
-      "post": 869.0,
-      "diff": 219.0
-     },
-     {
-      "line": "Exports",
-      "usda": 100.0,
-      "post": 120.0,
-      "diff": 20.0
-     },
-     {
-      "line": "Imports",
-      "usda": 650.0,
-      "post": 600.0,
-      "diff": -50.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 1200.0,
-      "post": 1300.0,
-      "diff": 100.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 177.0,
-      "post": 133.0,
-      "diff": -44.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 650.0,
+       "post": 869.0,
+       "diff": 219.0
+      },
+      {
+       "line": "Exports",
+       "usda": 100.0,
+       "post": 120.0,
+       "diff": 20.0
+      },
+      {
+       "line": "Imports",
+       "usda": 650.0,
+       "post": 600.0,
+       "diff": -50.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 1200.0,
+       "post": 1300.0,
+       "diff": 100.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 177.0,
+       "post": 133.0,
+       "diff": -44.0
+      }
+     ],
+     "country": "Mexico"
+    }
+   ]
   },
   {
    "date": "2026-08-27",
@@ -352,45 +497,50 @@
    "country": "India",
    "tag": "FAS attaché",
    "key_points": [
+    "Below-normal Aug–Sep rain and a 12% monsoon deficit: Post cuts yield ~2% and the crop to 24.5m bales; planting 2% behind last year.",
     "MY 2026/27, Post vs USDA official: production 24.50m bales vs 24.00m bales (+500k bales); exports 1.20m bales vs 1.50m bales (−300k bales); mill use 26.20m bales vs 26.50m bales (−300k bales); ending stocks 12.12m bales vs 10.02m bales (+2.10m bales).",
-    "MY 2025/26, Post vs USDA: ending stocks 12.02m bales vs 11.02m bales."
+    "MY 2025/26, Post vs USDA: ending stocks 12.02m bales vs 11.02m bales.",
+    "Post's own revision since its Cotton and Products Annual (Apr 2026), MY 2026/27: production 24.50m bales from 25.20m bales (−2.8%); mill use 26.20m bales from 25.80m bales (+1.6%); ending stocks 12.12m bales from 12.31m bales (−1.6%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 24000.0,
-      "post": 24500.0,
-      "diff": 500.0
-     },
-     {
-      "line": "Exports",
-      "usda": 1500.0,
-      "post": 1200.0,
-      "diff": -300.0
-     },
-     {
-      "line": "Imports",
-      "usda": 3000.0,
-      "post": 3000.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 26500.0,
-      "post": 26200.0,
-      "diff": -300.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 10015.0,
-      "post": 12115.0,
-      "diff": 2100.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 24000.0,
+       "post": 24500.0,
+       "diff": 500.0
+      },
+      {
+       "line": "Exports",
+       "usda": 1500.0,
+       "post": 1200.0,
+       "diff": -300.0
+      },
+      {
+       "line": "Imports",
+       "usda": 3000.0,
+       "post": 3000.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 26500.0,
+       "post": 26200.0,
+       "diff": -300.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 10015.0,
+       "post": 12115.0,
+       "diff": 2100.0
+      }
+     ],
+     "country": "India"
+    }
+   ]
   },
   {
    "date": "2026-08-14",
@@ -399,11 +549,10 @@
    "kind": "ers",
    "tag": "ERS outlook",
    "key_points": [
-    "Economic Research Service | Situation and Outlook Report   CWS-26h | August 14, 2026 Next release is September 15, 2026    Cotton and Wool Outlook: August 2026 Leslie Meyer and Taylor Dew  Global 2026/27 Cotton Stocks Forecast Lower as Projected Mill Use Exceeds Production The latest U.S.",
-    "With world cotton stocks expected to decline, global cotton prices are projected to rise moderately in 2026/27 (figure 1).",
-    "Global cotton production in 2026/27 is estimated to decline 4.3 million bales (nearly 4 percent) from the previous year to 117.6 million bales."
+    "First survey-based US crop: 13.6m bales on ~10.5m planted acres.",
+    "World 2026/27 stocks 69.7m (−5.1m, lowest since 2011/12) as mill use (122.9m) exceeds production (117.6m) for the first time in 3 years; Australia's exports −21% to 4.5m."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-07-14",
@@ -412,11 +561,10 @@
    "kind": "ers",
    "tag": "ERS outlook",
    "key_points": [
-    "Economic Research Service | Situation and Outlook Report   CWS-26g | July 14, 2026 Next release is August 14, 2026    Cotton and Wool Outlook: July 2026 Leslie Meyer and Taylor Dew  Global 2026/27 Cotton Mill Use Projected Second Highest in 9 Years The latest U.S.",
-    "Department of Agriculture (USDA) cotton projections for 2026/27 (August–July) indicate that world mill use is projected at 122.0 million bales, a 2-percent increase from 2025/26 and the second-highest level since 2017/18 (figure 1).",
-    "Cotton mill use for each of the major spinning countries in 2026/27 is unchanged or higher compared with the previous season"
+    "US 2026/27 crop raised 0.4m to 13.7m bales after June Acreage (9.85m acres); US stocks 4.1m (+0.4m).",
+    "World 2026/27 crop 117.3m, mill use ~122.0m (+1.7%); India's imports fall the most."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-06-15",
@@ -425,11 +573,10 @@
    "kind": "ers",
    "tag": "ERS outlook",
    "key_points": [
-    "Economic Research Service | Situation and Outlook Report   CWS-26f | June 15, 2026 Next release is July 14, 2026    Cotton and Wool Outlook: June 2026 Leslie Meyer and Taylor Dew   Global 2026/27 Cotton Ending Stocks Projected Lowest in 8 Years The latest U.S.",
-    "All major cotton-producing countries are projected to contribute to the 2026/27 stock reduction.",
-    "Global cotton production is forecast at 116.0 million bales, nearly 5.5 percent (6.6 million bales) below 2025/26."
+    "World 2026/27 stocks 71.1m bales, lowest since 2018/19; mill use ~121.8m (+1.4%).",
+    "US 2025/26 exports raised 0.2m to 12.2m; 2026/27 US crop unchanged at 13.3m."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-05-14",
@@ -438,11 +585,10 @@
    "kind": "ers",
    "tag": "ERS outlook",
    "key_points": [
-    "Department of Agriculture (USDA) cotton projections for 2026/27 (August–July) indicate a decrease in global ending stocks, compared with 2025/26",
-    "World 2026/27 cotton ending stocks are projected at 71.8 million bales, 7 percent (5.4 million bales) lower than the previous year, supporting the potential for higher cotton prices than in 2025/26.",
-    "Lower stocks are mainly the result of a 5-percent (6.6 million bales) reduction in the global cotton production forecast (116.0 million bales) from 2025/26."
+    "First 2026/27 projections: world crop 116.0m bales (−6.6m) on lower yields, ending stocks 71.8m (−5.4m) as mill use rises.",
+    "US crop 13.3m bales, exports 12.3m; Brazil exports a record 15.0m."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-05-07",
@@ -451,8 +597,10 @@
    "kind": "gain",
    "country": "Uzbekistan",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "No PSD table in this report. Post cuts 2025/26 lint to ~750,000 t (from 906,000 t in its December 2025 report) and puts 2026/27 at ~780,000 t; Amu Darya flow at ~67% of normal is the main risk."
+   ],
+   "auto": false
   },
   {
    "date": "2026-04-24",
@@ -462,45 +610,49 @@
    "country": "Indonesia",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 2k bales; exports 25k bales; imports 1.90m bales; mill use 1.90m bales; ending stocks 435k bales.",
+    "Struggling textile sector: imports seen lower in both 2025/26 and 2026/27 despite open trade.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 2k bales; exports 25k bales; imports 1.90m bales; mill use 1.90m bales; ending stocks 435k bales.",
     "MY 2025/26, Post vs USDA: exports 22k bales vs 15k bales; ending stocks 458k bales vs 395k bales."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 2.0,
-      "diff": 2.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 25.0,
-      "diff": 25.0
-     },
-     {
-      "line": "Imports",
-      "usda": 0.0,
-      "post": 1900.0,
-      "diff": 1900.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 0.0,
-      "post": 1900.0,
-      "diff": 1900.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 435.0,
-      "diff": 435.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 2.0,
+       "diff": 2.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 25.0,
+       "diff": 25.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 1900.0,
+       "diff": 1900.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 1900.0,
+       "diff": 1900.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 435.0,
+       "diff": 435.0
+      }
+     ],
+     "country": "Indonesia"
+    }
+   ]
   },
   {
    "date": "2026-04-22",
@@ -509,8 +661,44 @@
    "kind": "gain",
    "country": "China",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Xinjiang subsidy changes push cotton off marginal land: crop seen −4.5% (7.2 Mt); imports only slightly above the low 2025/26 level; US cotton still faces an extra 10% tariff.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 33.07m bales; exports 46k bales; imports 6.89m bales; ending stocks 40.61m bales.",
+    "MY 2025/26, Post vs USDA: production 34.63m bales vs 35.80m bales; exports 23k bales vs 75k bales; ending stocks 39.28m bales vs 36.56m bales."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 33070.0,
+       "diff": 33070.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 46.0,
+       "diff": 46.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 6890.0,
+       "diff": 6890.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 40612.0,
+       "diff": 40612.0
+      }
+     ],
+     "country": "China"
+    }
+   ]
   },
   {
    "date": "2026-04-13",
@@ -519,8 +707,50 @@
    "kind": "gain",
    "country": "Vietnam",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Imports seen +10% to a record 8.4m bales on strong Chinese yarn demand; 2025/26 stocks cut to 913k bales.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): imports 8.40m bales; mill use 8.00m bales; ending stocks 1.31m bales.",
+    "MY 2025/26, Post vs USDA: ending stocks 913k bales vs 1.02m bales."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 8400.0,
+       "diff": 8400.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 8000.0,
+       "diff": 8000.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 1313.0,
+       "diff": 1313.0
+      }
+     ],
+     "country": "Vietnam"
+    }
+   ]
   },
   {
    "date": "2026-04-13",
@@ -529,11 +759,10 @@
    "kind": "ers",
    "tag": "ERS outlook",
    "key_points": [
-    "Department of Agriculture (USDA) cotton projections for 2025/26 (August–July) forecast global production at 121.9 million bales, a 2-percent increase from the previous season and the highest since 2012/13 (figure 1).",
-    "The major producing countries are projected to be mixed in 2025/26",
-    "Global cotton mill use is projected to decrease marginally in 2025/26 to 119.1 million bales, down 300,000 bales (0.3 percent) from 2024/25."
+    "World 2025/26 crop 121.9m bales (+2%, highest since 2012/13); mill use raised 0.56m to 119.1m on China and India.",
+    "US 2025/26 stocks unchanged at 4.4m bales; Prospective Plantings put 2026 US area at ~9.6m acres (+4%)."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-04-06",
@@ -542,8 +771,50 @@
    "kind": "gain",
    "country": "Brazil",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "High interest rates and costs push some area to corn: 2026/27 area and crop lower (18.0m bales), but Brazil stays the top exporter (15.0m).",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 18.00m bales; exports 15.00m bales; imports 6k bales; mill use 3.50m bales; ending stocks 3.97m bales.",
+    "MY 2025/26, Post vs USDA: exports 14.35m bales vs 14.50m bales; ending stocks 4.96m bales vs 5.02m bales."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 18000.0,
+       "diff": 18000.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 15000.0,
+       "diff": 15000.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 6.0,
+       "diff": 6.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 3500.0,
+       "diff": 3500.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 3970.0,
+       "diff": 3970.0
+      }
+     ],
+     "country": "Brazil"
+    }
+   ]
   },
   {
    "date": "2026-04-06",
@@ -553,92 +824,176 @@
    "country": "Bangladesh",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 153k bales; imports 7.70m bales; mill use 7.80m bales; ending stocks 1.82m bales."
+    "Energy shortages and fewer garment orders: Post cuts 2025/26 imports and use and sees 2026/27 imports lower at 7.7m bales.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 153k bales; imports 7.70m bales; mill use 7.80m bales; ending stocks 1.82m bales."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 153.0,
-      "diff": 153.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Imports",
-      "usda": 0.0,
-      "post": 7700.0,
-      "diff": 7700.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 0.0,
-      "post": 7800.0,
-      "diff": 7800.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 1820.0,
-      "diff": 1820.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 153.0,
+       "diff": 153.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 7700.0,
+       "diff": 7700.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 7800.0,
+       "diff": 7800.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 1820.0,
+       "diff": 1820.0
+      }
+     ],
+     "country": "Bangladesh"
+    }
+   ]
   },
   {
    "date": "2026-04-03",
-   "title": "Senegal: Cotton and Products Annual",
+   "title": "West Africa (Mali, Burkina Faso, Senegal): Cotton and Products Annual",
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Annual_Dakar_Senegal_SG2026-0002.pdf",
    "kind": "gain",
    "country": "Senegal",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 1.23m bales; exports 1.20m bales; mill use 25k bales; ending stocks 180k bales.",
-    "MY 2025/26, Post vs USDA: production 835k bales vs 820k bales; exports 1.04m bales vs 900k bales; ending stocks 179k bales vs 304k bales."
+    "Mali, Burkina Faso and Senegal together: area +8%, crop +27% as Mali recovers from jassids; doubt over whether Burkina's second ginner (SOCOMA) operates this season.",
+    "Mali: MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 1.23m bales; exports 1.20m bales; mill use 25k bales; ending stocks 180k bales.",
+    "Mali: MY 2025/26, Post vs USDA: production 835k bales vs 820k bales; exports 1.04m bales vs 900k bales; ending stocks 179k bales vs 304k bales.",
+    "Burkina: MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 660k bales; exports 634k bales; mill use 25k bales; ending stocks 25k bales.",
+    "Burkina: MY 2025/26, Post vs USDA: production 650k bales vs 635k bales; exports 625k bales vs 600k bales; ending stocks 24k bales vs 86k bales.",
+    "Senegal: MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 55k bales; exports 53k bales; mill use 2k bales; ending stocks 2k bales.",
+    "Senegal: MY 2025/26, Post vs USDA: exports 47k bales vs 45k bales; ending stocks 2k bales vs 13k bales."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 1230.0,
-      "diff": 1230.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 1204.0,
-      "diff": 1204.0
-     },
-     {
-      "line": "Imports",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 0.0,
-      "post": 25.0,
-      "diff": 25.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 180.0,
-      "diff": 180.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 1230.0,
+       "diff": 1230.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 1204.0,
+       "diff": 1204.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 25.0,
+       "diff": 25.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 180.0,
+       "diff": 180.0
+      }
+     ],
+     "country": "Mali"
+    },
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 660.0,
+       "diff": 660.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 634.0,
+       "diff": 634.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 25.0,
+       "diff": 25.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 25.0,
+       "diff": 25.0
+      }
+     ],
+     "country": "Burkina"
+    },
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 55.0,
+       "diff": 55.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 53.0,
+       "diff": 53.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 2.0,
+       "diff": 2.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 2.0,
+       "diff": 2.0
+      }
+     ],
+     "country": "Senegal"
+    }
+   ]
   },
   {
    "date": "2026-04-03",
@@ -648,45 +1003,49 @@
    "country": "Mexico",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 657k bales; exports 110k bales; imports 750k bales; mill use 1.30m bales; ending stocks 77k bales.",
+    "Chihuahua growers returning to cotton lifts area ~12%; output still near historic lows, mill use flat against synthetics and Asian yarn.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 657k bales; exports 110k bales; imports 750k bales; mill use 1.30m bales; ending stocks 77k bales.",
     "MY 2025/26, Post vs USDA: production 651k bales vs 565k bales; exports 110k bales vs 100k bales; ending stocks 104k bales vs 207k bales."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 657.0,
-      "diff": 657.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 110.0,
-      "diff": 110.0
-     },
-     {
-      "line": "Imports",
-      "usda": 0.0,
-      "post": 750.0,
-      "diff": 750.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 0.0,
-      "post": 1300.0,
-      "diff": 1300.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 77.0,
-      "diff": 77.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 657.0,
+       "diff": 657.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 110.0,
+       "diff": 110.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 750.0,
+       "diff": 750.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 1300.0,
+       "diff": 1300.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 77.0,
+       "diff": 77.0
+      }
+     ],
+     "country": "Mexico"
+    }
+   ]
   },
   {
    "date": "2026-04-03",
@@ -695,8 +1054,50 @@
    "kind": "gain",
    "country": "India",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "First 2026/27 view: area +3% to 11.5m ha on trade-deal optimism and a normal-monsoon assumption; crop seen +7% at 25.2m bales with mill use rising.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 25.20m bales; exports 1.20m bales; imports 3.00m bales; mill use 25.80m bales; ending stocks 12.31m bales.",
+    "MY 2025/26, Post vs USDA: production 23.80m bales vs 23.50m bales; exports 1.50m bales vs 1.40m bales; ending stocks 11.12m bales vs 10.31m bales."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 25200.0,
+       "diff": 25200.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 1200.0,
+       "diff": 1200.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 3000.0,
+       "diff": 3000.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 25800.0,
+       "diff": 25800.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 12315.0,
+       "diff": 12315.0
+      }
+     ],
+     "country": "India"
+    }
+   ]
   },
   {
    "date": "2026-04-02",
@@ -705,8 +1106,50 @@
    "kind": "gain",
    "country": "Pakistan",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Post assumes average yields on similar area, so a slightly smaller crop; weak textile demand, with imports filling the gap. Post thinks 28–30% of last crop went unreported because of the tax regime.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 5.05m bales; exports 50k bales; imports 5.20m bales; mill use 10.20m bales; ending stocks 2.25m bales.",
+    "MY 2025/26, Post vs USDA: production 5.30m bales vs 5.00m bales; ending stocks 2.25m bales vs 1.95m bales."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 5050.0,
+       "diff": 5050.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 50.0,
+       "diff": 50.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 5200.0,
+       "diff": 5200.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 10200.0,
+       "diff": 10200.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 2250.0,
+       "diff": 2250.0
+      }
+     ],
+     "country": "Pakistan"
+    }
+   ]
   },
   {
    "date": "2026-04-02",
@@ -716,44 +1159,48 @@
    "country": "Egypt",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 325k bales; exports 350k bales; imports 1.20m bales; mill use 1.20m bales; ending stocks 267k bales."
+    "Area seen up about a fifth to ~100,000 ha on Chinese and Indian demand for Egyptian ELS; freer seed-cotton auctions (no floor price) helped grower confidence.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 325k bales; exports 350k bales; imports 1.20m bales; mill use 1.20m bales; ending stocks 267k bales."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 325.0,
-      "diff": 325.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 350.0,
-      "diff": 350.0
-     },
-     {
-      "line": "Imports",
-      "usda": 0.0,
-      "post": 1200.0,
-      "diff": 1200.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 0.0,
-      "post": 1200.0,
-      "diff": 1200.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 267.0,
-      "diff": 267.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 325.0,
+       "diff": 325.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 350.0,
+       "diff": 350.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 1200.0,
+       "diff": 1200.0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 1200.0,
+       "diff": 1200.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 267.0,
+       "diff": 267.0
+      }
+     ],
+     "country": "Egypt"
+    }
+   ]
   },
   {
    "date": "2026-04-02",
@@ -763,45 +1210,49 @@
    "country": "Cote d'Ivoire",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 590k bales; exports 610k bales; mill use 10k bales; ending stocks 232k bales.",
+    "Crop recovering from the jassid damage of the last two seasons; Post sees lint up ~4–5% to 590k bales, still below the 2024/25 level.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 590k bales; exports 610k bales; mill use 10k bales; ending stocks 232k bales.",
     "MY 2025/26, Post vs USDA: production 565k bales vs 560k bales; exports 555k bales vs 550k bales; ending stocks 262k bales vs 253k bales."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 590.0,
-      "diff": 590.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 610.0,
-      "diff": 610.0
-     },
-     {
-      "line": "Imports",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 0.0,
-      "post": 10.0,
-      "diff": 10.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 232.0,
-      "diff": 232.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 590.0,
+       "diff": 590.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 610.0,
+       "diff": 610.0
+      },
+      {
+       "line": "Imports",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Mill use",
+       "usda": 0,
+       "post": 10.0,
+       "diff": 10.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 232.0,
+       "diff": 232.0
+      }
+     ],
+     "country": "Cote d'Ivoire"
+    }
+   ]
   }
  ],
  "window_start": "2026-04-01",
@@ -823,9 +1274,9 @@
      },
      {
       "line": "Exports",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
+      "usda": 0,
+      "post": 0,
+      "diff": 0
      },
      {
       "line": "Imports",
@@ -848,7 +1299,7 @@
     ]
    },
    {
-    "country": "Senegal",
+    "country": "Mali",
     "date": "2026-09-17",
     "report": "Cotton and Products Update",
     "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Dakar_Senegal_SG2026-0004.pdf",
@@ -868,9 +1319,9 @@
      },
      {
       "line": "Imports",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
+      "usda": 0,
+      "post": 0,
+      "diff": 0
      },
      {
       "line": "Mill use",
@@ -883,6 +1334,84 @@
       "usda": 314.0,
       "post": 179.0,
       "diff": -135.0
+     }
+    ]
+   },
+   {
+    "country": "Burkina Faso",
+    "date": "2026-09-17",
+    "report": "Cotton and Products Update",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Dakar_Senegal_SG2026-0004.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 635.0,
+      "post": 750.0,
+      "diff": 115.0
+     },
+     {
+      "line": "Exports",
+      "usda": 625.0,
+      "post": 725.0,
+      "diff": 100.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0,
+      "post": 0,
+      "diff": 0
+     },
+     {
+      "line": "Mill use",
+      "usda": 15.0,
+      "post": 25.0,
+      "diff": 10.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 81.0,
+      "post": 26.0,
+      "diff": -55.0
+     }
+    ]
+   },
+   {
+    "country": "Senegal",
+    "date": "2026-09-17",
+    "report": "Cotton and Products Update",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Dakar_Senegal_SG2026-0004.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 40.0,
+      "post": 70.0,
+      "diff": 30.0
+     },
+     {
+      "line": "Exports",
+      "usda": 40.0,
+      "post": 68.0,
+      "diff": 28.0
+     },
+     {
+      "line": "Imports",
+      "usda": 0,
+      "post": 0,
+      "diff": 0
+     },
+     {
+      "line": "Mill use",
+      "usda": 2.0,
+      "post": 2.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 21.0,
+      "post": 2.0,
+      "diff": -19.0
      }
     ]
    },
@@ -926,45 +1455,6 @@
     ]
    },
    {
-    "country": "Brazil",
-    "date": "2026-09-02",
-    "report": "Cotton and Products Update",
-    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Brasilia_Brazil_BR2026-0036.pdf",
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 18250.0,
-      "post": 18400.0,
-      "diff": 150.0
-     },
-     {
-      "line": "Exports",
-      "usda": 15300.0,
-      "post": 15500.0,
-      "diff": 200.0
-     },
-     {
-      "line": "Imports",
-      "usda": 5.0,
-      "post": 5.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Mill use",
-      "usda": 3400.0,
-      "post": 3400.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 3159.0,
-      "post": 3109.0,
-      "diff": -50.0
-     }
-    ]
-   },
-   {
     "country": "Pakistan",
     "date": "2026-09-02",
     "report": "Cotton and Products Update",
@@ -1004,41 +1494,80 @@
     ]
    },
    {
-    "country": "Mexico",
-    "date": "2026-08-27",
+    "country": "Brazil",
+    "date": "2026-09-02",
     "report": "Cotton and Products Update",
-    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Mexico%20City_Mexico_MX2026-0043.pdf",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Brasilia_Brazil_BR2026-0036.pdf",
     "my": "2026/27",
     "rows": [
      {
       "line": "Production",
-      "usda": 650.0,
-      "post": 869.0,
-      "diff": 219.0
+      "usda": 18250.0,
+      "post": 18400.0,
+      "diff": 150.0
      },
      {
       "line": "Exports",
-      "usda": 100.0,
-      "post": 120.0,
-      "diff": 20.0
+      "usda": 15300.0,
+      "post": 15500.0,
+      "diff": 200.0
      },
      {
       "line": "Imports",
-      "usda": 650.0,
-      "post": 600.0,
-      "diff": -50.0
+      "usda": 5.0,
+      "post": 5.0,
+      "diff": 0.0
      },
      {
       "line": "Mill use",
-      "usda": 1200.0,
-      "post": 1300.0,
-      "diff": 100.0
+      "usda": 3400.0,
+      "post": 3400.0,
+      "diff": 0.0
      },
      {
       "line": "Ending stocks",
-      "usda": 177.0,
-      "post": 133.0,
-      "diff": -44.0
+      "usda": 3159.0,
+      "post": 3109.0,
+      "diff": -50.0
+     }
+    ]
+   },
+   {
+    "country": "Turkey",
+    "date": "2026-09-02",
+    "report": "Cotton and Products Update",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Ankara_Turkiye_TU2026-0021.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 2650.0,
+      "post": 2274.0,
+      "diff": -376.0
+     },
+     {
+      "line": "Exports",
+      "usda": 600.0,
+      "post": 919.0,
+      "diff": 319.0
+     },
+     {
+      "line": "Imports",
+      "usda": 4800.0,
+      "post": 5052.0,
+      "diff": 252.0
+     },
+     {
+      "line": "Mill use",
+      "usda": 6800.0,
+      "post": 6889.0,
+      "diff": 89.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 1132.0,
+      "post": 1688.0,
+      "diff": 556.0
      }
     ]
    },
@@ -1082,6 +1611,45 @@
     ]
    },
    {
+    "country": "Mexico",
+    "date": "2026-08-27",
+    "report": "Cotton and Products Update",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Mexico%20City_Mexico_MX2026-0043.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 650.0,
+      "post": 869.0,
+      "diff": 219.0
+     },
+     {
+      "line": "Exports",
+      "usda": 100.0,
+      "post": 120.0,
+      "diff": 20.0
+     },
+     {
+      "line": "Imports",
+      "usda": 650.0,
+      "post": 600.0,
+      "diff": -50.0
+     },
+     {
+      "line": "Mill use",
+      "usda": 1200.0,
+      "post": 1300.0,
+      "diff": 100.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 177.0,
+      "post": 133.0,
+      "diff": -44.0
+     }
+    ]
+   },
+   {
     "country": "Indonesia",
     "date": "2026-04-24",
     "report": "Cotton and Products Annual",
@@ -1090,33 +1658,72 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 2.0,
       "diff": 2.0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 25.0,
       "diff": 25.0
      },
      {
       "line": "Imports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1900.0,
       "diff": 1900.0
      },
      {
       "line": "Mill use",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1900.0,
       "diff": 1900.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 435.0,
       "diff": 435.0
+     }
+    ]
+   },
+   {
+    "country": "Vietnam",
+    "date": "2026-04-13",
+    "report": "Cotton and Products Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Annual_Ho%20Chi%20Minh%20City_Vietnam_VM2026-0009.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0,
+      "post": 0,
+      "diff": 0
+     },
+     {
+      "line": "Exports",
+      "usda": 0,
+      "post": 0,
+      "diff": 0
+     },
+     {
+      "line": "Imports",
+      "usda": 0,
+      "post": 8400.0,
+      "diff": 8400.0
+     },
+     {
+      "line": "Mill use",
+      "usda": 0,
+      "post": 8000.0,
+      "diff": 8000.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0,
+      "post": 1313.0,
+      "diff": 1313.0
      }
     ]
    },
@@ -1129,31 +1736,31 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 325.0,
       "diff": 325.0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 350.0,
       "diff": 350.0
      },
      {
       "line": "Imports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1200.0,
       "diff": 1200.0
      },
      {
       "line": "Mill use",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1200.0,
       "diff": 1200.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 267.0,
       "diff": 267.0
      }
@@ -1168,31 +1775,31 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 590.0,
       "diff": 590.0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 610.0,
       "diff": 610.0
      },
      {
       "line": "Imports",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
+      "usda": 0,
+      "post": 0,
+      "diff": 0
      },
      {
       "line": "Mill use",
-      "usda": 0.0,
+      "usda": 0,
       "post": 10.0,
       "diff": 10.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 232.0,
       "diff": 232.0
      }
@@ -1200,5 +1807,5 @@
    }
   ]
  },
- "built": "2026-11-18 17:54 UTC"
+ "built": "2026-11-18 18:05 UTC"
 }

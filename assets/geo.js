@@ -2,7 +2,7 @@
 // crop-region weather vs history, US drought, and weather websites. Geo.mount(el, ['corn']) or several keys (picker).
 const Geo = (() => {
   const LIB = ['https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js', 'https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js'];
-  let libs = null, world = null, us = null, WX = null, WE = null, WW = null;
+  let libs = null, world = null, us = null, WX = null, WE = null, WW = null, HC = null;
   const cache = {};
   const load = src => new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = no; document.head.appendChild(s); });
   async function ready() {
@@ -13,6 +13,7 @@ const Geo = (() => {
     if (!WX) WX = await getJSON('data/geo/weather.json').catch(() => ({ regions: [] }));
     if (!WE) WE = await getJSON('data/geo/wx_ensemble.json').catch(() => ({ regions: {} }));
     if (!WW) WW = await getJSON('data/geo/weighted.json').catch(() => ({ commodities: {} }));
+    if (!HC) HC = await getJSON('data/geo/harvest_calendar.json').catch(() => ({}));
   }
   const n0 = v => v == null ? '–' : Math.round(v).toLocaleString();
   const n1 = v => v == null ? '–' : (+v).toLocaleString(undefined, { maximumFractionDigits: 1 });
@@ -197,6 +198,23 @@ const Geo = (() => {
           <p class="note">USDA estimate ${G.my}/${String(G.my + 1).slice(2)} — production: ${cmp(c.production)}${c.yield ? `; yield (${yu}): ${cmp(c.yield)}` : ''}</p>
           ${bars(c.yield)}${c.yield ? '<span class="note"> yield, last 10 years</span>' : ''}</div>`; }).join('')}</div></div>`;
   }
+  // Harvest calendar by origin (data/geo/harvest_calendar.json, hand-kept with sources): harvest window, peak darker.
+  function harvestCard(key, now) {
+    const R = HC && HC[key];
+    if (!R || !R.length) return '';
+    const M = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+    const inW = (m, w) => !!w && (w[0] <= w[1] ? m >= w[0] && m <= w[1] : m >= w[0] || m <= w[1]);
+    const mn = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const srcs = [...new Map(R.flatMap(r => r.sources || []).map(x => [x.name, x])).values()];
+    const what = { coffee: 'harvest', sugar: 'crush / campaign', cotton: 'harvest' }[key] || 'harvest';
+    return `<div class="card" style="margin-top:12px"><h2>Harvest calendar by origin <span class="note">typical ${what} months; darker = peak</span></h2>
+      <div class="tbl"><table class="geo-cal hv-cal"><tr><th class="l">Origin</th><th class="l">Region</th><th class="l">Crop</th>${M.map((m, i) => `<th class="${i + 1 === now ? 'geo-now' : ''}">${m}</th>`).join('')}<th class="l">Window</th><th class="l">Note</th></tr>
+      ${R.map(r => `<tr><td class="l"><b>${r.country}</b></td><td class="l">${r.region}</td><td class="l">${r.type}</td>
+        ${M.map((_, i) => { const pk = inW(i + 1, r.peak), h = inW(i + 1, r.harvest);
+          return `<td class="geo-cell ${i + 1 === now ? 'geo-now' : ''}" style="${h ? `background:${pk ? '#8a5a24' : '#d9b77e'}` : ''}" title="${h ? (pk ? 'peak' : 'harvest') : ''}"></td>`; }).join('')}
+        <td class="l" style="white-space:nowrap">${mn[r.harvest[0]]}–${mn[r.harvest[1]]}</td><td class="l note">${r.note || ''}</td></tr>`).join('')}</table></div>
+      <p class="note"><span class="geo-key"><i style="background:#d9b77e;height:10px"></i>${what}</span><span class="geo-key"><i style="background:#8a5a24;height:10px"></i>peak</span> Column with the border = this month. Typical windows; each season moves a few weeks with the weather. Sources: ${srcs.map(x => `<a href="${x.url}" target="_blank" rel="noopener">${x.name}</a>`).join('; ')}. Updated ${HC.updated || ''}.</p></div>`;
+  }
   async function render(el, key) {
     el.innerHTML = '<p class="note">Loading maps…</p>';
     try { await ready(); } catch (e) { el.innerHTML = '<p class="note">Map libraries could not load.</p>'; return; }
@@ -215,6 +233,7 @@ const Geo = (() => {
         <div class="tbl"><table><tr><th class="l">Country</th><th>Production</th><th>Share</th><th>vs last yr</th><th>vs 5-yr avg</th></tr>
         ${G.production.map(p => `<tr class="${p.mapped ? '' : 'note'}"><td class="l">${p.mapped ? '<b>' + p.country + '</b>' : p.country}</td><td>${n1(p.value)}</td><td>${p.share}%</td><td class="${cls(p.value - p.prev)}">${pct(p.value, p.prev)}</td><td class="${cls(p.value - p.avg5)}">${pct(p.value, p.avg5)}</td></tr>`).join('')}</table></div></div></div></div>
       ${calendarCard(G)}
+      ${harvestCard(key, G.month)}
       ${G.us_states ? `<div class="card" style="margin-top:12px"><h2>United States by state <span class="note">USDA NASS ${G.us_states.year}: ${G.us_states.what.toLowerCase()}</span></h2>
         <div class="geo-wrap"><svg class="geo-map" id="geoU"></svg><div class="tbl"><table><tr><th class="l">State</th><th>${G.us_states.unit.toLowerCase()}</th><th>Share</th></tr>
         ${G.us_states.states.slice(0, 12).map(s => `<tr><td class="l">${s.state}</td><td>${n0(s.value)}</td><td>${s.share}%</td></tr>`).join('')}</table></div></div></div>` : ''}

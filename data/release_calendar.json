@@ -1842,6 +1842,28 @@
     "file": "intel.yml"
    },
    "manual": false
+  },
+  {
+   "id": "usda_reports",
+   "status_source": "Reports: USDA attaché (GAIN), World Markets and Trade, ERS outlook (last full check)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Cotton / Coffee / Sugar > Reports (USDA)",
+   "report": "USDA FAS GAIN attaché reports; FAS World Markets and Trade (cotton monthly, coffee Jun/Dec, sugar May/Nov); ERS Cotton and Wool / Sugar and Sweeteners Outlook",
+   "publisher": "USDA FAS / ERS",
+   "release_et": "GAIN posts every business day; desk checks weekdays 15:40 ET (catch-up 18:25 ET)",
+   "release": {
+    "type": "business_daily",
+    "time": "15:40",
+    "data_offset_bd": 0,
+    "calendar": "federal"
+   },
+   "late_after_hours": 6,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "usda_reports.yml"
+   },
+   "manual": false
   }
  ]
 }

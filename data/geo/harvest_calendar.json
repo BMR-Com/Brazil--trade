@@ -1,0 +1,1049 @@
+{
+ "about": "Typical harvest windows by origin (months, start-end, wrapping over the year end). Timing moves a few weeks with each season. Hand-maintained; each row names its public sources. Rendered on the Where it's grown tab (assets/geo.js harvestCard).",
+ "updated": "2026-11-18",
+ "coffee": [
+  {
+   "country": "Brazil",
+   "region": "Espírito Santo, Rondônia",
+   "type": "Robusta (conilon)",
+   "harvest": [
+    3,
+    7
+   ],
+   "peak": [
+    4,
+    6
+   ],
+   "note": "picked first; ES conilon almost all irrigated",
+   "sources": [
+    {
+     "name": "Sucafina, Brazil origin page and 2026/27 harvest updates",
+     "url": "https://sucafina.com/na/origins/brazil?offerlistmode=0"
+    }
+   ]
+  },
+  {
+   "country": "Brazil",
+   "region": "South Minas, Mogiana, Matas de Minas",
+   "type": "Arabica",
+   "harvest": [
+    4,
+    9
+   ],
+   "peak": [
+    6,
+    8
+   ],
+   "note": "2026 picking ran late after May–June rain",
+   "sources": [
+    {
+     "name": "Sucafina, Brazil origin page and 2026/27 harvest updates",
+     "url": "https://sucafina.com/na/origins/brazil?offerlistmode=0"
+    }
+   ]
+  },
+  {
+   "country": "Brazil",
+   "region": "Cerrado Mineiro",
+   "type": "Arabica",
+   "harvest": [
+    5,
+    9
+   ],
+   "peak": [
+    6,
+    8
+   ],
+   "note": "machine-picked",
+   "sources": [
+    {
+     "name": "Sucafina, Brazil origin page and 2026/27 harvest updates",
+     "url": "https://sucafina.com/na/origins/brazil?offerlistmode=0"
+    }
+   ]
+  },
+  {
+   "country": "Vietnam",
+   "region": "Central Highlands (Dak Lak, Gia Lai, Dak Nong)",
+   "type": "Robusta",
+   "harvest": [
+    11,
+    1
+   ],
+   "peak": [
+    11,
+    12
+   ],
+   "note": "Lam Dong runs from late Nov into early Feb",
+   "sources": [
+    {
+     "name": "Sucafina, Vietnam 2026/27 harvest update (Nov 2026)",
+     "url": "https://sucafina.com/na/news"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Vietnam",
+   "region": "North (Son La)",
+   "type": "Arabica",
+   "harvest": [
+    9,
+    12
+   ],
+   "peak": null,
+   "note": "",
+   "sources": [
+    {
+     "name": "Sucafina, Vietnam 2026/27 harvest update (Nov 2026)",
+     "url": "https://sucafina.com/na/news"
+    }
+   ]
+  },
+  {
+   "country": "Colombia",
+   "region": "All regions",
+   "type": "Arabica, main crop",
+   "harvest": [
+    10,
+    1
+   ],
+   "peak": [
+    11,
+    12
+   ],
+   "note": "most volume by December",
+   "sources": [
+    {
+     "name": "Sucafina, Colombia mitaca and main-crop updates (2026)",
+     "url": "https://sucafina.com/na/news/colombia-2026-harvest-update"
+    }
+   ]
+  },
+  {
+   "country": "Colombia",
+   "region": "All regions",
+   "type": "Arabica, mitaca",
+   "harvest": [
+    4,
+    7
+   ],
+   "peak": [
+    5,
+    6
+   ],
+   "note": "lower altitudes first; high zones into Sep",
+   "sources": [
+    {
+     "name": "Sucafina, Colombia mitaca and main-crop updates (2026)",
+     "url": "https://sucafina.com/na/news/colombia-2026-harvest-update"
+    }
+   ]
+  },
+  {
+   "country": "Indonesia",
+   "region": "South Sumatra, Lampung, Java",
+   "type": "Robusta",
+   "harvest": [
+    4,
+    8
+   ],
+   "peak": [
+    5,
+    7
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "Sucafina, Indonesia & Timor-Leste update (Jul 2026)",
+     "url": "https://sucafina.com/na/news"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Indonesia",
+   "region": "Aceh, North Sumatra",
+   "type": "Arabica",
+   "harvest": [
+    9,
+    3
+   ],
+   "peak": null,
+   "note": "Sumatra arabica runs into Q1",
+   "sources": [
+    {
+     "name": "Sucafina, Indonesia & Timor-Leste update (Jul 2026)",
+     "url": "https://sucafina.com/na/news"
+    }
+   ]
+  },
+  {
+   "country": "Honduras",
+   "region": "All regions",
+   "type": "Arabica",
+   "harvest": [
+    11,
+    4
+   ],
+   "peak": [
+    12,
+    2
+   ],
+   "note": "Central America peaks Dec–Feb",
+   "sources": [
+    {
+     "name": "Sucafina, Honduras origin page",
+     "url": "https://sucafina.com/na/origins/honduras"
+    }
+   ]
+  },
+  {
+   "country": "Guatemala",
+   "region": "All regions",
+   "type": "Arabica",
+   "harvest": [
+    11,
+    3
+   ],
+   "peak": [
+    12,
+    2
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Mexico",
+   "region": "Chiapas, Veracruz, Oaxaca",
+   "type": "Arabica (some robusta)",
+   "harvest": [
+    11,
+    3
+   ],
+   "peak": [
+    12,
+    2
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Nicaragua",
+   "region": "All regions",
+   "type": "Arabica",
+   "harvest": [
+    11,
+    3
+   ],
+   "peak": [
+    12,
+    2
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Costa Rica",
+   "region": "All regions",
+   "type": "Arabica",
+   "harvest": [
+    10,
+    3
+   ],
+   "peak": [
+    12,
+    1
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "El Salvador",
+   "region": "All regions",
+   "type": "Arabica",
+   "harvest": [
+    11,
+    3
+   ],
+   "peak": [
+    12,
+    2
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Peru",
+   "region": "Cajamarca, Junín, San Martín",
+   "type": "Arabica",
+   "harvest": [
+    4,
+    9
+   ],
+   "peak": [
+    5,
+    8
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "Sucafina, Peru harvest update (Jun 2026)",
+     "url": "https://sucafina.com/na/news"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Ethiopia",
+   "region": "All regions",
+   "type": "Arabica",
+   "harvest": [
+    10,
+    1
+   ],
+   "peak": [
+    11,
+    12
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Uganda",
+   "region": "Central and south-west",
+   "type": "Robusta",
+   "harvest": [
+    10,
+    2
+   ],
+   "peak": null,
+   "note": "south-west/Masaka also picks a crop around May–Aug; 2026 main harvest 4–6 weeks late",
+   "sources": [
+    {
+     "name": "Sucafina, East Africa mid-year update (Jun 2026)",
+     "url": "https://sucafina.com/na/news"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Uganda",
+   "region": "Mt Elgon",
+   "type": "Arabica",
+   "harvest": [
+    8,
+    12
+   ],
+   "peak": null,
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Kenya",
+   "region": "Central (Kiambu, Kirinyaga, Nyeri)",
+   "type": "Arabica, main crop",
+   "harvest": [
+    10,
+    12
+   ],
+   "peak": [
+    11,
+    12
+   ],
+   "note": "early (fly) crop Apr–Jun",
+   "sources": [
+    {
+     "name": "Sucafina, Kenya – Tanzania update (Oct 2026)",
+     "url": "https://sucafina.com/na/news"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Tanzania",
+   "region": "North and south highlands",
+   "type": "Arabica",
+   "harvest": [
+    7,
+    12
+   ],
+   "peak": null,
+   "note": "",
+   "sources": [
+    {
+     "name": "Sucafina, Tanzania update (Aug 2026)",
+     "url": "https://sucafina.com/na/news"
+    }
+   ]
+  },
+  {
+   "country": "Tanzania",
+   "region": "Kagera",
+   "type": "Robusta",
+   "harvest": [
+    5,
+    9
+   ],
+   "peak": null,
+   "note": "",
+   "sources": [
+    {
+     "name": "Sucafina, Tanzania update (Aug 2026)",
+     "url": "https://sucafina.com/na/news"
+    }
+   ]
+  },
+  {
+   "country": "India",
+   "region": "Karnataka, Kerala, Tamil Nadu",
+   "type": "Arabica / robusta",
+   "harvest": [
+    11,
+    2
+   ],
+   "peak": [
+    12,
+    1
+   ],
+   "note": "arabica first (Nov–Jan), robusta Dec–Feb",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) coffee reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Papua New Guinea",
+   "region": "Highlands",
+   "type": "Arabica",
+   "harvest": [
+    4,
+    9
+   ],
+   "peak": [
+    5,
+    7
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "CIC Papua New Guinea",
+     "url": "https://www.cic.org.pg/"
+    }
+   ]
+  },
+  {
+   "country": "Burundi, Rwanda",
+   "region": "All regions",
+   "type": "Arabica",
+   "harvest": [
+    3,
+    7
+   ],
+   "peak": [
+    4,
+    5
+   ],
+   "note": "Burundi started ~10 March in 2026",
+   "sources": [
+    {
+     "name": "Sucafina, Burundi and Rwanda update (Feb 2026)",
+     "url": "https://sucafina.com/na/news"
+    }
+   ]
+  }
+ ],
+ "sugar": [
+  {
+   "country": "Brazil",
+   "region": "Centre-South",
+   "type": "Cane crush",
+   "harvest": [
+    4,
+    11
+   ],
+   "peak": [
+    6,
+    9
+   ],
+   "note": "rain stops crushing; some mills run into Dec",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    },
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  },
+  {
+   "country": "Brazil",
+   "region": "North-Northeast",
+   "type": "Cane crush",
+   "harvest": [
+    9,
+    3
+   ],
+   "peak": null,
+   "note": "2026/27 harvest began in September",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "India",
+   "region": "Uttar Pradesh",
+   "type": "Cane crush",
+   "harvest": [
+    10,
+    4
+   ],
+   "peak": [
+    12,
+    3
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    },
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  },
+  {
+   "country": "India",
+   "region": "Maharashtra, Karnataka",
+   "type": "Cane crush",
+   "harvest": [
+    11,
+    4
+   ],
+   "peak": [
+    12,
+    3
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    },
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  },
+  {
+   "country": "Thailand",
+   "region": "North-east, central",
+   "type": "Cane crush",
+   "harvest": [
+    12,
+    4
+   ],
+   "peak": [
+    1,
+    3
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    },
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  },
+  {
+   "country": "European Union",
+   "region": "France, Germany, Poland",
+   "type": "Beet campaign",
+   "harvest": [
+    9,
+    1
+   ],
+   "peak": [
+    10,
+    12
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    },
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  },
+  {
+   "country": "China",
+   "region": "Guangxi, Yunnan",
+   "type": "Cane crush",
+   "harvest": [
+    11,
+    4
+   ],
+   "peak": [
+    12,
+    3
+   ],
+   "note": "beet (Inner Mongolia, Xinjiang) Sep–Jan",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    },
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  },
+  {
+   "country": "Mexico",
+   "region": "Veracruz, Jalisco, San Luis Potosí",
+   "type": "Cane crush (zafra)",
+   "harvest": [
+    11,
+    6
+   ],
+   "peak": [
+    1,
+    4
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Australia",
+   "region": "Queensland",
+   "type": "Cane crush",
+   "harvest": [
+    6,
+    11
+   ],
+   "peak": [
+    7,
+    10
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    },
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  },
+  {
+   "country": "Pakistan",
+   "region": "Punjab, Sindh",
+   "type": "Cane crush",
+   "harvest": [
+    11,
+    3
+   ],
+   "peak": [
+    12,
+    2
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Philippines",
+   "region": "Negros",
+   "type": "Cane milling",
+   "harvest": [
+    9,
+    5
+   ],
+   "peak": [
+    11,
+    3
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Indonesia",
+   "region": "East and Central Java",
+   "type": "Cane milling",
+   "harvest": [
+    5,
+    10
+   ],
+   "peak": [
+    6,
+    9
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) sugar reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Russia",
+   "region": "Central, Volga, south",
+   "type": "Beet campaign",
+   "harvest": [
+    8,
+    1
+   ],
+   "peak": [
+    9,
+    11
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  }
+ ],
+ "cotton": [
+  {
+   "country": "United States",
+   "region": "Texas, Delta, Southeast, West",
+   "type": "Harvest",
+   "harvest": [
+    8,
+    12
+   ],
+   "peak": [
+    10,
+    11
+   ],
+   "note": "Rio Grande Valley from late July",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    }
+   ]
+  },
+  {
+   "country": "China",
+   "region": "Xinjiang",
+   "type": "Harvest",
+   "harvest": [
+    9,
+    11
+   ],
+   "peak": [
+    9,
+    10
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "India",
+   "region": "Gujarat, Maharashtra, Telangana",
+   "type": "Picking and arrivals",
+   "harvest": [
+    10,
+    3
+   ],
+   "peak": [
+    11,
+    1
+   ],
+   "note": "north (irrigated) from late Sep",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Brazil",
+   "region": "Mato Grosso, Bahia",
+   "type": "Harvest",
+   "harvest": [
+    6,
+    9
+   ],
+   "peak": [
+    7,
+    8
+   ],
+   "note": "export season Aug–Jan",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Pakistan",
+   "region": "Punjab, Sindh",
+   "type": "Picking",
+   "harvest": [
+    8,
+    12
+   ],
+   "peak": [
+    9,
+    11
+   ],
+   "note": "Sindh from July",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Australia",
+   "region": "NSW, Queensland",
+   "type": "Picking",
+   "harvest": [
+    3,
+    6
+   ],
+   "peak": [
+    4,
+    5
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Uzbekistan",
+   "region": "All regions",
+   "type": "Harvest",
+   "harvest": [
+    9,
+    11
+   ],
+   "peak": [
+    9,
+    10
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Turkey",
+   "region": "Southeast (Şanlıurfa), Aegean",
+   "type": "Harvest",
+   "harvest": [
+    9,
+    11
+   ],
+   "peak": [
+    9,
+    10
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "West Africa",
+   "region": "Mali, Burkina Faso, Côte d'Ivoire, Benin",
+   "type": "Seed-cotton harvest",
+   "harvest": [
+    10,
+    1
+   ],
+   "peak": [
+    11,
+    12
+   ],
+   "note": "ginning and exports run into mid-year",
+   "sources": [
+    {
+     "name": "USDA FAS IPAD crop calendars",
+     "url": "https://ipad.fas.usda.gov/ogamaps/cropcalendar.aspx"
+    },
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Mexico",
+   "region": "Chihuahua",
+   "type": "Harvest",
+   "harvest": [
+    9,
+    12
+   ],
+   "peak": [
+    10,
+    11
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  },
+  {
+   "country": "Egypt",
+   "region": "Delta",
+   "type": "Harvest",
+   "harvest": [
+    9,
+    11
+   ],
+   "peak": [
+    9,
+    10
+   ],
+   "note": "",
+   "sources": [
+    {
+     "name": "USDA FAS attaché (GAIN) cotton reports",
+     "url": "https://gain.fas.usda.gov/"
+    }
+   ]
+  }
+ ]
+}

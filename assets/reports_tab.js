@@ -1,14 +1,14 @@
-// Reports tab (coffee, sugar) and the Spreads & arbs table.
-// Reports: data/{coffee,sugar}/reports/*.json, short own-words key points per source (current crop / marketing year only).
+// Reports tab (cotton, coffee, sugar) and the Spreads & arbs table.
+// Reports: data/{cotton,coffee,sugar}/reports/*.json (usda.json from models/usda_reports.py), short own-words key points per source (current crop / marketing year only).
 // Spreads & arbs: data/markets/spread_tables.json built daily by models/softs_spread_tables.py from the desk's settlements.
 const ReportsView = (() => {
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const lk = (u, t) => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t);
   const dt = d => d ? new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '–';
   const sg = (v, d = 1) => v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(d);
-  const SRC = { coffee: ['sucden', 'sucafina', 'stonex', 'cic_png', 'rabobank'], sugar: ['edfman', 'sucden_technicals'] };
+  const SRC = { cotton: ['usda'], coffee: ['usda', 'sucden', 'sucafina', 'stonex', 'cic_png', 'rabobank'], sugar: ['usda', 'edfman', 'sucden_technicals'] };
   const get = (m, s) => getJSON(`data/${m}/reports/${s}.json`).catch(() => null);
-  const entries = (E, n) => (E || []).slice(0, n).map(e => `<div style="margin:8px 0 10px"><div><b>${lk(e.url, e.title)}</b> <span class="note">· ${dt(e.date)}${e.tag ? ' · ' + esc(e.tag) : ''}</span></div>
+  const entries = (E, n) => (E || []).slice(0, n).map(e => `<div style="margin:8px 0 10px"><div><b>${lk(e.url, e.title)}</b> <span class="note">· ${dt(e.date)}${e.tag ? ' · ' + esc(e.tag) : ''}${e.auto ? ' · numbers only, summary pending' : ''}</span></div>
       ${(e.key_points || []).length ? `<ul style="margin:4px 0 0 18px;padding:0">${e.key_points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}</div>`).join('');
   const head = (D, extra = '') => `<h2>${lk(D.home, D.name)}</h2><p class="note">Read ${esc(D.cadence)}. Showing ${D.window_start ? 'items from ' + dt(D.window_start) + ' (current crop / marketing year)' : 'latest items'}.${extra}</p>`;
 
@@ -44,13 +44,35 @@ const ReportsView = (() => {
       <h3>Key points</h3>${entries(E.filter(e => (e.key_points || []).length), 4)}</div>`;
   }
 
+  // USDA: attaché (GAIN) reports, World Markets and Trade, ERS outlook. Summary = latest attaché report per country, Post vs USDA official.
+  function usda(D, market) {
+    const E = D.entries || [], S = D.summary || {}, R = S.rows || [];
+    const k = v => v == null ? '–' : Math.round(v).toLocaleString('en-US');
+    const dcell = (r, line) => { const x = (r.rows || []).find(y => y.line === line); if (!x) return '<td class="n note">–</td><td class="n note">–</td>';
+      const first = (r.rows || []).every(y => !y.usda), dd = Math.round(x.diff);
+      const off = first ? '<span class="note">no official</span>' : (dd > 0 ? '+' : dd < 0 ? '−' : '') + Math.abs(dd).toLocaleString('en-US');
+      return `<td class="n">${k(x.post)}</td><td class="n ${!first && dd ? (dd > 0 ? 'up' : 'dn') : ''}">${off}</td>`; };
+    const lines = market === 'cotton' ? ['Production', 'Exports', 'Imports', 'Ending stocks'] : market === 'coffee' ? ['Production', 'Exports', 'Ending stocks'] : ['Production', 'Exports', 'Imports', 'Ending stocks'];
+    const tbl = R.length ? `<div class="tbl"><table><tr><th class="l" rowspan="2">Country</th><th class="l" rowspan="2">Latest report</th><th class="l" rowspan="2">MY</th>${lines.map(l => `<th colspan="2">${l}</th>`).join('')}</tr>
+      <tr>${lines.map(() => '<th>Post</th><th>vs USDA</th>').join('')}</tr>
+      ${R.map(r => `<tr><td class="l"><b>${esc(r.country)}</b></td><td class="l" style="white-space:nowrap">${lk(r.url, r.report.replace(/^(Cotton and Products|Coffee|Sugar)\s+/i, '') || r.report)} <span class="note">${dt(r.date)}</span></td><td class="l">${esc(r.my)}</td>${lines.map(l => dcell(r, l)).join('')}</tr>`).join('')}</table></div>
+      <p class="note">${esc(S.unit)}. "vs USDA" = Post minus the USDA official number printed in the same report; "no official" = Post's first forecast for a year USDA had not yet projected. Attaché numbers are not official USDA estimates.</p>` : '<p class="note">No attaché reports with a supply table in the current window yet.</p>';
+    const top = E.filter(e => e.kind !== 'gain'), gain = E.filter(e => e.kind === 'gain');
+    return `<div class="card">${head(D)}<p class="note">${esc(D.note)}</p>
+      <h3>Attaché (Post) vs USDA official, latest report per country</h3>${tbl}
+      <h3>World Markets and Trade and ERS outlook</h3>${entries(top, 12) || '<p class="note">No issues in the current window.</p>'}
+      <h3>Attaché reports (newest first)</h3>${entries(gain, 8) || '<p class="note">None in the current window.</p>'}
+      ${gain.length > 8 ? `<details><summary><b>Older attaché reports (${gain.length - 8})</b></summary>${entries(gain.slice(8), 99)}</details>` : ''}</div>`;
+  }
+
   async function mount(el, market) {
     const L = await Promise.all(SRC[market].map(s => get(market, s)));
     const parts = SRC[market].map((s, i) => { const D = L[i]; if (!D) return '';
       if (s === 'sucden') return sucden(D);
       if (s === 'cic_png') return cic(D);
+      if (s === 'usda') return usda(D, market);
       return `<div class="card">${head(D, D.sugar_line ? ' Sugar: ' + esc(D.sugar_line) : '')}${D.note ? `<p class="note">${esc(D.note)}</p>` : ''}${entries(D.entries, 16) || '<p class="note">No items in the current window.</p>'}</div>`; });
-    el.innerHTML = `<div class="card"><p class="note" style="margin:0">Short summaries in the desk's own words of free research from each source, current ${market === 'coffee' ? 'coffee crop year' : 'Centre-South season'} only, with links to the originals. Numbers are the publishers' and are attributed; nothing here is a recommendation.</p></div>`
+    el.innerHTML = `<div class="card"><p class="note" style="margin:0">Short summaries in the desk's own words of free research from each source and of USDA reports, current ${market === 'coffee' ? 'coffee crop year' : market === 'cotton' ? 'cotton marketing year (from the April attaché annuals)' : 'Centre-South season'} only, with links to the originals. Numbers are the publishers' and are attributed; nothing here is a recommendation.</p></div>`
       + parts.filter(Boolean).map(p => `<div style="margin-top:12px">${p}</div>`).join('');
   }
   return { mount };

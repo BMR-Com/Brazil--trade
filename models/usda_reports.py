@@ -31,7 +31,7 @@ import subprocess
 import sys
 import tempfile
 import time
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 
 import requests
 
@@ -53,21 +53,21 @@ MARKETS = {
     "cotton": {"cat": 25, "word": r"cotton", "label": "Cotton",
                "countries": ["China", "India", "Pakistan", "Bangladesh", "Vietnam", "Turkey", "Brazil", "Australia", "Uzbekistan",
                              "Indonesia", "Egypt", "Mexico"] + WEST_AFRICA,
-               "types": r"^Cotton and Products (Annual|Update)", "table": r"^\s*Cotton\b",
+               "types": r"^Cotton and Products (Annual|Update)", "table": r"\bCotton\b",
                "lines": [("Production", r"^Production"), ("Exports", r"^Exports"), ("Imports", r"^Imports"),
                          ("Mill use", r"^Domestic Use(?! and)"), ("Ending stocks", r"^Ending Stocks")],
                "unit": ("bales", 1000), "wmt": "cotton", "ers": ("Cotton and Wool Outlook", "cws")},
     "coffee": {"cat": 24, "word": r"coffee", "label": "Coffee",
                "countries": ["Brazil", "Vietnam", "Colombia", "Indonesia", "Ethiopia", "Uganda", "Kenya", "India", "Peru",
                              "European Union"] + CENTRAL_AMERICA,
-               "types": r"^Coffee (Annual|Semi-annual|Semi-Annual|.*Update)", "table": r"^\s*Coffee, Green",
+               "types": r"^Coffee (Annual|Semi-annual|Semi-Annual|.*Update)", "table": r"Coffee, Green",
                "lines": [("Production", r"^Total Production"), ("Arabica", r"^Arabica Production"), ("Robusta", r"^Robusta Production"),
                          ("Exports", r"^Total Exports"), ("Consumption", r"^Domestic Consumption"), ("Ending stocks", r"^Ending Stocks")],
                "unit": ("bags", 1000), "wmt": "coffee", "ers": None},
     "sugar": {"cat": 31, "word": r"sugar", "label": "Sugar",
               "countries": ["Brazil", "India", "Thailand", "European Union", "China", "Mexico", "Russia", "Pakistan", "Indonesia",
                             "Australia", "Philippines"],
-              "types": r"^Sugar (Annual|Semi-annual|Semi-Annual|.*Update)", "table": r"^\s*Sugar, Centrifugal",
+              "types": r"^Sugar (Annual|Semi-annual|Semi-Annual|.*Update)", "table": r"Sugar, Centrifugal",
               "lines": [("Production", r"^Total Sugar Production"), ("Exports", r"^Total Exports"), ("Imports", r"^Total Imports"),
                         ("Consumption", r"^Human Dom\. Consumption"), ("Ending stocks", r"^Ending Stocks")],
               "unit": ("t", 1000), "wmt": "sugar", "ers": ("Sugar and Sweeteners Outlook", "sss")},
@@ -90,7 +90,7 @@ def load(path, default):
 
 
 def save_state(S):
-    S["updated"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ")
+    S["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     os.makedirs(os.path.dirname(STATE), exist_ok=True)
     with open(STATE, "w") as f:
         json.dump(S, f, indent=1, ensure_ascii=False, sort_keys=True)
@@ -128,14 +128,54 @@ def read_text(key):
 
 
 # ---------------------------------------------------------------- PSD tables in GAIN reports (USDA Official | New Post)
-NUM = r"-?\(?[\d,]+(?:\.\d+)?\)?"
+VAL = re.compile(r"^\(?-?[\d,]*\d(?:\.\d+)?\)?$|^[-–]$")
 
 
 def num(s):
+    if s in ("-", "–"):
+        return None
     s = s.replace(",", "")
     neg = s.startswith("(") or s.startswith("-")
     v = float(s.strip("()-"))
     return -v if neg else v
+
+
+def row(line, k):
+    """(label, [[official, post] per year]) from one table line, or None. Values may be '-' (none); a unit may follow
+    the values; a label may end in a number ('Domestic Use and Loss 1000'); the newest year may have no official column."""
+    tok = line.split()
+    runs, i = [], 0
+    while i < len(tok):
+        if VAL.match(tok[i]):
+            j = i
+            while j < len(tok) and VAL.match(tok[j]):
+                j += 1
+            runs.append((i, j))
+            i = j
+        else:
+            i += 1
+    if not runs:
+        return None
+    i, j = max(runs, key=lambda r: (r[1] - r[0], r[0]))
+    n = j - i
+    if n < 2 * k - 1:
+        return None
+    vals = tok[i:j]
+    if n > 2 * k:
+        if j == len(tok):                   # label ends in a number: values are the last 2k
+            i, vals = j - 2 * k, vals[-2 * k:]
+        else:                               # a unit follows the values ('1000 480 lb. Bales'): values are the first 2k
+            vals = vals[:2 * k]
+    label = " ".join(tok[:i]).strip()
+    if not re.search(r"[A-Za-z]{3}", label):
+        return None
+    try:
+        v = [num(x) for x in vals]
+    except ValueError:
+        return None
+    if n == 2 * k - 1:                      # newest year: Post only
+        v = v[:-1] + [None, v[-1]]
+    return label, [[v[2 * m], v[2 * m + 1]] for m in range(k)]
 
 
 def parse_tables(text):
@@ -143,7 +183,7 @@ def parse_tables(text):
     L = text.splitlines()
     out = []
     for i, l in enumerate(L):
-        if not re.search(r"Market Year Begin", l):
+        if not re.search(r"Market (Year Begin|Begin Year)", l):
             continue
         head = None
         for j in range(i - 1, max(-1, i - 4), -1):
@@ -154,44 +194,60 @@ def parse_tables(text):
         if not head:
             continue
         k = len(head[1])
-        title = re.split(r"\s{2,}", L[head[0]].strip())[0]
+        title = " ".join(re.sub(r"\b(?:MY\s*)?\d{4}/\d{2,4}\b|Market Year Begins?:?", " ", x).strip() for x in L[max(0, head[0] - 2):i + 2]
+                         if not re.search(r"Official|USDA", x))
+        title = re.sub(r"\s+", " ", title)
         win = "\n".join(L[i:i + 6])
         if not re.search(r"Official", win) or not re.search(r"Post", win):
             continue
         rows, blank = {}, 0
-        for l2 in L[i + 1:i + 60]:
+        for l2 in L[i + 1:i + 70]:
             if not l2.strip():
                 blank += 1
                 if blank >= 4 and rows:
                     break
                 continue
             blank = 0
-            if re.search(r"Market Year Begin", l2) or (rows and re.search(r"\b\d{4}/\d{2,4}\b.*\b\d{4}/\d{2,4}\b", l2)):
+            if re.search(r"Market (Year Begin|Begin Year)", l2) or (rows and re.search(r"\b\d{4}/\d{2,4}\b.*\b\d{4}/\d{2,4}\b", l2)):
                 break
-            m = re.match(r"^\s*(.*?[A-Za-z.)%])\s+((?:" + NUM + r"\s+)*" + NUM + r")\s*$", l2)
-            if not m:
-                continue
-            label, vals = m.group(1).strip(), re.split(r"\s+", m.group(2).strip())
-            if len(vals) == 2 * k + 1:          # label ending in a number ("Domestic Use and Loss 1000")
-                label, vals = label + " " + vals[0], vals[1:]
-            if len(vals) != 2 * k:
-                continue
-            try:
-                v = [num(x) for x in vals]
-            except ValueError:
-                continue
-            rows.setdefault(label, [[v[2 * n], v[2 * n + 1]] for n in range(k)])
+            r = row(l2, k)
+            if r:
+                rows.setdefault(r[0], r[1])
+        cty = ""
+        for x in L[i + 1:i + 5]:
+            x = re.sub(r"\b(USDA|Official|New|Post|\(Units\))\b", " ", x).strip()
+            if re.match(r"^[A-Z][A-Za-z’'\- ]{2,40}$", x) and not re.search(r"Area|Stocks|Production", x):
+                cty = re.sub(r"\s+", " ", x)
+                break
         if rows:
-            out.append({"title": title, "years": [y if len(y) == 7 else y[:5] + y[-2:] for y in head[1]], "rows": rows})
+            out.append({"title": title, "country": cty, "years": [y if len(y) == 7 else y[:5] + y[-2:] for y in head[1]], "rows": rows})
     return out
 
 
 def pick_table(tables, market):
     pat = MARKETS[market]["table"]
+    for t in tables:                        # the commodity table in its usual unit (first one; a 1,000 MT twin may follow)
+        if re.search(pat, t["title"], re.I) and not re.search(r"Cane|Beets?\b|1,?000 MT\b(?!.*RSE)", t["title"], re.I if market != "sugar" else 0):
+            return t
     for t in tables:
         if re.search(pat, t["title"], re.I):
             return t
     return None
+
+
+def pick_tables(tables, market):
+    first = pick_table(tables, market)
+    if not first:
+        return []
+    out, seen = [], set()
+    for t in tables:
+        if t["title"] == first["title"] or (t.get("country") and re.sub(r"\s*\(.*", "", t["title"]) == re.sub(r"\s*\(.*", "", first["title"])):
+            c = t.get("country") or ""
+            if c in seen:
+                continue
+            seen.add(c)
+            out.append(t)
+    return out or [first]
 
 
 def line_vals(t, market):
@@ -298,9 +354,32 @@ def wmt_headline(t):
     for i, l in enumerate(L):
         if re.search(r"World Markets and Trade", l):
             for n in L[i + 1:i + 4]:
-                if len(n) > 15 and not re.match(r"^[\d.\s]+$", n) and not re.search(r"Million|Percent|^\d", n):
-                    return re.sub(r"\s{2,}.*", "", n)
+                n = re.split(r"\s{3,}", n)[0]
+                if len(n) > 15 and not re.match(r"^[\d.,\s%]+$", n) and not re.search(r"^(Million|Percent|Thousand)", n):
+                    return n
     return None
+
+
+def lead(t, after=None):
+    """(headline lines, lead paragraph) of an ERS outlook / WMT issue: the first long text line after `after`, and
+    the short title lines just above it. Right-hand column text (3+ spaces) is dropped."""
+    L = [re.split(r"\s{3,}", l.strip())[0] for l in t.splitlines()[:160]]
+    start = 0
+    if after:
+        start = next((i for i, l in enumerate(L) if re.search(after, l)), 0) + 1
+    for i in range(start, len(L)):
+        if len(L[i]) > 80 and re.search(r"[a-z]{3}", L[i]) and not re.search(r"Source:|Note:|\|", L[i]):
+            h, j = [], i - 1
+            while j >= start and L[j] and len(L[j]) <= 80 and len(h) < 3:
+                h.insert(0, L[j])
+                j -= 1
+            para = []
+            for x in L[i:i + 25]:
+                if not x:
+                    break
+                para.append(x)
+            return " ".join(h), re.sub(r"\s+", " ", " ".join(para))
+    return None, None
 
 
 def fetch_ers(S):
@@ -358,19 +437,8 @@ def fetch_ers(S):
 
 
 def ers_headline(t):
-    L = [l.strip() for l in t.splitlines()[:40]]
-    for i, l in enumerate(L):
-        if re.match(r"^(Cotton and Wool|Sugar and Sweeteners) Outlook:", l):
-            body = [x for x in L[i + 1:i + 8] if x]
-            if body and not re.search(r"\d{4}", body[0]) and "," in body[0] or " and " in (body[0] if body else ""):
-                body = body[1:]                 # authors line
-            h = []
-            for x in body:
-                if len(x) > 110 or re.search(r"\bThe (latest|U\.S\.)\b|USDA", x):
-                    break
-                h.append(x)
-            return " ".join(h)[:160] or None
-    return None
+    h, _ = lead(t, r"Outlook:\s+\w+ \d{4}|contributor|coordinator")
+    return (h or "")[:160] or None
 
 
 def fetch():
@@ -386,6 +454,9 @@ def fetch():
             errs.append(f"{name}: {type(e).__name__}: {e}")
         save_state(S)
     print("new:", n)
+    if not errs:
+        S["last_ok"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")   # data-status date: last run where every source listed
+        save_state(S)
     if errs:
         print("::error::" + "; ".join(errs))
         return 1
@@ -410,46 +481,73 @@ def pct(a, b):
     return "" if not b else f" ({(a / b - 1) * 100:+.1f}%)".replace("-", "−")
 
 
-def gain_points(rec, market, prev):
-    t = pick_table(rec.get("tables") or [], market)
-    if not t:
-        return [], None
+def one_table_points(t, market, prev_t, prev_rec, who=""):
     V = line_vals(t, market)
     if not V:
         return [], None
-    ys = t["years"]
+    ys, k = t["years"], len(t["years"]) - 1
+    pre = f"{who}: " if who else ""
     pts, comp = [], {"my": ys[-1], "rows": []}
-    k = len(ys) - 1
     for name, v in V.items():
         o, p = v[k]
-        comp["rows"].append({"line": name, "usda": o, "post": p, "diff": p - o})
+        comp["rows"].append({"line": name, "usda": o or 0, "post": p or 0, "diff": (p or 0) - (o or 0)})
     diffs = [r for r in comp["rows"] if r["diff"] and r["usda"] and abs(r["diff"]) >= 0.005 * abs(r["usda"])]   # ignore <0.5% gaps
     if all(r["usda"] == 0 for r in comp["rows"]):
-        pts.append(f"MY {ys[-1]}: Post's first forecast (no USDA official number yet): " +
+        pts.append(f"{pre}MY {ys[-1]} first forecast by Post (no USDA official number in the report yet): " +
                    "; ".join(f"{r['line'].lower()} {fmt(r['post'], market)}" for r in comp["rows"] if r["post"]) + ".")
     elif diffs:
-        pts.append(f"MY {ys[-1]}, Post vs USDA official: " + "; ".join(
+        pts.append(f"{pre}MY {ys[-1]}, Post vs USDA official: " + "; ".join(
             f"{r['line'].lower()} {fmt(r['post'], market)} vs {fmt(r['usda'], market)} ({fmt(r['diff'], market, True)})" for r in diffs) + ".")
     else:
-        pts.append(f"MY {ys[-1]}: Post in line with USDA official (production {fmt(V.get('Production', [[0, 0]] * len(ys))[k][1], market)}).")
+        pr = next((r["post"] for r in comp["rows"] if r["line"] == "Production"), None)
+        pts.append(f"{pre}MY {ys[-1]}: Post in line with USDA official" + (f" (production {fmt(pr, market)})." if pr else "."))
     if k >= 1:
-        d1 = [(name, v[k - 1]) for name, v in V.items() if v[k - 1][0] and v[k - 1][1] != v[k - 1][0] and name in ("Production", "Exports", "Ending stocks")]
+        d1 = [(n, v[k - 1]) for n, v in V.items() if v[k - 1][0] and v[k - 1][1] is not None and n in ("Production", "Exports", "Ending stocks")
+              and abs(v[k - 1][1] - v[k - 1][0]) >= 0.005 * abs(v[k - 1][0])]
         if d1:
-            pts.append(f"MY {ys[k - 1]}, Post vs USDA: " + "; ".join(f"{n.lower()} {fmt(b, market)} vs {fmt(a, market)}" for n, (a, b) in d1) + ".")
-    if prev:
-        pt = pick_table(prev.get("tables") or [], market)
-        PV = line_vals(pt, market) if pt else {}
-        if PV and ys[-1] in pt["years"]:
-            j = pt["years"].index(ys[-1])
-            ch = [(n, PV[n][j][1], V[n][k][1]) for n in V if n in PV and PV[n][j][1] and PV[n][j][1] != V[n][k][1]
+            pts.append(f"{pre}MY {ys[k - 1]}, Post vs USDA: " + "; ".join(f"{n.lower()} {fmt(b, market)} vs {fmt(a, market)}" for n, (a, b) in d1) + ".")
+    if prev_t:
+        PV = line_vals(prev_t, market)
+        if PV and ys[-1] in prev_t["years"]:
+            j = prev_t["years"].index(ys[-1])
+            ch = [(n, PV[n][j][1], V[n][k][1]) for n in V if n in PV and PV[n][j][1] and V[n][k][1] is not None and PV[n][j][1] != V[n][k][1]
                   and n in ("Production", "Exports", "Imports", "Consumption", "Mill use", "Ending stocks")]
-            when = datetime.fromisoformat(prev["date"]).strftime("%b %Y")
+            when = datetime.fromisoformat(prev_rec["date"]).strftime("%b %Y")
             if ch:
-                pts.append(f"Post's own revision since its {prev['name']} ({when}), MY {ys[-1]}: " + "; ".join(
+                pts.append(f"{pre}Post's own revision since its {prev_rec['name']} ({when}), MY {ys[-1]}: " + "; ".join(
                     f"{n.lower()} {fmt(b, market)} from {fmt(a, market)}{pct(b, a)}" for n, a, b in ch) + ".")
             else:
-                pts.append(f"No change to Post's MY {ys[-1]} key numbers since its {prev['name']} ({when}).")
+                pts.append(f"{pre}No change to Post's MY {ys[-1]} key numbers since its {prev_rec['name']} ({when}).")
     return pts, comp
+
+
+def gain_points(rec, market, prev):
+    """Key points and Post-vs-USDA rows for one GAIN report (one block per country table, e.g. Dakar covers Mali,
+    Burkina Faso and Senegal). prev = the same post's previous report in the window."""
+    T = pick_tables(rec.get("tables") or [], market)
+    PT = {(t.get("country") or ""): t for t in pick_tables(prev.get("tables") or [], market)} if prev else {}
+    multi = len(T) > 1
+    pts, comps = [], []
+    for t in T:
+        c = t.get("country") or ""
+        p, comp = one_table_points(t, market, PT.get(c) or (PT.get("") if not multi else None), prev, c if multi else "")
+        pts += p
+        if comp:
+            comp["country"] = c if multi else rec["country"]
+            comps.append(comp)
+    return pts, comps
+
+
+def wmt_date(w):
+    """WMT issues come out with the WASDE: the WASDE date of the issue month (release calendar), else the day first seen."""
+    try:
+        cal = json.load(open(os.path.join(ROOT, "data", "release_calendar.json")))
+        wd = [d for r in cal["reports"] if r["id"] == "wasde" for d in r["release"].get("dates", []) if d[:7] == w["month"]]
+        if wd and wd[0] <= w["first_seen"]:
+            return wd[0]
+    except Exception:
+        pass
+    return w["first_seen"]
 
 
 def build():
@@ -470,20 +568,25 @@ def build():
         last_by_country = {}
         for r in recs:
             prev = last_by_country.get(r["country"])
-            pts, comp = gain_points(r, market, prev)
+            pts, comps = gain_points(r, market, prev)
             note = NT.get(r["key"], [])
-            e = {"date": r["date"], "title": f"{r['country']}: {r['name']}", "url": r["url"], "kind": "gain", "country": r["country"],
+            where = r["country"]
+            if len(comps) > 1:
+                where = "West Africa (" + ", ".join(c["country"].replace("Burkina", "Burkina Faso") for c in comps) + ")" if r["country"] in WEST_AFRICA \
+                    else r["country"] + " and region"
+            e = {"date": r["date"], "title": f"{where}: {r['name']}", "url": r["url"], "kind": "gain", "country": r["country"],
                  "tag": "FAS attaché", "key_points": note + pts, "auto": not note}
-            if comp:
-                e["post_vs_usda"] = comp
+            if comps:
+                e["post_vs_usda"] = comps
                 last_by_country[r["country"]] = r
-                summary[r["country"]] = {"date": r["date"], "report": r["name"], "url": r["url"], **comp}
+                for c in comps:
+                    summary[c["country"].replace("Burkina", "Burkina Faso").replace("Burkina Faso Faso", "Burkina Faso")] = {"date": r["date"], "report": r["name"], "url": r["url"], **{k: v for k, v in c.items() if k != "country"}}
             entries.append(e)
         for w in S.get("wmt", {}).values():
             if w["market"] != market or w["month"] < ws[:7]:
                 continue
             note = NT.get(w["key"], [])
-            d = w["month"] + "-15" if w["first_seen"][:7] != w["month"] else w["first_seen"]
+            d = wmt_date(w)
             entries.append({"date": d, "title": f"FAS {M['label']}: World Markets and Trade, {datetime.strptime(w['month'], '%Y-%m').strftime('%B %Y')}"
                             + (f" — {w['headline']}" if w.get("headline") else ""), "url": w["url"], "kind": "wmt", "tag": "FAS WMT",
                             "key_points": note or auto_text_points(w["key"]), "auto": not note})
@@ -498,7 +601,7 @@ def build():
         D["window_start"] = ws
         D["summary"] = {"unit": {"cotton": "thousand 480-lb bales", "coffee": "thousand 60-kg bags", "sugar": "thousand t, raw value"}[market],
                         "rows": [dict(country=c, **v) for c, v in sorted(summary.items(), key=lambda kv: kv[1]["date"], reverse=True)]}
-        D["built"] = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+        D["built"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
         os.makedirs(os.path.dirname(path), exist_ok=True)
         reports_store.save(path, D)
         print(f"{os.path.relpath(path, ROOT)}: {len(entries)} entries ({sum(1 for e in entries if e['kind'] == 'gain')} GAIN), from {ws}")
@@ -509,20 +612,17 @@ REV = re.compile(r"\b(raised|lowered|reduced|increased|decreased|cut|up|down|unc
 
 
 def auto_text_points(key, n=3):
-    """Fallback for a WMT / ERS issue nobody has summarised yet: the first sentences that carry a number and a change,
-    clipped to the clause with the number (marked auto on the page)."""
+    """Fallback for a WMT / ERS issue not yet summarised by hand: the first sentences of the lead paragraph that
+    carry a number, clipped to the main clause (marked auto on the page until a note replaces them)."""
     t = read_text(key)
     if not t:
         return []
-    body = re.sub(r"[ \t]+", " ", t[:9000])
-    body = re.sub(r"\n(?=[a-z(0-9])", " ", body)
-    sents = re.split(r"(?<=[.])\s+(?=[A-Z])", body.replace("\n", " "))
+    _, para = lead(t, r"World Markets and Trade" if key.startswith("wmt") else r"Outlook:\s+\w+ \d{4}|contributor|coordinator")
     out = []
-    for s in sents:
-        s = s.strip()
-        if 40 < len(s) < 320 and REV.search(s) and re.search(r"\d", s) and not re.search(r"Figure|Table|Source:|http|click", s):
-            s = re.split(r";|, (?:but|while|as|which|with)\b", s)[0].strip().rstrip(",") + ("" if s.endswith(".") else ".")
-            out.append(s)
+    for s_ in re.split(r"(?<!U\.S)(?<=[.])\s+(?=[A-Z])", para or ""):
+        if re.search(r"\d", s_) and REV.search(s_):
+            s_ = re.split(r";|, (?:but|while|as|which|with)\b", s_)[0].strip().rstrip(",.") + "."
+            out.append(s_)
         if len(out) >= n:
             break
     return out

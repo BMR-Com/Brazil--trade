@@ -65,7 +65,7 @@
    "ers-cotton-2026-09": {
     "code": "CWS-26i",
     "date": "2026-09-15",
-    "headline": "Special Article: U.S. Hemp Fiber Market Outlook Global Cotton Mill Use Projected To Rise for Fourth Consecutive Year in 2026/27",
+    "headline": "Global Cotton Mill Use Projected To Rise for Fourth Consecutive Year in 2026/27",
     "id": 115566,
     "key": "ers-cotton-2026-09",
     "market": "cotton",
@@ -89,7 +89,7 @@
    "ers-sugar-2026-04": {
     "code": "SSS-M-452",
     "date": "2026-04-15",
-    "headline": null,
+    "headline": "U.S. 2025/26 Sugar Ending Stocks Are Mostly Unchanged; Mexico’s 2025/26 Sugar Production Is Raised",
     "id": 114070,
     "key": "ers-sugar-2026-04",
     "market": "sugar",
@@ -101,7 +101,7 @@
    "ers-sugar-2026-05": {
     "code": "SSS-M-453",
     "date": "2026-05-18",
-    "headline": null,
+    "headline": "U.S. 2026/27 Sugar Supply Is Forecast Lower; Mexico’s 2026/27 Sugar Output Is Mostly Flat",
     "id": 114172,
     "key": "ers-sugar-2026-05",
     "market": "sugar",
@@ -113,7 +113,7 @@
    "ers-sugar-2026-06": {
     "code": "SSS-M-454",
     "date": "2026-06-17",
-    "headline": null,
+    "headline": "U.S. 2026/27 Sugar Deliveries Are Up; Mexico’s 2026/27 Sugar Output Is Raised",
     "id": 115037,
     "key": "ers-sugar-2026-06",
     "market": "sugar",
@@ -125,7 +125,7 @@
    "ers-sugar-2026-07": {
     "code": "SSS-M-455",
     "date": "2026-07-16",
-    "headline": null,
+    "headline": "Changes to the U.S. 2026/27 Balance Sheet Include Data Revisions From Prior Years; Mexico’s 2026/27 Sugar Production Is Raised",
     "id": 115093,
     "key": "ers-sugar-2026-07",
     "market": "sugar",
@@ -137,7 +137,7 @@
    "ers-sugar-2026-08": {
     "code": "SSS-M-456",
     "date": "2026-08-18",
-    "headline": null,
+    "headline": "U.S. 2026/27 Sugar Supply Is Raised; Mexico’s 2025/26 Sugar Production Is Finalized",
     "id": 115137,
     "key": "ers-sugar-2026-08",
     "market": "sugar",
@@ -149,7 +149,7 @@
    "ers-sugar-2026-09": {
     "code": "SSS-M-457",
     "date": "2026-09-17",
-    "headline": null,
+    "headline": "U.S. 2026/27 Sugar Production Is Reduced; Mexico’s 2026/27 Sugar Exports to the United States Are Revised Accordingly",
     "id": 115588,
     "key": "ers-sugar-2026-09",
     "market": "sugar",
@@ -161,7 +161,7 @@
    "ers-sugar-2026-10": {
     "code": "SSS-M-458",
     "date": "2026-10-16",
-    "headline": null,
+    "headline": "U.S. 2026/27 Sugar Supply Is Raised; Use is Reduced",
     "id": 115636,
     "key": "ers-sugar-2026-10",
     "market": "sugar",
@@ -186,6 +186,7 @@
    "post": "Canberra",
    "tables": [
     {
+     "country": "Australia",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -286,7 +287,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 1 - Production, Supply, and Distribution of Sugar Cane Sugar Cane for Centrifugal Jul 2024 Jul 2025 Jul 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -294,6 +295,7 @@
      ]
     },
     {
+     "country": "Australia",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -520,7 +522,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 2 - Production, Supply, and Distribution of Centrifugal Sugar Sugar, Centrifugal Jul 2024 Jul 2025 Jul 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -544,6 +546,7 @@
    "post": "Canberra",
    "tables": [
     {
+     "country": "Australia",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -630,7 +633,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 1 - Production, Supply, and Distribution of Sugar Cane Sugar Cane for Centrifugal Jul 2024 Jul 2025 Jul 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -638,6 +641,7 @@
      ]
     },
     {
+     "country": "Australia",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -864,7 +868,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 2 - Production, Supply, and Distribution of Sugar Sugar, Centrifugal Jul 2024 Jul 2025 Jul 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -888,6 +892,7 @@
    "post": "Dhaka",
    "tables": [
     {
+     "country": "Bangladesh",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -1058,7 +1063,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "Bangladesh Cotton: Production, Supply and Distribution Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -1082,6 +1087,7 @@
    "post": "Dhaka",
    "tables": [
     {
+     "country": "Bangladesh",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -1252,7 +1258,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "Bangladesh’s Production, Supply, and Distribution of Cotton Cotton Aug-24 Aug-25 Aug-26",
      "years": [
       "2024/25",
       "2025/26",
@@ -1289,7 +1295,394 @@
    ],
    "name": "Cotton and Products Annual",
    "post": "Brasilia",
-   "tables": [],
+   "tables": [
+    {
+     "country": "Brazil",
+     "rows": {
+      "Area Harvested (1000 HA)": [
+       [
+        1945.0,
+        1945.0
+       ],
+       [
+        2170.0,
+        2170.0
+       ],
+       [
+        null,
+        2000.0
+       ]
+      ],
+      "Beginning Stocks 1000 480 lb. Bales": [
+       [
+        2826.0,
+        2826.0
+       ],
+       [
+        3418.0,
+        3309.0
+       ],
+       [
+        null,
+        4964.0
+       ]
+      ],
+      "Domestic Use 1000 480 lb. Bales": [
+       [
+        3391.0,
+        3500.0
+       ],
+       [
+        3400.0,
+        3500.0
+       ],
+       [
+        null,
+        3500.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480 lb.": [
+       [
+        3391.0,
+        3500.0
+       ],
+       [
+        3400.0,
+        3500.0
+       ],
+       [
+        null,
+        3500.0
+       ]
+      ],
+      "Ending Stocks 1000 480 lb. Bales": [
+       [
+        3418.0,
+        3309.0
+       ],
+       [
+        5023.0,
+        4964.0
+       ],
+       [
+        null,
+        3970.0
+       ]
+      ],
+      "Exports 1000 480 lb. Bales": [
+       [
+        13021.0,
+        13021.0
+       ],
+       [
+        14500.0,
+        14350.0
+       ],
+       [
+        null,
+        15000.0
+       ]
+      ],
+      "Imports 1000 480 lb. Bales": [
+       [
+        4.0,
+        4.0
+       ],
+       [
+        5.0,
+        5.0
+       ],
+       [
+        null,
+        6.0
+       ]
+      ],
+      "Loss 1000 480 lb. Bales": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Production 1000 480 lb. Bales": [
+       [
+        17000.0,
+        17000.0
+       ],
+       [
+        19500.0,
+        19500.0
+       ],
+       [
+        null,
+        18000.0
+       ]
+      ],
+      "Stock to Use % (PERCENT)": [
+       [
+        20.83,
+        20.03
+       ],
+       [
+        28.06,
+        27.81
+       ],
+       [
+        null,
+        21.46
+       ]
+      ],
+      "Total Distribution 1000 480 lb. Bales": [
+       [
+        19830.0,
+        19830.0
+       ],
+       [
+        22923.0,
+        22814.0
+       ],
+       [
+        null,
+        22470.0
+       ]
+      ],
+      "Total Supply 1000 480 lb. Bales": [
+       [
+        19830.0,
+        19830.0
+       ],
+       [
+        22923.0,
+        22814.0
+       ],
+       [
+        null,
+        22970.0
+       ]
+      ],
+      "Yield (KG/HA)": [
+       [
+        1903.0,
+        1903.0
+       ],
+       [
+        1957.0,
+        1957.0
+       ],
+       [
+        null,
+        1960.0
+       ]
+      ]
+     },
+     "title": "Production, Supply, and Distribution (PSD) in 1000 480 lb. Bales Cotton Aug 2024 Aug 2025 Aug 2026 ",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    },
+    {
+     "country": "Brazil",
+     "rows": {
+      "Area Harvested (1000 HA)": [
+       [
+        1945.0,
+        1945.0
+       ],
+       [
+        2170.0,
+        2170.0
+       ],
+       [
+        null,
+        2000.0
+       ]
+      ],
+      "Beginning Stocks 1000 MT": [
+       [
+        615.0,
+        615.0
+       ],
+       [
+        744.0,
+        720.0
+       ],
+       [
+        null,
+        1081.0
+       ]
+      ],
+      "Domestic Use 1000 MT": [
+       [
+        738.0,
+        762.0
+       ],
+       [
+        740.0,
+        762.0
+       ],
+       [
+        null,
+        762.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 MT": [
+       [
+        738.0,
+        762.0
+       ],
+       [
+        740.0,
+        762.0
+       ],
+       [
+        null,
+        762.0
+       ]
+      ],
+      "Ending Stocks 1000 MT": [
+       [
+        744.0,
+        720.0
+       ],
+       [
+        1094.0,
+        1081.0
+       ],
+       [
+        null,
+        864.0
+       ]
+      ],
+      "Exports 1000 MT": [
+       [
+        2835.0,
+        2835.0
+       ],
+       [
+        3157.0,
+        3124.0
+       ],
+       [
+        null,
+        3266.0
+       ]
+      ],
+      "Imports 1000 MT": [
+       [
+        1.0,
+        1.0
+       ],
+       [
+        1.0,
+        1.0
+       ],
+       [
+        null,
+        1.3
+       ]
+      ],
+      "Loss 1000 MT": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Production 1000 MT": [
+       [
+        3701.0,
+        3701.0
+       ],
+       [
+        4246.0,
+        4246.0
+       ],
+       [
+        null,
+        3919.0
+       ]
+      ],
+      "Stock to Use % (PERCENT)": [
+       [
+        20.83,
+        20.03
+       ],
+       [
+        28.06,
+        27.81
+       ],
+       [
+        null,
+        21.46
+       ]
+      ],
+      "Total Distribution 1000 MT": [
+       [
+        4317.0,
+        4317.0
+       ],
+       [
+        4991.0,
+        4967.0
+       ],
+       [
+        null,
+        4892.0
+       ]
+      ],
+      "Total Supply 1000 MT": [
+       [
+        4317.0,
+        4317.0
+       ],
+       [
+        4991.0,
+        4967.0
+       ],
+       [
+        null,
+        5001.0
+       ]
+      ],
+      "Yield (KG/HA)": [
+       [
+        1903.0,
+        1903.0
+       ],
+       [
+        1957.0,
+        1957.0
+       ],
+       [
+        null,
+        1960.0
+       ]
+      ]
+     },
+     "title": "Production, Supply, and Distribution (PSD) in 1000 MT Cotton Aug 2024 Aug 2025 Aug 2026 ",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Annual_Brasilia_Brazil_BR2026-0019.pdf"
   },
@@ -1306,6 +1699,7 @@
    "post": "Brasilia",
    "tables": [
     {
+     "country": "Brazil",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -1406,7 +1800,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": "Sugarcane Production Sugar Cane for Centrifugal Apr 2024 Apr 2025 Apr 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -1414,6 +1808,7 @@
      ]
     },
     {
+     "country": "Brazil",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -1640,7 +2035,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": "Cane Sugar Production Sugar, Centrifugal Apr 2024 Apr 2025 Apr 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -1662,7 +2057,285 @@
    ],
    "name": "Coffee Annual",
    "post": "Brasilia",
-   "tables": [],
+   "tables": [
+    {
+     "country": "Brazil",
+     "rows": {
+      "Arabica Production (1000 60 Kg Bags)": [
+       [
+        44000.0,
+        44500.0
+       ],
+       [
+        38000.0,
+        38000.0
+       ],
+       [
+        null,
+        47500.0
+       ]
+      ],
+      "Bean Exports (1000 60 Kg Bags)": [
+       [
+        41000.0,
+        41000.0
+       ],
+       [
+        37000.0,
+        34000.0
+       ],
+       [
+        null,
+        45000.0
+       ]
+      ],
+      "Bean Imports (1000 60 Kg Bags)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Beginning Stocks (1000 60 Kg Bags)": [
+       [
+        2085.0,
+        2085.0
+       ],
+       [
+        440.0,
+        955.0
+       ],
+       [
+        null,
+        3895.0
+       ]
+      ],
+      "Domestic Consumption (1000 60 Kg Bags)": [
+       [
+        21970.0,
+        21970.0
+       ],
+       [
+        22280.0,
+        22280.0
+       ],
+       [
+        null,
+        22390.0
+       ]
+      ],
+      "Ending Stocks (1000 60 Kg Bags)": [
+       [
+        440.0,
+        955.0
+       ],
+       [
+        485.0,
+        3895.0
+       ],
+       [
+        null,
+        4425.0
+       ]
+      ],
+      "Other Production (1000 60 Kg Bags)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Roast & Ground Imports (1000 60 Kg Bags)": [
+       [
+        75.0,
+        90.0
+       ],
+       [
+        75.0,
+        90.0
+       ],
+       [
+        null,
+        90.0
+       ]
+      ],
+      "Robusta Production (1000 60 Kg Bags)": [
+       [
+        21000.0,
+        21000.0
+       ],
+       [
+        25000.0,
+        25000.0
+       ],
+       [
+        null,
+        24400.0
+       ]
+      ],
+      "Rst,Ground Dom. Consum (1000 60 Kg": [
+       [
+        21000.0,
+        21000.0
+       ],
+       [
+        21300.0,
+        21300.0
+       ],
+       [
+        null,
+        21400.0
+       ]
+      ],
+      "Rst-Grnd Exp. (1000 60 Kg Bags)": [
+       [
+        50.0,
+        50.0
+       ],
+       [
+        50.0,
+        70.0
+       ],
+       [
+        null,
+        70.0
+       ]
+      ],
+      "Soluble Dom. Cons. (1000 60 Kg Bags)": [
+       [
+        970.0,
+        970.0
+       ],
+       [
+        980.0,
+        980.0
+       ],
+       [
+        null,
+        990.0
+       ]
+      ],
+      "Soluble Exports (1000 60 Kg Bags)": [
+       [
+        3700.0,
+        3700.0
+       ],
+       [
+        3700.0,
+        3800.0
+       ],
+       [
+        null,
+        4000.0
+       ]
+      ],
+      "Soluble Imports (1000 60 Kg Bags)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Total Distribution (1000 60 Kg Bags)": [
+       [
+        67160.0,
+        67675.0
+       ],
+       [
+        63515.0,
+        64045.0
+       ],
+       [
+        null,
+        75885.0
+       ]
+      ],
+      "Total Exports (1000 60 Kg Bags)": [
+       [
+        44750.0,
+        44750.0
+       ],
+       [
+        40750.0,
+        37870.0
+       ],
+       [
+        null,
+        49070.0
+       ]
+      ],
+      "Total Imports (1000 60 Kg Bags)": [
+       [
+        75.0,
+        90.0
+       ],
+       [
+        75.0,
+        90.0
+       ],
+       [
+        null,
+        90.0
+       ]
+      ],
+      "Total Production (1000 60 Kg Bags)": [
+       [
+        65000.0,
+        65500.0
+       ],
+       [
+        63000.0,
+        63000.0
+       ],
+       [
+        null,
+        71900.0
+       ]
+      ],
+      "Total Supply (1000 60 Kg Bags)": [
+       [
+        67160.0,
+        67675.0
+       ],
+       [
+        63515.0,
+        64045.0
+       ],
+       [
+        null,
+        75885.0
+       ]
+      ]
+     },
+     "title": "Production, Supply, and Distribution of Coffee Coffee, Green Jul 2024 Jul 2025 Jul 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Brasilia_Brazil_BR2026-0025.pdf"
   },
@@ -1679,6 +2352,7 @@
    "post": "Brasilia",
    "tables": [
     {
+     "country": "Brazil",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -1863,7 +2537,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "Production, Supply, and Distribution (PSD) in 1000 480 lb. Bales Cotton Aug 2024 Aug 2025 Aug 2026 ",
      "years": [
       "2024/25",
       "2025/26",
@@ -1871,6 +2545,7 @@
      ]
     },
     {
+     "country": "Brazil",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -2055,7 +2730,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "Production, Supply, and Distribution (PSD) in 1000 MT Cotton Aug 2024 Aug 2025 Aug 2026 ",
      "years": [
       "2024/25",
       "2025/26",
@@ -2079,6 +2754,7 @@
    "post": "Brasilia",
    "tables": [
     {
+     "country": "Brazil",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -2179,7 +2855,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": "Sugarcane Production, Supply and Demand Sugar Cane for Centrifugal Apr 2024 Apr 2025 Apr 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -2187,6 +2863,7 @@
      ]
     },
     {
+     "country": "Brazil",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -2413,7 +3090,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": "Table 06 Sugarcane Production, Supply and Demand Sugar, Centrifugal Apr 2024 Apr 2025 Apr 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -2453,6 +3130,7 @@
    "post": "Brasilia",
    "tables": [
     {
+     "country": "Brazil",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -2553,7 +3231,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": "Sugarcane Production, Supply and Demand Sugar Cane for Centrifugal Apr 2024 Apr 2025 Apr 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -2561,6 +3239,7 @@
      ]
     },
     {
+     "country": "Brazil",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -2787,7 +3466,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": "Sugar Production, Supply and Demand Sugar, Centrifugal Apr 2024 Apr 2025 Apr 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -2811,6 +3490,7 @@
    "post": "Brasilia",
    "tables": [
     {
+     "country": "Brazil",
      "rows": {
       "Arabica Production (1000 60-kg bags)": [
        [
@@ -3079,7 +3759,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": "Production, Supply, and Distribution of Coffee Coffee, Green Jul 2024 Jul 2025 Jul 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -3103,6 +3783,7 @@
    "post": "Guangzhou ATO",
    "tables": [
     {
+     "country": "China",
      "rows": {
       "Beet Sugar Production (1,000 MT)": [
        [
@@ -3329,7 +4010,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 3. China: Sugar, Centrifugal Production, Supply, and Distribution Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -3337,6 +4018,7 @@
      ]
     },
     {
+     "country": "China",
      "rows": {
       "Area Harvested (1,000 HA)": [
        [
@@ -3437,7 +4119,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 4. China: Sugar Cane Production, Supply, and Distribution Sugar Cane for Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -3445,6 +4127,7 @@
      ]
     },
     {
+     "country": "China",
      "rows": {
       "Area Harvested (1,000 HA)": [
        [
@@ -3545,7 +4228,7 @@
        ]
       ]
      },
-     "title": "Sugar Beets",
+     "title": " Table 5. China: Sugar Beets Production, Supply, and Distribution Sugar Beets Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -3569,6 +4252,186 @@
    "post": "Beijing",
    "tables": [
     {
+     "country": "",
+     "rows": {
+      "Area Harvested": [
+       [
+        2900.0,
+        2930.0
+       ],
+       [
+        3050.0,
+        3050.0
+       ],
+       [
+        null,
+        2970.0
+       ]
+      ],
+      "Area Planted": [
+       [
+        2900.0,
+        2930.0
+       ],
+       [
+        3050.0,
+        3050.0
+       ],
+       [
+        null,
+        2970.0
+       ]
+      ],
+      "Beginning Stocks": [
+       [
+        36713.0,
+        36713.0
+       ],
+       [
+        34837.0,
+        36134.0
+       ],
+       [
+        null,
+        39280.0
+       ]
+      ],
+      "Ending Stocks": [
+       [
+        34837.0,
+        36134.0
+       ],
+       [
+        36562.0,
+        39280.0
+       ],
+       [
+        null,
+        40612.0
+       ]
+      ],
+      "Exports": [
+       [
+        61.0,
+        61.0
+       ],
+       [
+        75.0,
+        23.0
+       ],
+       [
+        null,
+        46.0
+       ]
+      ],
+      "Imports": [
+       [
+        5185.0,
+        5186.0
+       ],
+       [
+        6000.0,
+        6430.0
+       ],
+       [
+        null,
+        6890.0
+       ]
+      ],
+      "Production": [
+       [
+        32000.0,
+        31270.0
+       ],
+       [
+        35800.0,
+        34632.0
+       ],
+       [
+        null,
+        33070.0
+       ]
+      ],
+      "Stock to Use %": [
+       [
+        89.19,
+        97.57
+       ],
+       [
+        91.2,
+        103.6
+       ],
+       [
+        null,
+        105.1
+       ]
+      ],
+      "Total Distribution": [
+       [
+        73898.0,
+        73169.0
+       ],
+       [
+        76637.0,
+        77196.0
+       ],
+       [
+        null,
+        79240.0
+       ]
+      ],
+      "Total Supply": [
+       [
+        73898.0,
+        73169.0
+       ],
+       [
+        76637.0,
+        77196.0
+       ],
+       [
+        null,
+        79240.0
+       ]
+      ],
+      "Use": [
+       [
+        39000.0,
+        36974.0
+       ],
+       [
+        40000.0,
+        37893.0
+       ],
+       [
+        null,
+        38582.0
+       ]
+      ],
+      "Yield": [
+       [
+        2402.0,
+        2324.0
+       ],
+       [
+        2556.0,
+        2472.0
+       ],
+       [
+        null,
+        2424.0
+       ]
+      ]
+     },
+     "title": " Table 8. China: Cotton PSD (in 1,000 Bales and 1,000 Ha) Cotton China Aug 2024 Aug 2025 Aug 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    },
+    {
+     "country": "",
      "rows": {
       "Area Harvested": [
        [
@@ -3753,7 +4616,7 @@
        ]
       ]
      },
-     "title": "2024/25",
+     "title": " Table 9. China: Cotton PSD (in 1,000 MT and 1,000 Ha) Cotton China Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -3777,6 +4640,7 @@
    "post": "Beijing",
    "tables": [
     {
+     "country": "China",
      "rows": {
       "Area Harvested": [
        [
@@ -3947,7 +4811,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "Production, Supply, and Distribution (PSD) Tables Table 8. China: Cotton PSD (in 1,000 Bales and 1,000 Ha) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -3955,7 +4819,22 @@
      ]
     },
     {
+     "country": "",
      "rows": {
+      "April": [
+       [
+        173177.0,
+        83836.0
+       ],
+       [
+        341913.0,
+        59603.0
+       ],
+       [
+        null,
+        165291.0
+       ]
+      ],
       "Area Harvested": [
        [
         2900.0,
@@ -4026,6 +4905,20 @@
         10.0
        ]
       ],
+      "February": [
+       [
+        184926.0,
+        85040.0
+       ],
+       [
+        294726.0,
+        115478.0
+       ],
+       [
+        null,
+        165969.0
+       ]
+      ],
       "Imports": [
        [
         1129.0,
@@ -4040,6 +4933,48 @@
         1500.0
        ]
       ],
+      "January": [
+       [
+        227685.0,
+        139645.0
+       ],
+       [
+        344742.0,
+        148378.0
+       ],
+       [
+        null,
+        204992.0
+       ]
+      ],
+      "July": [
+       [
+        118098.0,
+        109660.0
+       ],
+       [
+        199175.0,
+        53095.0
+       ],
+       [
+        null,
+        91587.0
+       ]
+      ],
+      "June": [
+       [
+        162861.0,
+        83077.0
+       ],
+       [
+        154805.0,
+        27434.0
+       ],
+       [
+        null,
+        109807.0
+       ]
+      ],
       "Loss": [
        [
         0.0,
@@ -4052,6 +4987,48 @@
        [
         0.0,
         0.0
+       ]
+      ],
+      "March": [
+       [
+        204172.0,
+        72343.0
+       ],
+       [
+        396991.0,
+        73755.0
+       ],
+       [
+        null,
+        175434.0
+       ]
+      ],
+      "May": [
+       [
+        182137.0,
+        109202.0
+       ],
+       [
+        259627.0,
+        34488.0
+       ],
+       [
+        null,
+        112832.0
+       ]
+      ],
+      "Month": [
+       [
+        2022.0,
+        2023.0
+       ],
+       [
+        2024.0,
+        2025.0
+       ],
+       [
+        null,
+        2026.0
        ]
       ],
       "Production": [
@@ -4080,6 +5057,20 @@
        [
         82.44,
         96.3
+       ]
+      ],
+      "Total": [
+       [
+        1929220.0,
+        1952268.0
+       ],
+       [
+        2610580.0,
+        1067044.0
+       ],
+       [
+        null,
+        1027938.0
        ]
       ],
       "Total Distribution": [
@@ -4139,7 +5130,7 @@
        ]
       ]
      },
-     "title": "2024/25",
+     "title": " Table 9. China: Cotton PSD (in 1,000 MT and 1,000 Ha) Market Year Cotton China Begin: Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -4163,6 +5154,7 @@
    "post": "Guangzhou ATO",
    "tables": [
     {
+     "country": "China",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -4389,7 +5381,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 1: Sugar, Centrifugal: Production, Supply and Distribution Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -4397,6 +5389,7 @@
      ]
     },
     {
+     "country": "China",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -4497,7 +5490,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 2: Sugar Cane: Production, Supply and Distribution Sugar Cane for Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -4505,6 +5498,7 @@
      ]
     },
     {
+     "country": "China",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -4605,7 +5599,7 @@
        ]
       ]
      },
-     "title": "Sugar Beets",
+     "title": " Table 3: Sugar Beets: Production, Supply and Distribution Sugar Beets Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -4629,6 +5623,7 @@
    "post": "Bogota",
    "tables": [
     {
+     "country": "Colombia",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -4967,7 +5962,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": "Coffee, Green Table 1. Colombia, Coffee, Green, Production, Supply and Distribution Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -4991,6 +5986,7 @@
    "post": "San Jose",
    "tables": [
     {
+     "country": "Costa Rica",
      "rows": {
       "Arabica Production (1000 60 KG": [
        [
@@ -5329,7 +6325,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": " Production, Supply and Distribution Statistics: Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -5353,6 +6349,7 @@
    "post": "Brussels USEU",
    "tables": [
     {
+     "country": "",
      "rows": {
       "Beet Sugar Production": [
        [
@@ -5565,7 +6562,7 @@
        ]
       ]
      },
-     "title": "2024/2025",
+     "title": "Table 1– EU27 Sugar Production, Supply, and Distribution (PS&D) EU27 Sugar, Centrifugal (1,000 MT RSE) Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -5589,6 +6586,7 @@
    "post": "Brussels USEU",
    "tables": [
     {
+     "country": "European Union",
      "rows": {
       "Beet Sugar Production": [
        [
@@ -5801,7 +6799,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": "Table 1– EU-27 Sugar Production, Supply, and Distribution (PS&D) Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -5825,6 +6823,7 @@
    "post": "Cairo",
    "tables": [
     {
+     "country": "Egypt",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -6009,7 +7008,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": " Table 1: Production, Supply, and Demand (1,000 480 lb. Bales) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -6033,6 +7032,7 @@
    "post": "San Salvador",
    "tables": [
     {
+     "country": "El Salvador",
      "rows": {
       "9Total Distribution (1000 60 KG BAGS)": [
        [
@@ -6371,7 +7371,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": " Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -6395,6 +7395,7 @@
    "post": "Addis Ababa",
    "tables": [
     {
+     "country": "Ethiopia",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -6733,7 +7734,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": " Table 4: Production, Supply, and Distribution (PSD) Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -6757,6 +7758,7 @@
    "post": "Guatemala City",
    "tables": [
     {
+     "country": "Guatemala",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -7095,7 +8097,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": " COFFE PSD Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -7117,7 +8119,369 @@
    ],
    "name": "Coffee Annual",
    "post": "Tegucigalpa",
-   "tables": [],
+   "tables": [
+    {
+     "country": "Honduras",
+     "rows": {
+      "Arabica Production": [
+       [
+        5000.0,
+        5200.0
+       ],
+       [
+        5800.0,
+        5530.0
+       ],
+       [
+        0.0,
+        6030.0
+       ]
+      ],
+      "Area Harvested": [
+       [
+        0.0,
+        300.0
+       ],
+       [
+        0.0,
+        310.0
+       ],
+       [
+        0.0,
+        330.0
+       ]
+      ],
+      "Area Planted": [
+       [
+        0.0,
+        340.0
+       ],
+       [
+        0.0,
+        350.0
+       ],
+       [
+        0.0,
+        360.0
+       ]
+      ],
+      "Bean Exports": [
+       [
+        4765.0,
+        4958.0
+       ],
+       [
+        5500.0,
+        4980.0
+       ],
+       [
+        0.0,
+        5500.0
+       ]
+      ],
+      "Bean Imports": [
+       [
+        16.0,
+        96.0
+       ],
+       [
+        17.0,
+        100.0
+       ],
+       [
+        0.0,
+        120.0
+       ]
+      ],
+      "Bearing Trees": [
+       [
+        0.0,
+        1900.0
+       ],
+       [
+        0.0,
+        2000.0
+       ],
+       [
+        0.0,
+        2100.0
+       ]
+      ],
+      "Beginning Stocks": [
+       [
+        143.0,
+        143.0
+       ],
+       [
+        81.0,
+        178.0
+       ],
+       [
+        0.0,
+        435.0
+       ]
+      ],
+      "Domestic Consumption": [
+       [
+        335.0,
+        335.0
+       ],
+       [
+        335.0,
+        380.0
+       ],
+       [
+        0.0,
+        415.0
+       ]
+      ],
+      "Ending Stocks": [
+       [
+        81.0,
+        178.0
+       ],
+       [
+        86.0,
+        435.0
+       ],
+       [
+        0.0,
+        707.0
+       ]
+      ],
+      "Exportable Production": [
+       [
+        4665.0,
+        4865.0
+       ],
+       [
+        5465.0,
+        5150.0
+       ],
+       [
+        0.0,
+        5615.0
+       ]
+      ],
+      "Non-Bearing Trees": [
+       [
+        0.0,
+        245.0
+       ],
+       [
+        0.0,
+        260.0
+       ],
+       [
+        0.0,
+        270.0
+       ]
+      ],
+      "Other Production": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ],
+      "Roast & Ground Imports": [
+       [
+        0.0,
+        3.0
+       ],
+       [
+        0.0,
+        4.0
+       ],
+       [
+        0.0,
+        5.0
+       ]
+      ],
+      "Robusta Production": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ],
+      "Rst,Ground Dom. Consum": [
+       [
+        310.0,
+        310.0
+       ],
+       [
+        310.0,
+        350.0
+       ],
+       [
+        0.0,
+        380.0
+       ]
+      ],
+      "Rst-Grnd Exp.": [
+       [
+        2.0,
+        2.0
+       ],
+       [
+        2.0,
+        2.0
+       ],
+       [
+        0.0,
+        2.0
+       ]
+      ],
+      "Soluble Dom. Cons.": [
+       [
+        25.0,
+        25.0
+       ],
+       [
+        25.0,
+        30.0
+       ],
+       [
+        0.0,
+        35.0
+       ]
+      ],
+      "Soluble Exports": [
+       [
+        1.0,
+        0.0
+       ],
+       [
+        1.0,
+        0.0
+       ],
+       [
+        0.0,
+        1.0
+       ]
+      ],
+      "Soluble Imports": [
+       [
+        25.0,
+        31.0
+       ],
+       [
+        26.0,
+        33.0
+       ],
+       [
+        0.0,
+        35.0
+       ]
+      ],
+      "Total Distribution": [
+       [
+        5184.0,
+        5473.0
+       ],
+       [
+        5924.0,
+        5845.0
+       ],
+       [
+        0.0,
+        6625.0
+       ]
+      ],
+      "Total Exports": [
+       [
+        4768.0,
+        4960.0
+       ],
+       [
+        5503.0,
+        5030.0
+       ],
+       [
+        0.0,
+        5503.0
+       ]
+      ],
+      "Total Imports": [
+       [
+        41.0,
+        130.0
+       ],
+       [
+        43.0,
+        137.0
+       ],
+       [
+        0.0,
+        160.0
+       ]
+      ],
+      "Total Production": [
+       [
+        5000.0,
+        5200.0
+       ],
+       [
+        5800.0,
+        5530.0
+       ],
+       [
+        0.0,
+        6030.0
+       ]
+      ],
+      "Total Supply": [
+       [
+        5184.0,
+        5473.0
+       ],
+       [
+        5924.0,
+        5845.0
+       ],
+       [
+        0.0,
+        6625.0
+       ]
+      ],
+      "Total Tree Population": [
+       [
+        0.0,
+        2145.0
+       ],
+       [
+        0.0,
+        2260.0
+       ],
+       [
+        0.0,
+        2370.0
+       ]
+      ]
+     },
+     "title": " Production, Supply, and Demand Data Statistics Coffee, Green Coffee, Green Market Begin Year Oct 2024 Oct 2025 Oct 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Tegucigalpa_Honduras_HO2026-0002.pdf"
   },
@@ -7134,6 +8498,7 @@
    "post": "Jakarta",
    "tables": [
     {
+     "country": "Indonesia",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -7234,7 +8599,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 3. Production, Supply, & Distribution: Sugarcane for Centrifugal Sugar Cane for Centrifugal May 2024 May 2025 May 2026 ",
      "years": [
       "2024/25",
       "2025/26",
@@ -7242,6 +8607,7 @@
      ]
     },
     {
+     "country": "Indonesia",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -7468,7 +8834,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 7. Production, Supply, and Distribution: Centrifugal Sugar Sugar, Centrifugal May 2024 May 2025 May 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -7492,6 +8858,7 @@
    "post": "Jakarta",
    "tables": [
     {
+     "country": "Indonesia",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -7676,7 +9043,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": " Table 4. Production, Supply, and Distribution: Cotton (HS Code 5201) in Bales Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -7684,6 +9051,7 @@
      ]
     },
     {
+     "country": "Indonesia",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -7699,6 +9067,118 @@
         1.0
        ]
       ],
+      "Beginning Stocks 1000 480 lb. Bales": [
+       [
+        86437.0,
+        86437.0
+       ],
+       [
+        88832.0,
+        88832.0
+       ],
+       [
+        null,
+        99719.0
+       ]
+      ],
+      "Domestic Use 1000 480 lb. Bales": [
+       [
+        424567.0,
+        424567.0
+       ],
+       [
+        413680.0,
+        402794.0
+       ],
+       [
+        null,
+        413680.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480 lb.": [
+       [
+        424567.0,
+        424567.0
+       ],
+       [
+        413680.0,
+        402794.0
+       ],
+       [
+        null,
+        413680.0
+       ]
+      ],
+      "Ending Stocks 1000 480 lb. Bales": [
+       [
+        88832.0,
+        88832.0
+       ],
+       [
+        86002.0,
+        99719.0
+       ],
+       [
+        null,
+        94711.0
+       ]
+      ],
+      "Exports 1000 480 lb. Bales": [
+       [
+        4137.0,
+        4137.0
+       ],
+       [
+        3266.0,
+        4790.0
+       ],
+       [
+        null,
+        5443.0
+       ]
+      ],
+      "Imports 1000 480 lb. Bales": [
+       [
+        430663.0,
+        430663.0
+       ],
+       [
+        413680.0,
+        418035.0
+       ],
+       [
+        null,
+        413680.0
+       ]
+      ],
+      "Loss 1000 480 lb. Bales": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Production 1000 480 lb. Bales": [
+       [
+        435.0,
+        435.0
+       ],
+       [
+        435.0,
+        435.0
+       ],
+       [
+        null,
+        435.0
+       ]
+      ],
       "Stock to Use % (PERCENT)": [
        [
         20.72,
@@ -7712,9 +9192,51 @@
         0.0,
         22.6
        ]
+      ],
+      "Total Distribution 1000 480 lb. Bales": [
+       [
+        517536.0,
+        517536.0
+       ],
+       [
+        502948.0,
+        507303.0
+       ],
+       [
+        null,
+        513834.0
+       ]
+      ],
+      "Total Supply 1000 480 lb. Bales": [
+       [
+        517536.0,
+        517536.0
+       ],
+       [
+        502948.0,
+        507303.0
+       ],
+       [
+        null,
+        513834.0
+       ]
+      ],
+      "Yield (KG/HA)": [
+       [
+        94711.0,
+        94810.0
+       ],
+       [
+        435.0,
+        94810.0
+       ],
+       [
+        null,
+        94810.0
+       ]
       ]
      },
-     "title": "Cotton",
+     "title": " Table 5. Production, Supply, and Distribution: Cotton (HS Code 5201) in MT Cotton Aug 2022 Aug 2023 Aug 2024",
      "years": [
       "2022/23",
       "2023/24",
@@ -7738,6 +9260,7 @@
    "post": "Jakarta",
    "tables": [
     {
+     "country": "Indonesia",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -8006,7 +9529,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": " Table 5. Production, Supply and Distribution: Coffee Coffee, Green Apr 2024 Apr 2025 Apr 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -8030,6 +9553,7 @@
    "post": "Jakarta",
    "tables": [
     {
+     "country": "Indonesia",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -8298,7 +9822,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": " Table 4. Production, Supply and Distribution: Coffee Coffee, Green Apr 2024 Apr 2025 Apr 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -8320,7 +9844,201 @@
    ],
    "name": "Cotton and Products Annual",
    "post": "New Delhi",
-   "tables": [],
+   "tables": [
+    {
+     "country": "India",
+     "rows": {
+      "Area Harvested (1000 HA)": [
+       [
+        11484.0,
+        11484.0
+       ],
+       [
+        11200.0,
+        11200.0
+       ],
+       [
+        null,
+        11500.0
+       ]
+      ],
+      "Beginning Stocks 1000 480 lb. Bales": [
+       [
+        9299.0,
+        9299.0
+       ],
+       [
+        9215.0,
+        10015.0
+       ],
+       [
+        null,
+        11115.0
+       ]
+      ],
+      "Domestic Use 1000 480 lb. Bales": [
+       [
+        25000.0,
+        25500.0
+       ],
+       [
+        25000.0,
+        25200.0
+       ],
+       [
+        null,
+        25800.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480 lb. Bales": [
+       [
+        25000.0,
+        25500.0
+       ],
+       [
+        25000.0,
+        25200.0
+       ],
+       [
+        null,
+        25800.0
+       ]
+      ],
+      "Ending Stocks 1000 480 lb. Bales": [
+       [
+        9215.0,
+        10015.0
+       ],
+       [
+        10315.0,
+        11115.0
+       ],
+       [
+        null,
+        12315.0
+       ]
+      ],
+      "Exports 1000 480 lb. Bales": [
+       [
+        1325.0,
+        1325.0
+       ],
+       [
+        1400.0,
+        1500.0
+       ],
+       [
+        null,
+        1200.0
+       ]
+      ],
+      "Imports 1000 480 lb. Bales": [
+       [
+        3041.0,
+        3041.0
+       ],
+       [
+        4000.0,
+        4000.0
+       ],
+       [
+        null,
+        3000.0
+       ]
+      ],
+      "Loss 1000 480 lb. Bales": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Production 1000 480 lb. Bales": [
+       [
+        23200.0,
+        24500.0
+       ],
+       [
+        23500.0,
+        23800.0
+       ],
+       [
+        null,
+        25200.0
+       ]
+      ],
+      "Stock to Use % (PERCENT)": [
+       [
+        35.0,
+        37.0
+       ],
+       [
+        39.0,
+        42.0
+       ],
+       [
+        null,
+        46.0
+       ]
+      ],
+      "Total Distribution 1000 480 lb. Bales": [
+       [
+        35540.0,
+        36840.0
+       ],
+       [
+        36715.0,
+        37815.0
+       ],
+       [
+        null,
+        39315.0
+       ]
+      ],
+      "Total Supply 1000 480 lb. Bales": [
+       [
+        35540.0,
+        36840.0
+       ],
+       [
+        36715.0,
+        37815.0
+       ],
+       [
+        null,
+        39315.0
+       ]
+      ],
+      "Yield (KG/HA)": [
+       [
+        440.0,
+        464.0
+       ],
+       [
+        457.0,
+        463.0
+       ],
+       [
+        null,
+        477.0
+       ]
+      ]
+     },
+     "title": "India Cotton - Production, Supply and Distribution Cotton Aug 2024 Aug 2025 Aug 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Annual_New%20Delhi_India_IN2026-0020.pdf"
   },
@@ -8337,6 +10055,7 @@
    "post": "New Delhi",
    "tables": [
     {
+     "country": "India",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -8437,7 +10156,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": "Table 1. India: Sugarcane, Centrifugal, Area in Thousand Hectares; Others, Thousand Metric Tons Sugar Cane for Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -8445,6 +10164,7 @@
      ]
     },
     {
+     "country": "India",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -8671,7 +10391,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 2. India: Centrifugal Sugar (Raw Value Basis) (Thousand Metric Tons [TMT]) Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -8693,7 +10413,355 @@
    ],
    "name": "Coffee Annual",
    "post": "New Delhi",
-   "tables": [],
+   "tables": [
+    {
+     "country": "India",
+     "rows": {
+      "Arabica Production (1000 60 KG BAGS)": [
+       [
+        1400.0,
+        1762.0
+       ],
+       [
+        1350.0,
+        1730.0
+       ],
+       [
+        null,
+        1560.0
+       ]
+      ],
+      "Area Harvested (1000 HA)": [
+       [
+        434.0,
+        436.0
+       ],
+       [
+        null,
+        435.0
+       ],
+       [
+        null,
+        429.0
+       ]
+      ],
+      "Area Planted (1000 HA)": [
+       [
+        475.0,
+        475.0
+       ],
+       [
+        null,
+        475.0
+       ],
+       [
+        null,
+        475.0
+       ]
+      ],
+      "Bean Exports (1000 60 KG BAGS)": [
+       [
+        3708.0,
+        3613.0
+       ],
+       [
+        3560.0,
+        3600.0
+       ],
+       [
+        null,
+        3680.0
+       ]
+      ],
+      "Bean Imports (1000 60 KG BAGS)": [
+       [
+        1245.0,
+        1258.0
+       ],
+       [
+        1270.0,
+        1270.0
+       ],
+       [
+        null,
+        1320.0
+       ]
+      ],
+      "Bearing Trees (MILLION TREES)": [
+       [
+        549.0,
+        549.0
+       ],
+       [
+        null,
+        550.0
+       ],
+       [
+        null,
+        549.0
+       ]
+      ],
+      "Beginning Stocks (1000 60 KG BAGS)": [
+       [
+        242.0,
+        242.0
+       ],
+       [
+        197.0,
+        323.0
+       ],
+       [
+        null,
+        485.0
+       ]
+      ],
+      "Domestic Consumption (1000 60 KG BAGS)": [
+       [
+        1300.0,
+        1150.0
+       ],
+       [
+        1360.0,
+        1575.0
+       ],
+       [
+        null,
+        1580.0
+       ]
+      ],
+      "Ending Stocks (1000 60 KG BAGS)": [
+       [
+        197.0,
+        323.0
+       ],
+       [
+        234.0,
+        485.0
+       ],
+       [
+        null,
+        216.0
+       ]
+      ],
+      "Non-Bearing Trees (MILLION TREES)": [
+       [
+        96.0,
+        96.0
+       ],
+       [
+        null,
+        95.0
+       ],
+       [
+        null,
+        96.0
+       ]
+      ],
+      "Other Production (1000 60 KG BAGS)": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Roast & Ground Imports (1000 60 KG BAGS)": [
+       [
+        5.0,
+        4.0
+       ],
+       [
+        3.0,
+        3.0
+       ],
+       [
+        null,
+        3.0
+       ]
+      ],
+      "Robusta Production (1000 60 KG BAGS)": [
+       [
+        4800.0,
+        4297.0
+       ],
+       [
+        4700.0,
+        4700.0
+       ],
+       [
+        null,
+        4580.0
+       ]
+      ],
+      "Rst,Ground Dom. Consum (1000 60 KG BAGS)": [
+       [
+        400.0,
+        330.0
+       ],
+       [
+        410.0,
+        415.0
+       ],
+       [
+        null,
+        420.0
+       ]
+      ],
+      "Rst-Grnd Exp. (1000 60 KG BAGS)": [
+       [
+        7.0,
+        7.0
+       ],
+       [
+        6.0,
+        6.0
+       ],
+       [
+        null,
+        9.0
+       ]
+      ],
+      "Soluble Dom. Cons. (1000 60 KG BAGS)": [
+       [
+        900.0,
+        820.0
+       ],
+       [
+        950.0,
+        1160.0
+       ],
+       [
+        null,
+        1160.0
+       ]
+      ],
+      "Soluble Exports (1000 60 KG BAGS)": [
+       [
+        2545.0,
+        2545.0
+       ],
+       [
+        2420.0,
+        2420.0
+       ],
+       [
+        null,
+        2530.0
+       ]
+      ],
+      "Soluble Imports (1000 60 KG BAGS)": [
+       [
+        65.0,
+        75.0
+       ],
+       [
+        60.0,
+        60.0
+       ],
+       [
+        null,
+        67.0
+       ]
+      ],
+      "Total Distribution (1000 60 KG BAGS)": [
+       [
+        7757.0,
+        7638.0
+       ],
+       [
+        7580.0,
+        8086.0
+       ],
+       [
+        null,
+        8015.0
+       ]
+      ],
+      "Total Exports (1000 60 KG BAGS)": [
+       [
+        6260.0,
+        6165.0
+       ],
+       [
+        5986.0,
+        6026.0
+       ],
+       [
+        null,
+        6219.0
+       ]
+      ],
+      "Total Imports (1000 60 KG BAGS)": [
+       [
+        1315.0,
+        1337.0
+       ],
+       [
+        1333.0,
+        1333.0
+       ],
+       [
+        null,
+        1390.0
+       ]
+      ],
+      "Total Production (1000 60 KG BAGS)": [
+       [
+        6200.0,
+        6059.0
+       ],
+       [
+        6050.0,
+        6430.0
+       ],
+       [
+        null,
+        6140.0
+       ]
+      ],
+      "Total Supply (1000 60 KG BAGS)": [
+       [
+        7757.0,
+        7638.0
+       ],
+       [
+        7580.0,
+        8086.0
+       ],
+       [
+        null,
+        8015.0
+       ]
+      ],
+      "Total Tree Population (MILLION TREES)": [
+       [
+        645.0,
+        645.0
+       ],
+       [
+        null,
+        645.0
+       ],
+       [
+        null,
+        645.0
+       ]
+      ]
+     },
+     "title": "Production, Supply and Distribution Coffee, Green Oct 2024 Oct 2025 Oct 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_New%20Delhi_India_IN2026-0026.pdf"
   },
@@ -8710,6 +10778,7 @@
    "post": "New Delhi",
    "tables": [
     {
+     "country": "India",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -8809,6 +10878,20 @@
         3000.0
        ]
       ],
+      "Loss 1000 480 lb. Bales": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
       "Production 1000 480 lb. Bales": [
        [
         24000.0,
@@ -8880,7 +10963,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "India Cotton - Production, Supply and Distribution Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -8904,6 +10987,7 @@
    "post": "New Delhi",
    "tables": [
     {
+     "country": "India",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -9004,7 +11088,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 1. India: Sugarcane, Centrifugal, Area in Thousand Hectares and Others, TMT Sugar Cane for Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -9012,6 +11096,7 @@
      ]
     },
     {
+     "country": "India",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -9238,7 +11323,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 2. India: Centrifugal Sugar (Raw Value Basis) (Thousand Metric Tons [TMT]) Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -9262,6 +11347,7 @@
    "post": "New Delhi",
    "tables": [
     {
+     "country": "India",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -9275,6 +11361,34 @@
        [
         1560.0,
         1420.0
+       ]
+      ],
+      "Area Harvested (1000 HA)": [
+       [
+        434.0,
+        436.0
+       ],
+       [
+        null,
+        435.0
+       ],
+       [
+        null,
+        429.0
+       ]
+      ],
+      "Area Planted (1000 HA)": [
+       [
+        475.0,
+        475.0
+       ],
+       [
+        null,
+        475.0
+       ],
+       [
+        null,
+        475.0
        ]
       ],
       "Bean Exports (1000 60 KG BAGS)": [
@@ -9303,6 +11417,20 @@
        [
         1320.0,
         1583.0
+       ]
+      ],
+      "Bearing Trees (MILLION TREES)": [
+       [
+        549.0,
+        549.0
+       ],
+       [
+        null,
+        550.0
+       ],
+       [
+        null,
+        549.0
        ]
       ],
       "Beginning Stocks (1000 60 KG BAGS)": [
@@ -9345,6 +11473,34 @@
        [
         216.0,
         389.0
+       ]
+      ],
+      "Non-Bearing Trees (MILLION TREES)": [
+       [
+        96.0,
+        96.0
+       ],
+       [
+        null,
+        95.0
+       ],
+       [
+        null,
+        96.0
+       ]
+      ],
+      "Other Production (1000 60 KG BAGS)": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
        ]
       ],
       "Roast & Ground Imports (1000 60 KG BAGS)": [
@@ -9514,9 +11670,23 @@
         8015.0,
         8078.0
        ]
+      ],
+      "Total Tree Population (MILLION TREES)": [
+       [
+        645.0,
+        645.0
+       ],
+       [
+        null,
+        645.0
+       ],
+       [
+        null,
+        645.0
+       ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": "Production, Supply and Distribution Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -9540,6 +11710,7 @@
    "post": "Accra",
    "tables": [
     {
+     "country": "Cote d’Ivoire",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -9724,7 +11895,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": " Table 1: Côte d’Ivoire, Cotton, Production-Supply-Distribution (PSD) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -9746,7 +11917,355 @@
    ],
    "name": "Coffee Annual",
    "post": "Nairobi",
-   "tables": [],
+   "tables": [
+    {
+     "country": "Kenya",
+     "rows": {
+      "Arabica Production (1000 60 KG BAGS)": [
+       [
+        1000.0,
+        950.0
+       ],
+       [
+        850.0,
+        850.0
+       ],
+       [
+        null,
+        950.0
+       ]
+      ],
+      "Area Harvested (1000 HA)": [
+       [
+        0.0,
+        105.0
+       ],
+       [
+        0.0,
+        105.0
+       ],
+       [
+        null,
+        106.0
+       ]
+      ],
+      "Area Planted (1000 HA)": [
+       [
+        0.0,
+        105.0
+       ],
+       [
+        0.0,
+        106.0
+       ],
+       [
+        null,
+        107.0
+       ]
+      ],
+      "Bean Exports (1000 60 KG BAGS)": [
+       [
+        950.0,
+        923.0
+       ],
+       [
+        850.0,
+        800.0
+       ],
+       [
+        null,
+        900.0
+       ]
+      ],
+      "Bean Imports (1000 60 KG BAGS)": [
+       [
+        30.0,
+        30.0
+       ],
+       [
+        30.0,
+        30.0
+       ],
+       [
+        null,
+        30.0
+       ]
+      ],
+      "Bearing Trees (MILLION TREES)": [
+       [
+        0.0,
+        170.0
+       ],
+       [
+        0.0,
+        170.0
+       ],
+       [
+        null,
+        172.0
+       ]
+      ],
+      "Beginning Stocks (1000 60 KG BAGS)": [
+       [
+        61.0,
+        61.0
+       ],
+       [
+        83.0,
+        74.0
+       ],
+       [
+        null,
+        97.0
+       ]
+      ],
+      "Domestic Consumption (1000 60 KG BAGS)": [
+       [
+        58.0,
+        58.0
+       ],
+       [
+        62.0,
+        62.0
+       ],
+       [
+        null,
+        62.0
+       ]
+      ],
+      "Ending Stocks (1000 60 KG BAGS)": [
+       [
+        83.0,
+        74.0
+       ],
+       [
+        56.0,
+        97.0
+       ],
+       [
+        null,
+        120.0
+       ]
+      ],
+      "Non-Bearing Trees (MILLION TREES)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        2.0
+       ],
+       [
+        null,
+        2.0
+       ]
+      ],
+      "Other Production (1000 60 KG BAGS)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Roast & Ground Imports (1000 60 KG BAGS)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Robusta Production (1000 60 KG BAGS)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Rst,Ground Dom. Consum (1000 60 KG": [
+       [
+        38.0,
+        38.0
+       ],
+       [
+        40.0,
+        40.0
+       ],
+       [
+        null,
+        40.0
+       ]
+      ],
+      "Rst-Grnd Exp. (1000 60 KG BAGS)": [
+       [
+        30.0,
+        17.0
+       ],
+       [
+        30.0,
+        30.0
+       ],
+       [
+        null,
+        30.0
+       ]
+      ],
+      "Soluble Dom. Cons. (1000 60 KG BAGS)": [
+       [
+        20.0,
+        20.0
+       ],
+       [
+        22.0,
+        22.0
+       ],
+       [
+        null,
+        22.0
+       ]
+      ],
+      "Soluble Exports (1000 60 KG BAGS)": [
+       [
+        13.0,
+        12.0
+       ],
+       [
+        10.0,
+        10.0
+       ],
+       [
+        null,
+        10.0
+       ]
+      ],
+      "Soluble Imports (1000 60 KG BAGS)": [
+       [
+        43.0,
+        43.0
+       ],
+       [
+        45.0,
+        45.0
+       ],
+       [
+        null,
+        45.0
+       ]
+      ],
+      "Total Distribution (1000 60 KG BAGS)": [
+       [
+        1134.0,
+        1084.0
+       ],
+       [
+        1008.0,
+        999.0
+       ],
+       [
+        null,
+        1122.0
+       ]
+      ],
+      "Total Exports (1000 60 KG BAGS)": [
+       [
+        993.0,
+        952.0
+       ],
+       [
+        890.0,
+        840.0
+       ],
+       [
+        null,
+        940.0
+       ]
+      ],
+      "Total Imports (1000 60 KG BAGS)": [
+       [
+        73.0,
+        73.0
+       ],
+       [
+        75.0,
+        75.0
+       ],
+       [
+        null,
+        75.0
+       ]
+      ],
+      "Total Production (1000 60 KG BAGS)": [
+       [
+        1000.0,
+        950.0
+       ],
+       [
+        850.0,
+        850.0
+       ],
+       [
+        null,
+        950.0
+       ]
+      ],
+      "Total Supply (1000 60 KG BAGS)": [
+       [
+        1134.0,
+        1084.0
+       ],
+       [
+        1008.0,
+        999.0
+       ],
+       [
+        null,
+        1122.0
+       ]
+      ],
+      "Total Tree Population (MILLION TREES)": [
+       [
+        0.0,
+        170.0
+       ],
+       [
+        0.0,
+        172.0
+       ],
+       [
+        null,
+        174.0
+       ]
+      ]
+     },
+     "title": " Table 1: Production, Supply, and Distribution (PSD) Coffee, Green Oct 2024 Oct 2025 Oct 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Nairobi_Kenya_KE2026-0011.pdf"
   },
@@ -9763,6 +12282,7 @@
    "post": "Mexico City",
    "tables": [
     {
+     "country": "Mexico",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -9933,7 +12453,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": " Table 1: Cotton Production, Supply and Distribution Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -9957,6 +12477,7 @@
    "post": "Mexico City",
    "tables": [
     {
+     "country": "Mexico",
      "rows": {
       "Beet Sugar Production": [
        [
@@ -10183,7 +12704,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 1: Sugar Supply and Distribution October/September MY (1000 MT-RV) Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -10191,6 +12712,7 @@
      ]
     },
     {
+     "country": "Mexico",
      "rows": {
       "Area Harvested": [
        [
@@ -10291,7 +12813,7 @@
        ]
       ]
      },
-     "title": "2024/2025",
+     "title": "Table 2: Mexico – Sugar Cane for Centrifugal PS&D (1000 MT), (1000 HA) Sugar Cane for Centrifugal Nov 2024 Nov 2025 Nov 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -10315,6 +12837,7 @@
    "post": "Mexico City",
    "tables": [
     {
+     "country": "Mexico",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -10653,7 +13176,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": " Table 1. Mexico Coffee Production, Supply and Distribution Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -10677,6 +13200,7 @@
    "post": "Mexico City",
    "tables": [
     {
+     "country": "Mexico",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -10847,7 +13371,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": " Table 1: Cotton Production, Supply and Distribution Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -10871,6 +13395,7 @@
    "post": "Mexico City",
    "tables": [
     {
+     "country": "Mexico",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -11097,7 +13622,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": "Table 1: Sugar Supply and Distribution October/September MY (1000 MT-RV) Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -11105,6 +13630,7 @@
      ]
     },
     {
+     "country": "Mexico",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -11205,7 +13731,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 2: Mexico – Sugar Cane for Centrifugal PS&D Sugar Cane for Centrifugal Nov 2024 Nov 2025 Nov 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -11229,6 +13755,7 @@
    "post": "Managua",
    "tables": [
     {
+     "country": "Nicaragua",
      "rows": {
       "Arabica Production (1000 60 KG": [
        [
@@ -11567,7 +14094,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": " Table 2. Production, Supply and Distribution: Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -11591,6 +14118,7 @@
    "post": "Lima",
    "tables": [
     {
+     "country": "Peru",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -11929,7 +14457,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": "Table 1: Coffee Production, Supply and Distribution Coffee, Green Apr 2024 Apr 2025 Apr 2026 ",
      "years": [
       "2024/25",
       "2025/26",
@@ -11951,7 +14479,380 @@
    ],
    "name": "Cotton and Products Annual",
    "post": "Islamabad",
-   "tables": [],
+   "tables": [
+    {
+     "country": "Pakistan",
+     "rows": {
+      "Area Harvested (1000 HA)": [
+       [
+        2000.0,
+        2000.0
+       ],
+       [
+        1950.0,
+        2000.0
+       ],
+       [
+        null,
+        2000.0
+       ]
+      ],
+      "Beginning Stocks (1000 480 lb. Bales)": [
+       [
+        1850.0,
+        1850.0
+       ],
+       [
+        2100.0,
+        2300.0
+       ],
+       [
+        null,
+        2250.0
+       ]
+      ],
+      "Domestic Use (1000 480 lb. Bales)": [
+       [
+        10800.0,
+        10600.0
+       ],
+       [
+        10600.0,
+        10300.0
+       ],
+       [
+        null,
+        10200.0
+       ]
+      ],
+      "Domestic Use and Loss (1000 480 lb.": [
+       [
+        10800.0,
+        10600.0
+       ],
+       [
+        10600.0,
+        10300.0
+       ],
+       [
+        null,
+        10200.0
+       ]
+      ],
+      "Ending Stocks (1000 480 lb. Bales)": [
+       [
+        2100.0,
+        2300.0
+       ],
+       [
+        1950.0,
+        2250.0
+       ],
+       [
+        null,
+        2250.0
+       ]
+      ],
+      "Exports (1000 480 lb. Bales)": [
+       [
+        50.0,
+        50.0
+       ],
+       [
+        50.0,
+        50.0
+       ],
+       [
+        null,
+        50.0
+       ]
+      ],
+      "Imports (1000 480 lb. Bales)": [
+       [
+        6100.0,
+        6100.0
+       ],
+       [
+        5500.0,
+        5000.0
+       ],
+       [
+        null,
+        5200.0
+       ]
+      ],
+      "Loss (1000 480 lb. Bales)": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Production (1000 480 lb. Bales)": [
+       [
+        5000.0,
+        5000.0
+       ],
+       [
+        5000.0,
+        5300.0
+       ],
+       [
+        null,
+        5050.0
+       ]
+      ],
+      "Stock to Use % (Percent)": [
+       [
+        19.0,
+        22.0
+       ],
+       [
+        18.0,
+        22.0
+       ],
+       [
+        null,
+        22.0
+       ]
+      ],
+      "Total Distribution (1000 480 lb. Bales)": [
+       [
+        12950.0,
+        12950.0
+       ],
+       [
+        12600.0,
+        12600.0
+       ],
+       [
+        null,
+        12500.0
+       ]
+      ],
+      "Total Supply (1000 480 lb. Bales)": [
+       [
+        12950.0,
+        12950.0
+       ],
+       [
+        12600.0,
+        12600.0
+       ],
+       [
+        null,
+        12500.0
+       ]
+      ],
+      "Yield (KG/HA)": [
+       [
+        544.0,
+        544.0
+       ],
+       [
+        558.0,
+        577.0
+       ],
+       [
+        null,
+        550.0
+       ]
+      ]
+     },
+     "title": " Table 1: Production, Supply, and Demand (1,000 480 lb. Bales) (1,000 HA) Cotton Aug 2024 Aug 2025 Aug 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    },
+    {
+     "country": "Pakistan",
+     "rows": {
+      "Area Harvested (1000 HA)": [
+       [
+        2000.0,
+        2000.0
+       ],
+       [
+        1950.0,
+        2000.0
+       ],
+       [
+        null,
+        2000.0
+       ]
+      ],
+      "Beginning Stocks (1,000 MT)": [
+       [
+        404.0,
+        404.0
+       ],
+       [
+        458.0,
+        502.0
+       ],
+       [
+        null,
+        491.0
+       ]
+      ],
+      "Domestic Use (1,000 MT)": [
+       [
+        2356.0,
+        2313.0
+       ],
+       [
+        2313.0,
+        2247.0
+       ],
+       [
+        null,
+        2225.0
+       ]
+      ],
+      "Domestic Use and Loss (1,000 MT)": [
+       [
+        2356.0,
+        2313.0
+       ],
+       [
+        2313.0,
+        2247.0
+       ],
+       [
+        null,
+        2225.0
+       ]
+      ],
+      "Ending Stocks (1,000 MT)": [
+       [
+        458.0,
+        502.0
+       ],
+       [
+        425.0,
+        491.0
+       ],
+       [
+        null,
+        491.0
+       ]
+      ],
+      "Exports (1,000 MT)": [
+       [
+        11.0,
+        11.0
+       ],
+       [
+        11.0,
+        11.0
+       ],
+       [
+        null,
+        11.0
+       ]
+      ],
+      "Imports (1,000 MT)": [
+       [
+        1331.0,
+        1331.0
+       ],
+       [
+        1200.0,
+        1091.0
+       ],
+       [
+        null,
+        1135.0
+       ]
+      ],
+      "Loss (1,000 MT)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        null,
+        0.0
+       ]
+      ],
+      "Production (1,000 MT)": [
+       [
+        1091.0,
+        1091.0
+       ],
+       [
+        1091.0,
+        1156.0
+       ],
+       [
+        null,
+        1102.0
+       ]
+      ],
+      "Total Distribution (1,000 MT)": [
+       [
+        2825.0,
+        2825.0
+       ],
+       [
+        2749.0,
+        2749.0
+       ],
+       [
+        null,
+        2727.0
+       ]
+      ],
+      "Total Supply (1,000 MT)": [
+       [
+        2825.0,
+        2825.0
+       ],
+       [
+        2749.0,
+        2749.0
+       ],
+       [
+        null,
+        2727.0
+       ]
+      ],
+      "Yield (KG/HA)": [
+       [
+        544.0,
+        544.0
+       ],
+       [
+        558.0,
+        577.0
+       ],
+       [
+        null,
+        550.0
+       ]
+      ]
+     },
+     "title": " Table 2: Production, Supply, and Demand (1,000 MT) (1,000 HA) Cotton Aug 2024 Aug 2025 Aug 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Annual_Islamabad_Pakistan_PK2026-0002.pdf"
   },
@@ -11968,6 +14869,116 @@
    "post": "Islamabad",
    "tables": [
     {
+     "country": "Pakistan",
+     "rows": {
+      "Area Harvested (1000 HA)": [
+       [
+        1210.0,
+        1190.0
+       ],
+       [
+        null,
+        1200.0
+       ],
+       [
+        null,
+        1210.0
+       ]
+      ],
+      "Area Planted (1000 HA)": [
+       [
+        1210.0,
+        1210.0
+       ],
+       [
+        null,
+        1210.0
+       ],
+       [
+        null,
+        1210.0
+       ]
+      ],
+      "Production (1000 MT)": [
+       [
+        83500.0,
+        83500.0
+       ],
+       [
+        null,
+        84500.0
+       ],
+       [
+        null,
+        84500.0
+       ]
+      ],
+      "Total Supply (1000 MT)": [
+       [
+        83500.0,
+        83500.0
+       ],
+       [
+        null,
+        84500.0
+       ],
+       [
+        null,
+        84500.0
+       ]
+      ],
+      "Total Utilization (1000 MT)": [
+       [
+        83500.0,
+        83500.0
+       ],
+       [
+        null,
+        84500.0
+       ],
+       [
+        null,
+        84500.0
+       ]
+      ],
+      "Utilization for Alcohol (1000 MT)": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Utilization for Sugar (1000 MT)": [
+       [
+        83500.0,
+        83500.0
+       ],
+       [
+        null,
+        84500.0
+       ],
+       [
+        null,
+        84500.0
+       ]
+      ]
+     },
+     "title": " Table 2: Sugar Cane Production, Supply and Distribution (1000 HA), (1000 MT) Sugar Cane for Centrifugal Oct 2024 Oct 2025 Oct 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    },
+    {
+     "country": "Pakistan",
      "rows": {
       "April": [
        [
@@ -12390,7 +15401,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": "Table 4: Sugar Production, Supply and Distribution (1000 MT) Sugar, Centrifugal Oct-24 Oct-25 Oct-26",
      "years": [
       "2024/25",
       "2025/26",
@@ -12414,6 +15425,7 @@
    "post": "Islamabad",
    "tables": [
     {
+     "country": "Pakistan",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -12513,6 +15525,20 @@
         5200.0
        ]
       ],
+      "Loss": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
       "Production": [
        [
         5000.0,
@@ -12584,7 +15610,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": " Table 1: Production, Supply, and Distribution (1,000 480 lb. Bales) (1,000 HA) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -12608,6 +15634,116 @@
    "post": "Islamabad",
    "tables": [
     {
+     "country": "Pakistan",
+     "rows": {
+      "Area Harvested (1000 HA)": [
+       [
+        1210.0,
+        1190.0
+       ],
+       [
+        null,
+        1200.0
+       ],
+       [
+        null,
+        1210.0
+       ]
+      ],
+      "Area Planted (1000 HA)": [
+       [
+        1210.0,
+        1210.0
+       ],
+       [
+        null,
+        1210.0
+       ],
+       [
+        null,
+        1210.0
+       ]
+      ],
+      "Production (1000 MT)": [
+       [
+        83500.0,
+        83500.0
+       ],
+       [
+        null,
+        84500.0
+       ],
+       [
+        null,
+        84500.0
+       ]
+      ],
+      "Total Supply (1000 MT)": [
+       [
+        83500.0,
+        83500.0
+       ],
+       [
+        null,
+        84500.0
+       ],
+       [
+        null,
+        84500.0
+       ]
+      ],
+      "Total Utilization (1000 MT)": [
+       [
+        83500.0,
+        83500.0
+       ],
+       [
+        null,
+        84500.0
+       ],
+       [
+        null,
+        84500.0
+       ]
+      ],
+      "Utilization for Alcohol (1000 MT)": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Utilization of Sugar (1000 MT)": [
+       [
+        83500.0,
+        83500.0
+       ],
+       [
+        null,
+        84500.0
+       ],
+       [
+        null,
+        84500.0
+       ]
+      ]
+     },
+     "title": " Table 1: Sugar Cane Production, Supply and Distribution (1000 HA), (1000 MT) Sugar Cane for Centrifugal Oct 2024 Oct 2025 Oct 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    },
+    {
+     "country": "Pakistan",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -12679,6 +15815,48 @@
         6800.0
        ]
       ],
+      "Other Disappearance (1000 MT)": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Raw Exports (1000 MT)": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Raw Imports (1000 MT)": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
       "Refined Exp. (Raw Val) (1000 MT)": [
        [
         700.0,
@@ -12691,6 +15869,20 @@
        [
         300.0,
         500.0
+       ]
+      ],
+      "Refined Imp. (Raw Val) (1000 MT)": [
+       [
+        null,
+        null
+       ],
+       [
+        250.0,
+        250.0
+       ],
+       [
+        null,
+        null
        ]
       ],
       "Total Distribution (1000 MT)": [
@@ -12719,6 +15911,20 @@
        [
         300.0,
         500.0
+       ]
+      ],
+      "Total Imports (1000 MT)": [
+       [
+        null,
+        null
+       ],
+       [
+        250.0,
+        250.0
+       ],
+       [
+        null,
+        null
        ]
       ],
       "Total Sugar Production (1000 MT)": [
@@ -12764,7 +15970,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 2: Centrifugal Sugar Production, Supply and Distribution (1000 HA), (1000 MT) Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -12788,6 +15994,7 @@
    "post": "Manila",
    "tables": [
     {
+     "country": "Philippines",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -13014,7 +16221,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 1. Sugar (Centrifugal or Raw) Production, Supply, and Distribution, ‘000 MT Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -13022,6 +16229,7 @@
      ]
     },
     {
+     "country": "Philippines",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -13122,7 +16330,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 2. Sugarcane for Centrifugal Production, Supply, and Distribution Sugar Cane for Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -13146,6 +16354,7 @@
    "post": "Manila",
    "tables": [
     {
+     "country": "Philippines",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -13372,7 +16581,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 1. Sugar (Centrifugal or Raw) Production, Supply, and Distribution, 000 MT Sugar, Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -13380,6 +16589,7 @@
      ]
     },
     {
+     "country": "Philippines",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -13480,7 +16690,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 2. Sugarcane for Centrifugal Production, Supply, and Distribution Sugar Cane for Centrifugal Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -13504,6 +16714,7 @@
    "post": "Dakar",
    "tables": [
     {
+     "country": "Mali",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -13534,6 +16745,20 @@
        ]
       ],
       "Domestic Use 1000 480 lb. Bales": [
+       [
+        25.0,
+        25.0
+       ],
+       [
+        25.0,
+        25.0
+       ],
+       [
+        0.0,
+        25.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480": [
        [
         25.0,
         25.0
@@ -13674,7 +16899,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "(1,000 Hectares (HA), 1,000 bales, PERCENT, KG/HA) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -13682,6 +16907,7 @@
      ]
     },
     {
+     "country": "Burkina",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -13712,6 +16938,20 @@
        ]
       ],
       "Domestic Use 1000 480 lb. Bales": [
+       [
+        15.0,
+        25.0
+       ],
+       [
+        15.0,
+        25.0
+       ],
+       [
+        0.0,
+        25.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480": [
        [
         15.0,
         25.0
@@ -13852,7 +17092,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "(1,000 Hectares (HA), 1,000 bales, PERCENT, KG/HA) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -13860,6 +17100,7 @@
      ]
     },
     {
+     "country": "Senegal",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -13890,6 +17131,20 @@
        ]
       ],
       "Domestic Use 1000 480 lb. Bales": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        2.0,
+        2.0
+       ],
+       [
+        0.0,
+        2.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480": [
        [
         0.0,
         0.0
@@ -14030,7 +17285,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "(1,000 Hectares (HA), 1,000 bales, PERCENT, KG/HA) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -14054,6 +17309,7 @@
    "post": "Dakar",
    "tables": [
     {
+     "country": "Mali",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -14084,6 +17340,20 @@
        ]
       ],
       "Domestic Use 1000 480 lb. Bales": [
+       [
+        25.0,
+        25.0
+       ],
+       [
+        25.0,
+        25.0
+       ],
+       [
+        25.0,
+        25.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480": [
        [
         25.0,
         25.0
@@ -14224,7 +17494,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "(1,000 Hectares (HA), 1,000 bales, PERCENT, KG/HA) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -14232,6 +17502,7 @@
      ]
     },
     {
+     "country": "Burkina",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -14262,6 +17533,20 @@
        ]
       ],
       "Domestic Use 1000 480 lb. Bales": [
+       [
+        15.0,
+        25.0
+       ],
+       [
+        15.0,
+        25.0
+       ],
+       [
+        15.0,
+        25.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480": [
        [
         15.0,
         25.0
@@ -14402,7 +17687,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "(1,000 Hectares (HA), 1,000 bales, PERCENT, KG/HA) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -14410,6 +17695,7 @@
      ]
     },
     {
+     "country": "Senegal",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -14440,6 +17726,20 @@
        ]
       ],
       "Domestic Use 1000 480 lb. Bales": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        2.0,
+        2.0
+       ],
+       [
+        2.0,
+        2.0
+       ]
+      ],
+      "Domestic Use and Loss 1000 480": [
        [
         0.0,
         0.0
@@ -14580,7 +17880,7 @@
        ]
       ]
      },
-     "title": "Cotton",
+     "title": "(1,000 Hectares (HA), 1,000 bales, PERCENT, KG/HA) Cotton Aug 2024 Aug 2025 Aug 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -14604,6 +17904,7 @@
    "post": "Bangkok",
    "tables": [
     {
+     "country": "Thailand",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -14704,7 +18005,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 1: Thailand’s Sugarcane Production Sugar Cane for Centrifugal Dec 2024 Dec 2025 Dec 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -14712,6 +18013,7 @@
      ]
     },
     {
+     "country": "Thailand",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -14938,7 +18240,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 2. Thailand: Sugar Production Sugar, Centrifugal Dec 2024 Dec 2025 Dec 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -14962,6 +18264,7 @@
    "post": "Bangkok",
    "tables": [
     {
+     "country": "Thailand",
      "rows": {
       "Area Harvested (1000 HA)": [
        [
@@ -15062,7 +18365,7 @@
        ]
       ]
      },
-     "title": "Sugar Cane for Centrifugal",
+     "title": " Table 1. Thailand: Sugarcane Production Sugar Cane for Centrifugal Dec 2024 Dec 2025 Dec 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -15070,6 +18373,7 @@
      ]
     },
     {
+     "country": "Thailand",
      "rows": {
       "Beet Sugar Production (1000 MT)": [
        [
@@ -15296,7 +18600,7 @@
        ]
       ]
      },
-     "title": "Sugar, Centrifugal",
+     "title": " Table 2. Thailand: Sugar Production Sugar, Centrifugal Dec 2024 Dec 2025 Dec 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -15318,7 +18622,394 @@
    ],
    "name": "Cotton and Products Update",
    "post": "Ankara",
-   "tables": [],
+   "tables": [
+    {
+     "country": "Turkey",
+     "rows": {
+      "Area Harvested": [
+       [
+        465.0,
+        465.0
+       ],
+       [
+        395.0,
+        395.0
+       ],
+       [
+        310.0,
+        275.0
+       ]
+      ],
+      "Beginning Stocks": [
+       [
+        1402.0,
+        2634.0
+       ],
+       [
+        1278.0,
+        2721.0
+       ],
+       [
+        1082.0,
+        2170.0
+       ]
+      ],
+      "Domestic Use": [
+       [
+        7100.0,
+        6889.0
+       ],
+       [
+        6800.0,
+        7119.0
+       ],
+       [
+        6800.0,
+        6889.0
+       ]
+      ],
+      "Domestic Use & Loss": [
+       [
+        7100.0,
+        6889.0
+       ],
+       [
+        6800.0,
+        7119.0
+       ],
+       [
+        6800.0,
+        6889.0
+       ]
+      ],
+      "Ending Stocks": [
+       [
+        1278.0,
+        2721.0
+       ],
+       [
+        1082.0,
+        2170.0
+       ],
+       [
+        1132.0,
+        1688.0
+       ]
+      ],
+      "Exports": [
+       [
+        1433.0,
+        1433.0
+       ],
+       [
+        950.0,
+        1079.0
+       ],
+       [
+        600.0,
+        919.0
+       ]
+      ],
+      "Imports": [
+       [
+        4459.0,
+        4460.0
+       ],
+       [
+        4500.0,
+        4593.0
+       ],
+       [
+        4800.0,
+        5052.0
+       ]
+      ],
+      "Loss": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ],
+      "Production": [
+       [
+        3950.0,
+        3950.0
+       ],
+       [
+        3054.0,
+        3054.0
+       ],
+       [
+        2650.0,
+        2274.0
+       ]
+      ],
+      "Stock to use %": [
+       [
+        14.98,
+        32.69
+       ],
+       [
+        13.96,
+        26.47
+       ],
+       [
+        15.3,
+        21.61
+       ]
+      ],
+      "Total Distribution": [
+       [
+        9811.0,
+        11043.0
+       ],
+       [
+        8832.0,
+        10368.0
+       ],
+       [
+        8532.0,
+        9496.0
+       ]
+      ],
+      "Total Supply": [
+       [
+        9811.0,
+        11043.0
+       ],
+       [
+        8832.0,
+        10368.0
+       ],
+       [
+        8532.0,
+        9496.0
+       ]
+      ],
+      "Yield (kg/HA)": [
+       [
+        1849.0,
+        1849.0
+       ],
+       [
+        1683.0,
+        1684.0
+       ],
+       [
+        1861.0,
+        1800.0
+       ]
+      ]
+     },
+     "title": "Table 1: Production, Supply and Distribution, Bales (thousands of hectares, thousands of 480lb. bales) Cotton Market Begin Year August 2023 August 2024 August 2025",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    },
+    {
+     "country": "Turkey",
+     "rows": {
+      "Area Harvested": [
+       [
+        465.0,
+        465.0
+       ],
+       [
+        395.0,
+        395.0
+       ],
+       [
+        310.0,
+        275.0
+       ]
+      ],
+      "Beginning Stocks": [
+       [
+        305.0,
+        573.0
+       ],
+       [
+        278.0,
+        592.0
+       ],
+       [
+        236.0,
+        472.0
+       ]
+      ],
+      "Domestic Use": [
+       [
+        1546.0,
+        1500.0
+       ],
+       [
+        1481.0,
+        1550.0
+       ],
+       [
+        1481.0,
+        1500.0
+       ]
+      ],
+      "Domestic Use & Loss": [
+       [
+        1546.0,
+        1500.0
+       ],
+       [
+        1481.0,
+        1550.0
+       ],
+       [
+        1481.0,
+        1500.0
+       ]
+      ],
+      "Ending Stocks": [
+       [
+        278.0,
+        592.0
+       ],
+       [
+        236.0,
+        472.0
+       ],
+       [
+        246.0,
+        367.0
+       ]
+      ],
+      "Exports": [
+       [
+        312.0,
+        312.0
+       ],
+       [
+        207.0,
+        235.0
+       ],
+       [
+        131.0,
+        200.0
+       ]
+      ],
+      "Imports": [
+       [
+        971.0,
+        971.0
+       ],
+       [
+        980.0,
+        1000.0
+       ],
+       [
+        1045.0,
+        1100.0
+       ]
+      ],
+      "Loss": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ],
+      "Production": [
+       [
+        860.0,
+        860.0
+       ],
+       [
+        665.0,
+        665.0
+       ],
+       [
+        577.0,
+        495.0
+       ]
+      ],
+      "Stock to use %": [
+       [
+        14.98,
+        32.69
+       ],
+       [
+        13.96,
+        26.47
+       ],
+       [
+        15.3,
+        21.61
+       ]
+      ],
+      "Total Distribution": [
+       [
+        2136.0,
+        2404.0
+       ],
+       [
+        1923.0,
+        2257.0
+       ],
+       [
+        1858.0,
+        2067.0
+       ]
+      ],
+      "Total Supply": [
+       [
+        2136.0,
+        2404.0
+       ],
+       [
+        1923.0,
+        2257.0
+       ],
+       [
+        1858.0,
+        2067.0
+       ]
+      ],
+      "Yield (kg/HA)": [
+       [
+        1849.0,
+        1849.0
+       ],
+       [
+        1683.0,
+        1684.0
+       ],
+       [
+        1861.0,
+        1800.0
+       ]
+      ]
+     },
+     "title": "Table 2: Production, Supply and Distribution, Metric Tons (thousands of hectares, thousands of MT) Cotton Market Begin Year August 2023 August 2024 August 2025",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Update_Ankara_Turkiye_TU2026-0021.pdf"
   },
@@ -15335,6 +19026,7 @@
    "post": "Nairobi",
    "tables": [
     {
+     "country": "Uganda",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -15673,7 +19365,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": "Production Table 1: Production, Supply and Demand (PSD) Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -15710,7 +19402,229 @@
    ],
    "name": "Cotton and Products Annual",
    "post": "Ho Chi Minh City",
-   "tables": [],
+   "tables": [
+    {
+     "country": "Vietnam",
+     "rows": {
+      "Area Harvested": [
+       [
+        1.0,
+        null
+       ],
+       [
+        1.0,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Beginning Stocks": [
+       [
+        1034.0,
+        1034.0
+       ],
+       [
+        1016.0,
+        1113.0
+       ],
+       [
+        null,
+        913.0
+       ]
+      ],
+      "Domestic Use": [
+       [
+        8000.0,
+        7900.0
+       ],
+       [
+        8000.0,
+        7800.0
+       ],
+       [
+        null,
+        8000.0
+       ]
+      ],
+      "Ending Stocks": [
+       [
+        1016.0,
+        1113.0
+       ],
+       [
+        1019.0,
+        913.0
+       ],
+       [
+        null,
+        1313.0
+       ]
+      ],
+      "Exports": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Imports": [
+       [
+        7979.0,
+        7979.0
+       ],
+       [
+        8000.0,
+        7600.0
+       ],
+       [
+        null,
+        8400.0
+       ]
+      ],
+      "Loss": [
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Production": [
+       [
+        3.0,
+        null
+       ],
+       [
+        3.0,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ],
+      "Stock to Use %": [
+       [
+        13.0,
+        14.0
+       ],
+       [
+        13.0,
+        12.0
+       ],
+       [
+        null,
+        16.0
+       ]
+      ],
+      "Stocks to Use": [
+       [
+        2.0,
+        2.0
+       ],
+       [
+        2.0,
+        1.0
+       ],
+       [
+        null,
+        2.0
+       ]
+      ],
+      "Supply Less Imports": [
+       [
+        1037.0,
+        1034.0
+       ],
+       [
+        1019.0,
+        1113.0
+       ],
+       [
+        null,
+        913.0
+       ]
+      ],
+      "Total Distribution": [
+       [
+        9016.0,
+        9013.0
+       ],
+       [
+        9019.0,
+        8713.0
+       ],
+       [
+        null,
+        9313.0
+       ]
+      ],
+      "Total Supply": [
+       [
+        9016.0,
+        9013.0
+       ],
+       [
+        9019.0,
+        8713.0
+       ],
+       [
+        null,
+        9313.0
+       ]
+      ],
+      "Total Use": [
+       [
+        8000.0,
+        7900.0
+       ],
+       [
+        8000.0,
+        7800.0
+       ],
+       [
+        null,
+        8000.0
+       ]
+      ],
+      "Yield": [
+       [
+        653.0,
+        null
+       ],
+       [
+        653.0,
+        null
+       ],
+       [
+        null,
+        null
+       ]
+      ]
+     },
+     "title": " Table 4: Production, Supply, and Distribution Cotton Market Begin Year Aug 2024 Aug 2025 Aug 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Cotton%20and%20Products%20Annual_Ho%20Chi%20Minh%20City_Vietnam_VM2026-0009.pdf"
   },
@@ -15727,6 +19641,7 @@
    "post": "Ho Chi Minh City",
    "tables": [
     {
+     "country": "Vietnam",
      "rows": {
       "Arabica Production (1000 60 KG BAGS)": [
        [
@@ -15995,7 +19910,7 @@
        ]
       ]
      },
-     "title": "Coffee, Green",
+     "title": "bags GBE. Coffee, Green Oct 2024 Oct 2025 Oct 2026",
      "years": [
       "2024/25",
       "2025/26",
@@ -16007,7 +19922,8 @@
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Ho%20Chi%20Minh%20City_Vietnam_VM2026-0016.pdf"
   }
  },
- "updated": "2026-11-18T17:54Z",
+ "last_ok": "2026-11-18T19:10Z",
+ "updated": "2026-11-18T18:01Z",
  "wmt": {
   "wmt-coffee-2026-07": {
    "first_seen": "2026-11-18",
@@ -16020,7 +19936,7 @@
   },
   "wmt-cotton-2026-11": {
    "first_seen": "2026-11-18",
-   "headline": null,
+   "headline": "2026 China State Reserve Sales Total Nearly 2 Million Bales",
    "key": "wmt-cotton-2026-11",
    "market": "cotton",
    "month": "2026-11",

@@ -14,52 +14,56 @@
    "country": "Indonesia",
    "tag": "FAS attaché",
    "key_points": [
+    "Arabica cut again (logistics recovery in the highlands, warm dry mid-year); exports seen −7% to 7.3m bags.",
     "MY 2026/27, Post vs USDA official: arabica 1.35m bags vs 1.38m bags (−30k bags); exports 8.33m bags vs 8.05m bags (+280k bags); ending stocks 479k bags vs 671k bags (−192k bags).",
     "MY 2025/26, Post vs USDA: production 12.37m bags vs 12.45m bags.",
     "Post's own revision since its Coffee Annual (May 2026), MY 2026/27: production 11.35m bags from 11.38m bags (−0.3%); exports 8.33m bags from 8.05m bags (+3.5%); consumption 4.82m bags from 4.83m bags (−0.2%); ending stocks 479k bags from 671k bags (−28.6%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 11380.0,
-      "post": 11350.0,
-      "diff": -30.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 1380.0,
-      "post": 1350.0,
-      "diff": -30.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 10000.0,
-      "post": 10000.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Exports",
-      "usda": 8050.0,
-      "post": 8330.0,
-      "diff": 280.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 4830.0,
-      "post": 4820.0,
-      "diff": -10.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 671.0,
-      "post": 479.0,
-      "diff": -192.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 11380.0,
+       "post": 11350.0,
+       "diff": -30.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 1380.0,
+       "post": 1350.0,
+       "diff": -30.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 10000.0,
+       "post": 10000.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Exports",
+       "usda": 8050.0,
+       "post": 8330.0,
+       "diff": 280.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 4830.0,
+       "post": 4820.0,
+       "diff": -10.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 671.0,
+       "post": 479.0,
+       "diff": -192.0
+      }
+     ],
+     "country": "Indonesia"
+    }
+   ]
   },
   {
    "date": "2026-11-17",
@@ -69,51 +73,56 @@
    "country": "India",
    "tag": "FAS attaché",
    "key_points": [
+    "Robusta +4% more than offsets arabica −9%; imports raised 20% to 1.67m bags as domestic supply tightens; exports raised 3%.",
     "MY 2026/27, Post vs USDA official: arabica 1.42m bags vs 1.56m bags (−140k bags); robusta 4.75m bags vs 4.58m bags (+170k bags); exports 6.39m bags vs 6.22m bags (+170k bags); consumption 1.30m bags vs 1.58m bags (−280k bags); ending stocks 389k bags vs 216k bags (+173k bags).",
-    "MY 2025/26, Post vs USDA: production 6.62m bags vs 6.43m bags; exports 7.02m bags vs 6.03m bags; ending stocks 235k bags vs 485k bags."
+    "MY 2025/26, Post vs USDA: production 6.62m bags vs 6.43m bags; exports 7.02m bags vs 6.03m bags; ending stocks 235k bags vs 485k bags.",
+    "Post's own revision since its Coffee Annual (May 2026), MY 2026/27: production 6.17m bags from 6.14m bags (+0.5%); exports 6.39m bags from 6.22m bags (+2.7%); consumption 1.30m bags from 1.58m bags (−17.7%); ending stocks 389k bags from 216k bags (+80.1%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 6140.0,
-      "post": 6170.0,
-      "diff": 30.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 1560.0,
-      "post": 1420.0,
-      "diff": -140.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 4580.0,
-      "post": 4750.0,
-      "diff": 170.0
-     },
-     {
-      "line": "Exports",
-      "usda": 6219.0,
-      "post": 6389.0,
-      "diff": 170.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 1580.0,
-      "post": 1300.0,
-      "diff": -280.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 216.0,
-      "post": 389.0,
-      "diff": 173.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 6140.0,
+       "post": 6170.0,
+       "diff": 30.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 1560.0,
+       "post": 1420.0,
+       "diff": -140.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 4580.0,
+       "post": 4750.0,
+       "diff": 170.0
+      },
+      {
+       "line": "Exports",
+       "usda": 6219.0,
+       "post": 6389.0,
+       "diff": 170.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 1580.0,
+       "post": 1300.0,
+       "diff": -280.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 216.0,
+       "post": 389.0,
+       "diff": 173.0
+      }
+     ],
+     "country": "India"
+    }
+   ]
   },
   {
    "date": "2026-11-16",
@@ -123,51 +132,56 @@
    "country": "Brazil",
    "tag": "FAS attaché",
    "key_points": [
+    "Record crop but heavy rain lowered arabica quality; exports picked up with the new crop after a slow first half; first flowering for 2027/28 looks good, El Niño watched.",
     "MY 2026/27, Post vs USDA official: production 72.50m bags vs 71.90m bags (+600k bags); arabica 49.20m bags vs 47.50m bags (+1.70m bags); robusta 23.30m bags vs 24.40m bags (−1.10m bags); ending stocks 3.42m bags vs 4.42m bags (−1.00m bags).",
-    "MY 2025/26, Post vs USDA: exports 39.02m bags vs 37.87m bags; ending stocks 2.29m bags vs 3.90m bags."
+    "MY 2025/26, Post vs USDA: exports 39.02m bags vs 37.87m bags; ending stocks 2.29m bags vs 3.90m bags.",
+    "Post's own revision since its Coffee Annual (Jun 2026), MY 2026/27: production 72.50m bags from 71.90m bags (+0.8%); ending stocks 3.42m bags from 4.42m bags (−22.7%)."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 71900.0,
-      "post": 72500.0,
-      "diff": 600.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 47500.0,
-      "post": 49200.0,
-      "diff": 1700.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 24400.0,
-      "post": 23300.0,
-      "diff": -1100.0
-     },
-     {
-      "line": "Exports",
-      "usda": 49070.0,
-      "post": 49070.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 22390.0,
-      "post": 22390.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 4425.0,
-      "post": 3420.0,
-      "diff": -1005.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 71900.0,
+       "post": 72500.0,
+       "diff": 600.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 47500.0,
+       "post": 49200.0,
+       "diff": 1700.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 24400.0,
+       "post": 23300.0,
+       "diff": -1100.0
+      },
+      {
+       "line": "Exports",
+       "usda": 49070.0,
+       "post": 49070.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 22390.0,
+       "post": 22390.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 4425.0,
+       "post": 3420.0,
+       "diff": -1005.0
+      }
+     ],
+     "country": "Brazil"
+    }
+   ]
   },
   {
    "date": "2026-10-13",
@@ -176,21 +190,23 @@
    "kind": "gain",
    "country": "Brazil",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "El Niño brief: heat and dryness risk in central/northern Brazil (coffee flowering), excess rain in the south."
+   ],
+   "auto": false
   },
   {
-   "date": "2026-07-15",
+   "date": "2026-07-10",
    "title": "FAS Coffee: World Markets and Trade, July 2026 — Record Brazil Production Driven by Rebounding Arabica Crop",
    "url": "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
    "kind": "wmt",
    "tag": "FAS WMT",
    "key_points": [
-    "Robusta production is forecast to retreat 600,000 bags to 24.4 million following last year’s  record harvest.",
-    "Production  increased again in 2023/24 but yields lagged expectations because of excessive rainfall during fruit  development.",
-    "These gains were followed by 2 consecutive years of declines as drought and heat  again lowered yields."
+    "World 2026/27 output seen at a record 189.7m bags (+10.8m), exports a record 131.4m; prices fell ~25% over the previous seven months as supply grew.",
+    "Brazil a record 71.9m bags (+8.9m): arabica +9.5m to 47.5m on near-record Minas yields, robusta −0.6m to 24.4m (cool, wet Espírito Santo); bean exports seen a record 45.0m.",
+    "Vietnam +0.8m to a record 32.5m bags."
    ],
-   "auto": true
+   "auto": false
   },
   {
    "date": "2026-06-01",
@@ -199,8 +215,56 @@
    "kind": "gain",
    "country": "Brazil",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Good weather in the main arabica areas: record crop after five weak years, exports seen +30%; exporters cautious on low stocks and El Niño risk to the end of harvest and to 2027/28.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 71.90m bags; arabica 47.50m bags; robusta 24.40m bags; exports 49.07m bags; consumption 22.39m bags; ending stocks 4.42m bags.",
+    "MY 2025/26, Post vs USDA: exports 37.87m bags vs 40.75m bags; ending stocks 3.90m bags vs 485k bags."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 71900.0,
+       "diff": 71900.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 47500.0,
+       "diff": 47500.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 24400.0,
+       "diff": 24400.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 49070.0,
+       "diff": 49070.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 22390.0,
+       "diff": 22390.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 4425.0,
+       "diff": 4425.0
+      }
+     ],
+     "country": "Brazil"
+    }
+   ]
   },
   {
    "date": "2026-05-20",
@@ -210,51 +274,55 @@
    "country": "Vietnam",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 32.50m bags; arabica 1.10m bags; robusta 31.40m bags; exports 28.95m bags; consumption 5.00m bags; ending stocks 489k bags.",
+    "Planting after the 2024–25 price peak: crop up to 32.5m bags; lower prices are drawing stocks out to export.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 32.50m bags; arabica 1.10m bags; robusta 31.40m bags; exports 28.95m bags; consumption 5.00m bags; ending stocks 489k bags.",
     "MY 2025/26, Post vs USDA: production 31.70m bags vs 30.80m bags; exports 28.50m bags vs 27.90m bags; ending stocks 689k bags vs 389k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 32500.0,
-      "diff": 32500.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 1100.0,
-      "diff": 1100.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 31400.0,
-      "diff": 31400.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 28950.0,
-      "diff": 28950.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 5000.0,
-      "diff": 5000.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 489.0,
-      "diff": 489.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 32500.0,
+       "diff": 32500.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 1100.0,
+       "diff": 1100.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 31400.0,
+       "diff": 31400.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 28950.0,
+       "diff": 28950.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 5000.0,
+       "diff": 5000.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 489.0,
+       "diff": 489.0
+      }
+     ],
+     "country": "Vietnam"
+    }
+   ]
   },
   {
    "date": "2026-05-20",
@@ -264,51 +332,55 @@
    "country": "Uganda",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 7.16m bags; arabica 1.14m bags; robusta 6.03m bags; exports 6.83m bags; consumption 335k bags; ending stocks 329k bags.",
+    "More area after high prices: crop 7.2m bags (from 7.1m), exports 6.8m.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 7.16m bags; arabica 1.14m bags; robusta 6.03m bags; exports 6.83m bags; consumption 335k bags; ending stocks 329k bags.",
     "MY 2025/26, Post vs USDA: production 7.09m bags vs 6.88m bags; exports 6.70m bags vs 6.51m bags; ending stocks 334k bags vs 299k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 7160.0,
-      "diff": 7160.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 1135.0,
-      "diff": 1135.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 6025.0,
-      "diff": 6025.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 6830.0,
-      "diff": 6830.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 335.0,
-      "diff": 335.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 329.0,
-      "diff": 329.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 7160.0,
+       "diff": 7160.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 1135.0,
+       "diff": 1135.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 6025.0,
+       "diff": 6025.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 6830.0,
+       "diff": 6830.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 335.0,
+       "diff": 335.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 329.0,
+       "diff": 329.0
+      }
+     ],
+     "country": "Uganda"
+    }
+   ]
   },
   {
    "date": "2026-05-20",
@@ -318,51 +390,55 @@
    "country": "Peru",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 4.78m bags; arabica 4.78m bags; exports 4.55m bags; consumption 305k bags; ending stocks 26k bags.",
+    "Crop flat at 4.78m bags; US took 32% of exports.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 4.78m bags; arabica 4.78m bags; exports 4.55m bags; consumption 305k bags; ending stocks 26k bags.",
     "MY 2025/26, Post vs USDA: production 4.76m bags vs 4.20m bags; exports 4.55m bags vs 4.38m bags; ending stocks 21k bags vs 26k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 4780.0,
-      "diff": 4780.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 4780.0,
-      "diff": 4780.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 4554.0,
-      "diff": 4554.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 305.0,
-      "diff": 305.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 26.0,
-      "diff": 26.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 4780.0,
+       "diff": 4780.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 4780.0,
+       "diff": 4780.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 4554.0,
+       "diff": 4554.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 305.0,
+       "diff": 305.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 26.0,
+       "diff": 26.0
+      }
+     ],
+     "country": "Peru"
+    }
+   ]
   },
   {
    "date": "2026-05-20",
@@ -372,51 +448,55 @@
    "country": "Nicaragua",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 2.44m bags; arabica 2.30m bags; robusta 140k bags; exports 2.25m bags; consumption 160k bags; ending stocks 85k bags.",
+    "El Niño risk and fertiliser +25%: crop seen 2.4m bags, ~8% below the 2.6m high.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 2.44m bags; arabica 2.30m bags; robusta 140k bags; exports 2.25m bags; consumption 160k bags; ending stocks 85k bags.",
     "MY 2025/26, Post vs USDA: production 2.56m bags vs 2.58m bags; ending stocks 55k bags vs 130k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 2440.0,
-      "diff": 2440.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 2300.0,
-      "diff": 2300.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 140.0,
-      "diff": 140.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 2250.0,
-      "diff": 2250.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 160.0,
-      "diff": 160.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 85.0,
-      "diff": 85.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 2440.0,
+       "diff": 2440.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 2300.0,
+       "diff": 2300.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 140.0,
+       "diff": 140.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 2250.0,
+       "diff": 2250.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 160.0,
+       "diff": 160.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 85.0,
+       "diff": 85.0
+      }
+     ],
+     "country": "Nicaragua"
+    }
+   ]
   },
   {
    "date": "2026-05-20",
@@ -426,51 +506,55 @@
    "country": "Ethiopia",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 12.10m bags; arabica 12.10m bags; exports 7.13m bags; consumption 5.00m bags; ending stocks 145k bags.",
+    "Normal weather assumed: crop 12.1m bags, exports 7.13m; record cherry prices squeezed exporters in 2025/26.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 12.10m bags; arabica 12.10m bags; exports 7.13m bags; consumption 5.00m bags; ending stocks 145k bags.",
     "MY 2025/26, Post vs USDA: exports 6.96m bags vs 7.80m bags; ending stocks 175k bags vs 140k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 12100.0,
-      "diff": 12100.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 12100.0,
-      "diff": 12100.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 7130.0,
-      "diff": 7130.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 5000.0,
-      "diff": 5000.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 145.0,
-      "diff": 145.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 12100.0,
+       "diff": 12100.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 12100.0,
+       "diff": 12100.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 7130.0,
+       "diff": 7130.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 5000.0,
+       "diff": 5000.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 145.0,
+       "diff": 145.0
+      }
+     ],
+     "country": "Ethiopia"
+    }
+   ]
   },
   {
    "date": "2026-05-20",
@@ -480,51 +564,55 @@
    "country": "Costa Rica",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 1.20m bags; arabica 1.20m bags; exports 1.06m bags; consumption 320k bags; ending stocks 68k bags.",
+    "Crop +3.5% to 1.2m bags, but strong colón, dearer fertiliser and El Niño limit the on-year gain.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 1.20m bags; arabica 1.20m bags; exports 1.06m bags; consumption 320k bags; ending stocks 68k bags.",
     "MY 2025/26, Post vs USDA: production 1.16m bags vs 1.17m bags; exports 1.02m bags vs 1.06m bags; ending stocks 133k bags vs 105k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 1200.0,
-      "diff": 1200.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 1200.0,
-      "diff": 1200.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 1060.0,
-      "diff": 1060.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 320.0,
-      "diff": 320.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 68.0,
-      "diff": 68.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 1200.0,
+       "diff": 1200.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 1200.0,
+       "diff": 1200.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 1060.0,
+       "diff": 1060.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 320.0,
+       "diff": 320.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 68.0,
+       "diff": 68.0
+      }
+     ],
+     "country": "Costa Rica"
+    }
+   ]
   },
   {
    "date": "2026-05-20",
@@ -534,51 +622,55 @@
    "country": "Colombia",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 13.40m bags; arabica 13.40m bags; exports 13.40m bags; consumption 2.20m bags; ending stocks 670k bags.",
+    "Shift from La Niña to El Niño (drier) seen helping: crop +7.2% to 13.4m bags; lower prices encourage renovation.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 13.40m bags; arabica 13.40m bags; exports 13.40m bags; consumption 2.20m bags; ending stocks 670k bags.",
     "MY 2025/26, Post vs USDA: production 12.50m bags vs 13.80m bags; exports 12.81m bags vs 12.55m bags; ending stocks 866k bags vs 963k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 13400.0,
-      "diff": 13400.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 13400.0,
-      "diff": 13400.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 13400.0,
-      "diff": 13400.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 2200.0,
-      "diff": 2200.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 670.0,
-      "diff": 670.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 13400.0,
+       "diff": 13400.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 13400.0,
+       "diff": 13400.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 13400.0,
+       "diff": 13400.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 2200.0,
+       "diff": 2200.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 670.0,
+       "diff": 670.0
+      }
+     ],
+     "country": "Colombia"
+    }
+   ]
   },
   {
    "date": "2026-05-18",
@@ -587,8 +679,56 @@
    "kind": "gain",
    "country": "Kenya",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Crop +12% to 950k bags on new area and better care after two years of high prices; new Coffee Act 2026 changes regulation.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 950k bags; arabica 950k bags; exports 940k bags; consumption 62k bags; ending stocks 120k bags.",
+    "MY 2025/26, Post vs USDA: exports 840k bags vs 890k bags; ending stocks 97k bags vs 56k bags."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 950.0,
+       "diff": 950.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 950.0,
+       "diff": 950.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 940.0,
+       "diff": 940.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 62.0,
+       "diff": 62.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 120.0,
+       "diff": 120.0
+      }
+     ],
+     "country": "Kenya"
+    }
+   ]
   },
   {
    "date": "2026-05-15",
@@ -598,51 +738,55 @@
    "country": "Indonesia",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 11.38m bags; arabica 1.38m bags; robusta 10.00m bags; exports 8.05m bags; consumption 4.83m bags; ending stocks 671k bags.",
-    "MY 2025/26, Post vs USDA: production 12.37m bags vs 12.45m bags; exports 8.84m bags vs 8.87m bags; ending stocks 751k bags vs 657k bags."
+    "Excess rain at flowering in south Sumatra and Java: crop −8% to 11.38m bags; 2025/26 arabica cut after floods in Aceh/North Sumatra.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 11.38m bags; arabica 1.38m bags; robusta 10.00m bags; exports 8.05m bags; consumption 4.83m bags; ending stocks 671k bags.",
+    "MY 2025/26, Post vs USDA: production 12.37m bags vs 12.45m bags; ending stocks 751k bags vs 657k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 11380.0,
-      "diff": 11380.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 1380.0,
-      "diff": 1380.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 10000.0,
-      "diff": 10000.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 8050.0,
-      "diff": 8050.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 4830.0,
-      "diff": 4830.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 671.0,
-      "diff": 671.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 11380.0,
+       "diff": 11380.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 1380.0,
+       "diff": 1380.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 10000.0,
+       "diff": 10000.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 8050.0,
+       "diff": 8050.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 4830.0,
+       "diff": 4830.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 671.0,
+       "diff": 671.0
+      }
+     ],
+     "country": "Indonesia"
+    }
+   ]
   },
   {
    "date": "2026-05-13",
@@ -652,51 +796,55 @@
    "country": "Mexico",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 4.13m bags; arabica 3.58m bags; robusta 560k bags; exports 3.41m bags; consumption 3.17m bags; ending stocks 5k bags.",
+    "Crop +1% on more robusta and better management; US is the main buyer.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 4.13m bags; arabica 3.58m bags; robusta 560k bags; exports 3.41m bags; consumption 3.17m bags; ending stocks 5k bags.",
     "MY 2025/26, Post vs USDA: production 4.08m bags vs 3.90m bags; exports 3.45m bags vs 3.35m bags; ending stocks 20k bags vs 111k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 4135.0,
-      "diff": 4135.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 3575.0,
-      "diff": 3575.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 560.0,
-      "diff": 560.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 3410.0,
-      "diff": 3410.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 3170.0,
-      "diff": 3170.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 5.0,
-      "diff": 5.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 4135.0,
+       "diff": 4135.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 3575.0,
+       "diff": 3575.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 560.0,
+       "diff": 560.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 3410.0,
+       "diff": 3410.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 3170.0,
+       "diff": 3170.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 5.0,
+       "diff": 5.0
+      }
+     ],
+     "country": "Mexico"
+    }
+   ]
   },
   {
    "date": "2026-05-12",
@@ -705,8 +853,56 @@
    "kind": "gain",
    "country": "India",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Wet Jan–Feb then a dry spell at flowering hit arabica yields; farmgate arabica −16% and robusta −11% since October but still above other origins.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 6.14m bags; arabica 1.56m bags; robusta 4.58m bags; exports 6.22m bags; consumption 1.58m bags; ending stocks 216k bags.",
+    "MY 2025/26, Post vs USDA: production 6.43m bags vs 6.05m bags; exports 6.03m bags vs 5.99m bags; ending stocks 485k bags vs 234k bags."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 6140.0,
+       "diff": 6140.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 1560.0,
+       "diff": 1560.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 4580.0,
+       "diff": 4580.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 6219.0,
+       "diff": 6219.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 1580.0,
+       "diff": 1580.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 216.0,
+       "diff": 216.0
+      }
+     ],
+     "country": "India"
+    }
+   ]
   },
   {
    "date": "2026-04-29",
@@ -715,8 +911,56 @@
    "kind": "gain",
    "country": "Honduras",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Better nutrition, pruning, new plantings and the on-year cycle: 2026/27 seen at 6.03m bags (5.53m in 2025/26), exports ~5.5m.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 6.03m bags; arabica 6.03m bags; exports 5.50m bags; consumption 415k bags; ending stocks 707k bags.",
+    "MY 2025/26, Post vs USDA: production 5.53m bags vs 5.80m bags; exports 5.03m bags vs 5.50m bags; ending stocks 435k bags vs 86k bags."
+   ],
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 6030.0,
+       "diff": 6030.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 6030.0,
+       "diff": 6030.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 5503.0,
+       "diff": 5503.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 415.0,
+       "diff": 415.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 707.0,
+       "diff": 707.0
+      }
+     ],
+     "country": "Honduras"
+    }
+   ]
   },
   {
    "date": "2026-04-20",
@@ -726,51 +970,55 @@
    "country": "El Salvador",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 542k bags; arabica 542k bags; exports 543k bags; consumption 339k bags; ending stocks 79k bags.",
+    "El Niño and rural labour shortages: 2026/27 seen down to 542k bags from 586k.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 542k bags; arabica 542k bags; exports 543k bags; consumption 339k bags; ending stocks 79k bags.",
     "MY 2025/26, Post vs USDA: production 586k bags vs 670k bags; exports 535k bags vs 610k bags; ending stocks 147k bags vs 10k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 542.0,
-      "diff": 542.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 542.0,
-      "diff": 542.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 543.0,
-      "diff": 543.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 339.0,
-      "diff": 339.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 79.0,
-      "diff": 79.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 542.0,
+       "diff": 542.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 542.0,
+       "diff": 542.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 543.0,
+       "diff": 543.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 339.0,
+       "diff": 339.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 79.0,
+       "diff": 79.0
+      }
+     ],
+     "country": "El Salvador"
+    }
+   ]
   },
   {
    "date": "2026-04-16",
@@ -780,51 +1028,55 @@
    "country": "Guatemala",
    "tag": "FAS attaché",
    "key_points": [
-    "MY 2026/27: Post's first forecast (no USDA official number yet): production 3.26m bags; arabica 3.13m bags; robusta 130k bags; exports 3.20m bags; consumption 900k bags; ending stocks 16k bags.",
+    "Crop seen +3% (3.13m bags arabica); ~30% of hybrids are rust-tolerant; 81% of exports strictly hard bean; US takes 42%.",
+    "MY 2026/27 first forecast by Post (no USDA official number in the report yet): production 3.26m bags; arabica 3.13m bags; robusta 130k bags; exports 3.20m bags; consumption 900k bags; ending stocks 16k bags.",
     "MY 2025/26, Post vs USDA: production 3.15m bags vs 3.54m bags; exports 2.98m bags vs 3.27m bags; ending stocks 11k bags vs 29k bags."
    ],
-   "auto": true,
-   "post_vs_usda": {
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0.0,
-      "post": 3260.0,
-      "diff": 3260.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0.0,
-      "post": 3130.0,
-      "diff": 3130.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0.0,
-      "post": 130.0,
-      "diff": 130.0
-     },
-     {
-      "line": "Exports",
-      "usda": 0.0,
-      "post": 3200.0,
-      "diff": 3200.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0.0,
-      "post": 900.0,
-      "diff": 900.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0.0,
-      "post": 16.0,
-      "diff": 16.0
-     }
-    ]
-   }
+   "auto": false,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 0,
+       "post": 3260.0,
+       "diff": 3260.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 0,
+       "post": 3130.0,
+       "diff": 3130.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 130.0,
+       "diff": 130.0
+      },
+      {
+       "line": "Exports",
+       "usda": 0,
+       "post": 3200.0,
+       "diff": 3200.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 0,
+       "post": 900.0,
+       "diff": 900.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 0,
+       "post": 16.0,
+       "diff": 16.0
+      }
+     ],
+     "country": "Guatemala"
+    }
+   ]
   },
   {
    "date": "2026-03-06",
@@ -833,59 +1085,16 @@
    "kind": "gain",
    "country": "Brazil",
    "tag": "FAS attaché",
-   "key_points": [],
-   "auto": true
+   "key_points": [
+    "Market-development piece on Brazil's specialty coffee (credit, post-harvest and technical support are the constraints); no supply numbers."
+   ],
+   "auto": false
   }
  ],
  "window_start": "2026-01-01",
  "summary": {
   "unit": "thousand 60-kg bags",
   "rows": [
-   {
-    "country": "Indonesia",
-    "date": "2026-11-17",
-    "report": "Coffee Semi-annual",
-    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Jakarta_Indonesia_ID2026-0044.pdf",
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 11380.0,
-      "post": 11350.0,
-      "diff": -30.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 1380.0,
-      "post": 1350.0,
-      "diff": -30.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 10000.0,
-      "post": 10000.0,
-      "diff": 0.0
-     },
-     {
-      "line": "Exports",
-      "usda": 8050.0,
-      "post": 8330.0,
-      "diff": 280.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 4830.0,
-      "post": 4820.0,
-      "diff": -10.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 671.0,
-      "post": 479.0,
-      "diff": -192.0
-     }
-    ]
-   },
    {
     "country": "India",
     "date": "2026-11-17",
@@ -928,6 +1137,51 @@
       "usda": 216.0,
       "post": 389.0,
       "diff": 173.0
+     }
+    ]
+   },
+   {
+    "country": "Indonesia",
+    "date": "2026-11-17",
+    "report": "Coffee Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Jakarta_Indonesia_ID2026-0044.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 11380.0,
+      "post": 11350.0,
+      "diff": -30.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 1380.0,
+      "post": 1350.0,
+      "diff": -30.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 10000.0,
+      "post": 10000.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Exports",
+      "usda": 8050.0,
+      "post": 8330.0,
+      "diff": 280.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 4830.0,
+      "post": 4820.0,
+      "diff": -10.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 671.0,
+      "post": 479.0,
+      "diff": -192.0
      }
     ]
    },
@@ -985,37 +1239,37 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 13400.0,
       "diff": 13400.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 13400.0,
       "diff": 13400.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
+      "usda": 0,
+      "post": 0,
+      "diff": 0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 13400.0,
       "diff": 13400.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 2200.0,
       "diff": 2200.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 670.0,
       "diff": 670.0
      }
@@ -1030,37 +1284,37 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1200.0,
       "diff": 1200.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1200.0,
       "diff": 1200.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
+      "usda": 0,
+      "post": 0,
+      "diff": 0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1060.0,
       "diff": 1060.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 320.0,
       "diff": 320.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 68.0,
       "diff": 68.0
      }
@@ -1075,37 +1329,37 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 12100.0,
       "diff": 12100.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 12100.0,
       "diff": 12100.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
+      "usda": 0,
+      "post": 0,
+      "diff": 0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 7130.0,
       "diff": 7130.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 5000.0,
       "diff": 5000.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 145.0,
       "diff": 145.0
      }
@@ -1120,37 +1374,37 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 2440.0,
       "diff": 2440.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 2300.0,
       "diff": 2300.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
+      "usda": 0,
       "post": 140.0,
       "diff": 140.0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 2250.0,
       "diff": 2250.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 160.0,
       "diff": 160.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 85.0,
       "diff": 85.0
      }
@@ -1165,37 +1419,37 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 4780.0,
       "diff": 4780.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 4780.0,
       "diff": 4780.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
+      "usda": 0,
+      "post": 0,
+      "diff": 0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 4554.0,
       "diff": 4554.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 305.0,
       "diff": 305.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 26.0,
       "diff": 26.0
      }
@@ -1210,37 +1464,37 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 7160.0,
       "diff": 7160.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1135.0,
       "diff": 1135.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
+      "usda": 0,
       "post": 6025.0,
       "diff": 6025.0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 6830.0,
       "diff": 6830.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 335.0,
       "diff": 335.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 329.0,
       "diff": 329.0
      }
@@ -1255,39 +1509,84 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 32500.0,
       "diff": 32500.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 1100.0,
       "diff": 1100.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
+      "usda": 0,
       "post": 31400.0,
       "diff": 31400.0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 28950.0,
       "diff": 28950.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 5000.0,
       "diff": 5000.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 489.0,
       "diff": 489.0
+     }
+    ]
+   },
+   {
+    "country": "Kenya",
+    "date": "2026-05-18",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Nairobi_Kenya_KE2026-0011.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0,
+      "post": 950.0,
+      "diff": 950.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0,
+      "post": 950.0,
+      "diff": 950.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0,
+      "post": 0,
+      "diff": 0
+     },
+     {
+      "line": "Exports",
+      "usda": 0,
+      "post": 940.0,
+      "diff": 940.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0,
+      "post": 62.0,
+      "diff": 62.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0,
+      "post": 120.0,
+      "diff": 120.0
      }
     ]
    },
@@ -1300,39 +1599,84 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 4135.0,
       "diff": 4135.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 3575.0,
       "diff": 3575.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
+      "usda": 0,
       "post": 560.0,
       "diff": 560.0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 3410.0,
       "diff": 3410.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 3170.0,
       "diff": 3170.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 5.0,
       "diff": 5.0
+     }
+    ]
+   },
+   {
+    "country": "Honduras",
+    "date": "2026-04-29",
+    "report": "Coffee Annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Tegucigalpa_Honduras_HO2026-0002.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 0,
+      "post": 6030.0,
+      "diff": 6030.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 0,
+      "post": 6030.0,
+      "diff": 6030.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0,
+      "post": 0,
+      "diff": 0
+     },
+     {
+      "line": "Exports",
+      "usda": 0,
+      "post": 5503.0,
+      "diff": 5503.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 0,
+      "post": 415.0,
+      "diff": 415.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 0,
+      "post": 707.0,
+      "diff": 707.0
      }
     ]
    },
@@ -1345,37 +1689,37 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 542.0,
       "diff": 542.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 542.0,
       "diff": 542.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
-      "post": 0.0,
-      "diff": 0.0
+      "usda": 0,
+      "post": 0,
+      "diff": 0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 543.0,
       "diff": 543.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 339.0,
       "diff": 339.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 79.0,
       "diff": 79.0
      }
@@ -1390,37 +1734,37 @@
     "rows": [
      {
       "line": "Production",
-      "usda": 0.0,
+      "usda": 0,
       "post": 3260.0,
       "diff": 3260.0
      },
      {
       "line": "Arabica",
-      "usda": 0.0,
+      "usda": 0,
       "post": 3130.0,
       "diff": 3130.0
      },
      {
       "line": "Robusta",
-      "usda": 0.0,
+      "usda": 0,
       "post": 130.0,
       "diff": 130.0
      },
      {
       "line": "Exports",
-      "usda": 0.0,
+      "usda": 0,
       "post": 3200.0,
       "diff": 3200.0
      },
      {
       "line": "Consumption",
-      "usda": 0.0,
+      "usda": 0,
       "post": 900.0,
       "diff": 900.0
      },
      {
       "line": "Ending stocks",
-      "usda": 0.0,
+      "usda": 0,
       "post": 16.0,
       "diff": 16.0
      }
@@ -1428,5 +1772,5 @@
    }
   ]
  },
- "built": "2026-11-18 17:54 UTC"
+ "built": "2026-11-18 18:05 UTC"
 }
