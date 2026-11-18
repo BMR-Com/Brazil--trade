@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18 10:58 UTC",
+ "updated": "2026-11-18 13:43 UTC",
  "by": "claude",
  "views": {
   "cotton": {
@@ -20,7 +20,7 @@
   "cocoa": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.27
+   "score": -0.3
   }
  },
  "alerts": {
@@ -53,6 +53,9 @@
   "2026-11-17 Sugar Mar dipped to 17.97 (below 100-day 18.13), recovered to ~18.21",
   "2026-11-18 Sugar Mar ~17.91 overnight, below 18.02/17.92 supports (low 17.75)",
   "2026-11-18 Coffee Dec ~282.15 (-4.45), back below 283.50 support",
-  "2026-11-18 Cocoa Mar ~5,150, below 5,160 support"
+  "2026-11-18 Cocoa Mar ~5,150, below 5,160 support",
+  "2026-11-18 Cocoa Mar -3% to ~5,024 toward 4,978 support on rising ICE stocks",
+  "2026-11-18 Cotton Dec ~76.95 back below 77.05 support into first notice week",
+  "2026-11-18 Coffee Dec -6.4 to ~280.2 after failing at 284.65"
  ]
 }

@@ -5,56 +5,56 @@
   "cotton": {
    "date": "2026-11-18",
    "by": "claude",
-   "time": "04:55 CT",
+   "time": "07:50 CT",
    "claude_date": "2026-11-18",
-   "fundamental": "Nothing new on supply overnight; with Dec first notice next week the old-crop Dec/Mar spread and certificate flow matter more than headlines. Dec is sitting right on its 77.05 support, and high-grade certs remain a delivery risk for Dec longs rather than a comfort.",
+   "fundamental": "Nothing new on US or Brazil supply this morning; Dec has slipped back under the 77.05 support into first-notice week, so old-crop Dec/Mar spread and certificate flow drive price, and high-grade certs remain a delivery risk for Dec longs rather than a comfort.",
    "events": [
-    "Dec ~77.06 (-0.26) on the 77.05 support; Mar ~81.05 (ICE via TradingView)",
-    "Crude falls again after API stock builds, a soft lead for synthetics (OilPrice.com)",
-    "Real still weak after Lula fiscal worries (Bloomberg)"
+    "Dec ~76.95 (-0.37), below 77.05 support; low 76.84 (ICE via TradingView)",
+    "Crude slides again on surplus talk and inventory builds, a soft lead for polyester (Dow Jones, OilPrice.com)",
+    "Real still under pressure from fiscal worries (Bloomberg)"
    ]
   },
   "sugar": {
    "date": "2026-11-18",
    "by": "claude",
-   "time": "04:55 CT",
+   "time": "07:50 CT",
    "claude_date": "2026-11-18",
-   "fundamental": "Brazil first: no new Centre-South crush data, but crude's renewed slide trims ethanol parity support for mills while the weak real keeps hedging sugar attractive. Mar has slipped back under the 18.02/17.92 supports overnight.",
-   "fund_score": -0.35,
+   "fundamental": "Brazil first: no fresh Centre-South crush figures; crude's further slide on surplus expectations trims ethanol parity, and the weak real keeps mills hedging. Mar is holding just under the 18.02 support, so the fund buy trigger at 18.15 is not in play.",
    "events": [
-    "Mar ~17.91 (-0.26), low 17.75, below 17.92 support (ICE via TradingView)",
-    "API crude and gasoline builds pull oil lower, eroding Brazil ethanol parity (OilPrice.com)",
-    "BRL pressure from Lula fiscal worries keeps producer selling attractive (Bloomberg)"
+    "Mar ~17.93 (-0.24), range 17.75-18.09 (ICE via TradingView)",
+    "Oil lower on surplus expectations and US stock builds, eroding ethanol parity (Dow Jones, OilPrice.com)",
+    "BRL weakness keeps producer selling attractive (Bloomberg)"
    ],
+   "fund_score": -0.35,
    "claude_fund_score": -0.35
   },
   "coffee": {
    "date": "2026-11-18",
    "by": "claude",
-   "time": "04:55 CT",
+   "time": "07:50 CT",
    "claude_date": "2026-11-18",
-   "fundamental": "ICE certified arabica stocks at a 1999 low and the widening Dec/Mar inverse still say deliverable coffee is scarce; the overnight dip back under 283.50 looks like profit-taking, not new supply. Antwerp/European stock levels and Brazil deliverability remain the things to watch.",
-   "fund_score": 0.3,
+   "fundamental": "No new supply news: the morning drop to ~280 is a price move, not a change in deliverable supply. ICE certified arabica stocks at a 1999 low and Brazil deliverability still argue for a tight nearby; watch whether Antwerp/European stocks move and the Dec/Mar inverse holds.",
    "events": [
-    "ICE certified arabica stocks hit the lowest since 1999 (ADMIS, Barchart)",
-    "Dec ~282.15 (-4.45), back below 283.50 support; Mar ~277.85 (ICE via TradingView)",
-    "Nestle Brazil supplier labour hearing keeps forced-labour import-ban risk in view (Reuters, Daily Coffee News)"
+    "Dec ~280.2 (-6.4), back under 283.50 after failing at 284.65 (ICE via TradingView)",
+    "ICE certified arabica stocks at the lowest since 1999 (Barchart, ADMIS)",
+    "Brazil forced-labour scrutiny of Nestle suppliers keeps import-ban risk in view (Reuters)"
    ],
+   "fund_score": 0.3,
    "claude_fund_score": 0.3
   },
   "cocoa": {
    "date": "2026-11-18",
    "by": "claude",
-   "time": "04:55 CT",
+   "time": "07:50 CT",
    "claude_date": "2026-11-18",
-   "fundamental": "Rising ICE certified stocks keep the near-term balance looking comfortable; slow Ivory Coast port arrivals after heavy rains and dry-season mid-crop questions are the offsetting risks. No new ICCO quarterly bulletin yet (due end-November).",
-   "fund_score": -0.15,
+   "fundamental": "Cocoa is down about 3% as climbing ICE certified stocks and talk of ample supply outweigh the slow Ivory Coast port arrivals; nothing new from Ghana's COCOBOD or on mid-crop weather this morning. No new ICCO quarterly bulletin yet (due end-November).",
    "events": [
-    "Mar ~5,150 (-27), below 5,160 support (ICE via TradingView)",
-    "ICE cocoa inventories keep rising (Barchart)",
-    "Ghana plans a raw-bean export ban by 2030 (Reuters)"
+    "Mar ~5,024 (-153), low 5,011, nearing 4,978 support (ICE via TradingView)",
+    "ICE cocoa inventories keep climbing (Barchart)",
+    "Heavy rains still slowing bean transport to Ivory Coast ports (Barchart)"
    ],
-   "claude_fund_score": -0.15
+   "fund_score": -0.25,
+   "claude_fund_score": -0.25
   }
  }
 }
