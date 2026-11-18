@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:49 UTC",
+ "generated": "2026-11-18 19:35 UTC",
  "beet": {
   "eu_fr_b": "Picardie / Hauts-de-France (Amiens)",
   "su_fr_ce": "Centre-Val de Loire / Beauce (Pithiviers)",
@@ -14,6 +14,14 @@
   "su_pi": "Piracicaba / Jaú, central São Paulo"
  },
  "log": [
+  [
+   "archive-api.open-meteo.com",
+   "HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read timeout=120)"
+  ],
+  [
+   "archive-api.open-meteo.com",
+   "HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read timeout=120)"
+  ],
   [
    "archive-api.open-meteo.com",
    "HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read timeout=120)"
