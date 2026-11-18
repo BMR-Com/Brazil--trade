@@ -1,0 +1,29 @@
+{
+ "files": {
+  "prices_xlsx": {
+   "url": "inbox:Precios-area-y-produccion-de-cafe-Noviembre-2026-1.xlsx",
+   "latest_data": "production 2026-10, internal price 2026-11-12",
+   "read": "2026-11-18 18:48 UTC",
+   "via": "manual"
+  },
+  "exports_xlsx": {
+   "url": "inbox:Exportaciones-Septiembre-2026.xlsx",
+   "latest_data": "exports 2026-09",
+   "read": "2026-11-18 18:48 UTC",
+   "via": "manual"
+  },
+  "monthly_pdf": {
+   "url": "inbox:10.-Informe-mensual-Octubre-2026-p.pdf",
+   "latest_data": "report 2026-10",
+   "read": "2026-11-18 18:48 UTC",
+   "via": "manual"
+  },
+  "daily_pdf": {
+   "url": "inbox:precio_cafe.pdf",
+   "latest_data": "2026-11-17",
+   "read": "2026-11-18 18:48 UTC",
+   "via": "manual"
+  }
+ },
+ "updated": "2026-11-18 18:48 UTC"
+}

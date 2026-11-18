@@ -180,6 +180,7 @@ now = {"date": last.strftime("%Y-%m-%d"), "sw": rd(r.cd_usc_lb, 1), "fc": rd(r.c
        "kc2": rd(r.kc2, 2), "kc2_contract": r.kc2_contract, "sw_minus_fc": rd(r.cd_usc_lb - r.cepea_usc_lb, 1), "sw_minus_b3": rd(r.cd_usc_lb - r.icf_usc_lb, 1),
        "fc_vs_kc2": rd(r.cepea_usc_lb - r.kc2, 1), "sw_vs_kc2": rd(r.cd_usc_lb - r.kc2, 1)}
 gs = T.sw_minus_fc
+now["sw_frozen"] = True    # co-op semi-washed quotes stopped (Notícias Agrícolas blocks runners): the card is as of the last co-op date
 now["sw_minus_fc_pct_all"] = rd((gs <= gs.iloc[-1]).mean() * 100, 0)
 g5 = gs[gs.index >= last - pd.DateOffset(years=5)]
 now["sw_minus_fc_pct5y"] = rd((g5 <= gs.iloc[-1]).mean() * 100, 0)

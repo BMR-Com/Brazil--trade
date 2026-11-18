@@ -136,7 +136,6 @@ SOURCES = [
     ("Coffee", "ICO group prices for the certs physical comparison", "monthly", 40, C, False, lambda: J("data/coffee/certs_profile.json")["physical"]["ico_month"] + "-28", "Certs profile tab"),
     ("Coffee", "CEPEA/ESALQ arabica index (Ma's cepea.org.br download, inbox/)", "weekly", 10, C, True, lambda: brazil_last("cepea_arabica"), "Brazil basis history, KC spread model (Brazil leg, Lab)"),
     ("Coffee", "CEPEA/ESALQ robusta index (Ma's cepea.org.br download, inbox/)", "weekly", 10, C, True, lambda: brazil_last("cepea_robusta"), "Brazil conilon vs London chart"),
-    ("Coffee", "Brazil co-op semi-washed / tipo 6 quotes (Notícias Agrícolas)", "daily", 3, B, False, lambda: brazil_last("coop_cd"), "Brazil basis ladder"),
     ("Coffee", "USD/BRL PTAX (Banco Central do Brasil)", "daily", 3, B, False, lambda: max_csv_date("data/coffee/usdbrl_ptax.csv"), "Brazil physical in US cents/lb"),
     ("Coffee", "Brazil tender parity (blend cost in Antwerp vs exchange value)", "daily", 3, B, False, lambda: J("data/coffee/tender_parity.json")["now"]["date"], "Brazil tender parity card"),
     ("Coffee", "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv)", "as found", 120, C, True, lambda: max_csv_date("data/coffee/manual/brazil_export_diffs.csv", "quote_date"), "fine-cup proxy calibration (tender parity)"),

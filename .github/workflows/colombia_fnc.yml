@@ -1,0 +1,48 @@
+name: coffee-centrals
+# Coffee > Centrals & Col tab. Colombia (FNC): production and exports Excel files (FNC posts them in the first weeks of
+# the following month), daily internal reference price (precio_cafe.pdf, after the NY close) and USD/COP (TRM).
+# pipelines/colombia_fnc.py fails the run when FNC cannot be reached or a file cannot be read (it retries first).
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['pipelines/colombia_fnc.py', 'pipelines/honduras_adecafeh.py', '.github/workflows/colombia_fnc.yml']
+  schedule:
+    - cron: '7 23 * * 1-5'     # after FNC sets the day's internal price from the NY close
+    - cron: '17 14 * * 1-5'    # morning retry (monthly files appear on any weekday)
+permissions: {contents: write}
+concurrency: {group: coffee-centrals, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: install
+        run: |
+          sudo apt-get install -y -qq poppler-utils >/dev/null
+          pip install -q requests openpyxl pandas lxml
+      - name: Colombia (FNC)
+        id: col
+        continue-on-error: true
+        run: python pipelines/colombia_fnc.py
+      - name: Honduras (ADECAFEH) probe
+        continue-on-error: true
+        run: |
+          mkdir -p data/coffee/honduras/probe
+          curl -sSL -m 60 -A "Mozilla/5.0 (X11; Linux x86_64) Chrome/124" -o data/coffee/honduras/probe/cifras.html -w "%{http_code} %{size_download}\n" https://exportadoresdecafe.com/cifras > data/coffee/honduras/probe/log.txt 2>&1 || true
+          curl -sSL -m 30 -A "Mozilla/5.0" https://exportadoresdecafe.com/robots.txt -o data/coffee/honduras/probe/robots.txt || true
+          cat data/coffee/honduras/probe/log.txt
+      - name: data status
+        run: python pipelines/data_status.py > /dev/null || echo "::warning::data status refresh failed"
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/coffee/colombia data/coffee/honduras data/status.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -q -m "data: Colombia FNC $(date -u +%F)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q origin HEAD:main && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: fail the run if the FNC step failed
+        if: steps.col.outcome == 'failure'
+        run: { echo "::error::Colombia FNC step failed (see its log)"; exit 1; }

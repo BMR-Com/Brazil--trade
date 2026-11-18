@@ -312,10 +312,11 @@ def fetch_cot():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--full", action="store_true"); ap.add_argument("--only", default="")
     a = ap.parse_args()
+    # "brazil" (Notícias Agrícolas) is off by default: the site blocks GitHub runners since Nov 2026; br_physical.csv stays as history
     steps = {"futures": lambda: fetch_futures(a.full), "brazil": lambda: fetch_brazil(a.full), "brazil_new": lambda: fetch_brazil(True, {"coop_cd", "coop_67"}), "colombia": lambda: fetch_colombia(a.full),
              "vietnam": lambda: fetch_vietnam(a.full), "ico": fetch_ico, "psd": fetch_psd, "cot": fetch_cot}
     for k, f in steps.items():
-        if (a.only and k not in a.only.split(",")) or (not a.only and k == "brazil_new"):
+        if (a.only and k not in a.only.split(",")) or (not a.only and k in ("brazil_new", "brazil")):
             continue
         try:
             f()

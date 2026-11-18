@@ -1235,26 +1235,6 @@
    "season": null
   },
   {
-   "id": "na_coop",
-   "status_source": "Brazil co-op semi-washed / tipo 6 quotes (Notícias Agrícolas)",
-   "age_limit": 3,
-   "age_unit": "business days",
-   "tab": "Coffee > Brazil basis ladder",
-   "report": "Brazil co-op quotes (Notícias Agrícolas)",
-   "publisher": "Notícias Agrícolas",
-   "release_et": "each Brazil business day",
-   "release": {
-    "type": "age"
-   },
-   "late_after_hours": 0,
-   "workflow": {
-    "repo": "BMR-Com/Brazil--trade",
-    "file": "coffee.yml"
-   },
-   "manual": false,
-   "season": null
-  },
-  {
    "id": "ptax",
    "status_source": "USD/BRL PTAX (Banco Central do Brasil)",
    "age_limit": 3,

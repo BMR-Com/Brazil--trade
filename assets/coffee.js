@@ -218,7 +218,7 @@ const Coffee = (() => {
       <div class="card"><h2>Brazil tender parity</h2>
         <p class="note" style="margin-top:0">${T.reading.join(' ')}</p>${box('kcTP', 230)}
         <p class="note">Semi-washed (co-op cereja descascado) minus fine/good cup (CEPEA tipo 6), ¢/lb, with the tender margin of a 30% semi-washed blend. Dashed: the usual ~10¢ semi-washed premium. Prices at origin, treated as about FOB.</p></div>
-      <div class="card"><h2>Cost to tender in Antwerp vs exchange value <span class="note">${N.date}, ¢/lb</span></h2>
+      <div class="card"><h2>Cost to tender in Antwerp vs exchange value <span class="note">as of ${N.date}, ¢/lb</span></h2>${N.sw_frozen ? `<p class="note">The co-op semi-washed quote stopped on ${N.date} (source no longer reachable); this card stays at that date. CEPEA tipo 6 (Ma\'s weekly upload) remains the Brazil physical price on the other panels.</p>` : ''}
         <div class="tbl"><table><tr><th class="l">Item</th>${W.map(([, l]) => `<th>${l}</th>`).join('')}</tr>
         ${row('Blend at origin (semi-washed + CEPEA fine/good cup)', x => fmt(x.blend, 1))}
         ${keys.map(k => row(T.cost_labels[k] || k, x => fmt(x.costs[k], 2))).join('')}

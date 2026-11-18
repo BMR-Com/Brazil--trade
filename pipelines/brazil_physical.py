@@ -503,7 +503,8 @@ def main(argv):
     backfill = "--backfill" in argv or ((short is None or short > "2015-01-01") and (not last_bf or last_bf < (date.today() - timedelta(days=7)).isoformat()))
     M["cepea_download"] = "not fetched automatically (cepea.org.br disallows automated access); CEPEA files come only from Ma's downloads dropped into inbox/"
     fetch_ptax(S, M, backfill or not os.path.exists(FXF))
-    fetch_na(S, M, backfill)
+    # Notícias Agrícolas co-op quotes: no longer fetched (the site blocks GitHub runners since Nov 2026); the stored series stays as history
+    M["coop_quotes"] = "discontinued after the last stored date (Notícias Agrícolas blocks GitHub runners); CEPEA (Ma's inbox uploads) is the Brazil physical source"
     if backfill:
         M["backfill"] = {"ran": date.today().isoformat()}
     M["log"] = LOG[-60:]
