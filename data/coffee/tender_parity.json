@@ -1,5 +1,5 @@
 {
- "built": "2026-11-18 17:54 UTC",
+ "built": "2026-11-18 22:24 UTC",
  "now": {
   "date": "2026-11-11",
   "sw": 236.5,
@@ -12,6 +12,7 @@
   "sw_minus_b3": -27.3,
   "fc_vs_kc2": -48.1,
   "sw_vs_kc2": -28.2,
+  "sw_frozen": true,
   "sw_minus_fc_pct_all": 77.0,
   "sw_minus_fc_pct5y": 63.0,
   "sw_minus_fc_median": 11.0,
