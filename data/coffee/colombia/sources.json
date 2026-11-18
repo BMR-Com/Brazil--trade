@@ -1,29 +1,43 @@
 {
  "files": {
   "prices_xlsx": {
-   "url": "inbox:Precios-area-y-produccion-de-cafe-Noviembre-2026-1.xlsx",
+   "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/09/Precios-area-y-produccion-de-cafe-Noviembre-2026-1.xlsx",
    "latest_data": "production 2026-10, internal price 2026-11-12",
-   "read": "2026-11-18 18:48 UTC",
-   "via": "manual"
+   "read": "2026-11-18 22:28 UTC",
+   "via": "auto"
   },
   "exports_xlsx": {
-   "url": "inbox:Exportaciones-Septiembre-2026.xlsx",
+   "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/10/Exportaciones-Septiembre-2026.xlsx",
    "latest_data": "exports 2026-09",
-   "read": "2026-11-18 18:48 UTC",
-   "via": "manual"
+   "read": "2026-11-18 22:28 UTC",
+   "via": "auto"
   },
   "monthly_pdf": {
-   "url": "inbox:10.-Informe-mensual-Octubre-2026-p.pdf",
+   "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/11/10.-Informe-mensual-Octubre-2026-p.pdf",
    "latest_data": "report 2026-10",
-   "read": "2026-11-18 18:48 UTC",
-   "via": "manual"
+   "read": "2026-11-18 22:28 UTC",
+   "via": "auto"
   },
   "daily_pdf": {
-   "url": "inbox:precio_cafe.pdf",
-   "latest_data": "2026-11-17",
-   "read": "2026-11-18 18:48 UTC",
-   "via": "manual"
+   "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/03/precio_cafe.pdf",
+   "latest_data": "2026-11-18",
+   "read": "2026-11-18 22:28 UTC",
+   "via": "auto"
+  },
+  "expos_pdf": {
+   "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/10/Informe-Expos-Septiembre-2026.pdf",
+   "latest_data": "",
+   "read": "2026-11-18 22:28 UTC",
+   "via": "auto"
   }
  },
- "updated": "2026-11-18 18:48 UTC"
+ "updated": "2026-11-18 22:28 UTC",
+ "monthly_reports": {
+  "2026-10": "https://federaciondecafeteros.org/wp-content/uploads/2026/11/10.-Informe-mensual-Octubre-2026-p.pdf"
+ },
+ "last_check": "2026-11-18 22:28 UTC",
+ "pages_read": [
+  "https://federaciondecafeteros.org/estadisticas-cafeteras/"
+ ],
+ "last_ok": "2026-11-18 22:28 UTC"
 }
