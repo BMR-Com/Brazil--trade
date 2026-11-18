@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 10:10 UTC",
+ "generated": "2026-11-18 11:17 UTC",
  "asof": "2026-11-17",
  "today": "2026-11-18",
  "active": [
@@ -188,7 +188,7 @@
    "text": "Ethanol parity 15.14¢/lb: No. 11 Mar 27 now 18.17¢ (2026-11-17)"
   }
  ],
- "rules_checked": 146,
+ "rules_checked": 152,
  "pending_email": [
   {
    "id": "KC_certs_week",
