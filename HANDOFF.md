@@ -19,7 +19,7 @@
 - No desk panels read the new files yet.
 
 ## Coffee → KC spread model on the "Certified stocks & structure" tab (2026-11-18)
-- `models/kc_spread_model.py` → `data/coffee/spread_model.json`, rendered by `smBlock()` / `smCharts()` in `assets/coffee.js` on `#kc-certs` (replaces the old monthly certs-vs-spread scatter; `structure.fair` in coffee.json is no longer drawn). Runs in `coffee.yml` after the certs profile and in `ice_inbox.yml` after ICE uploads; a missing input or too-short history exits non-zero. Registered in `pipelines/data_status.py`.
+- `models/kc_spread_model.py` → `data/coffee/spread_model.json`, rendered by `smBlock()` / `smCharts()` in `assets/coffee.js` on `#kc-certs` (added below the original spread study, which is kept unchanged: the "Front spread against certified stocks" scatter and the four-period spread-history table). Runs in `coffee.yml` after the certs profile and in `ice_inbox.yml` after ICE uploads; a missing input or too-short history exits non-zero. Registered in `pipelines/data_status.py`.
 - Inputs: ICE certs (month-end by port, daily, aging, grading, daily detail pending), `kc_spreads_history.csv`, CFTC `data/cot/KC_fut.csv`, MDIC `data/exports_*.csv`, `certs_profile.json` (pool value), `data/contracts/KC.csv`, `data/options/roll.json`.
 - `python models/kc_spread_model.py --lab PATH` also writes the regime tests and out-of-sample statistics to PATH (keep it outside the repo; they belong in the private Lab only). The page shows outputs and the variables list only.
 
