@@ -121,6 +121,7 @@ SOURCES = [
     ("Cocoa", "ICE cocoa grading results with discounts (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/cocoa/ice_grading_monthly.csv", "period_end"), "Certs profile tab"),
     ("Cocoa", "Certs profile and delivery value (built from the ICE files)", "daily", 2, B, False, lambda: J("data/cocoa/certs_profile.json")["current"]["date"], "Certs profile tab"),
     ("Cocoa", "CC calendar-spread history (per-contract closes)", "daily", 3, B, False, lambda: max_csv_date("data/cocoa/cc_spreads_history.csv"), "Certs profile tab"),
+    ("Coffee", "KC spread model: fair front spread from certified stocks", "daily", 3, B, False, lambda: J("data/coffee/spread_model.json")["asof"], "Certified stocks & structure tab"),
     ("Coffee", "KC calendar-spread history (per-contract closes)", "daily", 3, B, False, lambda: max_csv_date("data/coffee/kc_spreads_history.csv"), "Certs profile tab"),
     ("Cocoa", "ICCO balance", "monthly", 40, C, False, lambda: J("data/cocoa/icco.json")["updated"], "cocoa balance tab"),
     ("Desk watch", "What changed strip (settlement date)", "daily", 2, B, False, lambda: J("data/overview/what_changed.json")["asof"], "overview what-changed strip"),

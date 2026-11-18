@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17 23:42 UTC",
+ "generated": "2026-11-18 02:13 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -221,7 +221,7 @@
   {
    "group": "Cotton",
    "source": "Crop projection (cotton-crop-progress)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "weekly, after crop progress / ginnings / drought",
    "age": 0,
    "age_unit": "days",
@@ -640,6 +640,18 @@
   },
   {
    "group": "Coffee",
+   "source": "KC spread model: fair front spread from certified stocks",
+   "latest": "2026-11-17",
+   "cadence": "daily",
+   "age": 0,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Certified stocks & structure tab"
+  },
+  {
+   "group": "Coffee",
    "source": "KC calendar-spread history (per-contract closes)",
    "latest": "2026-11-17",
    "cadence": "daily",
@@ -773,7 +785,7 @@
   {
    "group": "Macro",
    "source": "News",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "every few hours",
    "age": 0,
    "age_unit": "business days",

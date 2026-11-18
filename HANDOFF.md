@@ -18,6 +18,11 @@
 - Known: `pipelines/coffee_certs.py` counts "Flagged for Rebagging" bags as pending (no section break), so `ice_certs.csv` pending = true pending + rebagging; the daily detail file has them apart. Not changed here.
 - No desk panels read the new files yet.
 
+## Coffee → KC spread model on the "Certified stocks & structure" tab (2026-11-18)
+- `models/kc_spread_model.py` → `data/coffee/spread_model.json`, rendered by `smBlock()` / `smCharts()` in `assets/coffee.js` on `#kc-certs` (replaces the old monthly certs-vs-spread scatter; `structure.fair` in coffee.json is no longer drawn). Runs in `coffee.yml` after the certs profile and in `ice_inbox.yml` after ICE uploads; a missing input or too-short history exits non-zero. Registered in `pipelines/data_status.py`.
+- Inputs: ICE certs (month-end by port, daily, aging, grading, daily detail pending), `kc_spreads_history.csv`, CFTC `data/cot/KC_fut.csv`, MDIC `data/exports_*.csv`, `certs_profile.json` (pool value), `data/contracts/KC.csv`, `data/options/roll.json`.
+- `python models/kc_spread_model.py --lab PATH` also writes the regime tests and out-of-sample statistics to PATH (keep it outside the repo; they belong in the private Lab only). The page shows outputs and the variables list only.
+
 ## Coffee → "Certs profile & delivery economics" tab (2026-11-17)
 - `models/coffee_certs_profile.py` → `data/coffee/certs_profile.json`, rendered by `cprof()` in `assets/coffee.js` (tab `#kc-cprof`). Runs in `ice_inbox.yml` after new ICE files and in `coffee.yml` (weekdays) after the coffee build; any missing input or failed check exits non-zero and fails the run. Registered in `pipelines/data_status.py`.
 - Rule parameters by version: `data/coffee/ref/kc_rule_params.json`; dated rule timeline with sources: `data/coffee/ref/rule_changes.csv` (both edited by hand when ICE amends Chapter 8). Physical comparison uses `coffee/data/ico_groups_monthly.csv` and the Brazil ladder in `coffee/data/coffee.json` (no manual file needed).

@@ -5,7 +5,7 @@ on:
     - cron: "35 22 * * 1-5"    # weekdays after the ICE close
   push:
     branches: [main]
-    paths: ['pipelines/coffee_certs.py', '.github/workflows/coffee.yml']
+    paths: ['pipelines/coffee_certs.py', 'models/kc_spread_model.py', '.github/workflows/coffee.yml']
   workflow_dispatch:
     inputs:
       full:
@@ -45,11 +45,13 @@ jobs:
         run: if [ -f coffee/scripts/build.py ]; then python coffee/scripts/build.py; fi
       - name: Certs profile and delivery economics (fails the run on error)
         run: python -W ignore models/coffee_certs_profile.py
+      - name: KC spread model against certified stocks (fails the run on error)
+        run: python -W ignore models/kc_spread_model.py
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add coffee/data data/coffee/ice_certs.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv 2>/dev/null || true
+          git add coffee/data data/coffee/ice_certs.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json 2>/dev/null || true
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "coffee: data refresh $(date -u +%F) [bot]"
           git pull --rebase origin "${GITHUB_REF_NAME}"

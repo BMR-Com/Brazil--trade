@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', 'pipelines/ice_history.py', 'models/coffee_certs_profile.py', 'data/coffee/ref/kc_rule_params.json', 'data/coffee/ref/rule_changes.csv', 'models/cocoa_certs_profile.py', 'data/cocoa/ref/**', '.github/workflows/ice_inbox.yml']
+    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', 'pipelines/ice_history.py', 'models/coffee_certs_profile.py', 'models/kc_spread_model.py', 'data/coffee/ref/kc_rule_params.json', 'data/coffee/ref/rule_changes.csv', 'models/cocoa_certs_profile.py', 'data/cocoa/ref/**', '.github/workflows/ice_inbox.yml']
   schedule:
     - cron: '41 */4 * * *'      # backup, and daily clean-up of old staged PDFs
 permissions: {contents: write}
@@ -32,6 +32,8 @@ jobs:
         run: |
           pip install -q pandas numpy >/dev/null
           python -W ignore models/coffee_certs_profile.py
+      - name: KC spread model against certified stocks
+        run: python -W ignore models/kc_spread_model.py
       - name: cocoa certs profile and delivery value
         run: |
           python -W ignore models/softs_spreads_history.py CC
@@ -45,7 +47,7 @@ jobs:
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
           for p in inbox data/ice_staging data/ice_raw data/ice_inbox data/cotton/ice data/coffee/ice_certs.csv data/coffee/ice_certs_inbox.csv data/coffee/ice_certs_check.json \
                    data/coffee/ice_certs_daily_detail.csv data/coffee/ice_aging_history.csv data/coffee/ice_certs_eom_by_port.csv \
-                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/cocoa/certs_profile.json data/cocoa/cc_spreads_history.csv data/cocoa/ref data/status.json; do
+                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/cocoa/certs_profile.json data/cocoa/cc_spreads_history.csv data/cocoa/ref data/status.json; do
             git add -A -- "$p" 2>/dev/null || true
           done
           git diff --cached --quiet && exit 0
