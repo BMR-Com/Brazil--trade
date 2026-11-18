@@ -24,6 +24,10 @@ Upload any ICE file here exactly as you downloaded it. The file name does not ma
 
 - Coffee "C" licensed warehouses list and the storage and handling rates (PDF)
 
+**CEPEA coffee indices (weekly, any day; not ICE, same box)**
+
+- CEPEA/ESALQ Arabica Coffee Price Index and CEPEA/ESALQ Robusta Coffee Price Index: on cepea.org.br (English page "Indicators → Coffee"), download each series (.xls) and drop it here as it is. The whole history is in each file, so any copy brings the series up to date. CEPEA does not allow automated downloads, so this is the only way the desk gets them.
+
 A .zip of any of these works too.
 
 How: **Add file → Upload files**, drop the files, then **Commit changes**.

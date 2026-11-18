@@ -14,6 +14,8 @@ and the original archived or removed.
       cocoa grading results with discounts (monthly), coffee licensed-warehouse list and storage/handling rates (PDF)
       -> one combined history file each (pipelines/ice_history.py). The daily coffee certs report also adds every
       section (pending, transition, passed/failed, rebagging) to data/coffee/ice_certs_daily_detail.csv.
+  CEPEA/ESALQ arabica or robusta coffee index (xls from cepea.org.br, Portuguese or English page) -> data/coffee/
+      brazil_physical_raw.csv and the Brazil physical histories (pipelines/brazil_physical.py); not an ICE file, same box.
   A .zip is opened and each file in it handled as above.
   Anything else -> inbox/unrecognised/ with the reason (run shows a warning; listed on the Data status tab).
   A file that is recognised but cannot be read -> inbox/unrecognised/ too, and the run fails.
@@ -46,7 +48,9 @@ LABEL = {"options": "{} options settlement (ICE daily market report)", "futures"
          "ct_stock": "Cotton certs: stock by delivery point", "ct_grade": "Cotton certs: grade / staple",
          "ct_warehouse": "Cotton certs: stock by warehouse", "ct_yog": "Cotton certs: year of growth",
          "ct_strength": "Cotton certs: strength", "ct_four_months": "Cotton certs: four months and older",
-         "kc_certs": "Coffee certs: certified warehouse stock"}
+         "kc_certs": "Coffee certs: certified warehouse stock",
+         "cepea_arabica": "CEPEA/ESALQ arabica coffee index (cepea.org.br download)",
+         "cepea_robusta": "CEPEA/ESALQ robusta (conilon) coffee index (cepea.org.br download)"}
 sys.path.insert(0, str(ROOT / "pipelines"))
 import ice_history  # noqa: E402
 LABEL.update(ice_history.LABEL)
@@ -381,6 +385,36 @@ def handle_kc(data, info):
     return {"stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv", "note": note + f"; detail: {pend:,} bags pending grading"}
 
 
+# ---------------- CEPEA coffee indicator files (not ICE, same drop box) ----------------
+def classify_cepea(data):
+    """CEPEA/ESALQ arabica or robusta coffee index as downloaded from cepea.org.br (xls, often slightly corrupt; Portuguese
+    'Data | À vista R$ | À vista US$' or English 'Date | Price US$' layout). cepea.org.br is never fetched automatically."""
+    if not (data[:8] == b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1" or data[:4] == b"PK\x03\x04" or b"cepea" in data[:8000].lower()):
+        return None
+    import brazil_physical as bp
+    try:
+        rows = bp.sheet_rows(data)
+    except Exception:
+        return None
+    if not bp.is_cepea_file(rows):
+        return None
+    got = bp.cepea_rows(rows)
+    if not got:
+        raise ParseError("CEPEA coffee index file: no dated prices could be read")
+    ser = got[0][1]
+    return {"kind": ser, "sym": "KC", "date": max(d for d, *_ in got), "n": len(got)}
+
+
+def handle_cepea(data, info):
+    import brazil_physical as bp
+    try:
+        ser, a, b, n = bp.ingest_cepea_file(data)
+    except Exception as e:
+        raise ParseError(f"CEPEA coffee index file: could not be stored ({e})")
+    out = "data/coffee/brazil_physical_raw.csv, brazil_physical_history.csv" + (", cepea_robusta_history.csv" if ser == "cepea_robusta" else "")
+    return {"stored": out, "note": f"{n:,} daily prices {a} to {b} (replace the same days; nothing else changed)"}
+
+
 # ---------------- driver ----------------
 def identify(p):
     """(info, handler) for one file, by its content."""
@@ -393,6 +427,9 @@ def identify(p):
         with zipfile.ZipFile(p) as z:
             if not any(n.lower().endswith((".xlsx", ".xlsm")) for n in z.namelist()) and "[Content_Types].xml" not in z.namelist():
                 return {"kind": "zip"}, "zip"
+    cep = classify_cepea(data)
+    if cep:
+        return cep, "cepea"
     rows = table_rows(p, data)
     h = ice_history.classify_table(rows)
     if h:
@@ -413,6 +450,8 @@ def process(p, info, how, now):
     elif how == "pdf":
         res, keep = handle_settlement(p, info)
         d = info["date"]
+    elif how == "cepea":
+        res, keep, d = handle_cepea(p.read_bytes(), info), False, info["date"]
     elif how == "kc":
         res, keep, d = handle_kc(p.read_bytes(), info), True, info["date"]
     else:

@@ -130,8 +130,32 @@ const Coffee = (() => {
     chart('kcP', { type: 'line', data: { labels: lab, datasets: ctry.slice(0, 4).map((c, q) => ({ label: c, data: P[c].prod, borderColor: PAL[q], pointRadius: 0, borderWidth: 1.6 })) } });
   }
 
+  // CEPEA/ESALQ long histories (data/coffee/brazil_physical_meta.json, pipelines/brazil_physical.py): Brazil conilon vs London,
+  // and the CEPEA arabica basis once its history reaches well before 2018
+  function BPh(BP) {
+    const C = BP && BP.charts; if (!C || !C.robusta_vs_rc) return '';
+    const R = C.robusta_vs_rc, A = C.cepea_basis_2nd3rd;
+    return `<div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Brazil conilon vs London robusta</h2>${box('kcRob', 240)}
+          <p class="note">CEPEA/ESALQ robusta (conilon) index minus the ICE London front, US$/t, weekly average. Latest (${R.now_date}) <b>${sgn(R.now, 0)} $/t</b>, ${ord(R.pct5y)} of 5 years; 5-yr median ${sgn(R.median5y, 0)}. CEPEA is a domestic Espírito Santo price, not FOB, so only the change against its own history matters. A deep Brazil discount makes conilon cheap for blends against arabica.</p></div>
+        ${A ? `<div class="card"><h2>Brazil arabica basis since ${A.dates[0].slice(0, 4)} (CEPEA/ESALQ)</h2>${box('kcCep', 240)}
+          <p class="note">CEPEA/ESALQ arabica index (tipo 6 bebida dura para melhor, delivered São Paulo) minus ICE KC, ¢/lb, monthly average; purple = vs the 2nd/3rd average, grey = vs the front. Latest week <b>${sgn(A.now, 1, '¢')}</b> vs 2nd/3rd, ${ord(A.pct5y)} of 5 years; median since ${A.dates[0].slice(0, 4)} ${sgn(A.median_all, 1, '¢')}. Red lines: ICE rule changes that matter for Brazil. A domestic naturals price, not semi-washed and not FOB, so read the change against its own history, not the level.</p></div>` : ''}</div>`;
+  }
+  function BPc(BP) {
+    const C = BP && BP.charts; if (!C || !C.robusta_vs_rc) return;
+    const line = (id, X, l, y) => chart(id, { type: 'line', data: { labels: X.dates, datasets: [{ label: l, data: X.v, borderColor: PAL[0], pointRadius: 0, borderWidth: 1.2 }] },
+      options: { plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: y } } } } });
+    line('kcRob', C.robusta_vs_rc, 'Conilon minus London, $/t', '$/t vs London');
+    const M = C.cepea_basis_m;
+    if (C.cepea_basis_2nd3rd && M) chart('kcCep', { type: 'line', data: { labels: M.months, datasets: [
+        { label: 'vs KC 2nd/3rd', data: M.b23, borderColor: '#7d3c98', pointRadius: 0, borderWidth: 1.4 },
+        { label: 'vs KC front', data: M.bfront, borderColor: '#95a5a6', pointRadius: 0, borderWidth: 1 }] }, plugins: [ruleLines(M.markers, M.months)],
+      options: { scales: { y: { title: { display: true, text: '¢/lb vs KC' } } } } });
+  }
+
   async function brazil() {
     await load();
+    const BP = await getJSON('data/coffee/brazil_physical_meta.json').catch(() => null);
     const B = K.brazil, L = B.ladder, LH = B.ladder_hist, E = K.br_exports, BE = E.belgium, Q = B.quotes, cy = E.cy[E.cur_cy], py = E.cy[E.cur_cy - 1], m = cy.n - 1;
     const qtab = (t, q, cur) => q ? `<h3>${t} <span class="note">${q.date}</span></h3><div class="tbl"><table><tr><th class="l">Place</th><th>R$/bag</th><th>1 week ago</th><th>${cur}</th></tr>
       ${q.rows.map(r => `<tr><td class="l">${r.place}</td><td class="n">${f0(r.brl)}</td><td class="n">${f0(r.brl_1w)}</td><td class="n">${fmt(r.usd, 1)}</td></tr>`).join('')}</table></div>` : '';
@@ -142,6 +166,7 @@ const Coffee = (() => {
           ${L.map(x => `<tr><td class="l">${x.name}</td><td>${x.date}</td><td class="n">${f1(x.c_lb)}</td><td class="n"><b>${sgn(x.basis, 1, '¢')}</b></td><td class="n">${sgn(x.avg1y, 1, '¢')}</td><td class="n">${ord(x.pct)}</td></tr>`).join('')}</table></div>
           <p class="note">Local prices (R$ per 60-kg bag) converted to ¢/lb at the day's real. Basis = physical minus the KC front month. A low rank (wide discount) means Brazilian physical is plentiful or farmers are selling; a high rank means origin is tight. Fine-cup export differentials are not published freely; B3's 4/5 good-cup contract is the closest public benchmark.</p></div>
         <div class="card"><h2>Basis history</h2>${box('kcLad', 300)}</div></div>
+      ${BPh(BP)}
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Brazil coffee exports by crop year (Jul–Jun)</h2>${box('kcEx', 260)}
           <p class="note">${E.cur_cy}/${String(E.cur_cy + 1).slice(2)} to ${E.last}: <b>${f2(cy.cum[m])}m bags</b> against ${f2(py.cum[m])}m a year earlier (${sgn(100 * (cy.cum[m] / py.cum[m] - 1), 1, '%')}). MDIC/SECEX, all forms, million bags.</p></div>
@@ -154,6 +179,7 @@ const Coffee = (() => {
     const i0 = since(LH.dates, 4);
     chart('kcLad', { type: 'line', data: { labels: LH.dates.slice(i0), datasets: [['icf', 'B3 4/5 good cup'], ['cd', 'Semi-washed'], ['t6', 'Tipo 6'], ['cepea', 'CEPEA tipo 6']]
       .map(([k, l], q) => ({ label: l, data: LH[k].slice(i0), borderColor: PAL[q], pointRadius: 0, borderWidth: 1.4, spanGaps: true })) }, options: { scales: { y: { title: { display: true, text: '¢/lb vs KC' } } } } });
+    BPc(BP);
     const ys = Object.keys(E.cy).map(Number).sort().slice(-5), ML = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
     chart('kcEx', { type: 'line', data: { labels: ML, datasets: ys.map((y, q) => ({ label: `${y}/${String(y + 1).slice(2)}`, data: E.cy[y].cum, borderColor: PAL[q], borderWidth: y === E.cur_cy ? 2.6 : 1.2, pointRadius: 0 })) } });
     const j0 = Math.max(0, BE.ym.length - 36);

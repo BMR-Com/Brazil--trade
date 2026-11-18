@@ -78,7 +78,7 @@ def fetch_futures(full=False):
     tv = TvDatafeed()
     rows = []
     for sym, ex in CONT:
-        d = _hist(tv, sym, ex)
+        d = _hist(tv, sym, ex, 8000)          # ~30 years where TradingView has them (RC1! from 1999; the CEPEA robusta index starts 2001)
         log("tv", sym, None if d is None else len(d))
         if d is not None:
             d.insert(0, "symbol", sym); rows.append(d)

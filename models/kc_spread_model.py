@@ -6,7 +6,9 @@ Drivers, each as of the target date (no look-ahead):
          ICE certified stocks at the last month-end before the date (log bags; vs their own 5-year average; 1- and 3-month change;
          European-port share), cover = certified lots / total KC futures open interest (CFTC, last report at least 3 days old),
          age of the pile (share over one year, bag-weighted age; ICE aging report, month-end at least 7 days old, 2016 on),
-         ICO Brazilian naturals and other milds minus the ICE 2nd/3rd average (month at least 10 days complete),
+         ICO Brazilian naturals and other milds minus the ICE 2nd/3rd average (month at least 10 days complete; also vs their
+         own 3-year median), Brazil physical basis to the ICE 2nd/3rd (CEPEA tipo 6, co-op semi-washed; 20-day average to the
+         day before; research only, data/coffee/brazil_physical_history.csv),
          Brazil green exports (MDIC, NCM 0901.11.10) to Belgium / Germany / Netherlands vs the same months of the 3 years
          before, ICE gradings passed and bags leaving the pile (monthly grading files, Oct 2022 on), bags pending grading x
          the recent pass rate ("certs to come"; grading run-rate where no pending series), whole-pool delivery value from
@@ -81,6 +83,36 @@ grd = grd[(grd.scope == "month") & (grd.row_type == "total") & (grd.stage == "or
 ico = pd.read_csv(need("data/coffee/ico_groups_history.csv")).set_index("month")
 ico_bra = (ico.bra_w - ico.kc_2nd_3rd_avg_calc).dropna()
 ico_oth = (ico.oth_w - ico.kc_2nd_3rd_avg_calc).dropna()
+# Brazil physical (pipelines/brazil_physical.py; optional, research only): daily basis to the ICE 2nd/3rd average, US cents/lb.
+# CEPEA tipo 6 = domestic São Paulo naturals (not semi-washed, not FOB); co-op semi-washed (cereja descascado) from 2018.
+BPH = os.path.join(ROOT, "data", "coffee", "brazil_physical_history.csv")
+BRP = pd.read_csv(BPH, parse_dates=["date"]).set_index("date").sort_index() if os.path.exists(BPH) else pd.DataFrame()
+BRB = {c: BRP[c].dropna() for c in ("cepea_basis_2nd3rd", "cd_basis_2nd3rd") if c in BRP}
+
+
+def brb(name, d, adj=False, min_obs=5):
+    """20-day average of a Brazil basis to the day before d; adj = minus its own median over the 3 years before (change vs history)."""
+    s_ = BRB.get(name)
+    if s_ is None:
+        return np.nan
+    w = s_[(s_.index < d) & (s_.index >= d - pd.Timedelta(days=30))].tail(20)
+    if len(w) < min_obs:
+        return np.nan
+    v = float(w.mean())
+    if not adj:
+        return v
+    h = s_[(s_.index < d) & (s_.index >= d - pd.DateOffset(years=3))]
+    return v - float(h.median()) if len(h) >= 250 else np.nan
+
+
+def ico_adj(s_, d):
+    m_, v = month_asof(s_, d, 10)
+    if m_ is None:
+        return np.nan
+    h = s_[[k for k in s_.index if k <= m_]].tail(36)
+    return v - float(h.median()) if len(h) >= 24 else np.nan
+
+
 cot = pd.read_csv(need("data/cot/KC_fut.csv"), usecols=["report_date_as_yyyy_mm_dd", "open_interest_all", "m_money_positions_long_all",
                                                          "m_money_positions_short_all", "m_money_positions_spread"])
 cot["date"] = pd.to_datetime(cot.report_date_as_yyyy_mm_dd.str[:10])
@@ -239,6 +271,11 @@ def features(d, certs_override=None, fnd_d=None):
     f["avg_age"] = ag.avg_age.get(a0, np.nan) if a0 is not None and (d - a0).days < 70 else np.nan
     f["ico_bra"] = month_asof(ico_bra, d, 10)[1]
     f["ico_oth"] = month_asof(ico_oth, d, 10)[1]
+    f["ico_bra_adj"] = ico_adj(ico_bra, d)
+    f["ico_oth_adj"] = ico_adj(ico_oth, d)
+    f["cep_b"] = brb("cepea_basis_2nd3rd", d)
+    f["cep_b_adj"] = brb("cepea_basis_2nd3rd", d, True)
+    f["cd_b"] = brb("cd_basis_2nd3rd", d, min_obs=1)        # co-op quotes are sampled about fortnightly before late 2026
     # flows: net change in the pile over 1-3 months (log and bags), gradings passed and bags that left (Oct 2022 on)
     cm = mk(t0)
     for n in (1, 2, 3):
@@ -770,6 +807,58 @@ if LAB_MODE:                                  # research only: written to the --
                                          "change: spread + certs + regimes": wf(["p21", "lc@21", "r19@21", "r23@21"], "chg_p", eval_from="2010-01-01"),
                                          "change: + ICO premium": wf(["p21", "lc@21", "r19@21", "r23@21", "ico_oth@21"], "chg_p", eval_from="2010-01-01")}
     LAB["poison_pill"] = X2
+
+    # 2b. Brazil leg of the physical premium (Ma, 18 Nov): ICO Brazilian naturals vs CEPEA tipo 6 basis (and co-op semi-washed
+    # where it exists), each minus the ICE 2nd/3rd average; levels and "vs own 3-yr median". By regime, then walk-forward by
+    # delivery (training = deliveries whose first notice came before the target's bd 21; no look-ahead). Each candidate is
+    # compared with the chosen drivers ON THE SAME deliveries (those where the candidate exists).
+    BXS = ["ico_bra", "ico_bra_adj", "ico_oth", "ico_oth_adj", "cep_b", "cep_b_adj", "cd_b"]
+    BL = {"depth": {x: (H.loc[H[f"{x}@21"].notna(), "contract"].iloc[0] if H[f"{x}@21"].notna().any() else None) for x in BXS},
+          "n": {x: int(H[f"{x}@21"].notna().sum()) for x in BXS}, "regimes": {}, "oos": {}}
+    for rn, m in REG3 + [("all", H.fnd > "1900")]:
+        D_ = H[m]
+        BL["regimes"][rn] = {x: {"n": int(D_[f"{x}@21"].notna().sum()), "vs_avg": spear(D_[f"{x}@21"], D_.avg_p)[0],
+                                 "vs_chg": spear(D_[f"{x}@21"], D_.chg_p)[0], "vs_p10": spear(D_[f"{x}@10"], D_.p10)[0]} for x in BXS}
+        Dq = D_.dropna(subset=["lc@21", "avg_p"])
+        if len(Dq) >= 8:
+            bq = np.polyfit(Dq["lc@21"], Dq.avg_p, 1)
+            rq = Dq.avg_p - np.polyval(bq, Dq["lc@21"])
+            for x in BXS:
+                BL["regimes"][rn][x]["vs_resid_after_certs"] = spear(Dq[f"{x}@21"], rq)[0]
+        BL["regimes"][rn]["cep_vs_ico_bra"] = spear(D_["cep_b@21"], D_["ico_bra@21"])[0]
+
+    def wf_on(cols, y, mask_col, eval_from, base):
+        """Walk-forward MAE on the deliveries where mask_col exists (same set for the base and the candidate)."""
+        res = {}
+        for tag, cc in (("base", base), ("with", base + [cols])):
+            out = []
+            for i, r in H.iterrows():
+                if r.fnd < pd.Timestamp(eval_from) or pd.isna(r[y]) or pd.isna(r[mask_col]):
+                    continue
+                tr = H[(H.fnd < r.date21) & H[mask_col].notna()]
+                X = np.column_stack([np.ones(len(tr))] + [tr[c].values.astype(float) for c in cc])
+                ok = ~np.isnan(X).any(1) & tr[y].notna().values
+                if ok.sum() < X.shape[1] + 6:
+                    continue
+                keep = [0] + [j for j in range(1, X.shape[1]) if np.ptp(X[ok][:, j]) > 0]
+                b, *_ = np.linalg.lstsq(X[ok][:, keep], tr[y].values[ok], rcond=None)
+                x = np.array([1.0] + [float(r[c]) for c in cc])[keep]
+                if not np.isnan(x).any():
+                    out.append((r.contract, float(r[y]), float(x @ b)))
+            res[tag] = out
+        common = {c for c, *_ in res["base"]} & {c for c, *_ in res["with"]}
+        mae = lambda L: rd(np.mean([abs(a - p) for c, a, p in L if c in common]), 3) if common else None
+        return {"n": len(common), "mae_base": mae(res["base"]), "mae_with": mae(res["with"]),
+                "skill": rd(1 - mae(res["with"]) / mae(res["base"]), 3) if common and mae(res["base"]) else None}
+
+    for x in BXS:
+        col = f"{x}@21"
+        BL["oos"][x] = {"avg, chosen drivers (2021 on)": wf_on(col, "avg_p", col, "2021-01-01", BASE),
+                        "change into notice, spread + chosen (2021 on)": wf_on(col, "chg_p", col, "2021-01-01", ["p21"] + BASE),
+                        "avg, certs + regimes (2010 on)": wf_on(col, "avg_p", col, "2010-01-01", ["lc@21", "r19@21", "r23@21"]),
+                        "change, spread + certs + regimes (2010 on)": wf_on(col, "chg_p", col, "2010-01-01", ["p21", "lc@21", "r19@21", "r23@21"]),
+                        "bd10 level, chosen (2021 on)": wf_on(f"{x}@10", "p10", f"{x}@10", "2021-01-01", [f"{v}@10" for v in XS + REGS])}
+    LAB["brazil_leg"] = BL
 
     # 3. fundamentals: USDA PSD (final estimates, i.e. with hindsight) by marketing year; Brazil MY Y runs Jul Y - Jun Y+1
     psd = pd.read_csv(need("coffee/data/psd_coffee.csv"))

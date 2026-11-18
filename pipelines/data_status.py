@@ -65,6 +65,20 @@ def wasde_release():
     return rep + "-10"                                       # WASDE comes out around the 8th-12th; month is what matters
 
 
+def brazil_last(series):
+    """Latest day of one series in data/coffee/brazil_physical_raw.csv (plus the coffee fetch's co-op file)."""
+    best = None
+    for p, col, name in (("data/coffee/brazil_physical_raw.csv", "series", series),
+                         ("coffee/data/br_physical.csv", "series", {"coop_cd": "coop_cd", "cepea_arabica": "cepea_arabica"}.get(series))):
+        if not name or not (ROOT / p).exists():
+            continue
+        with open(ROOT / p) as f:
+            m = max((r["date"] for r in csv.DictReader(f) if r.get(col) == name
+                     and (not series.startswith("cepea") or r.get("source") == "CEPEA file uploaded to inbox")), default=None)
+        best = max(filter(None, [best, m]), default=None)
+    return best
+
+
 # (group, name, cadence, limit, unit, manual, getter, note)
 B, C = "bd", "d"
 SOURCES = [
@@ -102,6 +116,10 @@ SOURCES = [
     ("Coffee", "ICE grading summary by origin (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/coffee/ice_grading_monthly.csv", "period_end"), "Certs profile tab"),
     ("Coffee", "Certs profile and delivery economics (built from the ICE files)", "daily", 2, B, False, lambda: d10(J("data/coffee/certs_profile.json")["current"]["daily_date"]), "Certs profile tab"),
     ("Coffee", "ICO group prices for the certs physical comparison", "monthly", 40, C, False, lambda: J("data/coffee/certs_profile.json")["physical"]["ico_month"] + "-28", "Certs profile tab"),
+    ("Coffee", "CEPEA/ESALQ arabica index (Ma's cepea.org.br download, inbox/)", "weekly", 10, C, True, lambda: brazil_last("cepea_arabica"), "Brazil basis history, KC spread model (Brazil leg, Lab)"),
+    ("Coffee", "CEPEA/ESALQ robusta index (Ma's cepea.org.br download, inbox/)", "weekly", 10, C, True, lambda: brazil_last("cepea_robusta"), "Brazil conilon vs London chart"),
+    ("Coffee", "Brazil co-op semi-washed / tipo 6 quotes (Notícias Agrícolas)", "daily", 3, B, False, lambda: brazil_last("coop_cd"), "Brazil basis ladder"),
+    ("Coffee", "USD/BRL PTAX (Banco Central do Brasil)", "daily", 3, B, False, lambda: max_csv_date("data/coffee/usdbrl_ptax.csv"), "Brazil physical in US cents/lb"),
     ("Coffee", "Cecafé daily registrations", "daily", 2, B, False, lambda: J("data/coffee/cecafe.json")["asof"], "Cecafé tab"),
     ("Coffee", "Brazil coffee weather (weighted)", "daily", 2, B, False, lambda: d10(J("data/coffee/weather_weighted.json")["generated"]), "weather tab"),
     ("Sugar", "Sugar desk", "daily", 2, B, False, lambda: d10(J("sugar/data/sugar.json")["built"]), "sugar tabs"),
@@ -146,7 +164,7 @@ def age(d, unit):
 
 INBOX_ORDER = ["CT_options", "CT_futures", "KC_options", "KC_futures", "SB_options", "SB_futures", "CC_options", "CC_futures",
                "ct_stock", "ct_grade", "ct_warehouse", "ct_yog", "ct_strength", "ct_four_months", "kc_certs", "kc_aging", "kc_eom",
-               "kc_grading", "cc_certs", "cc_grading", "kc_warehouses", "kc_rates"]
+               "kc_grading", "cc_certs", "cc_grading", "kc_warehouses", "kc_rates", "cepea_arabica", "cepea_robusta"]
 
 
 def inbox():
