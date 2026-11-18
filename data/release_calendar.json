@@ -714,13 +714,14 @@
     "repo": "BMR-Com/softs--options-",
     "file": "daily_options_archive.yml"
    },
-   "manual": false,
+   "manual": true,
    "probe": {
     "path": "data/web/CT_desk.json",
     "key": [
      "date"
     ]
-   }
+   },
+   "note": "Depends on Ma's daily ICE report uploads; a failed run of the archive workflow still counts as a failure."
   },
   {
    "id": "options_terminal_kc",
@@ -739,13 +740,14 @@
     "repo": "BMR-Com/softs--options-",
     "file": "daily_options_archive.yml"
    },
-   "manual": false,
+   "manual": true,
    "probe": {
     "path": "data/web/KC_desk.json",
     "key": [
      "date"
     ]
-   }
+   },
+   "note": "Depends on Ma's daily ICE report uploads; a failed run of the archive workflow still counts as a failure."
   },
   {
    "id": "ct_ice_warehouse",

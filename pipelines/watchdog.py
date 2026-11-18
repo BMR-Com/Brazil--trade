@@ -118,7 +118,7 @@ def check(entries, args, root, cal, now, prev):
             no_run = not any(datetime.fromisoformat(r["created_at"].replace("Z", "+00:00")) >= rel for r in ws["runs"])
         if reason or failed:
             items.append({"id": e["id"], "report": e["status_source"] if e["report"] == "Desk build" else e["report"], "tab": e["tab"], "latest": latest,
-                          "expected": exp["data_date"] if exp else None, "late": bool(reason),
+                          "expected": exp["data_date"] if exp else None, "late": bool(reason), "failed": failed,
                           "reason": "; ".join(x for x in [reason, f"last run of {wf['file']} {ws['last']['conclusion']} ({ws['last']['html_url']})" if failed else None,
                                                           f"no run of {wf['file']} since the release" if no_run else None] if x),
                           "workflow": key, "manual": e.get("manual", False),
@@ -131,7 +131,7 @@ def dispatch(items, args, prev, now, cooldown_h):
     last = {d["workflow"]: d["at"] for d in (prev.get("dispatch_log") or [])}
     for it in items:
         k = it["workflow"]
-        if it["manual"] or not k:
+        if not k or (it["manual"] and not it.get("failed")):
             continue
         if k in seen:
             it["action"] = seen[k]
@@ -226,9 +226,9 @@ def main():
         for i in after:
             i.setdefault("action", acts.get(i["id"]))
     still = [i for i in after if not i["manual"] and i["late"]]
-    failed_now = [i for i in after if not i["manual"] and not i["late"]]   # data fine but last run failed
+    failed_now = [i for i in after if i.get("failed") and i not in still]   # last run of its workflow failed
     bad_reruns = [d for d in done if d.get("result") not in (None, "success")]
-    needs_ma = [i for i in after if i["manual"]]
+    needs_ma = [i for i in after if i["manual"] and i["late"]]
     red = bool(still or bad_reruns or failed_now)
     log = (prev.get("dispatch_log") or [])
     log = [d for d in log if now - datetime.fromisoformat(d["at"]) < timedelta(days=7)] + done
