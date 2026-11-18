@@ -2084,6 +2084,27 @@
    "manual": false,
    "season": null,
    "cadence": "daily"
+  },
+  {
+   "id": "adecafeh",
+   "status_source": "Honduras crop-year exports and forecast, ADECAFEH (page updated about weekly)",
+   "age_limit": 21,
+   "age_unit": "days",
+   "tab": "Coffee > Centrals & Col",
+   "report": "ADECAFEH cifras page (crop-year sales, exports, forecasts)",
+   "publisher": "ADECAFEH",
+   "release_et": "about weekly (page text, 'datos al' date)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "colombia_fnc.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "weekly"
   }
  ]
 }

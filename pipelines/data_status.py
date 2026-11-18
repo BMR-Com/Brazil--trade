@@ -142,6 +142,7 @@ SOURCES = [
     ("Coffee", "Colombia production, FNC (monthly; out early next month)", "monthly", 45, C, False, lambda: J("data/coffee/colombia/colombia.json")["production"]["latest"]["month"] + "-28", "Centrals & Col tab"),
     ("Coffee", "Colombia exports, FNC (monthly; out mid next month)", "monthly", 60, C, False, lambda: J("data/coffee/colombia/colombia.json")["exports"]["latest"]["month"] + "-28", "Centrals & Col tab"),
     ("Coffee", "Colombia internal reference price, FNC (daily)", "daily", 3, B, False, lambda: J("data/coffee/colombia/colombia.json")["internal"]["now"]["date"], "Centrals & Col tab"),
+    ("Coffee", "Honduras crop-year exports and forecast, ADECAFEH (page updated about weekly)", "weekly", 21, C, False, lambda: J("data/coffee/honduras/honduras.json")["latest"]["as_of"], "Centrals & Col tab"),
     ("Coffee", "Cecafé daily registrations", "daily", 2, B, False, lambda: J("data/coffee/cecafe.json")["asof"], "Cecafé tab"),
     ("Coffee", "Brazil coffee weather (weighted)", "daily", 2, B, False, lambda: d10(J("data/coffee/weather_weighted.json")["generated"]), "weather tab"),
     ("Sugar", "Sugar desk", "daily", 2, B, False, lambda: d10(J("sugar/data/sugar.json")["built"]), "sugar tabs"),

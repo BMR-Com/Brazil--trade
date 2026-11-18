@@ -1,0 +1,42 @@
+{
+ "built": "2026-11-18 22:29 UTC",
+ "source": "https://exportadoresdecafe.com/cifras",
+ "latest": {
+  "crop_year": "2026/2027",
+  "as_of": "2026-11-13",
+  "export_forecast_m": 5.1,
+  "export_forecast_yoy_pct": -8.0,
+  "production_forecast_m": 5.5,
+  "sales_k": 150.0,
+  "sales_yoy_pct": -49.0,
+  "exports_k": 55.0,
+  "exports_yoy_pct": -9.0,
+  "exports_value_musd": 19.0,
+  "month": "2026-10",
+  "month_exports_k": 21.0,
+  "month_yoy_pct": -33.0,
+  "prev_crop": "2025/2026",
+  "prev_crop_exports_m": 5.61,
+  "destinations": "Estados Unidos de América (46.0%); Bélgica (12.6%), Países Bajos (10.7%), Colombia (6.1%), República Dominicana (4.8%), Canadá (3.7%), Corea, República de (2.3%), Australia (1.8%), España (1.8%), Japón (1.7%); others (8.5%)"
+ },
+ "history": [
+  {
+   "as_of": "2026-11-13",
+   "crop_year": "2026/2027",
+   "export_forecast_m": 5.1,
+   "export_forecast_yoy_pct": -8.0,
+   "production_forecast_m": 5.5,
+   "sales_k": 150.0,
+   "sales_yoy_pct": -49.0,
+   "exports_k": 55.0,
+   "exports_yoy_pct": -9.0,
+   "exports_value_musd": 19.0,
+   "month": "2026-10",
+   "month_exports_k": 21.0,
+   "month_yoy_pct": -33.0,
+   "prev_crop": "2025/2026",
+   "prev_crop_exports_m": 5.61,
+   "destinations": "Estados Unidos de América (46.0%); Bélgica (12.6%), Países Bajos (10.7%), Colombia (6.1%), República Dominicana (4.8%), Canadá (3.7%), Corea, República de (2.3%), Australia (1.8%), España (1.8%), Japón (1.7%); others (8.5%)"
+  }
+ ]
+}

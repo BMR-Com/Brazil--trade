@@ -674,6 +674,7 @@ const Coffee = (() => {
 
   // Coffee > Centrals & Col (data/coffee/colombia/colombia.json, pipelines/colombia_fnc.py; FNC public files)
   async function centrals() {
+    const H = await getJSON('data/coffee/honduras/honduras.json').catch(() => null), HL = H && H.latest;
     const C = await getJSON('data/coffee/colombia/colombia.json'), P = C.production, E = C.exports, I = C.internal;
     const CYM = ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
     const lab = m => new Date(m + '-15').toLocaleString('en', { month: 'short', year: 'numeric' });
@@ -698,13 +699,21 @@ const Coffee = (() => {
           <tr><td class="l">Others</td><td class="n">${f0(D.rest)}</td><td class="n">${f1(D.rest / D.total * 100)}%</td><td></td></tr><tr><td class="l"><b>Total</b></td><td class="n"><b>${f0(D.total)}</b></td><td></td><td></td></tr></table></div></div>
         <div class="card"><h2>Exports by type, last 12 months</h2><div class="tbl"><table><tr><th class="l">Type</th><th>k bags</th><th>vs prior 12 m</th></tr>
           ${Object.entries(E.by_type).map(([k, v]) => `<tr><td class="l">${k}</td><td class="n">${f0(v.last12)}</td><td class="n">${sgn(v.chg_pct, 0, '%')}</td></tr>`).join('')}</table></div>
-          <p class="note">Honduras (ADECAFEH) is not shown: see the Data status tab.</p></div></div>
+</div></div>
+      ${H ? `<div class="card" style="margin-top:12px"><h2>Honduras: crop ${HL.crop_year} <span class="note">ADECAFEH, data to ${HL.as_of}</span></h2>
+        <div class="grid g4">${kpi('Export forecast', f1(HL.export_forecast_m) + 'm bags', `${sgn(HL.export_forecast_yoy_pct, 0, '%')} y/y; ${HL.prev_crop || 'last crop'} exported ${f2(HL.prev_crop_exports_m)}m`)}
+          ${kpi('Production forecast', f1(HL.production_forecast_m) + 'm bags', 'preliminary')}
+          ${kpi('Exports, crop to date', f0(HL.exports_k) + 'k bags', `${sgn(HL.exports_yoy_pct, 0, '%')} y/y; sales ${f0(HL.sales_k)}k (${sgn(HL.sales_yoy_pct, 0, '%')})`)}
+          ${HL.month ? kpi('Exports ' + lab(HL.month), f0(HL.month_exports_k) + 'k bags', `${sgn(HL.month_yoy_pct, 0, '%')} y/y (preliminary)`) : ''}</div>
+        <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Data to</th><th>Export fcst, m</th><th>Prod. fcst, m</th><th>Exports to date, k</th><th>y/y</th><th>Sales to date, k</th><th>y/y</th></tr>
+          ${H.history.slice().reverse().map(r => `<tr><td class="l">${r.as_of}</td><td class="n">${r.export_forecast_m}</td><td class="n">${r.production_forecast_m}</td><td class="n">${r.exports_k}</td><td class="n">${sgn(+r.exports_yoy_pct, 0, '%')}</td><td class="n">${r.sales_k}</td><td class="n">${sgn(+r.sales_yoy_pct, 0, '%')}</td></tr>`).join('')}</table></div>
+        <p class="note">Bags of 60 kg. Main buyers so far: ${HL.destinations || '–'}. ADECAFEH shows only the current crop year (Oct–Sep), so the desk keeps one row per update from 18 Nov 2026. Source: <a href="${H.source}" target="_blank" rel="noopener">ADECAFEH cifras</a>.</p></div>` : ''}
       <p class="note">Source: Federación Nacional de Cafeteros (FNC), <a href="https://federaciondecafeteros.org/estadisticas-cafeteras/" target="_blank" rel="noopener">estadísticas cafeteras</a>: ${Object.entries(src).map(([k, v]) => `${k.replace('_', ' ')} (${v.latest_data || 'read'}, read ${(v.read || '').slice(0, 10)})`).join('; ')}. Production history from ${P.history_from}, exports from ${E.history_from}. USD/COP: TRM (datos.gov.co), fallbacks Yahoo / TradingView. Built ${C.built}.</p>`;
     const seas = (id, S) => { const ks = Object.keys(S).filter(k => !k.startsWith('avg5')).slice(-3);
       chart(id, { type: 'bar', data: { labels: CYM, datasets: [...ks.map((k, q) => ({ type: q === ks.length - 1 ? 'bar' : 'line', label: k, data: S[k], backgroundColor: PAL[0], borderColor: PAL[q === ks.length - 1 ? 0 : q + 1], borderWidth: 1.5, pointRadius: 0 })),
         { type: 'line', label: '5-yr avg ' + S.avg5_years, data: S.avg5, borderColor: '#7f8c8d', borderDash: [4, 3], pointRadius: 0, borderWidth: 1.2 }] } }); };
     seas('coP', P.seasonal); seas('coE', E.seasonal);
-    const r0 = P.roll12.month.findIndex(m => m >= '2012-01'), e0 = E.roll12.month.indexOf(P.roll12.month[r0]);
+    const r0 = P.roll12.month.findIndex(m => m >= '2012-01');
     chart('coR', { type: 'line', data: { labels: P.roll12.month.slice(r0), datasets: [{ label: 'Production', data: P.roll12.v.slice(r0), borderColor: PAL[0], pointRadius: 0 },
       { label: 'Exports', data: P.roll12.month.slice(r0).map(m => { const i = E.roll12.month.indexOf(m); return i < 0 ? null : E.roll12.v[i]; }), borderColor: PAL[2], pointRadius: 0 }] } });
     if (I) { const i0 = since(I.dates, 5);
