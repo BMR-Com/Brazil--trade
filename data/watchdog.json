@@ -1,7 +1,7 @@
 {
- "checked": "2026-11-18 18:06 UTC",
+ "checked": "2026-11-18 18:35 UTC",
  "repo": "BMR-Com/Brazil--trade",
- "mode": "check",
+ "mode": "wait+recheck",
  "late_or_failed_at_start": [
   {
    "id": "cftc_cot",
@@ -11,11 +11,11 @@
    "expected": "2026-11-10",
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "yahoo_closes",
@@ -25,11 +25,11 @@
    "expected": "2026-11-16",
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "ct_ice_stock",
@@ -106,11 +106,11 @@
    "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "sb_spread_tables",
@@ -120,11 +120,11 @@
    "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "sugar_lineup",
@@ -134,11 +134,11 @@
    "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "ec_sugar",
@@ -161,23 +161,14 @@
    "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   }
  ],
- "reruns": [
-  {
-   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
-   "file": "softs_data.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-18T18:06+00:00",
-   "ok": true,
-   "for": "cftc_cot"
-  }
- ],
+ "reruns": [],
  "still_late": [
   {
    "id": "na_coop",
@@ -217,11 +208,11 @@
    "expected": "2026-11-10",
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "yahoo_closes",
@@ -231,11 +222,11 @@
    "expected": "2026-11-16",
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "kc_spread_tables",
@@ -245,11 +236,11 @@
    "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "sb_spread_tables",
@@ -259,11 +250,11 @@
    "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "sugar_lineup",
@@ -273,11 +264,11 @@
    "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   },
   {
    "id": "contract_calendar",
@@ -287,11 +278,11 @@
    "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44366164029)",
    "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
+   "action": "already rerun at 2026-11-18T18:06 UTC (cooldown 6 h)"
   }
  ],
  "needs_ma": [
@@ -348,6 +339,7 @@
    "owner": "Ma (upload / manual entry)"
   }
  ],
+ "off_season": [],
  "result": "red",
  "dispatch_log": [
   {
