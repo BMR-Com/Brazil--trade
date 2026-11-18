@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 17:44 UTC",
+ "generated": "2026-11-18 17:49 UTC",
  "today": "2026-11-18",
  "sources": [
   {
@@ -1013,29 +1013,29 @@
   {
    "group": "Embedded dashboards",
    "source": "Options terminal, cotton (BMR-Com/softs--options-)",
-   "latest": "2026-11-12",
+   "latest": "2026-11-16",
    "cadence": "daily",
-   "age": 4,
+   "age": 2,
    "age_unit": "business days",
    "limit": 3,
-   "state": "late",
+   "state": "ok",
    "manual": false,
    "used_in": "options terminal, Delivery tab options"
   },
   {
    "group": "Embedded dashboards",
    "source": "Options terminal, coffee (BMR-Com/softs--options-)",
-   "latest": "2026-11-11",
+   "latest": "2026-11-16",
    "cadence": "daily",
-   "age": 5,
+   "age": 2,
    "age_unit": "business days",
    "limit": 3,
-   "state": "late",
+   "state": "ok",
    "manual": false,
    "used_in": "options terminal"
   }
  ],
- "late": 8,
+ "late": 6,
  "inbox": {
   "updated": "2026-11-18 17:33 UTC",
   "last": [
