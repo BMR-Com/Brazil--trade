@@ -4,8 +4,10 @@
   "markets": {
     "cotton": {
       "date": "2026-11-17",
-      "time": "11:50 CT",
-      "fundamental": "Dec has pushed back above the broken 77.05 level to ~77.6 (+0.62) with Mar ~81.65, helped by a slightly softer dollar (DXY ~103.4). It is a short-covering bounce rather than new supply news; into Dec first notice, high-grade certs remain a risk for old-crop longs, so 79.90 resistance is the level to prove the low is in.",
+      "by": "bot",
+      "time": "21:51 CT",
+      "claude_date": "2026-11-17",
+      "fundamental": "No new headlines for this market in the last 30 hours.",
       "events": [
         "Dec cotton ~77.62 (+0.62), range 76.82-77.70; Mar ~81.65 (ICE via TradingView)",
         "Dollar index eases to ~103.4 (ICE via TradingView)"
@@ -13,36 +15,46 @@
     },
     "sugar": {
       "date": "2026-11-17",
-      "time": "11:50 CT",
-      "fund_score": -0.35,
-      "fundamental": "Mar recovered from the early dip to 17.97 and trades ~18.21, back above 18.02 support and the 100-day near 18.13; the real's slide still keeps Centre-South mills hedging, so Brazil-side selling caps rallies near 18.35. Crude giving back part of its gain trims the ethanol offset.",
+      "by": "bot",
+      "time": "21:51 CT",
+      "claude_date": "2026-11-17",
+      "fundamental": "No new headlines for this market in the last 30 hours.",
       "events": [
         "Mar sugar ~18.21 (+0.11), range 17.97-18.33 (ICE via TradingView)",
         "Weak Brazilian real keeps Centre-South hedge pressure on (Bloomberg)",
         "Crude pares gains as glut worries meet Gulf tanker attacks (Reuters)"
-      ]
+      ],
+      "claude_fund_score": -0.35,
+      "fund_score": -0.35
     },
     "coffee": {
       "date": "2026-11-17",
-      "time": "11:50 CT",
-      "fund_score": 0.3,
-      "fundamental": "ICE-certified arabica stocks have fallen to their lowest since 1999, and nearby is responding: Dec ~286.1 (+5.4, high 288.3) is back above the 283.50 level and the 200-day, with Mar ~281.25 so the Dec/Mar inverse holds near 5 cents. That is a deliverability squeeze for Dec; Brazil's weaker real is the main brake on Mar and beyond.",
+      "by": "bot",
+      "time": "21:51 CT",
+      "claude_date": "2026-11-17",
+      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 1 up, 0 down by keyword).",
       "events": [
-        "ICE arabica certified stocks hit a 1999 low (ADMIS)",
-        "Dec arabica ~286.1 (+5.4), back above 283.50/200-day; Mar ~281.25 (ICE via TradingView)",
-        "Weaker Brazilian real encourages grower selling (Bloomberg)"
-      ]
+        "Nestle Brazil coffee supplier faces hearing over labor abuse claims (Reuters, 2026-11-16)",
+        "Arabica Stocks Hit 1999 Low (ADMIS, 2026-11-17)",
+        "Arabica Coffee Settles Higher on Shrinking ICE Inventories (Barchart.com, 2026-11-17)"
+      ],
+      "claude_fund_score": 0.3,
+      "fund_score": 0.3
     },
     "cocoa": {
       "date": "2026-11-17",
-      "time": "11:50 CT",
-      "fund_score": -0.15,
-      "fundamental": "Mar is flat-to-firmer near 5,196 (+12), holding above 5,160 support; nothing new on supply since the morning. Steady Ivory Coast arrivals and rising ICE-certified stocks keep the ample-supply picture, with dry West African weather the only open question for the mid-crop.",
+      "by": "bot",
+      "time": "21:51 CT",
+      "claude_date": "2026-11-17",
+      "fundamental": "No new headlines for this market in the last 30 hours.",
       "events": [
         "Mar cocoa ~5,196 (+12), range 5,125-5,262 (ICE via TradingView)",
         "Rising ICE cocoa inventories keep pressure on (Barchart)",
         "Dry West African weather keeps mid-crop questions open (ADMIS)"
-      ]
+      ],
+      "claude_fund_score": -0.15,
+      "fund_score": -0.15
     }
-  }
+  },
+  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-17 21:51 CT: Claude's desk read had not run for 5+ hours."
 }
