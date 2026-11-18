@@ -1,33 +1,35 @@
 {
- "checked": "2026-11-18 17:44 UTC",
+ "checked": "2026-11-18 18:06 UTC",
  "repo": "BMR-Com/Brazil--trade",
- "mode": "wait+recheck",
+ "mode": "check",
  "late_or_failed_at_start": [
   {
-   "id": "options_terminal_ct",
-   "report": "ICE cotton options (from uploaded ICE reports)",
-   "tab": "Options terminal",
-   "latest": "2026-11-12",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-12 is older than the 3 business days limit",
-   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
-   "manual": true,
-   "owner": "Ma (upload / manual entry)"
+   "id": "cftc_cot",
+   "report": "CFTC Commitments of Traders (Tuesday positions)",
+   "tab": "COT sections, Overview, Cotton > Futures, options & COT",
+   "latest": "2026-11-10",
+   "expected": "2026-11-10",
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
   },
   {
-   "id": "options_terminal_kc",
-   "report": "ICE coffee options (from uploaded ICE reports)",
-   "tab": "Options terminal",
-   "latest": "2026-11-11",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-11 is older than the 3 business days limit",
-   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
-   "manual": true,
-   "owner": "Ma (upload / manual entry)"
+   "id": "yahoo_closes",
+   "report": "ICE futures closes (Yahoo)",
+   "tab": "Technicals, Overview",
+   "latest": "2026-11-18",
+   "expected": "2026-11-16",
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
   },
   {
    "id": "ct_ice_stock",
@@ -97,6 +99,48 @@
    "owner": "Ma (upload / manual entry)"
   },
   {
+   "id": "kc_spread_tables",
+   "report": "Spreads & arbs table (KC/RC switches, arabica-robusta arb, B3 arb)",
+   "tab": "Coffee/Sugar > Spreads & vol",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "sb_spread_tables",
+   "report": "Spreads & arbs table (No. 11 / No. 5 switches, white premium)",
+   "tab": "Sugar > Spreads & vol",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "sugar_lineup",
+   "report": "SECEX weekly exports / line-up",
+   "tab": "Sugar > Exports",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
    "id": "ec_sugar",
    "report": "EC balance sheet and EU price",
    "tab": "Sugar > Europe",
@@ -108,9 +152,32 @@
    "workflow": null,
    "manual": true,
    "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "contract_calendar",
+   "report": "Contract calendar (notice and roll dates)",
+   "tab": "Primers, delivery",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
   }
  ],
- "reruns": [],
+ "reruns": [
+  {
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "file": "softs_data.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-18T18:06+00:00",
+   "ok": true,
+   "for": "cftc_cot"
+  }
+ ],
  "still_late": [
   {
    "id": "na_coop",
@@ -141,34 +208,93 @@
    "action": "already rerun at 2026-11-18T17:40 UTC (cooldown 6 h)"
   }
  ],
- "last_run_failed": [],
+ "last_run_failed": [
+  {
+   "id": "cftc_cot",
+   "report": "CFTC Commitments of Traders (Tuesday positions)",
+   "tab": "COT sections, Overview, Cotton > Futures, options & COT",
+   "latest": "2026-11-10",
+   "expected": "2026-11-10",
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "yahoo_closes",
+   "report": "ICE futures closes (Yahoo)",
+   "tab": "Technicals, Overview",
+   "latest": "2026-11-18",
+   "expected": "2026-11-16",
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "kc_spread_tables",
+   "report": "Spreads & arbs table (KC/RC switches, arabica-robusta arb, B3 arb)",
+   "tab": "Coffee/Sugar > Spreads & vol",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "sb_spread_tables",
+   "report": "Spreads & arbs table (No. 11 / No. 5 switches, white premium)",
+   "tab": "Sugar > Spreads & vol",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "sugar_lineup",
+   "report": "SECEX weekly exports / line-up",
+   "tab": "Sugar > Exports",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "contract_calendar",
+   "report": "Contract calendar (notice and roll dates)",
+   "tab": "Primers, delivery",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of softs_data.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44363081705)",
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  }
+ ],
  "needs_ma": [
-  {
-   "id": "options_terminal_ct",
-   "report": "ICE cotton options (from uploaded ICE reports)",
-   "tab": "Options terminal",
-   "latest": "2026-11-12",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-12 is older than the 3 business days limit",
-   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
-   "manual": true,
-   "owner": "Ma (upload / manual entry)"
-  },
-  {
-   "id": "options_terminal_kc",
-   "report": "ICE coffee options (from uploaded ICE reports)",
-   "tab": "Options terminal",
-   "latest": "2026-11-11",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-11 is older than the 3 business days limit",
-   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
-   "manual": true,
-   "owner": "Ma (upload / manual entry)"
-  },
   {
    "id": "ct_ice_stock",
    "report": "ICE certs: stock by delivery point",
@@ -231,6 +357,14 @@
    "at": "2026-11-18T17:40+00:00",
    "ok": true,
    "for": "na_coop"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
+   "file": "softs_data.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-18T18:06+00:00",
+   "ok": true,
+   "for": "cftc_cot"
   }
  ],
  "last_email": null

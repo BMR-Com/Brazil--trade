@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 18:02 UTC",
+ "generated": "2026-11-18 18:06 UTC",
  "today": "2026-11-18",
  "sources": [
   {
@@ -773,9 +773,9 @@
   {
    "group": "Coffee",
    "source": "Reports: Sucafina / StoneX / Rabobank key points (weekly read)",
-   "latest": "2026-11-18",
+   "latest": "2026-11-16",
    "cadence": "weekly",
-   "age": 0,
+   "age": 2,
    "age_unit": "days",
    "limit": 10,
    "state": "ok",
@@ -793,6 +793,18 @@
    "state": "ok",
    "manual": true,
    "used_in": "Sugar Reports tab"
+  },
+  {
+   "group": "Cotton",
+   "source": "Reports: USDA attach\u00e9 (GAIN), World Markets and Trade, ERS outlook (last full check)",
+   "latest": "2026-11-18",
+   "cadence": "daily",
+   "age": 0,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Cotton, coffee and sugar Reports tabs"
   },
   {
    "group": "Coffee",
