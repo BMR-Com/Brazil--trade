@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:25 UTC",
+ "generated": "2026-11-18 03:47 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -460,6 +460,30 @@
   },
   {
    "group": "Coffee",
+   "source": "Brazil tender parity (blend cost in Antwerp vs exchange value)",
+   "latest": "2026-11-11",
+   "cadence": "daily",
+   "age": 4,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "late",
+   "manual": false,
+   "used_in": "Brazil tender parity card"
+  },
+  {
+   "group": "Coffee",
+   "source": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv)",
+   "latest": "2026-04-07",
+   "cadence": "as found",
+   "age": 224,
+   "age_unit": "days",
+   "limit": 120,
+   "state": "late",
+   "manual": true,
+   "used_in": "fine-cup proxy calibration (tender parity)"
+  },
+  {
+   "group": "Coffee",
    "source": "Cecaf\u00e9 daily registrations",
    "latest": "2026-11-17",
    "cadence": "daily",
@@ -485,7 +509,7 @@
   {
    "group": "Sugar",
    "source": "Sugar desk",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -855,7 +879,7 @@
    "used_in": "last file received per type is listed below the table"
   }
  ],
- "late": 4,
+ "late": 6,
  "inbox": {
   "updated": "2026-11-18 03:25 UTC",
   "last": [
