@@ -1,6 +1,6 @@
 {
  "history": {
-  "built": "2026-11-18 03:24 UTC",
+  "built": "2026-11-18 03:31 UTC",
   "rows": 7523,
   "last": "2026-11-17",
   "first": {
@@ -6978,9 +6978,36 @@
    "allowed": true,
    "disallow_lines": []
   },
-  "slugs_on_index": []
+  "slugs_on_index": [],
+  "coop_cd": {
+   "requests": 10,
+   "rows": 0,
+   "stopped_at": "2017-12-21",
+   "seconds": 3,
+   "first": null
+  },
+  "coop_t6": {
+   "requests": 10,
+   "rows": 0,
+   "stopped_at": "2017-12-21",
+   "seconds": 3,
+   "first": null
+  },
+  "coop_t67": {
+   "requests": 10,
+   "rows": 0,
+   "stopped_at": "2017-12-21",
+   "seconds": 3,
+   "first": null
+  }
  },
  "log": [
-  "PTAX {'1996-09-01': 'HTTP 200, 2260 days', '2005-08-31': 'HTTP 200, 2259 days', '2014-08-30': 'HTTP 200, 2258 days', '2023-08-29': 'HTTP 200, 808 days', 'first': '1996-09-02', 'last': '2026-11-17', 'n': 7585}"
- ]
+  "PTAX {'1996-09-01': 'HTTP 200, 2260 days', '2005-08-31': 'HTTP 200, 2259 days', '2014-08-30': 'HTTP 200, 2258 days', '2023-08-29': 'HTTP 200, 808 days', 'first': '1996-09-02', 'last': '2026-11-17', 'n': 7585}",
+  "NA backfill coop_cd {'requests': 10, 'rows': 0, 'stopped_at': '2017-12-21', 'seconds': 3, 'first': None}",
+  "NA backfill coop_t6 {'requests': 10, 'rows': 0, 'stopped_at': '2017-12-21', 'seconds': 3, 'first': None}",
+  "NA backfill coop_t67 {'requests': 10, 'rows': 0, 'stopped_at': '2017-12-21', 'seconds': 3, 'first': None}"
+ ],
+ "backfill": {
+  "ran": "2026-11-18"
+ }
 }
