@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 02:15 UTC",
+ "generated": "2026-11-18 02:19 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -581,7 +581,7 @@
   {
    "group": "Sugar",
    "source": "Brazil sugar export line-up (weekly)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "weekly",
    "age": 0,
    "age_unit": "days",
@@ -773,7 +773,7 @@
   {
    "group": "Macro",
    "source": "Contract calendar (notice and roll dates)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
