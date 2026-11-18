@@ -1,32 +1,21 @@
-"""USDA reports for the Reports tabs (probe stage 5)."""
+"""USDA reports for the Reports tabs (probe stage 6)."""
 import re, sys, json, requests
 H = {"User-Agent": "Mozilla/5.0 (research desk; github actions)", "Accept": "application/json, text/plain, */*"}
 
 def probe():
     t = requests.get("https://gain.fas.usda.gov/main-es2018.js", headers=H, timeout=60).text
-    m = t.find("class SearchFilter {"); print("FILTER", t[m: m + 1500].replace("\n", " "))
-    for mm in re.finditer(r"GetSearchResults", t):
-        print("GSR", t[mm.start() - 1500: mm.end() + 200].replace("\n", " "))
-        break
-    for mm in list(re.finditer(r"apiEndpoint: '[^']+'|searchApi[^,]{0,120}|publicApi[^,]{0,120}", t))[:10]:
-        print("EP", mm.group(0))
-    body = {"keyword": "", "fromDate": "2026-08-01T00:00:00", "toDate": "2026-11-18T00:00:00", "countryIds": [], "postNames": [], "categoryIds": [],
-            "reportName": "Cotton and Products", "reportHighlights": "", "reportNumber": "", "correctedReport": False}
-    for ep in ["https://apps.fas.usda.gov/newgainapi/api/Search/GetSearchResults", "https://apps.fas.usda.gov/newgainapi/api/Report/GetSearchResults",
-               "https://apps.fas.usda.gov/newgainapi/api/search/GetSearchResults"]:
-        try:
-            r = requests.post(ep, json=body, headers=H, timeout=60); print("POST", ep, r.status_code, r.text[:1500])
-        except Exception as e:
-            print("POST", ep, "ERR", e)
-    x = requests.get("https://www.ers.usda.gov/sitemap.xml", headers=H, timeout=60).text
-    subs = re.findall(r"<loc>([^<]+)</loc>", x); print("SUBS", subs)
-    for u in subs:
-        y = requests.get(u, headers=H, timeout=90).text
-        locs = re.findall(r"<loc>([^<]+)</loc>", y)
-        hits = [l for l in locs if re.search(r"cotton-and-wool-outlook|sugar-and-sweeteners-outlook|cws-|sss-m", l, re.I)]
-        print("SUB", u, len(locs), hits[-30:])
-        if any("publications/" in l for l in locs):
-            print("  pubsample", [l for l in locs if "publications/" in l][-10:])
+    m = t.find("AuthTokenService = class"); print("AUTH", t[m - 200: m + 3500].replace("\n", " "))
+    for mm in list(re.finditer(r"tempToken|anonymous|publicToken|client_secret", t))[:12]:
+        print("TOK", t[mm.start() - 400: mm.end() + 300].replace("\n", " "))
+    x = requests.get("https://www.ers.usda.gov/sitemap.xml?page=7", headers=H, timeout=90).text
+    print("SM7", x[:1200])
+    ids = sorted(set(int(i) for i in re.findall(r"/publications/(\d+)</loc>", x)))
+    print("IDS", len(ids), ids[-60:])
+    for i in ids[-40:]:
+        r = requests.get(f"https://www.ers.usda.gov/publications/{i}", headers=H, timeout=60)
+        tt = re.search(r"<title>([^<]+)</title>", r.text)
+        pdfs = sorted(set(re.findall(r'href="([^"]+\.pdf)"', r.text)))
+        print("PUB", i, r.status_code, tt.group(1) if tt else None, pdfs[:3])
 
 if __name__ == "__main__":
     probe()
