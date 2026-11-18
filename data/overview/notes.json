@@ -1,60 +1,60 @@
 {
-  "updated": "2026-11-17",
-  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
-  "markets": {
-    "cotton": {
-      "date": "2026-11-17",
-      "by": "bot",
-      "time": "21:51 CT",
-      "claude_date": "2026-11-17",
-      "fundamental": "No new headlines for this market in the last 30 hours.",
-      "events": [
-        "Dec cotton ~77.62 (+0.62), range 76.82-77.70; Mar ~81.65 (ICE via TradingView)",
-        "Dollar index eases to ~103.4 (ICE via TradingView)"
-      ]
-    },
-    "sugar": {
-      "date": "2026-11-17",
-      "by": "bot",
-      "time": "21:51 CT",
-      "claude_date": "2026-11-17",
-      "fundamental": "No new headlines for this market in the last 30 hours.",
-      "events": [
-        "Mar sugar ~18.21 (+0.11), range 17.97-18.33 (ICE via TradingView)",
-        "Weak Brazilian real keeps Centre-South hedge pressure on (Bloomberg)",
-        "Crude pares gains as glut worries meet Gulf tanker attacks (Reuters)"
-      ],
-      "claude_fund_score": -0.35,
-      "fund_score": -0.35
-    },
-    "coffee": {
-      "date": "2026-11-17",
-      "by": "bot",
-      "time": "21:51 CT",
-      "claude_date": "2026-11-17",
-      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 1 up, 0 down by keyword).",
-      "events": [
-        "Nestle Brazil coffee supplier faces hearing over labor abuse claims (Reuters, 2026-11-16)",
-        "Arabica Stocks Hit 1999 Low (ADMIS, 2026-11-17)",
-        "Arabica Coffee Settles Higher on Shrinking ICE Inventories (Barchart.com, 2026-11-17)"
-      ],
-      "claude_fund_score": 0.3,
-      "fund_score": 0.3
-    },
-    "cocoa": {
-      "date": "2026-11-17",
-      "by": "bot",
-      "time": "21:51 CT",
-      "claude_date": "2026-11-17",
-      "fundamental": "No new headlines for this market in the last 30 hours.",
-      "events": [
-        "Mar cocoa ~5,196 (+12), range 5,125-5,262 (ICE via TradingView)",
-        "Rising ICE cocoa inventories keep pressure on (Barchart)",
-        "Dry West African weather keeps mid-crop questions open (ADMIS)"
-      ],
-      "claude_fund_score": -0.15,
-      "fund_score": -0.15
-    }
+ "updated": "2026-11-18",
+ "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+ "markets": {
+  "cotton": {
+   "date": "2026-11-18",
+   "by": "claude",
+   "time": "04:55 CT",
+   "claude_date": "2026-11-18",
+   "fundamental": "Nothing new on supply overnight; with Dec first notice next week the old-crop Dec/Mar spread and certificate flow matter more than headlines. Dec is sitting right on its 77.05 support, and high-grade certs remain a delivery risk for Dec longs rather than a comfort.",
+   "events": [
+    "Dec ~77.06 (-0.26) on the 77.05 support; Mar ~81.05 (ICE via TradingView)",
+    "Crude falls again after API stock builds, a soft lead for synthetics (OilPrice.com)",
+    "Real still weak after Lula fiscal worries (Bloomberg)"
+   ]
   },
-  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-17 21:51 CT: Claude's desk read had not run for 5+ hours."
+  "sugar": {
+   "date": "2026-11-18",
+   "by": "claude",
+   "time": "04:55 CT",
+   "claude_date": "2026-11-18",
+   "fundamental": "Brazil first: no new Centre-South crush data, but crude's renewed slide trims ethanol parity support for mills while the weak real keeps hedging sugar attractive. Mar has slipped back under the 18.02/17.92 supports overnight.",
+   "fund_score": -0.35,
+   "events": [
+    "Mar ~17.91 (-0.26), low 17.75, below 17.92 support (ICE via TradingView)",
+    "API crude and gasoline builds pull oil lower, eroding Brazil ethanol parity (OilPrice.com)",
+    "BRL pressure from Lula fiscal worries keeps producer selling attractive (Bloomberg)"
+   ],
+   "claude_fund_score": -0.35
+  },
+  "coffee": {
+   "date": "2026-11-18",
+   "by": "claude",
+   "time": "04:55 CT",
+   "claude_date": "2026-11-18",
+   "fundamental": "ICE certified arabica stocks at a 1999 low and the widening Dec/Mar inverse still say deliverable coffee is scarce; the overnight dip back under 283.50 looks like profit-taking, not new supply. Antwerp/European stock levels and Brazil deliverability remain the things to watch.",
+   "fund_score": 0.3,
+   "events": [
+    "ICE certified arabica stocks hit the lowest since 1999 (ADMIS, Barchart)",
+    "Dec ~282.15 (-4.45), back below 283.50 support; Mar ~277.85 (ICE via TradingView)",
+    "Nestle Brazil supplier labour hearing keeps forced-labour import-ban risk in view (Reuters, Daily Coffee News)"
+   ],
+   "claude_fund_score": 0.3
+  },
+  "cocoa": {
+   "date": "2026-11-18",
+   "by": "claude",
+   "time": "04:55 CT",
+   "claude_date": "2026-11-18",
+   "fundamental": "Rising ICE certified stocks keep the near-term balance looking comfortable; slow Ivory Coast port arrivals after heavy rains and dry-season mid-crop questions are the offsetting risks. No new ICCO quarterly bulletin yet (due end-November).",
+   "fund_score": -0.15,
+   "events": [
+    "Mar ~5,150 (-27), below 5,160 support (ICE via TradingView)",
+    "ICE cocoa inventories keep rising (Barchart)",
+    "Ghana plans a raw-bean export ban by 2030 (Reuters)"
+   ],
+   "claude_fund_score": -0.15
+  }
+ }
 }
