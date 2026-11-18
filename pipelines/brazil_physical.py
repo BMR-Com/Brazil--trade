@@ -252,11 +252,11 @@ def fetch_na(S, M, backfill):
             rows += parse_na(r.text, name) if r.ok else []
         except Exception as e:
             log("NA latest", name, e)
-        if backfill:
+        if backfill and name != "cepea_arabica":
             got = have[have.series == name].date
             start = min(pd.to_datetime(got).min().date() if len(got) else date.today(), date(2018, 3, 1))
             d, miss, n_req, t0 = start, 0, 0, time.time()
-            while d > EARLIEST and miss < 10 and time.time() - t0 < 1500:
+            while d > EARLIEST and miss < 10 and time.time() - t0 < 840:
                 try:
                     r = S.get(f"{NA}{slug}/{d:%Y-%m-%d}", timeout=60)
                     n_req += 1
@@ -497,9 +497,10 @@ def main(argv):
     S = requests.Session(); S.headers.update(UA)
     M = meta_load()
     raw = read_raw()
-    short = raw[raw.series == "cepea_arabica"].date.min() if len(raw) else None
+    # the CEPEA indices come from Ma's files; the backfill only pages the co-op quotes (semi-washed first) further back
+    short = raw[raw.series == "coop_cd"].date.min() if len(raw) and (raw.series == "coop_cd").any() else None
     last_bf = (M.get("backfill") or {}).get("ran")
-    backfill = "--backfill" in argv or ((short is None or short > "2000-01-01") and (not last_bf or last_bf < (date.today() - timedelta(days=7)).isoformat()))
+    backfill = "--backfill" in argv or ((short is None or short > "2015-01-01") and (not last_bf or last_bf < (date.today() - timedelta(days=7)).isoformat()))
     M["cepea_download"] = "not fetched automatically (cepea.org.br disallows automated access); CEPEA files come only from Ma's downloads dropped into inbox/"
     fetch_ptax(S, M, backfill or not os.path.exists(FXF))
     fetch_na(S, M, backfill)
