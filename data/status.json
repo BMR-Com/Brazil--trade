@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:54 UTC",
+ "generated": "2026-11-18 04:46 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -17,7 +17,7 @@
   {
    "group": "Prices",
    "source": "Per-contract settlements (TradingView)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -317,7 +317,7 @@
   {
    "group": "Cotton",
    "source": "Australia (synced from US desk)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -497,7 +497,7 @@
   {
    "group": "Coffee",
    "source": "Brazil coffee weather (weighted)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -533,7 +533,7 @@
   {
    "group": "Sugar",
    "source": "Cane-belt weather, stoppage days, season range (ERA5)",
-   "latest": "2026-11-15",
+   "latest": "2026-11-16",
    "cadence": "daily",
    "age": 1,
    "age_unit": "business days",
@@ -545,7 +545,7 @@
   {
    "group": "Sugar",
    "source": "Cane-belt ensemble forecast (ECMWF ENS, GEFS)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -641,7 +641,7 @@
   {
    "group": "Sugar",
    "source": "Weekly report input pack",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
