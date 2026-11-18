@@ -103,6 +103,8 @@ def check(entries, args, root, cal, now, prev):
     items, wf_state = [], {}
     for e in entries:
         latest, st = L[e["id"]]
+        if not R.in_season(e, now.date()):
+            continue                                   # off season: never late
         reason, exp = assess(e, latest, st, cal, now)
         wf = e.get("workflow")
         key = f"{wf['repo']}/{wf['file']}" if wf else None
@@ -210,8 +212,9 @@ def main():
             prev = {}
     entries = [e for e in calj["reports"] if args.repo == DESK or (e.get("workflow") or {}).get("repo") == args.repo]
     cooldown = calj.get("catch_up", {}).get("rerun_cooldown_hours", 6)
+    off = [e["id"] for e in entries if not R.in_season(e, nowET.date())]
     items, _ = check(entries, args, root, cal, nowET, prev)
-    print(f"{len(items)} item(s) late or failed of {len(entries)}")
+    print(f"{len(items)} item(s) late or failed of {len(entries)} ({len(off)} off season: {', '.join(off) or 'none'})")
     for it in items:
         print(f"  {'MANUAL ' if it['manual'] else ''}{it['id']}: {it['reason']}")
     done = [] if args.no_dispatch else dispatch(items, args, prev, now, cooldown)
@@ -234,7 +237,7 @@ def main():
     log = [d for d in log if now - datetime.fromisoformat(d["at"]) < timedelta(days=7)] + done
     J = {"checked": now.strftime("%Y-%m-%d %H:%M UTC"), "repo": args.repo, "mode": "wait+recheck" if args.wait else "check",
          "late_or_failed_at_start": items, "reruns": done, "still_late": still, "last_run_failed": failed_now,
-         "needs_ma": needs_ma, "result": "red" if red else "green", "dispatch_log": log,
+         "needs_ma": needs_ma, "off_season": off, "result": "red" if red else "green", "dispatch_log": log,
          "last_email": prev.get("last_email")}
     if args.strict and red and J["last_email"] != now.date().isoformat():
         lines = [f"- {i['report']} ({i['tab']}): {i['reason']}. {i.get('action') or ''}" for i in still + failed_now]

@@ -5,12 +5,9 @@ name: catch-up
 # rechecks and writes data/watchdog.json (kept in the repo, not shown on the site).
 # Ends red when something collected automatically is still late or a rerun failed; one e-mail a day at most, and only when
 # the SMTP_*/EMAIL_* secrets exist. Uploads and manual entries that are late are listed as "needs Ma" but do not turn it red.
-# A lighter check (no waiting, no red) also runs at the end of every data-status run.
 on:
   schedule:
-    - cron: '17 9 * * *'    # 04:17/05:17 ET, quiet hour: catches anything missed the day before
-    - cron: '47 17 * * *'   # 12:47/13:47 ET, after the morning USDA/Drought Monitor releases
-    - cron: '43 2 * * *'    # 21:43/22:43 ET, after the afternoon CFTC/ICE releases (same-day catch-up)
+    - cron: '43 2 * * *'    # once a day, 21:43 EST / 22:43 EDT: after all of the day's US releases (same-day catch-up)
   workflow_dispatch: {}
 permissions: {contents: write, actions: write}
 concurrency: {group: catch-up, cancel-in-progress: false}

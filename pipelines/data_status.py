@@ -213,8 +213,19 @@ def inbox():
     return {"updated": L.get("updated"), "last": last, "unrecognised": L.get("unrecognised", [])}
 
 
+def seasons():
+    """status source -> calendar entry, for the off-season check (data/release_calendar.json)."""
+    try:
+        import sys; sys.path.insert(0, str(ROOT / "pipelines"))
+        import release_rules as RR
+        return RR, {e["status_source"]: e for e in RR.load_calendar()["reports"]}
+    except Exception as e:
+        print("release calendar unreadable:", repr(e)[:100]); return None, {}
+
+
 def main():
     out = []
+    RR, CALE = seasons()
     for grp, name, cad, lim, unit, manual, get, used in SOURCES:
         try:
             d = d10(get())
@@ -222,6 +233,8 @@ def main():
             d = None; print("status:", name, "unreadable:", repr(e)[:100])
         a = age(d, unit)
         state = "missing" if d is None else "late" if a > lim else "ok"
+        if state != "ok" and RR and name in CALE and not RR.in_season(CALE[name], TODAY):
+            state = "off season"
         out.append({"group": grp, "source": name, "latest": d, "cadence": cad, "age": a, "age_unit": "business days" if unit == B else "days",
                     "limit": lim, "state": state, "manual": manual, "used_in": used})
         print(f"{state:7s} {str(d):10s} age {a} ({lim}) {name}")
@@ -229,7 +242,7 @@ def main():
     if ib is not None:
         print(f"inbox: {len(ib['unrecognised'])} unrecognised file(s)")
     J_ = {"generated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "today": TODAY.isoformat(), "sources": out,
-          "late": sum(r["state"] != "ok" for r in out), "inbox": ib}
+          "late": sum(r["state"] not in ("ok", "off season") for r in out), "inbox": ib}
     (D / "status.json").write_text(json.dumps(J_, indent=1))
 
 

@@ -1,5 +1,5 @@
 {
- "about": "Release calendar for every source on the softs desk. Read by pipelines/watchdog.py (desk catch-up job and the source repos' own catch-up jobs). Times are US Eastern. 'release' rules are explained in pipelines/release_rules.py. 'late_after_hours': how long after the release the data may still be missing before it counts as late; rules of type 'age' use the data-status limit instead. 'manual': the source needs an upload or entry by Ma, so the catch-up job reports it but never reruns anything for it. 'workflow': the GitHub Actions workflow that collects it (its repo's catch-up job reruns it).",
+ "about": "Release calendar for every source on the softs desk. Read by pipelines/watchdog.py (desk catch-up job and the source repos' own catch-up jobs). Times are US Eastern. 'release' rules are explained in pipelines/release_rules.py. 'late_after_hours': how long after the release the data may still be missing before it counts as late; rules of type 'age' use the data-status limit instead. 'manual': the source needs an upload or entry by Ma, so the catch-up job reports it but never reruns anything for it. 'workflow': the GitHub Actions workflow that collects it (its repo's catch-up job reruns it). 'season' {from, to} (MM-DD, may wrap the year end): outside it the report is 'off season' and never late; null = all year. An optional season.last_report (YYYY-MM-DD) ends the season early for that year.",
  "timezone": "America/New_York",
  "holidays": {
   "us_federal": [
@@ -53,9 +53,7 @@
  },
  "catch_up": {
   "desk_runs_utc": [
-   "09:17",
-   "17:47",
-   "and at the end of every data-status run"
+   "02:43 (21:43 EST / 22:43 EDT), once a day"
   ],
   "rerun_cooldown_hours": 6,
   "wait_minutes": 40
@@ -82,7 +80,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "oncall.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "cftc_cot",
@@ -105,7 +104,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_data.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "cot_dashboard",
@@ -134,7 +134,8 @@
     "key": [
      "report_date"
     ]
-   }
+   },
+   "season": null
   },
   {
    "id": "usda_esr",
@@ -157,7 +158,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_trade.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "esr_dashboard",
@@ -188,7 +190,8 @@
      0,
      "week"
     ]
-   }
+   },
+   "season": null
   },
   {
    "id": "nass_crop_progress",
@@ -213,7 +216,8 @@
      8,
      9,
      10,
-     11
+     11,
+     12
     ]
    },
    "late_after_hours": 8,
@@ -228,6 +232,11 @@
      "inputs_through",
      "crop_progress"
     ]
+   },
+   "season": {
+    "from": "04-01",
+    "to": "12-05",
+    "note": "NASS Crop Progress carries cotton from the first April report (planting) to the last report of the harvest, late Nov / first days of Dec; set 'last_report' for the year when NASS's final report is known."
    }
   },
   {
@@ -253,7 +262,8 @@
      8,
      9,
      10,
-     11
+     11,
+     12
     ]
    },
    "late_after_hours": 8,
@@ -268,6 +278,11 @@
      "asof",
      "conditions"
     ]
+   },
+   "season": {
+    "from": "04-01",
+    "to": "12-05",
+    "note": "Same window as NASS Crop Progress."
    }
   },
   {
@@ -293,7 +308,8 @@
     "key": [
      "asof"
     ]
-   }
+   },
+   "season": null
   },
   {
    "id": "nass_ginnings",
@@ -320,6 +336,11 @@
      "inputs_through",
      "ginnings"
     ]
+   },
+   "season": {
+    "from": "08-15",
+    "to": "01-31",
+    "note": "NASS Cotton Ginnings: twice a month from August to January; afterwards monthly (Feb-Mar) and the annual report in May, which the 20-day limit cannot check, so off season from Feb."
    }
   },
   {
@@ -350,7 +371,9 @@
      "asof",
      "drought"
     ]
-   }
+   },
+   "season": null,
+   "note": "USDA's cotton-area 'Agriculture in Drought' share is published every week of the year, so it has no off season."
   },
   {
    "id": "ams_spot_basis",
@@ -378,7 +401,8 @@
     "key": [
      "as_of"
     ]
-   }
+   },
+   "season": null
   },
   {
    "id": "ice_quality_grid",
@@ -400,7 +424,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "cotton_diffs.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "carry_history",
@@ -419,7 +444,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "cotton_diffs.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "ams_weekly_review",
@@ -442,7 +468,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "cotton_review.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "ams_classing",
@@ -461,7 +488,12 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "cotton_review.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": {
+    "from": "08-01",
+    "to": "06-30",
+    "note": "AMS classing offices run from the start of the harvest (Aug) until the crop is classed (about June)."
+   }
   },
   {
    "id": "wasde",
@@ -496,7 +528,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "wasde.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "wasde_dashboard",
@@ -537,7 +570,8 @@
     "key": [
      "lastUpdated"
     ]
-   }
+   },
+   "season": null
   },
   {
    "id": "wasde_brief",
@@ -556,7 +590,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "wasde.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "fsa_loan",
@@ -575,7 +610,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "cotton_loan.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "china",
@@ -594,7 +630,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "china.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "india",
@@ -613,7 +650,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "india.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "australia",
@@ -632,7 +670,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "australia_sync.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "yahoo_closes",
@@ -654,7 +693,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_data.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "tv_settles",
@@ -676,7 +716,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_contracts.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "ice_options",
@@ -695,7 +736,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_options.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "options_terminal_ct",
@@ -721,7 +763,8 @@
      "date"
     ]
    },
-   "note": "Depends on Ma's daily ICE report uploads; a failed run of the archive workflow still counts as a failure."
+   "note": "Depends on Ma's daily ICE report uploads; a failed run of the archive workflow still counts as a failure.",
+   "season": null
   },
   {
    "id": "options_terminal_kc",
@@ -747,7 +790,8 @@
      "date"
     ]
    },
-   "note": "Depends on Ma's daily ICE report uploads; a failed run of the archive workflow still counts as a failure."
+   "note": "Depends on Ma's daily ICE report uploads; a failed run of the archive workflow still counts as a failure.",
+   "season": null
   },
   {
    "id": "ct_ice_warehouse",
@@ -766,7 +810,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "ct_ice_grade",
@@ -785,7 +830,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "ct_ice_yog",
@@ -804,7 +850,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "ct_ice_strength",
@@ -823,7 +870,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "ct_ice_stock",
@@ -842,7 +890,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "ct_ice_four_months",
@@ -861,7 +910,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "ct_ewr",
@@ -880,7 +930,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "ct_cfr",
@@ -899,7 +950,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "kc_certs_detail",
@@ -918,7 +970,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "kc_aging",
@@ -937,7 +990,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "kc_eom",
@@ -956,7 +1010,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "kc_grading",
@@ -975,7 +1030,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "cc_certs",
@@ -994,7 +1050,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "cc_grading",
@@ -1013,7 +1070,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "cepea_arabica",
@@ -1032,7 +1090,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "cepea_robusta",
@@ -1051,7 +1110,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "ice_inbox.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "coffee_desk",
@@ -1070,7 +1130,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "coffee_certs_profile",
@@ -1089,7 +1150,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "ico_groups",
@@ -1108,7 +1170,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "na_coop",
@@ -1127,7 +1190,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "ptax",
@@ -1146,7 +1210,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "tender_parity",
@@ -1165,7 +1230,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "br_export_diffs",
@@ -1184,7 +1250,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "coffee.yml"
    },
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "cecafe",
@@ -1203,7 +1270,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "coffee_weather",
@@ -1222,7 +1290,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "kc_spread_model",
@@ -1241,7 +1310,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "coffee.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "kc_spreads_hist",
@@ -1260,7 +1330,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_contracts.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "kc_spread_tables",
@@ -1279,7 +1350,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_data.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "sb_spread_tables",
@@ -1298,7 +1370,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_data.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "sucden_coffee",
@@ -1314,7 +1387,8 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "cic_png",
@@ -1330,7 +1404,8 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "coffee_weekly_reads",
@@ -1346,7 +1421,8 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "sugar_monthly_reads",
@@ -1362,7 +1438,8 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "sugar_desk",
@@ -1381,7 +1458,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "sugar.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "mapa",
@@ -1400,7 +1478,12 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "sugar.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": {
+    "from": "04-01",
+    "to": "12-31",
+    "note": "Centre-South season April-March; the fortnightly reports thin out in the Jan-Mar inter-harvest."
+   }
   },
   {
    "id": "cane_weather",
@@ -1419,7 +1502,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "sugar_world.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "cane_ensemble",
@@ -1438,7 +1522,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "sugar_world.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "chinimandi",
@@ -1457,7 +1542,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "sugar_world.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "unica",
@@ -1476,7 +1562,12 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "sugar_world.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": {
+    "from": "04-01",
+    "to": "12-31",
+    "note": "UNICA publishes irregularly and mostly in the Apr-Dec crush."
+   }
   },
   {
    "id": "sugar_weekly_pack",
@@ -1495,7 +1586,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "sugar_world.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "sugar_lineup",
@@ -1514,7 +1606,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_data.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "isma",
@@ -1530,7 +1623,12 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": {
+    "from": "11-01",
+    "to": "04-30",
+    "note": "India sugar season Oct-Sep; ISMA production releases mainly during the Nov-Apr crush."
+   }
   },
   {
    "id": "ec_sugar",
@@ -1546,7 +1644,8 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "sugar_deliveries",
@@ -1562,7 +1661,8 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "agency_revisions",
@@ -1578,7 +1678,8 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "fuel_policy",
@@ -1594,7 +1695,8 @@
    },
    "late_after_hours": 0,
    "workflow": null,
-   "manual": true
+   "manual": true,
+   "season": null
   },
   {
    "id": "cc_certs_profile",
@@ -1613,7 +1715,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_contracts.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "cc_spreads_hist",
@@ -1632,7 +1735,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_contracts.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "icco",
@@ -1651,7 +1755,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "intel.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "what_changed",
@@ -1670,7 +1775,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "desk_watch.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "delivery",
@@ -1689,7 +1795,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "desk_watch.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "alerts",
@@ -1708,7 +1815,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "desk_watch.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "calls",
@@ -1727,7 +1835,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "desk_watch.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "ethanol",
@@ -1746,7 +1855,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "desk_watch.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "markets",
@@ -1765,7 +1875,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "markets.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "us_econ",
@@ -1784,7 +1895,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "markets.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "events_calendar",
@@ -1803,7 +1915,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "intel.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "contract_calendar",
@@ -1822,7 +1935,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "softs_data.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "news",
@@ -1841,7 +1955,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "intel.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   },
   {
    "id": "usda_reports",
@@ -1863,7 +1978,8 @@
     "repo": "BMR-Com/Brazil--trade",
     "file": "usda_reports.yml"
    },
-   "manual": false
+   "manual": false,
+   "season": null
   }
  ]
 }

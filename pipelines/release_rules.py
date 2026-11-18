@@ -10,6 +10,7 @@ Rule types (times are US Eastern):
   business_daily  every business day at time; data_offset_bd (0 = same day, -1 = previous business day);
                   calendar "ice" or "federal"
   age             no fixed release: late when the source's age is over its data-status limit
+An entry's "season" (MM-DD from/to) limits when it is checked at all: outside it the report is off season, never late.
 Only the standard library is used, so the per-repo catch-up jobs can run it without installing anything.
 """
 import json
@@ -118,6 +119,17 @@ def latest_due(entry, cal, now):
         return None
     past = [(r, dd) for r, dd in releases(rule, cal, now) if r <= now]
     return past[-1] if past else None
+
+
+def in_season(entry, d):
+    """True when date d is inside the entry's active season (season null = all year)."""
+    S = entry.get("season")
+    if not S:
+        return True
+    if S.get("last_report") and d.isoformat() > S["last_report"] and d.isoformat()[:4] == S["last_report"][:4]:
+        return False
+    md, f, t = d.strftime("%m-%d"), S["from"], S["to"]
+    return f <= md <= t if f <= t else (md >= f or md <= t)
 
 
 def entry(cal, eid):
