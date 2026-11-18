@@ -40,7 +40,7 @@ def last_trade_guess(sym, y, m):
 
 
 def active(sym, today):
-    ex, root, months, _ = SPEC[sym]
+    ex, root, months = SPEC[sym][:3]
     out = []
     for y in range(today.year, today.year + 3):
         for m in months:
@@ -140,8 +140,8 @@ def main():
     tv = None
     today = pd.Timestamp.now()
     src = {"yahoo": 0, "tradingview": 0}
-    for sym in (sys.argv[1:] or SPEC):
-        ex, root, months, _ = SPEC[sym]
+    for sym in (sys.argv[1:] or [k for k in SPEC if '_pre' not in k]):   # pre-2006 back-history files are not active contracts
+        ex, root, months = SPEC[sym][:3]
         frames = []
         for series, symbol, n in [("cont", f"{root}1!", 2700)] + [(c, c, 800) for c in active(sym, today)]:
             # range=max makes Yahoo return weekly bars for some contracts; 2y (contracts) / 10y (front) stay daily
