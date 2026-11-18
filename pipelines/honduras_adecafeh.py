@@ -15,7 +15,21 @@ import requests
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "coffee" / "honduras"
 URL = "https://exportadoresdecafe.com/cifras"
-UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
+UA = {"User-Agent": "BMR-Com research desk (github.com/BMR-Com)"}
+
+
+def robots_ok():
+    """Respect the site's robots.txt; if it disallows us (or a generic crawler), skip quietly."""
+    import urllib.robotparser
+    rp = urllib.robotparser.RobotFileParser()
+    try:
+        r = requests.get("https://exportadoresdecafe.com/robots.txt", headers=UA, timeout=30)
+        if r.status_code >= 400:
+            return True
+        rp.parse(r.text.splitlines())
+    except Exception:
+        return True
+    return rp.can_fetch(UA["User-Agent"], URL) and rp.can_fetch("*", URL)
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 COLS = ["as_of", "crop_year", "export_forecast_m", "export_forecast_yoy_pct", "production_forecast_m", "sales_k", "sales_yoy_pct",
         "exports_k", "exports_yoy_pct", "exports_value_musd", "month", "month_exports_k", "month_yoy_pct", "prev_crop", "prev_crop_exports_m", "destinations"]
@@ -77,6 +91,9 @@ def parse(page):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    if not robots_ok():
+        print("ADECAFEH robots.txt disallows automated access: skipping (keeping the last saved figures)")
+        return
     R = parse(get())
     p = OUT / "snapshots.csv"
     rows = {r["as_of"]: r for r in csv.DictReader(open(p))} if p.exists() else {}

@@ -217,6 +217,25 @@ reading = [f"Semi-washed trades {now['sw_minus_fc']:+.1f}¢ over fine/good cup (
            f"{mid['exchange_value']:.0f}¢ ({now['kc2_contract']} − 6¢ Brazil − 1.25¢ Antwerp): tender margin {stk['w30']['margin']:+.0f} to {stk['w15']['margin']:+.0f}¢ "
            f"({min(v['margin_high_cost'] for v in stk.values()):+.0f} to {max(v['margin_low_cost'] for v in stk.values()):+.0f}¢ across the cost ranges); "
            f"{'tendering pays, so expect more Brazil coffee to be submitted for grading' if mid['margin'] > 0 else 'tendering does not pay at these costs'}."]
+# live margin on CEPEA (co-op semi-washed quotes stopped 11 Nov 2026): semi-washed proxied as CEPEA + Ma's normal 10c premium
+SW_NORMAL = 10.0
+cl = cep.index[-1]
+kcl = KC[KC.index <= cl].iloc[-1]
+live = {"date": cl.strftime("%Y-%m-%d"), "cepea": rd(cep.iloc[-1], 1), "kc2": rd(kcl.f2, 2), "kc2_contract": kcl.get("second", now["kc2_contract"]),
+        "sw_proxy_note": f"semi-washed taken as CEPEA + {SW_NORMAL:.0f}¢ (Ma's normal premium over fine cup)", "stack": {}}
+for w in W_RANGE:
+    blend = cep.iloc[-1] + w * SW_NORMAL
+    cases = [stack(cl, blend, kcl.f2, c, w=w) for c in (0, 1, 2)]
+    it, cost, exv, p = cases[1]
+    live["stack"][f"w{int(w * 100)}"] = {"blend": rd(blend, 1), "cost_total": rd(blend + cost, 1), "exchange_value": rd(exv, 1),
+                                         "margin": rd(exv - blend - cost, 1), "margin_low_cost": rd(exv - blend - cases[0][1], 1),
+                                         "margin_high_cost": rd(exv - blend - cases[2][1], 1)}
+lm = live["stack"]
+reading.insert(0, f"Live, on CEPEA ({live['date']}, {live['cepea']:.1f}¢; semi-washed taken at CEPEA + {SW_NORMAL:.0f}¢): a 15-30% semi-washed blend in the "
+                  f"Antwerp warehouse costs {lm['w15']['cost_total']:.0f}-{lm['w30']['cost_total']:.0f}¢ against {lm['w30']['exchange_value']:.0f}¢ from the exchange "
+                  f"→ tender margin {lm['w30']['margin']:+.0f} to {lm['w15']['margin']:+.0f}¢ "
+                  f"({min(v['margin_high_cost'] for v in lm.values()):+.0f} to {max(v['margin_low_cost'] for v in lm.values()):+.0f}¢ across cost ranges). "
+                  f"The lines below use the last co-op semi-washed quote ({now['date']}).")
 hist_w = T.resample("W-FRI").last().dropna(subset=["sw_minus_fc"])
 OUTJ = {"built": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "now": now, "stack": stk, "cost_labels": labels, "cost_sources": srcs,
         "w_base": W_BASE, "pass_rate": rd(p_now * 100, 0), "pass_rate_source": "ICE monthly grading files, Brazil, last 3 months" if p_live else "median",
@@ -224,7 +243,7 @@ OUTJ = {"built": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "now
                           "eudr": "new EU-port gradings from 30 Dec 2026 need validated EUDR due-diligence data (ICE Appendix VIII); the transition discount from Mar 2027 applies to older non-compliant stock"},
         "history": {"dates": [d.strftime("%Y-%m-%d") for d in hist_w.index], "sw_minus_fc": [rd(v, 1) for v in hist_w.sw_minus_fc],
                     "margin_w15": [rd(v, 1) for v in hist_w.margin_w15], "margin_w30": [rd(v, 1) for v in hist_w.margin_w30]},
-        "reading": reading,
+        "reading": reading, "live_cepea": live,
         "inputs": {"semi_washed": "co-op cereja descascado average (Notícias Agrícolas), R$/bag at BCB PTAX",
                    "fine_cup": "CEPEA/ESALQ arabica index, tipo 6 bebida dura para melhor (proxy for fine/good cup; calibration in data/coffee/manual/brazil_export_diffs.csv)",
                    "kc": "ICE KC 2nd position settlement", "pass_rate": "ICE monthly grading summary (upload)", "storage": "ICE Antwerp warehouse rates (upload)",
