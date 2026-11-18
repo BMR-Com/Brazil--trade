@@ -41,6 +41,7 @@ KS = [30, 10, 1]
 MC = {"H": 3, "K": 5, "N": 7, "U": 9, "Z": 12}
 MN = {3: "Mar", 5: "May", 7: "Jul", 9: "Sep", 12: "Dec"}
 R19, R23 = pd.Timestamp("2019-05-01"), pd.Timestamp("2023-12-01")
+LAB_MODE = "--lab" in sys.argv
 
 
 def rd(v, n=2):
@@ -620,210 +621,211 @@ for pn, (a_, b_) in PERIODS.items():
     LEAD["spread"][pn] = cs
 LAB["lead"] = LEAD
 
-# whole-pool delivery value (bag-weighted port + age + weight allowance; origin added where the origin snapshot exists) against the
-# AVERAGE front spread over the last month before first notice (bd 21 to bd 1)
-PL = {}
-Hp = H[H.paw.notna()]
-for pn, D_ in [("2016 on", Hp), ("2016-Apr 2019", Hp[Hp.fnd < R19]), ("May 2019-Nov 2023", Hp[(Hp.fnd >= R19) & (Hp.fnd < R23)]),
-               ("Dec 2023 on", Hp[Hp.fnd >= R23])]:
-    e = {"n": int(len(D_))}
-    for yv in ("avg_c", "avg_p"):
-        e[f"rho_{yv}"] = spear(D_.paw, D_[yv])[0]
-        if len(D_) >= 6:
-            bb = np.polyfit(D_.paw, D_[yv], 1)
-            e[f"slope_{yv}"] = rd(bb[0], 3)
-            e[f"r2_{yv}"] = rd(np.corrcoef(D_.paw, D_[yv])[0, 1] ** 2, 2)
-    # does it add after the certs level? rank correlation with the residual of avg_p on log certs (at bd 21) + regimes
-    if len(D_) >= 10:
-        Xr = np.column_stack([np.ones(len(D_)), D_["lc@21"].values] + ([D_["r23@21"].values] if np.ptp(D_["r23@21"].values) > 0 else []))
-        br, *_ = np.linalg.lstsq(Xr, D_.avg_p.values, rcond=None)
-        e["rho_resid_after_certs"] = spear(D_.paw, pd.Series(D_.avg_p.values - Xr @ br, index=D_.index))[0]
-        e["rho_paw_certs"] = spear(D_.paw, D_["lc@21"])[0]
-    PL[pn] = e
-Hf = H[H.inv_full.notna()]
-PL["full invoice incl. origin (snapshot era)"] = {"n": int(len(Hf)), "rho_avg_p": spear(Hf.inv_full, Hf.avg_p)[0] if len(Hf) >= 8 else None,
-                                                   "contracts": list(Hf.label)}
-# walk-forward: average last-month spread (% of price) from the pool value alone, certs alone, both
-def walk_avg(xs, since=None):
-    out = []
-    for i, r in Hp.iterrows():
-        if r.fnd < pd.Timestamp("2021-01-01"):
-            continue
-        tr = Hp[Hp.fnd < r.date21 - pd.Timedelta(days=60)] if False else Hp[Hp.fnd < r.date21]
-        X = np.column_stack([np.ones(len(tr))] + [tr[x].values for x in xs])
-        ok = ~np.isnan(X).any(1)
-        if ok.sum() < X.shape[1] + 6:
-            continue
-        b, *_ = np.linalg.lstsq(X[ok], tr.avg_p.values[ok], rcond=None)
-        x = np.array([1.0] + [r[x] for x in xs])
-        if np.isnan(x).any():
-            continue
-        out.append(abs(r.avg_p - x @ b))
-    return {"n": len(out), "mae": rd(np.mean(out), 3) if out else None}
-PL["walk_avg"] = {"mean only": walk_avg([]), "pool invoice": walk_avg(["paw"]), "certs (bd 21)": walk_avg(["lc@21"]),
-                  "certs + age (bd 21)": walk_avg(["lc@21", "over1y@21"]), "certs + age + pool": walk_avg(["lc@21", "over1y@21", "paw"]),
-                  "certs + age + regimes + pool": walk_avg(["lc@21", "over1y@21", "r23@21", "paw"]), "certs + age + regimes": walk_avg(["lc@21", "over1y@21", "r23@21"])}
-LAB["pool"] = PL
-# grading files: reconcile month-end cert changes with bags passed (implied outflow = passed - change; negative = inconsistency)
-rc = MF.dropna(subset=["pass_bags", "dtot"])
-LAB["grading_reconcile"] = {"months": int(len(rc)), "first": rc.index[0], "neg_outflow_months": int((rc.out_bags < 0).sum()),
-                            "neg_outflow_list": [(m, rd(v, 0)) for m, v in rc.out_bags[rc.out_bags < 0].items()],
-                            "corr_pass_vs_change": rd(rc.pass_bags.corr(rc.dtot), 2), "pass_mean": rd(rc.pass_bags.mean(), 0),
-                            "out_mean": rd(rc.out_bags.mean(), 0), "out_median": rd(rc.out_bags.median(), 0)}
-dd = det.assign(m=det.date.dt.strftime("%Y-%m")).groupby("m")[["passed", "failed"]].sum()
-LAB["grading_reconcile"]["daily_vs_monthly"] = {m: {"daily_passed_bags": rd(dd.at[m, "passed"], 0), "monthly_pass_bags": rd(MF.pass_bags.get(m), 0)}
-                                               for m in dd.index}
+if LAB_MODE:                                  # research only: written to the --lab file, not to the page
+    # whole-pool delivery value (bag-weighted port + age + weight allowance; origin added where the origin snapshot exists) against the
+    # AVERAGE front spread over the last month before first notice (bd 21 to bd 1)
+    PL = {}
+    Hp = H[H.paw.notna()]
+    for pn, D_ in [("2016 on", Hp), ("2016-Apr 2019", Hp[Hp.fnd < R19]), ("May 2019-Nov 2023", Hp[(Hp.fnd >= R19) & (Hp.fnd < R23)]),
+                   ("Dec 2023 on", Hp[Hp.fnd >= R23])]:
+        e = {"n": int(len(D_))}
+        for yv in ("avg_c", "avg_p"):
+            e[f"rho_{yv}"] = spear(D_.paw, D_[yv])[0]
+            if len(D_) >= 6:
+                bb = np.polyfit(D_.paw, D_[yv], 1)
+                e[f"slope_{yv}"] = rd(bb[0], 3)
+                e[f"r2_{yv}"] = rd(np.corrcoef(D_.paw, D_[yv])[0, 1] ** 2, 2)
+        # does it add after the certs level? rank correlation with the residual of avg_p on log certs (at bd 21) + regimes
+        if len(D_) >= 10:
+            Xr = np.column_stack([np.ones(len(D_)), D_["lc@21"].values] + ([D_["r23@21"].values] if np.ptp(D_["r23@21"].values) > 0 else []))
+            br, *_ = np.linalg.lstsq(Xr, D_.avg_p.values, rcond=None)
+            e["rho_resid_after_certs"] = spear(D_.paw, pd.Series(D_.avg_p.values - Xr @ br, index=D_.index))[0]
+            e["rho_paw_certs"] = spear(D_.paw, D_["lc@21"])[0]
+        PL[pn] = e
+    Hf = H[H.inv_full.notna()]
+    PL["full invoice incl. origin (snapshot era)"] = {"n": int(len(Hf)), "rho_avg_p": spear(Hf.inv_full, Hf.avg_p)[0] if len(Hf) >= 8 else None,
+                                                       "contracts": list(Hf.label)}
+    # walk-forward: average last-month spread (% of price) from the pool value alone, certs alone, both
+    def walk_avg(xs, since=None):
+        out = []
+        for i, r in Hp.iterrows():
+            if r.fnd < pd.Timestamp("2021-01-01"):
+                continue
+            tr = Hp[Hp.fnd < r.date21 - pd.Timedelta(days=60)] if False else Hp[Hp.fnd < r.date21]
+            X = np.column_stack([np.ones(len(tr))] + [tr[x].values for x in xs])
+            ok = ~np.isnan(X).any(1)
+            if ok.sum() < X.shape[1] + 6:
+                continue
+            b, *_ = np.linalg.lstsq(X[ok], tr.avg_p.values[ok], rcond=None)
+            x = np.array([1.0] + [r[x] for x in xs])
+            if np.isnan(x).any():
+                continue
+            out.append(abs(r.avg_p - x @ b))
+        return {"n": len(out), "mae": rd(np.mean(out), 3) if out else None}
+    PL["walk_avg"] = {"mean only": walk_avg([]), "pool invoice": walk_avg(["paw"]), "certs (bd 21)": walk_avg(["lc@21"]),
+                      "certs + age (bd 21)": walk_avg(["lc@21", "over1y@21"]), "certs + age + pool": walk_avg(["lc@21", "over1y@21", "paw"]),
+                      "certs + age + regimes + pool": walk_avg(["lc@21", "over1y@21", "r23@21", "paw"]), "certs + age + regimes": walk_avg(["lc@21", "over1y@21", "r23@21"])}
+    LAB["pool"] = PL
+    # grading files: reconcile month-end cert changes with bags passed (implied outflow = passed - change; negative = inconsistency)
+    rc = MF.dropna(subset=["pass_bags", "dtot"])
+    LAB["grading_reconcile"] = {"months": int(len(rc)), "first": rc.index[0], "neg_outflow_months": int((rc.out_bags < 0).sum()),
+                                "neg_outflow_list": [(m, rd(v, 0)) for m, v in rc.out_bags[rc.out_bags < 0].items()],
+                                "corr_pass_vs_change": rd(rc.pass_bags.corr(rc.dtot), 2), "pass_mean": rd(rc.pass_bags.mean(), 0),
+                                "out_mean": rd(rc.out_bags.mean(), 0), "out_median": rd(rc.out_bags.median(), 0)}
+    dd = det.assign(m=det.date.dt.strftime("%Y-%m")).groupby("m")[["passed", "failed"]].sum()
+    LAB["grading_reconcile"]["daily_vs_monthly"] = {m: {"daily_passed_bags": rd(dd.at[m, "passed"], 0), "monthly_pass_bags": rd(MF.pass_bags.get(m), 0)}
+                                                   for m in dd.index}
 
-# ------------------------------------------------------------------ extra driver tests (Ma, 18 Nov): spot-month limit, poison pill, fundamentals
-SPOT_LIMIT = 500                              # lots: most one account may hold into the spot month (no exemption)
-for k in (30, 21, 10, 1):
-    H[f"stop@{k}"] = np.exp(H[f"lc@{k}"]) / BAGS_PER_LOT / SPOT_LIMIT
-REG3 = [("before May 2019", H.fnd < R19), ("May 2019 - Nov 2023", (H.fnd >= R19) & (H.fnd < R23)), ("Dec 2023 on", H.fnd >= R23)]
+    # ------------------------------------------------------------------ extra driver tests (Ma, 18 Nov): spot-month limit, poison pill, fundamentals
+    SPOT_LIMIT = 500                              # lots: most one account may hold into the spot month (no exemption)
+    for k in (30, 21, 10, 1):
+        H[f"stop@{k}"] = np.exp(H[f"lc@{k}"]) / BAGS_PER_LOT / SPOT_LIMIT
+    REG3 = [("before May 2019", H.fnd < R19), ("May 2019 - Nov 2023", (H.fnd >= R19) & (H.fnd < R23)), ("Dec 2023 on", H.fnd >= R23)]
 
 
-def wf(cols, y, base_from=None, eval_from="2021-01-01", min_extra=6):
-    """Walk-forward OLS by delivery on explicit H columns (features dated at or before the target's start)."""
-    out = []
+    def wf(cols, y, base_from=None, eval_from="2021-01-01", min_extra=6):
+        """Walk-forward OLS by delivery on explicit H columns (features dated at or before the target's start)."""
+        out = []
+        for i, r in H.iterrows():
+            if r.fnd < pd.Timestamp(eval_from) or pd.isna(r[y]):
+                continue
+            tr = H[H.fnd < r.date21]
+            if base_from is not None:
+                tr = tr[tr.fnd >= base_from]
+            X = np.column_stack([np.ones(len(tr))] + [tr[c].values.astype(float) for c in cols])
+            ok = ~np.isnan(X).any(1) & tr[y].notna().values
+            if ok.sum() < X.shape[1] + min_extra:
+                continue
+            keep = [0] + [j for j in range(1, X.shape[1]) if np.ptp(X[ok][:, j]) > 0]
+            b, *_ = np.linalg.lstsq(X[ok][:, keep], tr[y].values[ok], rcond=None)
+            x = np.array([1.0] + [float(r[c]) for c in cols])[keep]
+            if np.isnan(x).any():
+                continue
+            out.append((float(r[y]), float(x @ b)))
+        if not out:
+            return {"n": 0}
+        a = np.array(out)
+        nz = np.abs(a[:, 0]) > .05
+        return {"n": len(a), "mae": rd(np.mean(np.abs(a[:, 0] - a[:, 1])), 3), "hit": rd(np.mean(np.sign(a[nz, 0]) == np.sign(a[nz, 1])) * 100, 0)}
+
+
+    BASE = ["lpendf@21", "over1y@21", "r19@21", "r23@21"]       # the chosen model's drivers, dated at bd 21
+    # 1. spot-month limit: the pile measured in maximum-size stoppers
+    X1 = {}
+    H["stop_le2@21"] = (H["stop@21"] <= 2).astype(float)
+    H["stop_le2@10"] = (H["stop@10"] <= 2).astype(float)
+    bins = [(0, 1, "within 1 stopper"), (1, 2, "1-2 stoppers"), (2, 5, "2-5 stoppers"), (5, 1e9, "over 5 stoppers")]
+    for rn, m in REG3 + [("all", H.fnd > "1900")]:
+        D_ = H[m]
+        X1[rn] = {lb: {"n": int(((D_["stop@10"] > lo) & (D_["stop@10"] <= hi)).sum()),
+                       "p10_med": rd(D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "p10"].median(), 2),
+                       "p1_med": rd(D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "p1"].median(), 2),
+                       "avg_med": rd(D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "avg_p"].median(), 2),
+                       "chg_med": rd(D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "chg_p"].median(), 2),
+                       "chg_up_pct": rd((D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "chg_p"] > 0).mean() * 100, 0)}
+                  for lo, hi, lb in bins}
+    # residual of the chosen bd-10 fit by stopper bucket (does a tiny pile squeeze more than its log size implies?)
+    b10_, ok10_ = fit(H[H.fnd >= "2016-01-01"], 10, XS, REGS, "p10")
+    H16 = H[H.fnd >= "2016-01-01"]
+    res = pd.Series(H16["p10"].values - design(H16, 10, XS, REGS) @ b10_, index=H16.index)
+    X1["resid_bd10_by_bucket_2016on"] = {lb: {"n": int(((H16["stop@10"] > lo) & (H16["stop@10"] <= hi)).sum()),
+                                              "mean_resid": rd(res[(H16["stop@10"] > lo) & (H16["stop@10"] <= hi)].mean(), 2)} for lo, hi, lb in bins}
+    X1["oos"] = {"avg last month: chosen drivers": wf(BASE, "avg_p"), "avg last month: + pile within 2 stoppers": wf(BASE + ["stop_le2@21"], "avg_p"),
+                 "change into notice: spread + chosen drivers": wf(["p21"] + BASE, "chg_p"),
+                 "change into notice: + pile within 2 stoppers": wf(["p21"] + BASE + ["stop_le2@21"], "chg_p")}
+    LAB["spot_limit"] = X1
+
+    # 2. poison pill: exchange invoice vs ICO physical. gap = ICO group ex-dock price - (futures + pool invoice diff), per delivery from
+    # the certs profile (2016 on, report at the start of the notice month); adjusted = gap minus the median of the same rule regime
+    # so far (expanding, no look-ahead). Longer proxy back to 2000: ICO other milds minus the ICE 2nd/3rd average (physical premium).
+    gapd = {g_["contract"]: g_["groups"].get("oth", {}).get("gap") for g_ in CPJ["gap"]["deliveries"]}
+    H["gap"] = H.contract.map(gapd)
+    adj = []
     for i, r in H.iterrows():
-        if r.fnd < pd.Timestamp(eval_from) or pd.isna(r[y]):
+        if pd.isna(r.gap):
+            adj.append(np.nan); continue
+        same = H[(H.fnd < r.fnd) & (H.reg == r.reg) & H.gap.notna()]
+        adj.append(r.gap - same.gap.median() if len(same) >= 3 else np.nan)
+    H["gap_adj"] = adj
+    X2 = {}
+    for rn, m in REG3 + [("2016 on", H.fnd >= "2016-01-01")]:
+        D_ = H[m]
+        X2[rn] = {"n_gap": int(D_.gap.notna().sum()), "gap_vs_avg": spear(D_.gap, D_.avg_p)[0], "gap_vs_chg": spear(D_.gap, D_.chg_p)[0],
+                  "gapadj_vs_avg": spear(D_.gap_adj, D_.avg_p)[0], "gapadj_vs_chg": spear(D_.gap_adj, D_.chg_p)[0],
+                  "n_ico": int(D_["ico_oth@21"].notna().sum()), "ico_vs_avg": spear(D_["ico_oth@21"], D_.avg_p)[0],
+                  "ico_vs_chg": spear(D_["ico_oth@21"], D_.chg_p)[0]}
+        # after certs: residual of avg_p on log certs at bd 21 within the period
+        Dq = D_.dropna(subset=["lc@21", "avg_p"])
+        if len(Dq) >= 8:
+            bq = np.polyfit(Dq["lc@21"], Dq.avg_p, 1)
+            rq = Dq.avg_p - np.polyval(bq, Dq["lc@21"])
+            X2[rn]["ico_vs_resid"] = spear(Dq["ico_oth@21"], rq)[0]
+            X2[rn]["gap_vs_resid"] = spear(Dq.gap, rq)[0]
+    X2["oos"] = {"avg: chosen drivers": wf(BASE, "avg_p"), "avg: + pool gap": wf(BASE + ["gap"], "avg_p"),
+                 "avg: + ICO other milds premium": wf(BASE + ["ico_oth@21"], "avg_p"),
+                 "change: spread + chosen": wf(["p21"] + BASE, "chg_p"), "change: + pool gap": wf(["p21"] + BASE + ["gap"], "chg_p"),
+                 "change: + ICO premium": wf(["p21"] + BASE + ["ico_oth@21"], "chg_p")}
+    X2["oos_full_history_certs_only"] = {"avg: certs + regimes": wf(["lc@21", "r19@21", "r23@21"], "avg_p", eval_from="2010-01-01"),
+                                         "avg: + ICO premium": wf(["lc@21", "r19@21", "r23@21", "ico_oth@21"], "avg_p", eval_from="2010-01-01"),
+                                         "change: spread + certs + regimes": wf(["p21", "lc@21", "r19@21", "r23@21"], "chg_p", eval_from="2010-01-01"),
+                                         "change: + ICO premium": wf(["p21", "lc@21", "r19@21", "r23@21", "ico_oth@21"], "chg_p", eval_from="2010-01-01")}
+    LAB["poison_pill"] = X2
+
+    # 3. fundamentals: USDA PSD (final estimates, i.e. with hindsight) by marketing year; Brazil MY Y runs Jul Y - Jun Y+1
+    psd = pd.read_csv(need("coffee/data/psd_coffee.csv"))
+    pw = psd.groupby(["Market_Year", "Attribute_Description"]).Value.sum().unstack()
+    pb = psd[psd.Country_Name == "Brazil"].pivot_table(index="Market_Year", columns="Attribute_Description", values="Value")
+    FY = pd.DataFrame({"world_prod": pw["Production"], "world_cons": pw["Domestic Consumption"], "world_end": pw["Ending Stocks"],
+                       "br_arabica": pb["Arabica Production"], "br_total": pb["Production"]}) / 1000
+    FY = FY[FY.index >= 2002]                        # consumption of the big importers is only in PSD from MY 2002
+    FY["balance"] = FY.world_prod - FY.world_cons
+    FY["su"] = FY.world_end / FY.world_cons * 100
+    FY["br_ar_chg"] = FY.br_arabica.pct_change() * 100
+    cy = lambda d: d.year if d.month >= 7 else d.year - 1
+    H["cy"] = H["date10"].map(cy)
+    for c_ in ("balance", "su", "br_arabica", "br_ar_chg"):
+        H[c_] = H.cy.map(FY[c_])
+        H[f"{c_}_prev"] = (H.cy - 1).map(FY[c_])
+    # certs 12 months on from the start of the crop year
+    H["lc_chg12@10"] = [r["lc@10"] - math.log(asof(tot, r.date10 - pd.DateOffset(months=12))[1]) if asof(tot, r.date10 - pd.DateOffset(months=12))[0] is not None else np.nan
+                        for _, r in H.iterrows()]
+    X3 = {}
+    for rn, m in [("2002 on", H.cy >= 2002), ("from May 2019", H.fnd >= R19), ("from Dec 2023", H.fnd >= R23)]:
+        D_ = H[m]
+        e = {"n": int(D_.balance.notna().sum()), "crop_years": int(D_.cy[D_.balance.notna()].nunique())}
+        for x in ("balance", "su", "br_arabica", "br_ar_chg", "balance_prev"):
+            e[x] = {"certs": spear(D_[x], D_["lc@10"])[0], "certs_chg12": spear(D_[x], D_["lc_chg12@10"])[0],
+                    "spread_bd10": spear(D_[x], D_.p10)[0], "avg_last_month": spear(D_[x], D_.avg_p)[0]}
+        Dq = D_.dropna(subset=["lc@10", "p10", "balance"])
+        if len(Dq) >= 8:
+            bq = np.polyfit(Dq["lc@10"], Dq.p10, 1)
+            rq = Dq.p10 - np.polyval(bq, Dq["lc@10"])
+            e["after_certs_resid_bd10"] = {x: spear(Dq[x], rq)[0] for x in ("balance", "su", "br_arabica", "br_ar_chg")}
+        X3[rn] = e
+    # crop-year table (one row per crop year: Brazil arabica, world balance, stocks/use, certs and spreads over that year's deliveries)
+    for c_ in ("balance", "su", "br_arabica"):
+        H[f"{c_}@10"] = H[c_]
+    X3["oos"] = {"bd10: chosen": wf(["lpendf@10", "over1y@10", "r19@10", "r23@10"], "p10"),
+                 "bd10: + world balance": wf(["lpendf@10", "over1y@10", "r19@10", "r23@10", "balance@10"], "p10"),
+                 "bd10: + stocks/use": wf(["lpendf@10", "over1y@10", "r19@10", "r23@10", "su@10"], "p10"),
+                 "bd10: + Brazil arabica crop": wf(["lpendf@10", "over1y@10", "r19@10", "r23@10", "br_arabica@10"], "p10"),
+                 "bd10: certs + regimes (2002 on)": wf(["lc@10", "r19@10", "r23@10"], "p10", eval_from="2010-01-01"),
+                 "bd10: + world balance (2002 on)": wf(["lc@10", "r19@10", "r23@10", "balance@10"], "p10", eval_from="2010-01-01"),
+                 "bd10: balance + regimes, no certs (2002 on)": wf(["balance@10", "r19@10", "r23@10"], "p10", eval_from="2010-01-01"),
+                 "certs: balance -> log certs (2002 on)": wf(["balance@10"], "lc@10", eval_from="2010-01-01"),
+                 "certs: mean only": wf([], "lc@10", eval_from="2010-01-01")}
+    LAB["fundamentals"] = X3
+    CROP = []
+    for y_ in sorted(FY.index):
+        D_ = H[H.cy == y_]
+        if y_ < 2012:
             continue
-        tr = H[H.fnd < r.date21]
-        if base_from is not None:
-            tr = tr[tr.fnd >= base_from]
-        X = np.column_stack([np.ones(len(tr))] + [tr[c].values.astype(float) for c in cols])
-        ok = ~np.isnan(X).any(1) & tr[y].notna().values
-        if ok.sum() < X.shape[1] + min_extra:
-            continue
-        keep = [0] + [j for j in range(1, X.shape[1]) if np.ptp(X[ok][:, j]) > 0]
-        b, *_ = np.linalg.lstsq(X[ok][:, keep], tr[y].values[ok], rcond=None)
-        x = np.array([1.0] + [float(r[c]) for c in cols])[keep]
-        if np.isnan(x).any():
-            continue
-        out.append((float(r[y]), float(x @ b)))
-    if not out:
-        return {"n": 0}
-    a = np.array(out)
-    nz = np.abs(a[:, 0]) > .05
-    return {"n": len(a), "mae": rd(np.mean(np.abs(a[:, 0] - a[:, 1])), 3), "hit": rd(np.mean(np.sign(a[nz, 0]) == np.sign(a[nz, 1])) * 100, 0)}
-
-
-BASE = ["lpendf@21", "over1y@21", "r19@21", "r23@21"]       # the chosen model's drivers, dated at bd 21
-# 1. spot-month limit: the pile measured in maximum-size stoppers
-X1 = {}
-H["stop_le2@21"] = (H["stop@21"] <= 2).astype(float)
-H["stop_le2@10"] = (H["stop@10"] <= 2).astype(float)
-bins = [(0, 1, "within 1 stopper"), (1, 2, "1-2 stoppers"), (2, 5, "2-5 stoppers"), (5, 1e9, "over 5 stoppers")]
-for rn, m in REG3 + [("all", H.fnd > "1900")]:
-    D_ = H[m]
-    X1[rn] = {lb: {"n": int(((D_["stop@10"] > lo) & (D_["stop@10"] <= hi)).sum()),
-                   "p10_med": rd(D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "p10"].median(), 2),
-                   "p1_med": rd(D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "p1"].median(), 2),
-                   "avg_med": rd(D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "avg_p"].median(), 2),
-                   "chg_med": rd(D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "chg_p"].median(), 2),
-                   "chg_up_pct": rd((D_.loc[(D_["stop@10"] > lo) & (D_["stop@10"] <= hi), "chg_p"] > 0).mean() * 100, 0)}
-              for lo, hi, lb in bins}
-# residual of the chosen bd-10 fit by stopper bucket (does a tiny pile squeeze more than its log size implies?)
-b10_, ok10_ = fit(H[H.fnd >= "2016-01-01"], 10, XS, REGS, "p10")
-H16 = H[H.fnd >= "2016-01-01"]
-res = pd.Series(H16["p10"].values - design(H16, 10, XS, REGS) @ b10_, index=H16.index)
-X1["resid_bd10_by_bucket_2016on"] = {lb: {"n": int(((H16["stop@10"] > lo) & (H16["stop@10"] <= hi)).sum()),
-                                          "mean_resid": rd(res[(H16["stop@10"] > lo) & (H16["stop@10"] <= hi)].mean(), 2)} for lo, hi, lb in bins}
-X1["oos"] = {"avg last month: chosen drivers": wf(BASE, "avg_p"), "avg last month: + pile within 2 stoppers": wf(BASE + ["stop_le2@21"], "avg_p"),
-             "change into notice: spread + chosen drivers": wf(["p21"] + BASE, "chg_p"),
-             "change into notice: + pile within 2 stoppers": wf(["p21"] + BASE + ["stop_le2@21"], "chg_p")}
-LAB["spot_limit"] = X1
-
-# 2. poison pill: exchange invoice vs ICO physical. gap = ICO group ex-dock price - (futures + pool invoice diff), per delivery from
-# the certs profile (2016 on, report at the start of the notice month); adjusted = gap minus the median of the same rule regime
-# so far (expanding, no look-ahead). Longer proxy back to 2000: ICO other milds minus the ICE 2nd/3rd average (physical premium).
-gapd = {g_["contract"]: g_["groups"].get("oth", {}).get("gap") for g_ in CPJ["gap"]["deliveries"]}
-H["gap"] = H.contract.map(gapd)
-adj = []
-for i, r in H.iterrows():
-    if pd.isna(r.gap):
-        adj.append(np.nan); continue
-    same = H[(H.fnd < r.fnd) & (H.reg == r.reg) & H.gap.notna()]
-    adj.append(r.gap - same.gap.median() if len(same) >= 3 else np.nan)
-H["gap_adj"] = adj
-X2 = {}
-for rn, m in REG3 + [("2016 on", H.fnd >= "2016-01-01")]:
-    D_ = H[m]
-    X2[rn] = {"n_gap": int(D_.gap.notna().sum()), "gap_vs_avg": spear(D_.gap, D_.avg_p)[0], "gap_vs_chg": spear(D_.gap, D_.chg_p)[0],
-              "gapadj_vs_avg": spear(D_.gap_adj, D_.avg_p)[0], "gapadj_vs_chg": spear(D_.gap_adj, D_.chg_p)[0],
-              "n_ico": int(D_["ico_oth@21"].notna().sum()), "ico_vs_avg": spear(D_["ico_oth@21"], D_.avg_p)[0],
-              "ico_vs_chg": spear(D_["ico_oth@21"], D_.chg_p)[0]}
-    # after certs: residual of avg_p on log certs at bd 21 within the period
-    Dq = D_.dropna(subset=["lc@21", "avg_p"])
-    if len(Dq) >= 8:
-        bq = np.polyfit(Dq["lc@21"], Dq.avg_p, 1)
-        rq = Dq.avg_p - np.polyval(bq, Dq["lc@21"])
-        X2[rn]["ico_vs_resid"] = spear(Dq["ico_oth@21"], rq)[0]
-        X2[rn]["gap_vs_resid"] = spear(Dq.gap, rq)[0]
-X2["oos"] = {"avg: chosen drivers": wf(BASE, "avg_p"), "avg: + pool gap": wf(BASE + ["gap"], "avg_p"),
-             "avg: + ICO other milds premium": wf(BASE + ["ico_oth@21"], "avg_p"),
-             "change: spread + chosen": wf(["p21"] + BASE, "chg_p"), "change: + pool gap": wf(["p21"] + BASE + ["gap"], "chg_p"),
-             "change: + ICO premium": wf(["p21"] + BASE + ["ico_oth@21"], "chg_p")}
-X2["oos_full_history_certs_only"] = {"avg: certs + regimes": wf(["lc@21", "r19@21", "r23@21"], "avg_p", eval_from="2010-01-01"),
-                                     "avg: + ICO premium": wf(["lc@21", "r19@21", "r23@21", "ico_oth@21"], "avg_p", eval_from="2010-01-01"),
-                                     "change: spread + certs + regimes": wf(["p21", "lc@21", "r19@21", "r23@21"], "chg_p", eval_from="2010-01-01"),
-                                     "change: + ICO premium": wf(["p21", "lc@21", "r19@21", "r23@21", "ico_oth@21"], "chg_p", eval_from="2010-01-01")}
-LAB["poison_pill"] = X2
-
-# 3. fundamentals: USDA PSD (final estimates, i.e. with hindsight) by marketing year; Brazil MY Y runs Jul Y - Jun Y+1
-psd = pd.read_csv(need("coffee/data/psd_coffee.csv"))
-pw = psd.groupby(["Market_Year", "Attribute_Description"]).Value.sum().unstack()
-pb = psd[psd.Country_Name == "Brazil"].pivot_table(index="Market_Year", columns="Attribute_Description", values="Value")
-FY = pd.DataFrame({"world_prod": pw["Production"], "world_cons": pw["Domestic Consumption"], "world_end": pw["Ending Stocks"],
-                   "br_arabica": pb["Arabica Production"], "br_total": pb["Production"]}) / 1000
-FY = FY[FY.index >= 2002]                        # consumption of the big importers is only in PSD from MY 2002
-FY["balance"] = FY.world_prod - FY.world_cons
-FY["su"] = FY.world_end / FY.world_cons * 100
-FY["br_ar_chg"] = FY.br_arabica.pct_change() * 100
-cy = lambda d: d.year if d.month >= 7 else d.year - 1
-H["cy"] = H["date10"].map(cy)
-for c_ in ("balance", "su", "br_arabica", "br_ar_chg"):
-    H[c_] = H.cy.map(FY[c_])
-    H[f"{c_}_prev"] = (H.cy - 1).map(FY[c_])
-# certs 12 months on from the start of the crop year
-H["lc_chg12@10"] = [r["lc@10"] - math.log(asof(tot, r.date10 - pd.DateOffset(months=12))[1]) if asof(tot, r.date10 - pd.DateOffset(months=12))[0] is not None else np.nan
-                    for _, r in H.iterrows()]
-X3 = {}
-for rn, m in [("2002 on", H.cy >= 2002), ("from May 2019", H.fnd >= R19), ("from Dec 2023", H.fnd >= R23)]:
-    D_ = H[m]
-    e = {"n": int(D_.balance.notna().sum()), "crop_years": int(D_.cy[D_.balance.notna()].nunique())}
-    for x in ("balance", "su", "br_arabica", "br_ar_chg", "balance_prev"):
-        e[x] = {"certs": spear(D_[x], D_["lc@10"])[0], "certs_chg12": spear(D_[x], D_["lc_chg12@10"])[0],
-                "spread_bd10": spear(D_[x], D_.p10)[0], "avg_last_month": spear(D_[x], D_.avg_p)[0]}
-    Dq = D_.dropna(subset=["lc@10", "p10", "balance"])
-    if len(Dq) >= 8:
-        bq = np.polyfit(Dq["lc@10"], Dq.p10, 1)
-        rq = Dq.p10 - np.polyval(bq, Dq["lc@10"])
-        e["after_certs_resid_bd10"] = {x: spear(Dq[x], rq)[0] for x in ("balance", "su", "br_arabica", "br_ar_chg")}
-    X3[rn] = e
-# crop-year table (one row per crop year: Brazil arabica, world balance, stocks/use, certs and spreads over that year's deliveries)
-for c_ in ("balance", "su", "br_arabica"):
-    H[f"{c_}@10"] = H[c_]
-X3["oos"] = {"bd10: chosen": wf(["lpendf@10", "over1y@10", "r19@10", "r23@10"], "p10"),
-             "bd10: + world balance": wf(["lpendf@10", "over1y@10", "r19@10", "r23@10", "balance@10"], "p10"),
-             "bd10: + stocks/use": wf(["lpendf@10", "over1y@10", "r19@10", "r23@10", "su@10"], "p10"),
-             "bd10: + Brazil arabica crop": wf(["lpendf@10", "over1y@10", "r19@10", "r23@10", "br_arabica@10"], "p10"),
-             "bd10: certs + regimes (2002 on)": wf(["lc@10", "r19@10", "r23@10"], "p10", eval_from="2010-01-01"),
-             "bd10: + world balance (2002 on)": wf(["lc@10", "r19@10", "r23@10", "balance@10"], "p10", eval_from="2010-01-01"),
-             "bd10: balance + regimes, no certs (2002 on)": wf(["balance@10", "r19@10", "r23@10"], "p10", eval_from="2010-01-01"),
-             "certs: balance -> log certs (2002 on)": wf(["balance@10"], "lc@10", eval_from="2010-01-01"),
-             "certs: mean only": wf([], "lc@10", eval_from="2010-01-01")}
-LAB["fundamentals"] = X3
-CROP = []
-for y_ in sorted(FY.index):
-    D_ = H[H.cy == y_]
-    if y_ < 2012:
-        continue
-    CROP.append({"cy": f"{y_}/{str(y_ + 1)[-2:]}", "br_arabica": rd(FY.at[y_, "br_arabica"], 1), "balance": rd(FY.at[y_, "balance"], 1),
-                 "su": rd(FY.at[y_, "su"], 0), "n": int(len(D_)),
-                 "certs_m": rd(np.exp(D_["lc@10"]).median() / 1e6, 2) if len(D_) else None,
-                 "stoppers": rd(D_["stop@10"].median(), 1) if len(D_) else None,
-                 "p10_med": rd(D_.p10.median(), 2) if len(D_) else None, "avg_med": rd(D_.avg_p.median(), 2) if len(D_) else None,
-                 "reg": D_.reg.iloc[-1] if len(D_) else ("post23" if y_ >= 2023 else "r19_23" if y_ >= 2019 else "pre19")})
+        CROP.append({"cy": f"{y_}/{str(y_ + 1)[-2:]}", "br_arabica": rd(FY.at[y_, "br_arabica"], 1), "balance": rd(FY.at[y_, "balance"], 1),
+                     "su": rd(FY.at[y_, "su"], 0), "n": int(len(D_)),
+                     "certs_m": rd(np.exp(D_["lc@10"]).median() / 1e6, 2) if len(D_) else None,
+                     "stoppers": rd(D_["stop@10"].median(), 1) if len(D_) else None,
+                     "p10_med": rd(D_.p10.median(), 2) if len(D_) else None, "avg_med": rd(D_.avg_p.median(), 2) if len(D_) else None,
+                     "reg": D_.reg.iloc[-1] if len(D_) else ("post23" if y_ >= 2023 else "r19_23" if y_ >= 2019 else "pre19")})
 
 LAB["depth"] = {"deliveries": int(len(H)), "first": H.contract.iloc[0], "cover_from": H[H["lcover@10"].notna()].contract.iloc[0],
                 "age_from": H[H["over1y@10"].notna()].contract.iloc[0], "post19": int((H.fnd >= R19).sum()), "post23": int((H.fnd >= R23).sum()),
@@ -967,55 +969,20 @@ bk = FIT[10]["b"]
 sl = bk[1]
 brief.append(f"Past deliveries with a similar pile ({', '.join(sim.contract.head(4))}) traded {sim.p10.min():+.1f} to {sim.p10.max():+.1f}% ten days before notice. "
              f"What would change the reading: each 10% more certified coffee lowers the fair spread by about {abs(sl * math.log(1.1)):.2f} points of price "
-             f"({abs(sl * math.log(1.1)) * m0['front'] / 100:.1f}¢); new certs come from the pending queue and from Brazil coffee shipped to Antwerp "
-             f"(Brazil green exports to Belgium {live['bel']:+.0f}% vs the same months of the last 3 years, {live['bel_month']} data).")
+             f"({abs(sl * math.log(1.1)) * m0['front'] / 100:.1f}¢); the pending queue passing grading would add to the pile, and a smaller premium of physical washed coffee over the exchange "
+             f"(now {live['ico_oth']:.0f}¢, against a median of {float(ico_oth.median()):.0f}¢ since 2000) would lower the fair spread.")
 
-# pool delivery value vs the average front spread over the month before first notice
-cur_front = spr[spr.front == spr.front.iloc[-1]]
-cur_lm = cur_front[cur_front.bd_to_fnd <= 21]
-pp = H[H.paw.notna()]
-POOL_OUT = {"points": [{"x": rd(r.paw, 2), "y": rd(r.avg_c, 2), "yp": rd(r.avg_p, 2), "c": r.label, "reg": r.reg} for _, r in pp.iterrows()],
-            "today": {"x": rd(POOL_NOW, 2), "y": rd(cur_lm.s12.mean(), 2) if len(cur_lm) else None,
-                      "yp": rd((cur_lm.s12 / cur_lm.f1 * 100).mean(), 2) if len(cur_lm) else None,
-                      "label": f"{lab(spr.front.iloc[-1])} (pool {CPJ['gap']['deliveries'][-1]['report']}, spread average so far, {len(cur_lm)} days)"},
-            "rho_post23": PL["Dec 2023 on"]["rho_avg_c"], "rho_all": PL["2016 on"]["rho_avg_c"]}
-r23_, rr_ = PL["Dec 2023 on"]["rho_avg_c"], PL["Dec 2023 on"].get("rho_resid_after_certs")
-if r23_ is None or abs(r23_) < .3:
-    POOL_OUT["read"] = "The pool's delivery value on its own has said little about the last month's spread."
-else:
-    POOL_OUT["read"] = (f"Since December 2023 a {'more' if r23_ < 0 else 'less'} discounted pool has gone with a wider inversion in the last month"
-                        + (", also after allowing for the size of the pile" if rr_ is not None and abs(rr_) >= .3 and np.sign(rr_) == np.sign(r23_) else ", mostly through the size of the pile")
-                        + ("; the link ran the other way from May 2019 to November 2023" if (PL["May 2019-Nov 2023"]["rho_avg_c"] or 0) * r23_ < 0 else "")
-                        + " and there are few deliveries under the current rules, so the fair ranges do not use it. "
-                        + f"Today's pool ({POOL_NOW:+.1f}¢) is {'more' if POOL_NOW < np.median([p_['x'] for p_ in POOL_OUT['points'] if p_['reg'] == 'post23']) else 'less'} discounted than the median since December 2023.")
 # spot-month limit reading: pile in maximum-size stoppers (500 lots), and past deliveries with a pile this small
+SPOT_LIMIT = 500                              # lots: most one account may hold into the spot month (no exemption)
 stop_now = live["certs"] / BAGS_PER_LOT / SPOT_LIMIT
-small = H[(H.fnd >= R19) & (H["stop@10"] <= 2)]
-SPOT_OUT = {"limit": SPOT_LIMIT, "now": rd(stop_now, 2), "with_pending": rd(exp_pend / BAGS_PER_LOT / SPOT_LIMIT, 2) if exp_pend else None,
-            "past": [{"c": r.label, "stoppers": rd(r["stop@10"], 1), "p10": rd(r.p10, 2), "p1": rd(r.p1, 2), "c10": rd(r.c10, 2), "c1": rd(r.c1, 2)}
-                     for _, r in small.iterrows()]}
-SPOT_OUT["read"] = (f"The whole certified pile is {stop_now:.1f} times the {SPOT_LIMIT}-lot spot-month limit: "
-                    + ("one long at the limit could stop all of it. " if stop_now <= 1 else f"{math.ceil(stop_now)} longs at the limit could stop all of it. ")
-                    + (f"With the pending bags at the recent pass rate it would be {SPOT_OUT['with_pending']:.1f} times. " if exp_pend else "")
-                    + (f"Since May 2019 the pile was within two maximum stoppers ten days before notice at {len(small)} deliveries ("
-                       + ", ".join(f"{p_['c']}: {p_['c10']:+.1f}¢ then {p_['c1']:+.1f}¢ the day before notice" for p_ in SPOT_OUT["past"]) + ")." if len(small) else ""))
-cr = [c_ for c_ in CROP if c_["p10_med"] is not None]
-CROP_READ = ("Lower world stocks relative to use have gone with smaller certified piles and firmer spreads; a single year's surplus or deficit much less so, "
-             "and the surpluses since 2023 have not rebuilt the pile. Once the certified pile is known, the crop numbers add little to the spread. "
-             "USDA figures here are today's revised estimates, not what was known at the time.")
-VARS = ["KC front minus second at 30 and 10 business days before first notice and on the day before it (% of the front price and ¢/lb; ICE settlements per contract, 1995 on)",
-        "ICE certified arabica stocks at the last month-end before each date (1996 on); the latest ICE daily report for today's reading",
-        "Certified lots as % of all KC futures open interest (CFTC futures-only, 2006 on)",
-        "Age of the certified pile: share over one year old (ICE aging report, 2016 on)",
-        "Change in certified stocks over 1, 2 and 3 months; ICE gradings passed and bags leaving the pile (Oct 2022 on)",
+SPOT_OUT = {"limit": SPOT_LIMIT, "now": rd(stop_now, 2), "with_pending": rd(exp_pend / BAGS_PER_LOT / SPOT_LIMIT, 2) if exp_pend else None}
+VARS = ["KC front minus second at 30 and 10 business days before first notice and on the day before it (% of the front price and ¢/lb; ICE settlements per contract)",
+        "ICE certified arabica stocks (month-end since 1996; latest daily report for today)",
         "Bags pending grading x the recent pass rate (ICE daily report and monthly grading summary)",
-        "Brazil green coffee exports to Belgium, Germany and the Netherlands (MDIC Comex Stat, NCM 0901.11.10, 1997 on)",
-        "Rule regimes: May 2019 port and rent rules, December 2023 re-grading ban",
-        "Certified lots against the 500-lot spot-month position limit",
-        "ICO other milds ex-dock price minus the ICE 2nd/3rd position average (physical premium over the exchange, 2000 on)",
-        "USDA PSD world production, consumption and ending stocks, Brazil arabica production, by marketing year (2002 on)",
-        "Delivery value of the whole certified pool: bag-weighted port differential, age discount and weight allowance under the rules of each delivery (certs profile, 2016 on)",
-        "Front-month open interest from the ICE daily report (today only)"]
+        "Age of the certified pile: share over one year old (ICE aging report)",
+        "ICO other milds ex-dock price minus the ICE 2nd/3rd position average (physical washed premium over the exchange)",
+        "Rule periods: May 2019 port and rent rules, December 2023 re-grading ban",
+        "Certified lots as % of all KC futures open interest (CFTC) and against the 500-lot spot-month limit (readings and chart only)"]
 OUTJ = {
     "built": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     "asof": today.strftime("%Y-%m-%d"), "certs_date": last_daily.strftime("%Y-%m-%d"),
@@ -1026,19 +993,16 @@ OUTJ = {
             "front_contract": roll.get("label"), "cover_front": rd(cover_front, 1), "over1y": rd(live["over1y"], 1),
             "avg_age": rd(live["avg_age"], 0), "d1": rd(live["d1"] * 100, 1) if live["d1"] == live["d1"] else None,
             "d3": rd(live["d3"] * 100, 1) if live["d3"] == live["d3"] else None, "pending": rd(pending_now, 0),
-            "eu_share": rd(live["eu_share"], 0), "bel": rd(live.get("bel"), 0), "bel_month": live.get("bel_month"),
-            "bel_bags3": rd(float(EXP.Belgium.loc[[m for m in EXP.index if m <= live["bel_month"]][-3:]].sum()), 0),
             "pass_rate": rd(pr_now * 100, 0), "exp_pend": rd(exp_pend, 0), "pending_date": det.date.max().strftime("%Y-%m-%d"),
-            "db1": rd(live["db1"], 0), "db3": rd(live["db3"], 0), "pass2": rd(live["pass2"], 1), "out2": rd(live["out2"], 1),
+            "ico_oth": rd(live["ico_oth"], 1), "ico_month": month_asof(ico_oth, today + pd.Timedelta(days=1), 10)[0],
+            "ico_oth_median": rd(float(ico_oth.median()), 1),
             "eom_certs": rd(live_eom["certs"], 0) if live_eom else None, "eom_date": live_eom["certs_date"].strftime("%Y-%m-%d") if live_eom else None},
     "upcoming": upcoming,
     "scatter": {"k": SK, "k_name": KNAME[SK], "points": [{"x": rd(r[f"cover@{SK}"], 2), "y": rd(r[f"p{SK}"], 2), "c": r.label, "reg": r.reg, "yr": int(r.fnd.year)} for _, r in sc.iterrows()],
                 "regimes": REGL, "line": line, "line_label": "Fair spread at today's open interest, age and rules",
                 "today": {"x": rd(cover_now, 2), "y": rd(m0["spread_pct"], 2), "label": f"{m0['pair']} now"},
                 "today_exp": {"x": rd(exp_pend / BAGS_PER_LOT / live["oi"] * 100, 2) if exp_pend else None, "y": rd(m0["spread_pct"], 2)}},
-    "pool": POOL_OUT,
     "spot": SPOT_OUT,
-    "crop": CROP, "crop_read": CROP_READ,
     "similar": nn_out,
     "brief": brief,
     "variables": [v for v in VARS if v],
