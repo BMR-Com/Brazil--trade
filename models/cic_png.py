@@ -49,7 +49,12 @@ def parse(text):
         j = seg.find(k)
         if j < 0:
             continue
-        m = NUM.search(seg[j:j + 110])
+        w = seg[j:j + 110]
+        m = NUM.search(w)
+        lv = re.search(r"\blevel\b", w)
+        if lv and (not m or lv.start() < m.start()):       # "quoted at level" = 0
+            out[g] = (0.0, "")
+            continue
         if not m:
             continue
         a = sign(m.group(1)) * float(m.group(2))
@@ -58,6 +63,9 @@ def parse(text):
             out[g] = ((a + b) / 2, f"{a:g} to {b:g}")
         else:
             out[g] = (a, "")
+    for g, (v, _) in list(out.items()):                     # guard against typos in the source (e.g. "plus 222")
+        if abs(v) > 150:
+            print(f"warning: {g} {v} looks like a typo in the report; check and fix by hand", file=sys.stderr)
     kc = re.search(r"closing at ([0-9.,]+) ?cents/lb", low)
     return out, (float(kc.group(1).replace(",", "")) if kc else None)
 

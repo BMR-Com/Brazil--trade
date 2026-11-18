@@ -304,7 +304,7 @@ date,grade,diff,range,basis,source_url,note
 2023-03-12,Honduras HG,29,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-12th-march-2023/,indication quoted in report
 2023-03-12,Kenya AB FAQ,100,90 to 110,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-12th-march-2023/,indication quoted in report
 2023-03-12,PNG Y1,15,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-12th-march-2023/,author estimate (inferred from other origins)
-2023-03-19,Brazil 3/4,28,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-19th-march-2023/,indication quoted in report
+2023-03-19,Brazil 3/4,0,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-19th-march-2023/,"quoted ""at level"""
 2023-03-19,Colombia UGQ,56,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-19th-march-2023/,indication quoted in report
 2023-03-19,Honduras HG,28,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-19th-march-2023/,indication quoted in report
 2023-03-19,Kenya AB FAQ,100,90 to 110,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-19th-march-2023/,indication quoted in report
@@ -1022,7 +1022,7 @@ date,grade,diff,range,basis,source_url,note
 2026-03-29,Honduras HG,17,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-29-march-2026/,indication quoted in report
 2026-03-29,Kenya AB FAQ,47.5,45 to 50,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-29-march-2026/,indication quoted in report
 2026-03-29,PNG Y1,6,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-29-march-2026/,author estimate (inferred from other origins)
-2026-04-05,Brazil 3/4,222,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-05-april-2026/,indication quoted in report
+2026-04-05,Brazil 3/4,22,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-05-april-2026/,"report prints ""plus 222"", read as +22 (typo)"
 2026-04-05,Colombia UGQ,40,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-05-april-2026/,indication quoted in report
 2026-04-05,Honduras HG,19,,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-05-april-2026/,indication quoted in report
 2026-04-05,Kenya AB FAQ,48.5,47 to 50,c/lb vs ICE NY arabica,https://www.cic.org.pg/weekly-market-report-05-april-2026/,indication quoted in report
