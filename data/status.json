@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 03:11 UTC",
+ "generated": "2026-11-18 03:16 UTC",
  "today": "2026-11-17",
  "sources": [
   {
@@ -293,7 +293,7 @@
   {
    "group": "Cotton",
    "source": "China",
-   "latest": "2026-11-17",
+   "latest": "2026-11-18",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -409,6 +409,54 @@
    "state": "ok",
    "manual": false,
    "used_in": "Certs profile tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "CEPEA/ESALQ arabica index (Ma's cepea.org.br download, inbox/)",
+   "latest": "2026-11-17",
+   "cadence": "weekly",
+   "age": 0,
+   "age_unit": "days",
+   "limit": 10,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Brazil basis history, KC spread model (Brazil leg, Lab)"
+  },
+  {
+   "group": "Coffee",
+   "source": "CEPEA/ESALQ robusta index (Ma's cepea.org.br download, inbox/)",
+   "latest": "2026-11-17",
+   "cadence": "weekly",
+   "age": 0,
+   "age_unit": "days",
+   "limit": 10,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Brazil conilon vs London chart"
+  },
+  {
+   "group": "Coffee",
+   "source": "Brazil co-op semi-washed / tipo 6 quotes (Not\u00edcias Agr\u00edcolas)",
+   "latest": "2026-11-11",
+   "cadence": "daily",
+   "age": 4,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "late",
+   "manual": false,
+   "used_in": "Brazil basis ladder"
+  },
+  {
+   "group": "Coffee",
+   "source": "USD/BRL PTAX (Banco Central do Brasil)",
+   "latest": null,
+   "cadence": "daily",
+   "age": null,
+   "age_unit": "business days",
+   "limit": 3,
+   "state": "missing",
+   "manual": false,
+   "used_in": "Brazil physical in US cents/lb"
   },
   {
    "group": "Coffee",
@@ -807,7 +855,7 @@
    "used_in": "last file received per type is listed below the table"
   }
  ],
- "late": 3,
+ "late": 5,
  "inbox": {
   "updated": "2026-11-18 02:46 UTC",
   "last": [
