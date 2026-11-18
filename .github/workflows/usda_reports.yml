@@ -1,17 +1,40 @@
 name: usda-reports
-# USDA reports for the cotton/coffee/sugar Reports tabs (probe stage)
+# USDA reports for the cotton / coffee / sugar Reports tabs: FAS GAIN attaché reports (key countries), FAS World Markets
+# and Trade circulars, ERS Cotton and Wool / Sugar and Sweeteners Outlook. GAIN posts reports every business day, so
+# this runs weekdays after 15:30 ET (20:40 UTC = 15:40 EST / 16:40 EDT) with an evening re-run that picks up anything
+# missed (late postings, a failed afternoon run). Only new reports are downloaded (data/research/usda_reports_state.json).
 on:
-  workflow_dispatch:
-    inputs:
-      args: {description: 'arguments for models/usda_reports.py', required: false, default: ''}
+  workflow_dispatch: {}
+  schedule:
+    - cron: '40 20 * * 1-5'
+    - cron: '25 23 * * 1-5'    # catch-up
 permissions: {contents: write}
+concurrency: {group: usda-reports, cancel-in-progress: false}
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+      - name: start from the branch head
+        run: git pull -q --ff-only origin "${GITHUB_REF_NAME}" || true
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - run: pip install -q requests && sudo apt-get install -y -qq poppler-utils >/dev/null
-      - run: python -u models/usda_reports.py ${{ github.event.inputs.args }}
+      - name: fetch new USDA reports
+        id: fetch
+        continue-on-error: true
+        run: python -u models/usda_reports.py fetch
+      - name: build Reports entries and prune to the current window
+        run: python models/usda_reports.py build && python models/reports_store.py prune
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/research/usda_reports_state.json data/research/usda_text data/cotton/reports data/coffee/reports data/sugar/reports
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: USDA reports $(date -u +%F)"
+          B="${GITHUB_REF_NAME}"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin "$B" && git push -q origin "HEAD:$B" && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: fail the run if a source could not be listed
+        if: steps.fetch.outcome == 'failure'
+        run: exit 1

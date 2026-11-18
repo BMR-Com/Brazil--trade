@@ -1,6 +1,6 @@
-"""Store for the 'Reports' tabs (coffee and sugar): short own-words key points per source and report.
+"""Store for the 'Reports' tabs (cotton, coffee and sugar): short own-words key points per source and report.
 
-Files: data/coffee/reports/<source>.json, data/sugar/reports/<source>.json
+Files: data/{cotton,coffee,sugar}/reports/<source>.json (USDA reports: models/usda_reports.py writes usda.json)
   {source, name, home, cadence, access, window_start, entries: [{date, title, url, key_points: [..], tag}], ...}
   (sucden.json also carries the balance sheet and revisions written by models/sucden_coffee.py)
 
@@ -14,6 +14,7 @@ Window (only the current crop / marketing year is shown):
   coffee: Brazil crop year Y/Y+1 (Y = this year from April, else last year); entries from 1 Jan Y, when the first
           forecasts for that crop appear.
   sugar : Brazil Centre-South season Y/Y+1 (April-March); entries from 1 Apr Y.
+  cotton: marketing year Aug Y - Jul Y+1; entries from 1 Apr Y (attaché annuals carry the first forecasts for it).
 Key points are written in our own words (no copied sentences, no reproduced tables); numbers are attributed.
 """
 import argparse
@@ -28,12 +29,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def window_start(market, today=None):
     t = today or date.today()
+    if market == "cotton":   # MY Aug-Jul; from 1 Apr before it, when the attaché annuals give the first forecasts
+        y = t.year if t.month >= 8 else t.year - 1
+        return f"{y}-04-01"
     y = t.year if t.month >= 4 else t.year - 1
     return f"{y}-01-01" if market == "coffee" else f"{y}-04-01"
 
 
 def files(market=None):
-    ms = [market] if market else ["coffee", "sugar"]
+    ms = [market] if market else ["cotton", "coffee", "sugar"]
     return [(m, f) for m in ms for f in sorted(glob.glob(os.path.join(ROOT, "data", m, "reports", "*.json")))]
 
 
