@@ -201,7 +201,7 @@
    "tab": "Cotton > Crop progress (projection)",
    "report": "USDA NASS Crop Progress (week ending Sunday)",
    "publisher": "USDA NASS",
-   "release_et": "Mon 16:00, April-November (Monday holiday: Tuesday)",
+   "release_et": "Mon 16:00 (Tue after a Monday holiday); 2026 season Apr 6 - Nov 30",
    "release": {
     "type": "weekly",
     "weekday": 0,
@@ -236,7 +236,9 @@
    "season": {
     "from": "04-01",
     "to": "12-05",
-    "note": "NASS Crop Progress carries cotton from the first April report (planting) to the last report of the harvest, late Nov / first days of Dec; set 'last_report' for the year when NASS's final report is known."
+    "last_report": "2026-11-30",
+    "first_report_2027": null,
+    "note": "NASS 2026 Crop Progress: first Apr 6, last Nov 30 (holiday weeks on Tuesday: May 26, Sep 8, Oct 13), per NASS Reports by Release Day. 2027 dates not published yet: set first_report_2027 / last_report when NASS posts them."
    }
   },
   {
@@ -247,7 +249,7 @@
    "tab": "Cotton > Crop progress",
    "report": "USDA NASS Crop Progress conditions",
    "publisher": "USDA NASS",
-   "release_et": "Mon 16:00, April-November",
+   "release_et": "Mon 16:00 (Tue after a Monday holiday); 2026 season Apr 6 - Nov 30",
    "release": {
     "type": "weekly",
     "weekday": 0,
@@ -282,7 +284,9 @@
    "season": {
     "from": "04-01",
     "to": "12-05",
-    "note": "Same window as NASS Crop Progress."
+    "last_report": "2026-11-30",
+    "first_report_2027": null,
+    "note": "NASS 2026 Crop Progress: first Apr 6, last Nov 30 (holiday weeks on Tuesday: May 26, Sep 8, Oct 13), per NASS Reports by Release Day. 2027 dates not published yet: set first_report_2027 / last_report when NASS posts them."
    }
   },
   {
@@ -314,16 +318,73 @@
   {
    "id": "nass_ginnings",
    "status_source": "Crop projection input: NASS ginnings",
-   "age_limit": 20,
+   "age_limit": 25,
    "age_unit": "days",
    "tab": "Cotton > Crop progress",
    "report": "USDA NASS Cotton Ginnings",
    "publisher": "USDA NASS",
-   "release_et": "about twice a month at 12:00 (Aug-Mar); dates per NASS calendar",
+   "release_et": "12:00 on NASS's published dates: 2026 Aug 12, Sep 11, Sep 22, Oct 9, Oct 22, Nov 10, Nov 23, Dec 10, Dec 22 (as of the 1st/15th)",
    "release": {
-    "type": "age"
+    "type": "dates",
+    "time": "12:00",
+    "dates": [
+     {
+      "release": "2026-01-12",
+      "data": "2026-01-01"
+     },
+     {
+      "release": "2026-01-23",
+      "data": "2026-01-15"
+     },
+     {
+      "release": "2026-02-10",
+      "data": "2026-02-01"
+     },
+     {
+      "release": "2026-03-10",
+      "data": "2026-03-01"
+     },
+     {
+      "release": "2026-08-12",
+      "data": "2026-08-01"
+     },
+     {
+      "release": "2026-09-11",
+      "data": "2026-09-01"
+     },
+     {
+      "release": "2026-09-22",
+      "data": "2026-09-15"
+     },
+     {
+      "release": "2026-10-09",
+      "data": "2026-10-01"
+     },
+     {
+      "release": "2026-10-22",
+      "data": "2026-10-15"
+     },
+     {
+      "release": "2026-11-10",
+      "data": "2026-11-01"
+     },
+     {
+      "release": "2026-11-23",
+      "data": "2026-11-15"
+     },
+     {
+      "release": "2026-12-10",
+      "data": "2026-12-01"
+     },
+     {
+      "release": "2026-12-22",
+      "data": "2026-12-15"
+     }
+    ],
+    "source": "NASS release schedule (nass.usda.gov Publications > Reports by Release Day, checked 2026-11-18)",
+    "note": "2027 dates (Jan-Mar follow-ups, then Aug onward) are not published yet; add them when NASS posts its 2027 calendar (usually in December). The May annual summary is not checked."
    },
-   "late_after_hours": 0,
+   "late_after_hours": 8,
    "workflow": {
     "repo": "BMR-Com/cotton-crop-progress",
     "file": "ginning-data.yml"
@@ -338,9 +399,9 @@
     ]
    },
    "season": {
-    "from": "08-15",
-    "to": "01-31",
-    "note": "NASS Cotton Ginnings: twice a month from August to January; afterwards monthly (Feb-Mar) and the annual report in May, which the 20-day limit cannot check, so off season from Feb."
+    "from": "08-01",
+    "to": "03-31",
+    "note": "NASS Cotton Ginnings run from August (first 2026 report Aug 12) to the March follow-up (2026: Jan 12, Jan 23, Feb 10, Mar 10); the annual summary in May is not checked."
    }
   },
   {
@@ -492,7 +553,7 @@
    "season": {
     "from": "08-01",
     "to": "06-30",
-    "note": "AMS classing offices run from the start of the harvest (Aug) until the crop is classed (about June)."
+    "note": "AMS classing offices run from the start of the harvest (Aug) until the crop is classed (about June). AMS publishes no calendar for when classing ends; offices close as each crop is classed."
    }
   },
   {

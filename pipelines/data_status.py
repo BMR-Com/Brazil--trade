@@ -119,7 +119,7 @@ SOURCES = [
     ("Cotton", "AMS daily classing", "daily", 3, B, False, lambda: J("data/cotton_review/classing_daily.json").get("as_of"), "AMS review tab"),
     ("Cotton", "US export sales (week ending)", "weekly (Thu)", 15, C, False, lambda: next(c["week"] for c in J("data/grains/derived/esr_brief.json")["commodities"] if c.get("key") == "cotton"), "export sales tab"),
     ("Cotton", "Crop projection (cotton-crop-progress)", "weekly, after crop progress / ginnings / drought", 9, C, False, crop_projection, "Crop tab"),
-    ("Cotton", "Crop projection input: NASS ginnings", "about twice a month", 20, C, False, lambda: crop_projection("ginnings"), "Crop tab"),
+    ("Cotton", "Crop projection input: NASS ginnings", "twice a month Aug-Jan, monthly Feb-Mar (NASS dates)", 25, C, False, lambda: crop_projection("ginnings"), "Crop tab"),
     ("Cotton", "Crop projection input: crop progress", "weekly (Mon)", 9, C, False, lambda: crop_projection("crop_progress"), "Crop tab"),
     ("Cotton", "WASDE (latest report)", "monthly", 40, C, False, wasde_release, "WASDE tab, balance sheets"),
     ("Cotton", "WASDE brief, latest-data section", "daily", 2, B, False, lambda: d10(J("data/grains/derived/wasde_brief/index.json")["generated"]), "WASDE tab"),

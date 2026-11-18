@@ -6,7 +6,8 @@ Rule types (times are US Eastern):
                   shift: on_day (holiday on the day -> next business day), week_to_friday (a holiday Mon..release day ->
                   one business day later), week_to_monday (a holiday Mon..Fri of the release week -> following Monday),
                   optional months (release months only, e.g. crop progress Apr-Nov)
-  dates           explicit release dates (WASDE): {"dates": [...], "time": "12:00"}; data date = release date
+  dates           explicit release dates from the publisher's calendar: {"dates": [...], "time": "12:00"}; each item a date
+                  (data date = release date) or {"release": date, "data": as-of date}
   business_daily  every business day at time; data_offset_bd (0 = same day, -1 = previous business day);
                   calendar "ice" or "federal"
   age             no fixed release: late when the source's age is over its data-status limit
@@ -83,10 +84,11 @@ def releases(rule, cal, now, back_days=70):
                 out.append((_at(rel, rule["time"]), d + timedelta(days=rule.get("data_offset_days", 0))))
             d += timedelta(days=7)
     elif t == "dates":
-        for s in rule["dates"]:
-            d = date.fromisoformat(s)
+        for s in rule["dates"]:                 # "YYYY-MM-DD" (data date = release date) or {"release": ..., "data": ...}
+            rel, dd = (s["release"], s["data"]) if isinstance(s, dict) else (s, s)
+            d = date.fromisoformat(rel)
             if today - timedelta(days=back_days * 2) <= d <= today + timedelta(days=40):
-                out.append((_at(d, rule["time"]), d))
+                out.append((_at(d, rule["time"]), date.fromisoformat(dd)))
     elif t == "business_daily":
         which = rule.get("calendar", "federal")
         d = today - timedelta(days=back_days)

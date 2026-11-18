@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18 18:35 UTC",
+ "generated": "2026-11-18 18:38 UTC",
  "today": "2026-11-18",
  "sources": [
   {
@@ -234,10 +234,10 @@
    "group": "Cotton",
    "source": "Crop projection input: NASS ginnings",
    "latest": "2026-11-01",
-   "cadence": "about twice a month",
+   "cadence": "twice a month Aug-Jan, monthly Feb-Mar (NASS dates)",
    "age": 17,
    "age_unit": "days",
-   "limit": 20,
+   "limit": 25,
    "state": "ok",
    "manual": false,
    "used_in": "Crop tab"
