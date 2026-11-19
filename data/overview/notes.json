@@ -1,43 +1,56 @@
 {
- "updated": "2026-11-18",
- "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
- "markets": {
-  "cotton": {
-   "fundamental": "Dec slid to ~75.8 (-1.5) through both 77.05 and 76.47 supports in first-notice week, with Mar ~79.9 also lower; no new US or Brazil supply news, so this is old-crop Dec/Mar liquidation and certificate flow at work — high-grade certs available for delivery are not a comfort for longs.",
-   "events": [
-    "Dec ~75.83 (-1.49), low 75.58, below 76.47 support (ICE via TradingView)",
-    "Mar ~79.85 (-1.55) (ICE via TradingView)",
-    "Wider commodity selloff led by crude and wheat (Reuters)"
-   ],
-   "date": "2026-11-18"
+  "updated": "2026-11-18",
+  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+  "markets": {
+    "cotton": {
+      "date": "2026-11-18",
+      "by": "bot",
+      "time": "20:48 CT",
+      "claude_date": "2026-11-18",
+      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported lower (0 supply-tight, 0 supply-loose, 0 up, 1 down by keyword).",
+      "events": [
+        "Cotton Falling with Outside Pressure on Wednesday (Barchart.com, 2026-11-18)"
+      ]
+    },
+    "sugar": {
+      "date": "2026-11-18",
+      "by": "bot",
+      "time": "20:48 CT",
+      "claude_date": "2026-11-18",
+      "fundamental": "2 headlines in the last 30 hours; the news flow leans bearish (bigger supplies or weaker demand outnumber supply risks), prices mostly reported lower (0 supply-tight, 1 supply-loose, 0 up, 2 down by keyword).",
+      "events": [
+        "USDA Projects Lower Global Sugar Production (ADMIS, 2026-11-18)",
+        "Sugar Prices Slide as the Brazilian Real Weakens (Barchart.com, 2026-11-18)"
+      ],
+      "claude_fund_score": -0.3,
+      "fund_score": -0.3
+    },
+    "coffee": {
+      "date": "2026-11-18",
+      "by": "bot",
+      "time": "20:48 CT",
+      "claude_date": "2026-11-18",
+      "fundamental": "3 headlines in the last 30 hours; the news flow leans bearish (bigger supplies or weaker demand outnumber supply risks), prices mostly reported lower (0 supply-tight, 2 supply-loose, 0 up, 2 down by keyword).",
+      "events": [
+        "Coffee Prices Retreat on Bigger Supplies from Brazil (Barchart.com, 2026-11-18)",
+        "Coffee Prices Plunge on Expectations for Larger Global Supplies (Barchart.com, 2026-11-18)",
+        "Fair Trade USA Raising Minimum Coffee Prices to New Fairtrade Levels (Daily Coffee News by Roast Magazine, 2026-11-18)"
+      ],
+      "claude_fund_score": 0.3,
+      "fund_score": 0.0
+    },
+    "cocoa": {
+      "date": "2026-11-18",
+      "by": "bot",
+      "time": "20:48 CT",
+      "claude_date": "2026-11-18",
+      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, price reports mixed (0 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
+      "events": [
+        "Improved Supply Prospects Undercut Cocoa Prices (Barchart.com, 2026-11-18)"
+      ],
+      "claude_fund_score": -0.3,
+      "fund_score": -0.3
+    }
   },
-  "sugar": {
-   "fundamental": "Brazil first: still no fresh Centre-South crush data; Mar recovered from the overnight 17.75 low to ~18.08 even as crude fell another ~4%, which cuts Brazil's ethanol parity and keeps the mix leaning to sugar. The bounce looks like short covering into the 18.11 resistance rather than a supply change.",
-   "events": [
-    "Mar ~18.08 (-0.09), range 17.75-18.26 (ICE via TradingView)",
-    "WTI Dec down ~4% to ~82.7 on US stock builds, trimming ethanol parity (Reuters, TradingView)"
-   ],
-   "date": "2026-11-18",
-   "fund_score": -0.3
-  },
-  "coffee": {
-   "fundamental": "Dec swung from a 275.65 low back to ~282: the weakness is price action, not supply — ICE certified arabica stocks stay near 1999 lows and Brazil deliverable supply is thin, so the nearby structure remains supportive. Brazil rains are helping the next crop's flowering, the bearish side of the ledger.",
-   "events": [
-    "Dec ~282 (-4.6), range 275.65-284.65, failed again at 284.65 resistance (ICE via TradingView)",
-    "ICE certified arabica stocks near multi-decade lows (ICE, Barchart)",
-    "Brazil rains support 2027 flowering (CropGPT, Barchart)"
-   ],
-   "date": "2026-11-18",
-   "fund_score": 0.3
-  },
-  "cocoa": {
-   "fundamental": "Mar fell ~2.7% to ~5,035 and tested the 4,978 support (low 4,984): rising ICE certified stocks and talk of steadier Ivory Coast arrivals outweigh the earlier rain-related transport delays; nothing new from Ghana's COCOBOD today. Demand remains the weak leg.",
-   "events": [
-    "Mar ~5,035 (-142), low 4,984 just above 4,978 support (ICE via TradingView)",
-    "Rising ICE inventories and better West African supply weigh (Barchart, CropGPT)"
-   ],
-   "date": "2026-11-18",
-   "fund_score": -0.3
-  }
- }
+  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-18 20:48 CT: Claude's desk read had not run for 5+ hours."
 }
