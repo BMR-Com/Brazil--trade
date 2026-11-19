@@ -1,56 +1,51 @@
 {
-  "updated": "2026-11-18",
-  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
-  "markets": {
-    "cotton": {
-      "date": "2026-11-18",
-      "by": "bot",
-      "time": "20:48 CT",
-      "claude_date": "2026-11-18",
-      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported lower (0 supply-tight, 0 supply-loose, 0 up, 1 down by keyword).",
-      "events": [
-        "Cotton Falling with Outside Pressure on Wednesday (Barchart.com, 2026-11-18)"
-      ]
-    },
-    "sugar": {
-      "date": "2026-11-18",
-      "by": "bot",
-      "time": "20:48 CT",
-      "claude_date": "2026-11-18",
-      "fundamental": "2 headlines in the last 30 hours; the news flow leans bearish (bigger supplies or weaker demand outnumber supply risks), prices mostly reported lower (0 supply-tight, 1 supply-loose, 0 up, 2 down by keyword).",
-      "events": [
-        "USDA Projects Lower Global Sugar Production (ADMIS, 2026-11-18)",
-        "Sugar Prices Slide as the Brazilian Real Weakens (Barchart.com, 2026-11-18)"
-      ],
-      "claude_fund_score": -0.3,
-      "fund_score": -0.3
-    },
-    "coffee": {
-      "date": "2026-11-18",
-      "by": "bot",
-      "time": "20:48 CT",
-      "claude_date": "2026-11-18",
-      "fundamental": "3 headlines in the last 30 hours; the news flow leans bearish (bigger supplies or weaker demand outnumber supply risks), prices mostly reported lower (0 supply-tight, 2 supply-loose, 0 up, 2 down by keyword).",
-      "events": [
-        "Coffee Prices Retreat on Bigger Supplies from Brazil (Barchart.com, 2026-11-18)",
-        "Coffee Prices Plunge on Expectations for Larger Global Supplies (Barchart.com, 2026-11-18)",
-        "Fair Trade USA Raising Minimum Coffee Prices to New Fairtrade Levels (Daily Coffee News by Roast Magazine, 2026-11-18)"
-      ],
-      "claude_fund_score": 0.3,
-      "fund_score": 0.0
-    },
-    "cocoa": {
-      "date": "2026-11-18",
-      "by": "bot",
-      "time": "20:48 CT",
-      "claude_date": "2026-11-18",
-      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, price reports mixed (0 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
-      "events": [
-        "Improved Supply Prospects Undercut Cocoa Prices (Barchart.com, 2026-11-18)"
-      ],
-      "claude_fund_score": -0.3,
-      "fund_score": -0.3
-    }
+ "updated": "2026-11-18",
+ "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+ "markets": {
+  "cotton": {
+   "date": "2026-11-18",
+   "by": "claude",
+   "time": "22:50 CT",
+   "fundamental": "Nothing new on supply; Wednesday's slide was macro-driven (strong dollar, weaker grains and crude), not cotton-specific. Dec is in first-notice week below its supports, so delivery flows and high-grade certs matter more than the crop story near term — they are not a comfort for old-crop longs until Mar takes over.",
+   "events": [
+    "Dec cotton fell with outside markets on Wednesday, trading near 75 (Barchart)",
+    "Texas yield cut again in USDA's November forecast, backing the short-crop case (RFD-TV)"
+   ]
   },
-  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-18 20:48 CT: Claude's desk read had not run for 5+ hours."
+  "sugar": {
+   "date": "2026-11-18",
+   "by": "claude",
+   "time": "22:50 CT",
+   "fundamental": "Brazil still drives it: the weaker real makes Brazilian raws cheaper to sell abroad and sugar keeps paying over hydrous ethanol, so mills stay sugar-heavy. USDA's lower global production estimate is a mild offset, but it has not stopped Mar slipping to the 18.0 support area.",
+   "events": [
+    "Raws slid as the Brazilian real weakened (Barchart)",
+    "USDA's biannual outlook sees lower world sugar output (ADMIS)"
+   ],
+   "fund_score": -0.3
+  },
+  "coffee": {
+   "date": "2026-11-18",
+   "by": "claude",
+   "time": "22:50 CT",
+   "fundamental": "Price news is bearish on bigger expected Brazil and global supplies, but the deliverability picture still leans tight: ICE certified arabica keeps drawing (about 201k bags, down roughly 14% in a month) and Brazil's November shipments are running at a solid pace that has yet to restock ICE or Antwerp. Net: price weak, stocks story still supportive.",
+   "events": [
+    "Arabica fell sharply on expectations of larger Brazil and global supplies (Barchart)",
+    "ICE certified arabica stocks still falling; Cecafé shows Nov exports at 2.29m bags through the 17th (ICE, Cecafé)",
+    "Fair Trade USA raises its minimum coffee prices (Daily Coffee News)"
+   ],
+   "fund_score": 0.15
+  },
+  "cocoa": {
+   "date": "2026-11-18",
+   "by": "claude",
+   "time": "22:50 CT",
+   "fundamental": "Supply worries keep easing: rising ICE certified stocks and better crop prospects outweigh the earlier rain-related slowdown in Ivory Coast port deliveries. Demand evidence is still thin, so the bias stays bearish while Mar tests the 4,978 support.",
+   "events": [
+    "Improved supply prospects pushed cocoa lower; Mar down about 3% near 5,025 (Barchart)",
+    "Heavy rains had slowed bean transport to Ivorian ports last week (Reuters, Barchart)",
+    "Ghana plans to phase out raw bean exports by 2030 (Reuters)"
+   ],
+   "fund_score": -0.3
+  }
+ }
 }
