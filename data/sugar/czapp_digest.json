@@ -1,12 +1,24 @@
 {
-  "week_ending": "2026-11-18",
+  "week_ending": "2026-11-19",
   "themes": [
-    "Raws slipped below 18 cents on 18 Nov after USDA's biennial outlook and a weak real; producer hedging stays light, but speculative length is still large, so the band's floor is being tested rather than defended.",
-    "Czarnikow's Brazil revision is a shift in timing, not lost cane: rain stoppages push cane into 2027/28, tightening the old-crop balance into March while enlarging next season's start, which argues for a firmer March/May but a heavier deferred curve.",
-    "Whites remain the firmer leg on weak EU beet output, and the US domestic market keeps tightening after USDA's beet and cane cuts, walled off from the world price.",
-    "Ethanol is a cap rather than a floor: sugar still pays well above hydrous parity, and cheaper US ethanol into Brazil's North/Northeast in the inter-harvest limits support."
+    "Raws are holding the 18c area by short covering rather than fresh buying: long liquidation keeps probing the floor, but funds have stopped adding to sales and producer hedging stays light with the real weak.",
+    "Czarnikow's Brazil revision is a timing shift, not lost cane: rain-stopped cane rolls into 2027/28, tightening the old-crop balance into March while enlarging next season's start, which fits a firm Mar/May and a heavier deferred curve.",
+    "Outside Brazil, Australia finishes a delayed crush with poor late sugar content and the US domestic market keeps tightening after USDA's beet and cane cuts; neither changes the world balance much, but both lean supportive at the margin.",
+    "Ethanol is a cap rather than a floor: sugar still pays well above hydrous parity, so the mix stays maxed and cheaper US ethanol into Brazil's North/Northeast limits support in the inter-harvest."
   ],
   "items": [
+    {
+      "date": "2026-11-19",
+      "title": "Late Dry Spell Puts Queensland Cane Harvest Back on Track",
+      "url": "https://www.czapp.com/analyst-insights/late-dry-spell-puts-queensland-cane-harvest-back-on-track/",
+      "takeaway": "A grower's view from far north Queensland: dry weather let mills close out a badly delayed crush, but regrowth in the last cane cut its sugar content sharply, so Australian output and quality end the season on the soft side rather than with a late recovery."
+    },
+    {
+      "date": "2026-11-18",
+      "title": "Daily Market Price Updates and Commentary 18th November 2026",
+      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-18th-november-2026/",
+      "takeaway": "Raws dipped into the lows on long liquidation and fresh selling, then short covering trimmed the loss; whites eased on thin late volume. Funds did not press the sell side, and spread/premium interest was light."
+    },
     {
       "date": "2026-11-18",
       "title": "Brazil Weather Widens the Near-Term Deficit",
@@ -48,18 +60,6 @@
       "title": "Daily Market Price Updates and Commentary 13th November 2026",
       "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-13th-november-2026/",
       "takeaway": "Raws and whites both firmed into the week's close on small-trader buying; London December expired with a sizeable tender talked, and the white premium held near its recent highs."
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Daily Market Price Updates and Commentary 12th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-12th-november-2026/",
-      "takeaway": "Both contracts dipped intraday and settled lower as speculators stayed sidelined after repeated whipsaws; the December white spread eased as open interest ran down ahead of expiry."
-    },
-    {
-      "date": "2026-11-11",
-      "title": "CS Brazil: Sugar or Ethanol? 11th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/cs-brazil-sugar-or-ethanol-11th-november-2026/",
-      "takeaway": "Weekly chart-only tracker of Centre-South mill sugar-versus-ethanol pay; no readable commentary on the free page."
     }
   ]
 }

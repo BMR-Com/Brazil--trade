@@ -1,6 +1,5 @@
 {
-  "last_run_utc": "2026-11-18T17:45:00Z",
-  "note": "2026-11-18 run: 7 new ADMIS posts read via WebFetch (Wkly Futures Summary 11.16 failed to load); Czapp feed empty, used cz-insights listing; Rabobank: no new non-Exclusive commodity piece.",
+  "last_run_utc": "2026-11-19T17:45:00Z",
   "urls": [
     "https://www.admis.com/ag-market-view-for-nov-12-2026/",
     "https://www.admis.com/beef-imports-pressuring-beef-prices/",
@@ -46,6 +45,13 @@
     "https://www.admis.com/usda-projects-lower-global-sugar-production/",
     "https://www.czapp.com/analyst-insights/whey-strengthens-as-usda-lifts-dairy-price-outlook/",
     "https://www.czapp.com/analyst-insights/brazil-weather-widens-the-near-term-deficit/",
-    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-17th-november-2026/"
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-17th-november-2026/",
+    "https://www.admis.com/ag-market-view-for-nov-18-2026/",
+    "https://www.admis.com/strong-dollar-weighs-on-cotton/",
+    "https://www.rabobank.com/knowledge/q011558553-brazils-corn-market-shifts-as-ethanol-demand-expands",
+    "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-18th-november-2026/",
+    "https://www.czapp.com/analyst-insights/late-dry-spell-puts-queensland-cane-harvest-back-on-track/",
+    "https://www.czapp.com/analyst-insights/will-china-reduce-its-premium-for-brazilian-sorghum-in-2027/",
+    "https://www.czapp.com/analyst-insights/cs-brazil-sugar-or-ethanol-19th-november-2026/"
   ]
 }
