@@ -1,10 +1,10 @@
 {
- "run": "2026-11-18 19:35 UTC",
- "from": "2026-11-18",
+ "run": "2026-11-19 03:40 UTC",
+ "from": "2026-11-19",
  "tried": 1,
- "pages_with_prices": 1,
+ "pages_with_prices": 0,
  "http": {
-  "200": 1
+  "404": 1
  },
  "latest": "2026-11-18",
  "rows": 572
