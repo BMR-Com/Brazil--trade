@@ -5973,6 +5973,369 @@
    "text": true,
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Bogota_Colombia_CO2026-0008.pdf"
   },
+  "CO2026-0036": {
+   "country": "Colombia",
+   "date": "2026-11-18",
+   "file": "Coffee Semi-annual_Bogota_Colombia_CO2026-0036",
+   "highlights": "In Marketing Year (MY) 2026/2027, Colombian coffee production is forecast to increase 5.9 percent to 13.4 million bags green bean equivalent (GBE) as growing conditions normalize after the excessive La Niña rains that reduced the MY 2025/2026 crop. This increase follows a transition from La Niña to a strong El Niño. However, El Niño is expected to bring well-below-normal rainfall through early 2027, a downside risk to flowering for the 2027 harvest. Decreasing coffee prices are encouraging replanting and renovations. Post forecasts MY 2026/2027 exports at 12.6 million bags and imports at 1.4 million bags. For MY 2025/2026, Post revises production up to 12.65 million bags GBE, and revises exports down to 12.1 million bags and imports down to 1.7 million bags.. The United States remains the top export destination for Colombian coffee, followed by the European Union, Canada, and Japan.",
+   "key": "CO2026-0036",
+   "markets": [
+    "coffee"
+   ],
+   "name": "Coffee Semi-annual",
+   "post": "Bogota",
+   "tables": [
+    {
+     "country": "Colombia",
+     "rows": {
+      "Arabica Production (1000 60 KG BAGS)": [
+       [
+        14800.0,
+        14800.0
+       ],
+       [
+        12500.0,
+        12650.0
+       ],
+       [
+        13400.0,
+        13400.0
+       ]
+      ],
+      "Area Harvested (1000 HA)": [
+       [
+        0.0,
+        640.0
+       ],
+       [
+        0.0,
+        640.0
+       ],
+       [
+        0.0,
+        640.0
+       ]
+      ],
+      "Area Planted (1000 HA)": [
+       [
+        0.0,
+        800.0
+       ],
+       [
+        0.0,
+        800.0
+       ],
+       [
+        0.0,
+        800.0
+       ]
+      ],
+      "Bean Exports (1000 60 KG BAGS)": [
+       [
+        12200.0,
+        12200.0
+       ],
+       [
+        11700.0,
+        11000.0
+       ],
+       [
+        12200.0,
+        11500.0
+       ]
+      ],
+      "Bean Imports (1000 60 KG BAGS)": [
+       [
+        785.0,
+        785.0
+       ],
+       [
+        2200.0,
+        1400.0
+       ],
+       [
+        1800.0,
+        1200.0
+       ]
+      ],
+      "Bearing Trees (MILLION TREES)": [
+       [
+        0.0,
+        3500.0
+       ],
+       [
+        0.0,
+        3500.0
+       ],
+       [
+        0.0,
+        3500.0
+       ]
+      ],
+      "Beginning Stocks (1000 60 KG BAGS)": [
+       [
+        668.0,
+        668.0
+       ],
+       [
+        922.0,
+        922.0
+       ],
+       [
+        866.0,
+        955.0
+       ]
+      ],
+      "Domestic Consumption (1000 60 KG": [
+       [
+        2149.0,
+        2149.0
+       ],
+       [
+        2200.0,
+        2200.0
+       ],
+       [
+        2200.0,
+        2200.0
+       ]
+      ],
+      "Ending Stocks (1000 60 KG BAGS)": [
+       [
+        922.0,
+        922.0
+       ],
+       [
+        866.0,
+        955.0
+       ],
+       [
+        670.0,
+        918.0
+       ]
+      ],
+      "Non-Bearing Trees (MILLION TREES)": [
+       [
+        0.0,
+        1000.0
+       ],
+       [
+        0.0,
+        1000.0
+       ],
+       [
+        0.0,
+        1000.0
+       ]
+      ],
+      "Other Production (1000 60 KG BAGS)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ],
+      "Roast & Ground Imports (1000 60 KG": [
+       [
+        4.0,
+        4.0
+       ],
+       [
+        4.0,
+        3.0
+       ],
+       [
+        4.0,
+        3.0
+       ]
+      ],
+      "Robusta Production (1000 60 KG BAGS)": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0
+       ]
+      ],
+      "Rst,Ground Dom. Consum (1000 60 KG": [
+       [
+        1600.0,
+        1600.0
+       ],
+       [
+        1600.0,
+        1650.0
+       ],
+       [
+        1600.0,
+        1600.0
+       ]
+      ],
+      "Rst-Grnd Exp. (1000 60 KG BAGS)": [
+       [
+        220.0,
+        220.0
+       ],
+       [
+        160.0,
+        133.0
+       ],
+       [
+        200.0,
+        140.0
+       ]
+      ],
+      "Soluble Dom. Cons. (1000 60 KG BAGS)": [
+       [
+        549.0,
+        549.0
+       ],
+       [
+        600.0,
+        550.0
+       ],
+       [
+        600.0,
+        600.0
+       ]
+      ],
+      "Soluble Exports (1000 60 KG BAGS)": [
+       [
+        957.0,
+        957.0
+       ],
+       [
+        950.0,
+        985.0
+       ],
+       [
+        1000.0,
+        1000.0
+       ]
+      ],
+      "Soluble Imports (1000 60 KG BAGS)": [
+       [
+        191.0,
+        191.0
+       ],
+       [
+        250.0,
+        298.0
+       ],
+       [
+        200.0,
+        200.0
+       ]
+      ],
+      "Total Distribution (1000 60 KG BAGS)": [
+       [
+        16448.0,
+        16448.0
+       ],
+       [
+        15876.0,
+        15273.0
+       ],
+       [
+        16270.0,
+        15758.0
+       ]
+      ],
+      "Total Exports (1000 60 KG BAGS)": [
+       [
+        13377.0,
+        13377.0
+       ],
+       [
+        12810.0,
+        12118.0
+       ],
+       [
+        13400.0,
+        12640.0
+       ]
+      ],
+      "Total Imports (1000 60 KG BAGS)": [
+       [
+        980.0,
+        980.0
+       ],
+       [
+        2454.0,
+        1701.0
+       ],
+       [
+        2004.0,
+        1403.0
+       ]
+      ],
+      "Total Production (1000 60 KG BAGS)": [
+       [
+        14800.0,
+        14800.0
+       ],
+       [
+        12500.0,
+        12650.0
+       ],
+       [
+        13400.0,
+        13400.0
+       ]
+      ],
+      "Total Supply (1000 60 KG BAGS)": [
+       [
+        16448.0,
+        16448.0
+       ],
+       [
+        15876.0,
+        15273.0
+       ],
+       [
+        16270.0,
+        15758.0
+       ]
+      ],
+      "Total Tree Population (MILLION TREES)": [
+       [
+        0.0,
+        4500.0
+       ],
+       [
+        0.0,
+        4500.0
+       ],
+       [
+        0.0,
+        4500.0
+       ]
+      ]
+     },
+     "title": "Coffee, Green Table 1. Colombia, Coffee, Green, Production, Supply and Distribution Coffee, Green Oct 2024 Oct 2025 Oct 2026",
+     "years": [
+      "2024/25",
+      "2025/26",
+      "2026/27"
+     ]
+    }
+   ],
+   "text": true,
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Bogota_Colombia_CO2026-0036.pdf"
+  },
   "CS2026-0004": {
    "country": "Costa Rica",
    "date": "2026-05-20",
@@ -19922,8 +20285,8 @@
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Ho%20Chi%20Minh%20City_Vietnam_VM2026-0016.pdf"
   }
  },
- "last_ok": "2026-11-18T18:07Z",
- "updated": "2026-11-18T18:07Z",
+ "last_ok": "2026-11-19T01:59Z",
+ "updated": "2026-11-19T01:59Z",
  "wmt": {
   "wmt-coffee-2026-07": {
    "first_seen": "2026-11-18",

@@ -7,6 +7,64 @@
  "note": "GAIN reports are written by USDA's overseas posts and are not official USDA estimates; the official number is the one in the report's own table (USDA Official). Following the desk's rule, the points show how far Post is from USDA and how Post changed its own numbers, not the levels alone.",
  "entries": [
   {
+   "date": "2026-11-18",
+   "title": "Colombia: Coffee Semi-annual",
+   "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Bogota_Colombia_CO2026-0036.pdf",
+   "kind": "gain",
+   "country": "Colombia",
+   "tag": "FAS attaché",
+   "key_points": [
+    "MY 2026/27, Post vs USDA official: exports 12.64m bags vs 13.40m bags (−760k bags); ending stocks 918k bags vs 670k bags (+248k bags).",
+    "MY 2025/26, Post vs USDA: production 12.65m bags vs 12.50m bags; exports 12.12m bags vs 12.81m bags; ending stocks 955k bags vs 866k bags.",
+    "Post's own revision since its Coffee Annual (May 2026), MY 2026/27: exports 12.64m bags from 13.40m bags (−5.7%); ending stocks 918k bags from 670k bags (+37.0%)."
+   ],
+   "auto": true,
+   "post_vs_usda": [
+    {
+     "my": "2026/27",
+     "rows": [
+      {
+       "line": "Production",
+       "usda": 13400.0,
+       "post": 13400.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Arabica",
+       "usda": 13400.0,
+       "post": 13400.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Robusta",
+       "usda": 0,
+       "post": 0,
+       "diff": 0
+      },
+      {
+       "line": "Exports",
+       "usda": 13400.0,
+       "post": 12640.0,
+       "diff": -760.0
+      },
+      {
+       "line": "Consumption",
+       "usda": 2200.0,
+       "post": 2200.0,
+       "diff": 0.0
+      },
+      {
+       "line": "Ending stocks",
+       "usda": 670.0,
+       "post": 918.0,
+       "diff": 248.0
+      }
+     ],
+     "country": "Colombia"
+    }
+   ]
+  },
+  {
    "date": "2026-11-17",
    "title": "Indonesia: Coffee Semi-annual",
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Jakarta_Indonesia_ID2026-0044.pdf",
@@ -1096,6 +1154,51 @@
   "unit": "thousand 60-kg bags",
   "rows": [
    {
+    "country": "Colombia",
+    "date": "2026-11-18",
+    "report": "Coffee Semi-annual",
+    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Semi-annual_Bogota_Colombia_CO2026-0036.pdf",
+    "my": "2026/27",
+    "rows": [
+     {
+      "line": "Production",
+      "usda": 13400.0,
+      "post": 13400.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Arabica",
+      "usda": 13400.0,
+      "post": 13400.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Robusta",
+      "usda": 0,
+      "post": 0,
+      "diff": 0
+     },
+     {
+      "line": "Exports",
+      "usda": 13400.0,
+      "post": 12640.0,
+      "diff": -760.0
+     },
+     {
+      "line": "Consumption",
+      "usda": 2200.0,
+      "post": 2200.0,
+      "diff": 0.0
+     },
+     {
+      "line": "Ending stocks",
+      "usda": 670.0,
+      "post": 918.0,
+      "diff": 248.0
+     }
+    ]
+   },
+   {
     "country": "India",
     "date": "2026-11-17",
     "report": "Coffee Semi-annual",
@@ -1227,51 +1330,6 @@
       "usda": 4425.0,
       "post": 3420.0,
       "diff": -1005.0
-     }
-    ]
-   },
-   {
-    "country": "Colombia",
-    "date": "2026-05-20",
-    "report": "Coffee Annual",
-    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Bogota_Colombia_CO2026-0008.pdf",
-    "my": "2026/27",
-    "rows": [
-     {
-      "line": "Production",
-      "usda": 0,
-      "post": 13400.0,
-      "diff": 13400.0
-     },
-     {
-      "line": "Arabica",
-      "usda": 0,
-      "post": 13400.0,
-      "diff": 13400.0
-     },
-     {
-      "line": "Robusta",
-      "usda": 0,
-      "post": 0,
-      "diff": 0
-     },
-     {
-      "line": "Exports",
-      "usda": 0,
-      "post": 13400.0,
-      "diff": 13400.0
-     },
-     {
-      "line": "Consumption",
-      "usda": 0,
-      "post": 2200.0,
-      "diff": 2200.0
-     },
-     {
-      "line": "Ending stocks",
-      "usda": 0,
-      "post": 670.0,
-      "diff": 670.0
      }
     ]
    },
@@ -1772,5 +1830,5 @@
    }
   ]
  },
- "built": "2026-11-18 18:07 UTC"
+ "built": "2026-11-19 01:59 UTC"
 }
