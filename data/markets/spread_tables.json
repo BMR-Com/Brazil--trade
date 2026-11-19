@@ -1,5 +1,5 @@
 {
- "built": "2026-11-19 02:51 UTC",
+ "built": "2026-11-19 04:34 UTC",
  "asof": "2026-11-18",
  "coffee": [
   {
@@ -9,9 +9,9 @@
     "KCZ2026"
    ],
    "unit": "c/lb",
-   "value": 286.6,
-   "chg": 5.9,
-   "date": "2026-11-17"
+   "value": 280.95,
+   "chg": -5.65,
+   "date": "2026-11-18"
   },
   {
    "group": "Settlements: ICE arabica",
@@ -20,9 +20,9 @@
     "KCH2027"
    ],
    "unit": "c/lb",
-   "value": 281.4,
-   "chg": 6.5,
-   "date": "2026-11-17"
+   "value": 275.45,
+   "chg": -5.95,
+   "date": "2026-11-18"
   },
   {
    "group": "Settlements: ICE robusta",
@@ -55,11 +55,11 @@
    ],
    "position": "1/2",
    "unit": "c/lb",
-   "value": 5.2,
-   "pct_of_deferred": 1.85,
-   "chg": -0.6,
-   "pctile_1y": 15.0,
-   "date": "2026-11-17"
+   "value": 5.5,
+   "pct_of_deferred": 2.0,
+   "chg": 0.3,
+   "pctile_1y": 16.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Arabica switches",
@@ -70,11 +70,11 @@
    ],
    "position": "2/3",
    "unit": "c/lb",
-   "value": 6.05,
-   "pct_of_deferred": 2.2,
-   "chg": 1.7,
-   "pctile_1y": 40.0,
-   "date": "2026-11-17"
+   "value": 6.7,
+   "pct_of_deferred": 2.49,
+   "chg": 0.65,
+   "pctile_1y": 52.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Arabica switches",
@@ -85,11 +85,11 @@
    ],
    "position": "3/4",
    "unit": "c/lb",
-   "value": 4.2,
-   "pct_of_deferred": 1.55,
-   "chg": 0.95,
-   "pctile_1y": 58.0,
-   "date": "2026-11-17"
+   "value": 4.3,
+   "pct_of_deferred": 1.63,
+   "chg": 0.1,
+   "pctile_1y": 59.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Arabica switches",
@@ -101,10 +101,10 @@
    "position": "4/5",
    "unit": "c/lb",
    "value": 3.5,
-   "pct_of_deferred": 1.31,
-   "chg": 0.45,
+   "pct_of_deferred": 1.34,
+   "chg": 0.0,
    "pctile_1y": 67.0,
-   "date": "2026-11-17"
+   "date": "2026-11-18"
   },
   {
    "group": "Arabica switches",
@@ -115,11 +115,11 @@
    ],
    "position": "5/6",
    "unit": "c/lb",
-   "value": 4.0,
-   "pct_of_deferred": 1.52,
-   "chg": 0.45,
-   "pctile_1y": 92.0,
-   "date": "2026-11-17"
+   "value": 3.95,
+   "pct_of_deferred": 1.54,
+   "chg": -0.05,
+   "pctile_1y": 91.0,
+   "date": "2026-11-18"
   },
   {
    "group": "Robusta switches",
@@ -189,11 +189,11 @@
     "RCH2027"
    ],
    "unit": "c/lb",
-   "value": 143.64,
-   "chg": 10.4,
-   "pctile_1y": 60.0,
-   "date": "2026-11-17",
-   "ratio": 2.043,
+   "value": 139.92,
+   "chg": -3.73,
+   "pctile_1y": 54.0,
+   "date": "2026-11-18",
+   "ratio": 2.032,
    "ratio_pctile_1y": 95.0
   },
   {
@@ -204,12 +204,12 @@
     "RCK2027"
    ],
    "unit": "c/lb",
-   "value": 138.23,
-   "chg": 8.61,
-   "pctile_1y": 66.0,
-   "date": "2026-11-17",
-   "ratio": 2.008,
-   "ratio_pctile_1y": 99.0
+   "value": 133.85,
+   "chg": -4.38,
+   "pctile_1y": 59.0,
+   "date": "2026-11-18",
+   "ratio": 1.992,
+   "ratio_pctile_1y": 97.0
   },
   {
    "group": "Brazil arb",
@@ -234,9 +234,9 @@
     "SBH2027"
    ],
    "unit": "c/lb",
-   "value": 18.17,
-   "chg": 0.07,
-   "date": "2026-11-17"
+   "value": 18.04,
+   "chg": -0.13,
+   "date": "2026-11-18"
   },
   {
    "group": "Settlements: ICE No. 11",
@@ -245,9 +245,9 @@
     "SBK2027"
    ],
    "unit": "c/lb",
-   "value": 17.6,
-   "chg": 0.01,
-   "date": "2026-11-17"
+   "value": 17.48,
+   "chg": -0.12,
+   "date": "2026-11-18"
   },
   {
    "group": "Settlements: ICE No. 5",
@@ -256,9 +256,9 @@
     "WH2027"
    ],
    "unit": "$/t",
-   "value": 511.0,
-   "chg": 0.5,
-   "date": "2026-11-17"
+   "value": 507.1,
+   "chg": -3.9,
+   "date": "2026-11-18"
   },
   {
    "group": "Settlements: ICE No. 5",
@@ -267,9 +267,9 @@
     "WK2027"
    ],
    "unit": "$/t",
-   "value": 512.7,
-   "chg": -0.3,
-   "date": "2026-11-17"
+   "value": 508.0,
+   "chg": -4.7,
+   "date": "2026-11-18"
   },
   {
    "group": "No. 11 switches",
@@ -280,11 +280,11 @@
    ],
    "position": "1/2",
    "unit": "c/lb",
-   "value": 0.57,
-   "pct_of_deferred": 3.24,
-   "chg": 0.06,
-   "pctile_1y": 93.0,
-   "date": "2026-11-17"
+   "value": 0.56,
+   "pct_of_deferred": 3.2,
+   "chg": -0.01,
+   "pctile_1y": 91.0,
+   "date": "2026-11-18"
   },
   {
    "group": "No. 11 switches",
@@ -296,10 +296,10 @@
    "position": "2/3",
    "unit": "c/lb",
    "value": 0.36,
-   "pct_of_deferred": 2.09,
-   "chg": 0.03,
-   "pctile_1y": 79.0,
-   "date": "2026-11-17"
+   "pct_of_deferred": 2.1,
+   "chg": -0.0,
+   "pctile_1y": 78.0,
+   "date": "2026-11-18"
   },
   {
    "group": "No. 11 switches",
@@ -312,9 +312,9 @@
    "unit": "c/lb",
    "value": -0.02,
    "pct_of_deferred": -0.12,
-   "chg": 0.01,
-   "pctile_1y": 46.0,
-   "date": "2026-11-17"
+   "chg": 0.0,
+   "pctile_1y": 48.0,
+   "date": "2026-11-18"
   },
   {
    "group": "No. 11 switches",
@@ -325,11 +325,11 @@
    ],
    "position": "4/5",
    "unit": "c/lb",
-   "value": -0.37,
-   "pct_of_deferred": -2.1,
-   "chg": 0.01,
-   "pctile_1y": 31.0,
-   "date": "2026-11-17"
+   "value": -0.39,
+   "pct_of_deferred": -2.22,
+   "chg": -0.02,
+   "pctile_1y": 29.0,
+   "date": "2026-11-18"
   },
   {
    "group": "No. 5 switches",
@@ -340,11 +340,11 @@
    ],
    "position": "1/2",
    "unit": "$/t",
-   "value": -1.7,
-   "pct_of_deferred": -0.33,
+   "value": -0.9,
+   "pct_of_deferred": -0.18,
    "chg": 0.8,
-   "pctile_1y": 33.0,
-   "date": "2026-11-17"
+   "pctile_1y": 36.0,
+   "date": "2026-11-18"
   },
   {
    "group": "No. 5 switches",
@@ -355,11 +355,11 @@
    ],
    "position": "2/3",
    "unit": "$/t",
-   "value": 3.6,
-   "pct_of_deferred": 0.71,
-   "chg": 0.4,
-   "pctile_1y": 81.0,
-   "date": "2026-11-17"
+   "value": 4.2,
+   "pct_of_deferred": 0.83,
+   "chg": 0.6,
+   "pctile_1y": 87.0,
+   "date": "2026-11-18"
   },
   {
    "group": "No. 5 switches",
@@ -370,11 +370,11 @@
    ],
    "position": "3/4",
    "unit": "$/t",
-   "value": 4.7,
-   "pct_of_deferred": 0.93,
-   "chg": 0.5,
-   "pctile_1y": 92.0,
-   "date": "2026-11-17"
+   "value": 4.1,
+   "pct_of_deferred": 0.82,
+   "chg": -0.6,
+   "pctile_1y": 89.0,
+   "date": "2026-11-18"
   },
   {
    "group": "White premium",
@@ -384,11 +384,11 @@
     "SBH2027"
    ],
    "unit": "$/t",
-   "value": 110.4,
+   "value": 109.4,
    "chg": -1.0,
-   "pctile_1y": 58.0,
-   "date": "2026-11-17",
-   "pct_of_deferred": 27.6
+   "pctile_1y": 55.0,
+   "date": "2026-11-18",
+   "pct_of_deferred": 27.5
   },
   {
    "group": "White premium",
@@ -398,11 +398,11 @@
     "SBK2027"
    ],
    "unit": "$/t",
-   "value": 124.7,
-   "chg": -0.5,
-   "pctile_1y": 93.0,
-   "date": "2026-11-17",
-   "pct_of_deferred": 32.1
+   "value": 122.6,
+   "chg": -2.1,
+   "pctile_1y": 91.0,
+   "date": "2026-11-18",
+   "pct_of_deferred": 31.8
   },
   {
    "group": "White premium",
@@ -412,11 +412,11 @@
     "SBN2027"
    ],
    "unit": "$/t",
-   "value": 129.0,
-   "chg": -0.3,
-   "pctile_1y": 93.0,
-   "date": "2026-11-17",
-   "pct_of_deferred": 33.9
+   "value": 126.4,
+   "chg": -2.7,
+   "pctile_1y": 88.0,
+   "date": "2026-11-18",
+   "pct_of_deferred": 33.5
   }
  ],
  "notes": [
