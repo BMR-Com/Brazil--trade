@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-19 04:47 UTC",
+ "updated": "2026-11-19 13:44 UTC",
  "by": "claude",
  "views": {
   "cotton": {
    "view": "mildly bullish",
    "shade": "bull1",
-   "score": 0.07
+   "score": 0.18
   },
   "sugar": {
    "view": "bearish",
@@ -15,7 +15,7 @@
   "coffee": {
    "view": "neutral",
    "shade": "neutral",
-   "score": -0.04
+   "score": -0.05
   },
   "cocoa": {
    "view": "bearish",
@@ -54,6 +54,7 @@
   "2026-11-18 Coffee Dec -6.4 to ~280.2 after failing at 284.65",
   "2026-11-18 Cotton Dec ~75.8 below 76.47 S2 in FND week",
   "2026-11-18 Cocoa Mar ~5,035 tests 4,978 support (low 4,984)",
-  "2026-11-18 Crude -4% on US stock builds"
+  "2026-11-18 Crude -4% on US stock builds",
+  "2026-11-19 BRL -1.9% to 5.89; sugar Mar ~17.92, coffee Dec ~279.7"
  ]
 }
