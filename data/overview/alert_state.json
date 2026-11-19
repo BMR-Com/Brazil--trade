@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19 17:43 UTC",
+ "updated": "2026-11-19 20:50 UTC",
  "by": "claude",
  "views": {
   "cotton": {
@@ -15,7 +15,7 @@
   "coffee": {
    "view": "neutral",
    "shade": "neutral",
-   "score": -0.05
+   "score": -0.04
   },
   "cocoa": {
    "view": "bearish",
@@ -25,7 +25,26 @@
  },
  "alerts": {
   "cotton": [],
-  "sugar": [],
+  "sugar": [
+   {
+    "kind": "break",
+    "side": "dn",
+    "text": "Broke below S1 17.92",
+    "new": true
+   },
+   {
+    "kind": "break",
+    "side": "dn",
+    "text": "Broke below S2 17.23",
+    "new": true
+   },
+   {
+    "kind": "break",
+    "side": "dn",
+    "text": "Broke below the fund sell trigger (55-day breakout low) 17.75",
+    "new": true
+   }
+  ],
   "coffee": [],
   "cocoa": []
  },
@@ -57,6 +76,7 @@
   "2026-11-18 Crude -4% on US stock builds",
   "2026-11-19 BRL -1.9% to 5.89; sugar Mar ~17.92, coffee Dec ~279.7",
   "2026-11-19 Sugar Mar -4.7% to ~17.19 (7-week low), below 17.92/17.23 supports as BRL slides ~2% to 5.90",
-  "2026-11-19 Cocoa Mar +3.4% to ~5,173 on short covering; Dec cotton back to ~76.0"
+  "2026-11-19 Cocoa Mar +3.4% to ~5,173 on short covering; Dec cotton back to ~76.0",
+  "2026-11-19 Risk-off close: S&P -1.9%, VIX ~28, USD/BRL ~5.93 (-2.7% BRL); sugar Mar ~17.15, cocoa Dec +3.8% ~5,030"
  ]
 }
