@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19 13:44 UTC",
+ "updated": "2026-11-19 17:43 UTC",
  "by": "claude",
  "views": {
   "cotton": {
@@ -10,7 +10,7 @@
   "sugar": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.3
+   "score": -0.32
   },
   "coffee": {
    "view": "neutral",
@@ -20,7 +20,7 @@
   "cocoa": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.33
+   "score": -0.3
   }
  },
  "alerts": {
@@ -55,6 +55,8 @@
   "2026-11-18 Cotton Dec ~75.8 below 76.47 S2 in FND week",
   "2026-11-18 Cocoa Mar ~5,035 tests 4,978 support (low 4,984)",
   "2026-11-18 Crude -4% on US stock builds",
-  "2026-11-19 BRL -1.9% to 5.89; sugar Mar ~17.92, coffee Dec ~279.7"
+  "2026-11-19 BRL -1.9% to 5.89; sugar Mar ~17.92, coffee Dec ~279.7",
+  "2026-11-19 Sugar Mar -4.7% to ~17.19 (7-week low), below 17.92/17.23 supports as BRL slides ~2% to 5.90",
+  "2026-11-19 Cocoa Mar +3.4% to ~5,173 on short covering; Dec cotton back to ~76.0"
  ]
 }

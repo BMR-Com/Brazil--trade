@@ -3,39 +3,40 @@
  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
  "markets": {
   "cotton": {
-   "fundamental": "No fresh supply news overnight; prices are steadying after Wednesday's dollar-driven slide. With Dec in its delivery period, certificated flow and the high-grade share of certs set the tone for old-crop, and those are not a comfort for longs until Mar takes over.",
+   "fundamental": "Old-crop has bounced with Dec back to ~76 (+1.4%) and Mar near 80 despite a firm dollar, a technical recovery rather than new supply news. Dec deliveries and the high-grade share of certificated stock still cap the comfort for longs until Mar is the lead month.",
    "events": [
-    "Dec cotton slid with outside markets Wednesday, holding near 75 (Barchart)",
-    "Texas yield trimmed again in USDA's November crop report (RFD-TV)"
+    "Strong dollar weighed on cotton early (ADMIS)",
+    "Dec ~76.0, Mar ~79.8 by midday (ICE via TradingView)",
+    "Texas yield trimmed again in USDA's November report (RFD-TV)"
    ],
    "date": "2026-11-19"
   },
   "sugar": {
-   "fundamental": "Brazil still sets the tone: the real fell another ~1.9% this morning, which encourages more Brazilian raw-sugar export pricing and keeps Mar near 17.9. Tereos cutting its outlook on a poor French beet crop is a small European offset, not enough to change the Brazil-led bias.",
-   "fund_score": -0.3,
+   "fundamental": "A sharp Brazil-led leg lower: the real slid another ~2% to ~5.90 per dollar and Mar raws dropped ~4.7% to ~17.2, a 7-week low, as a cheaper real favours Brazilian export pricing. India's early crush adds to the near-term supply feel; its fresh raw-sugar import tender is only a small offset.",
+   "fund_score": -0.45,
    "events": [
-    "Real weakens again; Mar raws ~17.92 (Yahoo Finance)",
-    "Tereos cuts profit outlook after a poor French beet harvest (Investing.com)",
-    "USDA outlook sees lower world sugar output (ADMIS)"
+    "Mar raws ~17.19 (-4.7%), below 17.92 and 17.23 supports (ICE via TradingView)",
+    "Real weakens ~2% to ~5.90/USD (TradingView)",
+    "India invites fresh bids to import raw sugar (Reuters)"
    ],
    "date": "2026-11-19"
   },
   "coffee": {
-   "fundamental": "Bigger expected Brazil supplies and a weaker real keep pressure on flat price (Dec ~280). Deliverability still leans tight, though: falling ICE certified arabica stocks remain the counterweight and the key thing to watch into the Dec/Mar spread.",
+   "fundamental": "Flat price is holding up (Dec ~280, Mar ~276) even with the real down ~2%, so producer selling is not overwhelming the market. Shrinking ICE certified arabica stocks keep Dec deliverability tight and remain the main support for the Dec/Mar spread.",
    "fund_score": 0.1,
    "events": [
-    "Arabica eased on larger Brazil and global supply expectations (Barchart)",
-    "Brazilian real down ~1.9% Thursday, encouraging producer selling (Yahoo Finance)",
+    "Arabica near unchanged as the real weakens (ICE via TradingView)",
+    "Coffee and cocoa had slipped with sugar on Wednesday (Reuters)",
     "ICE certified arabica stocks keep declining (ICE)"
    ],
    "date": "2026-11-19"
   },
   "cocoa": {
-   "fundamental": "A modest bounce (Dec ~4,924, +1.6%) after Wednesday's drop, but nothing new on supply: rising ICE stocks and better West African crop prospects still dominate, while rain-slowed Ivorian port deliveries are a passing factor.",
-   "fund_score": -0.3,
+   "fundamental": "A strong rebound (Mar ~5,170, +3.4%) looks like short covering after the slide toward 4,980 support; the supply picture has not changed, with ICE stocks still climbing and West African prospects improved, so the bounce lacks fundamental backing.",
+   "fund_score": -0.25,
    "events": [
-    "Cocoa bounced ~1.6% early Thursday after Wednesday's slide (Yahoo Finance)",
-    "Improved supply prospects and rising ICE stocks weigh (Barchart)",
+    "Cocoa Mar up ~3.4% to ~5,173 (ICE via TradingView)",
+    "Soaring ICE inventories pressured prices on Wednesday (Barchart)",
     "Ghana plans to phase out raw bean exports by 2030 (Reuters)"
    ],
    "date": "2026-11-19"
