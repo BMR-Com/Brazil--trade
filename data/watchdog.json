@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-19 10:45 UTC",
+ "checked": "2026-11-20 10:30 UTC",
  "repo": "BMR-Com/Brazil--trade",
  "mode": "wait+recheck",
  "late_or_failed_at_start": [
@@ -27,6 +27,32 @@
    "failed": false,
    "reason": "data 2026-11-16 is older than the 2 business days limit",
    "workflow": "BMR-Com/Brazil--trade/softs_options.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "options_terminal_ct",
+   "report": "ICE cotton options (from uploaded ICE reports)",
+   "tab": "Options terminal",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 3 business days limit",
+   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "options_terminal_kc",
+   "report": "ICE coffee options (from uploaded ICE reports)",
+   "tab": "Options terminal",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 3 business days limit",
+   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)"
   },
@@ -163,29 +189,71 @@
    "action": "rerun dispatched"
   },
   {
-   "id": "ethanol",
-   "report": "CEPEA hydrous ethanol / B3",
-   "tab": "Sugar > Ethanol parity",
-   "latest": "2026-11-13",
+   "id": "what_changed",
+   "report": "What changed strip (settlement date)",
+   "tab": "Overview",
+   "latest": "2026-11-17",
    "expected": null,
    "late": true,
-   "failed": false,
-   "reason": "data 2026-11-13 is older than the 3 business days limit",
+   "failed": true,
+   "reason": "data 2026-11-17 is older than the 2 business days limit; last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44678138506)",
    "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
    "action": "rerun dispatched"
   },
   {
-   "id": "usda_reports",
-   "report": "USDA FAS GAIN attaché reports; FAS World Markets and Trade (cotton monthly, coffee Jun/Dec, sugar May/Nov); ERS Cotton and Wool / Sugar and Sweeteners Outlook",
-   "tab": "Cotton / Coffee / Sugar > Reports (USDA)",
-   "latest": "2026-11-19",
-   "expected": "2026-11-18",
+   "id": "delivery",
+   "report": "Delivery-period dashboard (settlement date)",
+   "tab": "Delivery",
+   "latest": "2026-11-17",
+   "expected": null,
+   "late": true,
+   "failed": true,
+   "reason": "data 2026-11-17 is older than the 2 business days limit; last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44678138506)",
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "alerts",
+   "report": "Alerts check",
+   "tab": "Overview alerts",
+   "latest": "2026-11-18",
+   "expected": null,
    "late": false,
    "failed": true,
-   "reason": "last run of usda_reports.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44457420654)",
-   "workflow": "BMR-Com/Brazil--trade/usda_reports.yml",
+   "reason": "last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44678138506)",
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "calls",
+   "report": "Desk call log / track record",
+   "tab": "Overview track record",
+   "latest": "2026-11-17",
+   "expected": null,
+   "late": true,
+   "failed": true,
+   "reason": "data 2026-11-17 is older than the 2 business days limit; last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44678138506)",
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "ethanol",
+   "report": "CEPEA hydrous ethanol / B3",
+   "tab": "Sugar > Ethanol parity",
+   "latest": "2026-11-13",
+   "expected": null,
+   "late": true,
+   "failed": true,
+   "reason": "data 2026-11-13 is older than the 3 business days limit; last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44678138506)",
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
    "action": "rerun dispatched"
@@ -196,51 +264,41 @@
    "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
    "file": "cotton_loan.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
+   "at": "2026-11-20T10:30+00:00",
    "ok": true,
    "for": "fsa_loan",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508683350"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44719812790"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/coffee.yml",
    "file": "coffee.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
+   "at": "2026-11-20T10:30+00:00",
    "ok": true,
    "for": "coffee_certs_profile",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508686348"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44719815651"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
    "file": "softs_contracts.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
+   "at": "2026-11-20T10:30+00:00",
    "ok": true,
    "for": "cc_certs_profile",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508689230"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44719818893"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
    "file": "desk_watch.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
+   "at": "2026-11-20T10:30+00:00",
    "ok": true,
-   "for": "ethanol",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508692679"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/usda_reports.yml",
-   "file": "usda_reports.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
-   "ok": true,
-   "for": "usda_reports",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508696380"
+   "for": "what_changed",
+   "result": "failure",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44719822121"
   }
  ],
  "still_late": [
@@ -287,21 +345,78 @@
    "action": "rerun dispatched"
   },
   {
+   "id": "what_changed",
+   "report": "What changed strip (settlement date)",
+   "tab": "Overview",
+   "latest": "2026-11-17",
+   "expected": null,
+   "late": true,
+   "failed": true,
+   "reason": "data 2026-11-17 is older than the 2 business days limit; last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44719822121)",
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "delivery",
+   "report": "Delivery-period dashboard (settlement date)",
+   "tab": "Delivery",
+   "latest": "2026-11-17",
+   "expected": null,
+   "late": true,
+   "failed": true,
+   "reason": "data 2026-11-17 is older than the 2 business days limit; last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44719822121)",
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "calls",
+   "report": "Desk call log / track record",
+   "tab": "Overview track record",
+   "latest": "2026-11-17",
+   "expected": null,
+   "late": true,
+   "failed": true,
+   "reason": "data 2026-11-17 is older than the 2 business days limit; last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44719822121)",
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
    "id": "ethanol",
    "report": "CEPEA hydrous ethanol / B3",
    "tab": "Sugar > Ethanol parity",
    "latest": "2026-11-13",
    "expected": null,
    "late": true,
-   "failed": false,
-   "reason": "data 2026-11-13 is older than the 3 business days limit",
+   "failed": true,
+   "reason": "data 2026-11-13 is older than the 3 business days limit; last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44719822121)",
    "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
    "action": "rerun dispatched"
   }
  ],
- "last_run_failed": [],
+ "last_run_failed": [
+  {
+   "id": "alerts",
+   "report": "Alerts check",
+   "tab": "Overview alerts",
+   "latest": "2026-11-18",
+   "expected": null,
+   "late": false,
+   "failed": true,
+   "reason": "last run of desk_watch.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/44719822121)",
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  }
+ ],
  "needs_ma": [
   {
    "id": "ice_options",
@@ -313,6 +428,34 @@
    "failed": false,
    "reason": "data 2026-11-16 is older than the 2 business days limit",
    "workflow": "BMR-Com/Brazil--trade/softs_options.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)",
+   "action": null
+  },
+  {
+   "id": "options_terminal_ct",
+   "report": "ICE cotton options (from uploaded ICE reports)",
+   "tab": "Options terminal",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 3 business days limit",
+   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)",
+   "action": null
+  },
+  {
+   "id": "options_terminal_kc",
+   "report": "ICE coffee options (from uploaded ICE reports)",
+   "tab": "Options terminal",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 3 business days limit",
+   "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)",
    "action": null
@@ -498,6 +641,46 @@
    "for": "usda_reports",
    "result": "success",
    "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508696380"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
+   "file": "cotton_loan.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-20T10:30+00:00",
+   "ok": true,
+   "for": "fsa_loan",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44719812790"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "file": "coffee.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-20T10:30+00:00",
+   "ok": true,
+   "for": "coffee_certs_profile",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44719815651"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
+   "file": "softs_contracts.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-20T10:30+00:00",
+   "ok": true,
+   "for": "cc_certs_profile",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44719818893"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "file": "desk_watch.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-20T10:30+00:00",
+   "ok": true,
+   "for": "what_changed",
+   "result": "failure",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44719822121"
   }
  ],
  "last_email": null

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20 07:46 UTC",
+ "generated": "2026-11-20 10:38 UTC",
  "today": "2026-11-20",
  "sources": [
   {
@@ -737,9 +737,9 @@
   {
    "group": "Cocoa",
    "source": "CC calendar-spread history (per-contract closes)",
-   "latest": "2026-11-19",
+   "latest": "2026-11-20",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -845,9 +845,9 @@
   {
    "group": "Coffee",
    "source": "KC calendar-spread history (per-contract closes)",
-   "latest": "2026-11-19",
+   "latest": "2026-11-20",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
