@@ -1,0 +1,8 @@
+# Raw-data folders left off the website by pipelines/build_site.py (they stay in the repo).
+# Each was checked on 2026-11-19: no page or script on the site references it, and a tab-by-tab crawl never requested it.
+# Delete a line to put that folder back on the site.
+weather/data/hist
+data/ice_staging
+data/geo/weather_hist
+data/fiber
+data/grains/raw/export_sales
