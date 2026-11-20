@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20 02:39 UTC",
+ "generated": "2026-11-20 03:26 UTC",
  "today": "2026-11-19",
  "sources": [
   {
@@ -221,7 +221,7 @@
   {
    "group": "Cotton",
    "source": "Crop projection (cotton-crop-progress)",
-   "latest": "2026-11-19",
+   "latest": "2026-11-20",
    "cadence": "weekly, after crop progress / ginnings / drought",
    "age": 0,
    "age_unit": "days",
@@ -977,7 +977,7 @@
   {
    "group": "Macro",
    "source": "News",
-   "latest": "2026-11-19",
+   "latest": "2026-11-20",
    "cadence": "every few hours",
    "age": 0,
    "age_unit": "business days",
