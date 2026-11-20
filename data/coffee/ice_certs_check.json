@@ -196,5 +196,23 @@
   "certified": 186414,
   "certified_auto": 186414,
   "differences": []
+ },
+ "2026-11-17": {
+  "status": "match",
+  "certified": 194523,
+  "certified_auto": 194523,
+  "differences": []
+ },
+ "2026-11-18": {
+  "status": "match",
+  "certified": 201273,
+  "certified_auto": 201273,
+  "differences": []
+ },
+ "2026-11-19": {
+  "status": "match",
+  "certified": 219436,
+  "certified_auto": 219436,
+  "differences": []
  }
 }

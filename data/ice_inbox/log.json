@@ -1,60 +1,60 @@
 {
  "last": {
   "CC_futures": {
-   "received": "2026-11-17 16:29 UTC",
-   "file": "CC_2026_11_16-2.pdf",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_19-2.pdf",
    "label": "Cocoa futures settlement (ICE daily market report)",
-   "report_date": "2026-11-16",
-   "stored": "data/ice_staging/pdfs/CC_2026_11_16-2.pdf"
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_19-2.pdf"
   },
   "CC_options": {
-   "received": "2026-11-17 16:29 UTC",
-   "file": "CC_2026_11_16.pdf",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_19.pdf",
    "label": "Cocoa options settlement (ICE daily market report)",
-   "report_date": "2026-11-16",
-   "stored": "data/ice_staging/pdfs/CC_2026_11_16.pdf"
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_19.pdf"
   },
   "CT_futures": {
-   "received": "2026-11-17 16:29 UTC",
-   "file": "CT_2026_11_16-2.pdf",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_19-2.pdf",
    "label": "Cotton futures settlement (ICE daily market report)",
-   "report_date": "2026-11-16",
-   "stored": "data/ice_staging/pdfs/CT_2026_11_16-2.pdf"
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_19-2.pdf"
   },
   "CT_options": {
-   "received": "2026-11-17 16:29 UTC",
-   "file": "CT_2026_11_16.pdf",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_19.pdf",
    "label": "Cotton options settlement (ICE daily market report)",
-   "report_date": "2026-11-16",
-   "stored": "data/ice_staging/pdfs/CT_2026_11_16.pdf"
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_19.pdf"
   },
   "KC_futures": {
-   "received": "2026-11-17 16:29 UTC",
-   "file": "KC_2026_11_16-2.pdf",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_19-2.pdf",
    "label": "Coffee futures settlement (ICE daily market report)",
-   "report_date": "2026-11-16",
-   "stored": "data/ice_staging/pdfs/KC_2026_11_16-2.pdf"
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_19-2.pdf"
   },
   "KC_options": {
-   "received": "2026-11-17 16:29 UTC",
-   "file": "KC_2026_11_16.pdf",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_19.pdf",
    "label": "Coffee options settlement (ICE daily market report)",
-   "report_date": "2026-11-16",
-   "stored": "data/ice_staging/pdfs/KC_2026_11_16.pdf"
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_19.pdf"
   },
   "SB_futures": {
-   "received": "2026-11-17 16:29 UTC",
-   "file": "SB_2026_11_16-2.pdf",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_19-2.pdf",
    "label": "Sugar No 11 futures settlement (ICE daily market report)",
-   "report_date": "2026-11-16",
-   "stored": "data/ice_staging/pdfs/SB_2026_11_16-2.pdf"
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_19-2.pdf"
   },
   "SB_options": {
-   "received": "2026-11-17 16:29 UTC",
-   "file": "SB_2026_11_16.pdf",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_19.pdf",
    "label": "Sugar No 11 options settlement (ICE daily market report)",
-   "report_date": "2026-11-16",
-   "stored": "data/ice_staging/pdfs/SB_2026_11_16.pdf"
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_19.pdf"
   },
   "ct_grade": {
    "received": "2026-11-17 16:34 UTC",
@@ -120,10 +120,10 @@
    "stored": "data/coffee/ice_aging_history.csv"
   },
   "kc_certs": {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "coffee_cert_stock_20261116.xls",
+   "received": "2026-11-20 14:50 UTC",
+   "file": "coffee_cert_stock_20261119.xls",
    "label": "Coffee certs: certified warehouse stock",
-   "report_date": "2026-11-16",
+   "report_date": "2026-11-19",
    "stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv"
   },
   "cc_grading": {
@@ -149,6 +149,402 @@
   }
  },
  "recent": [
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "coffee_cert_stock_20261119.xls",
+   "type": "kc_certs",
+   "label": "Coffee certs: certified warehouse stock",
+   "market": "KC",
+   "report_date": "2026-11-19",
+   "stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv",
+   "note": "matches the automatic series; detail: 248,175 bags pending grading",
+   "original": "data/ice_raw/2026-11-20/coffee_cert_stock_20261119.xls"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "coffee_cert_stock_20261118.xls",
+   "type": "kc_certs",
+   "label": "Coffee certs: certified warehouse stock",
+   "market": "KC",
+   "report_date": "2026-11-18",
+   "stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv",
+   "note": "matches the automatic series; detail: 246,647 bags pending grading",
+   "original": "data/ice_raw/2026-11-20/coffee_cert_stock_20261118.xls"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "coffee_cert_stock_20261117.xls",
+   "type": "kc_certs",
+   "label": "Coffee certs: certified warehouse stock",
+   "market": "KC",
+   "report_date": "2026-11-17",
+   "stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv",
+   "note": "matches the automatic series; detail: 212,959 bags pending grading",
+   "original": "data/ice_raw/2026-11-20/coffee_cert_stock_20261117.xls"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "coffee_cert_stock_20261116.xls",
+   "type": "kc_certs",
+   "label": "Coffee certs: certified warehouse stock",
+   "market": "KC",
+   "report_date": "2026-11-16",
+   "stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv",
+   "note": "matches the automatic series; detail: 196,852 bags pending grading",
+   "original": "data/ice_raw/2026-11-20/coffee_cert_stock_20261116.xls"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_19.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_19.pdf",
+   "note": "staged 631 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_19-2.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_19-2.pdf",
+   "note": "staged 12 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_18.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_18.pdf",
+   "note": "staged 621 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_18-2.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_18-2.pdf",
+   "note": "staged 12 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_17.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-17",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_17.pdf",
+   "note": "staged 619 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_17-2.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-17",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_17-2.pdf",
+   "note": "staged 12 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_16.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_16.pdf",
+   "note": "staged 687 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "SB_2026_11_16-2.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_16-2.pdf",
+   "note": "staged 12 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_19.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_19.pdf",
+   "note": "staged 516 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_19-2.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_19-2.pdf",
+   "note": "staged 7 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_18.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_18.pdf",
+   "note": "staged 506 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_18-2.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_18-2.pdf",
+   "note": "staged 7 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_17.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-17",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_17.pdf",
+   "note": "staged 502 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_17-2.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-17",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_17-2.pdf",
+   "note": "staged 7 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_16.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_16.pdf",
+   "note": "staged 487 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "KC_2026_11_16-2.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_16-2.pdf",
+   "note": "staged 7 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_19.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_19.pdf",
+   "note": "staged 400 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_19-2.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_19-2.pdf",
+   "note": "staged 15 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_18.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_18.pdf",
+   "note": "staged 396 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_18-2.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_18-2.pdf",
+   "note": "staged 15 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_17.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-17",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_17.pdf",
+   "note": "staged 394 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_17-2.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-17",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_17-2.pdf",
+   "note": "staged 15 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_16.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_16.pdf",
+   "note": "staged 391 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CT_2026_11_16-2.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_16-2.pdf",
+   "note": "staged 15 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_19.pdf",
+   "type": "CC_options",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_19.pdf",
+   "note": "staged 391 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_19-2.pdf",
+   "type": "CC_futures",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_19-2.pdf",
+   "note": "staged 10 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_18.pdf",
+   "type": "CC_options",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_18.pdf",
+   "note": "staged 386 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_18-2.pdf",
+   "type": "CC_futures",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_18-2.pdf",
+   "note": "staged 10 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_17.pdf",
+   "type": "CC_options",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-17",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_17.pdf",
+   "note": "staged 379 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_17-2.pdf",
+   "type": "CC_futures",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-17",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_17-2.pdf",
+   "note": "staged 10 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_16.pdf",
+   "type": "CC_options",
+   "label": "Cocoa options settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_16.pdf",
+   "note": "staged 372 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-20 14:50 UTC",
+   "file": "CC_2026_11_16-2.pdf",
+   "type": "CC_futures",
+   "label": "Cocoa futures settlement (ICE daily market report)",
+   "market": "CC",
+   "report_date": "2026-11-16",
+   "stored": "data/ice_staging/pdfs/CC_2026_11_16-2.pdf",
+   "note": "staged 10 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
   {
    "received": "2026-11-17 16:39 UTC",
    "file": "September_2023_Grading_Summary_Analysis.pdf",
@@ -1952,404 +2348,8 @@
    "stored": "data/cocoa/ice_certs_daily.csv",
    "note": "515,240 bags certified; 93,493 pending grading",
    "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261014.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-14",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "492,532 bags certified; 116,953 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261013.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-13",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "479,060 bags certified; 119,857 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261012.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-12",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "479,060 bags certified; 117,682 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261009.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-09",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "464,991 bags certified; 124,353 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261008.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-08",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "451,142 bags certified; 48,561 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261007.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-07",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "439,117 bags certified; 58,357 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261006-stop_cc_graders_test_message.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-06",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "423,725 bags certified; 66,833 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261005.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-05",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "423,725 bags certified; 55,956 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261002.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-02",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "423,725 bags certified; 47,280 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_Septmeber2017.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2017-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "36 graded chops in 1 origin(s), period 2017-09-01 to 2017-09-29",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_September2024.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2024-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "23 graded chops in 1 origin(s), period 2024-09-01 to 2024-09-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_September2019.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2019-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "0 graded chops in 1 origin(s), period 2019-09-01 to 2019-09-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_Sept_2025.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2025-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "174 graded chops in 3 origin(s), period 2025-09-01 to 2025-09-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_Sep2020.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2020-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "85 graded chops in 4 origin(s), period 2020-09-01 to 2020-09-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_Sep2018.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2018-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "475 graded chops in 4 origin(s), period 2018-08-30 to 2018-09-28",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_SEPTEMBER_2026.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2026-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "129 graded chops in 5 origin(s), period 2026-09-01 to 2026-09-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_SEPT2022.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2022-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "1626 graded chops in 9 origin(s), period 2022-09-01 to 2022-09-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_SEPT2021.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2021-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "456 graded chops in 2 origin(s), period 2021-09-01 to 2021-09-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_SEP2023.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2023-09",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "0 graded chops in 1 origin(s), period 2023-09-01 to 2023-09-29",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_October_2025.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2025-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "458 graded chops in 5 origin(s), period 2025-10-01 to 2025-10-31",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_October2024.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2024-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "1310 graded chops in 8 origin(s), period 2024-10-01 to 2024-10-31",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_October2019.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2019-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "13 graded chops in 1 origin(s), period 2019-10-01 to 2019-10-31",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_October2018.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2018-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "0 graded chops in 1 origin(s), period 2018-10-01 to 2018-10-31",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_October2017.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2017-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "127 graded chops in 6 origin(s), period 2017-10-01 to 2017-10-31",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_Oct2020.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2020-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "184 graded chops in 4 origin(s), period 2020-10-01 to 2020-10-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_OCT_2022.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2022-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "246 graded chops in 6 origin(s), period 2022-10-01 to 2022-10-31",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_OCTOBER_2026.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2026-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "1491 graded chops in 8 origin(s), period 2026-10-01 to 2026-10-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_OCT2023.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2023-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "1842 graded chops in 10 origin(s), period 2023-10-01 to 2023-10-31",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_OCT2021.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2021-10",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "1128 graded chops in 9 origin(s), period 2021-10-01 to 2021-10-29",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_November2024.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2024-11",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "614 graded chops in 6 origin(s), period 2024-11-01 to 2024-11-29",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_November2019.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2019-11",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "220 graded chops in 8 origin(s), period 2019-11-01 to 2019-11-29",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_November2018.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2018-11",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "2527 graded chops in 5 origin(s), period 2018-11-01 to 2018-11-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_November2017.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2017-11",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "825 graded chops in 3 origin(s), period 2017-11-01 to 2017-11-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_November2016.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2016-11",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "405 graded chops in 9 origin(s), period 2016-11-01 to 2016-11-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_Nov_2025.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2025-11",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "779 graded chops in 4 origin(s), period 2025-11-03 to 2025-11-28",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Cocoa_Grading_Results_with_Discounts_EOM_Nov2020.xls",
-   "type": "cc_grading",
-   "label": "Cocoa grading results with discounts (monthly)",
-   "market": "CC",
-   "report_date": "2020-11",
-   "stored": "data/cocoa/ice_grading_monthly.csv",
-   "note": "504 graded chops in 8 origin(s), period 2020-11-01 to 2020-11-30",
-   "kept_copy": "data/ice_raw/latest/cc_grading.xls"
   }
  ],
  "unrecognised": [],
- "updated": "2026-11-20 07:45 UTC"
+ "updated": "2026-11-20 14:50 UTC"
 }

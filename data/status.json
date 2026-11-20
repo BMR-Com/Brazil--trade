@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20 12:53 UTC",
+ "generated": "2026-11-20 14:50 UTC",
  "today": "2026-11-20",
  "sources": [
   {
@@ -341,12 +341,12 @@
   {
    "group": "Coffee",
    "source": "ICE certs detail: pending, transition, passed/failed, rebagging (upload)",
-   "latest": "2026-11-16",
+   "latest": "2026-11-19",
    "cadence": "daily",
-   "age": 4,
+   "age": 1,
    "age_unit": "business days",
    "limit": 2,
-   "state": "late",
+   "state": "ok",
    "manual": true,
    "used_in": "Certs profile tab"
   },
@@ -389,12 +389,12 @@
   {
    "group": "Coffee",
    "source": "Certs profile and delivery economics (built from the ICE files)",
-   "latest": "2026-11-16",
+   "latest": "2026-11-19",
    "cadence": "daily",
-   "age": 4,
+   "age": 1,
    "age_unit": "business days",
    "limit": 2,
-   "state": "late",
+   "state": "ok",
    "manual": false,
    "used_in": "Certs profile tab"
   },
@@ -749,9 +749,9 @@
   {
    "group": "Coffee",
    "source": "KC spread model: fair front spread from certified stocks",
-   "latest": "2026-11-19",
+   "latest": "2026-11-20",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -1049,12 +1049,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": "2026-11-20",
+   "latest": null,
    "cadence": "monthly",
-   "age": 0,
+   "age": null,
    "age_unit": "days",
    "limit": 40,
-   "state": "ok",
+   "state": "missing",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1083,73 +1083,73 @@
    "used_in": "options terminal"
   }
  ],
- "late": 18,
+ "late": 17,
  "inbox": {
-  "updated": "2026-11-20 07:45 UTC",
+  "updated": "2026-11-20 14:50 UTC",
   "last": [
    {
     "type": "CT_options",
-    "received": "2026-11-17 16:29 UTC",
-    "file": "CT_2026_11_16.pdf",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "CT_2026_11_19.pdf",
     "label": "Cotton options settlement (ICE daily market report)",
-    "report_date": "2026-11-16",
-    "stored": "data/ice_staging/pdfs/CT_2026_11_16.pdf"
+    "report_date": "2026-11-19",
+    "stored": "data/ice_staging/pdfs/CT_2026_11_19.pdf"
    },
    {
     "type": "CT_futures",
-    "received": "2026-11-17 16:29 UTC",
-    "file": "CT_2026_11_16-2.pdf",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "CT_2026_11_19-2.pdf",
     "label": "Cotton futures settlement (ICE daily market report)",
-    "report_date": "2026-11-16",
-    "stored": "data/ice_staging/pdfs/CT_2026_11_16-2.pdf"
+    "report_date": "2026-11-19",
+    "stored": "data/ice_staging/pdfs/CT_2026_11_19-2.pdf"
    },
    {
     "type": "KC_options",
-    "received": "2026-11-17 16:29 UTC",
-    "file": "KC_2026_11_16.pdf",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "KC_2026_11_19.pdf",
     "label": "Coffee options settlement (ICE daily market report)",
-    "report_date": "2026-11-16",
-    "stored": "data/ice_staging/pdfs/KC_2026_11_16.pdf"
+    "report_date": "2026-11-19",
+    "stored": "data/ice_staging/pdfs/KC_2026_11_19.pdf"
    },
    {
     "type": "KC_futures",
-    "received": "2026-11-17 16:29 UTC",
-    "file": "KC_2026_11_16-2.pdf",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "KC_2026_11_19-2.pdf",
     "label": "Coffee futures settlement (ICE daily market report)",
-    "report_date": "2026-11-16",
-    "stored": "data/ice_staging/pdfs/KC_2026_11_16-2.pdf"
+    "report_date": "2026-11-19",
+    "stored": "data/ice_staging/pdfs/KC_2026_11_19-2.pdf"
    },
    {
     "type": "SB_options",
-    "received": "2026-11-17 16:29 UTC",
-    "file": "SB_2026_11_16.pdf",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "SB_2026_11_19.pdf",
     "label": "Sugar No 11 options settlement (ICE daily market report)",
-    "report_date": "2026-11-16",
-    "stored": "data/ice_staging/pdfs/SB_2026_11_16.pdf"
+    "report_date": "2026-11-19",
+    "stored": "data/ice_staging/pdfs/SB_2026_11_19.pdf"
    },
    {
     "type": "SB_futures",
-    "received": "2026-11-17 16:29 UTC",
-    "file": "SB_2026_11_16-2.pdf",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "SB_2026_11_19-2.pdf",
     "label": "Sugar No 11 futures settlement (ICE daily market report)",
-    "report_date": "2026-11-16",
-    "stored": "data/ice_staging/pdfs/SB_2026_11_16-2.pdf"
+    "report_date": "2026-11-19",
+    "stored": "data/ice_staging/pdfs/SB_2026_11_19-2.pdf"
    },
    {
     "type": "CC_options",
-    "received": "2026-11-17 16:29 UTC",
-    "file": "CC_2026_11_16.pdf",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "CC_2026_11_19.pdf",
     "label": "Cocoa options settlement (ICE daily market report)",
-    "report_date": "2026-11-16",
-    "stored": "data/ice_staging/pdfs/CC_2026_11_16.pdf"
+    "report_date": "2026-11-19",
+    "stored": "data/ice_staging/pdfs/CC_2026_11_19.pdf"
    },
    {
     "type": "CC_futures",
-    "received": "2026-11-17 16:29 UTC",
-    "file": "CC_2026_11_16-2.pdf",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "CC_2026_11_19-2.pdf",
     "label": "Cocoa futures settlement (ICE daily market report)",
-    "report_date": "2026-11-16",
-    "stored": "data/ice_staging/pdfs/CC_2026_11_16-2.pdf"
+    "report_date": "2026-11-19",
+    "stored": "data/ice_staging/pdfs/CC_2026_11_19-2.pdf"
    },
    {
     "type": "ct_grade",
@@ -1193,10 +1193,10 @@
    },
    {
     "type": "kc_certs",
-    "received": "2026-11-17 16:36 UTC",
-    "file": "coffee_cert_stock_20261116.xls",
+    "received": "2026-11-20 14:50 UTC",
+    "file": "coffee_cert_stock_20261119.xls",
     "label": "Coffee certs: certified warehouse stock",
-    "report_date": "2026-11-16",
+    "report_date": "2026-11-19",
     "stored": "data/coffee/ice_certs_inbox.csv, data/coffee/ice_certs_daily_detail.csv"
    },
    {
