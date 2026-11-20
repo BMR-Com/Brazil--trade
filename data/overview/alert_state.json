@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20 13:44 UTC",
+ "updated": "2026-11-20 20:55 UTC",
  "by": "claude",
  "views": {
   "cotton": {
@@ -10,22 +10,25 @@
   "sugar": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.34
+   "score": -0.35
   },
   "coffee": {
    "view": "mildly bearish",
    "shade": "bear1",
-   "score": -0.15
+   "score": -0.17
   },
   "cocoa": {
-   "view": "bearish",
-   "shade": "bear2",
-   "score": -0.2
+   "view": "mildly bearish",
+   "shade": "bear1",
+   "score": -0.18
   }
  },
  "alerts": {
   "cotton": [],
-  "sugar": [],
+  "sugar": [
+   "Broke below S1 17.14",
+   "Broke below S2 17.13"
+  ],
   "coffee": [],
   "cocoa": []
  },
@@ -60,6 +63,8 @@
   "2026-11-19 Cocoa Mar +3.4% to ~5,173 on short covering; Dec cotton back to ~76.0",
   "2026-11-19 Risk-off close: S&P -1.9%, VIX ~28, USD/BRL ~5.93 (-2.7% BRL); sugar Mar ~17.15, cocoa Dec +3.8% ~5,030",
   "2026-11-20 Coffee view to mildly bearish (Mar ~269)",
-  "2026-11-20 Cocoa: EUDR prep lifts European premiums; delayed Ivorian crop risks port congestion"
+  "2026-11-20 Cocoa: EUDR prep lifts European premiums; delayed Ivorian crop risks port congestion",
+  "2026-11-20 Equity rout: Nasdaq ~-4.8%, S&P ~-3.3%, VIX ~35; gold -4%, silver -8%",
+  "2026-11-20 US screwworm cases surge (Reuters)"
  ]
 }

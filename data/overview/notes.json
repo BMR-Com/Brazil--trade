@@ -5,54 +5,54 @@
   "cotton": {
    "date": "2026-11-20",
    "by": "claude",
-   "time": "07:50 CT",
+   "time": "14:50 CT",
    "claude_date": "2026-11-20",
-   "fundamental": "Nothing new on the supply side overnight: US harvest reports describe uneven yields after weather extremes, and the dollar is still the main drag. Dec is in delivery week near 75.8, so the tradeable read is Mar/May; watch high-grade certs, which would add to delivered pressure rather than ease it.",
+   "fundamental": "Still no fresh supply news: harvest reports keep describing uneven US yields, and Dec is in delivery near 75.8, so the live read is Mar/May/Jul. The broad risk-off move in equities today is a demand-side headwind for a fund-driven market; high-grade certs remain the thing to watch for longs.",
    "events": [
-    "Farm Progress says weather extremes left mixed US cotton yields (Farm Progress)",
-    "Cotton recovers part of the week's losses on Thursday (Barchart)",
-    "Firm dollar weighs on cotton demand (ADMIS)"
+    "Mixed US cotton yields after weather extremes (Farm Progress)",
+    "Wall Street AI-led rout, VIX near 35 (AP, Yahoo Finance)"
    ]
   },
   "sugar": {
    "date": "2026-11-20",
    "by": "claude",
-   "time": "07:50 CT",
+   "time": "14:50 CT",
    "claude_date": "2026-11-20",
-   "fundamental": "The sell-off is Brazil-led: a sliding real (near 5.90) makes Brazilian exports cheaper and pushes Mar toward 17.15, a seven-week low. The only offset is the poor French beet harvest, which tightens EU white supply at the margin but does not change the Centre-South picture.",
+   "fundamental": "Brazil is still the driver: the real weakened again (USD/BRL near 5.95), keeping Centre-South export parity cheap, and Mar has slipped through the 17.13-17.14 support band to around 17.07. Talk of a better supply outlook adds to it; the weak French beet crop is only a marginal offset for whites.",
    "events": [
-    "Real weakness drives raw sugar to a 7-week low (Barchart)",
-    "Tereos cuts its outlook after a weak French beet crop (Investing.com)"
+    "Mar raw sugar breaks below 17.13 as the real slides (Barchart, Yahoo Finance)",
+    "Improved supply outlook weighs on sugar (Barchart)",
+    "Tereos cuts outlook on poor French beet crop (Investing.com)"
    ],
-   "fund_score": -0.4,
-   "claude_fund_score": -0.4
+   "fund_score": -0.45,
+   "claude_fund_score": -0.45
   },
   "coffee": {
    "date": "2026-11-20",
    "by": "claude",
-   "time": "07:50 CT",
+   "time": "14:50 CT",
    "claude_date": "2026-11-20",
-   "fundamental": "No fresh ICE certified-stock or Brazil deliverability data since the low certs reading earlier this week; the near-term support from tight exchange stocks is intact. Smaller Colombian exports helped Thursday, but the weaker real keeps Brazilian farmer selling a headwind.",
+   "fundamental": "Arabica gave back about 3% on talk of stronger Brazilian exports and a weaker real, which encourages farmer selling. There is still no new ICE certified-stock or Antwerp figure, so the support from thin exchange stocks is unchanged; if Brazil shipments do pick up, that would ease deliverability concerns over the next couple of months.",
    "events": [
-    "Lower Colombian exports lift arabica (Barchart)",
-    "Real slide weighs on Brazil-origin softs (Barchart)"
+    "Outlook for stronger Brazil exports weighs on arabica (Barchart)",
+    "Real weakens toward 5.95 per dollar (Yahoo Finance)"
    ],
-   "fund_score": 0.1,
-   "claude_fund_score": 0.1
+   "fund_score": 0.0,
+   "claude_fund_score": 0.0
   },
   "cocoa": {
    "date": "2026-11-20",
    "by": "claude",
-   "time": "07:50 CT",
+   "time": "14:50 CT",
    "claude_date": "2026-11-20",
-   "fundamental": "Rising ICE stocks still weigh, but two supportive threads are building: European physical premiums are firming as buyers prepare for EU deforestation rules, and the late Ivorian main crop risks port congestion that would slow arrivals. Thursday's short-covering bounce fits that mix.",
+   "fundamental": "Cocoa firmed about 1.5-2% as supply risks came back into focus: an El Nino warning for the coming West African seasons and the risk that rains and congestion slow Ivorian port arrivals. Rising ICE stocks still cap rallies, and European buyers paying up ahead of EU deforestation rules supports physical premiums.",
    "events": [
-    "Cocoa dearer in Europe as traders prepare for EUDR (Bloomberg)",
-    "Delayed Ivory Coast crop may congest ports ahead of EU rules (Reuters via Nation)",
-    "Mar cocoa jumps ~3% on short covering (ICE)"
+    "El Nino risk hits the cocoa output outlook (ADMIS)",
+    "Global supply risks lift cocoa (Barchart)",
+    "European cocoa premiums firm before deforestation rules (Bloomberg)"
    ],
-   "fund_score": -0.15,
-   "claude_fund_score": -0.15
+   "fund_score": -0.1,
+   "claude_fund_score": -0.1
   }
  },
  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-19 21:44 CT: Claude's desk read had not run for 5+ hours."
