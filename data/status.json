@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19 23:15 UTC",
+ "generated": "2026-11-20 01:26 UTC",
  "today": "2026-11-19",
  "sources": [
   {
@@ -53,9 +53,9 @@
   {
    "group": "Positions",
    "source": "CFTC cotton on-call (as of Fri, out next Thu)",
-   "latest": "2026-11-06",
+   "latest": "2026-11-13",
    "cadence": "weekly",
-   "age": 13,
+   "age": 6,
    "age_unit": "days",
    "limit": 13,
    "state": "ok",
@@ -1049,12 +1049,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": null,
+   "latest": "2026-11-20",
    "cadence": "monthly",
-   "age": null,
+   "age": 0,
    "age_unit": "days",
    "limit": 40,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1083,7 +1083,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 14,
+ "late": 13,
  "inbox": {
   "updated": "2026-11-19 23:15 UTC",
   "last": [
