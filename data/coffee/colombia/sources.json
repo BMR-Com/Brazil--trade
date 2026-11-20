@@ -1,43 +1,43 @@
 {
  "files": {
   "prices_xlsx": {
-   "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/09/Precios-area-y-produccion-de-cafe-Noviembre-2026-1.xlsx",
-   "latest_data": "production 2026-10, internal price 2026-11-12",
-   "read": "2026-11-20 03:57 UTC",
+   "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/09/Precios-area-y-produccion-de-cafe-Noviembre-2026.xlsx",
+   "latest_data": "production 2026-10, internal price 2026-11-22",
+   "read": "2026-11-20 21:50 UTC",
    "via": "auto"
   },
   "exports_xlsx": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/10/Exportaciones-Septiembre-2026.xlsx",
    "latest_data": "exports 2026-09",
-   "read": "2026-11-20 03:57 UTC",
+   "read": "2026-11-20 21:50 UTC",
    "via": "auto"
   },
   "monthly_pdf": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/11/10.-Informe-mensual-Octubre-2026-p.pdf",
    "latest_data": "report 2026-10",
-   "read": "2026-11-20 03:57 UTC",
+   "read": "2026-11-20 21:51 UTC",
    "via": "auto"
   },
   "daily_pdf": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/03/precio_cafe.pdf",
-   "latest_data": "2026-11-19",
-   "read": "2026-11-20 03:57 UTC",
+   "latest_data": "2026-11-20",
+   "read": "2026-11-20 21:51 UTC",
    "via": "auto"
   },
   "expos_pdf": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/10/Informe-Expos-Septiembre-2026.pdf",
    "latest_data": "",
-   "read": "2026-11-20 03:57 UTC",
+   "read": "2026-11-20 21:51 UTC",
    "via": "auto"
   }
  },
- "updated": "2026-11-20 03:58 UTC",
+ "updated": "2026-11-20 21:51 UTC",
  "monthly_reports": {
   "2026-10": "https://federaciondecafeteros.org/wp-content/uploads/2026/11/10.-Informe-mensual-Octubre-2026-p.pdf"
  },
- "last_check": "2026-11-20 03:58 UTC",
+ "last_check": "2026-11-20 21:51 UTC",
  "pages_read": [
   "https://federaciondecafeteros.org/estadisticas-cafeteras/"
  ],
- "last_ok": "2026-11-20 03:58 UTC"
+ "last_ok": "2026-11-20 21:51 UTC"
 }
