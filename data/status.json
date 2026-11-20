@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20 14:50 UTC",
+ "generated": "2026-11-20 14:53 UTC",
  "today": "2026-11-20",
  "sources": [
   {
@@ -412,26 +412,26 @@
   },
   {
    "group": "Coffee",
-   "source": "CEPEA/ESALQ arabica index (Ma's cepea.org.br download, inbox/)",
+   "source": "CEPEA/ESALQ arabica index (scheduled fetch weekdays; Ma's inbox download as backup)",
    "latest": "2026-11-17",
-   "cadence": "weekly",
+   "cadence": "daily",
    "age": 3,
    "age_unit": "days",
-   "limit": 10,
+   "limit": 4,
    "state": "ok",
-   "manual": true,
+   "manual": false,
    "used_in": "Brazil basis history, KC spread model (Brazil leg, Lab)"
   },
   {
    "group": "Coffee",
-   "source": "CEPEA/ESALQ robusta index (Ma's cepea.org.br download, inbox/)",
+   "source": "CEPEA/ESALQ robusta index (scheduled fetch weekdays; Ma's inbox download as backup)",
    "latest": "2026-11-17",
-   "cadence": "weekly",
+   "cadence": "daily",
    "age": 3,
    "age_unit": "days",
-   "limit": 10,
+   "limit": 4,
    "state": "ok",
-   "manual": true,
+   "manual": false,
    "used_in": "Brazil conilon vs London chart"
   },
   {
@@ -1049,12 +1049,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": null,
+   "latest": "2026-11-20",
    "cadence": "monthly",
-   "age": null,
+   "age": 0,
    "age_unit": "days",
    "limit": 40,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1083,7 +1083,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 17,
+ "late": 16,
  "inbox": {
   "updated": "2026-11-20 14:50 UTC",
   "last": [
