@@ -1,26 +1,26 @@
 {
- "updated": "2026-11-20 03:44 UTC",
- "by": "bot",
+ "updated": "2026-11-20 13:44 UTC",
+ "by": "claude",
  "views": {
   "cotton": {
    "view": "mildly bullish",
    "shade": "bull1",
-   "score": 0.12
+   "score": 0.11
   },
   "sugar": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.37
+   "score": -0.34
   },
   "coffee": {
-   "view": "neutral",
-   "shade": "neutral",
-   "score": -0.05
+   "view": "mildly bearish",
+   "shade": "bear1",
+   "score": -0.15
   },
   "cocoa": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.25
+   "score": -0.2
   }
  },
  "alerts": {
@@ -58,6 +58,8 @@
   "2026-11-19 BRL -1.9% to 5.89; sugar Mar ~17.92, coffee Dec ~279.7",
   "2026-11-19 Sugar Mar -4.7% to ~17.19 (7-week low), below 17.92/17.23 supports as BRL slides ~2% to 5.90",
   "2026-11-19 Cocoa Mar +3.4% to ~5,173 on short covering; Dec cotton back to ~76.0",
-  "2026-11-19 Risk-off close: S&P -1.9%, VIX ~28, USD/BRL ~5.93 (-2.7% BRL); sugar Mar ~17.15, cocoa Dec +3.8% ~5,030"
+  "2026-11-19 Risk-off close: S&P -1.9%, VIX ~28, USD/BRL ~5.93 (-2.7% BRL); sugar Mar ~17.15, cocoa Dec +3.8% ~5,030",
+  "2026-11-20 Coffee view to mildly bearish (Mar ~269)",
+  "2026-11-20 Cocoa: EUDR prep lifts European premiums; delayed Ivorian crop risks port congestion"
  ]
 }

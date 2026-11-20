@@ -1,61 +1,59 @@
 {
-  "updated": "2026-11-19",
-  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
-  "markets": {
-    "cotton": {
-      "date": "2026-11-19",
-      "by": "bot",
-      "time": "21:44 CT",
-      "claude_date": "2026-11-19",
-      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 2 up, 0 down by keyword).",
-      "events": [
-        "Strong Dollar Weighs on Cotton (ADMIS, 2026-11-19)",
-        "Cotton Claw Some Gains Back on Thursday (Barchart.com, 2026-11-19)",
-        "Cotton Posting Midday Gains (Barchart.com, 2026-11-19)"
-      ]
-    },
-    "sugar": {
-      "date": "2026-11-19",
-      "by": "bot",
-      "time": "21:44 CT",
-      "claude_date": "2026-11-19",
-      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported lower (0 supply-tight, 0 supply-loose, 0 up, 1 down by keyword).",
-      "events": [
-        "Brazilian Real Weakness Hammers Sugar Prices (Barchart.com, 2026-11-19)",
-        "Sugar Prices Plummet with the Brazilian Real (Barchart.com, 2026-11-19)",
-        "Tereos cuts profit outlook after poor French sugar beet harvest (Investing.com, 2026-11-19)"
-      ],
-      "claude_fund_score": -0.5,
-      "fund_score": -0.5
-    },
-    "coffee": {
-      "date": "2026-11-19",
-      "by": "bot",
-      "time": "21:44 CT",
-      "claude_date": "2026-11-19",
-      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 1 up, 0 down by keyword).",
-      "events": [
-        "Eight O'Clock Coffee Expands Portfolio with New Blonde Roast K-Cup® Pods – Company Announcement (Financial Times, 2026-11-19)",
-        "Reduced Coffee Exports from Colombia Boosts Arabica Prices (Barchart.com, 2026-11-19)",
-        "Arabica Coffee Rebounds on Smaller Exports from Colombia (Barchart.com, 2026-11-19)"
-      ],
-      "claude_fund_score": 0.15,
-      "fund_score": 0.15
-    },
-    "cocoa": {
-      "date": "2026-11-19",
-      "by": "bot",
-      "time": "21:44 CT",
-      "claude_date": "2026-11-19",
-      "fundamental": "No new headlines for this market in the last 30 hours.",
-      "events": [
-        "Cocoa Dec up ~3.8% to ~5,030 (ICE via Yahoo)",
-        "Rising ICE inventories still weigh on the balance (Barchart)",
-        "Ghana plans to phase out raw bean exports by 2030 (Reuters)"
-      ],
-      "claude_fund_score": -0.25,
-      "fund_score": -0.25
-    }
+ "updated": "2026-11-20",
+ "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+ "markets": {
+  "cotton": {
+   "date": "2026-11-20",
+   "by": "claude",
+   "time": "07:50 CT",
+   "claude_date": "2026-11-20",
+   "fundamental": "Nothing new on the supply side overnight: US harvest reports describe uneven yields after weather extremes, and the dollar is still the main drag. Dec is in delivery week near 75.8, so the tradeable read is Mar/May; watch high-grade certs, which would add to delivered pressure rather than ease it.",
+   "events": [
+    "Farm Progress says weather extremes left mixed US cotton yields (Farm Progress)",
+    "Cotton recovers part of the week's losses on Thursday (Barchart)",
+    "Firm dollar weighs on cotton demand (ADMIS)"
+   ]
   },
-  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-19 21:44 CT: Claude's desk read had not run for 5+ hours."
+  "sugar": {
+   "date": "2026-11-20",
+   "by": "claude",
+   "time": "07:50 CT",
+   "claude_date": "2026-11-20",
+   "fundamental": "The sell-off is Brazil-led: a sliding real (near 5.90) makes Brazilian exports cheaper and pushes Mar toward 17.15, a seven-week low. The only offset is the poor French beet harvest, which tightens EU white supply at the margin but does not change the Centre-South picture.",
+   "events": [
+    "Real weakness drives raw sugar to a 7-week low (Barchart)",
+    "Tereos cuts its outlook after a weak French beet crop (Investing.com)"
+   ],
+   "fund_score": -0.4,
+   "claude_fund_score": -0.4
+  },
+  "coffee": {
+   "date": "2026-11-20",
+   "by": "claude",
+   "time": "07:50 CT",
+   "claude_date": "2026-11-20",
+   "fundamental": "No fresh ICE certified-stock or Brazil deliverability data since the low certs reading earlier this week; the near-term support from tight exchange stocks is intact. Smaller Colombian exports helped Thursday, but the weaker real keeps Brazilian farmer selling a headwind.",
+   "events": [
+    "Lower Colombian exports lift arabica (Barchart)",
+    "Real slide weighs on Brazil-origin softs (Barchart)"
+   ],
+   "fund_score": 0.1,
+   "claude_fund_score": 0.1
+  },
+  "cocoa": {
+   "date": "2026-11-20",
+   "by": "claude",
+   "time": "07:50 CT",
+   "claude_date": "2026-11-20",
+   "fundamental": "Rising ICE stocks still weigh, but two supportive threads are building: European physical premiums are firming as buyers prepare for EU deforestation rules, and the late Ivorian main crop risks port congestion that would slow arrivals. Thursday's short-covering bounce fits that mix.",
+   "events": [
+    "Cocoa dearer in Europe as traders prepare for EUDR (Bloomberg)",
+    "Delayed Ivory Coast crop may congest ports ahead of EU rules (Reuters via Nation)",
+    "Mar cocoa jumps ~3% on short covering (ICE)"
+   ],
+   "fund_score": -0.15,
+   "claude_fund_score": -0.15
+  }
+ },
+ "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-19 21:44 CT: Claude's desk read had not run for 5+ hours."
 }
