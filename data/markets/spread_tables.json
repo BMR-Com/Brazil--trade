@@ -1,5 +1,5 @@
 {
- "built": "2026-11-20 04:13 UTC",
+ "built": "2026-11-20 05:00 UTC",
  "asof": "2026-11-19",
  "coffee": [
   {
@@ -9,8 +9,8 @@
     "KCZ2026"
    ],
    "unit": "c/lb",
-   "value": 280.95,
-   "chg": 0.0,
+   "value": 282.05,
+   "chg": 1.1,
    "date": "2026-11-19"
   },
   {
@@ -20,8 +20,8 @@
     "KCH2027"
    ],
    "unit": "c/lb",
-   "value": 276.8,
-   "chg": 1.35,
+   "value": 276.0,
+   "chg": 0.55,
    "date": "2026-11-19"
   },
   {
@@ -31,8 +31,8 @@
     "RCF2027"
    ],
    "unit": "$/t",
-   "value": 2981.0,
-   "chg": -38.0,
+   "value": 2978.0,
+   "chg": -41.0,
    "date": "2026-11-19"
   },
   {
@@ -42,8 +42,8 @@
     "RCH2027"
    ],
    "unit": "$/t",
-   "value": 2956.0,
-   "chg": -32.0,
+   "value": 2941.0,
+   "chg": -47.0,
    "date": "2026-11-19"
   },
   {
@@ -55,10 +55,10 @@
    ],
    "position": "1/2",
    "unit": "c/lb",
-   "value": 4.15,
-   "pct_of_deferred": 1.5,
-   "chg": -1.35,
-   "pctile_1y": 5.0,
+   "value": 6.05,
+   "pct_of_deferred": 2.19,
+   "chg": 0.55,
+   "pctile_1y": 23.0,
    "date": "2026-11-19"
   },
   {
@@ -70,10 +70,10 @@
    ],
    "position": "2/3",
    "unit": "c/lb",
-   "value": 6.8,
-   "pct_of_deferred": 2.52,
-   "chg": 0.1,
-   "pctile_1y": 53.0,
+   "value": 7.8,
+   "pct_of_deferred": 2.91,
+   "chg": 1.1,
+   "pctile_1y": 66.0,
    "date": "2026-11-19"
   },
   {
@@ -85,10 +85,10 @@
    ],
    "position": "3/4",
    "unit": "c/lb",
-   "value": 4.7,
-   "pct_of_deferred": 1.77,
-   "chg": 0.4,
-   "pctile_1y": 64.0,
+   "value": 6.35,
+   "pct_of_deferred": 2.43,
+   "chg": 2.05,
+   "pctile_1y": 76.0,
    "date": "2026-11-19"
   },
   {
@@ -100,10 +100,10 @@
    ],
    "position": "4/5",
    "unit": "c/lb",
-   "value": 4.15,
-   "pct_of_deferred": 1.59,
-   "chg": 0.65,
-   "pctile_1y": 74.0,
+   "value": 4.75,
+   "pct_of_deferred": 1.85,
+   "chg": 1.25,
+   "pctile_1y": 79.0,
    "date": "2026-11-19"
   },
   {
@@ -115,9 +115,9 @@
    ],
    "position": "5/6",
    "unit": "c/lb",
-   "value": 7.45,
-   "pct_of_deferred": 2.94,
-   "chg": 3.5,
+   "value": 5.2,
+   "pct_of_deferred": 2.06,
+   "chg": 1.25,
    "pctile_1y": 99.0,
    "date": "2026-11-19"
   },
@@ -130,10 +130,10 @@
    ],
    "position": "1/2",
    "unit": "$/t",
-   "value": 25.0,
-   "pct_of_deferred": 0.85,
-   "chg": -6.0,
-   "pctile_1y": 29.0,
+   "value": 37.0,
+   "pct_of_deferred": 1.26,
+   "chg": 6.0,
+   "pctile_1y": 37.0,
    "date": "2026-11-19"
   },
   {
@@ -145,10 +145,10 @@
    ],
    "position": "2/3",
    "unit": "$/t",
-   "value": 11.0,
-   "pct_of_deferred": 0.37,
-   "chg": -3.0,
-   "pctile_1y": 4.0,
+   "value": 15.0,
+   "pct_of_deferred": 0.51,
+   "chg": 1.0,
+   "pctile_1y": 11.0,
    "date": "2026-11-19"
   },
   {
@@ -160,10 +160,10 @@
    ],
    "position": "3/4",
    "unit": "$/t",
-   "value": 14.0,
-   "pct_of_deferred": 0.48,
-   "chg": 0.0,
-   "pctile_1y": 15.0,
+   "value": 17.0,
+   "pct_of_deferred": 0.58,
+   "chg": 3.0,
+   "pctile_1y": 20.0,
    "date": "2026-11-19"
   },
   {
@@ -175,10 +175,10 @@
    ],
    "position": "4/5",
    "unit": "$/t",
-   "value": 20.0,
-   "pct_of_deferred": 0.69,
-   "chg": 0.0,
-   "pctile_1y": 24.0,
+   "value": 19.0,
+   "pct_of_deferred": 0.66,
+   "chg": -1.0,
+   "pctile_1y": 22.0,
    "date": "2026-11-19"
   },
   {
@@ -189,11 +189,11 @@
     "RCH2027"
    ],
    "unit": "c/lb",
-   "value": 142.72,
-   "chg": 2.8,
+   "value": 142.6,
+   "chg": 2.68,
    "pctile_1y": 59.0,
    "date": "2026-11-19",
-   "ratio": 2.064,
+   "ratio": 2.069,
    "ratio_pctile_1y": 97.0
   },
   {
@@ -204,9 +204,9 @@
     "RCK2027"
    ],
    "unit": "c/lb",
-   "value": 136.42,
-   "chg": 2.57,
-   "pctile_1y": 63.0,
+   "value": 135.48,
+   "chg": 1.63,
+   "pctile_1y": 61.0,
    "date": "2026-11-19",
    "ratio": 2.021,
    "ratio_pctile_1y": 100.0
@@ -219,10 +219,10 @@
     "KCZ2026"
    ],
    "unit": "c/lb",
-   "value": -31.91,
-   "chg": -13.91,
-   "pctile_1y": 34.0,
-   "date": "2026-11-17",
+   "value": -27.73,
+   "chg": 4.18,
+   "pctile_1y": 50.0,
+   "date": "2026-11-18",
    "note": "B3 US$/bag converted at 132.277 lb/bag; B3 front month may differ from the KC month"
   }
  ],
@@ -234,8 +234,8 @@
     "SBH2027"
    ],
    "unit": "c/lb",
-   "value": 18.06,
-   "chg": 0.02,
+   "value": 17.16,
+   "chg": -0.88,
    "date": "2026-11-19"
   },
   {
@@ -245,8 +245,8 @@
     "SBK2027"
    ],
    "unit": "c/lb",
-   "value": 17.49,
-   "chg": 0.01,
+   "value": 16.55,
+   "chg": -0.93,
    "date": "2026-11-19"
   },
   {
@@ -280,10 +280,10 @@
    ],
    "position": "1/2",
    "unit": "c/lb",
-   "value": 0.57,
-   "pct_of_deferred": 3.26,
-   "chg": 0.01,
-   "pctile_1y": 92.0,
+   "value": 0.61,
+   "pct_of_deferred": 3.69,
+   "chg": 0.05,
+   "pctile_1y": 94.0,
    "date": "2026-11-19"
   },
   {
@@ -295,10 +295,10 @@
    ],
    "position": "2/3",
    "unit": "c/lb",
-   "value": 0.38,
-   "pct_of_deferred": 2.22,
-   "chg": 0.02,
-   "pctile_1y": 80.0,
+   "value": 0.31,
+   "pct_of_deferred": 1.91,
+   "chg": -0.05,
+   "pctile_1y": 73.0,
    "date": "2026-11-19"
   },
   {
@@ -310,10 +310,10 @@
    ],
    "position": "3/4",
    "unit": "c/lb",
-   "value": -0.02,
-   "pct_of_deferred": -0.12,
-   "chg": 0.0,
-   "pctile_1y": 48.0,
+   "value": -0.08,
+   "pct_of_deferred": -0.49,
+   "chg": -0.06,
+   "pctile_1y": 44.0,
    "date": "2026-11-19"
   },
   {
@@ -325,10 +325,10 @@
    ],
    "position": "4/5",
    "unit": "c/lb",
-   "value": -0.36,
-   "pct_of_deferred": -2.06,
-   "chg": 0.03,
-   "pctile_1y": 31.0,
+   "value": -0.47,
+   "pct_of_deferred": -2.8,
+   "chg": -0.08,
+   "pctile_1y": 27.0,
    "date": "2026-11-19"
   },
   {
@@ -384,11 +384,11 @@
     "SBH2027"
    ],
    "unit": "$/t",
-   "value": 90.0,
-   "chg": -19.3,
-   "pctile_1y": 5.0,
+   "value": 109.9,
+   "chg": 0.5,
+   "pctile_1y": 56.0,
    "date": "2026-11-19",
-   "pct_of_deferred": 22.6
+   "pct_of_deferred": 29.0
   },
   {
    "group": "White premium",
@@ -398,11 +398,11 @@
     "SBK2027"
    ],
    "unit": "$/t",
-   "value": 104.0,
-   "chg": -18.6,
-   "pctile_1y": 29.0,
+   "value": 124.7,
+   "chg": 2.1,
+   "pctile_1y": 93.0,
    "date": "2026-11-19",
-   "pct_of_deferred": 27.0
+   "pct_of_deferred": 34.2
   },
   {
    "group": "White premium",
@@ -412,11 +412,11 @@
     "SBN2027"
    ],
    "unit": "$/t",
-   "value": 108.9,
-   "chg": -17.5,
-   "pctile_1y": 61.0,
+   "value": 128.1,
+   "chg": 1.7,
+   "pctile_1y": 91.0,
    "date": "2026-11-19",
-   "pct_of_deferred": 28.9
+   "pct_of_deferred": 35.8
   }
  ],
  "notes": [
