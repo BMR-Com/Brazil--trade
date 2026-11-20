@@ -1,45 +1,61 @@
 {
- "updated": "2026-11-19",
- "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
- "markets": {
-  "cotton": {
-   "fundamental": "Old-crop has bounced with Dec back to ~76 (+1.4%) and Mar near 80 despite a firm dollar, a technical recovery rather than new supply news. Dec deliveries and the high-grade share of certificated stock still cap the comfort for longs until Mar is the lead month.",
-   "events": [
-    "Strong dollar weighed on cotton early (ADMIS)",
-    "Dec ~76.0, Mar ~79.8 by midday (ICE via TradingView)",
-    "Texas yield trimmed again in USDA's November report (RFD-TV)"
-   ],
-   "date": "2026-11-19"
+  "updated": "2026-11-19",
+  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+  "markets": {
+    "cotton": {
+      "date": "2026-11-19",
+      "by": "bot",
+      "time": "21:44 CT",
+      "claude_date": "2026-11-19",
+      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 2 up, 0 down by keyword).",
+      "events": [
+        "Strong Dollar Weighs on Cotton (ADMIS, 2026-11-19)",
+        "Cotton Claw Some Gains Back on Thursday (Barchart.com, 2026-11-19)",
+        "Cotton Posting Midday Gains (Barchart.com, 2026-11-19)"
+      ]
+    },
+    "sugar": {
+      "date": "2026-11-19",
+      "by": "bot",
+      "time": "21:44 CT",
+      "claude_date": "2026-11-19",
+      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported lower (0 supply-tight, 0 supply-loose, 0 up, 1 down by keyword).",
+      "events": [
+        "Brazilian Real Weakness Hammers Sugar Prices (Barchart.com, 2026-11-19)",
+        "Sugar Prices Plummet with the Brazilian Real (Barchart.com, 2026-11-19)",
+        "Tereos cuts profit outlook after poor French sugar beet harvest (Investing.com, 2026-11-19)"
+      ],
+      "claude_fund_score": -0.5,
+      "fund_score": -0.5
+    },
+    "coffee": {
+      "date": "2026-11-19",
+      "by": "bot",
+      "time": "21:44 CT",
+      "claude_date": "2026-11-19",
+      "fundamental": "3 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 1 up, 0 down by keyword).",
+      "events": [
+        "Eight O'Clock Coffee Expands Portfolio with New Blonde Roast K-Cup® Pods – Company Announcement (Financial Times, 2026-11-19)",
+        "Reduced Coffee Exports from Colombia Boosts Arabica Prices (Barchart.com, 2026-11-19)",
+        "Arabica Coffee Rebounds on Smaller Exports from Colombia (Barchart.com, 2026-11-19)"
+      ],
+      "claude_fund_score": 0.15,
+      "fund_score": 0.15
+    },
+    "cocoa": {
+      "date": "2026-11-19",
+      "by": "bot",
+      "time": "21:44 CT",
+      "claude_date": "2026-11-19",
+      "fundamental": "No new headlines for this market in the last 30 hours.",
+      "events": [
+        "Cocoa Dec up ~3.8% to ~5,030 (ICE via Yahoo)",
+        "Rising ICE inventories still weigh on the balance (Barchart)",
+        "Ghana plans to phase out raw bean exports by 2030 (Reuters)"
+      ],
+      "claude_fund_score": -0.25,
+      "fund_score": -0.25
+    }
   },
-  "sugar": {
-   "fundamental": "The Brazil-led slide held into the afternoon: the real weakened further to ~5.93 per dollar (about -2.7% on the day) and Mar raws traded ~17.15, near session lows. A cheaper real lifts mills' local-currency return on exports, so Centre-South export hedging is likely to keep pressing rallies while the currency is unstable.",
-   "fund_score": -0.5,
-   "events": [
-    "Mar raws ~17.15 (-4.9%) on the weak real (Barchart, ICE via Yahoo)",
-    "USD/BRL ~5.93 as LatAm currencies sell off with equities (Yahoo, Reuters)",
-    "India seeks fresh raw-sugar import offers (Reuters)"
-   ],
-   "date": "2026-11-19"
-  },
-  "coffee": {
-   "fundamental": "Arabica shrugged off the weaker real, with Dec up to ~282 as lower Colombian shipments trimmed washed-arabica availability. Falling ICE certified stocks keep Dec deliverability the key support; Brazil producer selling into a weak real is the main risk to the Dec/Mar inverse.",
-   "fund_score": 0.15,
-   "events": [
-    "Colombian coffee exports fall, lifting arabica (Barchart)",
-    "Dec ~282 (+0.5%) despite USD/BRL ~5.93 (ICE via Yahoo)",
-    "ICE certified arabica stocks keep declining (ICE)"
-   ],
-   "date": "2026-11-19"
-  },
-  "cocoa": {
-   "fundamental": "The rebound extended with Dec ~5,030 (+3.8%), still a short-covering move off the ~4,980 support. Nothing new on supply: ICE stocks are rising and the West African main crop looks better, so the bounce runs against the fundamentals.",
-   "fund_score": -0.25,
-   "events": [
-    "Cocoa Dec up ~3.8% to ~5,030 (ICE via Yahoo)",
-    "Rising ICE inventories still weigh on the balance (Barchart)",
-    "Ghana plans to phase out raw bean exports by 2030 (Reuters)"
-   ],
-   "date": "2026-11-19"
-  }
- }
+  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-19 21:44 CT: Claude's desk read had not run for 5+ hours."
 }

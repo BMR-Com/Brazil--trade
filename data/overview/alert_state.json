@@ -1,50 +1,31 @@
 {
- "updated": "2026-11-19 20:50 UTC",
- "by": "claude",
+ "updated": "2026-11-20 03:44 UTC",
+ "by": "bot",
  "views": {
   "cotton": {
    "view": "mildly bullish",
    "shade": "bull1",
-   "score": 0.18
+   "score": 0.12
   },
   "sugar": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.32
+   "score": -0.37
   },
   "coffee": {
    "view": "neutral",
    "shade": "neutral",
-   "score": -0.04
+   "score": -0.05
   },
   "cocoa": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.3
+   "score": -0.25
   }
  },
  "alerts": {
   "cotton": [],
-  "sugar": [
-   {
-    "kind": "break",
-    "side": "dn",
-    "text": "Broke below S1 17.92",
-    "new": true
-   },
-   {
-    "kind": "break",
-    "side": "dn",
-    "text": "Broke below S2 17.23",
-    "new": true
-   },
-   {
-    "kind": "break",
-    "side": "dn",
-    "text": "Broke below the fund sell trigger (55-day breakout low) 17.75",
-    "new": true
-   }
-  ],
+  "sugar": [],
   "coffee": [],
   "cocoa": []
  },
