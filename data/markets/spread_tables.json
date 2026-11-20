@@ -1,5 +1,5 @@
 {
- "built": "2026-11-20 03:26 UTC",
+ "built": "2026-11-20 04:13 UTC",
  "asof": "2026-11-19",
  "coffee": [
   {
@@ -256,9 +256,9 @@
     "WH2027"
    ],
    "unit": "$/t",
-   "value": 507.1,
-   "chg": -3.9,
-   "date": "2026-11-18"
+   "value": 488.2,
+   "chg": -18.9,
+   "date": "2026-11-19"
   },
   {
    "group": "Settlements: ICE No. 5",
@@ -267,9 +267,9 @@
     "WK2027"
    ],
    "unit": "$/t",
-   "value": 508.0,
-   "chg": -4.7,
-   "date": "2026-11-18"
+   "value": 489.6,
+   "chg": -18.4,
+   "date": "2026-11-19"
   },
   {
    "group": "No. 11 switches",
@@ -340,11 +340,11 @@
    ],
    "position": "1/2",
    "unit": "$/t",
-   "value": -0.9,
-   "pct_of_deferred": -0.18,
-   "chg": 0.8,
-   "pctile_1y": 36.0,
-   "date": "2026-11-18"
+   "value": -1.4,
+   "pct_of_deferred": -0.29,
+   "chg": -0.5,
+   "pctile_1y": 34.0,
+   "date": "2026-11-19"
   },
   {
    "group": "No. 5 switches",
@@ -355,11 +355,11 @@
    ],
    "position": "2/3",
    "unit": "$/t",
-   "value": 4.2,
-   "pct_of_deferred": 0.83,
-   "chg": 0.6,
-   "pctile_1y": 87.0,
-   "date": "2026-11-18"
+   "value": 3.5,
+   "pct_of_deferred": 0.72,
+   "chg": -0.7,
+   "pctile_1y": 78.0,
+   "date": "2026-11-19"
   },
   {
    "group": "No. 5 switches",
@@ -370,11 +370,11 @@
    ],
    "position": "3/4",
    "unit": "$/t",
-   "value": 4.1,
-   "pct_of_deferred": 0.82,
-   "chg": -0.6,
-   "pctile_1y": 89.0,
-   "date": "2026-11-18"
+   "value": 2.8,
+   "pct_of_deferred": 0.58,
+   "chg": -1.3,
+   "pctile_1y": 78.0,
+   "date": "2026-11-19"
   },
   {
    "group": "White premium",
@@ -384,11 +384,11 @@
     "SBH2027"
    ],
    "unit": "$/t",
-   "value": 109.4,
-   "chg": -1.0,
-   "pctile_1y": 55.0,
-   "date": "2026-11-18",
-   "pct_of_deferred": 27.5
+   "value": 90.0,
+   "chg": -19.3,
+   "pctile_1y": 5.0,
+   "date": "2026-11-19",
+   "pct_of_deferred": 22.6
   },
   {
    "group": "White premium",
@@ -398,11 +398,11 @@
     "SBK2027"
    ],
    "unit": "$/t",
-   "value": 122.6,
-   "chg": -2.1,
-   "pctile_1y": 91.0,
-   "date": "2026-11-18",
-   "pct_of_deferred": 31.8
+   "value": 104.0,
+   "chg": -18.6,
+   "pctile_1y": 29.0,
+   "date": "2026-11-19",
+   "pct_of_deferred": 27.0
   },
   {
    "group": "White premium",
@@ -412,11 +412,11 @@
     "SBN2027"
    ],
    "unit": "$/t",
-   "value": 126.4,
-   "chg": -2.7,
-   "pctile_1y": 88.0,
-   "date": "2026-11-18",
-   "pct_of_deferred": 33.5
+   "value": 108.9,
+   "chg": -17.5,
+   "pctile_1y": 61.0,
+   "date": "2026-11-19",
+   "pct_of_deferred": 28.9
   }
  ],
  "notes": [
