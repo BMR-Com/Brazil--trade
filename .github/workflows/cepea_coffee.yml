@@ -1,0 +1,39 @@
+name: Coffee — CEPEA/ESALQ indices (daily)
+
+# CEPEA publishes ~16:00-16:30 BRT. Runs 16:30 and 19:30 BRT weekdays; the second run is the same-day catch-up and the
+# page lists recent days, so a missed day is filled on the next run. One request per run, robots.txt checked each time.
+on:
+  schedule:
+    - cron: "37 19 * * 1-5"   # ~16:37 BRT
+    - cron: "37 22 * * 1-5"   # ~19:37 BRT catch-up
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coffee-refresh
+  cancel-in-progress: false
+
+jobs:
+  cepea:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install
+        run: pip install -q requests pandas numpy openpyxl lxml xlrd
+      - name: Fetch CEPEA page, append new dates, rebuild Brazil basis history (fails red if the page can't be parsed)
+        run: python pipelines/cepea_fetch.py
+      - name: Brazil tender parity rebuild
+        run: python -W ignore models/brazil_tender_parity.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for f in data/coffee/brazil_physical_raw.csv data/coffee/brazil_physical_history.csv data/coffee/brazil_physical_meta.json data/coffee/cepea_arabica_history.csv data/coffee/cepea_robusta_history.csv data/coffee/usdbrl_ptax.csv data/coffee/tender_parity.json data/coffee/tender_parity_history.csv; do [ -f "$f" ] && git add "$f"; done; true
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "coffee: CEPEA indices $(date -u +%F) [bot]"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

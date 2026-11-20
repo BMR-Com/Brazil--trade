@@ -4,8 +4,8 @@ Series (R$ per 60-kg bag unless stated), stored raw in data/coffee/brazil_physic
 usd_60kg, source):
   cepea_arabica  CEPEA/ESALQ arabica indicator: tipo 6 bebida dura para melhor, delivered São Paulo city (domestic, naturals,
                  not FOB). Daily from Sep 1996. Sources: the CEPEA file Ma downloads and drops in inbox/ (pipelines/ice_inbox.py
-                 recognises it and calls ingest_cepea_file; cepea.org.br disallows automated access, so it is never fetched
-                 here), and as an interim source the Notícias Agrícolas daily tables (only if its robots.txt allows them).
+                 recognises it and calls ingest_cepea_file), and the weekday scheduled fetch pipelines/cepea_fetch.py
+                 (workflow cepea_coffee.yml; robots.txt checked for its own agent every run), and as an interim source the Notícias Agrícolas daily tables (only if its robots.txt allows them).
   cepea_robusta  CEPEA/ESALQ robusta (conilon) index, US$/bag (Ma's file) -> data/coffee/cepea_robusta_history.csv.
   coop_cd        semi-washed (cereja descascado), co-op quotes in Minas Gerais / São Paulo (Notícias Agrícolas), co-op average.
   coop_t6        tipo 6 bebida dura, co-op quotes (Notícias Agrícolas), co-op average.
@@ -311,7 +311,7 @@ def save_raw(new):
     old = read_raw()
     new = new.reindex(columns=COLS)
     # CEPEA's own file wins over the Notícias Agrícolas copy for the same day
-    rank = {"CEPEA series download": 0, "CEPEA file uploaded to inbox": 0}
+    rank = {"CEPEA series download": 0, "CEPEA file uploaded to inbox": 0, "CEPEA indicator page (scheduled fetch)": 0}
     allr = pd.concat([old, new])
     allr["_r"] = allr.source.map(rank).fillna(1)
     allr = allr.sort_values(["date", "series", "place", "_r"]).drop_duplicates(["date", "series", "place"], keep="first").drop(columns="_r")

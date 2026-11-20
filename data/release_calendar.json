@@ -1136,42 +1136,42 @@
   },
   {
    "id": "cepea_arabica",
-   "status_source": "CEPEA/ESALQ arabica index (Ma's cepea.org.br download, inbox/)",
-   "age_limit": 10,
+   "status_source": "CEPEA/ESALQ arabica index (scheduled fetch weekdays; Ma's inbox download as backup)",
+   "age_limit": 4,
    "age_unit": "days",
    "tab": "Coffee > Brazil basis",
    "report": "CEPEA/ESALQ arabica",
-   "publisher": "CEPEA (manual download)",
-   "release_et": "daily; Ma uploads weekly",
+   "publisher": "CEPEA",
+   "release_et": "daily ~15:30 ET (16:30 BRT); fetched 16:30 and 19:30 BRT weekdays",
    "release": {
     "type": "age"
    },
    "late_after_hours": 0,
    "workflow": {
     "repo": "BMR-Com/Brazil--trade",
-    "file": "ice_inbox.yml"
+    "file": "cepea_coffee.yml"
    },
-   "manual": true,
+   "manual": false,
    "season": null
   },
   {
    "id": "cepea_robusta",
-   "status_source": "CEPEA/ESALQ robusta index (Ma's cepea.org.br download, inbox/)",
-   "age_limit": 10,
+   "status_source": "CEPEA/ESALQ robusta index (scheduled fetch weekdays; Ma's inbox download as backup)",
+   "age_limit": 4,
    "age_unit": "days",
    "tab": "Coffee > Brazil conilon",
    "report": "CEPEA/ESALQ robusta",
-   "publisher": "CEPEA (manual download)",
-   "release_et": "daily; Ma uploads weekly",
+   "publisher": "CEPEA",
+   "release_et": "daily ~15:30 ET (16:30 BRT); fetched 16:30 and 19:30 BRT weekdays",
    "release": {
     "type": "age"
    },
    "late_after_hours": 0,
    "workflow": {
     "repo": "BMR-Com/Brazil--trade",
-    "file": "ice_inbox.yml"
+    "file": "cepea_coffee.yml"
    },
-   "manual": true,
+   "manual": false,
    "season": null
   },
   {

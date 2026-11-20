@@ -92,7 +92,7 @@ def brazil_last(series):
             continue
         with open(ROOT / p) as f:
             m = max((r["date"] for r in csv.DictReader(f) if r.get(col) == name
-                     and (not series.startswith("cepea") or r.get("source") == "CEPEA file uploaded to inbox")), default=None)
+                     and (not series.startswith("cepea") or r.get("source") in ("CEPEA file uploaded to inbox", "CEPEA indicator page (scheduled fetch)"))), default=None)
         best = max(filter(None, [best, m]), default=None)
     return best
 
@@ -134,8 +134,8 @@ SOURCES = [
     ("Coffee", "ICE grading summary by origin (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/coffee/ice_grading_monthly.csv", "period_end"), "Certs profile tab"),
     ("Coffee", "Certs profile and delivery economics (built from the ICE files)", "daily", 2, B, False, lambda: d10(J("data/coffee/certs_profile.json")["current"]["daily_date"]), "Certs profile tab"),
     ("Coffee", "ICO group prices for the certs physical comparison", "monthly", 40, C, False, lambda: J("data/coffee/certs_profile.json")["physical"]["ico_month"] + "-28", "Certs profile tab"),
-    ("Coffee", "CEPEA/ESALQ arabica index (Ma's cepea.org.br download, inbox/)", "weekly", 10, C, True, lambda: brazil_last("cepea_arabica"), "Brazil basis history, KC spread model (Brazil leg, Lab)"),
-    ("Coffee", "CEPEA/ESALQ robusta index (Ma's cepea.org.br download, inbox/)", "weekly", 10, C, True, lambda: brazil_last("cepea_robusta"), "Brazil conilon vs London chart"),
+    ("Coffee", "CEPEA/ESALQ arabica index (scheduled fetch weekdays; Ma's inbox download as backup)", "daily", 4, C, False, lambda: brazil_last("cepea_arabica"), "Brazil basis history, KC spread model (Brazil leg, Lab)"),
+    ("Coffee", "CEPEA/ESALQ robusta index (scheduled fetch weekdays; Ma's inbox download as backup)", "daily", 4, C, False, lambda: brazil_last("cepea_robusta"), "Brazil conilon vs London chart"),
     ("Coffee", "USD/BRL PTAX (Banco Central do Brasil)", "daily", 3, B, False, lambda: max_csv_date("data/coffee/usdbrl_ptax.csv"), "Brazil physical in US cents/lb"),
     ("Coffee", "Brazil tender parity (blend cost in Antwerp vs exchange value)", "frozen at the last co-op quote (11 Nov 2026)", 9999, C, False, lambda: J("data/coffee/tender_parity.json")["now"]["date"], "Brazil tender parity card"),
     ("Coffee", "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv)", "as found", 120, C, True, lambda: max_csv_date("data/coffee/manual/brazil_export_diffs.csv", "quote_date"), "fine-cup proxy calibration (tender parity)"),
