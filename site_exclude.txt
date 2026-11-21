@@ -6,3 +6,17 @@ data/ice_staging
 data/geo/weather_hist
 data/fiber
 data/grains/raw/export_sales
+# ICE historical prices workbooks and daily contract history (analytics only, not read by any page; added 2026-11-21)
+data/sugar16
+data/cotton/ice_daily_contracts.csv
+data/cotton/ice_daily_totals.csv
+data/coffee/ice_daily_contracts.csv
+data/coffee/ice_daily_totals.csv
+data/sugar/ice_daily_contracts.csv
+data/sugar/ice_daily_totals.csv
+data/cocoa/ice_daily_contracts.csv
+data/cocoa/ice_daily_totals.csv
+data/cotton/ref/ICE_Cotton_Historical_Prices_2026-10-30.xls
+data/sugar/ref/ICE_Sugar11_Historical_Prices_2026-10-30.xls
+data/coffee/ref/ICE_Coffee_Historical_Prices_2026-08-31.xls
+data/cocoa/ref/ICE_Cocoa_Historical_Prices_2026-08-31.xls

@@ -53,7 +53,9 @@ LABEL = {"options": "{} options settlement (ICE daily market report)", "futures"
          "cepea_robusta": "CEPEA/ESALQ robusta (conilon) coffee index (cepea.org.br download)"}
 sys.path.insert(0, str(ROOT / "pipelines"))
 import ice_history  # noqa: E402
+import ice_price_history  # noqa: E402
 LABEL.update(ice_history.LABEL)
+LABEL["price_history"] = "ICE historical prices workbook (first five contracts, daily)"
 NAMES = {"CT": "Cotton", "KC": "Coffee", "SB": "Sugar No 11", "CC": "Cocoa"}
 
 
@@ -176,6 +178,10 @@ def handle_settlement(p, info):
     else:
         shutil.copyfile(p, dst)
         note = f"staged {info['rows']} contract rows for the options archive"
+    if info["kind"] == "futures":
+        extra = ice_price_history.add_futures_pdf(pdf_text(p), info["sym"], info["date"])
+        if extra:
+            note += "; " + extra
     return {"stored": f"data/ice_staging/pdfs/{name}", "note": note}, False   # original not archived (staged copy is the record)
 
 
@@ -431,6 +437,8 @@ def identify(p):
     if cep:
         return cep, "cepea"
     rows = table_rows(p, data)
+    if rows and rows[0] and ice_price_history.detect_xls(rows[0][0]):
+        return {"kind": "price_history", "sym": ice_price_history.detect_xls(rows[0][0])}, "pricehist"
     h = ice_history.classify_table(rows)
     if h:
         return h, "hist"
@@ -450,6 +458,9 @@ def process(p, info, how, now):
     elif how == "pdf":
         res, keep = handle_settlement(p, info)
         d = info["date"]
+    elif how == "pricehist":
+        sym, note = ice_price_history.add_xls(p.read_bytes())
+        res, keep, d = {"stored": f"data/{ice_price_history.DIRS[sym]}/ice_daily_contracts.csv", "note": note}, False, note.split(" to ")[-1][:10]
     elif how == "cepea":
         res, keep, d = handle_cepea(p.read_bytes(), info), False, info["date"]
     elif how == "kc":

@@ -7,7 +7,7 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', 'pipelines/ice_history.py', 'models/coffee_certs_profile.py', 'models/kc_spread_model.py', 'pipelines/brazil_physical.py', 'data/coffee/ref/kc_rule_params.json', 'data/coffee/ref/rule_changes.csv', 'models/cocoa_certs_profile.py', 'models/cert_economics.py', 'data/coffee/ref/grading_fees.csv', 'data/cocoa/ref/**', '.github/workflows/ice_inbox.yml']
+    paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', 'pipelines/ice_history.py', 'pipelines/ice_price_history.py', 'models/coffee_certs_profile.py', 'models/kc_spread_model.py', 'pipelines/brazil_physical.py', 'data/coffee/ref/kc_rule_params.json', 'data/coffee/ref/rule_changes.csv', 'models/cocoa_certs_profile.py', 'models/cert_economics.py', 'data/coffee/ref/grading_fees.csv', 'data/cocoa/ref/**', '.github/workflows/ice_inbox.yml']
   schedule:
     - cron: '41 13,19,23 * * 1-5'      # backup, and daily clean-up of old staged PDFs
 permissions: {contents: write}
@@ -54,7 +54,7 @@ jobs:
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
           for p in inbox data/ice_staging data/ice_raw data/ice_inbox data/cotton/ice data/coffee/ice_certs.csv data/coffee/ice_certs_inbox.csv data/coffee/ice_certs_check.json \
                    data/coffee/ice_certs_daily_detail.csv data/coffee/ice_aging_history.csv data/coffee/ice_certs_eom_by_port.csv \
-                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json data/coffee/brazil_physical_raw.csv data/coffee/brazil_physical_history.csv data/coffee/brazil_physical_meta.json data/coffee/cepea_robusta_history.csv data/coffee/cepea_arabica_history.csv data/coffee/tender_parity.json data/coffee/tender_parity_history.csv data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/cocoa/certs_profile.json data/cocoa/cc_spreads_history.csv data/cocoa/ref data/derived/cert_economics.json data/status.json; do
+                   data/coffee/ice_grading_monthly.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json data/coffee/brazil_physical_raw.csv data/coffee/brazil_physical_history.csv data/coffee/brazil_physical_meta.json data/coffee/cepea_robusta_history.csv data/coffee/cepea_arabica_history.csv data/coffee/tender_parity.json data/coffee/tender_parity_history.csv data/coffee/ref data/cocoa/ice_certs_daily.csv data/cocoa/ice_grading_monthly.csv data/cocoa/certs_profile.json data/cocoa/cc_spreads_history.csv data/cocoa/ref data/derived/cert_economics.json data/status.json data/cotton/ice_daily_contracts.csv data/cotton/ice_daily_totals.csv data/coffee/ice_daily_contracts.csv data/coffee/ice_daily_totals.csv data/sugar/ice_daily_contracts.csv data/sugar/ice_daily_totals.csv data/cocoa/ice_daily_contracts.csv data/cocoa/ice_daily_totals.csv data/sugar16; do
             git add -A -- "$p" 2>/dev/null || true
           done
           git diff --cached --quiet && exit 0
