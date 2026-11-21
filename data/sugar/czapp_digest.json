@@ -1,12 +1,18 @@
 {
-  "week_ending": "2026-11-19",
+  "week_ending": "2026-11-20",
   "themes": [
-    "Raws are holding the 18c area by short covering rather than fresh buying: long liquidation keeps probing the floor, but funds have stopped adding to sales and producer hedging stays light with the real weak.",
-    "Czarnikow's Brazil revision is a timing shift, not lost cane: rain-stopped cane rolls into 2027/28, tightening the old-crop balance into March while enlarging next season's start, which fits a firm Mar/May and a heavier deferred curve.",
-    "Outside Brazil, Australia finishes a delayed crush with poor late sugar content and the US domestic market keeps tightening after USDA's beet and cane cuts; neither changes the world balance much, but both lean supportive at the margin.",
-    "Ethanol is a cap rather than a floor: sugar still pays well above hydrous parity, so the mix stays maxed and cheaper US ethanol into Brazil's North/Northeast limits support in the inter-harvest."
+    "The short-covering floor in raws broke on 19 Nov: once fund sell stops under the prior low were hit, consumer and trade buying could not hold it, so the large managed-money long is now the main downside risk rather than a support.",
+    "Czarnikow's Brazil revision remains a timing shift, not lost cane: rain-stopped cane rolls into 2027/28, which keeps Mar/May firm on old-crop tightness even as flat price falls, while the deferred curve carries next season's larger start.",
+    "Outside Brazil, Australia ends a delayed crush with weak late sugar content and the US domestic market keeps tightening after USDA's beet and cane cuts; supportive at the margin, but not enough to offset fund selling in New York.",
+    "Ethanol is a cap rather than a floor: even after the drop, raws still pay above hydrous parity in Brazil, so mills have no reason to cut the sugar mix and the parity floor sits well below the market."
   ],
   "items": [
+    {
+      "date": "2026-11-19",
+      "title": "Daily Market Price Updates and Commentary 19th November 2026",
+      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-19th-november-2026/",
+      "takeaway": "The 18c floor gave way: an early run at the prior low tripped fund sell stops, trade and consumer buying could not absorb it, and long liquidation carried raws and whites sharply lower with little chart support until much lower levels; the whites Mar/May slipped further into discount."
+    },
     {
       "date": "2026-11-19",
       "title": "Late Dry Spell Puts Queensland Cane Harvest Back on Track",
@@ -54,12 +60,6 @@
       "title": "Daily Market Price Updates and Commentary 16th November 2026",
       "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-16th-november-2026/",
       "takeaway": "Raws stayed in their 18-18.5c band but closed toward the bottom as the real weakened; London March held just above its recent low, leaving a retest open."
-    },
-    {
-      "date": "2026-11-13",
-      "title": "Daily Market Price Updates and Commentary 13th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-13th-november-2026/",
-      "takeaway": "Raws and whites both firmed into the week's close on small-trader buying; London December expired with a sizeable tender talked, and the white premium held near its recent highs."
     }
   ]
 }
