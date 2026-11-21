@@ -170,7 +170,7 @@ const Cocoa = (() => {
           <p class="note">${RB} (read ${R.read_on}).</p></div>
         <div class="card"><h2>Dated rule changes</h2><div class="tbl"><table><tr><th class="l">Effective</th><th class="l">First contract</th><th class="l">Rule</th><th class="l">What it means</th><th class="l">Source</th></tr>${ruleRows}</table></div>
           <p class="note"><b>Long certified-stock history:</b> the desk has ICE's daily cocoa certs only from ${C.first_report}. ICE's report centre (historical cocoa certified stocks) is captcha-protected and is not downloaded automatically: drop the historical certified-stock file into the ICE inbox and it will be added.</p></div></div>
-      <p class="note">Variables used: ${D.variables.join('; ')}. Built ${D.built}.</p>`;
+      <div id="ccCE"></div><p class="note">Variables used: ${D.variables.join('; ')}. Built ${D.built}.</p>`;
     const pal = ['#7d3c98', '#2c6fbb', '#17a589', '#d68910', '#c0392b', '#2f6b3a', '#7f8c8d'];
     const dd = H.daily;
     chart('ccD', { type: 'line', data: { labels: dd.dates, datasets: Object.entries(dd.series).map(([o, v], i) => ({ label: o, data: v, backgroundColor: pal[i % 7], borderColor: pal[i % 7], fill: true, pointRadius: 0, borderWidth: 0, stack: 's' })) },
@@ -183,6 +183,7 @@ const Cocoa = (() => {
       plugins: [marks(H.markers.concat(D.rules.changes.filter(r => r.effective_date < '2016').map(r => ({ date: r.effective_date.slice(0, 7), label: r.short }))), SP.months)] });
     chart('ccY', { type: 'bar', data: { labels: SP.same_point.map(r => r.year), datasets: [{ label: `${SP.now.pair}, % of price`, data: SP.same_point.map(r => Math.max(-3, Math.min(3, r.pct))), backgroundColor: SP.same_point.map((r, i) => i === SP.same_point.length - 1 ? '#c0392b' : '#7d3c98') }] },
       options: { scales: { y: { title: { display: true, text: '% (capped at ±3)' } } } } });
+    certEcon('CC', $('#ccCE'));
   }
   async function flows() {
     body().innerHTML = `<div id="ccCot"></div>`;

@@ -172,7 +172,7 @@ const Cotton = (() => {
         <p class="note">Shows the latest ICE files stored on the desk (data/cotton/ice). To look at a newer file before it is added, pick it below: it is read in this browser and replaces the stored one until you choose "Forget loaded files".</p>
         <div class="grid g3"><label>Certified stock (by delivery point)<br><input type="file" id="ctFStock" accept=".csv,text/csv"></label><label>Stock by warehouse<br><input type="file" id="ctFWh" accept=".csv,text/csv"></label><label>Strength (GPT) by delivery point<br><input type="file" id="ctFStr" accept=".csv,text/csv"></label><label>Year of growth<br><input type="file" id="ctFYog" accept=".csv,text/csv"></label><label>Grade / staple (ICE updates the full detail on Mondays)<br><input type="file" id="ctFGrade" accept=".csv,text/csv"></label></div>
         <p class="note" style="margin-top:6px"><a href="#" id="ctFClear">Forget loaded files (back to the stored ones)</a></p>
-        <div id="ctCertOut" style="margin-top:10px"></div></div>`;
+        <div id="ctCertOut" style="margin-top:10px"></div></div><div id="ctCE"></div>`;
     const drawGrid = mode => {
       const ref = mode === 'm' ? P1 : mode === 'y' ? P1y : null;
       const cellv = (c, l, st) => { const v = G[`${c}|${l}|${st}`]; if (v == null) return null; return ref ? (ref[`${c}|${l}|${st}`] == null ? null : v - ref[`${c}|${l}|${st}`]) : v; };
@@ -184,7 +184,7 @@ const Cotton = (() => {
     chart('ctDiffH', { type: 'line', data: { labels: lab, datasets: ks.map((k, i) => ({ label: k, data: lab.map(d => { const j = H[k].dates.indexOf(d); return j < 0 ? null : H[k].points[j]; }), borderColor: ['#7f8c8d', '#2c6fbb', '#2f6b3a', '#7d3c98', '#d68910', '#c0392b', '#16a085', '#34495e'][i % 8], pointRadius: 0, borderWidth: 1.4, spanGaps: true })) },
       options: { scales: { y: { title: { display: true, text: 'points vs 41-4-34' } } } } });
 
-    carryHist();
+    carryHist(); certEcon('CT', $('#ctCE'));
     // ----- private ICE files -----
     let WM = null;
     try { const [csv, rules] = await Promise.all([fetch('data/cotton/warehouse_map.csv').then(r => r.text()), getJSON('data/cotton/warehouse_map_rules.json')]);

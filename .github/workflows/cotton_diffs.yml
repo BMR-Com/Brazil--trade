@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: ['pipelines/cotton_diffs.py', 'models/cotton_carry.py', 'data/cotton/ice/*.csv', '.github/workflows/cotton_diffs.yml']
+    paths: ['pipelines/cotton_diffs.py', 'models/cotton_carry.py', 'models/cert_economics.py', 'data/cotton/ice/*.csv', 'data/cotton/ref/ice_tariffs_*.csv', '.github/workflows/cotton_diffs.yml']
   schedule:
     - cron: '23 20 * * 1-5'
     - cron: '47 22 * * 1-5'
@@ -26,10 +26,13 @@ jobs:
         run: |
           [ -f data/cotton/carry_history.csv ] || B=--backfill
           python models/cotton_carry.py $B
+      - name: cost to put up certs, front spread into first notice
+        continue-on-error: true
+        run: python -W ignore models/cert_economics.py
       - name: commit
         run: |
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
-          git add data/cotton/ice_diffs.csv data/cotton/ice_diffs.json data/cotton/spot_basis.csv data/cotton/carry_history.csv 2>/dev/null || true
+          git add data/cotton/ice_diffs.csv data/cotton/ice_diffs.json data/cotton/spot_basis.csv data/cotton/carry_history.csv data/derived/cert_economics.json 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git commit -q -m "data: ICE cotton quality differentials $(date -u +%F)"
           for i in 1 2 3 4 5; do git pull -q --rebase --autostash -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

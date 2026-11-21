@@ -596,7 +596,7 @@ const Coffee = (() => {
           <p class="note">The rules changed, so older history is a different market. Before 2019 the curve sat in carry: de-certified old coffee could be graded again and come back as fresh, wiping out the age discount, so a receiver risked getting stale coffee and nobody paid up for nearby delivery; position limits in the spot month (500 lots without an exemption) also capped how hard anyone could squeeze. Brazil semi-washed has been deliverable since the March 2013 contract, but it only entered the certified pile in size from late 2020. Since 1 December 2023 ICE bars re-grading coffee that was certified and then de-certified. Percentiles on this tab are measured from December 2023.</p></div>
         <div class="card"><h2>KC curve</h2><div class="tbl"><table><tr><th class="l">Contract</th><th>Price</th><th>1 week ago</th><th>Change</th><th>Volume</th></tr>
           ${K.curves.KC.map(r => `<tr><td class="l">${r.label}</td><td class="n">${f2(r.px)}</td><td class="n">${f2(r.px_1w)}</td><td class="n">${sgn(r.px - r.px_1w, 2)}</td><td class="n">${f0(r.vol)}</td></tr>`).join('')}</table></div></div></div>
-      ${SM ? smBlock(SM) : ''}${asof()}`;
+      <div id="kcCE"></div>${SM ? smBlock(SM) : ''}${asof()}`;
     const drawSt = r => { const a = rngFrom(C.dates, r), pr = r === '1M' || r === '3M' ? 2 : 0;
       chart('kcSt', { type: 'line', data: { labels: C.dates.slice(a), datasets: [{ label: 'Certified, bags', data: C.total.slice(a), borderColor: '#7d3c98', pointRadius: pr, yAxisID: 'y' }, { label: 'Pending grading', data: C.pending.slice(a), borderColor: '#d68910', pointRadius: pr, yAxisID: 'y1' }] },
         options: { scales: { y: { beginAtZero: false, title: { display: true, text: 'certified' } }, y1: { position: 'right', beginAtZero: true, grid: { display: false }, title: { display: true, text: 'pending' } } } } }); };
@@ -621,6 +621,7 @@ const Coffee = (() => {
         { label: 'Certified stocks, m bags', data: lab.slice(a).map(m => cm[m] ?? null), borderColor: '#7d3c98', pointRadius: 0, spanGaps: true, yAxisID: 'y1' }] },
         options: { scales: { y1: { position: 'right', grid: { display: false } } } } }); };
     drawTp('5Y'); rngWire('kcTp', drawTp);
+    certEcon('KC', $('#kcCE'));
   }
 
   async function arb() {

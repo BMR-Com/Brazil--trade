@@ -1,0 +1,5 @@
+effective_from,item,usd,unit,note,source
+2025-01-01,grading,1.50,per bag,"60-kg bag basis; minimum $40 per warehouse receipt",ICE Coffee Grading Fee Schedule (PDF); ICE notice on 2025 grading fees
+2025-01-01,minimum_per_receipt,40.00,per warehouse receipt,,ICE Coffee Grading Fee Schedule (PDF)
+2025-01-01,refund_cancelled_before_grading,0.70,per bag,refund if the request is cancelled before grading,ICE Coffee Grading Fee Schedule (PDF)
+2025-01-01,refund_appeal_changed,0.50,per bag,refund if an appeal changes the result,ICE Coffee Grading Fee Schedule (PDF)

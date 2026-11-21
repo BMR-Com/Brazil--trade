@@ -57,11 +57,14 @@ jobs:
         run: python -W ignore models/coffee_certs_profile.py
       - name: KC spread model against certified stocks (fails the run on error)
         run: python -W ignore models/kc_spread_model.py
+      - name: Cost to put up certs, front spread into first notice
+        continue-on-error: true
+        run: python -W ignore models/cert_economics.py
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add coffee/data data/coffee/ice_certs.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json 2>/dev/null || true
+          git add coffee/data data/coffee/ice_certs.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json data/derived/cert_economics.json 2>/dev/null || true
           for f in data/coffee/brazil_physical_raw.csv data/coffee/brazil_physical_history.csv data/coffee/brazil_physical_meta.json data/coffee/cepea_robusta_history.csv data/coffee/usdbrl_ptax.csv data/coffee/cepea_arabica_history.csv data/coffee/tender_parity.json data/coffee/tender_parity_history.csv; do [ -f "$f" ] && git add "$f"; done; true
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "coffee: data refresh $(date -u +%F) [bot]"

@@ -67,6 +67,7 @@ jobs:
         run: |
           python -W ignore models/contract_calendar.py || { echo "::error::failed: python -W ignore models/contract_calendar.py"; echo x >> "$RUNNER_TEMP/failed"; }
           python models/cotton_carry.py || { echo "::error::failed: python models/cotton_carry.py"; echo x >> "$RUNNER_TEMP/failed"; }
+          python -W ignore models/cert_economics.py || { echo "::error::failed: python models/cert_economics.py"; echo x >> "$RUNNER_TEMP/failed"; }
           python models/softs_spread_tables.py || echo "::warning::spread tables failed"
           python models/reports_store.py prune || { echo "::error::failed: python models/reports_store.py prune"; echo x >> "$RUNNER_TEMP/failed"; }
           python pipelines/data_status.py || { echo "::error::failed: python pipelines/data_status.py"; echo x >> "$RUNNER_TEMP/failed"; }
