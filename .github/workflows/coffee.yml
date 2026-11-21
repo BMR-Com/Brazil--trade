@@ -65,7 +65,7 @@ jobs:
           for f in data/coffee/brazil_physical_raw.csv data/coffee/brazil_physical_history.csv data/coffee/brazil_physical_meta.json data/coffee/cepea_robusta_history.csv data/coffee/usdbrl_ptax.csv data/coffee/cepea_arabica_history.csv data/coffee/tender_parity.json data/coffee/tender_parity_history.csv; do [ -f "$f" ] && git add "$f"; done; true
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "coffee: data refresh $(date -u +%F) [bot]"
-          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+          for i in 1 2 3 4 5; do git pull -q --rebase --autostash -X theirs origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
       - name: fail the run if any step above failed (steps keep going so the other data still updates, but failures are not hidden)
         if: always()
         run: |

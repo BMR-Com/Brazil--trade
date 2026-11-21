@@ -53,7 +53,7 @@ def tables(html):
 
 
 def parse(html):
-    got = {}
+    got, unlabeled = {}, []
     for title, rows in tables(html):
         low = title.lower()
         tail = low[-400:]
@@ -62,10 +62,24 @@ def parse(html):
         elif "arábica" in tail or "arabica" in tail:
             name = "arabica"
         else:
+            unlabeled.append(rows)
             continue
         rr = bp.cepea_rows([[name]] + rows)
         if rr and ("cepea_" + name) not in got:
             got["cepea_" + name] = [(d, "cepea_" + name, b, u) for d, _, b, u in rr]
+    if len(got) < 2:
+        # Titles not found near the tables: fall back on price level (arabica always trades well above robusta per bag).
+        cands = []
+        for rows in unlabeled:
+            rr = bp.cepea_rows([["arabica"]] + rows)
+            if rr:
+                last = [b or u for _, _, b, u in rr if (b or u)]
+                if last:
+                    cands.append((float(last[-1]), rr))
+        cands.sort(key=lambda x: -x[0])
+        for name, (_, rr) in zip([n for n in ("arabica", "robusta") if "cepea_" + n not in got], cands):
+            got["cepea_" + name] = [(d, "cepea_" + name, b, u) for d, _, b, u in rr]
+            print(f"CEPEA {name}: table matched by price level (no title found)")
     return got
 
 

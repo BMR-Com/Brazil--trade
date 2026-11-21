@@ -58,3 +58,9 @@ jobs:
         with: {path: _site}
       - id: dep
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - if: steps.dep.outcome == 'failure'
+        run: sleep 90
+      - id: dep2
+        if: steps.dep.outcome == 'failure'
+        uses: actions/deploy-pages@v4

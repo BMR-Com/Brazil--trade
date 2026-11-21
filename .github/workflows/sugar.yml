@@ -43,5 +43,5 @@ jobs:
           git add sugar/data
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "sugar: data refresh $(date -u +%F) [bot]"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
