@@ -13711,3 +13711,7 @@ date,series,place,brl_60kg,usd_60kg,source
 2026-11-16,cepea_robusta,CEPEA/ESALQ,,167.63,CEPEA file uploaded to inbox
 2026-11-17,cepea_arabica,CEPEA/ESALQ,,292.19,CEPEA file uploaded to inbox
 2026-11-17,cepea_robusta,CEPEA/ESALQ,,166.18,CEPEA file uploaded to inbox
+2026-11-18,cepea_arabica,CEPEA/ESALQ,1682.78,287.03,CEPEA indicator page (scheduled fetch)
+2026-11-18,cepea_robusta,CEPEA/ESALQ,957.74,163.36,CEPEA indicator page (scheduled fetch)
+2026-11-19,cepea_arabica,CEPEA/ESALQ,1709.06,288.81,CEPEA indicator page (scheduled fetch)
+2026-11-19,cepea_robusta,CEPEA/ESALQ,947.36,160.09,CEPEA indicator page (scheduled fetch)
