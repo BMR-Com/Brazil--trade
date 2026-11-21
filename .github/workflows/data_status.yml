@@ -7,7 +7,7 @@ on:
     branches: [main]
     paths: ['pipelines/data_status.py', '.github/workflows/data_status.yml', 'data/cotton/ice/*.csv', 'data/cotton/ewr/**', 'data/cotton/cfr_compare.json']
   schedule:
-    - cron: '13 */4 * * *'
+    - cron: '13 12,23 * * 1-5'
 permissions: {contents: write}
 concurrency: {group: data-status, cancel-in-progress: true}
 jobs:

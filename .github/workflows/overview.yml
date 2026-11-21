@@ -8,7 +8,7 @@ on:
     paths: ['models/overview.py', 'assets/overview.js', 'data/overview/notes.json', 'data/optsig/optsig.json', '.github/workflows/overview.yml']
   schedule:
     - cron: '27 11-23 * * 1-5'    # hourly in trading hours, after the markets run (:07): intraday prices and key-level alerts
-    - cron: '53 */3 * * 0,6'    # weekends: every 3 hours (news)
+    - cron: '53 15 * * 6'    # weekends: every 3 hours (news)
     - cron: '22 22 * * 1-5'     # after the daily data and COT runs
 permissions: {contents: write}
 concurrency: {group: overview, cancel-in-progress: false}

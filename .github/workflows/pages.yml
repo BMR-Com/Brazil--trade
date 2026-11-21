@@ -2,18 +2,18 @@ name: pages
 # Publishes the website from _site/ (pipelines/build_site.py): the repo minus code and the raw-data folders in
 # site_exclude.txt, which no page reads. Keeps the published site well under GitHub Pages' 1 GB limit and keeps model
 # code off the public page. Everything stays in the repo.
-# Runs after every data workflow (bot commits made with GITHUB_TOKEN do not trigger 'push'), on pushes, and every
-# 20 minutes as a catch-up; a run whose commit is already live does nothing.
+# Runs at fixed times (weekdays 5x + one late run, Saturday and Sunday once each) and on code pushes; data
+# commits wait for the next fixed time. A run whose commit is already live does nothing.
 # Roll back: Settings -> Pages -> Source: "Deploy from a branch" (main, / root) — the old whole-repo site.
 on:
   workflow_dispatch: {}
   push:
     branches: [main]
   schedule:
-    - cron: '*/20 * * * *'
-  workflow_run:
-    workflows: ["australia-sync", "china", "coffee-centrals", "cotton-diffs", "cotton-review", "desk read backup", "ewr-ingest", "ice-certs-index", "india", "markets", "overview", "price_backup", "softs-coffee", "softs-data", "softs-options", "Sugar \u2014 data refresh and model build", "backtest", "Brazil Trade \u2014 Monthly Data Update", "Coffee \u2014 data refresh and model build", "wasde", "cot_full", "cotton_loan", "Weather \u2014 Brazil crop regions and ENSO", "data-status", "desk-watch", "fiber", "ice-inbox", "intel", "cotton-on-call", "softs-contracts", "softs-bootstrap", "softs-geo", "softs-trade", "Sugar \u2014 public panels and weekly inputs", "catch-up", "usda-reports", "wx-ensemble"]
-    types: [completed]
+    - cron: '55 12,15,18,21,23 * * 1-5'   # weekdays ~7am, 10am, 1pm, 4pm, 6pm CT
+    - cron: '55 3 * * 2-6'                # late evening, after the night data runs
+    - cron: '55 16 * * 6'                 # Saturday once (Friday COT, weekly reports)
+    - cron: '55 23 * * 0'                 # Sunday evening once
 permissions:
   contents: read
   pages: write

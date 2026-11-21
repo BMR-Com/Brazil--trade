@@ -9,7 +9,7 @@ on:
     branches: [main]
     paths: ['inbox/**', '!inbox/unrecognised/**', '!inbox/README.md', 'pipelines/ice_inbox.py', 'pipelines/ice_history.py', 'models/coffee_certs_profile.py', 'models/kc_spread_model.py', 'pipelines/brazil_physical.py', 'data/coffee/ref/kc_rule_params.json', 'data/coffee/ref/rule_changes.csv', 'models/cocoa_certs_profile.py', 'data/cocoa/ref/**', '.github/workflows/ice_inbox.yml']
   schedule:
-    - cron: '41 */4 * * *'      # backup, and daily clean-up of old staged PDFs
+    - cron: '41 13,19,23 * * 1-5'      # backup, and daily clean-up of old staged PDFs
 permissions: {contents: write}
 concurrency: {group: ice-inbox, cancel-in-progress: false}
 jobs:
