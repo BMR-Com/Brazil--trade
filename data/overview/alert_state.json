@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-20 20:55 UTC",
- "by": "claude",
+ "updated": "2026-11-21 02:50 UTC",
+ "by": "bot",
  "views": {
   "cotton": {
    "view": "mildly bullish",
@@ -13,22 +13,19 @@
    "score": -0.35
   },
   "coffee": {
-   "view": "mildly bearish",
-   "shade": "bear1",
-   "score": -0.17
+   "view": "bearish",
+   "shade": "bear2",
+   "score": -0.22
   },
   "cocoa": {
    "view": "mildly bearish",
    "shade": "bear1",
-   "score": -0.18
+   "score": -0.13
   }
  },
  "alerts": {
   "cotton": [],
-  "sugar": [
-   "Broke below S1 17.14",
-   "Broke below S2 17.13"
-  ],
+  "sugar": [],
   "coffee": [],
   "cocoa": []
  },

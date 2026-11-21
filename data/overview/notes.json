@@ -1,59 +1,57 @@
 {
- "updated": "2026-11-20",
- "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
- "markets": {
-  "cotton": {
-   "date": "2026-11-20",
-   "by": "claude",
-   "time": "14:50 CT",
-   "claude_date": "2026-11-20",
-   "fundamental": "Still no fresh supply news: harvest reports keep describing uneven US yields, and Dec is in delivery near 75.8, so the live read is Mar/May/Jul. The broad risk-off move in equities today is a demand-side headwind for a fund-driven market; high-grade certs remain the thing to watch for longs.",
-   "events": [
-    "Mixed US cotton yields after weather extremes (Farm Progress)",
-    "Wall Street AI-led rout, VIX near 35 (AP, Yahoo Finance)"
-   ]
+  "updated": "2026-11-20",
+  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+  "markets": {
+    "cotton": {
+      "date": "2026-11-20",
+      "by": "bot",
+      "time": "20:50 CT",
+      "claude_date": "2026-11-20",
+      "fundamental": "2 headlines in the last 30 hours; the news flow has no clear supply or demand signal, price reports mixed (0 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
+      "events": [
+        "Greaves Cotton Accelerates Global Marine Business Expansion Through Multiflex Marine; Targets Europe as a Key Growth Market – Company Announcement - FT.com (Financial Times, 2026-11-20)",
+        "Weather extremes bring mixed cotton yields (Farm Progress, 2026-11-20)"
+      ]
+    },
+    "sugar": {
+      "date": "2026-11-20",
+      "by": "bot",
+      "time": "20:50 CT",
+      "claude_date": "2026-11-20",
+      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, price reports mixed (0 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
+      "events": [
+        "Improved Supply Outlook Weighs on Sugar Prices (Barchart.com, 2026-11-20)"
+      ],
+      "claude_fund_score": -0.45,
+      "fund_score": -0.45
+    },
+    "coffee": {
+      "date": "2026-11-20",
+      "by": "bot",
+      "time": "20:50 CT",
+      "claude_date": "2026-11-20",
+      "fundamental": "2 headlines in the last 30 hours; the news flow leans bearish (bigger supplies or weaker demand outnumber supply risks), prices mostly reported lower (0 supply-tight, 1 supply-loose, 0 up, 1 down by keyword).",
+      "events": [
+        "Coffee Prices Fall on Expectations of Abundant Supplies (Barchart.com, 2026-11-20)",
+        "The Outlook for Stronger Brazil Coffee Exports Weighs on Prices (Barchart.com, 2026-11-20)"
+      ],
+      "claude_fund_score": 0.0,
+      "fund_score": -0.15
+    },
+    "cocoa": {
+      "date": "2026-11-20",
+      "by": "bot",
+      "time": "20:50 CT",
+      "claude_date": "2026-11-20",
+      "fundamental": "4 headlines in the last 30 hours; the news flow leans bearish (bigger supplies or weaker demand outnumber supply risks), price reports mixed (1 supply-tight, 2 supply-loose, 0 up, 0 down by keyword).",
+      "events": [
+        "Cocoa Pricier in Europe as Traders Brace for Deforestation Rules (Bloomberg.com, 2026-11-20)",
+        "El Niño Hits Cocoa Outlook (ADMIS, 2026-11-20)",
+        "Cocoa Prices Supported by Global Supply Risks (Barchart.com, 2026-11-20)"
+      ],
+      "claude_fund_score": -0.1,
+      "fund_score": -0.1
+    }
   },
-  "sugar": {
-   "date": "2026-11-20",
-   "by": "claude",
-   "time": "14:50 CT",
-   "claude_date": "2026-11-20",
-   "fundamental": "Brazil is still the driver: the real weakened again (USD/BRL near 5.95), keeping Centre-South export parity cheap, and Mar has slipped through the 17.13-17.14 support band to around 17.07. Talk of a better supply outlook adds to it; the weak French beet crop is only a marginal offset for whites.",
-   "events": [
-    "Mar raw sugar breaks below 17.13 as the real slides (Barchart, Yahoo Finance)",
-    "Improved supply outlook weighs on sugar (Barchart)",
-    "Tereos cuts outlook on poor French beet crop (Investing.com)"
-   ],
-   "fund_score": -0.45,
-   "claude_fund_score": -0.45
-  },
-  "coffee": {
-   "date": "2026-11-20",
-   "by": "claude",
-   "time": "14:50 CT",
-   "claude_date": "2026-11-20",
-   "fundamental": "Arabica gave back about 3% on talk of stronger Brazilian exports and a weaker real, which encourages farmer selling. There is still no new ICE certified-stock or Antwerp figure, so the support from thin exchange stocks is unchanged; if Brazil shipments do pick up, that would ease deliverability concerns over the next couple of months.",
-   "events": [
-    "Outlook for stronger Brazil exports weighs on arabica (Barchart)",
-    "Real weakens toward 5.95 per dollar (Yahoo Finance)"
-   ],
-   "fund_score": 0.0,
-   "claude_fund_score": 0.0
-  },
-  "cocoa": {
-   "date": "2026-11-20",
-   "by": "claude",
-   "time": "14:50 CT",
-   "claude_date": "2026-11-20",
-   "fundamental": "Cocoa firmed about 1.5-2% as supply risks came back into focus: an El Nino warning for the coming West African seasons and the risk that rains and congestion slow Ivorian port arrivals. Rising ICE stocks still cap rallies, and European buyers paying up ahead of EU deforestation rules supports physical premiums.",
-   "events": [
-    "El Nino risk hits the cocoa output outlook (ADMIS)",
-    "Global supply risks lift cocoa (Barchart)",
-    "European cocoa premiums firm before deforestation rules (Bloomberg)"
-   ],
-   "fund_score": -0.1,
-   "claude_fund_score": -0.1
-  }
- },
- "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-19 21:44 CT: Claude's desk read had not run for 5+ hours."
+  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-20 20:50 CT: Claude's desk read had not run for 5+ hours."
 }
