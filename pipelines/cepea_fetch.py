@@ -10,6 +10,7 @@ Rows with only R$ get US$ from the PTAX series already in the desk (build() hand
 Fails (exit 1) if the page was fetched but no dated rows for both indices could be parsed. Ma's inbox uploads stay as backup.
 """
 import re
+from datetime import date
 import sys
 import urllib.robotparser
 from pathlib import Path
@@ -52,6 +53,31 @@ def tables(html):
     return out
 
 
+def _br(x):
+    x = x.replace("R$", "").replace("US$", "").strip()
+    if not re.fullmatch(r"[\d.]+,\d+|\d+(\.\d+)?", x):
+        return None
+    return float(x.replace(".", "").replace(",", ".")) if "," in x else float(x)
+
+
+def loose_rows(rows):
+    """Header-free reading: rows starting with a dd/mm/yyyy date; BRL = first plain number, USD = last (percent cells skipped)."""
+    out = []
+    for r in rows:
+        m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})$", (r[0] if r else "").strip())
+        if not m:
+            continue
+        nums = [v for v in (_br(c) for c in r[1:] if "%" not in c) if v is not None]
+        if len(nums) < 2:
+            continue
+        try:
+            d = date(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+        except ValueError:
+            continue
+        out.append((d.isoformat(), "", nums[0], nums[-1]))
+    return out
+
+
 def parse(html):
     got, unlabeled = {}, []
     for title, rows in tables(html):
@@ -70,8 +96,8 @@ def parse(html):
     if len(got) < 2:
         # Titles not found near the tables: fall back on price level (arabica always trades well above robusta per bag).
         cands = []
-        for rows in unlabeled:
-            rr = bp.cepea_rows([["arabica"]] + rows)
+        for rows in (unlabeled or [r for _, r in tables(html)]):
+            rr = bp.cepea_rows([["arabica"]] + rows) or loose_rows(rows)
             if rr:
                 last = [b or u for _, _, b, u in rr if (b or u)]
                 if last:
