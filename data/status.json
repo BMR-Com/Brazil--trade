@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21 02:12 UTC",
+ "generated": "2026-11-21 02:17 UTC",
  "today": "2026-11-20",
  "sources": [
   {
@@ -293,7 +293,7 @@
   {
    "group": "Cotton",
    "source": "China",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -329,7 +329,7 @@
   {
    "group": "Coffee",
    "source": "Coffee desk (ICE certs, basis, origins)",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -413,9 +413,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ arabica index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-19",
    "cadence": "daily",
-   "age": 3,
+   "age": 1,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -425,9 +425,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ robusta index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-19",
    "cadence": "daily",
-   "age": 3,
+   "age": 1,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -533,7 +533,7 @@
   {
    "group": "Coffee",
    "source": "Brazil coffee weather (weighted)",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -941,7 +941,7 @@
   {
    "group": "Macro",
    "source": "US economic data (BLS, BEA, Fed)",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
