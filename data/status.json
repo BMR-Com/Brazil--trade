@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21 00:59 UTC",
+ "generated": "2026-11-21 01:45 UTC",
  "today": "2026-11-20",
  "sources": [
   {
@@ -65,9 +65,9 @@
   {
    "group": "Cotton",
    "source": "ICE quality grid (AMS daily spot quotes)",
-   "latest": "2026-11-19",
+   "latest": "2026-11-20",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -833,7 +833,7 @@
   {
    "group": "Cotton",
    "source": "Reports: USDA attach\u00e9 (GAIN), World Markets and Trade, ERS outlook (last full check)",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1049,12 +1049,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": null,
+   "latest": "2026-11-21",
    "cadence": "monthly",
-   "age": null,
+   "age": 0,
    "age_unit": "days",
    "limit": 40,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1083,9 +1083,9 @@
    "used_in": "options terminal"
   }
  ],
- "late": 14,
+ "late": 13,
  "inbox": {
-  "updated": "2026-11-20 17:16 UTC",
+  "updated": "2026-11-21 01:44 UTC",
   "last": [
    {
     "type": "CT_options",
