@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21 02:52 UTC",
+ "generated": "2026-11-21 03:54 UTC",
  "today": "2026-11-20",
  "sources": [
   {
@@ -317,7 +317,7 @@
   {
    "group": "Cotton",
    "source": "Australia (synced from US desk)",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -545,7 +545,7 @@
   {
    "group": "Sugar",
    "source": "Sugar desk",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -569,9 +569,9 @@
   {
    "group": "Sugar",
    "source": "Cane-belt weather, stoppage days, season range (ERA5)",
-   "latest": "2026-11-18",
+   "latest": "2026-11-20",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -581,7 +581,7 @@
   {
    "group": "Sugar",
    "source": "Cane-belt ensemble forecast (ECMWF ENS, GEFS)",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -593,9 +593,9 @@
   {
    "group": "Sugar",
    "source": "India releases: ISMA, DGFT, quotas, prices (manual)",
-   "latest": "2026-11-14",
+   "latest": "2026-11-18",
    "cadence": "fortnightly",
-   "age": 6,
+   "age": 2,
    "age_unit": "days",
    "limit": 20,
    "state": "ok",
@@ -677,7 +677,7 @@
   {
    "group": "Sugar",
    "source": "Weekly report input pack",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1037,9 +1037,9 @@
   {
    "group": "Embedded dashboards",
    "source": "Spot basis dashboard (BMR-Com/cotton-crop-progress)",
-   "latest": "2026-11-19",
+   "latest": "2026-11-20",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
