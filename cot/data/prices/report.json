@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-21 01:45 UTC",
+ "fetched_at": "2026-11-21 02:08 UTC",
  "source": "Yahoo Finance via yfinance (front-month continuous)",
  "markets": {
   "CO": {
@@ -167,8 +167,8 @@
    "front": "F27",
    "deferred": "F28",
    "p_front": 2.4813,
-   "p_deferred": 2.2204,
-   "carry_ann": 0.1111,
+   "p_deferred": 2.2314,
+   "carry_ann": 0.1062,
    "date": "2026-11-20"
   },
   "C": {
