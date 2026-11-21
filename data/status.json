@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21 02:20 UTC",
+ "generated": "2026-11-21 02:52 UTC",
  "today": "2026-11-20",
  "sources": [
   {
@@ -953,7 +953,7 @@
   {
    "group": "Macro",
    "source": "Events calendar",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -977,7 +977,7 @@
   {
    "group": "Macro",
    "source": "News",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "every few hours",
    "age": 0,
    "age_unit": "business days",
