@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21 10:24 UTC",
+ "generated": "2026-11-22 03:19 UTC",
  "today": "2026-11-21",
  "sources": [
   {
@@ -305,9 +305,9 @@
   {
    "group": "Cotton",
    "source": "India",
-   "latest": "2026-11-20",
+   "latest": "2026-11-21",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -317,7 +317,7 @@
   {
    "group": "Cotton",
    "source": "Australia (synced from US desk)",
-   "latest": "2026-11-21",
+   "latest": "2026-11-22",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
