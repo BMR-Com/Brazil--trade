@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-22 10:19 UTC",
+ "checked": "2026-11-23 11:17 UTC",
  "repo": "BMR-Com/Brazil--trade",
  "mode": "wait+recheck",
  "late_or_failed_at_start": [
@@ -198,31 +198,31 @@
    "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
    "file": "cotton_loan.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-22T10:19+00:00",
+   "at": "2026-11-23T11:17+00:00",
    "ok": true,
    "for": "fsa_loan",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45011862484"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45163869898"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
    "file": "softs_contracts.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-22T10:19+00:00",
+   "at": "2026-11-23T11:17+00:00",
    "ok": true,
    "for": "cc_certs_profile",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45011863781"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45163873465"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
    "file": "desk_watch.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-22T10:19+00:00",
+   "at": "2026-11-23T11:17+00:00",
    "ok": true,
    "for": "what_changed",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45011865365"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45163876792"
   }
  ],
  "still_late": [
@@ -594,6 +594,36 @@
    "for": "what_changed",
    "result": "success",
    "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45011865365"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
+   "file": "cotton_loan.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-23T11:17+00:00",
+   "ok": true,
+   "for": "fsa_loan",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45163869898"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
+   "file": "softs_contracts.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-23T11:17+00:00",
+   "ok": true,
+   "for": "cc_certs_profile",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45163873465"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "file": "desk_watch.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-23T11:17+00:00",
+   "ok": true,
+   "for": "what_changed",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45163876792"
   }
  ],
  "last_email": null
