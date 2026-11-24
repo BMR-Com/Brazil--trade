@@ -1,12 +1,30 @@
 {
-  "week_ending": "2026-11-20",
+  "week_ending": "2026-11-24",
   "themes": [
-    "The short-covering floor in raws broke on 19 Nov: once fund sell stops under the prior low were hit, consumer and trade buying could not hold it, so the large managed-money long is now the main downside risk rather than a support.",
-    "Czarnikow's Brazil revision remains a timing shift, not lost cane: rain-stopped cane rolls into 2027/28, which keeps Mar/May firm on old-crop tightness even as flat price falls, while the deferred curve carries next season's larger start.",
-    "Outside Brazil, Australia ends a delayed crush with weak late sugar content and the US domestic market keeps tightening after USDA's beet and cane cuts; supportive at the margin, but not enough to offset fund selling in New York.",
-    "Ethanol is a cap rather than a floor: even after the drop, raws still pay above hydrous parity in Brazil, so mills have no reason to cut the sugar mix and the parity floor sits well below the market."
+    "The break below the 18c floor turned into a two-session slide, and Monday's bounce was short covering met by Brazilian mill and grower hedging on a weak real: the real channel is capping rallies while funds still hold a large net long.",
+    "Positioning is the main risk in both directions: specs only trimmed their long into the break, so further liquidation is still the downside path, while producers covering shorts and end-users adding longs show who buys the dips.",
+    "Whites are holding up better than raws, keeping the whites premium firm enough to keep refiners bidding for Brazilian raws on the March and May horizontals.",
+    "The US domestic market stays tight after USDA's November cuts, but it is walled off from No. 11 and its demand looks softer than deliveries suggest; little read-across to world prices."
   ],
   "items": [
+    {
+      "date": "2026-11-24",
+      "title": "US Sugar Prices Hold Firm as Demand Signals Soften",
+      "url": "https://www.czapp.com/analyst-insights/us-sugar-prices-hold-firm-as-demand-signals-soften/",
+      "takeaway": "US domestic cash trade is thin with users mostly covered for next year; sellers keep premiums because USDA's November cuts to US output and deliveries tightened stocks-to-use, though it stays inside the comfort band. Strong deliveries may partly be buyers forced to take contracted sugar, a setup for later destocking."
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Futures and Market Data: 23rd November 2026",
+      "url": "https://www.czapp.com/analyst-insights/futures-and-market-data-23rd-november-2026/",
+      "takeaway": "Chart pack for the week of the break: raws fell hard in the last two sessions; the latest COT showed specs trimming but still holding a large net long, producers covering some shorts and end-users adding longs, with March and May open interest falling. The 2027 whites premium held broadly steady."
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Daily Market Price Updates and Commentary 23rd November 2026",
+      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-23rd-november-2026/",
+      "takeaway": "Raws bounced on short covering and fresh buying after Friday's slide, but mills and growers priced into the strength with the real near 6.0 per dollar, capping the rally; whites outperformed and the March whites premium widened."
+    },
     {
       "date": "2026-11-19",
       "title": "Daily Market Price Updates and Commentary 19th November 2026",
@@ -54,12 +72,6 @@
       "title": "Understanding Sugar Production",
       "url": "https://www.czapp.com/explainers/understanding-sugar-production/",
       "takeaway": "Explainer on cane versus beet: cane is tropical, ratooned and milled to raws with bagasse as fuel; beet is temperate, harvested in autumn and processed straight to whites."
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Daily Market Price Updates and Commentary 16th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-16th-november-2026/",
-      "takeaway": "Raws stayed in their 18-18.5c band but closed toward the bottom as the real weakened; London March held just above its recent low, leaving a retest open."
     }
   ]
 }
