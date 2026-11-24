@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24 06:56 UTC",
+ "generated": "2026-11-24 07:00 UTC",
  "today": "2026-11-24",
  "sources": [
   {
@@ -17,9 +17,9 @@
   {
    "group": "Prices",
    "source": "Per-contract settlements (TradingView)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -533,9 +533,9 @@
   {
    "group": "Coffee",
    "source": "Brazil coffee weather (weighted)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
