@@ -1,21 +1,6 @@
 {
-"generated": "2026-11-23 23:59 UTC",
+"generated": "2026-11-24 22:32 UTC",
 "events": [
-{
-"date": "2026-11-16",
-"time": "10:00 AM CT",
-"event": "USDA export inspections",
-"cat": "USDA",
-"markets": [
-"ZC",
-"ZS",
-"ZW",
-"KE"
-],
-"importance": 1,
-"link": null,
-"estimated": false
-},
 {
 "date": "2026-11-17",
 "time": "3:30 PM CT",
@@ -2306,6 +2291,33 @@
 "cat": "CFTC",
 "markets": [
 "ALL"
+],
+"importance": 1,
+"link": null,
+"estimated": false
+},
+{
+"date": "2027-02-22",
+"time": "",
+"event": "Cotton Mar 27: first notice day",
+"cat": "ICE contract",
+"markets": [
+"CT"
+],
+"importance": 2,
+"link": null,
+"estimated": true
+},
+{
+"date": "2027-02-22",
+"time": "10:00 AM CT",
+"event": "USDA export inspections",
+"cat": "USDA",
+"markets": [
+"ZC",
+"ZS",
+"ZW",
+"KE"
 ],
 "importance": 1,
 "link": null,
