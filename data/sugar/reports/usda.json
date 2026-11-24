@@ -7,6 +7,19 @@
  "note": "GAIN reports are written by USDA's overseas posts and are not official USDA estimates; the official number is the one in the report's own table (USDA Official). Following the desk's rule, the points show how far Post is from USDA and how Post changed its own numbers, not the levels alone.",
  "entries": [
   {
+   "date": "2026-11-17",
+   "title": "ERS Sugar and Sweeteners Outlook: November 2026 — U.S. 2026/27 Sugar Supply and Use Are Lowered",
+   "url": "https://www.ers.usda.gov/publications/115678",
+   "kind": "ers",
+   "tag": "ERS outlook",
+   "key_points": [
+    "For 2026/27, U.S. sugar supply is reduced 238,000 short tons, raw value (STRV) from last month to 14.149 million STRV.",
+    "Domestic sugar production is down almost 250,000 STRV to 8.520 million, the lowest since the weather-reduced 2019/20 output.",
+    "U.S. 2026/27 sugar use is decreased 96,000 STRV to 12.426 million, solely on a reduction to sugar deliveries for human consumption, in line with the adjusted 2025/26 volume."
+   ],
+   "auto": true
+  },
+  {
    "date": "2026-11-10",
    "title": "FAS Sugar: World Markets and Trade, November 2026 — China Sugar Deficit Falls to 10-Year Low, Curbing Imports",
    "url": "https://apps.fas.usda.gov/psdonline/circulars/sugar.pdf",
@@ -1562,5 +1575,5 @@
    }
   ]
  },
- "built": "2026-11-21 04:06 UTC"
+ "built": "2026-11-24 04:57 UTC"
 }

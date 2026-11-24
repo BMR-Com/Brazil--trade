@@ -1,6 +1,6 @@
 {
  "ers": {
-  "checked_max": 115675,
+  "checked_max": 115679,
   "items": {
    "ers-cotton-2026-04": {
     "code": "CWS-26d",
@@ -169,6 +169,18 @@
     "pdf": "https://www.ers.usda.gov/media/29758/sss-m-458.pdf",
     "title": "Sugar and Sweeteners Outlook: October 2026",
     "url": "https://www.ers.usda.gov/publications/115636"
+   },
+   "ers-sugar-2026-11": {
+    "code": "SSS-M-459",
+    "date": "2026-11-17",
+    "headline": "U.S. 2026/27 Sugar Supply and Use Are Lowered",
+    "id": 115678,
+    "key": "ers-sugar-2026-11",
+    "market": "sugar",
+    "month": "2026-11",
+    "pdf": "https://www.ers.usda.gov/media/30375/sss-m-459.pdf",
+    "title": "Sugar and Sweeteners Outlook: November 2026",
+    "url": "https://www.ers.usda.gov/publications/115678"
    }
   }
  },
@@ -20285,8 +20297,8 @@
    "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Ho%20Chi%20Minh%20City_Vietnam_VM2026-0016.pdf"
   }
  },
- "last_ok": "2026-11-21T04:06Z",
- "updated": "2026-11-21T04:06Z",
+ "last_ok": "2026-11-24T04:57Z",
+ "updated": "2026-11-24T04:57Z",
  "wmt": {
   "wmt-coffee-2026-07": {
    "first_seen": "2026-11-18",
