@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-21 02:50 UTC",
+ "updated": "2026-11-24 01:12 UTC",
  "by": "bot",
  "views": {
   "cotton": {
    "view": "mildly bullish",
    "shade": "bull1",
-   "score": 0.11
+   "score": 0.12
   },
   "sugar": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.35
+   "score": -0.34
   },
   "coffee": {
    "view": "bearish",
@@ -25,7 +25,10 @@
  },
  "alerts": {
   "cotton": [],
-  "sugar": [],
+  "sugar": [
+   "Broke above R1 17.26",
+   "Broke above R2 17.27"
+  ],
   "coffee": [],
   "cocoa": []
  },
