@@ -5,37 +5,37 @@
     "cotton": {
       "date": "2026-11-24",
       "by": "claude",
-      "time": "07:55 CT",
-      "fundamental": "Fresh Texas Plains yield reports describe drought losses on dryland fields, in line with the desk's above-USDA abandonment call; nothing new on demand. For old-crop Mar/May the supply story stays supportive, but the dollar firming and Brazilian real weakness keep export competition tough.",
+      "time": "11:50 CT",
+      "fundamental": "Old-crop Mar is pushing back above 81-82 as Dec heads into delivery, with Texas Plains drought losses still the supply story; nothing new on export demand. A slightly softer dollar and a firmer real today ease the Brazil export-competition headwind at the margin; watch high-grade certificated stocks into Dec notice, which are not benign for longs.",
       "events": [
-        "Texas Plains drought cutting cotton yields, Floyd County still leads upland output (Farm Progress, RFD-TV)",
-        "Mar/May cotton spread update as Dec delivery period nears (Barchart)",
-        "Cotton firm Monday morning with equities rebounding (Barchart)"
+        "Cotton firm, Dec ~78.7 and Mar ~82 midday (Yahoo Finance/ICE)",
+        "Texas Plains drought cuts dryland yields (Farm Progress)",
+        "Mar/May spread in focus as Dec delivery nears (Barchart)"
       ]
     },
     "sugar": {
       "date": "2026-11-24",
       "by": "claude",
-      "time": "07:55 CT",
-      "fundamental": "Brazil drives this: the real sliding past 6 per dollar to a 19-month low on the post-election selloff makes dollar sugar more attractive for Brazilian mills to hedge and export, which caps rallies. Monday's bounce looks like short covering rather than a change in Brazil's supply picture; Europe's weaker beet crop is a minor offset.",
+      "time": "11:50 CT",
+      "fundamental": "Brazil remains the driver: the real bounced about 1% to near 5.89 after Lula's fiscal plan cleared Congress, trimming some of the mill-hedging incentive that weighed last week. Mar is holding just above 17.56 resistance, but nothing has changed in Brazil's supply picture, so the bounce still reads as positioning.",
       "events": [
-        "Real weakens past 6/USD, 19-month low as Lula selloff extends (Bloomberg)",
-        "Raw sugar rebounds Monday after last week's slide (Barchart)",
-        "Tereos cuts outlook on poor French beet harvest (Investing.com)"
+        "Lula's fiscal plan clears Congress after real slump (Bloomberg)",
+        "Real firms ~1% to 5.89/USD (Yahoo Finance)",
+        "Raw sugar holds Monday's rebound near 17.6 (Barchart)"
       ],
-      "fund_score": -0.4
+      "fund_score": -0.35
     },
     "coffee": {
       "date": "2026-11-24",
       "by": "claude",
-      "time": "07:55 CT",
-      "fundamental": "ICE certified arabica keeps rebuilding (about 269k bags, up roughly a sixth in a month), which eases the deliverable squeeze that underpinned the Dec/Mar inverse. A real at a 1.75-year low encourages Brazilian farmer selling while November export registrations run close to October's pace, so deliverability from Brazil looks ample near term.",
+      "time": "11:50 CT",
+      "fundamental": "Rising ICE certified arabica stocks remain the bearish anchor and ease Dec deliverability worries; a firmer real today only slightly reduces Brazilian farmer selling. USDA's cut to Colombia's export outlook trims washed-arabica availability, a modest offset rather than a change of direction.",
       "events": [
-        "Coffee falls as ICE inventories rise and the real hits a 1.75-year low (Barchart)",
-        "Brief Monday rebound as the real steadied (ADMIS)",
-        "Cecafé registrations 3.43m bags month-to-date to 23 Nov (Cecafé)"
+        "USDA cuts Colombia coffee export forecast by 760,000 bags (Daily Coffee News)",
+        "Coffee Dec ~271, down ~1% early (Yahoo Finance/ICE)",
+        "Real rebounds as fiscal plan passes (Bloomberg)"
       ],
-      "fund_score": -0.3
+      "fund_score": -0.25
     },
     "cocoa": {
       "date": "2026-11-24",
