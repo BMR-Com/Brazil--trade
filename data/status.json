@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24 01:13 UTC",
+ "generated": "2026-11-24 01:42 UTC",
  "today": "2026-11-23",
  "sources": [
   {
@@ -497,7 +497,7 @@
   {
    "group": "Coffee",
    "source": "Colombia internal reference price, FNC (daily)",
-   "latest": "2026-11-22",
+   "latest": "2026-11-23",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -509,9 +509,9 @@
   {
    "group": "Coffee",
    "source": "Honduras crop-year exports and forecast, ADECAFEH (page updated about weekly)",
-   "latest": "2026-11-13",
+   "latest": "2026-11-20",
    "cadence": "weekly",
-   "age": 10,
+   "age": 3,
    "age_unit": "days",
    "limit": 21,
    "state": "ok",
