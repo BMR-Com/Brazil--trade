@@ -1,33 +1,32 @@
 {
- "updated": "2026-11-24 01:12 UTC",
- "by": "bot",
+ "updated": "2026-11-24 13:50 UTC",
+ "by": "claude",
  "views": {
   "cotton": {
-   "view": "mildly bullish",
-   "shade": "bull1",
-   "score": 0.12
+   "view": "bullish",
+   "shade": "bull2",
+   "score": 0.21
   },
   "sugar": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.34
+   "score": -0.25
   },
   "coffee": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.22
+   "score": -0.43
   },
   "cocoa": {
-   "view": "mildly bearish",
-   "shade": "bear1",
-   "score": -0.13
+   "view": "neutral",
+   "shade": "neutral",
+   "score": -0.06
   }
  },
  "alerts": {
   "cotton": [],
   "sugar": [
-   "Broke above R1 17.26",
-   "Broke above R2 17.27"
+   "Broke above R1 17.56"
   ],
   "coffee": [],
   "cocoa": []
@@ -65,6 +64,8 @@
   "2026-11-20 Coffee view to mildly bearish (Mar ~269)",
   "2026-11-20 Cocoa: EUDR prep lifts European premiums; delayed Ivorian crop risks port congestion",
   "2026-11-20 Equity rout: Nasdaq ~-4.8%, S&P ~-3.3%, VIX ~35; gold -4%, silver -8%",
-  "2026-11-20 US screwworm cases surge (Reuters)"
+  "2026-11-20 US screwworm cases surge (Reuters)",
+  "2026-11-24 BRL past 6/USD, 19-month low (Bloomberg)",
+  "2026-11-24 Views: cotton to bullish, cocoa to neutral; sugar Mar above R1 17.56"
  ]
 }

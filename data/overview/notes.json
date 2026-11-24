@@ -1,58 +1,53 @@
 {
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
   "markets": {
     "cotton": {
-      "date": "2026-11-23",
-      "by": "bot",
-      "time": "19:12 CT",
-      "claude_date": "2026-11-20",
-      "fundamental": "No new headlines for this market in the last 76 hours.",
+      "date": "2026-11-24",
+      "by": "claude",
+      "time": "07:55 CT",
+      "fundamental": "Fresh Texas Plains yield reports describe drought losses on dryland fields, in line with the desk's above-USDA abandonment call; nothing new on demand. For old-crop Mar/May the supply story stays supportive, but the dollar firming and Brazilian real weakness keep export competition tough.",
       "events": [
-        "Greaves Cotton Accelerates Global Marine Business Expansion Through Multiflex Marine; Targets Europe as a Key Growth Market – Company Announcement - FT.com (Financial Times, 2026-11-20)",
-        "Weather extremes bring mixed cotton yields (Farm Progress, 2026-11-20)"
+        "Texas Plains drought cutting cotton yields, Floyd County still leads upland output (Farm Progress, RFD-TV)",
+        "Mar/May cotton spread update as Dec delivery period nears (Barchart)",
+        "Cotton firm Monday morning with equities rebounding (Barchart)"
       ]
     },
     "sugar": {
-      "date": "2026-11-23",
-      "by": "bot",
-      "time": "19:12 CT",
-      "claude_date": "2026-11-20",
-      "fundamental": "1 headline in the last 76 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 1 up, 0 down by keyword).",
+      "date": "2026-11-24",
+      "by": "claude",
+      "time": "07:55 CT",
+      "fundamental": "Brazil drives this: the real sliding past 6 per dollar to a 19-month low on the post-election selloff makes dollar sugar more attractive for Brazilian mills to hedge and export, which caps rallies. Monday's bounce looks like short covering rather than a change in Brazil's supply picture; Europe's weaker beet crop is a minor offset.",
       "events": [
-        "Sugar Prices Rebound Higher (Barchart.com, 2026-11-23)"
+        "Real weakens past 6/USD, 19-month low as Lula selloff extends (Bloomberg)",
+        "Raw sugar rebounds Monday after last week's slide (Barchart)",
+        "Tereos cuts outlook on poor French beet harvest (Investing.com)"
       ],
-      "claude_fund_score": -0.45,
-      "fund_score": -0.45
+      "fund_score": -0.4
     },
     "coffee": {
-      "date": "2026-11-23",
-      "by": "bot",
-      "time": "19:12 CT",
-      "claude_date": "2026-11-20",
-      "fundamental": "3 headlines in the last 76 hours; the news flow leans bearish (bigger supplies or weaker demand outnumber supply risks), price reports mixed (0 supply-tight, 1 supply-loose, 2 up, 2 down by keyword).",
+      "date": "2026-11-24",
+      "by": "claude",
+      "time": "07:55 CT",
+      "fundamental": "ICE certified arabica keeps rebuilding (about 269k bags, up roughly a sixth in a month), which eases the deliverable squeeze that underpinned the Dec/Mar inverse. A real at a 1.75-year low encourages Brazilian farmer selling while November export registrations run close to October's pace, so deliverability from Brazil looks ample near term.",
       "events": [
-        "Coffee Rebounds as Brazil Real Recovers (ADMIS, 2026-11-23)",
-        "Coffee Prices Fall as ICE Inventories Rise and Brazilian Real Falls to 1.75-Year Low (Barchart.com, 2026-11-23)",
-        "Coffee Prices Fall as Brazilian Real Posts New 1.75-Year Low (Barchart.com, 2026-11-23)"
+        "Coffee falls as ICE inventories rise and the real hits a 1.75-year low (Barchart)",
+        "Brief Monday rebound as the real steadied (ADMIS)",
+        "Cecafé registrations 3.43m bags month-to-date to 23 Nov (Cecafé)"
       ],
-      "claude_fund_score": 0.0,
-      "fund_score": -0.15
+      "fund_score": -0.3
     },
     "cocoa": {
-      "date": "2026-11-23",
-      "by": "bot",
-      "time": "19:12 CT",
-      "claude_date": "2026-11-20",
-      "fundamental": "No new headlines for this market in the last 76 hours.",
+      "date": "2026-11-24",
+      "by": "claude",
+      "time": "07:55 CT",
+      "fundamental": "Recent reports point to Ivory Coast port arrivals picking up after rain-related transport delays, and talk of ample global supply is weighing on prices; rising ICE certified stocks support that. Offsets are El Niño risk to the mid-crop and EUDR-related premiums in Europe; no new Ghana COCOBOD news since the 2030 bean-export-ban plan.",
       "events": [
-        "Cocoa Pricier in Europe as Traders Brace for Deforestation Rules (Bloomberg.com, 2026-11-20)",
-        "El Niño Hits Cocoa Outlook (ADMIS, 2026-11-20)",
-        "Cocoa Prices Supported by Global Supply Risks (Barchart.com, 2026-11-20)"
+        "Cocoa eases as supply concerns fade and arrivals improve (Barchart/Nasdaq)",
+        "EUDR preparations lift European cocoa premiums (Bloomberg)",
+        "El Niño risk flagged for West African output (ADMIS)"
       ],
-      "claude_fund_score": -0.1,
-      "fund_score": -0.1
+      "fund_score": -0.2
     }
-  },
-  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-23 19:12 CT: Claude's desk read had not run for 5+ hours."
+  }
 }
