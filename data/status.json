@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24 12:29 UTC",
+ "generated": "2026-11-24 13:05 UTC",
  "today": "2026-11-24",
  "sources": [
   {
@@ -737,9 +737,9 @@
   {
    "group": "Cocoa",
    "source": "CC calendar-spread history (per-contract closes)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -845,9 +845,9 @@
   {
    "group": "Coffee",
    "source": "KC calendar-spread history (per-contract closes)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -1049,12 +1049,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": "2026-11-24",
+   "latest": null,
    "cadence": "monthly",
-   "age": 0,
+   "age": null,
    "age_unit": "days",
    "limit": 40,
-   "state": "ok",
+   "state": "missing",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1083,7 +1083,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 17,
+ "late": 18,
  "inbox": {
   "updated": "2026-11-24 01:12 UTC",
   "last": [
