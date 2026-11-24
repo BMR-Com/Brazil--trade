@@ -1,6 +1,6 @@
 {
- "built": "2026-11-21 09:56 UTC",
- "asof": "2026-11-20",
+ "built": "2026-11-24 05:03 UTC",
+ "asof": "2026-11-23",
  "coffee": [
   {
    "group": "Settlements: ICE arabica",
@@ -9,9 +9,9 @@
     "KCH2027"
    ],
    "unit": "c/lb",
-   "value": 268.5,
-   "chg": -7.5,
-   "date": "2026-11-20"
+   "value": 274.25,
+   "chg": 5.75,
+   "date": "2026-11-23"
   },
   {
    "group": "Settlements: ICE arabica",
@@ -20,9 +20,9 @@
     "KCK2027"
    ],
    "unit": "c/lb",
-   "value": 262.1,
-   "chg": -6.1,
-   "date": "2026-11-20"
+   "value": 267.55,
+   "chg": 5.45,
+   "date": "2026-11-23"
   },
   {
    "group": "Settlements: ICE robusta",
@@ -55,11 +55,11 @@
    ],
    "position": "1/2",
    "unit": "c/lb",
-   "value": 6.4,
-   "pct_of_deferred": 2.44,
-   "chg": -1.4,
-   "pctile_1y": 25.0,
-   "date": "2026-11-20"
+   "value": 6.7,
+   "pct_of_deferred": 2.5,
+   "chg": 0.3,
+   "pctile_1y": 27.0,
+   "date": "2026-11-23"
   },
   {
    "group": "Arabica switches",
@@ -70,11 +70,11 @@
    ],
    "position": "2/3",
    "unit": "c/lb",
-   "value": 4.95,
-   "pct_of_deferred": 1.92,
-   "chg": -1.4,
-   "pctile_1y": 32.0,
-   "date": "2026-11-20"
+   "value": 5.2,
+   "pct_of_deferred": 1.98,
+   "chg": 0.25,
+   "pctile_1y": 35.0,
+   "date": "2026-11-23"
   },
   {
    "group": "Arabica switches",
@@ -85,11 +85,11 @@
    ],
    "position": "3/4",
    "unit": "c/lb",
-   "value": 3.8,
-   "pct_of_deferred": 1.5,
-   "chg": -0.95,
-   "pctile_1y": 56.0,
-   "date": "2026-11-20"
+   "value": 3.7,
+   "pct_of_deferred": 1.43,
+   "chg": -0.1,
+   "pctile_1y": 55.0,
+   "date": "2026-11-23"
   },
   {
    "group": "Arabica switches",
@@ -100,11 +100,11 @@
    ],
    "position": "4/5",
    "unit": "c/lb",
-   "value": 4.35,
-   "pct_of_deferred": 1.75,
-   "chg": -0.85,
-   "pctile_1y": 77.0,
-   "date": "2026-11-20"
+   "value": 4.95,
+   "pct_of_deferred": 1.95,
+   "chg": 0.6,
+   "pctile_1y": 81.0,
+   "date": "2026-11-23"
   },
   {
    "group": "Arabica switches",
@@ -115,11 +115,11 @@
    ],
    "position": "5/6",
    "unit": "c/lb",
-   "value": 3.8,
-   "pct_of_deferred": 1.55,
-   "chg": -0.75,
-   "pctile_1y": 88.0,
-   "date": "2026-11-20"
+   "value": 4.85,
+   "pct_of_deferred": 1.95,
+   "chg": 1.05,
+   "pctile_1y": 99.0,
+   "date": "2026-11-23"
   },
   {
    "group": "Robusta switches",
@@ -234,9 +234,9 @@
     "SBH2027"
    ],
    "unit": "c/lb",
-   "value": 17.03,
-   "chg": -0.13,
-   "date": "2026-11-20"
+   "value": 17.36,
+   "chg": 0.33,
+   "date": "2026-11-23"
   },
   {
    "group": "Settlements: ICE No. 11",
@@ -245,9 +245,9 @@
     "SBK2027"
    ],
    "unit": "c/lb",
-   "value": 16.37,
-   "chg": -0.18,
-   "date": "2026-11-20"
+   "value": 16.71,
+   "chg": 0.34,
+   "date": "2026-11-23"
   },
   {
    "group": "Settlements: ICE No. 5",
@@ -280,11 +280,11 @@
    ],
    "position": "1/2",
    "unit": "c/lb",
-   "value": 0.66,
-   "pct_of_deferred": 4.03,
-   "chg": 0.05,
-   "pctile_1y": 95.0,
-   "date": "2026-11-20"
+   "value": 0.65,
+   "pct_of_deferred": 3.89,
+   "chg": -0.01,
+   "pctile_1y": 94.0,
+   "date": "2026-11-23"
   },
   {
    "group": "No. 11 switches",
@@ -295,11 +295,11 @@
    ],
    "position": "2/3",
    "unit": "c/lb",
-   "value": 0.33,
-   "pct_of_deferred": 2.06,
+   "value": 0.35,
+   "pct_of_deferred": 2.14,
    "chg": 0.02,
-   "pctile_1y": 75.0,
-   "date": "2026-11-20"
+   "pctile_1y": 77.0,
+   "date": "2026-11-23"
   },
   {
    "group": "No. 11 switches",
@@ -310,11 +310,11 @@
    ],
    "position": "3/4",
    "unit": "c/lb",
-   "value": -0.08,
-   "pct_of_deferred": -0.5,
-   "chg": 0.0,
+   "value": -0.04,
+   "pct_of_deferred": -0.24,
+   "chg": 0.04,
    "pctile_1y": 44.0,
-   "date": "2026-11-20"
+   "date": "2026-11-23"
   },
   {
    "group": "No. 11 switches",
@@ -325,11 +325,11 @@
    ],
    "position": "4/5",
    "unit": "c/lb",
-   "value": -0.49,
-   "pct_of_deferred": -2.95,
-   "chg": -0.02,
+   "value": -0.48,
+   "pct_of_deferred": -2.84,
+   "chg": 0.01,
    "pctile_1y": 26.0,
-   "date": "2026-11-20"
+   "date": "2026-11-23"
   },
   {
    "group": "No. 5 switches",
