@@ -82,7 +82,9 @@ def monthly():
 
 def weekly():
     n = 0
-    for sid, d in snapshots("official-psl61r-weekly").items():
+    snaps = snapshots("official-psl61r-weekly")
+    print("PSL-61R weekly: FSA lists", len(snaps), "snapshots, newest", max(snaps.values()) if snaps else None)
+    for sid, d in snaps.items():
         p = RAW / "psl61r_weekly" / f"{d}.csv"
         if not p.exists():
             write_once(p, cotton_rows(post("official-psl61r-weekly", "csv", snapshot=sid).decode("latin-1")).encode())

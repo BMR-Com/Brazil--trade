@@ -56,7 +56,8 @@ jobs:
         if: always()
         run: |
           git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
-          git add data/overview/what_changed.json data/overview/what_changed_hist.csv data/delivery data/alerts data/scorecard data/sugar/parity_read.json data/watch 2>/dev/null || true
+          # add each output that exists (one missing path made the old single git add stage nothing; data/watch was removed 2026-11-18)
+          for p in data/overview/what_changed.json data/overview/what_changed_hist.csv data/delivery data/alerts data/scorecard data/sugar/parity_read.json; do if [ -e "$p" ]; then git add "$p"; fi; done
           [ -f sugar/data/cepea_hydrous.csv ] && git add sugar/data/cepea_hydrous.csv
           git diff --cached --quiet && exit 0
           git commit -q -m "desk watch: what changed, delivery, alerts, calls $(date -u +%F' '%H:%M)"
