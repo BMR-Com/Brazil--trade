@@ -1,47 +1,48 @@
 {
- "generated": "2026-11-23 22:37 UTC",
+ "generated": "2026-11-24 21:08 UTC",
  "view": "headwind",
- "score": -6,
+ "score": -7,
  "components": {
   "rates": 0,
   "dollar": -1,
   "brl": -1,
+  "mxn": -1,
   "risk": -1,
   "energy": -1,
   "china": -1,
   "breadth": -1
  },
- "summary": "Macro backdrop for ags: headwind (score -6 across rates, dollar, Brazil real, risk, energy, China, breadth). rates 0; dollar \u2212; brl \u2212; risk \u2212; energy \u2212; china \u2212; breadth \u2212. Strongest ag/soft over the month: Rough rice +4.5%; weakest: Lean hogs -15.3%. Key releases ahead: US Core PCE Price Index m/m (11-25 8:30 AM ET); US Prelim GDP q/q (11-25 8:30 AM ET).",
+ "summary": "Macro backdrop for ags: headwind (score -7 across rates, dollar, Brazil real, risk, energy, China, breadth). rates 0; dollar \u2212; brl \u2212; mxn \u2212; risk \u2212; energy \u2212; china \u2212; breadth \u2212. Strongest ag/soft over the month: Rough rice +4.4%; weakest: Lean hogs -21.2%. Key releases ahead: US Core PCE Price Index m/m (11-25 8:30 AM ET); US Prelim GDP q/q (11-25 8:30 AM ET).",
  "sections": [
   {
    "title": "Rates",
    "score": 0,
-   "text": "US 10-year 4.92% (-8 bp in a month), 2-year 4.63% (-6 bp); 2s10s curve +29 bp (-2 bp in a month). Yields are little changed on the month. T-bill yield 4.15% sets the cost of carrying inventory."
+   "text": "US 10-year 4.91% (-9 bp in a month), 2-year 4.63% (-6 bp); 2s10s curve +28 bp (-3 bp in a month). Yields are little changed on the month. T-bill yield 4.17% sets the cost of carrying inventory."
   },
   {
    "title": "Dollar & farm currencies",
    "score": -2,
-   "text": "Dollar index 104.34 (+2.5% in a month, +6.2% YTD). A stronger dollar makes US grain, oilseeds, cotton and meat dearer abroad. USD/BRL 5.931 (+17.4% in a month): a weaker real encourages Brazilian farmer selling of soybeans, corn, sugar, coffee and cotton, pressuring world prices. USD/CNY 6.664 (-0.2%); USD/MXN 19.15 (+2.3%)."
+   "text": "Dollar index 103.82 (+2.0% in a month, +5.6% YTD). A stronger dollar makes US grain, oilseeds, cotton and meat dearer abroad. USD/BRL 5.904 (+16.9% in a month): a weaker real encourages Brazilian farmer selling of soybeans, corn, sugar, coffee and cotton, pressuring world prices. USD/CNY 6.663 (-0.2%); USD/MXN 19.42 (+3.7%); a sharply weaker peso cuts Mexico's buying power for US corn, pork, dairy and wheat (Mexico is the top buyer of all four)."
   },
   {
    "title": "Risk appetite",
    "score": -1,
-   "text": "S&P 500 -5.1% in a month (+5.7% YTD); VIX 26.6. Risk-off: funds tend to cut commodity length along with equities. "
+   "text": "S&P 500 -5.5% in a month (+5.2% YTD); VIX 26.3. Risk-off: funds tend to cut commodity length along with equities. "
   },
   {
    "title": "Energy",
    "score": -1,
-   "text": "WTI 80.25 $/bbl (-20.5% in a month), Brent 86.72, ULSD 3.647 $/gal (-22.0%), natural gas 3.54 (+0.9%). Lower crude weighs on soybean oil and corn through biofuel margins and on cotton via cheaper polyester. "
+   "text": "WTI 81.38 $/bbl (-19.4% in a month), Brent 88.20, ULSD 3.648 $/gal (-22.0%), natural gas 3.69 (+5.1%). Lower crude weighs on soybean oil and corn through biofuel margins and on cotton via cheaper polyester. "
   },
   {
    "title": "China & industrial demand",
    "score": -1,
-   "text": "Copper -13.8% in a month, Shanghai Composite -4.1%, Hang Seng -3.1%, yuan +0.2% vs USD. Soft China/industrial signals point to weaker import demand. "
+   "text": "Copper -17.1% in a month, Shanghai Composite -3.9%, Hang Seng -3.8%, yuan +0.2% vs USD. Soft China/industrial signals point to weaker import demand. "
   },
   {
    "title": "Commodity breadth",
    "score": -1,
-   "text": "7 of 33 commodities trade above their 50-day average (21%); S&P GSCI -15.4% in a month; gold -9.3%. "
+   "text": "10 of 33 commodities trade above their 50-day average (30%); S&P GSCI -15.3% in a month; gold -11.3%. "
   }
  ],
  "caveat": "Directional channels from macro to ag prices are standard relationships, not signals tested on this desk; use as context.",
