@@ -3,41 +3,41 @@
   "prices_xlsx": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/09/Precios-area-y-produccion-de-cafe-Noviembre-2026.xlsx",
    "latest_data": "production 2026-10, internal price 2026-11-22",
-   "read": "2026-11-24 06:55 UTC",
+   "read": "2026-11-24 23:30 UTC",
    "via": "auto"
   },
   "exports_xlsx": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/10/Exportaciones-Septiembre-2026.xlsx",
    "latest_data": "exports 2026-09",
-   "read": "2026-11-24 06:55 UTC",
+   "read": "2026-11-24 23:30 UTC",
    "via": "auto"
   },
   "monthly_pdf": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/11/10.-Informe-mensual-Octubre-2026-p.pdf",
    "latest_data": "report 2026-10",
-   "read": "2026-11-24 06:55 UTC",
+   "read": "2026-11-24 23:30 UTC",
    "via": "auto"
   },
   "daily_pdf": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/03/precio_cafe.pdf",
-   "latest_data": "2026-11-23",
-   "read": "2026-11-24 06:56 UTC",
+   "latest_data": "2026-11-24",
+   "read": "2026-11-24 23:30 UTC",
    "via": "auto"
   },
   "expos_pdf": {
    "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/10/Informe-Expos-Septiembre-2026.pdf",
    "latest_data": "",
-   "read": "2026-11-24 06:56 UTC",
+   "read": "2026-11-24 23:30 UTC",
    "via": "auto"
   }
  },
- "updated": "2026-11-24 06:56 UTC",
+ "updated": "2026-11-24 23:30 UTC",
  "monthly_reports": {
   "2026-10": "https://federaciondecafeteros.org/wp-content/uploads/2026/11/10.-Informe-mensual-Octubre-2026-p.pdf"
  },
- "last_check": "2026-11-24 06:56 UTC",
+ "last_check": "2026-11-24 23:30 UTC",
  "pages_read": [
   "https://federaciondecafeteros.org/estadisticas-cafeteras/"
  ],
- "last_ok": "2026-11-24 06:56 UTC"
+ "last_ok": "2026-11-24 23:30 UTC"
 }
