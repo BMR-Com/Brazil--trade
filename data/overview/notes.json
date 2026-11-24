@@ -1,53 +1,52 @@
 {
-  "updated": "2026-11-24",
-  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
-  "markets": {
-    "cotton": {
-      "date": "2026-11-24",
-      "by": "claude",
-      "time": "11:50 CT",
-      "fundamental": "Old-crop Mar is pushing back above 81-82 as Dec heads into delivery, with Texas Plains drought losses still the supply story; nothing new on export demand. A slightly softer dollar and a firmer real today ease the Brazil export-competition headwind at the margin; watch high-grade certificated stocks into Dec notice, which are not benign for longs.",
-      "events": [
-        "Cotton firm, Dec ~78.7 and Mar ~82 midday (Yahoo Finance/ICE)",
-        "Texas Plains drought cuts dryland yields (Farm Progress)",
-        "Mar/May spread in focus as Dec delivery nears (Barchart)"
-      ]
-    },
-    "sugar": {
-      "date": "2026-11-24",
-      "by": "claude",
-      "time": "11:50 CT",
-      "fundamental": "Brazil remains the driver: the real bounced about 1% to near 5.89 after Lula's fiscal plan cleared Congress, trimming some of the mill-hedging incentive that weighed last week. Mar is holding just above 17.56 resistance, but nothing has changed in Brazil's supply picture, so the bounce still reads as positioning.",
-      "events": [
-        "Lula's fiscal plan clears Congress after real slump (Bloomberg)",
-        "Real firms ~1% to 5.89/USD (Yahoo Finance)",
-        "Raw sugar holds Monday's rebound near 17.6 (Barchart)"
-      ],
-      "fund_score": -0.35
-    },
-    "coffee": {
-      "date": "2026-11-24",
-      "by": "claude",
-      "time": "11:50 CT",
-      "fundamental": "Rising ICE certified arabica stocks remain the bearish anchor and ease Dec deliverability worries; a firmer real today only slightly reduces Brazilian farmer selling. USDA's cut to Colombia's export outlook trims washed-arabica availability, a modest offset rather than a change of direction.",
-      "events": [
-        "USDA cuts Colombia coffee export forecast by 760,000 bags (Daily Coffee News)",
-        "Coffee Dec ~271, down ~1% early (Yahoo Finance/ICE)",
-        "Real rebounds as fiscal plan passes (Bloomberg)"
-      ],
-      "fund_score": -0.25
-    },
-    "cocoa": {
-      "date": "2026-11-24",
-      "by": "claude",
-      "time": "07:55 CT",
-      "fundamental": "Recent reports point to Ivory Coast port arrivals picking up after rain-related transport delays, and talk of ample global supply is weighing on prices; rising ICE certified stocks support that. Offsets are El Niño risk to the mid-crop and EUDR-related premiums in Europe; no new Ghana COCOBOD news since the 2030 bean-export-ban plan.",
-      "events": [
-        "Cocoa eases as supply concerns fade and arrivals improve (Barchart/Nasdaq)",
-        "EUDR preparations lift European cocoa premiums (Bloomberg)",
-        "El Niño risk flagged for West African output (ADMIS)"
-      ],
-      "fund_score": -0.2
-    }
+ "updated": "2026-11-24",
+ "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+ "markets": {
+  "cotton": {
+   "date": "2026-11-24",
+   "by": "claude",
+   "time": "14:45 CT",
+   "fundamental": "With Dec in its final days the front quote has rolled to Mar, now near 82.3, so the jump on screens is mostly the roll rather than new demand. Old-crop Mar/May is the market to watch: Texas Plains losses still back a tighter crop, while high-grade certificated stocks into Dec delivery remain a risk for longs, not a comfort.",
+   "events": [
+    "Front cotton quote rolls to Mar near 82.3 (Yahoo Finance/ICE)",
+    "Cotton slips early Tuesday before recovering (Barchart/Nasdaq)",
+    "Texas Plains drought trims dryland yields (Farm Progress)"
+   ]
+  },
+  "sugar": {
+   "date": "2026-11-24",
+   "by": "claude",
+   "time": "14:45 CT",
+   "fundamental": "Mar is edging up to about 17.70, holding above the 17.56 break as the real stays near 5.91 after the fiscal plan passed. Nothing new from Brazil's centre-south crush or mill mix this afternoon, so the rebound is still positioning rather than a supply change.",
+   "events": [
+    "Raw sugar Mar ~17.70, holding above 17.56 (Yahoo Finance/ICE)",
+    "Real steady near 5.91/USD after fiscal plan clears Congress (Bloomberg/Yahoo Finance)"
+   ],
+   "fund_score": -0.35
+  },
+  "coffee": {
+   "date": "2026-11-24",
+   "by": "claude",
+   "time": "14:45 CT",
+   "fundamental": "Dec arabica has slid about 2.5% to near 268 as rising ICE certified stocks keep easing worries over Dec deliverability from Brazil. The Colombia export cut is a modest offset; until certs stop climbing, the stock build dominates.",
+   "events": [
+    "Arabica Dec ~268, down ~2.5% (Yahoo Finance/ICE)",
+    "ICE certified arabica stocks keep rising (Barchart)",
+    "USDA trims Colombia export forecast by 760k bags (Daily Coffee News)"
+   ],
+   "fund_score": -0.3
+  },
+  "cocoa": {
+   "date": "2026-11-24",
+   "by": "claude",
+   "time": "07:55 CT",
+   "fundamental": "Recent reports point to Ivory Coast port arrivals picking up after rain-related transport delays, and talk of ample global supply is weighing on prices; rising ICE certified stocks support that. Offsets are El Niño risk to the mid-crop and EUDR-related premiums in Europe; no new Ghana COCOBOD news since the 2030 bean-export-ban plan.",
+   "events": [
+    "Cocoa eases as supply concerns fade and arrivals improve (Barchart/Nasdaq)",
+    "EUDR preparations lift European cocoa premiums (Bloomberg)",
+    "El Niño risk flagged for West African output (ADMIS)"
+   ],
+   "fund_score": -0.2
   }
+ }
 }
