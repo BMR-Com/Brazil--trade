@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-18 17:40 UTC",
- "asof": "2026-11-17",
- "today": "2026-11-18",
+ "generated": "2026-11-24 15:25 UTC",
+ "asof": "2026-11-23",
+ "today": "2026-11-24",
  "active": [
   {
    "id": "CT_certs_week",
@@ -16,62 +16,72 @@
   {
    "id": "KC_certs_week",
    "market": "Coffee C",
-   "text": "ICE certified arabica −46,845 bags in a week to 2026-11-17 (threshold ±40,000 bags)",
+   "text": "ICE certified arabica +82,200 bags in a week to 2026-11-23 (threshold ±40,000 bags)",
    "on": true,
    "level": "±40,000 bags",
-   "date": "2026-11-17",
+   "date": "2026-11-23",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "SB_mm_hi",
    "market": "Sugar No. 11",
-   "text": "Managed money net +193,196 lots (2026-11-10) above its 3-year 90th percentile (+144,549)",
+   "text": "Managed money net +181,463 lots (2026-11-17) above its 3-year 90th percentile (+144,549)",
    "on": true,
    "level": "+144,549",
-   "date": "2026-11-10",
+   "date": "2026-11-17",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "KC_mm_lo",
    "market": "Coffee C",
-   "text": "Managed money net +4,972 lots (2026-11-10) below its 3-year 10th percentile (+16,070)",
+   "text": "Managed money net +6,767 lots (2026-11-17) below its 3-year 10th percentile (+15,320)",
    "on": true,
-   "level": "+16,070",
-   "date": "2026-11-10",
+   "level": "+15,320",
+   "date": "2026-11-17",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "CC_mm_lo",
    "market": "Cocoa",
-   "text": "Managed money net -21,830 lots (2026-11-10) below its 3-year 10th percentile (-15,365)",
+   "text": "Managed money net -20,268 lots (2026-11-17) below its 3-year 10th percentile (-15,878)",
    "on": true,
-   "level": "-15,365",
-   "date": "2026-11-10",
+   "level": "-15,878",
+   "date": "2026-11-17",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "wx_br_sp_wet",
    "market": "Sugar No. 11",
-   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-18 to 2026-12-02; ECMWF ENS only)",
+   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-24 to 2026-12-08; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-18",
+   "date": "2026-11-24",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "wx_br_gos_wet",
    "market": "Sugar No. 11",
-   "text": "Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-18 to 2026-12-02; ECMWF ENS only)",
+   "text": "Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-24 to 2026-12-08; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-18",
+   "date": "2026-11-24",
    "new": false,
    "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_options_settlements__uploaded_ICE_files_",
+   "market": "Data",
+   "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-19, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
   },
   {
    "id": "data_ICE_certs__stock_by_delivery_point__upload_",
@@ -79,7 +89,7 @@
    "text": "ICE certs: stock by delivery point (upload): late (latest 2026-11-04, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-18",
+   "date": "2026-11-24",
    "new": false,
    "since": "2026-11-17"
   },
@@ -89,29 +99,59 @@
    "text": "ICE certs: four months and older (upload): late (latest 2026-11-02, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-18",
+   "date": "2026-11-24",
    "new": false,
    "since": "2026-11-17"
   },
   {
-   "id": "data_Brazil_co_op_semi_washed___tipo_6_quotes__Notícias_Agrícolas",
+   "id": "data_EWR_receipts__upload_",
    "market": "Data",
-   "text": "Brazil co-op semi-washed / tipo 6 quotes (Notícias Agrícolas): late (latest 2026-11-11, limit 3 business days)",
+   "text": "EWR receipts (upload): late (latest 2026-11-09, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-18",
-   "new": false,
-   "since": "2026-11-17"
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
   },
   {
-   "id": "data_Brazil_tender_parity__blend_cost_in_Antwerp_vs_exchange_valu",
+   "id": "data_CFR_Far_East_quotes__upload_",
    "market": "Data",
-   "text": "Brazil tender parity (blend cost in Antwerp vs exchange value): late (latest 2026-11-11, limit 3 business days)",
+   "text": "CFR Far East quotes (upload): late (latest 2026-11-09, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-18",
-   "new": false,
-   "since": "2026-11-17"
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Cotton_loan__FSA_",
+   "market": "Data",
+   "text": "Cotton loan (FSA): late (latest 2026-11-09, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_ICE_certs_detail__pending__transition__passed_failed__rebagg",
+   "market": "Data",
+   "text": "ICE certs detail: pending, transition, passed/failed, rebagging (upload): late (latest 2026-11-19, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Certs_profile_and_delivery_economics__built_from_the_ICE_fil",
+   "market": "Data",
+   "text": "Certs profile and delivery economics (built from the ICE files): late (latest 2026-11-19, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
   },
   {
    "id": "data_Brazil_export_differentials__public_quotes__manual__data_cof",
@@ -119,7 +159,7 @@
    "text": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv): late (latest 2026-04-07, limit 120 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-18",
+   "date": "2026-11-24",
    "new": false,
    "since": "2026-11-17"
   },
@@ -129,15 +169,95 @@
    "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-18",
+   "date": "2026-11-24",
    "new": false,
    "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_cocoa_certs_and_grading__upload_",
+   "market": "Data",
+   "text": "ICE cocoa certs and grading (upload): late (latest 2026-11-16, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Certs_profile_and_delivery_value__built_from_the_ICE_files_",
+   "market": "Data",
+   "text": "Certs profile and delivery value (built from the ICE files): late (latest 2026-11-16, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_What_changed_strip__settlement_date_",
+   "market": "Data",
+   "text": "What changed strip (settlement date): late (latest 2026-11-17, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Delivery_period_dashboard__settlement_date_",
+   "market": "Data",
+   "text": "Delivery-period dashboard (settlement date): late (latest 2026-11-17, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Alerts_check",
+   "market": "Data",
+   "text": "Alerts check: late (latest 2026-11-18, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Desk_call_log___track_record",
+   "market": "Data",
+   "text": "Desk call log / track record: late (latest 2026-11-17, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
+   "market": "Data",
+   "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-13, limit 3 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
+   "market": "Data",
+   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
   }
  ],
  "watch": [
   {
    "market": "Cotton",
-   "text": "Dec 26/Mar 27 80% of full carry at 4.37¢ Mar 27 over Dec 26 (now +4.11¢, 2026-11-17)"
+   "text": "Dec 26/Mar 27 80% of full carry at 4.33¢ Mar 27 over Dec 26 (now +3.82¢, 2026-11-20)"
   },
   {
    "market": "Cotton",
@@ -145,39 +265,39 @@
   },
   {
    "market": "Coffee C",
-   "text": "Certs weekly change beyond ±40,000 bags (latest −46,845, 2026-11-17)"
+   "text": "Certs weekly change beyond ±40,000 bags (latest +82,200, 2026-11-23)"
   },
   {
    "market": "Cotton",
-   "text": "Dec 26: 55-day high 91.55, 55-day low 77.00 ¢/lb (settle 77.32 on 2026-11-17)"
+   "text": "Mar 27: 55-day high 90.66, 55-day low 78.88 ¢/lb (settle 81.36 on 2026-11-23)"
   },
   {
    "market": "Sugar No. 11",
-   "text": "Mar 27: 55-day high 21.13, 55-day low 18.09 ¢/lb (settle 18.17 on 2026-11-17)"
+   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 17.61 on 2026-11-23)"
   },
   {
    "market": "Coffee C",
-   "text": "Dec 26: 55-day high 316.15, 55-day low 269.00 ¢/lb (settle 286.60 on 2026-11-17)"
+   "text": "Mar 27: 55-day high 302.25, 55-day low 264.65 ¢/lb (settle 267.75 on 2026-11-23)"
   },
   {
    "market": "Cocoa",
-   "text": "Mar 27: 55-day high 6,701, 55-day low 4,871 $/t (settle 5,177 on 2026-11-17)"
+   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,299 on 2026-11-23)"
   },
   {
    "market": "Cotton",
-   "text": "Managed money net +55,382 lots (2026-11-10); 3-year band -66,475 to +68,503"
+   "text": "Managed money net +48,998 lots (2026-11-17); 3-year band -66,475 to +68,503"
   },
   {
    "market": "Sugar No. 11",
-   "text": "Managed money net +193,196 lots (2026-11-10); 3-year band -172,123 to +144,549"
+   "text": "Managed money net +181,463 lots (2026-11-17); 3-year band -172,123 to +144,549"
   },
   {
    "market": "Coffee C",
-   "text": "Managed money net +4,972 lots (2026-11-10); 3-year band +16,070 to +60,564"
+   "text": "Managed money net +6,767 lots (2026-11-17); 3-year band +15,320 to +60,564"
   },
   {
    "market": "Cocoa",
-   "text": "Managed money net -21,830 lots (2026-11-10); 3-year band -15,365 to +39,892"
+   "text": "Managed money net -20,268 lots (2026-11-17); 3-year band -15,878 to +39,413"
   },
   {
    "market": "Coffee C",
@@ -185,10 +305,10 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.14¢/lb: No. 11 Mar 27 now 18.17¢ (2026-11-17)"
+   "text": "Ethanol parity 15.00¢/lb: No. 11 Mar 27 now 17.61¢ (2026-11-23)"
   }
  ],
- "rules_checked": 152,
+ "rules_checked": 163,
  "pending_email": [
   {
    "id": "KC_certs_week",
@@ -291,26 +411,6 @@
    "since": "2026-11-17"
   },
   {
-   "id": "data_Brazil_co_op_semi_washed___tipo_6_quotes__Notícias_Agrícolas",
-   "market": "Data",
-   "text": "Brazil co-op semi-washed / tipo 6 quotes (Notícias Agrícolas): late (latest 2026-11-11, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-17",
-   "new": true,
-   "since": "2026-11-17"
-  },
-  {
-   "id": "data_Brazil_tender_parity__blend_cost_in_Antwerp_vs_exchange_valu",
-   "market": "Data",
-   "text": "Brazil tender parity (blend cost in Antwerp vs exchange value): late (latest 2026-11-11, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-17",
-   "new": true,
-   "since": "2026-11-17"
-  },
-  {
    "id": "data_Brazil_export_differentials__public_quotes__manual__data_cof",
    "market": "Data",
    "text": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv): late (latest 2026-04-07, limit 120 days)",
@@ -319,6 +419,146 @@
    "date": "2026-11-17",
    "new": true,
    "since": "2026-11-17"
+  },
+  {
+   "id": "data_ICE_options_settlements__uploaded_ICE_files_",
+   "market": "Data",
+   "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-19, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_EWR_receipts__upload_",
+   "market": "Data",
+   "text": "EWR receipts (upload): late (latest 2026-11-09, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_CFR_Far_East_quotes__upload_",
+   "market": "Data",
+   "text": "CFR Far East quotes (upload): late (latest 2026-11-09, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Cotton_loan__FSA_",
+   "market": "Data",
+   "text": "Cotton loan (FSA): late (latest 2026-11-09, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_ICE_certs_detail__pending__transition__passed_failed__rebagg",
+   "market": "Data",
+   "text": "ICE certs detail: pending, transition, passed/failed, rebagging (upload): late (latest 2026-11-19, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Certs_profile_and_delivery_economics__built_from_the_ICE_fil",
+   "market": "Data",
+   "text": "Certs profile and delivery economics (built from the ICE files): late (latest 2026-11-19, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_ICE_cocoa_certs_and_grading__upload_",
+   "market": "Data",
+   "text": "ICE cocoa certs and grading (upload): late (latest 2026-11-16, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Certs_profile_and_delivery_value__built_from_the_ICE_files_",
+   "market": "Data",
+   "text": "Certs profile and delivery value (built from the ICE files): late (latest 2026-11-16, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_What_changed_strip__settlement_date_",
+   "market": "Data",
+   "text": "What changed strip (settlement date): late (latest 2026-11-17, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Delivery_period_dashboard__settlement_date_",
+   "market": "Data",
+   "text": "Delivery-period dashboard (settlement date): late (latest 2026-11-17, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Alerts_check",
+   "market": "Data",
+   "text": "Alerts check: late (latest 2026-11-18, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Desk_call_log___track_record",
+   "market": "Data",
+   "text": "Desk call log / track record: late (latest 2026-11-17, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
+   "market": "Data",
+   "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-13, limit 3 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
+   "market": "Data",
+   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
   }
  ],
  "last_email": null,

@@ -89,3 +89,48 @@ asof,sym,item,value,d1,d5,flag
 2026-11-17,CC,wx:ci_dl,,,,0
 2026-11-17,CC,wx:gh_ku,,,,0
 2026-11-17,CC,cot_date,2026-11-10,,,0
+2026-11-23,CT,Flat price (Mar 27),81.36,2.07,0.44,1
+2026-11-23,CT,Front spread (Mar 27/May 27),-1.37,0.01,0.24,0
+2026-11-23,CT,ICE certificated cotton,83599.0,,16883.0,0
+2026-11-23,CT,Spot basis (US average),-328.0,-14.0,-7.0,1
+2026-11-23,CT,Managed money net,48998.0,,-6384.0,0
+2026-11-23,CT,Front implied vol (JAN27),20.5,,,0
+2026-11-23,CT,"On-call sales, old crop",68240.0,,12.0,0
+2026-11-23,CT,wx:us_tx,near normal,,,0
+2026-11-23,CT,wx:br_mt,wet,,,0
+2026-11-23,CT,wx:br_ba,dry,,,0
+2026-11-23,CT,wx:in_gj,near normal,,,0
+2026-11-23,CT,wx:au_nsw,wet,,,0
+2026-11-23,CT,cot_date,2026-11-17,,,0
+2026-11-23,SB,Flat price (Mar 27),17.61,0.58,-0.49,1
+2026-11-23,SB,Front spread (Mar 27/May 27),0.62,-0.04,0.11,1
+2026-11-23,SB,Certified stocks,,,,0
+2026-11-23,SB,Managed money net,181463.0,,-11733.0,0
+2026-11-23,SB,Front implied vol (JAN27),25.9,,,0
+2026-11-23,SB,wx:br_sp,wet,,,0
+2026-11-23,SB,wx:br_spw,wet,,,0
+2026-11-23,SB,wx:br_gos,wet,,,0
+2026-11-23,SB,wx:br_mgc,wet,,,0
+2026-11-23,SB,wx:in_sl,,,,0
+2026-11-23,SB,wx:th_kk,,,,0
+2026-11-23,SB,cot_date,2026-11-17,,,0
+2026-11-23,KC,Flat price (Mar 27),267.75,-0.75,-7.15,0
+2026-11-23,KC,Front spread (Mar 27/May 27),6.6,0.2,2.25,0
+2026-11-23,KC,ICE certified arabica,268614.0,43395.0,82200.0,1
+2026-11-23,KC,Managed money net,6767.0,,1795.0,0
+2026-11-23,KC,Front implied vol (MAR27),36.7,,,0
+2026-11-23,KC,wx:br_mg,wet,,,0
+2026-11-23,KC,wx:br_cer,wet,,,0
+2026-11-23,KC,wx:br_zm,wet,,,0
+2026-11-23,KC,wx:br_es,near normal,,,0
+2026-11-23,KC,wx:vn_dl,near normal,,,0
+2026-11-23,KC,cot_date,2026-11-17,,,0
+2026-11-23,CC,Flat price (Mar 27),5299.0,29.0,115.0,0
+2026-11-23,CC,Front spread (Mar 27/May 27),-65.0,0.0,0.0,0
+2026-11-23,CC,Certified stocks,,,,0
+2026-11-23,CC,Managed money net,-20268.0,,1562.0,0
+2026-11-23,CC,Front implied vol (JAN27),40.9,,,0
+2026-11-23,CC,wx:ci_sb,,,,0
+2026-11-23,CC,wx:ci_dl,,,,0
+2026-11-23,CC,wx:gh_ku,,,,0
+2026-11-23,CC,cot_date,2026-11-17,,,0

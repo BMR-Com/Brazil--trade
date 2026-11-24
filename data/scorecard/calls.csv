@@ -10,5 +10,6 @@ brief-2026-10-30-CT,2026-10-30,Morning brief (Oct 2026),CT,outright,CTZ2026,,dow
 2026-11-16-Overview-SB,2026-11-16,Overview read,SB,outright,SBH2027,,down,18.1,2026-12-15,Overview bearish (2026-11-17); measured on Mar 27,open,,,
 2026-11-16-Overview-CC,2026-11-16,Overview read,CC,outright,CCH2027,,down,5184,2026-12-15,Overview mildly bearish (2026-11-17); measured on Mar 27,open,,,
 2026-11-16-Cottonp-CT,2026-11-16,Cotton price outlook,CT,outright,CTK2027,,up,82.53,2027-04-24,Base case May 27 90.2¢ at May option expiry (2026-11-17),open,,,
-2026-11-16-Delivery-CT,2026-11-16,Delivery read,CT,spread,CTZ2026,CTH2027,down,-3.92,2026-11-23,Delivery does not pay: Dec 26/Mar 27 under pressure into first notice,open,,,
+2026-11-16-Delivery-CT,2026-11-16,Delivery read,CT,spread,CTZ2026,CTH2027,down,-3.92,2026-11-23,Delivery does not pay: Dec 26/Mar 27 under pressure into first notice,miss,2026-11-23,-3.83,+0.09
 2026-11-16-Overview-KC,2026-11-16,Overview read,KC,outright,KCH2027,,up,274.9,2026-12-15,Overview mildly bullish (2026-11-17); measured on Mar 27,open,,,
+2026-11-23-Overview-KC,2026-11-23,Overview read,KC,outright,KCH2027,,down,267.8,2026-12-22,Overview bearish (2026-11-24); measured on Mar 27,open,,,

@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-18 17:40 UTC",
- "asof": "2026-11-17",
+ "generated": "2026-11-24 15:25 UTC",
+ "asof": "2026-11-23",
  "min_n": 10,
  "open": [
   {
@@ -72,23 +72,6 @@
    "move": ""
   },
   {
-   "id": "2026-11-16-Delivery-CT",
-   "logged": "2026-11-16",
-   "source": "Delivery read",
-   "market": "CT",
-   "kind": "spread",
-   "leg1": "CTZ2026",
-   "leg2": "CTH2027",
-   "direction": "down",
-   "entry": "-3.92",
-   "horizon": "2026-11-23",
-   "text": "Delivery does not pay: Dec 26/Mar 27 under pressure into first notice",
-   "status": "open",
-   "exit_date": "",
-   "exit": "",
-   "move": ""
-  },
-  {
    "id": "2026-11-16-Overview-KC",
    "logged": "2026-11-16",
    "source": "Overview read",
@@ -100,6 +83,23 @@
    "entry": "274.9",
    "horizon": "2026-12-15",
    "text": "Overview mildly bullish (2026-11-17); measured on Mar 27",
+   "status": "open",
+   "exit_date": "",
+   "exit": "",
+   "move": ""
+  },
+  {
+   "id": "2026-11-23-Overview-KC",
+   "logged": "2026-11-23",
+   "source": "Overview read",
+   "market": "KC",
+   "kind": "outright",
+   "leg1": "KCH2027",
+   "leg2": "",
+   "direction": "down",
+   "entry": "267.8",
+   "horizon": "2026-12-22",
+   "text": "Overview bearish (2026-11-24); measured on Mar 27",
    "status": "open",
    "exit_date": "",
    "exit": "",
@@ -225,12 +225,35 @@
    "exit_date": "2026-11-06",
    "exit": "79.11",
    "move": "+0.96"
+  },
+  {
+   "id": "2026-11-16-Delivery-CT",
+   "logged": "2026-11-16",
+   "source": "Delivery read",
+   "market": "CT",
+   "kind": "spread",
+   "leg1": "CTZ2026",
+   "leg2": "CTH2027",
+   "direction": "down",
+   "entry": "-3.92",
+   "horizon": "2026-11-23",
+   "text": "Delivery does not pay: Dec 26/Mar 27 under pressure into first notice",
+   "status": "miss",
+   "exit_date": "2026-11-23",
+   "exit": "-3.83",
+   "move": "+0.09"
   }
  ],
- "n_closed": 7,
+ "n_closed": 8,
  "hits": 5,
  "hit_rate": null,
  "by_source": [
+  {
+   "source": "Delivery read",
+   "n": 1,
+   "hits": 0,
+   "hit_rate": null
+  },
   {
    "source": "Morning brief (Oct 2026)",
    "n": 7,
