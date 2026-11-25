@@ -1,5 +1,12 @@
 # Softs desk (Brazil--trade) — handoff notes
 
+## India crush tracker, crop projection and import need (2026-11-25)
+- Sugar > India detail now opens with: crush tracker (ISMA season-to-date, all-India / Maharashtra toggle, first-weeks vs full-season view, state table vs year ago, Maharashtra cane/recovery rows), 2026/27 crop range (low/mid/high vs ISMA), 2026/27 balance and import need (grid by closing-stock norm and crop case, TRQ left), import economics and a 2027/28 note.
+- Code: `models/india_crush.py` (called from `sugar_world.india()` → `world.json` `india.crush`); `python models/india_crush.py --backtest` prints the leave-one-season-out backtest to the terminal only (never written to the repo or page).
+- Data (hand-entered, dated, sourced): `data/sugar/manual/india_crush_history.csv` (releases 2018/19 on; add each new ISMA release here or as an india.csv "... to date" row), `india_season_finals.csv` (finals + Maharashtra start date; add the new season's MH start each October), `india_isma_estimates.csv`, `india_balance_inputs.csv` (opening stock, consumption, norm, TRQ).
+- Collector: `pipelines/india_crush.py` (step in `sugar_world.yml`, at most once a day): checks ISMA and Maharashtra Sugar Commissionerate sites (robots.txt first), then ChiniMandi news of releases (WP search API, RSS fallback); parsed rows → `data/sugar/india_crush_auto.csv` (manual rows win), status `data/sugar/india_crush_status.json`.
+- `sugar_world.yml` also runs on push to main touching `data/sugar/manual/**`, `data/sugar/ref/ISMA_*` or `models/india_crush.py`.
+
 ## Sugar tab audit: crush data fixes, spread primer logic, India ¢/lb history (2026-11-25)
 - MAPA: a region "Tot." row that failed to parse (CS 2024/25, 31 Dec 2024, sugar blank) is rebuilt from the states (`fill_totals` in `sugar/scripts/mapa.py`, applied at parse time and once to the stored CSV). MAPA never published CS 2022/23 fortnight 15 Nov 2022: `cs_clean` interpolates it (flag `interp`) for `build.py` and `models/sugar_world.mapa()` (so also `cane_model.py`), so fortnight increments are never two fortnights in one.
 - `build.py`: `lt_fn` was ×1000 too big (now litres per tonne); states drop all-zero rows (RS) and carry kg/t, share, previous-season kg/t, `states_end`/`states_prev_end`.

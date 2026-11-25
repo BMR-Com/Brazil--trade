@@ -1,0 +1,28 @@
+season,region,final_lakh_t,mh_start,basis,source,url
+2018/19,IN,331.61,2018-10-20,actual,ISMA press release 5 Nov 2019,https://www.indiansugar.com/EventDetails.aspx?Nid=5252
+2018/19,MH,107.20,,actual,ISMA press release 5 Nov 2019,https://www.indiansugar.com/EventDetails.aspx?Nid=5252
+2018/19,UP,118.21,,actual,ISMA press release 5 Nov 2019,https://www.indiansugar.com/EventDetails.aspx?Nid=5252
+2018/19,KA,44.30,,actual,ISMA press release 5 Nov 2019,https://www.indiansugar.com/EventDetails.aspx?Nid=5252
+2019/20,IN,274.2,2019-11-22,actual after ~8 lakh t to ethanol,ISMA press release 19 Oct 2020,https://indiansugar.com/EventDetails.aspx?Nid=5270
+2019/20,MH,61.68,,actual,ISMA press release 19 Oct 2020,https://indiansugar.com/EventDetails.aspx?Nid=5270
+2019/20,UP,126.37,,actual,ISMA press release 19 Oct 2020,https://indiansugar.com/EventDetails.aspx?Nid=5270
+2019/20,KA,34.96,,actual,ISMA press release 19 Oct 2020,https://indiansugar.com/EventDetails.aspx?Nid=5270
+2020/21,IN,311.92,2020-10-15,actual after ~20 lakh t to ethanol,ISMA press release 8 Jun 2022,https://www.indiansugar.com/EventDetails.aspx?Nid=9316
+2020/21,MH,106.50,,actual (net),ISMA press release 31 Jan 2022,https://www.indiansugar.com/EventDetails.aspx?Nid=8299
+2020/21,UP,110.59,,actual (net),ISMA press release 31 Jan 2022,https://www.indiansugar.com/EventDetails.aspx?Nid=8299
+2020/21,KA,44.68,,actual (net),ISMA press release 31 Jan 2022,https://www.indiansugar.com/EventDetails.aspx?Nid=8299
+2021/22,IN,358.0,2021-10-15,final after ~34 lakh t to ethanol,ISMA bulletin 19 Apr 2023,https://www.indiansugar.com/IsmaBulletinDetails.aspx?Nid=1055
+2021/22,MH,137.0,,state final (record),Business Standard (PTI) 16 Jun 2022,https://bsppd.business-standard.com/article/pti-stories/at-137-lakh-tonnes-maharashtra-sees-its-all-time-high-sugar-production-122061601091_1.html
+2022/23,IN,328.0,2022-10-15,ISMA end-season estimate after ~40 lakh t to ethanol,ISMA press release 26 Apr 2023,https://www.indiansugar.com/EventDetails.aspx?Nid=10335
+2022/23,MH,105.0,,ISMA end-season estimate (net),ISMA press release 26 Apr 2023,https://www.indiansugar.com/EventDetails.aspx?Nid=10335
+2022/23,UP,105.0,,ISMA end-season estimate (net),ISMA press release 26 Apr 2023,https://www.indiansugar.com/EventDetails.aspx?Nid=10335
+2022/23,KA,57.0,,ISMA end-season estimate (net),ISMA press release 26 Apr 2023,https://www.indiansugar.com/EventDetails.aspx?Nid=10335
+2023/24,IN,319.64,2023-11-01,provisional after 21 lakh t to ethanol,ISMA 1st advance estimate 2024/25 via Krishi Jagran,https://krishijagran.com/news/1st-advance-estimates-of-sugar-production-for-2024-25-ss-ample-sugar-availability-expected
+2023/24,MH,110.0,,NFCSF season-end figure,Business Recorder (Reuters) 2 May 2024,https://www.brecorder.com/news/40301287/indian-sugar-mills-end-season-with-higher-than-expected-output
+2024/25,IN,261.08,2024-11-15,provisional after 35 lakh t to ethanol,ISMA 1st estimate 2025/26 via ChiniMandi,https://www.chinimandi.com/?p=349696
+2024/25,MH,80.9,,last season-to-date figure (crush ended in April),ISMA via Outlook Business (PTI),https://www.outlookbusiness.com/economy-and-policy/sugar-output-rises-7-pc-so-far-in-2025-26-isma-presses-for-policy-relief
+2025/26,IN,279.71,2025-11-01,net after 32.42 lakh t to ethanol,ISMA press release 25 Nov 2026,data/sugar/ref/ISMA_Press_Release_2026-11-25.pdf
+2025/26,MH,99.17,,net,ISMA press release 25 Nov 2026,data/sugar/ref/ISMA_Press_Release_2026-11-25.pdf
+2025/26,UP,89.74,,net,ISMA press release 25 Nov 2026,data/sugar/ref/ISMA_Press_Release_2026-11-25.pdf
+2025/26,KA,49.54,,net,ISMA press release 25 Nov 2026,data/sugar/ref/ISMA_Press_Release_2026-11-25.pdf
+2026/27,IN,,2026-10-08,season in progress,,

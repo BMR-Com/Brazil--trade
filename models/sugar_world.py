@@ -463,7 +463,14 @@ def india(fri):
         par["domestic"] = {"item": p["item"], "value": float(p["value"]), "date": p["date"], "url": p["url"], "source": p["source"] + " (manual fallback)"}
     par["note"] = ("All parities are ex-freight and ex-port/handling (no public freight series); the raw parity is also before refining cost. "
                    "Raws under the duty-free TRQ (to 31 Mar 2027) must be refined and sold in India.")
-    return {"releases": rows.to_dict("records"), "parity": par, "prices": prices, "collector": st, "history": india_history()}
+    crush = None
+    try:
+        import india_crush
+        crush = india_crush.build(par)
+        crush["collector"] = jl(ROOT / "data/sugar/india_crush_status.json")
+    except Exception as e:                      # the rest of the India panel still builds
+        print("india crush tracker failed:", repr(e))
+    return {"releases": rows.to_dict("records"), "parity": par, "prices": prices, "collector": st, "history": india_history(), "crush": crush}
 
 
 def india_history():

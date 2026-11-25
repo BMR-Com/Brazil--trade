@@ -1,6 +1,6 @@
 // Sugar tab: public-data panels built by models/sugar_world.py into data/sugar/world.json.
 // Brazil cane weather (rain vs normal, estimated harvest-stoppage days, ensemble forecast), Centre-South fortnight scorecard
-// and season range, fuel policy; India; Europe; expiry deliveries and agency revisions. Outputs only: the rules sit in the model.
+// and season range, fuel policy; India (crush tracker, crop projection, balance and import need); Europe; expiry deliveries and agency revisions. Outputs only: the rules sit in the model.
 const SugarWorld = (() => {
   let W = null;
   const load = () => W ? Promise.resolve(W) : getJSON('data/sugar/world.json').then(d => (W = d));
@@ -75,12 +75,13 @@ const SugarWorld = (() => {
   function india(el) {
     const I = W.india, P = I.parity, rows = I.releases, inp = P.inputs;
     const prod = rows.filter(r => r.kind === 'production'), pol = rows.filter(r => r.kind === 'policy'), pr = rows.filter(r => r.kind === 'price');
-    const dom = P.domestic;
+    const dom = P.domestic, sm = prod.find(r => /^all-india/i.test(r.item) && /to date/i.test(r.item));
     el.innerHTML = `<div class="grid g4">
-        ${prod[0] ? kpi(`Sugar made to ${prod[0].date}`, f2(+prod[0].value) + ' lakh t', `${f2(+prod[0].prev_value)} lakh t a year ago; ${esc(prod[0].note)}`) : ''}
+        ${sm ? kpi(`Sugar made to ${sm.date}`, f2(+sm.value) + ' lakh t', `${f2(+sm.prev_value)} lakh t a year ago; ${esc(sm.note)}`) : ''}
         ${kpi('Raw import parity (TRQ, zero duty)', 'Rs ' + f0(P.raw_trq_rs_qtl) + '/qtl', `No. 11 Mar ${f2(inp.sb_mar27_c_lb)}¢ = $${f1(P.raw_usd_t)}/t × ${f2(inp.usd_inr)} INR; ex-freight, before refining`)}
         ${kpi('White import parity, full duty', 'Rs ' + f0(P.white_full_duty_rs_qtl) + '/qtl', `No. 5 Mar $${f1(inp.w_mar27_usd_t)}/t × INR × (1 + ${f0(inp.duty_full_pct)}% duty); at zero duty Rs ${f0(P.white_zero_duty_rs_qtl)}`)}
         ${dom ? kpi('Domestic ex-mill (latest public quote)', 'Rs ' + f0(dom.value) + '/qtl', `${esc(dom.item)}, ${dom.date}${age(dom.date)}`) : ''}</div>
+      ${crushCards(I.crush, P)}
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>Production by state (ISMA)</h2><div class="tbl"><table><tr><th class="l">As of</th><th class="l">Item</th><th>2026/27</th><th>Year ago</th><th class="l">Note</th><th class="l">Source</th></tr>
           ${prod.map(r => `<tr><td class="l">${r.date}${age(r.date)}</td><td class="l">${esc(r.item)}</td><td class="n"><b>${f2(+r.value)}</b> ${esc(r.unit)}</td><td class="n">${r.prev_value ? f2(+r.prev_value) : '–'}</td><td class="l">${esc(r.note)}</td><td class="l">${link(r.source, r.url)}</td></tr>`).join('')}</table></div>
@@ -104,6 +105,10 @@ const SugarWorld = (() => {
         ${pol.map(r => `<tr><td class="l">${r.date}</td><td class="l"><b>${esc(r.item)}</b></td><td class="n">${esc(r.value)} ${esc(r.unit === 'date' ? '' : r.unit)}</td><td class="l">${esc(r.note)}</td><td class="l">${link(r.source, r.url)}</td></tr>`).join('')}
         ${pr.map(r => `<tr><td class="l">${r.date}${age(r.date)}</td><td class="l">${esc(r.item)}</td><td class="n">${f0(+r.value)} ${esc(r.unit)}</td><td class="l">${esc(r.note)}</td><td class="l">${link(r.source, r.url)}</td></tr>`).join('')}</table></div>
         <p class="note">Fortnightly sales quotas (DFPD) are entered when the order is published. Weather in the Indian cane belt is on the "Where it's grown" tab.</p></div>${foot()}`;
+    crushChart(I.crush);
+    const zb = document.getElementById('swCrushZ'), rs = document.getElementById('swCrushReg');
+    if (zb) zb.onclick = () => { const z = zb.dataset.z !== '1'; zb.dataset.z = z ? '1' : '0'; zb.textContent = z ? 'Show full season' : 'Show first weeks'; crushChart(I.crush, z); };
+    if (rs) rs.onchange = () => crushChart(I.crush, zb ? zb.dataset.z === '1' : undefined);
     const H = I.history;
     if (H && H.n >= 20 && document.getElementById('swInH')) {
       const R = H.rows;
@@ -114,6 +119,78 @@ const SugarWorld = (() => {
         { label: 'NY No. 11 raw, front', data: R.map(r => r.sb_c), borderColor: PAL[0], borderWidth: 1.6, pointRadius: 0, spanGaps: true }] },
         options: { scales: { y: { title: { display: true, text: 'US cents per lb' } } } } });
     }
+  }
+
+  // ---------- India crush tracker, season projection, balance and import need ----------
+  function crushCards(C, par) {
+    if (!C) return '';
+    const p = C.projection, B = C.balance, L = C.latest || [];
+    const lt = v => v == null ? '–' : f2(v);
+    const chg = (a, b) => a != null && b ? sgn(100 * (a / b - 1), 0, '%') : '–';
+    const rel = { low: 'early season: crushing pace says little yet, so the range leans on the cane-area estimate', medium: 'mid-season: pace and area estimate carry similar weight', high: 'late season: the crushing pace now drives the projection' };
+    const mc = C.mh_crush || [];
+    const grid = B ? `<div class="tbl"><table><tr><th class="l">Production case</th><th>Production</th>${B.norms.map(n => `<th>${fmt(n, 1)} months</th>`).join('')}</tr>
+        ${B.grid.map(g => `<tr><td class="l">${g.case === 'mid' ? '<b>Mid</b>' : g.case === 'low' ? 'Low' : 'High'}</td><td class="n">${f1(g.production)}</td>${g.need.map((v, i) => `<td class="n">${B.norms[i] === 2.5 && g.case === 'mid' ? '<b>' + f1(Math.max(v, 0)) + '</b>' : f1(Math.max(v, 0))}</td>`).join('')}</tr>`).join('')}</table></div>` : '';
+    const E = B && B.economics;
+    return `<div class="grid g2" style="margin-top:12px">
+      <div class="card"><h2>Crush tracker: sugar made so far, ${C.season} <span class="note">ISMA, to ${C.as_of}</span></h2>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px"><select id="swCrushReg" aria-label="Region"><option value="IN">All India</option><option value="MH">Maharashtra</option></select>
+          <button type="button" class="btn" id="swCrushZ" data-z="${C.days_into_season < 120 ? 1 : 0}">${C.days_into_season < 120 ? 'Show full season' : 'Show first weeks'}</button></div>
+        <div style="position:relative;height:270px"><canvas id="swCrush"></canvas></div>
+        <div class="tbl" style="margin-top:8px"><table><tr><th class="l">To ${C.as_of}</th><th>${C.season}, lakh t</th><th>Mills</th><th>Year ago</th><th>Mills</th><th>Change</th><th>Last season final</th></tr>
+          ${L.map(r => `<tr><td class="l">${r.region === 'All India' ? '<b>All India</b>' : r.region}</td><td class="n"><b>${lt(r.now)}</b></td><td class="n">${r.mills ? f0(r.mills) : '–'}</td><td class="n">${lt(r.year_ago)}</td><td class="n">${r.mills_year_ago ? f0(r.mills_year_ago) : '–'}</td><td class="n">${chg(r.now, r.year_ago)}</td><td class="n">${lt(r.final_last_season)}</td></tr>`).join('')}</table></div>
+        <p class="note">Season-to-date sugar production (net of any sugar diverted to ethanol) at each ISMA release, by days since 1 October; past seasons for comparison, final production at the right on the full-season view. Maharashtra began crushing on ${C.mh_start} this season, earlier than in any season since 2018/19, so early totals run far ahead of last year without implying a bigger crop. Source of the latest release: ${link(C.source, C.url)}. ISMA publishes twice a month in season; the desk adds each release the day it is reported.</p>
+        ${mc.length ? `<h3>Maharashtra cane crushing</h3><div class="tbl"><table><tr><th class="l">As of</th><th>Mills</th><th>Cane crushed, lakh t</th><th>Sugar, lakh t</th><th>Recovery %</th><th class="l">Source</th></tr>
+          ${mc.slice(0, 8).map(r => `<tr><td class="l">${r.as_of}${r.season !== C.season ? ` <span class="note">(${r.season})</span>` : ''}</td><td class="n">${r.mills ? f0(r.mills) : '–'}</td><td class="n">${f1(r.cane_lakh_t)}</td><td class="n">${f2(r.sugar_lakh_t)}</td><td class="n">${r.recovery_pct ? f2(r.recovery_pct) : '–'}</td><td class="l">${link(r.source, r.url)}</td></tr>`).join('')}</table></div>
+          <p class="note">State figures (Sugar Commissionerate, or NFCSF early in the season) as reported in the press; the Commissionerate's own site is checked each run (${C.collector && C.collector.direct_sources ? Object.entries(C.collector.direct_sources).map(([k, v]) => `${esc(k)}: ${v === 200 ? 'reachable' : 'not reachable from the desk, so news reports of the releases are used'}`).join('; ') : 'first check pending'}).</p>` : ''}
+      </div>
+      <div class="card"><h2>2026/27 crop: where the crush points</h2>
+        ${p ? `<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
+          ${kpi('Low', f1(p.low) + ' lakh t', '')}${kpi('<b>Mid</b>', '<b>' + f1(p.mid) + ' lakh t</b>', `${sgn(p.vs_isma_pct, 1, '%')} vs ISMA`)}${kpi('High', f1(p.high) + ' lakh t', '')}</div>
+          <div class="tbl" style="margin-top:8px"><table><tr><th class="l"></th><th>Lakh t</th><th class="l">Note</th></tr>
+            <tr><td class="l">Desk projection (mid; 80% range)</td><td class="n"><b>${f1(p.mid)}</b></td><td class="l">${f1(p.low)} to ${f1(p.high)}, as of the ${p.as_of} release</td></tr>
+            <tr><td class="l">ISMA first estimate (${p.isma_date})</td><td class="n">${f2(p.isma)}</td><td class="l">No sugar to ethanol this season, so gross = net; revision due January 2027</td></tr>
+            <tr><td class="l">Last season (2025/26, net)</td><td class="n">${f2(p.last_season_final)}</td><td class="l">after 32.42 lakh t to ethanol</td></tr>
+            <tr><td class="l">Made so far</td><td class="n">${f2(p.to_date)}</td><td class="l">${f1(p.share_of_mid_made)}% of the mid projection</td></tr></table></div>
+          <p>Reading: ${rel[p.reliability]}. The projection is ${p.vs_isma_pct < -1 ? 'below' : p.vs_isma_pct > 1 ? 'above' : 'in line with'} ISMA's ${f2(p.isma)} lakh t${p.mh_vs_isma ? `. Measured from its early start, Maharashtra's crush pace points ${p.mh_vs_isma === 'in line' ? 'in line with' : p.mh_vs_isma} ISMA's ${f2(p.isma_mh)} lakh t for the state` : ''}${(L.find(r => r.region === 'Uttar Pradesh') || {}).now < (L.find(r => r.region === 'Uttar Pradesh') || {}).year_ago ? '; Uttar Pradesh is behind last year on fewer mills' : ''}.</p>
+          <details><summary>Variables used</summary><ul>${C.variables.map(v => `<li class="note">${esc(v)}</li>`).join('')}</ul></details>` : '<p class="note">Projection needs a release with all-India and Maharashtra figures.</p>'}
+      </div></div>
+      ${B ? `<div class="grid g2" style="margin-top:12px">
+      <div class="card"><h2>2026/27 balance (Oct–Sep) and import need</h2>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">${kpi('Imports needed (mid)', f1(B.need_mid) + ' lakh t', `to end the season at 2.5 months of consumption; range ${f1(Math.max(B.need_low, 0))} to ${f1(B.need_high)}`)}
+          ${kpi('Duty-free quota left', f1(B.trq_left) + ' lakh t', `${f0(B.trq_quota)} lakh t TRQ, about ${f1(B.trq_used)} used by ${B.trq_used_date}; deadline 31 Mar 2027`)}
+          ${kpi('Need beyond the quota', f1(B.need_vs_trq_left) + ' lakh t', 'mid case, at full duty unless the quota is widened')}</div>
+        <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Item</th><th>Lakh t</th><th class="l">Note</th><th class="l">Source</th></tr>
+          ${B.rows.map(r => `<tr><td class="l">${esc(r.item)}</td><td class="n"><b>${f1(r.value)}</b></td><td class="l">${esc(r.note)}</td><td class="l">${r.url ? link(r.source, r.url) : esc(r.source)}</td></tr>`).join('')}</table></div>
+        <h3>Imports needed (lakh t) by closing stock and crop size</h3>${grid}
+        <p class="note">Closing stock in months of consumption at ${f0(B.rows[2].value)} lakh t a year. Zero means the crop alone reaches that stock. If only the unused part of the duty-free quota arrives, the season ends with about <b>${f1(B.closing_if_trq_only)} lakh t</b> (${f1(B.closing_if_trq_only_months)} months of consumption).</p></div>
+      <div class="card"><h2>Do imports pay?</h2>
+        ${E ? `<div class="tbl"><table><tr><th class="l"></th><th>Rs per quintal</th></tr>
+          <tr><td class="l">Raw sugar landed under the TRQ (zero duty), before freight and refining</td><td class="n">${f0(E.raw_trq_rs_qtl)}</td></tr>
+          <tr><td class="l">${esc(E.domestic_item)} (${E.domestic_date})</td><td class="n">${f0(E.domestic_rs_qtl)}</td></tr>
+          <tr><td class="l"><b>Room for freight, refining and margin</b></td><td class="n"><b>${f0(E.gap_rs_qtl)}</b></td></tr>
+          ${E.white_full_duty_rs_qtl ? `<tr><td class="l">White sugar at full duty (outside the quota)</td><td class="n">${f0(E.white_full_duty_rs_qtl)}</td></tr>` : ''}</table></div>
+          <p>Inside the quota, imported raws have Rs ${f0(E.gap_rs_qtl)}/qtl below the domestic ex-mill price to cover ocean freight, port, refining and margin; outside it, the full duty prices imports far above the home market, so any need beyond the quota requires a policy change (wider quota or lower duty) rather than price alone. Same inputs as the import-parity table below.</p>` : '<p class="note">Import parity needs the latest No. 11, USD/INR and a domestic ex-mill quote.</p>'}
+        <h3>2027/28</h3><p>${esc(B.next_season.text)}</p></div></div>` : ''}`;
+  }
+
+  function crushChart(C, zoom) {
+    const el = document.getElementById('swCrush');
+    if (!C || !el) return;
+    zoom = zoom ?? (C.days_into_season < 120);
+    const reg = (document.getElementById('swCrushReg') || {}).value || 'IN';
+    const P = reg === 'MH' ? C.chart.mh_points : C.chart.points, ss = Object.keys(P).filter(x => P[x].length).sort(), past = ss.filter(x => x !== C.season);
+    const pc = ['#d0d0d0', '#b8b8b8', '#9a9a9a', PAL[5], PAL[3], PAL[2]].slice(-past.length);
+    const xmax = zoom ? Math.max(92, C.days_into_season + 30) : 364;
+    const day = t => { const d = new Date(Date.UTC(2001, 9, 1) + t * 864e5); return d.getUTCDate() + ' ' + MON[d.getUTCMonth()]; };
+    const data = x => P[x].filter(q => q[0] <= xmax).map(q => ({ x: q[0], y: q[1] }));
+    chart('swCrush', { type: 'line', data: { datasets: ss.map(x => x === C.season
+      ? { label: x, data: data(x), borderColor: PAL[1], backgroundColor: PAL[1], borderWidth: 3, pointRadius: 3.5 }
+      : { label: x, data: data(x), borderColor: pc[past.indexOf(x)], backgroundColor: pc[past.indexOf(x)], borderWidth: 1.4, pointRadius: 1.5 }) },
+      options: { interaction: { mode: 'nearest', intersect: false },
+        plugins: { tooltip: { callbacks: { title: it => it.length ? (it[0].parsed.x >= 364 ? 'Season final' : day(it[0].parsed.x)) : '' } } },
+        scales: { x: { type: 'linear', min: 0, max: xmax, ticks: { stepSize: zoom ? 15 : 30.5, callback: v => v >= 364 ? 'Final' : day(Math.round(v)) } },
+                  y: { min: 0, title: { display: true, text: 'lakh tonnes, season to date' } } } } });
   }
 
   function histCard(H) {
