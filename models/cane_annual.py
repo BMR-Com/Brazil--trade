@@ -88,6 +88,9 @@ def window_rain(cc, src):
         c = pd.read_csv(f)
         c = c[c.point.isin(pts)]
         c["y"], c["m"] = c.month.str[:4].astype(int), c.month.str[5:7].astype(int)
+        if "days" in c:   # drop months that are not complete yet
+            dim = pd.to_datetime(c.month + "-01").dt.days_in_month
+            c = c[c.days.isna() | (c.days >= 0.9 * dim)]
         c = c[(c.m >= m0) & (c.m <= m1)]
         n = c.groupby(["point", "y"]).rain_mm.count()
         s = c.groupby(["point", "y"]).rain_mm.sum()[n == m1 - m0 + 1].unstack(0)

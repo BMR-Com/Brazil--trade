@@ -4,7 +4,8 @@
 - NASA POWER daily point weather 1981->present for cane regions (rain, tmax, tmin, root-zone wetness)
   -> data/sugar/cane_model/wx/<id>.csv.gz   (Open-Meteo ERA5 archive as fallback)
 - ONI (NOAA CPC) -> data/sugar/cane_model/oni.csv
-- CHIRPS v2 monthly rain 1981->present (IRI Data Library) for the India and Thailand points -> data/sugar/cane_model/chirps.csv
+- CHIRPS daily rain 1981->present (ClimateSERV API), 0.5-degree box per India/Thailand point, as monthly totals
+  -> data/sugar/cane_model/chirps.csv
 - ERA5 daily rain/temperature 1981->present for the same points -> data/sugar/cane_model/era5/<id>.csv.gz (--only era5;
   heavy on the Open-Meteo quota, so it runs as its own step and keeps whatever points it finished)
 - USD/THB and USD/INR daily (FRED DEXTHUS, DEXINUS) -> data/sugar/cane_model/fx_thb.csv, fx_inr.csv;
@@ -12,6 +13,7 @@
 Re-runs fetch only what is missing or stale (weather: last 120 days refreshed).
 """
 import argparse, gzip, io, json, os, sys, time, zipfile
+import numpy as np
 from datetime import date, timedelta
 import pandas as pd, requests
 
@@ -174,39 +176,74 @@ def openmeteo_light(lat, lon, d0, d1):
 
 
 def chirps_hist(ccs=("IN", "TH")):
-    """CHIRPS v2 monthly rain (IRI Data Library), 1981 on, 0.5-degree box average around each India/Thailand point.
-    Station-blended, so a better long record of monsoon totals than reanalysis. -> data/sugar/cane_model/chirps.csv"""
-    base = "https://iridl.ldeo.columbia.edu/SOURCES/.UCSB/.CHIRPS/.v2p0/.monthly/.global/.precipitation/"
-    tails = ["[X/Y]average/T+exch+table-+text+text+-table+.csv", "[X/Y]average/data.csv"]
-    rows = []
+    """CHIRPS daily rain (station-blended, 0.05 deg) averaged over a 0.5-degree box around each India/Thailand point, from
+    the ClimateSERV API (SERVIR/NASA), 1981 on, summed to months -> data/sugar/cane_model/chirps.csv. ClimateSERV takes
+    at most 20 years per job, so each point is three jobs; all jobs are submitted first, then collected."""
+    api = "https://climateserv.servirglobal.net/api/"
+    end = date.today() - timedelta(days=3)
+    spans = [(date(1981, 1, 1), date(2000, 12, 31)), (date(2001, 1, 1), date(2020, 12, 31)), (date(2021, 1, 1), end)]
+    fn = os.path.join(OUT, "chirps.csv")
+    old = pd.read_csv(fn) if os.path.exists(fn) else None
+    jobs = []
     for pid, (cc, lab, lat, lon, w) in POINTS.items():
         if cc not in ccs:
             continue
-        box = "X/%.2f/%.2f/RANGEEDGES/Y/%.2f/%.2f/RANGEEDGES/" % (lon - .25, lon + .25, lat - .25, lat + .25)
-        got = None
-        for t in tails:
-            r = get(base + box + t, tries=2, timeout=120)
-            if r is None:
-                continue
+        ring = [[lon - .25, lat - .25], [lon + .25, lat - .25], [lon + .25, lat + .25], [lon - .25, lat + .25], [lon - .25, lat - .25]]
+        geo = json.dumps({"type": "Polygon", "coordinates": [ring]}, separators=(",", ":"))
+        have = old is not None and (old.point == pid).any() and old[old.point == pid].month.min() <= "1981-01"
+        for d0, d1 in (spans[-1:] if have else spans):
+            q = {"datatype": 0, "begintime": d0.strftime("%m/%d/%Y"), "endtime": d1.strftime("%m/%d/%Y"), "intervaltype": 0,
+                 "operationtype": 5, "dateType_Category": "default", "isZip_CurrentDataType": "false", "geometry": geo}
+            r = get(api + "submitDataRequest/", tries=3, timeout=60, params=q)
             try:
-                d = pd.read_csv(io.StringIO(r.text))
-                d = d.iloc[:, -2:]; d.columns = ["T", "rain_mm_day"]
-                d["month"] = pd.to_datetime(d["T"].astype(str).str.strip(), format="%b %Y", errors="coerce")
-                d = d.dropna(subset=["month"])
-                if len(d) > 300:
-                    got = d; break
-                log("chirps parse", pid, t[:20], r.text[:120].replace("\n", " | "))
-            except Exception as e:
-                log("chirps parse err", pid, type(e).__name__, r.text[:120].replace("\n", " | "))
-        if got is None:
-            log("chirps fail", pid); continue
-        got["mm"] = pd.to_numeric(got.rain_mm_day, errors="coerce") * got.month.dt.days_in_month
-        rows += [(pid, m.strftime("%Y-%m"), round(v, 1)) for m, v in zip(got.month, got.mm)]
-        log("chirps", pid, got.month.min().date(), got.month.max().date())
-        time.sleep(3)
+                jid = r.json()[0] if r is not None else None
+            except Exception:
+                jid = None
+            if not jid:
+                log("chirps submit fail", pid, d0, (r.text[:120] if r is not None else "")); continue
+            jobs.append((pid, d0, jid)); time.sleep(2)
+    log("chirps jobs", len(jobs))
+    rows, t0 = [], time.time()
+    pending = list(jobs)
+    while pending and time.time() - t0 < 1800:
+        time.sleep(15)
+        for job in list(pending):
+            pid, d0, jid = job
+            r = get(api + "getDataRequestProgress/", tries=2, timeout=60, params={"id": jid})
+            try:
+                prog = float(r.json()[0]) if r is not None else 0.0
+            except Exception:
+                prog = 0.0
+            if prog < 0:
+                log("chirps job error", pid, d0); pending.remove(job); continue
+            if prog < 100:
+                continue
+            r = get(api + "getDataFromRequest/", tries=3, timeout=120, params={"id": jid})
+            pending.remove(job)
+            try:
+                dd = r.json()["data"]
+            except Exception:
+                log("chirps data fail", pid, d0); continue
+            for it in dd:
+                v = list(it["value"].values())[0]
+                if v is None or v < -1:
+                    continue
+                rows.append((pid, pd.Timestamp(int(float(it["epochTime"])), unit="s").normalize() + pd.Timedelta(hours=12), float(v)))
+            log("chirps", pid, d0, len(dd))
+    if pending:
+        log("chirps: jobs not finished", len(pending))
     if not rows:
         return False
-    pd.DataFrame(rows, columns=["point", "month", "rain_mm"]).to_csv(os.path.join(OUT, "chirps.csv"), index=False)
+    d = pd.DataFrame(rows, columns=["point", "day", "rain"])
+    d["month"] = d.day.dt.strftime("%Y-%m")
+    m = d.groupby(["point", "month"]).agg(rain_mm=("rain", "sum"), days=("rain", "count")).reset_index()
+    m["rain_mm"] = m.rain_mm.round(1)
+    if old is not None:
+        if "days" not in old:
+            old["days"] = np.nan
+        m = pd.concat([old[~old.set_index(["point", "month"]).index.isin(m.set_index(["point", "month"]).index)], m])
+    m.sort_values(["point", "month"]).to_csv(fn, index=False)
+    log("chirps saved", m.point.nunique(), "points", m.month.min(), m.month.max())
     return True
 
 
