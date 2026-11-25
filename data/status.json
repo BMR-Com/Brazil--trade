@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 03:48 UTC",
+ "generated": "2026-11-25 04:37 UTC",
  "today": "2026-11-24",
  "sources": [
   {
@@ -833,7 +833,7 @@
   {
    "group": "Cotton",
    "source": "Reports: USDA attach\u00e9 (GAIN), World Markets and Trade, ERS outlook (last full check)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -929,7 +929,7 @@
   {
    "group": "Macro",
    "source": "Markets snapshot",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "hourly in trading hours",
    "age": 0,
    "age_unit": "business days",
