@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 11:53 UTC",
+ "generated": "2026-11-25 13:15 UTC",
  "today": "2026-11-25",
  "sources": [
   {
@@ -593,9 +593,9 @@
   {
    "group": "Sugar",
    "source": "India releases: ISMA, DGFT, quotas, prices (manual)",
-   "latest": "2026-11-18",
+   "latest": "2026-11-25",
    "cadence": "fortnightly",
-   "age": 7,
+   "age": 0,
    "age_unit": "days",
    "limit": 20,
    "state": "ok",
@@ -761,9 +761,9 @@
   {
    "group": "Coffee",
    "source": "Spreads & arbs table (KC/RC switches, arabica-robusta arb, B3 arb)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -773,9 +773,9 @@
   {
    "group": "Sugar",
    "source": "Spreads & arbs table (No. 11 / No. 5 switches, white premium)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
