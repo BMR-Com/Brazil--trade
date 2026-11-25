@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-24 15:25 UTC",
- "asof": "2026-11-23",
+ "generated": "2026-11-25 00:59 UTC",
+ "asof": "2026-11-24",
  "today": "2026-11-24",
  "active": [
   {
@@ -22,6 +22,16 @@
    "date": "2026-11-23",
    "new": false,
    "since": "2026-11-17"
+  },
+  {
+   "id": "KC_55lo",
+   "market": "Coffee C",
+   "text": "Mar 27 settled 264.30 ¢/lb, a new 55-day low (below 264.65)",
+   "on": true,
+   "level": "264.65",
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
   },
   {
    "id": "SB_mm_hi",
@@ -54,6 +64,16 @@
    "since": "2026-11-17"
   },
   {
+   "id": "wx_br_mt_wet",
+   "market": "Cotton",
+   "text": "Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-24 to 2026-12-08; ECMWF ENS only)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
    "id": "wx_br_sp_wet",
    "market": "Sugar No. 11",
    "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-24 to 2026-12-08; ECMWF ENS only)",
@@ -74,13 +94,23 @@
    "since": "2026-11-17"
   },
   {
+   "id": "wx_vn_dl_wet",
+   "market": "Coffee C",
+   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-25 to 2026-12-08; ECMWF ENS only)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
    "id": "data_ICE_options_settlements__uploaded_ICE_files_",
    "market": "Data",
    "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-19, limit 2 business days)",
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -110,7 +140,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -120,7 +150,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -130,7 +160,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -140,7 +170,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -150,7 +180,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -180,7 +210,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -190,74 +220,14 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_What_changed_strip__settlement_date_",
-   "market": "Data",
-   "text": "What changed strip (settlement date): late (latest 2026-11-17, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Delivery_period_dashboard__settlement_date_",
-   "market": "Data",
-   "text": "Delivery-period dashboard (settlement date): late (latest 2026-11-17, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Alerts_check",
-   "market": "Data",
-   "text": "Alerts check: late (latest 2026-11-18, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Desk_call_log___track_record",
-   "market": "Data",
-   "text": "Desk call log / track record: late (latest 2026-11-17, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
-   "market": "Data",
-   "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-13, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   }
  ],
  "watch": [
   {
    "market": "Cotton",
-   "text": "Dec 26/Mar 27 80% of full carry at 4.33¢ Mar 27 over Dec 26 (now +3.82¢, 2026-11-20)"
+   "text": "Dec 26/Mar 27 80% of full carry at 4.38¢ Mar 27 over Dec 26 (now +3.35¢, 2026-11-24)"
   },
   {
    "market": "Cotton",
@@ -269,19 +239,19 @@
   },
   {
    "market": "Cotton",
-   "text": "Mar 27: 55-day high 90.66, 55-day low 78.88 ¢/lb (settle 81.36 on 2026-11-23)"
+   "text": "Mar 27: 55-day high 90.66, 55-day low 78.88 ¢/lb (settle 81.38 on 2026-11-24)"
   },
   {
    "market": "Sugar No. 11",
-   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 17.61 on 2026-11-23)"
+   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 17.63 on 2026-11-24)"
   },
   {
    "market": "Coffee C",
-   "text": "Mar 27: 55-day high 302.25, 55-day low 264.65 ¢/lb (settle 267.75 on 2026-11-23)"
+   "text": "Mar 27: 55-day high 302.25, 55-day low 264.30 ¢/lb (settle 264.30 on 2026-11-24)"
   },
   {
    "market": "Cocoa",
-   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,299 on 2026-11-23)"
+   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,419 on 2026-11-24)"
   },
   {
    "market": "Cotton",
@@ -305,7 +275,7 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.00¢/lb: No. 11 Mar 27 now 17.61¢ (2026-11-23)"
+   "text": "Ethanol parity 15.00¢/lb: No. 11 Mar 27 now 17.63¢ (2026-11-24)"
   }
  ],
  "rules_checked": 163,
@@ -501,9 +471,19 @@
    "since": "2026-11-24"
   },
   {
-   "id": "data_What_changed_strip__settlement_date_",
-   "market": "Data",
-   "text": "What changed strip (settlement date): late (latest 2026-11-17, limit 2 business days)",
+   "id": "KC_55lo",
+   "market": "Coffee C",
+   "text": "Mar 27 settled 264.30 ¢/lb, a new 55-day low (below 264.65)",
+   "on": true,
+   "level": "264.65",
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "wx_br_mt_wet",
+   "market": "Cotton",
+   "text": "Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-24 to 2026-12-08; ECMWF ENS only)",
    "on": true,
    "level": null,
    "date": "2026-11-24",
@@ -511,49 +491,9 @@
    "since": "2026-11-24"
   },
   {
-   "id": "data_Delivery_period_dashboard__settlement_date_",
-   "market": "Data",
-   "text": "Delivery-period dashboard (settlement date): late (latest 2026-11-17, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Alerts_check",
-   "market": "Data",
-   "text": "Alerts check: late (latest 2026-11-18, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Desk_call_log___track_record",
-   "market": "Data",
-   "text": "Desk call log / track record: late (latest 2026-11-17, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
-   "market": "Data",
-   "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-13, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
+   "id": "wx_vn_dl_wet",
+   "market": "Coffee C",
+   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-25 to 2026-12-08; ECMWF ENS only)",
    "on": true,
    "level": null,
    "date": "2026-11-24",

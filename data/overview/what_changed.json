@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-24 15:25 UTC",
- "asof": "2026-11-23",
+ "generated": "2026-11-25 00:58 UTC",
+ "asof": "2026-11-24",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
-  "generated": "2026-11-24 05:45 UTC",
-  "prev_generated": "2026-11-23 02:17 UTC"
+  "generated": "2026-11-24 20:19 UTC",
+  "prev_generated": "2026-11-23 21:39 UTC"
  },
  "markets": [
   {
@@ -15,14 +15,14 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 81.36,
-     "d1": 2.07,
-     "d5": 0.44,
+     "now": 81.38,
+     "d1": 0.02,
+     "d5": -0.02,
      "norm1": 1.14,
      "norm5": 3.21,
-     "flag1": true,
+     "flag1": false,
      "flag5": false,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "",
      "kind": "daily"
     },
@@ -30,14 +30,14 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": -1.37,
-     "d1": 0.01,
-     "d5": 0.24,
+     "now": -1.38,
+     "d1": -0.01,
+     "d5": 0.13,
      "norm1": 0.16,
      "norm5": 0.34,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "Mar 27 minus May 27; negative = carry",
      "kind": "daily"
     },
@@ -83,9 +83,9 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-17",
-     "note": "new report; CFTC futures and options, positions as of 2026-11-17",
+     "note": "no new report since the last run; CFTC futures and options, positions as of 2026-11-17",
      "kind": "weekly",
-     "new": true
+     "new": false
     },
     {
      "item": "Front implied vol (JAN27)",
@@ -99,7 +99,7 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-19",
-     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 2 business days old",
+     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 3 business days old",
      "kind": "daily"
     },
     {
@@ -119,8 +119,8 @@
     }
    ],
    "flags": [
-    "Flat price (Mar 27) +2.07 ¢/lb on the day (normal within ±1.14)",
-    "Spot basis (US average) −14 pts on the day (normal within ±0)"
+    "Spot basis (US average) −14 pts on the day (normal within ±0)",
+    "Weather Sorriso, Mato Grosso: next-15-day read turned wet (was near normal)"
    ],
    "errors": [],
    "weather": [
@@ -131,19 +131,19 @@
      "prev": "near normal",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 5.7,
-     "rain_normal": 10.0,
+     "rain_p50": 4.5,
+     "rain_normal": 10.7,
      "frost": 1.0,
-     "window": "2026-11-24 to 2026-12-07"
+     "window": "2026-11-24 to 2026-12-08"
     },
     {
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
      "read": "wet",
-     "prev": "wet",
-     "flip": false,
+     "prev": "near normal",
+     "flip": true,
      "src": "ECMWF ENS only",
-     "rain_p50": 132.8,
+     "rain_p50": 124.2,
      "rain_normal": 89.6,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -151,11 +151,11 @@
     {
      "region": "br_ba",
      "name": "LEM, western Bahia",
-     "read": "dry",
+     "read": "near normal",
      "prev": "dry",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 42.6,
+     "rain_p50": 56.3,
      "rain_normal": 85.8,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -170,7 +170,7 @@
      "rain_p50": 0.0,
      "rain_normal": 2.3,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-08"
     },
     {
      "region": "au_nsw",
@@ -179,13 +179,13 @@
      "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 58.5,
-     "rain_normal": 29.8,
+     "rain_p50": 38.3,
+     "rain_normal": 27.7,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-08"
     }
    ],
-   "summary": "Flat price (Mar 27) +2.07 ¢/lb on the day (normal within ±1.14); Spot basis (US average) −14 pts on the day (normal within ±0)"
+   "summary": "Spot basis (US average) −14 pts on the day (normal within ±0); Weather Sorriso, Mato Grosso: next-15-day read turned wet (was near normal)"
   },
   {
    "sym": "SB",
@@ -195,14 +195,14 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 17.61,
-     "d1": 0.58,
-     "d5": -0.49,
+     "now": 17.63,
+     "d1": 0.02,
+     "d5": -0.54,
      "norm1": 0.34,
      "norm5": 0.79,
-     "flag1": true,
+     "flag1": false,
      "flag5": false,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "",
      "kind": "daily"
     },
@@ -210,14 +210,14 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 0.62,
-     "d1": -0.04,
-     "d5": 0.11,
+     "now": 0.57,
+     "d1": -0.05,
+     "d5": 0.0,
      "norm1": 0.05,
      "norm5": 0.09,
-     "flag1": false,
-     "flag5": true,
-     "date": "2026-11-23",
+     "flag1": true,
+     "flag5": false,
+     "date": "2026-11-24",
      "note": "Mar 27 minus May 27; negative = carry",
      "kind": "daily"
     },
@@ -248,9 +248,9 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-17",
-     "note": "new report; CFTC futures and options, positions as of 2026-11-17",
+     "note": "no new report since the last run; CFTC futures and options, positions as of 2026-11-17",
      "kind": "weekly",
-     "new": true
+     "new": false
     },
     {
      "item": "Front implied vol (JAN27)",
@@ -264,13 +264,12 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-19",
-     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 2 business days old",
+     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 3 business days old",
      "kind": "daily"
     }
    ],
    "flags": [
-    "Flat price (Mar 27) +0.58 ¢/lb on the day (normal within ±0.34)",
-    "Front spread (Mar 27/May 27) +0.11 ¢/lb on the week (normal within ±0.09)"
+    "Front spread (Mar 27/May 27) −0.05 ¢/lb on the day (normal within ±0.05)"
    ],
    "errors": [],
    "weather": [
@@ -281,7 +280,7 @@
      "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 197.5,
+     "rain_p50": 197.7,
      "rain_normal": 98.7,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -293,7 +292,7 @@
      "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 173.7,
+     "rain_p50": 162.0,
      "rain_normal": 75.0,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -305,7 +304,7 @@
      "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 154.2,
+     "rain_p50": 173.1,
      "rain_normal": 97.7,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -317,7 +316,7 @@
      "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 204.2,
+     "rain_p50": 220.4,
      "rain_normal": 115.3,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -347,7 +346,7 @@
      "window": null
     }
    ],
-   "summary": "Flat price (Mar 27) +0.58 ¢/lb on the day (normal within ±0.34); Front spread (Mar 27/May 27) +0.11 ¢/lb on the week (normal within ±0.09)"
+   "summary": "Front spread (Mar 27/May 27) −0.05 ¢/lb on the day (normal within ±0.05)"
   },
   {
    "sym": "KC",
@@ -357,14 +356,14 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 267.75,
-     "d1": -0.75,
-     "d5": -7.15,
+     "now": 264.3,
+     "d1": -3.45,
+     "d5": -17.1,
      "norm1": 8.2,
      "norm5": 18.5,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "",
      "kind": "daily"
     },
@@ -372,14 +371,14 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 6.6,
-     "d1": 0.2,
-     "d5": 2.25,
+     "now": 6.0,
+     "d1": -0.6,
+     "d5": -0.05,
      "norm1": 1.4,
      "norm5": 3.7,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "Mar 27 minus May 27; negative = carry",
      "kind": "daily"
     },
@@ -410,9 +409,9 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-17",
-     "note": "new report; CFTC futures and options, positions as of 2026-11-17",
+     "note": "no new report since the last run; CFTC futures and options, positions as of 2026-11-17",
      "kind": "weekly",
-     "new": true
+     "new": false
     },
     {
      "item": "Front implied vol (MAR27)",
@@ -426,13 +425,14 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-19",
-     "note": "ATM vol of the first option series with at least 15 days to expiry (MAR27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 2 business days old",
+     "note": "ATM vol of the first option series with at least 15 days to expiry (MAR27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 3 business days old",
      "kind": "daily"
     }
    ],
    "flags": [
     "ICE certified arabica +43,395 bags on the day (normal within ±7,939)",
-    "ICE certified arabica +82,200 bags on the week (normal within ±42,750)"
+    "ICE certified arabica +82,200 bags on the week (normal within ±42,750)",
+    "Weather Buon Ma Thuot, Dak Lak: next-15-day read turned wet (was near normal)"
    ],
    "errors": [],
    "weather": [
@@ -443,7 +443,7 @@
      "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 213.9,
+     "rain_p50": 219.0,
      "rain_normal": 97.2,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -455,7 +455,7 @@
      "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 161.9,
+     "rain_p50": 186.2,
      "rain_normal": 111.9,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -467,7 +467,7 @@
      "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 184.6,
+     "rain_p50": 215.2,
      "rain_normal": 102.8,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -479,7 +479,7 @@
      "prev": "near normal",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 55.4,
+     "rain_p50": 106.4,
      "rain_normal": 105.6,
      "frost": 0.0,
      "window": "2026-11-24 to 2026-12-08"
@@ -487,17 +487,17 @@
     {
      "region": "vn_dl",
      "name": "Buon Ma Thuot, Dak Lak",
-     "read": "near normal",
+     "read": "wet",
      "prev": "near normal",
-     "flip": false,
+     "flip": true,
      "src": "ECMWF ENS only",
-     "rain_p50": 36.2,
-     "rain_normal": 25.2,
+     "rain_p50": 49.5,
+     "rain_normal": 24.0,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-08"
     }
    ],
-   "summary": "ICE certified arabica +43,395 bags on the day (normal within ±7,939); ICE certified arabica +82,200 bags on the week (normal within ±42,750)"
+   "summary": "ICE certified arabica +43,395 bags on the day (normal within ±7,939); ICE certified arabica +82,200 bags on the week (normal within ±42,750); Weather Buon Ma Thuot, Dak Lak: next-15-day read turned wet (was near normal)"
   },
   {
    "sym": "CC",
@@ -507,14 +507,14 @@
      "item": "Flat price (Mar 27)",
      "unit": "$/t",
      "dp": 0,
-     "now": 5299.0,
-     "d1": 29.0,
-     "d5": 115.0,
+     "now": 5419.0,
+     "d1": 120.0,
+     "d5": 242.0,
      "norm1": 204.0,
      "norm5": 549.0,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "",
      "kind": "daily"
     },
@@ -522,14 +522,14 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "$/t",
      "dp": 0,
-     "now": -65.0,
-     "d1": 0.0,
-     "d5": 0.0,
+     "now": -62.0,
+     "d1": 3.0,
+     "d5": -3.0,
      "norm1": 9.0,
      "norm5": 18.0,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "Mar 27 minus May 27; negative = carry",
      "kind": "daily"
     },
@@ -560,9 +560,9 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-17",
-     "note": "new report; CFTC futures and options, positions as of 2026-11-17",
+     "note": "no new report since the last run; CFTC futures and options, positions as of 2026-11-17",
      "kind": "weekly",
-     "new": true
+     "new": false
     },
     {
      "item": "Front implied vol (JAN27)",
@@ -576,7 +576,7 @@
      "flag1": false,
      "flag5": false,
      "date": "2026-11-19",
-     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 12 sessions only; option data 2 business days old",
+     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 12 sessions only; option data 3 business days old",
      "kind": "daily"
     }
    ],
