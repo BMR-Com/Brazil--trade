@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 01:19 UTC",
+ "generated": "2026-11-25 01:53 UTC",
  "today": "2026-11-24",
  "sources": [
   {
@@ -1049,7 +1049,7 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "monthly",
    "age": 0,
    "age_unit": "days",
