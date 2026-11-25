@@ -347,6 +347,12 @@ def build(parity=None):
                          "Mills operating at each release",
                          "ISMA's in-season estimates and how far past first estimates were from the final"]}
     out["balance"] = balance(proj, parity)
+    try:
+        import india_imports
+        out["imports"] = india_imports.build(proj)
+    except Exception as e:                      # the tracker and balance still build
+        print("india import scenarios failed:", repr(e))
+        out["imports"] = None
     return out
 
 

@@ -129,9 +129,6 @@ const SugarWorld = (() => {
     const chg = (a, b) => a != null && b ? sgn(100 * (a / b - 1), 0, '%') : '–';
     const rel = { low: 'early season: crushing pace says little yet, so the range leans on the cane-area estimate', medium: 'mid-season: pace and area estimate carry similar weight', high: 'late season: the crushing pace now drives the projection' };
     const mc = C.mh_crush || [];
-    const grid = B ? `<div class="tbl"><table><tr><th class="l">Production case</th><th>Production</th>${B.norms.map(n => `<th>${fmt(n, 1)} months</th>`).join('')}</tr>
-        ${B.grid.map(g => `<tr><td class="l">${g.case === 'mid' ? '<b>Mid</b>' : g.case === 'low' ? 'Low' : 'High'}</td><td class="n">${f1(g.production)}</td>${g.need.map((v, i) => `<td class="n">${B.norms[i] === 2.5 && g.case === 'mid' ? '<b>' + f1(Math.max(v, 0)) + '</b>' : f1(Math.max(v, 0))}</td>`).join('')}</tr>`).join('')}</table></div>` : '';
-    const E = B && B.economics;
     return `<div class="grid g2" style="margin-top:12px">
       <div class="card"><h2>Crush tracker: sugar made so far, ${C.season} <span class="note">ISMA, to ${C.as_of}</span></h2>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px"><select id="swCrushReg" aria-label="Region"><option value="IN">All India</option><option value="MH">Maharashtra</option></select>
@@ -155,23 +152,68 @@ const SugarWorld = (() => {
           <p>Reading: ${rel[p.reliability]}. The projection is ${p.vs_isma_pct < -1 ? 'below' : p.vs_isma_pct > 1 ? 'above' : 'in line with'} ISMA's ${f2(p.isma)} lakh t${p.mh_vs_isma ? `. Measured from its early start, Maharashtra's crush pace points ${p.mh_vs_isma === 'in line' ? 'in line with' : p.mh_vs_isma} ISMA's ${f2(p.isma_mh)} lakh t for the state` : ''}${(L.find(r => r.region === 'Uttar Pradesh') || {}).now < (L.find(r => r.region === 'Uttar Pradesh') || {}).year_ago ? '; Uttar Pradesh is behind last year on fewer mills' : ''}.</p>
           <details><summary>Variables used</summary><ul>${C.variables.map(v => `<li class="note">${esc(v)}</li>`).join('')}</ul></details>` : '<p class="note">Projection needs a release with all-India and Maharashtra figures.</p>'}
       </div></div>
-      ${B ? `<div class="grid g2" style="margin-top:12px">
-      <div class="card"><h2>2026/27 balance (Oct–Sep) and import need</h2>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">${kpi('Imports needed (mid)', f1(B.need_mid) + ' lakh t', `to end the season at 2.5 months of consumption; range ${f1(Math.max(B.need_low, 0))} to ${f1(B.need_high)}`)}
-          ${kpi('Duty-free quota left', f1(B.trq_left) + ' lakh t', `${f0(B.trq_quota)} lakh t TRQ, about ${f1(B.trq_used)} used by ${B.trq_used_date}; deadline 31 Mar 2027`)}
-          ${kpi('Need beyond the quota', f1(B.need_vs_trq_left) + ' lakh t', 'mid case, at full duty unless the quota is widened')}</div>
-        <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Item</th><th>Lakh t</th><th class="l">Note</th><th class="l">Source</th></tr>
-          ${B.rows.map(r => `<tr><td class="l">${esc(r.item)}</td><td class="n"><b>${f1(r.value)}</b></td><td class="l">${esc(r.note)}</td><td class="l">${r.url ? link(r.source, r.url) : esc(r.source)}</td></tr>`).join('')}</table></div>
-        <h3>Imports needed (lakh t) by closing stock and crop size</h3>${grid}
-        <p class="note">Closing stock in months of consumption at ${f0(B.rows[2].value)} lakh t a year. Zero means the crop alone reaches that stock. If only the unused part of the duty-free quota arrives, the season ends with about <b>${f1(B.closing_if_trq_only)} lakh t</b> (${f1(B.closing_if_trq_only_months)} months of consumption).</p></div>
-      <div class="card"><h2>Do imports pay?</h2>
-        ${E ? `<div class="tbl"><table><tr><th class="l"></th><th>Rs per quintal</th></tr>
-          <tr><td class="l">Raw sugar landed under the TRQ (zero duty), before freight and refining</td><td class="n">${f0(E.raw_trq_rs_qtl)}</td></tr>
-          <tr><td class="l">${esc(E.domestic_item)} (${E.domestic_date})</td><td class="n">${f0(E.domestic_rs_qtl)}</td></tr>
-          <tr><td class="l"><b>Room for freight, refining and margin</b></td><td class="n"><b>${f0(E.gap_rs_qtl)}</b></td></tr>
-          ${E.white_full_duty_rs_qtl ? `<tr><td class="l">White sugar at full duty (outside the quota)</td><td class="n">${f0(E.white_full_duty_rs_qtl)}</td></tr>` : ''}</table></div>
-          <p>Inside the quota, imported raws have Rs ${f0(E.gap_rs_qtl)}/qtl below the domestic ex-mill price to cover ocean freight, port, refining and margin; outside it, the full duty prices imports far above the home market, so any need beyond the quota requires a policy change (wider quota or lower duty) rather than price alone. Same inputs as the import-parity table below.</p>` : '<p class="note">Import parity needs the latest No. 11, USD/INR and a domestic ex-mill quote.</p>'}
-        <h3>2027/28</h3><p>${esc(B.next_season.text)}</p></div></div>` : ''}`;
+      ${importCards(C.imports, B)}`;
+  }
+
+  // ---------- India 2026/27 imports: history, market-implied read, scenario matrices, TRQ use ----------
+  function importCards(M, B) {
+    if (!M) return '';
+    const I = M.implied, T = M.trq, Hs = M.history, st = Hs.stats, d = I.domestic;
+    const lt = v => v == null ? '–' : f1(v);
+    const cellTd = (c, bold) => `<td class="n">${bold ? '<b>' : ''}${f0(c.likely)}${bold ? '</b>' : ''}<div class="note">${c.requirement > 0 ? 'need ' + f0(c.requirement) : 'need 0'}${c.beyond_trq >= 0.5 ? ' · ' + f0(c.beyond_trq) + ' beyond quota' : ''}</div></td>`;
+    const crops = r => `<td class="l">${r.crop === 'ISMA' ? '<b>ISMA</b>' : r.crop}</td><td class="n">${f1(r.production)}</td>`;
+    const monT = `<div class="tbl"><table><tr><th class="l">2026/27 crop</th><th>Production</th>${Object.entries(M.monsoon.targets).map(([k, v]) => `<th>${k[0].toUpperCase() + k.slice(1)} monsoon<div class="note">end-Sep stock ${f2(v)} months</div></th>`).join('')}</tr>
+      ${M.monsoon.rows.map(r => `<tr>${crops(r)}${Object.keys(M.monsoon.targets).map(k => cellTd(r.cells[k], r.crop === 'ISMA' && k === 'normal')).join('')}</tr>`).join('')}</table></div>`;
+    const lv = M.ny.levels;
+    const nyT = `<div class="tbl"><table><tr><th class="l">No. 11, ¢/lb</th>${lv.map(x => `<th>${x.current ? '<b>' + f2(x.ny) + ' now</b>' : f0(x.ny)}</th>`).join('')}</tr>
+      <tr><td class="l">Raws landed, zero duty (TRQ), Rs/qtl</td>${lv.map(x => `<td class="n">${f0(x.raw_trq)}</td>`).join('')}</tr>
+      <tr><td class="l">Raws landed, full duty, Rs/qtl</td>${lv.map(x => `<td class="n">${f0(x.raw_full_duty)}</td>`).join('')}</tr>
+      <tr><td class="l">Ex-mill ${esc(d.label)} less TRQ raws, Rs/qtl</td>${lv.map(x => `<td class="n">${f0(x.gap)}</td>`).join('')}</tr>
+      <tr><td class="l">TRQ imports pay at today's ex-mill?</td>${lv.map(x => `<td class="n">${x.pays ? '<b class="up">yes</b>' : '<b class="dn">no</b>'}</td>`).join('')}</tr>
+      <tr><th class="l">Likely imports, lakh t (normal monsoon)</th>${lv.map(() => '<th></th>').join('')}</tr>
+      ${M.ny.rows.map(r => `<tr><td class="l">${r.crop === 'ISMA' ? '<b>ISMA</b>' : r.crop} (${f1(r.production)})</td>${r.cells.map(c => `<td class="n">${r.crop === 'ISMA' && lv.find(x => x.ny === c.ny).current ? '<b>' + f0(c.likely) + '</b>' : f0(c.likely)}<div class="note">at Rs ${f0(c.domestic_needed)}</div></td>`).join('')}</tr>`).join('')}</table></div>`;
+    const sc = M.stock.cols;
+    const stT = `<div class="tbl"><table><tr><th class="l">2026/27 crop</th><th>Production</th>${sc.map(c => `<th>${esc(c.label)}<div class="note">${f2(c.months)} months, ${f0(c.lakh_t)} lakh t</div></th>`).join('')}</tr>
+      ${M.stock.rows.map(r => `<tr>${crops(r)}${r.cells.map(c => cellTd(c, false)).join('')}</tr>`).join('')}</table></div>`;
+    const hT = `<div class="tbl"><table><tr><th class="l">Season</th><th>Production</th><th>Consumption</th><th>Imports</th><th>of which raws / whites</th><th>Closing stock</th><th>Months of use</th><th class="l">What followed</th></tr>
+      ${Hs.rows.map(r => `<tr><td class="l">${r.months < 2.5 ? '<b>' + r.season + '</b>' : r.season}</td><td class="n">${f0(r.production)}</td><td class="n">${f0(r.consumption)}</td><td class="n">${r.imports ? (r.season === st.max_imports_season ? '<b>' + f1(r.imports) + '</b>' : f1(r.imports)) : '–'}</td>
+        <td class="n">${r.raw != null || r.white != null ? lt(r.raw) + ' / ' + lt(r.white) : '–'}</td><td class="n">${f1(r.closing)}</td><td class="n">${r.months < 2.5 ? '<b>' + f1(r.months) + '</b>' : f1(r.months)}</td><td class="l" style="min-width:280px">${esc(r.next)}</td></tr>`).join('')}</table></div>`;
+    return `<div class="card" style="margin-top:12px"><h2>2026/27 imports: what is likely, not just what is "needed"</h2>
+        <p><b>${esc(M.most_likely)}</b></p>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))">
+          ${kpi('Likely imports 2026/27', f0(M.likely) + ' lakh t', `ISMA crop, normal monsoon; ${f0(M.likely_mid_crop)} on the desk mid crop`)}
+          ${kpi('Duty-free quota used by 31 Mar 2027', f1(T.likely) + ' lakh t', `of ${f0(T.quota)}; low ${f1(T.low)}, high ${f1(T.high)}; ${f1(T.used)} used by ${I.trq_used_date}`)}
+          ${kpi('TRQ imports pay below', f1(I.breakeven_ny) + '¢/lb', `No. 11 ${esc(I.ny_contract)} ${f2(I.ny)}¢ (${I.ny_date}), INR ${f2(I.inr)}`)}
+          ${kpi('Requirement to reach the 2.5-month norm', f0(M.norm_requirement) + ' lakh t', `secondary: balance arithmetic, before prices and policy; ${f0(M.norm_requirement_mid)} on the desk mid crop`)}</div></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>What the market is implying</h2>
+          <div class="tbl"><table><tr><th class="l">Signal</th><th>Now</th><th class="l">Reading</th></tr>
+            <tr><td class="l">Ex-mill ${esc(d.label)}, Rs/qtl (${d.date})</td><td class="n"><b>${f0(d.value)}</b></td><td class="l">${sgn(I.trend_4w_pct, 1, '%')} in 4 weeks, ${sgn(I.vs_12w_pct, 1, '%')} in 12; peak ${f0(d.peak)} (${d.peak_date}), low ${f0(d.low)} (${d.low_date})</td></tr>
+            ${I.domestic_up ? `<tr><td class="l">Ex-mill ${esc(I.domestic_up.label)}, Rs/qtl</td><td class="n">${f0(I.domestic_up.value)}</td><td class="l">4 weeks ago ${f0(I.domestic_up.w4)}</td></tr>` : ''}
+            <tr><td class="l">Raws landed at zero duty (TRQ), Rs/qtl</td><td class="n">${f0(I.raw_trq)}</td><td class="l">before ocean freight, port and refining</td></tr>
+            <tr><td class="l"><b>Ex-mill less landed raws</b></td><td class="n"><b>${f0(I.gap)}</b></td><td class="l">room for freight, refining and margin; imports pay below about ${f1(I.breakeven_ny)}¢ (range ${f1(I.breakeven_ny_range[0])}–${f1(I.breakeven_ny_range[1])}¢)</td></tr>
+            <tr><td class="l">Whites at full duty (${f0(I.duty_pct)}%), Rs/qtl</td><td class="n">${f0(I.white_full_duty)}</td><td class="l">far above ex-mill: nothing comes in outside the quota</td></tr>
+            <tr><td class="l">Duty-free quota used</td><td class="n">${f1(I.trq_used)} of ${f0(I.trq_quota)}</td><td class="l">by ${I.trq_used_date}; unallotted and surrendered tonnage re-offered in November; deadline moved to 31 Mar 2027</td></tr>
+            <tr><td class="l">End-Sep 2027 stock if only likely TRQ tonnage arrives</td><td class="n">${f0(I.closing_trq_only_isma)}</td><td class="l">${f1(I.closing_trq_only_isma_months)} months on ISMA's crop; ${f0(I.closing_trq_only_mid)} (${f1(I.closing_trq_only_mid_months)} months) on the desk mid</td></tr>
+            <tr><td class="l">Consumption that needs nothing beyond that (good-monsoon stock)</td><td class="n">${f0(I.consumption_ceiling_good_monsoon)}</td><td class="l">against ${f0(I.consumption)} assumed (range ${f0(I.consumption_range[0])}–${f0(I.consumption_range[1])})</td></tr></table></div>
+          <p>${esc(I.read)}</p></div>
+        <div class="card"><h2>Likely imports by crop and No. 11 price <span class="note">normal monsoon</span></h2>${nyT}
+          <p class="note">Import parity = No. 11 × 22.0462 × USD/INR ÷ 10, before freight and refining; full duty at ${f0(I.duty_pct)}%. "At Rs" is the ex-mill price at which that tonnage comes in: a higher No. 11 changes how high Indian prices must go more than how much India imports, because beyond the quota imports need a policy step.</p></div></div>
+      <div class="card" style="margin-top:12px"><h2>Likely imports by crop and 2027 monsoon <span class="note">lakh t, No. 11 at ${f2(I.ny)}¢</span></h2>${monT}
+        <p class="note">Bold figure: likely imports; under it, the balance requirement to reach that stock before prices and policy respond, and the part that would need a quota beyond 10 lakh t. A good 2027 monsoon lets the government accept a lower end-September stock because the 2027/28 crop follows; a poor one needs a bigger carry-out. Capped at the record ${f1(st.max_imports)} lakh t.</p></div>
+      <div class="card" style="margin-top:12px"><h2>Likely imports by end-September 2027 stock and crop <span class="note">No. 11 at ${f2(I.ny)}¢</span></h2>${stT}
+          <p class="note">How far India is willing to run stocks down drives the answer: each column is an end-September 2027 stock anchored on the history (lakh t at ${f0(I.consumption)} lakh t of consumption). The long-run low quartile and median come from surplus years and are shown for scale, not as targets.</p></div>
+      <div class="card" style="margin-top:12px"><h2>History: imports and how low stocks have gone</h2>
+          <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+            ${kpi('Record imports', f1(st.max_imports) + ' lakh t', `${st.max_imports_season}: the ceiling used in every scenario`)}
+            ${kpi('Lowest closing stock', f1(st.min_closing) + ' lakh t', `30 Sep ${st.min_closing_season.slice(0, 2)}${st.min_closing_season.slice(5)}`)}
+            ${kpi('Lowest in months of use', f2(st.min_months) + ' months', `${st.min_months_season}; low quartile ${f1(st.q1_months)}, median ${f1(st.median_months)} (${st.first}–${st.last})`)}</div>
+          ${hT}
+          <p class="note">Lakh tonnes, October–September seasons; low-stock seasons (under 2.5 months) in bold. Imports for domestic use (open general licence and quotas), not raws imported for re-export. Source: ${link(Hs.source, Hs.url)}. Duty-free episodes: 2009/10 (raws and whites, record), 2016/17 (5 lakh t raw TRQ), 2026 (10 lakh t raw TRQ, to 31 Mar 2027).</p></div>
+      ${B ? `<details style="margin-top:8px"><summary>Balance arithmetic (secondary)</summary><div class="tbl"><table><tr><th class="l">Item</th><th>Lakh t</th><th class="l">Note</th><th class="l">Source</th></tr>
+          ${B.rows.map(r => `<tr><td class="l">${esc(r.item)}</td><td class="n">${f1(r.value)}</td><td class="l">${esc(r.note)}</td><td class="l">${r.url ? link(r.source, r.url) : esc(r.source)}</td></tr>`).join('')}</table></div>
+          <p class="note">"Imports needed to reach the norm" is balance arithmetic on the desk mid crop; the tables above show what is likely once prices and policy respond.</p></details>` : ''}
+      <details><summary>Variables used</summary><ul>${M.variables.map(v => `<li class="note">${esc(v)}</li>`).join('')}</ul></details>`;
   }
 
   function crushChart(C, zoom) {

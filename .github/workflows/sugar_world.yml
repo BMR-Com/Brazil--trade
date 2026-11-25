@@ -1,6 +1,6 @@
 name: Sugar — public panels and weekly inputs
 
-# Brazil cane weather / stoppage days / season range, India (incl. crush tracker, projection, import need), Europe, deliveries, revisions, fuel policy (models/sugar_world.py)
+# Brazil cane weather / stoppage days / season range, India (incl. crush tracker, projection, import scenarios), Europe, deliveries, revisions, fuel policy (models/sugar_world.py)
 # and the weekly report input pack (models/sugar_weekly.py). Runs after each sugar data refresh (which picks up new MAPA/UNICA
 # fortnights), on Fridays after the ICE close, and on demand.
 on:
@@ -16,6 +16,7 @@ on:
       - "data/sugar/manual/**"
       - "data/sugar/ref/ISMA_*"
       - "models/india_crush.py"
+      - "models/india_imports.py"
   workflow_dispatch:
 
 permissions:
