@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 11:18 UTC",
+ "generated": "2026-11-25 11:46 UTC",
  "asof": "2026-11-24",
  "today": "2026-11-25",
  "active": [
@@ -210,7 +210,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-25",
-   "new": true,
+   "new": false,
    "since": "2026-11-25"
   },
   {
@@ -220,7 +220,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-25",
-   "new": true,
+   "new": false,
    "since": "2026-11-25"
   },
   {
@@ -230,7 +230,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-25",
-   "new": true,
+   "new": false,
    "since": "2026-11-25"
   }
  ],
