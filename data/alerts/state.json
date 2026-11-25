@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 00:59 UTC",
+ "generated": "2026-11-25 01:03 UTC",
  "asof": "2026-11-24",
  "today": "2026-11-24",
  "active": [
@@ -30,7 +30,7 @@
    "on": true,
    "level": "264.65",
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -70,7 +70,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -100,7 +100,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-24",
-   "new": true,
+   "new": false,
    "since": "2026-11-24"
   },
   {
@@ -221,6 +221,16 @@
    "level": null,
    "date": "2026-11-24",
    "new": false,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
+   "market": "Data",
+   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
    "since": "2026-11-24"
   }
  ],
@@ -494,6 +504,16 @@
    "id": "wx_vn_dl_wet",
    "market": "Coffee C",
    "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-25 to 2026-12-08; ECMWF ENS only)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-24",
+   "new": true,
+   "since": "2026-11-24"
+  },
+  {
+   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
+   "market": "Data",
+   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
    "on": true,
    "level": null,
    "date": "2026-11-24",
