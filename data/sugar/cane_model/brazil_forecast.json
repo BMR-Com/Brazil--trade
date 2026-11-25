@@ -1,5 +1,5 @@
 {
- "built": "2026-11-25 01:11 UTC",
+ "built": "2026-11-25 05:41 UTC",
  "region": "Brazil Centre-South",
  "unica_last_position": "2026-09-01",
  "current_season": {
@@ -18,8 +18,8 @@
    "cane_mt": 608.2,
    "sugar_mt": 40.31
   },
-  "sepoct_crush_lost_to_rain_mt": 20.8,
-  "sugar_premium_30d_c_lb": 2.13,
+  "sepoct_crush_lost_to_rain_mt": 19.3,
+  "sugar_premium_30d_c_lb": 2.1,
   "fortnights": [
    {
     "start": "2026-11-01",
@@ -27,11 +27,11 @@
     "fn": 15,
     "weather": "observed",
     "stop_days": 6.1,
-    "cane_mt": 19.21,
-    "mix": 45.5,
-    "kgt": 55.3,
-    "atr": 127.5,
-    "sugar_mt": 1.062
+    "cane_mt": 18.1,
+    "mix": 46.9,
+    "kgt": 55.9,
+    "atr": 125.2,
+    "sugar_mt": 1.012
    },
    {
     "start": "2026-11-16",
@@ -39,11 +39,11 @@
     "fn": 16,
     "weather": "observed + forecast",
     "stop_days": 10.2,
-    "cane_mt": 10.53,
-    "mix": 43.2,
-    "kgt": 53.5,
-    "atr": 129.9,
-    "sugar_mt": 0.563
+    "cane_mt": 10.73,
+    "mix": 43.6,
+    "kgt": 53.7,
+    "atr": 129.3,
+    "sugar_mt": 0.576
    },
    {
     "start": "2026-12-01",
@@ -51,11 +51,11 @@
     "fn": 17,
     "weather": "forecast",
     "stop_days": 10.9,
-    "cane_mt": 5.14,
+    "cane_mt": 5.19,
     "mix": 37.3,
     "kgt": 43.9,
     "atr": 124.6,
-    "sugar_mt": 0.226
+    "sugar_mt": 0.228
    },
    {
     "start": "2026-12-16",
@@ -64,10 +64,10 @@
     "weather": "normal",
     "stop_days": 7.2,
     "cane_mt": 1.09,
-    "mix": 32.8,
-    "kgt": 43.8,
-    "atr": 139.3,
-    "sugar_mt": 0.048
+    "mix": 31.2,
+    "kgt": 43.0,
+    "atr": 145.5,
+    "sugar_mt": 0.047
    },
    {
     "start": "2027-01-01",
@@ -76,10 +76,10 @@
     "weather": "normal",
     "stop_days": 8.1,
     "cane_mt": 2.43,
-    "mix": 29.1,
-    "kgt": 37.9,
-    "atr": 123.4,
-    "sugar_mt": 0.092
+    "mix": 28.7,
+    "kgt": 37.4,
+    "atr": 124.4,
+    "sugar_mt": 0.091
    },
    {
     "start": "2027-01-16",
@@ -88,10 +88,10 @@
     "weather": "normal",
     "stop_days": 7.1,
     "cane_mt": 0.39,
-    "mix": 29.1,
-    "kgt": 37.9,
-    "atr": 123.4,
-    "sugar_mt": 0.015
+    "mix": 28.7,
+    "kgt": 37.4,
+    "atr": 124.4,
+    "sugar_mt": 0.014
    },
    {
     "start": "2027-02-01",
@@ -100,9 +100,9 @@
     "weather": "normal",
     "stop_days": 6.5,
     "cane_mt": 0.33,
-    "mix": 29.1,
-    "kgt": 37.9,
-    "atr": 123.4,
+    "mix": 28.7,
+    "kgt": 37.4,
+    "atr": 124.4,
     "sugar_mt": 0.012
    },
    {
@@ -112,9 +112,9 @@
     "weather": "normal",
     "stop_days": 5.9,
     "cane_mt": 0.31,
-    "mix": 29.1,
-    "kgt": 37.9,
-    "atr": 123.4,
+    "mix": 28.7,
+    "kgt": 37.4,
+    "atr": 124.4,
     "sugar_mt": 0.012
    },
    {
@@ -124,9 +124,9 @@
     "weather": "normal",
     "stop_days": 6.4,
     "cane_mt": 1.36,
-    "mix": 29.1,
-    "kgt": 37.9,
-    "atr": 123.4,
+    "mix": 28.7,
+    "kgt": 37.4,
+    "atr": 124.4,
     "sugar_mt": 0.051
    },
    {
@@ -136,37 +136,37 @@
     "weather": "normal",
     "stop_days": 5.4,
     "cane_mt": 4.0,
-    "mix": 29.1,
-    "kgt": 37.9,
-    "atr": 123.4,
-    "sugar_mt": 0.152
+    "mix": 28.7,
+    "kgt": 37.4,
+    "atr": 124.4,
+    "sugar_mt": 0.15
    }
   ],
   "season_total": {
    "catchup_30": {
-    "cane_mt": 593.0,
-    "sugar_mt": 35.43,
-    "cane_yoy_pct": -2.5,
-    "sugar_yoy_pct": -12.1
+    "cane_mt": 591.7,
+    "sugar_mt": 35.36,
+    "cane_yoy_pct": -2.7,
+    "sugar_yoy_pct": -12.3
    },
    "catchup_50": {
-    "cane_mt": 597.2,
-    "sugar_mt": 35.63,
-    "cane_yoy_pct": -1.8,
-    "sugar_yoy_pct": -11.6
+    "cane_mt": 595.6,
+    "sugar_mt": 35.56,
+    "cane_yoy_pct": -2.1,
+    "sugar_yoy_pct": -11.8
    },
    "catchup_70": {
-    "cane_mt": 601.3,
-    "sugar_mt": 35.84,
-    "cane_yoy_pct": -1.1,
-    "sugar_yoy_pct": -11.1
+    "cane_mt": 599.4,
+    "sugar_mt": 35.75,
+    "cane_yoy_pct": -1.4,
+    "sugar_yoy_pct": -11.3
    }
   }
  },
  "next_season_signals": {
   "oni_latest": 2.46,
   "el_nino_analogs": 5,
-  "cs_rain_since_1_oct_pct_normal": 87.0
+  "cs_rain_since_1_oct_pct_normal": 86.0
  },
  "variables_used": [
   "MAPA fortnightly cane, sugar and ethanol by state",
