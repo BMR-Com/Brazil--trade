@@ -1,0 +1,67 @@
+{
+ "run": "2026-11-25 13:43 UTC",
+ "last_run_date": "2026-11-25",
+ "direct_sources": {
+  "ISMA": 200,
+  "Maharashtra Sugar Commissionerate": 200
+ },
+ "news_via": "wp-json",
+ "news_posts_checked": 33,
+ "rows_parsed": 4,
+ "rows_added": 4,
+ "rows_total": 4,
+ "http": {
+  "200": 4
+ },
+ "disallowed": 0,
+ "seen_urls": [
+  "https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-11-2026/",
+  "https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-11-2026/",
+  "https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-11-2026/",
+  "https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-11-2026/",
+  "https://www.chinimandi.com/dhananjay-mahadik-seeks-rs-500-700-per-tonne-central-aid-for-drought-hit-maharashtra-sugar-mills/",
+  "https://www.chinimandi.com/drought-raises-concerns-over-marathwadas-expanding-sugarcane-area-and-water-consumption/",
+  "https://www.chinimandi.com/early-domestic-sugar-output-surges-to-12-85-lakh-tonnes-as-184-mills-start-operations-isma/",
+  "https://www.chinimandi.com/eid-parry-expects-10-decline-in-indias-sugarcane-crop-flags-possibility-of-imports-in-2026-27/",
+  "https://www.chinimandi.com/farmers-sugar-industry-seek-rs-50-kg-sugar-msp-changes-in-frp-policy-before-central-panel/",
+  "https://www.chinimandi.com/global-sugar-prices-rebound-on-higher-crude-oil-short-covering-supply-concerns-persist/",
+  "https://www.chinimandi.com/higher-sugar-realisations-drive-q2-earnings-recovery-at-major-listed-sugar-companies-but-margin-pressures-persist/",
+  "https://www.chinimandi.com/india-may-need-up-to-3-5-million-tonnes-of-sugar-imports-as-production-falls-below-consumption-report/",
+  "https://www.chinimandi.com/india-needs-balanced-use-of-feedstock-for-ethanol-production-isma/",
+  "https://www.chinimandi.com/indias-retail-sugar-prices-remain-elevated-despite-fourfold-jump-in-early-season-production/",
+  "https://www.chinimandi.com/indias-sugar-stocks-may-fall-below-two-months-of-consumption-in-sugar-year-2026-27-icra-estimates/",
+  "https://www.chinimandi.com/isma-releases-preliminary-sugar-production-estimates-for-2026-27-sugar-season-production-expected-to-moderate/",
+  "https://www.chinimandi.com/maharashtra-may-see-sharp-decline-in-sugarcane-pulses-and-oilseeds-output-in-2026-27/",
+  "https://www.chinimandi.com/maharashtra-panel-to-explore-zero-waste-bio-refinery-model-for-sugar-mills-with-201070-funding/",
+  "https://www.chinimandi.com/maharashtra-sugar-production-reaches-28-25-lakh-tonnes-as-of-november-24/",
+  "https://www.chinimandi.com/odisha-amit-shah-assures-steps-to-revive-defunct-baragada-cooperative-sugar-mill-in-odisha/",
+  "https://www.chinimandi.com/pralhad-joshi-urges-karnataka-to-announce-additional-support-for-sugarcane-farmers/",
+  "https://www.chinimandi.com/sugar-first-fuel-next-getting-the-2026-27-balance-right/",
+  "https://www.chinimandi.com/sugar-production-reaches-23-59-lakh-tonnes-as-on-15th-november-2026-313-mills-commence-operations-across-india/",
+  "https://www.chinimandi.com/the-comfort-of-thirty-why-india-must-plan-for-a-thinner-sugar-season/",
+  "https://www.chinimandi.com/the-new-crushing-season-why-sugar-mills-must-focus-on-recovery-not-just-production/",
+  "https://www.chinimandi.com/the-table-before-the-tank-who-carries-indias-ethanol-now/"
+ ],
+ "log_tail": [
+  {
+   "url": "https://www.indiansugar.com/",
+   "result": 200,
+   "robots": "unreadable"
+  },
+  {
+   "url": "https://sugar.maharashtra.gov.in/",
+   "result": 200,
+   "robots": "read"
+  },
+  {
+   "url": "https://www.chinimandi.com/wp-json/wp/v2/posts",
+   "result": 200,
+   "robots": "read"
+  },
+  {
+   "url": "https://www.chinimandi.com/wp-json/wp/v2/posts",
+   "result": 200,
+   "robots": "read"
+  }
+ ]
+}

@@ -1,22 +1,22 @@
 {
- "run": "2026-11-25 05:07 UTC",
+ "run": "2026-11-25 13:43 UTC",
  "from": "2026-11-25",
  "tried": 1,
- "pages_with_prices": 0,
+ "pages_with_prices": 1,
  "http": {
-  "404": 4,
-  "200": 57
+  "200": 62,
+  "404": 7
  },
- "latest": "2026-11-24",
- "earliest": "2026-04-02",
- "rows": 2226,
+ "latest": "2026-11-25",
+ "earliest": "2026-01-15",
+ "rows": 2970,
  "robots_txt": "read",
  "disallowed": 0,
  "backfill": {
-  "cursor": "2026-04-01",
-  "miss_run": 0,
+  "cursor": "2026-01-12",
+  "miss_run": 2,
   "done": false,
-  "tried_this_run": 60,
-  "pages_this_run": 57
+  "tried_this_run": 68,
+  "pages_this_run": 61
  }
 }
