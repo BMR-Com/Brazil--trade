@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 01:02 UTC",
+ "generated": "2026-11-25 01:14 UTC",
  "today": "2026-11-24",
  "sources": [
   {
@@ -869,9 +869,9 @@
   {
    "group": "Desk watch",
    "source": "What changed strip (settlement date)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -881,9 +881,9 @@
   {
    "group": "Desk watch",
    "source": "Delivery-period dashboard (settlement date)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -893,7 +893,7 @@
   {
    "group": "Desk watch",
    "source": "Alerts check",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -905,9 +905,9 @@
   {
    "group": "Desk watch",
    "source": "Desk call log / track record",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -1049,12 +1049,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": null,
+   "latest": "2026-11-24",
    "cadence": "monthly",
-   "age": null,
+   "age": 0,
    "age_unit": "days",
    "limit": 40,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1083,7 +1083,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 13,
+ "late": 12,
  "inbox": {
   "updated": "2026-11-24 23:15 UTC",
   "last": [
