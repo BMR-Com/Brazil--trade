@@ -5,35 +5,35 @@
   "cotton": {
    "date": "2026-11-25",
    "by": "claude",
-   "time": "07:55 CT",
-   "fundamental": "Mar is steady near 81.5-81.7 after Tuesday's gain, which Barchart tied mostly to outside markets rather than fresh cotton demand. Old-crop Mar/May still rests on Texas Plains crop losses; Dec delivery and high-grade certificated stocks remain a risk for longs, so the firmness is not yet a demand signal.",
+   "time": "11:50 CT",
+   "fundamental": "Mar is choppy around 81.5-82 in thin pre-holiday trade, giving back part of Tuesday's outside-market lift early before steadying. Nothing new on demand; old-crop Mar/May still leans on Texas Plains losses, while Dec delivery and high-grade certs keep the risk two-sided for longs.",
    "events": [
-    "Cotton closes Tuesday higher on outside-market help (Barchart)",
-    "Mar ~81.5 in early trade, little changed (ICE/Yahoo Finance)",
-    "Texas Plains drought trims dryland yields (Farm Progress)"
+    "Cotton fades in early Wednesday trade (Barchart)",
+    "Mar ~82 midday in light holiday volume (ICE/Yahoo Finance)",
+    "Broad risk-off as equities slide and VIX jumps to ~34 (WSJ, Yahoo Finance)"
    ]
   },
   "sugar": {
    "date": "2026-11-25",
    "by": "claude",
-   "time": "07:55 CT",
-   "fundamental": "Mar has pushed back above 18c (about 18.1, +2.7% early) on a softer dollar, firmer crude and a steadier real, which reduce the incentive for Brazilian mills to hedge. There is still no new centre-south crush or mix data, so this is a currency and positioning move; the Brazil supply picture has not changed.",
+   "time": "11:50 CT",
+   "fundamental": "Mar has extended to about 18.28 (+0.9%), back above its 100-day average, as the real firms close to 2% to ~5.82 per dollar, which further cuts Brazilian mills' appetite to hedge exports. There is still no fresh centre-south crush or mix data, and the surprise US tariff proposal on Brazil matters little for sugar flows, so the Brazil supply picture is unchanged and the move is currency and short covering.",
    "events": [
-    "Raw sugar Mar ~18.13, back above 18c (ICE/Yahoo Finance)",
-    "Sugar supported by dollar weakness and firmer crude (Barchart)",
-    "Real holds firmer after fiscal plan clears Congress (Bloomberg)"
+    "Raw sugar Mar ~18.28, through 18.17 resistance (ICE/Yahoo Finance)",
+    "Real strengthens ~1.9% vs the dollar (Yahoo Finance)",
+    "Dollar weakness spurs short covering in sugar (Barchart)"
    ],
-   "fund_score": -0.3
+   "fund_score": -0.25
   },
   "coffee": {
    "date": "2026-11-25",
    "by": "claude",
-   "time": "07:55 CT",
-   "fundamental": "Dec arabica sits near 267.6 and Mar around 259, close to four-month lows. Reports that Brazilian arabica is moving into ICE warehouses, with talk that certified stocks could more than double, go straight at the Dec/Mar deliverability concern that had supported the front; that keeps the stock build as the dominant factor.",
+   "time": "11:50 CT",
+   "fundamental": "Dec arabica eased about 1% to ~265.7 early, still near four-month lows, even with a firmer real. The certified-stock build from Brazilian arabica heading into ICE warehouses remains the dominant factor for Dec/Mar deliverability. A new US tariff proposal on Brazil is a watch point: coffee was spared in July, and if it is included it would steer US buyers away from Brazilian beans and slow the flow into US-delivered certs.",
    "events": [
-    "Arabica near 4-month low; Mar ~259 (Trading Economics/ICE)",
-    "Brazilian arabica heading to ICE warehouses; certs could more than double (CNN Brasil, Finimize)",
-    "Coffee falls as supply concerns ease (Barchart)"
+    "Arabica Dec ~265.7, -1% early (ICE/Yahoo Finance)",
+    "US proposes surprise new tariffs on Brazilian imports, incl. 10% on aircraft (Reuters)",
+    "Brazilian arabica heading to ICE warehouses (Finimize, CNN Brasil)"
    ],
    "fund_score": -0.4
   },
