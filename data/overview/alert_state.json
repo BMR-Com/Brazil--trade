@@ -1,34 +1,31 @@
 {
- "updated": "2026-11-25 17:55 UTC",
+ "updated": "2026-11-25 20:44 UTC",
  "by": "claude",
  "views": {
   "cotton": {
    "view": "bullish",
    "shade": "bull2",
-   "score": 0.21
+   "score": 0.37
   },
   "sugar": {
-   "view": "mildly bearish",
-   "shade": "bear1",
-   "score": -0.19
+   "view": "neutral",
+   "shade": "neutral",
+   "score": -0.06
   },
   "coffee": {
    "view": "bearish",
    "shade": "bear2",
-   "score": -0.4
+   "score": -0.35
   },
   "cocoa": {
-   "view": "mildly bearish",
-   "shade": "bear1",
-   "score": -0.18
+   "view": "neutral",
+   "shade": "neutral",
+   "score": 0.0
   }
  },
  "alerts": {
   "cotton": [],
-  "sugar": [
-   "Broke above R1 18.17",
-   "Broke above the fund buy trigger (100-day average) 18.23"
-  ],
+  "sugar": [],
   "coffee": [],
   "cocoa": []
  },
@@ -74,6 +71,7 @@
   "2026-11-25 Views: coffee to strongly bearish (Brazil arabica heading to ICE warehouses), cocoa to mildly bearish, sugar to mildly bearish",
   "2026-11-25 Cocoa: Ivory Coast port arrivals slow again (Barchart)",
   "2026-11-25 Sugar Mar ~18.28 through R1 18.17 and 100-day 18.23 as real firms ~1.9%; coffee view to bearish",
-  "2026-11-25 US proposes surprise new tariffs on Brazil imports incl. 10% on aircraft (Reuters)"
+  "2026-11-25 US proposes surprise new tariffs on Brazil imports incl. 10% on aircraft (Reuters)",
+  "2026-11-25 Late: cotton Mar ~82.9 through 82.71 R2; coffee Mar ~268.6 (+2.6%) back above 264.9; cocoa Mar ~5,421 (+2%); views: sugar and cocoa to neutral"
  ]
 }

@@ -5,49 +5,49 @@
   "cotton": {
    "date": "2026-11-25",
    "by": "claude",
-   "time": "11:50 CT",
-   "fundamental": "Mar is choppy around 81.5-82 in thin pre-holiday trade, giving back part of Tuesday's outside-market lift early before steadying. Nothing new on demand; old-crop Mar/May still leans on Texas Plains losses, while Dec delivery and high-grade certs keep the risk two-sided for longs.",
+   "time": "14:45 CT",
+   "fundamental": "Mar rallied into the close to ~82.9, clearing Tuesday's highs and the 82.7 resistance as a weaker dollar and firmer crude helped outside money back in. No new supply or demand data; old-crop Mar/May keeps leaning on Texas Plains losses, but high-grade certs stay a two-sided risk for longs.",
    "events": [
-    "Cotton fades in early Wednesday trade (Barchart)",
-    "Mar ~82 midday in light holiday volume (ICE/Yahoo Finance)",
-    "Broad risk-off as equities slide and VIX jumps to ~34 (WSJ, Yahoo Finance)"
+    "Mar ~82.9, through 82.7 resistance (ICE)",
+    "Dollar index slips, firmer crude (WSJ, Pro Farmer)",
+    "Tuesday gains on outside factors (Barchart)"
    ]
   },
   "sugar": {
    "date": "2026-11-25",
    "by": "claude",
-   "time": "11:50 CT",
-   "fundamental": "Mar has extended to about 18.28 (+0.9%), back above its 100-day average, as the real firms close to 2% to ~5.82 per dollar, which further cuts Brazilian mills' appetite to hedge exports. There is still no fresh centre-south crush or mix data, and the surprise US tariff proposal on Brazil matters little for sugar flows, so the Brazil supply picture is unchanged and the move is currency and short covering.",
+   "time": "14:45 CT",
+   "fundamental": "Mar held its gains near ~18.4, above the 100-day average, with the firmer real still discouraging Brazilian mill export hedging. No fresh centre-south crush or mix figures, so the move remains currency and short covering rather than a change in the Brazil supply picture.",
    "events": [
-    "Raw sugar Mar ~18.28, through 18.17 resistance (ICE/Yahoo Finance)",
-    "Real strengthens ~1.9% vs the dollar (Yahoo Finance)",
-    "Dollar weakness spurs short covering in sugar (Barchart)"
+    "Mar ~18.4, above 18.17/18.23 (ICE)",
+    "Real firm vs the dollar; dollar index weaker (Yahoo Finance, WSJ)",
+    "Dollar weakness spurs short covering (Barchart)"
    ],
-   "fund_score": -0.25
+   "fund_score": -0.2
   },
   "coffee": {
    "date": "2026-11-25",
    "by": "claude",
-   "time": "11:50 CT",
-   "fundamental": "Dec arabica eased about 1% to ~265.7 early, still near four-month lows, even with a firmer real. The certified-stock build from Brazilian arabica heading into ICE warehouses remains the dominant factor for Dec/Mar deliverability. A new US tariff proposal on Brazil is a watch point: coffee was spared in July, and if it is included it would steer US buyers away from Brazilian beans and slow the flow into US-delivered certs.",
+   "time": "14:45 CT",
+   "fundamental": "Mar recovered to ~268.6 (+2.6%) from the morning dip, helped by the firmer real and a weaker dollar. Nothing has changed on deliverability: Brazilian arabica moving into ICE warehouses still points to rebuilding certified stocks, and the proposed US tariffs on Brazil are the watch point for US-delivered flows.",
    "events": [
-    "Arabica Dec ~265.7, -1% early (ICE/Yahoo Finance)",
-    "US proposes surprise new tariffs on Brazilian imports, incl. 10% on aircraft (Reuters)",
+    "Mar ~268.6, back above 265 (ICE)",
+    "US proposes surprise new tariffs on Brazilian imports (Reuters)",
     "Brazilian arabica heading to ICE warehouses (Finimize, CNN Brasil)"
    ],
-   "fund_score": -0.4
+   "fund_score": -0.35
   },
   "cocoa": {
    "date": "2026-11-25",
    "by": "claude",
-   "time": "07:55 CT",
-   "fundamental": "Latest reports point to Ivory Coast port arrivals running slower again, which lifted prices on Tuesday and cuts against the ample-supply story; rising ICE certified stocks are the main offset. No new Ghana COCOBOD news, and the ICCO November quarterly bulletin is not yet out.",
+   "time": "14:45 CT",
+   "fundamental": "Mar extended the rally to ~5,420 (+2%), with the slow pace of Ivory Coast port arrivals and dollar weakness driving short covering. Rising ICE certified stocks remain the offset; no new Ghana COCOBOD news, and no ICCO November quarterly bulletin found yet.",
    "events": [
-    "Cocoa climbs as Ivory Coast shipments decline (Barchart)",
-    "Ivorian port arrivals crawl (Maritime Professional)",
-    "EUDR preparations lift European cocoa premiums (Bloomberg)"
+    "Cocoa settles higher on slower Ivory Coast deliveries (Barchart)",
+    "Dollar weakness sparks short covering in cocoa (Barchart)",
+    "Ivorian port arrivals crawl (Maritime Professional)"
    ],
-   "fund_score": -0.1
+   "fund_score": -0.05
   }
  }
 }
