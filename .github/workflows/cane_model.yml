@@ -1,0 +1,42 @@
+name: Sugar — cane crop model
+
+# Long weather history for cane regions, full USDA PSD sugar and ONI (pipelines/cane_model_data.py), then the
+# cane crop model (models/cane_model.py). Runs after each MAPA/UNICA refresh and once a week; weather is appended
+# incrementally (last 120 days refreshed), so a normal run takes a few minutes.
+on:
+  workflow_run:
+    workflows: ["Sugar — data refresh and model build"]
+    types: [completed]
+  schedule:
+    - cron: "15 23 * * 5"   # Fridays, after the week's MAPA/UNICA and PSD updates
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cane-model
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -q requests pandas numpy
+      - name: Inputs (PSD, ONI, cane-region weather)
+        run: timeout 4800 python -u pipelines/cane_model_data.py
+      - name: Model
+        run: |
+          if [ -f models/cane_model.py ]; then python -u models/cane_model.py; else echo "model not added yet"; fi
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/sugar/cane_model
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "sugar: cane model inputs $(date -u +%F) [bot]"
+          for i in 1 2 3; do git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; sleep 10; done
