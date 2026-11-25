@@ -4,9 +4,11 @@
 - NASA POWER daily point weather 1981->present for cane regions (rain, tmax, tmin, root-zone wetness)
   -> data/sugar/cane_model/wx/<id>.csv.gz   (Open-Meteo ERA5 archive as fallback)
 - ONI (NOAA CPC) -> data/sugar/cane_model/oni.csv
-- ERA5 daily rain/temperature 1981->present for the India and Thailand points -> data/sugar/cane_model/era5/<id>.csv.gz
-  (second weather source for the India/Thailand annual models; fetched in 10-year pieces, then incrementally)
-- USD/THB daily (FRED DEXTHUS) -> data/sugar/cane_model/fx_thb.csv
+- CHIRPS v2 monthly rain 1981->present (IRI Data Library) for the India and Thailand points -> data/sugar/cane_model/chirps.csv
+- ERA5 daily rain/temperature 1981->present for the same points -> data/sugar/cane_model/era5/<id>.csv.gz (--only era5;
+  heavy on the Open-Meteo quota, so it runs as its own step and keeps whatever points it finished)
+- USD/THB and USD/INR daily (FRED DEXTHUS, DEXINUS) -> data/sugar/cane_model/fx_thb.csv, fx_inr.csv;
+  India CPI (FRED INDCPIALLMINMEI) -> cpi_in.csv
 Re-runs fetch only what is missing or stale (weather: last 120 days refreshed).
 """
 import argparse, gzip, io, json, os, sys, time, zipfile
@@ -158,6 +160,56 @@ def weather(only=None):
     return sum(v != "fail" for v in status.values())
 
 
+def openmeteo_light(lat, lon, d0, d1):
+    u = ("https://archive-api.open-meteo.com/v1/archive?latitude=%s&longitude=%s&start_date=%s&end_date=%s"
+         "&daily=precipitation_sum,temperature_2m_max,temperature_2m_min&timezone=GMT") % (lat, lon, d0, d1)
+    r = get(u, tries=2, timeout=300)
+    if r is None:
+        return None
+    j = r.json()["daily"]
+    d = pd.DataFrame({"rain": j["precipitation_sum"], "tmax": j["temperature_2m_max"], "tmin": j["temperature_2m_min"]},
+                     index=pd.to_datetime(j["time"]))
+    d.index.name = "date"
+    return d.dropna(how="all")
+
+
+def chirps_hist(ccs=("IN", "TH")):
+    """CHIRPS v2 monthly rain (IRI Data Library), 1981 on, 0.5-degree box average around each India/Thailand point.
+    Station-blended, so a better long record of monsoon totals than reanalysis. -> data/sugar/cane_model/chirps.csv"""
+    base = "https://iridl.ldeo.columbia.edu/SOURCES/.UCSB/.CHIRPS/.v2p0/.monthly/.global/.precipitation/"
+    tails = ["[X/Y]average/T+exch+table-+text+text+-table+.csv", "[X/Y]average/data.csv"]
+    rows = []
+    for pid, (cc, lab, lat, lon, w) in POINTS.items():
+        if cc not in ccs:
+            continue
+        box = "X/%.2f/%.2f/RANGEEDGES/Y/%.2f/%.2f/RANGEEDGES/" % (lon - .25, lon + .25, lat - .25, lat + .25)
+        got = None
+        for t in tails:
+            r = get(base + box + t, tries=2, timeout=120)
+            if r is None:
+                continue
+            try:
+                d = pd.read_csv(io.StringIO(r.text))
+                d = d.iloc[:, -2:]; d.columns = ["T", "rain_mm_day"]
+                d["month"] = pd.to_datetime(d["T"].astype(str).str.strip(), format="%b %Y", errors="coerce")
+                d = d.dropna(subset=["month"])
+                if len(d) > 300:
+                    got = d; break
+                log("chirps parse", pid, t[:20], r.text[:120].replace("\n", " | "))
+            except Exception as e:
+                log("chirps parse err", pid, type(e).__name__, r.text[:120].replace("\n", " | "))
+        if got is None:
+            log("chirps fail", pid); continue
+        got["mm"] = pd.to_numeric(got.rain_mm_day, errors="coerce") * got.month.dt.days_in_month
+        rows += [(pid, m.strftime("%Y-%m"), round(v, 1)) for m, v in zip(got.month, got.mm)]
+        log("chirps", pid, got.month.min().date(), got.month.max().date())
+        time.sleep(3)
+    if not rows:
+        return False
+    pd.DataFrame(rows, columns=["point", "month", "rain_mm"]).to_csv(os.path.join(OUT, "chirps.csv"), index=False)
+    return True
+
+
 def era5_hist(ccs=("IN", "TH")):
     """ERA5 (Open-Meteo archive) for the India and Thailand points, 1981 on."""
     d5 = os.path.join(OUT, "era5"); os.makedirs(d5, exist_ok=True)
@@ -174,12 +226,12 @@ def era5_hist(ccs=("IN", "TH")):
             old, pieces = None, [(date(y, 1, 1), min(date(y + 9, 12, 31), end)) for y in range(1981, end.year + 1, 10)]
         got = []
         for d0, d1 in pieces:
-            x = openmeteo(lat, lon, d0, d1)
+            x = openmeteo_light(lat, lon, d0, d1)
             if x is None or x.empty:
                 log("era5 fail", pid, d0); got = None; break
             got.append(x); time.sleep(8)
         if not got:
-            continue
+            log("era5: stopping for this run (quota); finished points are kept"); break
         new = pd.concat(got)
         d = new if old is None else pd.concat([old[old.index < new.index.min()], new])
         d = d[~d.index.duplicated(keep="last")].sort_index()
@@ -190,24 +242,31 @@ def era5_hist(ccs=("IN", "TH")):
     return n
 
 
-def fx_thb():
-    r = get("https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXTHUS", timeout=60)
+def fx_series(sid, col, fn):
+    r = get(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", timeout=60)
     if r is None:
         return False
     d = pd.read_csv(io.StringIO(r.text))
-    d.columns = ["date", "thb_per_usd"]
-    d = d[pd.to_numeric(d.thb_per_usd, errors="coerce").notna()]
-    d.to_csv(os.path.join(OUT, "fx_thb.csv"), index=False)
-    log("fx THB", d.date.iloc[0], d.date.iloc[-1]); return True
+    d.columns = ["date", col]
+    d = d[pd.to_numeric(d[col], errors="coerce").notna()]
+    d.to_csv(os.path.join(OUT, fn), index=False)
+    log("fx", sid, d.date.iloc[0], d.date.iloc[-1]); return True
+
+
+def fx_thb():
+    ok = fx_series("DEXTHUS", "thb_per_usd", "fx_thb.csv")
+    ok &= fx_series("DEXINUS", "inr_per_usd", "fx_inr.csv")
+    ok &= fx_series("INDCPIALLMINMEI", "cpi", "cpi_in.csv")      # India CPI, to put the cane price in real terms
+    return ok
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--only", default=""); ap.add_argument("--points", default="")
     a = ap.parse_args()
     os.makedirs(WX, exist_ok=True)
-    steps = a.only.split(",") if a.only else ["psd", "oni", "wx", "era5", "fx"]
+    steps = a.only.split(",") if a.only else ["psd", "oni", "wx", "chirps", "fx"]
     ok = True
-    for k, f in (("psd", psd), ("oni", oni), ("era5", era5_hist), ("fx", fx_thb)):
+    for k, f in (("psd", psd), ("oni", oni), ("chirps", chirps_hist), ("era5", era5_hist), ("fx", fx_thb)):
         if k in steps:
             try:
                 ok &= bool(f())

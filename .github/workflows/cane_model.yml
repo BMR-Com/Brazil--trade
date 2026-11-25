@@ -27,13 +27,23 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
       - run: pip install -q requests pandas numpy
-      - name: Inputs (PSD, ONI, cane-region weather)
-        run: timeout 4800 python -u pipelines/cane_model_data.py
+      - name: Inputs (PSD, ONI, cane-region weather, CHIRPS, FX)
+        continue-on-error: true
+        run: timeout 3000 python -u pipelines/cane_model_data.py
+      - name: ERA5 history for India/Thailand (keeps finished points; resumes next run)
+        continue-on-error: true
+        run: timeout 1500 python -u pipelines/cane_model_data.py --only era5
       - name: Brazil half-monthly model
+        continue-on-error: true
         run: python -u models/cane_model.py
       - name: Country models
+        continue-on-error: true
         run: python -u models/cane_country.py
+      - name: India and Thailand annual models
+        continue-on-error: true
+        run: python -u models/cane_annual.py
       - name: Commit
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
