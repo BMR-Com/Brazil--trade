@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 04:37 UTC",
+ "generated": "2026-11-25 05:23 UTC",
  "today": "2026-11-24",
  "sources": [
   {
@@ -293,7 +293,7 @@
   {
    "group": "Cotton",
    "source": "China",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -317,7 +317,7 @@
   {
    "group": "Cotton",
    "source": "Australia (synced from US desk)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -329,7 +329,7 @@
   {
    "group": "Coffee",
    "source": "Coffee desk (ICE certs, basis, origins)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -437,9 +437,9 @@
   {
    "group": "Coffee",
    "source": "USD/BRL PTAX (Banco Central do Brasil)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
