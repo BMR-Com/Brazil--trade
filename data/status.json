@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 22:45 UTC",
+ "generated": "2026-11-25 23:07 UTC",
  "today": "2026-11-25",
  "sources": [
   {
@@ -485,9 +485,9 @@
   {
    "group": "Coffee",
    "source": "Colombia exports, FNC (monthly; out mid next month)",
-   "latest": "2026-09-28",
+   "latest": "2026-10-28",
    "cadence": "monthly",
-   "age": 58,
+   "age": 28,
    "age_unit": "days",
    "limit": 60,
    "state": "ok",
@@ -497,9 +497,9 @@
   {
    "group": "Coffee",
    "source": "Colombia internal reference price, FNC (daily)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
