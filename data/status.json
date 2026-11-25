@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 14:11 UTC",
+ "generated": "2026-11-25 20:33 UTC",
  "today": "2026-11-25",
  "sources": [
   {
@@ -521,9 +521,9 @@
   {
    "group": "Coffee",
    "source": "Cecaf\u00e9 daily registrations",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -616,12 +616,24 @@
   },
   {
    "group": "Sugar",
-   "source": "ICE expiry deliveries (manual, from news)",
+   "source": "ICE No. 11 expiry deliveries (news capture + hand entries)",
    "latest": "2026-10-01",
    "cadence": "per expiry",
    "age": 55,
    "age_unit": "days",
-   "limit": 75,
+   "limit": 160,
+   "state": "ok",
+   "manual": false,
+   "used_in": "sugar deliveries tab"
+  },
+  {
+   "group": "Sugar",
+   "source": "ICE No. 5 expiry deliveries (manual, from news)",
+   "latest": "2026-10-01",
+   "cadence": "per expiry",
+   "age": 55,
+   "age_unit": "days",
+   "limit": 120,
    "state": "ok",
    "manual": true,
    "used_in": "sugar deliveries tab"
@@ -941,9 +953,9 @@
   {
    "group": "Macro",
    "source": "US economic data (BLS, BEA, Fed)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
