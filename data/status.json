@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-25 02:10 UTC",
+ "generated": "2026-11-25 02:41 UTC",
  "today": "2026-11-24",
  "sources": [
   {
    "group": "Prices",
    "source": "Futures closes, all softs (Yahoo)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -173,7 +173,7 @@
   {
    "group": "Cotton",
    "source": "Spread vs full carry history",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
