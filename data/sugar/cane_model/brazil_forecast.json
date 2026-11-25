@@ -1,0 +1,176 @@
+{
+ "built": "2026-11-25 00:52 UTC",
+ "region": "Brazil Centre-South",
+ "unica_last_position": "2026-09-01",
+ "current_season": {
+  "season": "2026/2027",
+  "mapa_last": "2026-10-31",
+  "weather_to": "2026-11-23",
+  "to_date": {
+   "cane_mt": 541.99,
+   "sugar_mt": 32.88
+  },
+  "to_date_last_year_same_date": {
+   "cane_mt": 556.19,
+   "sugar_mt": 38.14
+  },
+  "last_year_final": {
+   "cane_mt": 608.2,
+   "sugar_mt": 40.31
+  },
+  "sepoct_crush_lost_to_rain_mt": 20.8,
+  "sugar_premium_30d_c_lb": 2.13,
+  "fortnights": [
+   {
+    "start": "2026-11-01",
+    "end": "2026-11-15",
+    "fn": 15,
+    "weather": "observed",
+    "stop_days": 6.1,
+    "cane_mt": 19.21,
+    "mix": 45.5,
+    "kgt": 57.1,
+    "atr": 135.0,
+    "sugar_mt": 1.097
+   },
+   {
+    "start": "2026-11-16",
+    "end": "2026-11-30",
+    "fn": 16,
+    "weather": "observed + forecast",
+    "stop_days": 10.2,
+    "cane_mt": 10.53,
+    "mix": 43.2,
+    "kgt": 52.4,
+    "atr": 130.0,
+    "sugar_mt": 0.552
+   },
+   {
+    "start": "2026-12-01",
+    "end": "2026-12-15",
+    "fn": 17,
+    "weather": "forecast",
+    "stop_days": 10.9,
+    "cane_mt": 5.14,
+    "mix": 43.2,
+    "kgt": 53.0,
+    "atr": 131.4,
+    "sugar_mt": 0.273
+   },
+   {
+    "start": "2026-12-16",
+    "end": "2026-12-31",
+    "fn": 18,
+    "weather": "normal",
+    "stop_days": 7.2,
+    "cane_mt": 1.09,
+    "mix": 43.6,
+    "kgt": 53.7,
+    "atr": 132.2,
+    "sugar_mt": 0.058
+   },
+   {
+    "start": "2027-01-01",
+    "end": "2027-01-15",
+    "fn": 19,
+    "weather": "normal",
+    "stop_days": 8.1,
+    "cane_mt": 2.43,
+    "mix": 43.5,
+    "kgt": 53.5,
+    "atr": 132.0,
+    "sugar_mt": 0.13
+   },
+   {
+    "start": "2027-01-16",
+    "end": "2027-01-31",
+    "fn": 20,
+    "weather": "normal",
+    "stop_days": 7.1,
+    "cane_mt": 0.39,
+    "mix": 43.6,
+    "kgt": 53.7,
+    "atr": 132.2,
+    "sugar_mt": 0.021
+   },
+   {
+    "start": "2027-02-01",
+    "end": "2027-02-15",
+    "fn": 21,
+    "weather": "normal",
+    "stop_days": 6.5,
+    "cane_mt": 0.33,
+    "mix": 43.6,
+    "kgt": 53.8,
+    "atr": 132.3,
+    "sugar_mt": 0.018
+   },
+   {
+    "start": "2027-02-16",
+    "end": "2027-02-28",
+    "fn": 22,
+    "weather": "normal",
+    "stop_days": 5.9,
+    "cane_mt": 0.31,
+    "mix": 43.7,
+    "kgt": 53.9,
+    "atr": 132.4,
+    "sugar_mt": 0.017
+   },
+   {
+    "start": "2027-03-01",
+    "end": "2027-03-15",
+    "fn": 23,
+    "weather": "normal",
+    "stop_days": 6.4,
+    "cane_mt": 1.36,
+    "mix": 43.6,
+    "kgt": 53.8,
+    "atr": 132.3,
+    "sugar_mt": 0.073
+   },
+   {
+    "start": "2027-03-16",
+    "end": "2027-03-31",
+    "fn": 24,
+    "weather": "normal",
+    "stop_days": 5.4,
+    "cane_mt": 4.0,
+    "mix": 43.7,
+    "kgt": 54.0,
+    "atr": 132.5,
+    "sugar_mt": 0.216
+   }
+  ],
+  "season_total": {
+   "catchup_30": {
+    "cane_mt": 593.0,
+    "sugar_mt": 35.68
+   },
+   "catchup_50": {
+    "cane_mt": 597.2,
+    "sugar_mt": 35.9
+   },
+   "catchup_70": {
+    "cane_mt": 601.3,
+    "sugar_mt": 36.13
+   }
+  }
+ },
+ "next_season_signals": {
+  "oni_latest": 2.46,
+  "el_nino_analogs": 5,
+  "cs_rain_since_1_oct_pct_normal": 87.0
+ },
+ "variables_used": [
+  "MAPA fortnightly cane, sugar and ethanol by state",
+  "daily rain by cane state (ERA5)",
+  "estimated harvest-stoppage days",
+  "ECMWF and GEFS ensemble rain forecast",
+  "No. 11 front vs hydrous-ethanol export parity",
+  "corn ethanol (UNICA)",
+  "ONI (NOAA)",
+  "USDA PSD sugar history",
+  "NASA POWER rain 1981 on"
+ ]
+}

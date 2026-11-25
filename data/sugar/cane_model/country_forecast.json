@@ -1,0 +1,300 @@
+{
+ "built": "2026-11-25 00:52 UTC",
+ "units": "1000 MT raw value, cane sugar",
+ "as_of": "2026-11-21",
+ "countries": {
+  "BR": {
+   "name": "Brazil",
+   "my_label_2026": "2026/27 (Apr-Mar)",
+   "my_label_2027": "2027/28 (Apr-Mar)",
+   "usda_2025": 43295,
+   "usda_2026": 40500,
+   "usda_2026_vs_2025_pct": -6.5,
+   "model_2026": 43738,
+   "model_2026_vs_2025_pct": 1.0,
+   "change_vs_usda_pct": 8.0,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Oct previous year-Mar",
+    "rainfall, Apr-Sep previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "IN": {
+   "name": "India",
+   "my_label_2026": "2026/27 (Oct-Sep)",
+   "my_label_2027": "2027/28 (Oct-Sep)",
+   "usda_2025": 30000,
+   "usda_2026": 29500,
+   "usda_2026_vs_2025_pct": -1.7,
+   "model_2026": 32090,
+   "model_2026_vs_2025_pct": 7.0,
+   "change_vs_usda_pct": 8.8,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Jun-Sep",
+    "rainfall, Jun-Sep previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "TH": {
+   "name": "Thailand",
+   "my_label_2026": "2026/27 (Dec-Nov)",
+   "my_label_2027": "2027/28 (Dec-Nov)",
+   "usda_2025": 11528,
+   "usda_2026": 9500,
+   "usda_2026_vs_2025_pct": -17.6,
+   "model_2026": 12631,
+   "model_2026_vs_2025_pct": 9.6,
+   "change_vs_usda_pct": 33.0,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, May-Oct",
+    "rainfall, May-Oct previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "CH": {
+   "name": "China",
+   "my_label_2026": "2026/27 (Oct-Sep)",
+   "my_label_2027": "2027/28 (Oct-Sep)",
+   "usda_2025": 11380,
+   "usda_2026": 12000,
+   "usda_2026_vs_2025_pct": 5.4,
+   "model_2026": 12655,
+   "model_2026_vs_2025_pct": 11.2,
+   "change_vs_usda_pct": 5.5,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Apr-Sep",
+    "frost days, Dec previous year-Feb",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "MX": {
+   "name": "Mexico",
+   "my_label_2026": "2026/27 (Oct-Sep)",
+   "my_label_2027": "2027/28 (Oct-Sep)",
+   "usda_2025": 5645,
+   "usda_2026": 5610,
+   "usda_2026_vs_2025_pct": -0.6,
+   "model_2026": 5564,
+   "model_2026_vs_2025_pct": -1.4,
+   "change_vs_usda_pct": -0.8,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Jun-Oct",
+    "rainfall, Jun-Oct previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "AS": {
+   "name": "Australia",
+   "my_label_2026": "2026/27 (Jul-Jun)",
+   "my_label_2027": "2027/28 (Jul-Jun)",
+   "usda_2025": 3830,
+   "usda_2026": 4000,
+   "usda_2026_vs_2025_pct": 4.4,
+   "model_2026": 3780,
+   "model_2026_vs_2025_pct": -1.3,
+   "change_vs_usda_pct": -5.5,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Dec previous year-Mar",
+    "rainfall, Jun-Nov previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "PK": {
+   "name": "Pakistan",
+   "my_label_2026": "2026/27 (Oct-Sep)",
+   "my_label_2027": "2027/28 (Oct-Sep)",
+   "usda_2025": 7000,
+   "usda_2026": 6850,
+   "usda_2026_vs_2025_pct": -2.1,
+   "model_2026": 7280,
+   "model_2026_vs_2025_pct": 4.0,
+   "change_vs_usda_pct": 6.3,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Jul-Sep",
+    "heat days (>35°C), May-Jun",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "GT": {
+   "name": "Guatemala",
+   "my_label_2026": "2026/27 (Oct-Sep)",
+   "my_label_2027": "2027/28 (Oct-Sep)",
+   "usda_2025": 2898,
+   "usda_2026": 2810,
+   "usda_2026_vs_2025_pct": -3.0,
+   "model_2026": 3103,
+   "model_2026_vs_2025_pct": 7.1,
+   "change_vs_usda_pct": 10.4,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, May-Oct",
+    "rainfall, May-Oct previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "CO": {
+   "name": "Colombia",
+   "my_label_2026": "2026/27 (Oct-Sep)",
+   "my_label_2027": "2027/28 (Oct-Sep)",
+   "usda_2025": 2300,
+   "usda_2026": 2400,
+   "usda_2026_vs_2025_pct": 4.3,
+   "model_2026": 2329,
+   "model_2026_vs_2025_pct": 1.3,
+   "change_vs_usda_pct": -3.0,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Oct previous year-Sep",
+    "ENSO (ONI), Oct previous year-Sep",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "SF": {
+   "name": "South Africa",
+   "my_label_2026": "2026/27 (May-Apr)",
+   "my_label_2027": "2027/28 (May-Apr)",
+   "usda_2025": 2016,
+   "usda_2026": 2060,
+   "usda_2026_vs_2025_pct": 2.2,
+   "model_2026": 1931,
+   "model_2026_vs_2025_pct": -4.2,
+   "change_vs_usda_pct": -6.3,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Oct previous year-Mar",
+    "rainfall, Oct two years before-Mar previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "RP": {
+   "name": "Philippines",
+   "my_label_2026": "2026/27 (Dec-Nov)",
+   "my_label_2027": "2027/28 (Dec-Nov)",
+   "usda_2025": 1851,
+   "usda_2026": 1700,
+   "usda_2026_vs_2025_pct": -8.2,
+   "model_2026": 1795,
+   "model_2026_vs_2025_pct": -3.0,
+   "change_vs_usda_pct": 5.6,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Jun-Nov",
+    "rainfall, Jun-Nov previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "ID": {
+   "name": "Indonesia",
+   "my_label_2026": "2026/27 (May-Apr)",
+   "my_label_2027": "2027/28 (May-Apr)",
+   "usda_2025": 2700,
+   "usda_2026": 2500,
+   "usda_2026_vs_2025_pct": -7.4,
+   "model_2026": 2692,
+   "model_2026_vs_2025_pct": -0.3,
+   "change_vs_usda_pct": 7.7,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Nov previous year-Apr",
+    "rainfall, Nov two years before-Apr previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "AR": {
+   "name": "Argentina",
+   "my_label_2026": "2026/27 (May-Apr)",
+   "my_label_2027": "2027/28 (May-Apr)",
+   "usda_2025": 1835,
+   "usda_2026": 2000,
+   "usda_2026_vs_2025_pct": 9.0,
+   "model_2026": 1853,
+   "model_2026_vs_2025_pct": 1.0,
+   "change_vs_usda_pct": -7.3,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Nov previous year-Mar",
+    "frost days, Jun-Aug previous year",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "US": {
+   "name": "United States (cane)",
+   "my_label_2026": "2026/27 (Oct-Sep)",
+   "my_label_2027": "2027/28 (Oct-Sep)",
+   "usda_2025": 3851,
+   "usda_2026": 3600,
+   "usda_2026_vs_2025_pct": -6.5,
+   "model_2026": 3836,
+   "model_2026_vs_2025_pct": -0.4,
+   "change_vs_usda_pct": 6.5,
+   "model_2027": null,
+   "variables_used": [
+    "rainfall, Apr-Sep",
+    "frost days, Dec previous year-Feb",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  },
+  "EG": {
+   "name": "Egypt (cane)",
+   "my_label_2026": "2026/27 (Oct-Sep)",
+   "my_label_2027": "2027/28 (Oct-Sep)",
+   "usda_2025": 710,
+   "usda_2026": 700,
+   "usda_2026_vs_2025_pct": -1.4,
+   "model_2026": 710,
+   "model_2026_vs_2025_pct": -0.0,
+   "change_vs_usda_pct": 1.4,
+   "model_2027": null,
+   "variables_used": [
+    "heat days (>35°C), Apr-Sep",
+    "previous season's crop change (ratoon / area persistence)"
+   ],
+   "as_of": "2026-11-21"
+  }
+ },
+ "total_modelled": {
+  "usda_2025": 130839,
+  "usda_2026": 125730,
+  "model_2026": 135987,
+  "countries": [
+   "BR",
+   "IN",
+   "TH",
+   "CH",
+   "MX",
+   "AS",
+   "PK",
+   "GT",
+   "CO",
+   "SF",
+   "RP",
+   "ID",
+   "AR",
+   "US",
+   "EG"
+  ],
+  "change_vs_usda_pct": 8.2
+ },
+ "use": "Weather overlay to read against USDA, not a standalone production forecast."
+}

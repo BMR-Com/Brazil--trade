@@ -20,3 +20,5 @@ data/cotton/ref/ICE_Cotton_Historical_Prices_2026-10-30.xls
 data/sugar/ref/ICE_Sugar11_Historical_Prices_2026-10-30.xls
 data/coffee/ref/ICE_Coffee_Historical_Prices_2026-08-31.xls
 data/cocoa/ref/ICE_Cocoa_Historical_Prices_2026-08-31.xls
+# Sugar cane crop model inputs and outputs (models/cane_model.py, models/cane_country.py; no page reads them; added 2026-11-25)
+data/sugar/cane_model
