@@ -32,18 +32,18 @@ const Sugar = (() => {
   function primer() {
     const row = (a, b) => `<tr><td class="l"><b>${a}</b></td><td class="l">${b}</td></tr>`;
     const SPR = [
-      ['Mar/May (H/K)', 'Q1 → Q2: Brazil off-season into the new crush', 'Usually a premium (Mar over May): Centre-South stocks are lowest in March and the new crop starts filling May.',
-        'Old-crop Brazilian sugar delivered into March; Central American surplus when March pays above its carry; whether India/Thailand ship in Q1; the start date of the new crush (stood-over cane and a dry late March bring it forward, rain and immature cane delay it).',
-        'When ethanol pays better than sugar, Brazil makes less sugar and the Q1/Q2 supply gap narrows: the spread drifts toward flat.'],
-      ['May/Jul (K/N)', 'Early crush → peak crush', 'Usually a premium: even an early start leaves less sugar for May than for July, when Brazil runs at full speed.',
-        'Stood-over cane, rain interrupting early field work, the opening sugar/ethanol mix, and any unusually large Q2 supply from India or Thailand.',
-        'A heavy Q2 from other exporters, weak import demand or a weak white premium (refiners stop bidding for raws) can push May to a discount; longs avoiding delivery can weaken it into expiry.'],
-      ['Jul/Oct (N/V)', 'Peak crush, port bottleneck', 'No fixed pattern: mills make sugar faster than Santos can load it, so stocks build inland toward an October peak.',
-        'Vessel queues and their timing, terminal capacity shared with soybeans (Q2) and corn (from July), the expected October stock level, and the mix.',
-        'A queue peaking before July weighs on July; big expected October stocks weigh on October.'],
+      ['Mar/May (H/K)', 'Q1 → Q2: last old-crop month into the first new-crop month', 'Usually a premium (Mar over May): Centre-South stocks are lowest in March, while May is the first month the new Brazilian crush can deliver.',
+        'How much old-crop Brazilian sugar is left for March; Central American, Indian and Thai sugar arriving in Q1; Q1 import demand; and the start of the new crush (stood-over cane and a dry late March bring it forward, rain and immature cane delay it).',
+        'Tighter Q1 (a small or low-sugar-mix Centre-South crop leaving little old-crop sugar, Indian or Thai export cuts, strong Q1 buying) firms March against May: the premium widens. Ample Q1 (big Indian/Thai/Central American shipments, a large March delivery with no natural receiver) pushes it toward flat or carry. May is new crop, so the new crush matters too: an early, sugar-heavy start (dry March, lots of stood-over cane, sugar paying more than ethanol) adds sugar into May and weakens May, widening the premium; a slow start or a low opening sugar mix (ethanol paying more) tightens May and narrows it.'],
+      ['May/Jul (K/N)', 'Early crush → peak crush', 'Often a small premium: even an early start leaves less new-crop sugar for May than for July, when Brazil runs at full speed.',
+        'The speed of the first weeks of crush (stood-over cane, rain stopping harvest), the opening sugar mix, and any unusually large Q2 supply from India or Thailand.',
+        'A slow or wet start, a low opening sugar mix or strong nearby buying tightens May: the premium widens. A fast, sugar-heavy start, a heavy Q2 from other exporters, weak import demand or a weak white premium (refiners stop bidding for raws) adds nearby supply and can push May to a discount; longs avoiding delivery weaken it into expiry.'],
+      ['Jul/Oct (N/V)', 'Peak crush, port bottleneck', 'No fixed pattern: mills make sugar faster than the ports can load it, so stocks build inland toward an October peak.',
+        'The pace of the crush and the sugar mix, vessel line-ups and terminal capacity shared with soybeans (Q2) and corn (from July), and the stock Brazil is expected to hold in October.',
+        'A fast, sugar-heavy crush, or a port bottleneck that backs sugar up inland, adds to what has to be stored into October: July weakens toward carry. A crush cut by rain or frost, a low mix or strong demand that clears the ports tightens July: July moves to a premium.'],
       ['Oct/Mar (V/H)', 'Stock peak → off-season low', 'Usually a discount (Oct under Mar): October sits on the year’s largest Brazilian stocks, March on the smallest.',
-        'Centre-South production and stocks, sugar vs ethanol pay, whether exports flow or back up at the ports, the quality and size of Thai/Indian/Australian supply, and the cost of carrying sugar to March.',
-        'The discount is roughly capped by carry (financing, storage, insurance). Low Brazilian stocks, port jams, strong Q3 demand and export bans elsewhere can flip it to a premium.']];
+        'Centre-South production and stocks, sugar vs ethanol pay, whether exports flow or back up at the ports, the quality and size of Thai/Indian/Australian supply arriving in Q1, and the cost of carrying sugar to March.',
+        'The discount is roughly capped by carry (financing, storage, insurance). A small Brazilian crop, a low mix or strong Q3/Q4 buying leaves less sugar at the October peak: October firms and the discount narrows, or flips to a premium. Asian supply arrives in Q1 and works on the March leg: big Indian or Thai exports weaken March and narrow the discount; Indian or Thai export cuts firm March and widen it.']];
     const LSPR = [
       ['Mar/May', 'Refined supply from the northern-hemisphere campaign vs re-export refiners running on Brazilian raws.'],
       ['May/Aug', 'August is London-only: the bridge from Q2 to the main Brazilian white (crystal) and refined-from-Brazil-raws season.'],
@@ -79,7 +79,7 @@ const Sugar = (() => {
       <div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>London white spreads</h2><div class="tbl"><table><tr><th class="l">Spread</th><th class="l">What it reflects</th></tr>
           ${LSPR.map(r => `<tr><td class="l"><b>${r[0]}</b></td><td class="l">${r[1]}</td></tr>`).join('')}</table></div>
-          <p class="note">London spreads respond to refinery runs, destination demand (Middle East, North and East Africa, South Asia) and who is willing to deliver into an expiry. Packaging and freight make whites slower to move than raws, so local shortages show up in the front London spread before the premium.</p></div>
+          <p class="note">Same direction rule as raws: anything that tightens whites in the nearer month (a refinery outage, an export ban, a short beet campaign, strong destination buying) firms that month and widens its premium over the next; a big campaign, heavy refinery output or a large delivery pushes the spread toward carry. London spreads respond to refinery runs, destination demand (Middle East, North and East Africa, South Asia) and who is willing to deliver into an expiry. Packaging and freight make whites slower to move than raws, so local shortages show up in the front London spread before the premium.</p></div>
         <div class="card"><h2>Rules that hold across all spreads</h2><div class="tbl"><table>
           ${row('Carry caps the discount', 'A discount wide enough to pay financing, storage and insurance pays someone to hold sugar, so carry limits how far a spread can fall. Higher interest rates widen that limit; each exporter’s own costs differ.')}
           ${row('Liquidity decides who sets it', 'Front spreads move on fundamentals and deliveries; spreads further out move on order flow and can drift away from fundamentals.')}
@@ -103,7 +103,7 @@ const Sugar = (() => {
         <tr><td class="l"><b>8. Documents and payment</b></td><td class="l">Clean on-board bills of lading, invoice at the actual polarization, weight and quality certificates, certificate of origin; the receiver pays on presentation. Risk passes when the sugar crosses the ship's rail, title on payment.</td><td class="l">Seller lodges documents on settlement day and is paid through the clearing house unless the buyer rejects them that afternoon.</td></tr>
         <tr><td class="l"><b>9. Default</b></td><td class="l">Failure to load or to take delivery goes to expedited arbitration and cash settlement against the expiry price; force majeure gives limited extra time.</td><td class="l">Insufficient-seller rules and arbitration; quality, weight and packing claims go to arbitration.</td></tr></table></div>
         <div class="tbl" style="margin-top:8px"><table>
-          ${row('Why demurrage matters to the price', 'A port with long queues (Santos in a peak crush) means the deliverer risks paying demurrage on every exchange tender. Deliverers then prefer to sell physical sugar directly, or want a bigger discount to deliver, so congestion weakens the expiring month against the next. When ports are clear, delivery is cheap and the expiring month holds better.')}
+          ${row('Why demurrage matters to the price', 'Delay costs fall on the deliverer (the short). A port with long queues (Santos at the peak of the crush) makes every tonne loaded there dearer to deliver, so sugar sitting at that port is worth less FOB and its physical premium softens. On the exchange, shorts then deliver only if the futures pay for the expected wait; otherwise they buy back or sell the sugar direct, and fewer tenders leave the expiring month firmer against the next. When ports are clear, delivery is cheap, more sugar is tendered and the expiring month is under more pressure.')}
           ${row('Why the receiver matters', 'A single large receiver (a refiner or trade house that needs the sugar) means the delivery is absorbed and the front spread firms after expiry; a large delivery with no natural receiver means the sugar has to be re-sold, which weighs on the next month and on physical premiums.')}
           ${row('Off-exchange alternatives', 'Most physical sugar is not delivered through the exchange: buyers and sellers swap futures for physical sugar (exchange for physical) and price off the futures with a premium or discount. Exchange delivery is the backstop that keeps futures tied to physical value.')}</table></div>
         <p class="note">Summary of the ICE Sugar No. 11 rules and ICE Futures Europe White Sugar delivery procedures; rule details change (some No. 11 polarization and delay-fee terms change from the March 2028 delivery), so check the current rulebook before acting.</p></div>
@@ -193,44 +193,58 @@ const Sugar = (() => {
   // ---------- Centre-South crush ----------
   async function crush() {
     await load();
-    const C = S.crush, cur = C.current, sz = C.seasons[cur], Pj = C.projection, U = S.unica, n = sz.fn.length - 1;
+    const C = S.crush, cur = C.current, sz = C.seasons[cur], Pj = C.projection, U = S.unica, n = sz.fn.length - 1, fnNow = sz.fn[n];
     const prevK = Object.keys(C.seasons).sort().filter(k => k < cur).pop(), pv = C.seasons[prevK];
-    const at = (s, k) => s[k][Math.min(n, s[k].length - 1)];
+    // every series is matched by fortnight number (1 = 1-15 April ... 24 = 16-31 March), never by position
+    const byFn = (s, k) => { const a = Array(24).fill(null); s.fn.forEach((f, i) => { if (f >= 1 && f <= 24) a[f - 1] = s[k][i]; }); return a; };
+    const at = (s, k) => byFn(s, k)[fnNow - 1];
+    const yoy = (a, b) => a != null && b ? sgn(100 * (a / b - 1), 1, '%') : '–';
     const rng = x => `${f1(x.lo)}–${f1(x.hi)}`;
     const mixNow = U.implied_mix?.at(-1);
     const uv = (k, t = 'accumulated') => U[t][k];
+    const ST = C.states || [];
     body().innerHTML = `<div class="grid g4">
-        ${kpi(`Cane crushed to ${sz.end[n]}`, f1(at(sz, 'cane')) + ' mt', `${sgn(100 * (at(sz, 'cane') / at(pv, 'cane') - 1), 1, '%')} vs ${prevK} at the same fortnight`)}
-        ${kpi('Sugar made', f2(at(sz, 'sugar')) + ' mt', `${sgn(100 * (at(sz, 'sugar') / at(pv, 'sugar') - 1), 1, '%')} on the year`)}
-        ${kpi('Ethanol made', f2(at(sz, 'ethanol')) + ' bn L', `${sgn(100 * (at(sz, 'ethanol') / at(pv, 'ethanol') - 1), 1, '%')} on the year`)}
-        ${kpi('Sugar mix (latest fortnight)', mixNow ? f1(mixNow.mix) + '%' : '–', mixNow ? `fortnight to ${mixNow.end}${mixNow.corn_est ? '; corn ethanol estimated out' : ''}` : '')}</div>
+        ${kpi(`Cane crushed to ${sz.end[n]}`, f1(at(sz, 'cane')) + ' mt', `${yoy(at(sz, 'cane'), at(pv, 'cane'))} vs ${prevK} at the same fortnight`)}
+        ${kpi('Sugar made', f2(at(sz, 'sugar')) + ' mt', `${yoy(at(sz, 'sugar'), at(pv, 'sugar'))} on the year`)}
+        ${kpi('Ethanol made (cane and corn)', f2(at(sz, 'ethanol')) + ' bn L', `${yoy(at(sz, 'ethanol'), at(pv, 'ethanol'))} on the year`)}
+        ${kpi('Sugar mix (latest fortnight)', mixNow ? f1(mixNow.mix) + '%' : '–', mixNow ? `fortnight to ${mixNow.end}; share of cane ATR made into sugar${mixNow.corn_est ? ', corn ethanol estimated out' : ', corn ethanol taken out (UNICA)'}` : '')}</div>
       <div class="grid g2" style="margin-top:12px">
-        <div class="card"><h2>Season to date: sugar made by fortnight</h2><div style="position:relative;height:300px"><canvas id="suCane"></canvas></div>
-          <p class="note">Cumulative from April 1. MAPA fortnightly Centre-South production (all mills), million tonnes.</p></div>
-        <div class="card"><h2>Where the season ends</h2><p>At the pace of past seasons from this fortnight on, Centre-South ${cur} ends at:</p>
+        <div class="card"><h2>Season to date: sugar made, cumulative</h2><div style="position:relative;height:300px"><canvas id="suCane"></canvas></div>
+          <p class="note">Cumulative Centre-South sugar from 1 April, million tonnes, by fortnight of the season (F1 = 1–15 April … F24 = 16–31 March). MAPA (all mills).${Object.values(C.seasons).some(x => (x.interp || []).some(Boolean)) ? ' MAPA skipped one release (15 Nov 2022); that point is filled halfway between its neighbours.' : ''}</p></div>
+        <div class="card"><h2>Where the season ends (pace only)</h2><p>If the rest of ${cur} follows the pace of past seasons from this fortnight on, the Centre-South ends at:</p>
           <div class="tbl"><table><tr><th class="l"></th><th>So far</th><th>Central</th><th>Middle range</th><th>Past-season range</th></tr>
           <tr><td class="l">Cane, mt</td><td class="n">${f1(Pj.cane.now)}</td><td class="n"><b>${f1(Pj.cane.mid)}</b></td><td class="n">${rng(Pj.cane)}</td><td class="n">${f1(Pj.cane.min)}–${f1(Pj.cane.max)}</td></tr>
           <tr><td class="l">Sugar, mt</td><td class="n">${f2(Pj.sugar.now)}</td><td class="n"><b>${f2(Pj.sugar.mid)}</b></td><td class="n">${rng(Pj.sugar)}</td><td class="n">${f1(Pj.sugar.min)}–${f1(Pj.sugar.max)}</td></tr>
           <tr><td class="l">Ethanol, bn L</td><td class="n">${f2(Pj.ethanol.now)}</td><td class="n"><b>${f2(Pj.ethanol.mid)}</b></td><td class="n">${rng(Pj.ethanol)}</td><td class="n">${f1(Pj.ethanol.min)}–${f1(Pj.ethanol.max)}</td></tr></table></div>
+          <p class="note">Pace only: no weather. The <a href="#su-wx" onclick="document.querySelector('#suTabs button[data-t=su-wx]').click();return false">Brazil cane weather &amp; season range</a> tab adjusts the rest of the harvest for rain (wet / normal / dry cases), so its numbers differ from these.</p>
           <details style="margin-top:8px"><summary>Each past season's finish applied to this year</summary><div class="tbl"><table><tr><th class="l">Pattern of</th><th>Pace ratio</th><th>Cane</th><th>Sugar</th><th>Ethanol</th></tr>
-            ${Pj.by_season.map(r => `<tr><td class="l">${r.safra}</td><td class="n">${f2(r.pace_ratio)}</td><td class="n">${f1(r.cane)}</td><td class="n">${f2(r.sugar)}</td><td class="n">${f2(r.ethanol)}</td></tr>`).join('')}</table></div></details>
-          <h3>Same date in past seasons</h3><div class="tbl"><table><tr><th class="l">Season</th><th>Cane</th><th>Sugar</th><th>Ethanol</th><th>Sugar kg/t cane</th><th>Hydrous stocks</th></tr>
+            ${Pj.by_season.map(r => `<tr><td class="l">${r.safra}</td><td class="n">${f2(r.pace_ratio)}</td><td class="n">${f1(r.cane)}</td><td class="n">${f2(r.sugar)}</td><td class="n">${f2(r.ethanol)}</td></tr>`).join('')}</table></div>
+            <p class="note">Pace ratio = this season's cane crushed in the last four fortnights ÷ the same four fortnights of that season.</p></details>
+          <h3>Same date in past seasons (to ${sz.end[n].slice(5)})</h3><div class="tbl"><table><tr><th class="l">Season</th><th>Cane mt</th><th>Sugar mt</th><th>Ethanol bn L</th><th>Sugar kg/t</th><th>Hydrous stock bn L</th></tr>
             ${C.same_date.map(r => `<tr><td class="l">${r.safra}</td><td class="n">${f1(r.cane)}</td><td class="n">${f2(r.sugar)}</td><td class="n">${f2(r.ethanol)}</td><td class="n">${f1(r.kgt)}</td><td class="n">${f2(r.hyd_stock)}</td></tr>`).join('')}</table></div></div></div>
       <div class="grid g2" style="margin-top:12px">
-        <div class="card"><h2>UNICA, accumulated to ${U.position}</h2><div class="tbl"><table><tr><th class="l"></th>${U.seasons.map(s => `<th>${s}</th>`).join('')}<th>Change</th></tr>
-          ${[['cane_kt', 'Cane, kt', 0], ['sugar_kt', 'Sugar, kt', 0], ['ethanol_ml', 'Ethanol, m L', 0], ['hydrous_ml', 'of which hydrous', 0], ['anhydrous_ml', 'of which anhydrous', 0], ['atr_kg_t', 'ATR, kg/t', 2], ['sugar_kg_t', 'Sugar, kg/t cane', 2], ['mix_sugar', 'Sugar mix, %', 2]]
+        <div class="card"><h2>Cane by state, season to date (to ${C.states_end || sz.end[n]})</h2><div class="tbl"><table><tr><th class="l">State</th><th>Cane, mt</th><th>± yoy</th><th>Sugar, mt</th><th>± yoy</th><th>Sugar kg/t (last yr)</th></tr>
+          ${ST.map(r => `<tr><td class="l">${r.uf}</td><td class="n">${f1(r.cane)}</td><td class="n">${yoy(r.cane, r.cane_prev)}</td><td class="n">${f2(r.sugar)}</td><td class="n">${yoy(r.sugar, r.sugar_prev)}</td><td class="n">${r.kgt != null ? f1(r.kgt) : '–'} (${r.kgt_prev != null ? f1(r.kgt_prev) : '–'})</td></tr>`).join('')}
+          <tr><td class="l"><b>Total</b></td><td class="n"><b>${f1(at(sz, 'cane'))}</b></td><td class="n">${yoy(at(sz, 'cane'), at(pv, 'cane'))}</td><td class="n"><b>${f2(at(sz, 'sugar'))}</b></td><td class="n">${yoy(at(sz, 'sugar'), at(pv, 'sugar'))}</td><td class="n">${f1(1000 * at(sz, 'sugar') / at(sz, 'cane'))} (${f1(1000 * at(pv, 'sugar') / at(pv, 'cane'))})</td></tr></table></div>
+          <div style="position:relative;height:240px;margin-top:8px"><canvas id="suSt"></canvas></div>
+          <p class="note">Cumulative cane crushed by state from 1 April to ${C.states_end || sz.end[n]}, against ${prevK} to ${C.states_prev_end || 'the same date'}, million tonnes (MAPA). States add up to the Centre-South total. Sugar kg/t = sugar made ÷ cane crushed: it falls when mills switch cane to ethanol or the cane carries less sugar (ATR).</p></div>
+        <div class="card"><h2>Sugar per tonne of cane, by fortnight</h2><div style="position:relative;height:300px"><canvas id="suKgt"></canvas></div>
+          <p class="note">Sugar made in each fortnight ÷ cane crushed in that fortnight, kg per tonne, Centre-South (MAPA). Fortnights with under 2 mt of cane (start and end of the off-season) are left out because a handful of mills distorts the ratio. It falls when mills favour ethanol or when ATR drops late in the season.</p></div></div>
+      <div class="card" style="margin-top:12px"><h2>UNICA, accumulated to ${U.position}</h2><div class="tbl"><table><tr><th class="l"></th>${U.seasons.map(s => `<th>${s}</th>`).join('')}<th>Change</th></tr>
+          ${[['cane_kt', 'Cane, thousand t', 0], ['sugar_kt', 'Sugar, thousand t', 0], ['ethanol_ml', 'Ethanol (cane and corn), million L', 0], ['hydrous_ml', 'of which hydrous', 0], ['anhydrous_ml', 'of which anhydrous', 0], ['atr_kg_t', 'ATR, kg/t cane', 2], ['sugar_kg_t', 'Sugar, kg/t cane', 2], ['mix_sugar', 'Sugar mix, % (cane only)', 2]]
             .map(([k, l, d]) => { const v = uv(k); return v ? `<tr><td class="l">${l}</td>${v.map(x => `<td class="n">${fmt(x, d)}</td>`).join('')}<td class="n">${k.includes('mix') || k.includes('kg_t') ? sgn(v[1] - v[0], 2) : sgn(100 * (v[1] / v[0] - 1), 1, '%')}</td></tr>` : ''; }).join('')}</table></div>
-          ${U.corn?.total_fn?.length ? `<p class="note">Corn ethanol (UNICA members), latest fortnight ${U.corn.fortnight.at(-1)}: ${f1(U.corn.total_fn.at(-1))} m L. Corn ethanol is why total ethanol can rise while the cane mix still favours sugar.</p>` : ''}</div>
-        <div class="card"><h2>Cane by state, season to date</h2><div class="tbl"><table><tr><th class="l">State</th><th>Cane, mt</th><th>vs last year</th><th>Sugar, mt</th><th>vs last year</th></tr>
-          ${C.states.map(r => `<tr><td class="l">${r.uf}</td><td class="n">${f1(r.cane)}</td><td class="n">${sgn(100 * (r.cane / r.cane_prev - 1), 1, '%')}</td><td class="n">${f2(r.sugar)}</td><td class="n">${sgn(100 * (r.sugar / r.sugar_prev - 1), 1, '%')}</td></tr>`).join('')}</table></div>
-          <div style="position:relative;height:220px;margin-top:8px"><canvas id="suKgt"></canvas></div><p class="note">Sugar kg per tonne of cane, by fortnight (MAPA). Falls when mills favour ethanol or ATR drops.</p></div></div>${asof()}`;
-    const ks = Object.keys(C.seasons).sort().slice(-5);
+          ${U.corn?.total_fn?.length ? `<p class="note">Corn ethanol (UNICA members), latest fortnight to ${U.corn.fortnight.at(-1)}: ${f1(U.corn.total_fn.at(-1))} million L. Corn ethanol is why total ethanol can rise while the cane mix still favours sugar. UNICA's report is the official source for ATR and the cane mix; MAPA's fortnightly totals (above) come out sooner and are the main series here.</p>` : ''}</div>${asof()}`;
+    const ks = Object.keys(C.seasons).sort().filter(k => (C.seasons[k].fn || []).length > 4).slice(-5);
     const L = Array.from({ length: 24 }, (_, k) => 'F' + (k + 1));
-    chart('suCane', { type: 'line', data: { labels: L, datasets: ks.flatMap((k, q) => [
-      { label: k + ' sugar', data: C.seasons[k].sugar, borderColor: PAL[q], borderWidth: k === cur ? 2.6 : 1.2, pointRadius: k === cur ? 2 : 0, yAxisID: 'y' }]) },
+    chart('suCane', { type: 'line', data: { labels: L, datasets: ks.map((k, q) => (
+      { label: k, data: byFn(C.seasons[k], 'sugar'), borderColor: PAL[q], borderWidth: k === cur ? 2.6 : 1.2, pointRadius: k === cur ? 2 : 0, spanGaps: true })) },
       options: { scales: { y: { title: { display: true, text: 'sugar, mt' } } } } });
-    chart('suKgt', { type: 'line', data: { labels: L, datasets: ks.map((k, q) => ({ label: k, data: C.seasons[k].cane.map((c, t) => { const dc = c - (C.seasons[k].cane[t - 1] || 0), ds = C.seasons[k].sugar[t] - (C.seasons[k].sugar[t - 1] || 0); return dc > 1 ? +(1000 * ds / dc).toFixed(1) : null; }),
-      borderColor: PAL[q], borderWidth: k === cur ? 2.4 : 1.1, pointRadius: 0 })) } });
+    chart('suKgt', { type: 'line', data: { labels: L, datasets: ks.map((k, q) => ({ label: k, data: byFn(C.seasons[k], 'kgt_fn'),
+      borderColor: PAL[q], borderWidth: k === cur ? 2.4 : 1.1, pointRadius: k === cur ? 2 : 0 })) }, options: { scales: { y: { title: { display: true, text: 'kg sugar per t cane' } } } } });
+    if (ST.length) chart('suSt', { type: 'bar', data: { labels: ST.map(r => r.uf), datasets: [
+      { label: `${prevK} to ${(C.states_prev_end || '').slice(5)}`, data: ST.map(r => r.cane_prev), backgroundColor: '#b8b2a7' },
+      { label: `${cur} to ${(C.states_end || '').slice(5)}`, data: ST.map(r => r.cane), backgroundColor: '#2f6b3a' }] },
+      options: { scales: { y: { title: { display: true, text: 'cane, mt' } } } } });
   }
 
   // ---------- ethanol ----------
@@ -240,7 +254,7 @@ const Sugar = (() => {
     const yrs = 5, cut = new Date(); cut.setFullYear(cut.getFullYear() - yrs); const c0 = cut.toISOString().slice(0, 10);
     const k0 = Pa.dates.findIndex(d => d >= c0);
     body().innerHTML = `<div id="suParRead"></div><div class="grid g4">
-        ${kpi('Hydrous ethanol parity', f2(nw.parity) + ' ¢/lb', `B3 ethanol R$${fmt(nw.eth, 0)}/m³ at R$${fmt(nw.fx, 4)}/US$ (${nw.date})`)}
+        ${kpi('Hydrous ethanol parity (B3 futures)', f2(nw.parity) + ' ¢/lb', `B3 ethanol R$${fmt(nw.eth, 0)}/m³ at R$${fmt(nw.fx, 4)}/US$ (${nw.date})`)}
         ${kpi('Sugar No. 11 front', f2(nw.sb) + ' ¢/lb', `ethanol − sugar ${sgn(nw.eth_minus_sugar, 2)} ¢/lb`)}
         ${kpi('Parity vs last 5 years', ordn(nw.pct_rank_5y) + ' percentile', nw.eth_minus_sugar < 0 ? 'sugar pays more than ethanol: mills max sugar' : 'ethanol pays more: mills shift cane to ethanol')}
         ${kpi('Pump ratio hydrous/gasoline', f1(Pu.ratio[m]) + '%', `São Paulo, week to ${Pu.dates[m]}; under ~70% drivers choose ethanol`)}</div>
@@ -339,7 +353,7 @@ const Sugar = (() => {
       <div class="tbl"><table><tr><th class="l">${yl(d.years[n])} (USDA)</th><th>Production</th><th>Consumption</th><th>Exports</th><th>Ending stocks</th></tr>
       <tr><td class="l">mt</td><td class="n">${f1(d.prod[n])}</td><td class="n">${f1(d.cons[n])}</td><td class="n">${f1(d.exp[n])}</td><td class="n">${f1(d.end[n])}</td></tr>
       <tr><td class="l">vs last year</td><td class="n">${sgn(d.prod[n] - d.prod[n - 1], 1)}</td><td class="n">${sgn(d.cons[n] - d.cons[n - 1], 1)}</td><td class="n">${sgn(d.exp[n] - d.exp[n - 1], 1)}</td><td class="n">${sgn(d.end[n] - d.end[n - 1], 1)}</td></tr></table></div>
-      <h3>Latest estimates</h3><div class="tbl"><table>${est(c).map(e => `<tr><td>${e.season}</td><td class="l">${e.item}</td><td class="n"><b>${f2(e.value)}</b></td><td class="l">${e.url ? `<a href="${e.url}" target="_blank" rel="noopener">${e.source}</a>` : e.source}</td><td>${e.date}</td></tr>`).join('') || '<tr><td class="note">None recorded.</td></tr>'}</table></div></div>`; };
+      <h3>Latest estimates</h3><div class="tbl"><table>${est(c).map(e => `<tr><td>${e.season}</td><td class="l">${e.item}</td><td class="n"><b>${f2(e.value)}</b> ${e.unit || ''}</td><td class="l">${e.url ? `<a href="${e.url}" target="_blank" rel="noopener">${e.source}</a>` : e.source}</td><td>${e.date}</td></tr>`).join('') || '<tr><td class="note">None recorded.</td></tr>'}</table></div></div>`; };
     body().innerHTML = `<div class="grid g2">
       ${card('India', 'suIn', 'The second-largest producer and the largest consumer. Exports only when the government allows (quotas set each season after domestic needs and ethanol diversion); a monsoon shortfall or more cane diverted to ethanol removes India from the world market. Crush runs November to April, mostly Maharashtra, Uttar Pradesh and Karnataka.')}
       ${card('Thailand', 'suTh', 'The second-largest exporter and the main supplier to Asian refiners (Indonesia, China, Korea, Japan). Rain-fed cane: the May–October monsoon sets the next crop, crushed December to April. Thai sugar competes with Brazilian raws on freight into Asia.')}</div>
@@ -357,15 +371,16 @@ const Sugar = (() => {
   async function outlook() {
     await load();
     const Pj = S.crush.projection, Pa = S.parity.now, wp = S.white.curve[0], W = S.psd.World, n = W.years.length - 1, B = S.balance;
+    const LY = (Pj.history || []).at(-1);   // last finished Centre-South season (MAPA final)
     const tilt = (v, t) => v > t ? '<span class="up">supportive</span>' : v < -t ? '<span class="dn">bearish</span>' : 'neutral';
     const F = [
       ['World balance', tilt(-(W.prod[n] - W.cons[n]), 1.5), `USDA has world production ${f1(W.prod[n])} mt against consumption ${f1(W.cons[n])} mt, a ${W.prod[n] >= W.cons[n] ? 'surplus' : 'deficit'} of ${f1(Math.abs(W.prod[n] - W.cons[n]))} mt; stocks/use ${f1(W.stu[n])}%.`],
-      ['Centre-South crop', tilt(34.5 - Pj.sugar.mid, 0.5), `At past-season pace the Centre-South makes ${f2(Pj.sugar.mid)} mt of sugar this season (middle range ${f1(Pj.sugar.lo)}–${f1(Pj.sugar.hi)}), from ${f1(Pj.cane.mid)} mt of cane.`],
-      ['Ethanol parity', tilt(-Pa.eth_minus_sugar, 1), `Sugar ${f2(Pa.sb)} ¢/lb against hydrous parity ${f2(Pa.parity)} ¢/lb: ${Pa.eth_minus_sugar < 0 ? 'sugar still pays more, so mills keep the mix high. Below parity mills shift cane to ethanol, but that changes the mix over a season, not the price week to week' : 'ethanol pays more, so mills cut the sugar mix'}.`],
+      ['Centre-South crop', LY ? tilt(LY.sugar - Pj.sugar.mid, 0.5) : 'neutral', `At past-season pace the Centre-South makes ${f2(Pj.sugar.mid)} mt of sugar this season (middle range ${f1(Pj.sugar.lo)}–${f1(Pj.sugar.hi)}), from ${f1(Pj.cane.mid)} mt of cane${LY ? `, against ${f2(LY.sugar)} mt last season (${LY.safra}): ${Pj.sugar.mid < LY.sugar ? 'less Brazilian sugar to export, which supports prices' : 'more Brazilian sugar to export, which weighs on prices'}` : ''}.`],
+      ['Ethanol parity', tilt(Pa.eth_minus_sugar, 1), `Sugar ${f2(Pa.sb)} ¢/lb against hydrous parity ${f2(Pa.parity)} ¢/lb: ${Pa.eth_minus_sugar < 0 ? 'sugar pays more than ethanol, so mills keep the sugar mix high and Brazil makes more sugar (bearish), and the ethanol floor sits below today’s price. When sugar falls to parity, mills shift cane to ethanol, but that changes the mix over a season, not the price week to week' : 'ethanol pays more, so mills cut the sugar mix and Brazil makes less sugar (supportive); parity acts as a floor under No. 11'}.`],
       ['Refining demand', tilt((wp?.prem || 90) - 90, 10), wp ? `Front white premium $${f1(wp.prem)}/t (${wp.pair}), ${ordn(wp.pct_vs_hist)} percentile of past years.` : 'No white premium data.'],
     ];
     body().innerHTML = `<div class="card"><h2>Sugar outlook factors</h2><div class="tbl"><table>${F.map(([a, t, x]) => `<tr><td class="l"><b>${a}</b></td><td>${t}</td><td class="l sv-w">${x}</td></tr>`).join('')}</table></div>
-        <p class="note">Rule-of-thumb read of the data on these tabs; not a forecast.</p></div>
+        <p class="note">Rule-of-thumb read of the data on these tabs, for the price of raw sugar: supportive = points to higher prices, bearish = lower. Not a forecast.</p></div>
       <div id="suSig" style="margin-top:12px"></div>
       <div id="suCz" style="margin-top:12px"></div>
       <div id="suTech" style="margin-top:12px"></div>

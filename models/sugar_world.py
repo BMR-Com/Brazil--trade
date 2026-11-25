@@ -90,8 +90,17 @@ def state_rain():
 
 
 def mapa():
+    """MAPA fortnights by region/state. Region totals missing in MAPA's sheet are rebuilt from the states, and a
+    Centre-South fortnight MAPA skipped (15 Nov 2022) is interpolated from its neighbours (column 'interp'), so that
+    fortnight increments are never two fortnights booked as one."""
+    import sys
+    sys.path.insert(0, str(ROOT / "sugar" / "scripts"))
+    import mapa as mp
     m = pd.read_csv(ROOT / "sugar/data/mapa_fortnight.csv", parse_dates=["start", "end"])
-    return m
+    m = mp.fill_totals(m)
+    cs = mp.cs_clean(m)
+    rest = m[~((m.region == "Centro-Sul") & (m.uf == "TOTAL"))].assign(interp=False)
+    return pd.concat([rest, cs], ignore_index=True).sort_values(["end", "region", "uf"]).reset_index(drop=True)
 
 
 def weights(m):
@@ -264,7 +273,7 @@ def scorecard(t, S):
     mx = next((x for x in mix if x["end"] == str(E.date())), None)
     U = S.get("unica") or {}
     uc = jl(ROOT / "data/sugar/unica_check.json") or {}
-    return {"unica_last_published": uc.get("latest_position") or U.get("position"), "unica_checked": uc.get("checked"), "end": str(E.date()), "start": str((E - pd.Timedelta(days=14 if E.day > 15 else 14)).date()), "season": cur,
+    return {"unica_last_published": uc.get("latest_position") or U.get("position"), "unica_checked": uc.get("checked"), "end": str(E.date()), "start": str((pd.Timestamp(E.year, E.month, 16) if E.day > 15 else pd.Timestamp(E.year, E.month, 1)).date()), "season": cur,
             "fortnight": fort, "cumulative": cum, "mix_corn_adjusted": mx["mix"] if mx else None,
             "seasons_in_avg": [p.safra for p in prev], "unica_position": U.get("position"),
             "note": "MAPA fortnightly data for all Centre-South mills. Ethanol includes corn ethanol; 'sugar share of ATR' uses all ethanol, so it understates the cane mix as corn ethanol grows; the desk's corn-adjusted mix is shown for this season only."}
@@ -454,7 +463,60 @@ def india(fri):
         par["domestic"] = {"item": p["item"], "value": float(p["value"]), "date": p["date"], "url": p["url"], "source": p["source"] + " (manual fallback)"}
     par["note"] = ("All parities are ex-freight and ex-port/handling (no public freight series); the raw parity is also before refining cost. "
                    "Raws under the duty-free TRQ (to 31 Dec 2026) must be refined and sold in India.")
-    return {"releases": rows.to_dict("records"), "parity": par, "prices": prices, "collector": st}
+    return {"releases": rows.to_dict("records"), "parity": par, "prices": prices, "collector": st, "history": india_history()}
+
+
+def india_history():
+    """Indian ex-mill prices (ChiniMandi, Rs/quintal excl. GST) in US cents per lb next to ICE No. 11 and London No. 5
+    front months, every date the collector has a quote for. ¢/lb = Rs/qtl ÷ INR per USD ÷ 220.462 lb × 100."""
+    pp = ROOT / "data/sugar/india_prices.csv"
+    if not pp.exists():
+        return None
+    q = pd.read_csv(pp)
+    if q.empty:
+        return None
+    q["mid"] = (q.lo + q.hi) / 2
+    keys = {"mh_s30": ("Maharashtra", "S/30"), "up_m30": ("Uttar Pradesh", "M/30")}
+    piv = {k: q[(q.state == st) & (q.grade == g)].groupby("date").mid.mean() for k, (st, g) in keys.items()}
+    D = pd.DataFrame(piv)
+    D.index = pd.to_datetime(D.index)
+    D = D.sort_index()
+    # USD/INR: Yahoo INR=X, daily since 2016 (india workflow) and the desk's closes file
+    fx = []
+    for f, col in ((ROOT / "data/india/raw/fx_ct.csv", "INR=X"), (ROOT / "data/markets/closes.csv", "INR=X")):
+        if f.exists():
+            c = pd.read_csv(f, index_col=0, parse_dates=True)
+            if col in c:
+                fx.append(c[col].dropna())
+    if not fx:
+        return None
+    inr = pd.concat(fx).groupby(level=0).last().sort_index()
+    inr = inr[(inr > 40) & (inr < 200)]
+    pc = pd.read_csv(ROOT / "sugar/data/prices_cont.csv", parse_dates=["date"])
+    sb = pc[pc.symbol == "ICEUS:SB1!"].set_index("date").close.sort_index()
+    wh = pc[pc.symbol == "ICEEUR:W1!"].set_index("date").close.sort_index()
+    asof = lambda s, d: (float(s.loc[:d].iloc[-1]), str(s.loc[:d].index[-1].date())) if len(s.loc[:d]) and (d - s.loc[:d].index[-1]).days <= 7 else (None, None)
+    out = []
+    for d, r in D.iterrows():
+        x, xd = asof(inr, d)
+        if not x:
+            continue
+        s11, _ = asof(sb, d)
+        w5, _ = asof(wh, d)
+        c = lambda v: rd(v / x / 220.462 * 100, 2) if v == v and v is not None else None
+        rec = {"date": str(d.date()), "inr": rd(x, 2), "mh_rs": rd(r.mh_s30, 0) if r.mh_s30 == r.mh_s30 else None, "up_rs": rd(r.up_m30, 0) if r.up_m30 == r.up_m30 else None,
+               "mh_c": c(r.mh_s30), "up_c": c(r.up_m30), "sb_c": rd(s11, 2), "w5_c": rd(w5 / LB_T, 2) if w5 else None, "w5_usd_t": rd(w5, 1)}
+        rec["gap_w5"] = rd(rec["mh_c"] - rec["w5_c"], 2) if rec["mh_c"] is not None and rec["w5_c"] is not None else None
+        rec["gap_sb"] = rd(rec["mh_c"] - rec["sb_c"], 2) if rec["mh_c"] is not None and rec["sb_c"] is not None else None
+        out.append(rec)
+    if not out:
+        return None
+    # one row a week (last quote of each week) for the table
+    wk = pd.DataFrame(out)
+    wk["w"] = pd.to_datetime(wk.date).dt.to_period("W-FRI")
+    weekly = wk.groupby("w").tail(1).drop(columns="w").to_dict("records")
+    return {"rows": out, "weekly": weekly, "first": out[0]["date"], "last": out[-1]["date"], "n": len(out),
+            "sources": "ChiniMandi daily sugar market update (ex-mill, excl. GST); USD/INR Yahoo INR=X; ICE No. 11 and London No. 5 front month (TradingView continuous)"}
 
 
 def europe(fri):

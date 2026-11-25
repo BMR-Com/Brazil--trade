@@ -40,8 +40,11 @@ def crush():
     d = read("mapa_fortnight.csv", parse_dates=["start", "end"])
     if d is None:
         return None
-    cs = d[(d.region == "Centro-Sul") & (d.uf == "TOTAL")].copy()
-    cs = cs.drop_duplicates(["safra", "end"], keep="last").sort_values("end")
+    import sys
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import mapa
+    d = mapa.fill_totals(d)
+    cs = mapa.cs_clean(d)          # CS totals, missing totals rebuilt from states, a skipped fortnight interpolated
     cs["y0"] = cs.safra.str[:4].astype(int)
     cs["day"] = (cs["end"] - pd.to_datetime(cs.y0.astype(str) + "-04-01")).dt.days + 1
     # fortnight index 1..24: ends on the 15th or month-end
@@ -64,7 +67,8 @@ def crush():
                "ethanol_fn": [rd(x / 1e6, 3) for x in inc.ethanol_m3],
                "kgt": [rd(a / b * 1000, 2) if b else None for a, b in zip(g.sugar_t, g.cane_t)],
                "kgt_fn": [rd(a / b * 1000, 2) if b and b > 2e6 else None for a, b in zip(inc.sugar_t, inc.cane_t)],
-               "lt_fn": [rd(a / b * 1000, 2) if b and b > 2e6 else None for a, b in zip(inc.ethanol_m3 * 1000, inc.cane_t)]}
+               "lt_fn": [rd(a / b, 2) if b and b > 2e6 else None for a, b in zip(inc.ethanol_m3 * 1000, inc.cane_t)],
+               "interp": [bool(x) for x in g["interp"]]}
         out["seasons"][s] = rec
         if 24 in g.index and s != cur:
             finals[s] = g.loc[24, ["cane_t", "sugar_t", "ethanol_m3"]].to_dict()
@@ -121,18 +125,25 @@ def crush():
                          "kgt": rd(r.sugar_t / r.cane_t * 1000, 1), "hyd_stock": rd(r.hyd_stock / 1e6, 2)})
     out["same_date"] = comp
     # states: current season cumulative by UF vs last season same date
-    st = d[(d.region == "Centro-Sul") & (d.uf != "TOTAL")]
+    st = d[(d.region == "Centro-Sul") & (d.uf != "TOTAL")].drop_duplicates(["safra", "uf", "end"], keep="last")
     a = st[(st.safra == cur) & (st["end"] == g["end"].iloc[-1])]
     prev = seasons[-2] if len(seasons) > 1 else None
     pe = cs[(cs.safra == prev) & (cs.fn == n)]["end"]
     b = st[(st.safra == prev) & (st["end"] == pe.iloc[0])] if prev and len(pe) else st.iloc[0:0]
     out["states"] = []
+    out["states_end"] = str(g["end"].iloc[-1])[:10]
+    out["states_prev_end"] = str(pe.iloc[0])[:10] if prev and len(pe) else None
     for uf in a.sort_values("cane_t", ascending=False).uf:
         x = a[a.uf == uf].iloc[0]
         y = b[b.uf == uf].iloc[0] if (b.uf == uf).any() else None
+        if x.cane_t <= 0 and (y is None or y.cane_t <= 0):
+            continue                      # state with no cane crushed in either season (RS)
         out["states"].append({"uf": uf, "cane": rd(x.cane_t / 1e6, 2), "sugar": rd(x.sugar_t / 1e6, 3),
+                              "kgt": rd(1000 * x.sugar_t / x.cane_t, 1) if x.cane_t > 0 else None,
+                              "share": rd(100 * x.cane_t / g.loc[n, "cane_t"], 1),
                               "cane_prev": rd(y.cane_t / 1e6, 2) if y is not None else None,
-                              "sugar_prev": rd(y.sugar_t / 1e6, 3) if y is not None else None})
+                              "sugar_prev": rd(y.sugar_t / 1e6, 3) if y is not None else None,
+                              "kgt_prev": rd(1000 * y.sugar_t / y.cane_t, 1) if y is not None and y.cane_t > 0 else None})
     return out, cs
 
 

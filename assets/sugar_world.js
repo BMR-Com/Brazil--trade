@@ -99,10 +99,33 @@ const SugarWorld = (() => {
         ${I.prices.latest.map(r => `<tr><td class="l">${esc(r.state)}</td><td class="l">${r.grade}</td><td class="n">${f0(r.lo)}</td><td class="n">${f0(r.hi)}</td></tr>`).join('')}</table></div>
         <p class="note">Source: ${link(I.prices.source, I.prices.url)}, collected daily by the desk.</p></div>`
         : `<div class="card" style="margin-top:12px"><p class="note">Daily ex-mill price collector: ${I.collector ? `last run ${I.collector.run}, ${I.collector.pages_with_prices} pages with prices` : 'not run yet'}. Showing the last manual quote.</p></div>`}
+      ${histCard(I.history)}
       <div class="card" style="margin-top:12px"><h2>Policy and quotas</h2><div class="tbl"><table><tr><th class="l">Date</th><th class="l">Item</th><th>Value</th><th class="l">Detail</th><th class="l">Source</th></tr>
         ${pol.map(r => `<tr><td class="l">${r.date}</td><td class="l"><b>${esc(r.item)}</b></td><td class="n">${esc(r.value)} ${esc(r.unit === 'date' ? '' : r.unit)}</td><td class="l">${esc(r.note)}</td><td class="l">${link(r.source, r.url)}</td></tr>`).join('')}
         ${pr.map(r => `<tr><td class="l">${r.date}${age(r.date)}</td><td class="l">${esc(r.item)}</td><td class="n">${f0(+r.value)} ${esc(r.unit)}</td><td class="l">${esc(r.note)}</td><td class="l">${link(r.source, r.url)}</td></tr>`).join('')}</table></div>
         <p class="note">Fortnightly sales quotas (DFPD) are entered when the order is published. Weather in the Indian cane belt is on the "Where it's grown" tab.</p></div>${foot()}`;
+    const H = I.history;
+    if (H && H.n >= 20 && document.getElementById('swInH')) {
+      const R = H.rows;
+      chart('swInH', { type: 'line', data: { labels: R.map(r => r.date), datasets: [
+        { label: 'India ex-mill, Maharashtra S/30', data: R.map(r => r.mh_c), borderColor: PAL[3], borderWidth: 2.2, pointRadius: 0, spanGaps: true },
+        { label: 'India ex-mill, Uttar Pradesh M/30', data: R.map(r => r.up_c), borderColor: PAL[1], borderWidth: 1.4, pointRadius: 0, spanGaps: true },
+        { label: 'London No. 5 white, front', data: R.map(r => r.w5_c), borderColor: PAL[2], borderWidth: 1.6, pointRadius: 0, spanGaps: true },
+        { label: 'NY No. 11 raw, front', data: R.map(r => r.sb_c), borderColor: PAL[0], borderWidth: 1.6, pointRadius: 0, spanGaps: true }] },
+        options: { scales: { y: { title: { display: true, text: 'US cents per lb' } } } } });
+    }
+  }
+
+  function histCard(H) {
+    if (!H || !H.rows || !H.rows.length) return '';
+    const wk = H.weekly.slice(-26).reverse();
+    const gp = v => v == null ? '–' : sgn(v, 2);
+    return `<div class="card" style="margin-top:12px"><h2>Indian domestic sugar in ¢/lb against New York and London <span class="note">${H.first} to ${H.last}</span></h2>
+      ${H.n >= 20 ? '<div style="position:relative;height:300px"><canvas id="swInH"></canvas></div>' : ''}
+      <div class="tbl" style="margin-top:8px"><table><tr><th class="l">Date</th><th>Maharashtra S/30, Rs/qtl</th><th>USD/INR</th><th>Maharashtra, ¢/lb</th><th>UP M/30, ¢/lb</th><th>No. 11 front, ¢/lb</th><th>No. 5 front, ¢/lb</th><th>India − No. 5</th><th>India − No. 11</th></tr>
+        ${wk.map(r => `<tr><td class="l">${r.date}</td><td class="n">${f0(r.mh_rs)}</td><td class="n">${f2(r.inr)}</td><td class="n"><b>${f2(r.mh_c)}</b></td><td class="n">${f2(r.up_c)}</td><td class="n">${f2(r.sb_c)}</td><td class="n">${f2(r.w5_c)}</td><td class="n">${gp(r.gap_w5)}</td><td class="n">${gp(r.gap_sb)}</td></tr>`).join('')}</table></div>
+      <p class="note">Last quote of each week, newest first${H.weekly.length > 26 ? ' (latest 26 weeks; the chart has every day)' : ''}. Ex-mill prices are per quintal (100 kg) excluding GST, at the mid of the quoted range; converted as Rs per quintal ÷ rupees per dollar ÷ 220.462 lb × 100. London No. 5 is in $/t ÷ 22.046.
+        <b>How to read the gap:</b> India − No. 5 below zero means Indian white sugar at the mill is cheaper than London whites, so exports start to pay (before inland freight, port costs and the discount Indian plantation white takes against refined No. 5 quality); above zero, the home market pays more than the world and mills prefer to sell at home, even with an export quota. India − No. 11 shows how far domestic prices sit above the raw-sugar world price. Sources: ${esc(H.sources)}; history is added on every run of the collector.</p></div>`;
   }
 
   // ---------- Europe ----------
