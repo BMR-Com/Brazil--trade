@@ -1,5 +1,5 @@
 {
- "built": "2026-11-25 00:52 UTC",
+ "built": "2026-11-25 00:54 UTC",
  "region": "Brazil Centre-South",
  "unica_last_position": "2026-09-01",
  "current_season": {
@@ -52,10 +52,10 @@
     "weather": "forecast",
     "stop_days": 10.9,
     "cane_mt": 5.14,
-    "mix": 43.2,
-    "kgt": 53.0,
-    "atr": 131.4,
-    "sugar_mt": 0.273
+    "mix": 37.3,
+    "kgt": 43.9,
+    "atr": 124.6,
+    "sugar_mt": 0.226
    },
    {
     "start": "2026-12-16",
@@ -64,10 +64,10 @@
     "weather": "normal",
     "stop_days": 7.2,
     "cane_mt": 1.09,
-    "mix": 43.6,
-    "kgt": 53.7,
-    "atr": 132.2,
-    "sugar_mt": 0.058
+    "mix": 32.8,
+    "kgt": 43.8,
+    "atr": 139.3,
+    "sugar_mt": 0.048
    },
    {
     "start": "2027-01-01",
@@ -76,10 +76,10 @@
     "weather": "normal",
     "stop_days": 8.1,
     "cane_mt": 2.43,
-    "mix": 43.5,
-    "kgt": 53.5,
-    "atr": 132.0,
-    "sugar_mt": 0.13
+    "mix": 29.1,
+    "kgt": 37.9,
+    "atr": 123.4,
+    "sugar_mt": 0.092
    },
    {
     "start": "2027-01-16",
@@ -88,10 +88,10 @@
     "weather": "normal",
     "stop_days": 7.1,
     "cane_mt": 0.39,
-    "mix": 43.6,
-    "kgt": 53.7,
-    "atr": 132.2,
-    "sugar_mt": 0.021
+    "mix": 29.1,
+    "kgt": 37.9,
+    "atr": 123.4,
+    "sugar_mt": 0.015
    },
    {
     "start": "2027-02-01",
@@ -100,10 +100,10 @@
     "weather": "normal",
     "stop_days": 6.5,
     "cane_mt": 0.33,
-    "mix": 43.6,
-    "kgt": 53.8,
-    "atr": 132.3,
-    "sugar_mt": 0.018
+    "mix": 29.1,
+    "kgt": 37.9,
+    "atr": 123.4,
+    "sugar_mt": 0.012
    },
    {
     "start": "2027-02-16",
@@ -112,10 +112,10 @@
     "weather": "normal",
     "stop_days": 5.9,
     "cane_mt": 0.31,
-    "mix": 43.7,
-    "kgt": 53.9,
-    "atr": 132.4,
-    "sugar_mt": 0.017
+    "mix": 29.1,
+    "kgt": 37.9,
+    "atr": 123.4,
+    "sugar_mt": 0.012
    },
    {
     "start": "2027-03-01",
@@ -124,10 +124,10 @@
     "weather": "normal",
     "stop_days": 6.4,
     "cane_mt": 1.36,
-    "mix": 43.6,
-    "kgt": 53.8,
-    "atr": 132.3,
-    "sugar_mt": 0.073
+    "mix": 29.1,
+    "kgt": 37.9,
+    "atr": 123.4,
+    "sugar_mt": 0.051
    },
    {
     "start": "2027-03-16",
@@ -136,24 +136,24 @@
     "weather": "normal",
     "stop_days": 5.4,
     "cane_mt": 4.0,
-    "mix": 43.7,
-    "kgt": 54.0,
-    "atr": 132.5,
-    "sugar_mt": 0.216
+    "mix": 29.1,
+    "kgt": 37.9,
+    "atr": 123.4,
+    "sugar_mt": 0.152
    }
   ],
   "season_total": {
    "catchup_30": {
     "cane_mt": 593.0,
-    "sugar_mt": 35.68
+    "sugar_mt": 35.45
    },
    "catchup_50": {
     "cane_mt": 597.2,
-    "sugar_mt": 35.9
+    "sugar_mt": 35.66
    },
    "catchup_70": {
     "cane_mt": 601.3,
-    "sugar_mt": 36.13
+    "sugar_mt": 35.87
    }
   }
  },

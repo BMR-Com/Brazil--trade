@@ -310,8 +310,14 @@ def current_season(F, m, rain, stops, par, co_crush, qco):
             prem_l = prem_now
         x = {"prem_l": prem_l, "rain": rn_obs if src == "observed" else rn_obs + 3.0 * sd_rest}
         for t, (co, feats) in qco.items():
-            f_use = min(fn, Q_FN[1])
-            row[t] = rd(q_base(co, f_use, x, feats) + q_level(co, resid[t]), 1)
+            if fn <= Q_FN[1]:
+                row[t] = rd(q_base(co, fn, x, feats) + q_level(co, resid[t]), 1)
+            else:   # Dec-Mar: few mills run; use the last three seasons' cane-weighted value for that fortnight
+                last3 = sorted(F.safra[F.safra != cur].unique())[-3:]
+                pool = F[(F.fn == fn) if fn <= 18 else (F.fn >= 19)]
+                h = pool[pool.safra.isin(last3) & (pool.cane > 1e5)]
+                h = h[np.isfinite(h[t]) & (h[t] > 0) & (h[t] < 200)]
+                row[t] = rd(np.average(h[t], weights=h.cane), 1) if len(h) else None
         row["sugar_mt"] = row["cane_mt"] * (row["kgt"] or 0) / 1000
         out.append(row)
     # Nov-Mar total: model fortnights + catch-up of cane left standing by the wet Sep-Oct
