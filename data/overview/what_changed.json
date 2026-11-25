@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-25 01:14 UTC",
+ "generated": "2026-11-25 01:19 UTC",
  "asof": "2026-11-24",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
   "generated": "2026-11-24 20:19 UTC",
-  "prev_generated": "2026-11-23 21:39 UTC"
+  "prev_generated": null
  },
  "markets": [
   {
@@ -119,8 +119,7 @@
     }
    ],
    "flags": [
-    "Spot basis (US average) −14 pts on the day (normal within ±0)",
-    "Weather Sorriso, Mato Grosso: next-15-day read turned wet (was near normal)"
+    "Spot basis (US average) −14 pts on the day (normal within ±0)"
    ],
    "errors": [],
    "weather": [
@@ -128,7 +127,7 @@
      "region": "us_tx",
      "name": "Lubbock, West Texas",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 4.5,
@@ -140,8 +139,8 @@
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
      "read": "wet",
-     "prev": "near normal",
-     "flip": true,
+     "prev": null,
+     "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 124.2,
      "rain_normal": 89.6,
@@ -152,7 +151,7 @@
      "region": "br_ba",
      "name": "LEM, western Bahia",
      "read": "near normal",
-     "prev": "dry",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 56.3,
@@ -164,7 +163,7 @@
      "region": "in_gj",
      "name": "Rajkot, Gujarat",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 0.0,
@@ -176,7 +175,7 @@
      "region": "au_nsw",
      "name": "Moree, New South Wales",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 38.3,
@@ -185,7 +184,7 @@
      "window": "2026-11-25 to 2026-12-08"
     }
    ],
-   "summary": "Spot basis (US average) −14 pts on the day (normal within ±0); Weather Sorriso, Mato Grosso: next-15-day read turned wet (was near normal)"
+   "summary": "Spot basis (US average) −14 pts on the day (normal within ±0)"
   },
   {
    "sym": "SB",
@@ -277,7 +276,7 @@
      "region": "br_sp",
      "name": "Ribeirão Preto, São Paulo",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 197.7,
@@ -289,7 +288,7 @@
      "region": "br_spw",
      "name": "Araçatuba, western São Paulo",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 162.0,
@@ -301,7 +300,7 @@
      "region": "br_gos",
      "name": "Rio Verde, Goiás (cane)",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 173.1,
@@ -313,7 +312,7 @@
      "region": "br_mgc",
      "name": "Uberaba, Triângulo Mineiro",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 220.4,
@@ -431,8 +430,7 @@
    ],
    "flags": [
     "ICE certified arabica +43,395 bags on the day (normal within ±7,939)",
-    "ICE certified arabica +82,200 bags on the week (normal within ±42,750)",
-    "Weather Buon Ma Thuot, Dak Lak: next-15-day read turned wet (was near normal)"
+    "ICE certified arabica +82,200 bags on the week (normal within ±42,750)"
    ],
    "errors": [],
    "weather": [
@@ -440,7 +438,7 @@
      "region": "br_mg",
      "name": "Varginha, Sul de Minas",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 219.0,
@@ -452,7 +450,7 @@
      "region": "br_cer",
      "name": "Patrocínio, Cerrado Mineiro",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 186.2,
@@ -464,7 +462,7 @@
      "region": "br_zm",
      "name": "Manhuaçu, Zona da Mata (MG)",
      "read": "wet",
-     "prev": "wet",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 215.2,
@@ -476,7 +474,7 @@
      "region": "br_es",
      "name": "Linhares, Espírito Santo",
      "read": "near normal",
-     "prev": "near normal",
+     "prev": null,
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 106.4,
@@ -488,8 +486,8 @@
      "region": "vn_dl",
      "name": "Buon Ma Thuot, Dak Lak",
      "read": "wet",
-     "prev": "near normal",
-     "flip": true,
+     "prev": null,
+     "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 49.5,
      "rain_normal": 24.0,
@@ -497,7 +495,7 @@
      "window": "2026-11-25 to 2026-12-08"
     }
    ],
-   "summary": "ICE certified arabica +43,395 bags on the day (normal within ±7,939); ICE certified arabica +82,200 bags on the week (normal within ±42,750); Weather Buon Ma Thuot, Dak Lak: next-15-day read turned wet (was near normal)"
+   "summary": "ICE certified arabica +43,395 bags on the day (normal within ±7,939); ICE certified arabica +82,200 bags on the week (normal within ±42,750)"
   },
   {
    "sym": "CC",
