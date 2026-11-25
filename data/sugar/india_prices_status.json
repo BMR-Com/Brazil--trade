@@ -1,22 +1,19 @@
 {
- "run": "2026-11-25 14:22 UTC",
+ "run": "2026-11-25 20:39 UTC",
  "from": "2026-11-26",
  "tried": 0,
  "pages_with_prices": 0,
- "http": {
-  "404": 17,
-  "200": 44
- },
+ "http": {},
  "latest": "2026-11-25",
  "earliest": "2025-11-10",
  "rows": 3498,
- "robots_txt": "read",
+ "robots_txt": "unreadable (history walk paused)",
  "disallowed": 0,
  "backfill": {
   "cursor": "2025-11-02",
   "miss_run": 6,
   "done": false,
-  "tried_this_run": 61,
-  "pages_this_run": 44
+  "tried_this_run": 0,
+  "pages_this_run": 0
  }
 }
