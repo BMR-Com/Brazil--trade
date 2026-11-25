@@ -156,10 +156,15 @@ def weather(only=None):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--only", default=""); ap.add_argument("--points", default="")
     a = ap.parse_args()
+    os.makedirs(WX, exist_ok=True)
     steps = a.only.split(",") if a.only else ["psd", "oni", "wx"]
     ok = True
-    if "psd" in steps: ok &= psd()
-    if "oni" in steps: ok &= oni()
+    for k, f in (("psd", psd), ("oni", oni)):
+        if k in steps:
+            try:
+                ok &= bool(f())
+            except Exception as e:
+                log(k, "failed", e); ok = False
     if "wx" in steps:
         n = weather(a.points.split(",") if a.points else None)
         ok &= n > 0
