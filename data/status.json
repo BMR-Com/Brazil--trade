@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 02:41 UTC",
+ "generated": "2026-11-25 03:48 UTC",
  "today": "2026-11-24",
  "sources": [
   {
@@ -65,9 +65,9 @@
   {
    "group": "Cotton",
    "source": "ICE quality grid (AMS daily spot quotes)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -413,9 +413,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ arabica index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -425,9 +425,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ robusta index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
