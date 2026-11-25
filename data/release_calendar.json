@@ -1690,11 +1690,31 @@
   },
   {
    "id": "sugar_deliveries",
-   "status_source": "ICE expiry deliveries (manual, from news)",
-   "age_limit": 75,
+   "status_source": "ICE No. 11 expiry deliveries (news capture + hand entries)",
+   "age_limit": 160,
    "age_unit": "days",
    "tab": "Sugar > Deliveries",
-   "report": "ICE expiry deliveries (manual, from news)",
+   "report": "ICE Sugar No. 11 expiry tender (trade reports; exchange notice)",
+   "publisher": "Reuters mirrors (NovaCana, ChiniMandi, Business Recorder); ICE notice",
+   "release_et": "LTD to LTD + 6 business days (Mar, May, Jul, Oct expiries)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "sugar_deliveries.yml"
+   },
+   "manual": false,
+   "season": null
+  },
+  {
+   "id": "sugar_deliveries_n5",
+   "status_source": "ICE No. 5 expiry deliveries (manual, from news)",
+   "age_limit": 120,
+   "age_unit": "days",
+   "tab": "Sugar > Deliveries",
+   "report": "ICE No. 5 expiry deliveries (manual, from news)",
    "publisher": "manual entry from dated releases",
    "release_et": "as released",
    "release": {

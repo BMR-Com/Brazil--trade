@@ -267,13 +267,40 @@ const SugarWorld = (() => {
   }
 
   // ---------- deliveries and revisions ----------
-  function deliveries(el) {
+  async function deliveries(el) {
     const D = W.deliveries || [], R = W.revisions || [];
+    const H = await getJSON('data/sugar/deliveries/sb_history.json').catch(() => null);
     const t = v => v ? fmt(+v / 1000, 0) + 'k t' : '–';
-    el.innerHTML = `<div class="grid g2">
-        <div class="card"><h2>Expiry deliveries, No. 11 and No. 5</h2><div class="tbl"><table><tr><th class="l">Contract</th><th class="l">Expiry</th><th>Tonnes</th><th>Lots</th><th class="l">Status</th><th class="l">Deliverers</th><th class="l">Receivers</th><th class="l">Source</th></tr>
-          ${D.map(r => `<tr><td class="l"><b>${esc(r.contract)}</b></td><td class="l">${r.expiry_date}</td><td class="n">${t(r.tonnes)}</td><td class="n">${r.lots ? f0(+r.lots) : '–'}</td><td class="l">${esc(r.status)}</td><td class="l">${esc(r.deliverers)}</td><td class="l">${esc(r.receivers)}</td><td class="l">${link(r.source + (r.source_date ? ', ' + r.source_date : ''), r.url)}</td></tr>`).join('')}</table></div>
-          <p class="note">Tonnages from news reports of the tender (most are preliminary trade figures published the day after expiry); ICE's own delivery reports confirm them later. A large delivery with one natural receiver (a refiner) is absorbed; a large delivery that has to be resold weighs on the next spread. History is added expiry by expiry.</p></div>
+    const fig = { official: 'ICE notice', preliminary: 'traders, preliminary', approximate: 'traders, approximate', back_reference: 'later reference' };
+    const firms = L => (L || []).map(f => `${f.largest ? '<b>' : ''}${esc(f.firm)}${f.largest ? '</b>' : ''}${f.lots ? ' ' + f0(f.lots) : f.tonnes ? ' ' + t(f.tonnes) : (/\d/.test(f.note || '') ? ` <span class="note">(${esc(f.note)})</span>` : '')}${f.sole ? ' (sole)' : ''}`).join('<br>') || '<span class="note">not reported</span>';
+    const E = H ? H.expiries.filter(e => e.lots || e.tonnes) : [];
+    const mx = Math.max(...E.map(e => e.lots || e.tonnes / H.lot_tonnes), 1);
+    const bar = e => { const v = e.lots || e.tonnes / H.lot_tonnes; return `<div style="background:var(--accent,#4a7dbf);height:8px;width:${(100 * v / mx).toFixed(0)}%;opacity:${e.figure === 'official' ? 1 : .55}"></div>`; };
+    const lead = side => (H.leaders[side] || []).slice(0, 8).map(a => `<tr><td class="l">${esc(a.firm)}</td><td class="n">${a.expiries}</td><td class="n">${a.largest}</td><td class="n">${a.sole || '–'}</td><td class="l">${a.last}</td></tr>`).join('');
+    const bm = H ? Object.entries(H.by_month).map(([m, o]) => `<tr><td class="l">${m}</td><td class="n">${o.n}</td><td class="n">${f0(o.avg_lots)}</td><td class="n">${f0(o.min_lots)}</td><td class="n">${f0(o.max_lots)}</td></tr>`).join('') : '';
+    const last = E[0];
+    const sb = !H ? '<div class="card"><h2>Sugar No. 11 expiry deliveries</h2><p class="note">History file not built yet.</p></div>' : `
+      <div class="grid g4">
+        ${kpi('Latest expiry', last.label, `${f0(last.lots)} lots, ${t(last.tonnes)} (${fig[last.figure]})`)}
+        ${kpi('Largest deliverer, latest', esc((last.deliverers.find(f => f.largest) || {}).firm || '–'), '')}
+        ${kpi('Largest receiver, latest', esc((last.receivers.find(f => f.largest) || {}).firm || '–'), '')}
+        ${kpi('Expiries in the history', H.n_expiries, `${H.first} to ${H.last}`)}</div>
+      <div class="card" style="margin-top:12px"><h2>Sugar No. 11 expiry deliveries: who delivered and who received</h2><div class="tbl"><table>
+        <tr><th class="l">Contract</th><th class="l">Expiry</th><th>Lots</th><th>Tonnes</th><th class="l" style="min-width:90px">Size</th><th class="l">Figure</th><th class="l">Origin / ports</th><th class="l">Deliverers (lots)</th><th class="l">Receivers (lots)</th><th>Expiry ¢/lb</th><th class="l">Source</th></tr>
+        ${H.expiries.map(e => `<tr><td class="l"><b>${e.label}</b></td><td class="l">${e.expiry_date}</td><td class="n">${e.lots ? f0(e.lots) + (e.lots_derived ? '*' : '') : '–'}</td><td class="n">${t(e.tonnes)}</td><td class="l">${(e.lots || e.tonnes) ? bar(e) : ''}</td>
+          <td class="l">${fig[e.figure] || esc(e.figure)}${e.auto ? ' <span class="note">(auto)</span>' : ''}</td><td class="l">${esc([e.origins, e.ports].filter(Boolean).join('; ')) || '–'}</td>
+          <td class="l">${firms(e.deliverers)}</td><td class="l">${firms(e.receivers)}</td><td class="n">${e.expiry_settle_cents ? f2(e.expiry_settle_cents) : '–'}</td>
+          <td class="l">${e.sources.slice(0, 2).map(s => link(s.source + (s.date ? ', ' + s.date : ''), s.url)).join('<br>')}</td></tr>`).join('')}</table></div>
+        <p class="note">${esc(H.note)} Bold = largest on that side. * lots from tonnes (50.8 t a lot). Lighter bars are trader figures not yet matched to an ICE notice. Clearing members on the exchange notice are not shown. Built ${H.built}; new expiries are added automatically after each tender.</p></div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Most often the largest receiver</h2><div class="tbl"><table><tr><th class="l">Firm</th><th>Expiries named</th><th>Largest</th><th>Sole</th><th class="l">Last named</th></tr>${lead('receiver')}</table></div></div>
+        <div class="card"><h2>Most often the largest deliverer</h2><div class="tbl"><table><tr><th class="l">Firm</th><th>Expiries named</th><th>Largest</th><th>Sole</th><th class="l">Last named</th></tr>${lead('deliverer')}</table></div>
+          <h2 style="margin-top:12px">Delivery size by contract month</h2><div class="tbl"><table><tr><th class="l">Month</th><th>Expiries</th><th>Average lots</th><th>Smallest</th><th>Largest</th></tr>${bm}</table></div></div></div>`;
+    const n5 = D.filter(r => !/No\. 11/.test(r.contract));
+    el.innerHTML = `${sb}<div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>London No. 5 expiry deliveries</h2><div class="tbl"><table><tr><th class="l">Contract</th><th class="l">Expiry</th><th>Tonnes</th><th>Lots</th><th class="l">Status</th><th class="l">Deliverers</th><th class="l">Receivers</th><th class="l">Source</th></tr>
+          ${n5.map(r => `<tr><td class="l"><b>${esc(r.contract)}</b></td><td class="l">${r.expiry_date}</td><td class="n">${t(r.tonnes)}</td><td class="n">${r.lots ? f0(+r.lots) : '–'}</td><td class="l">${esc(r.status)}</td><td class="l">${esc(r.deliverers)}</td><td class="l">${esc(r.receivers)}</td><td class="l">${link(r.source + (r.source_date ? ', ' + r.source_date : ''), r.url)}</td></tr>`).join('')}</table></div>
+          <p class="note">Tonnages from news reports of the tender; ICE's own delivery reports confirm them later. History is added expiry by expiry.</p></div>
         <div class="card"><h2>What the agencies changed at their latest update</h2><div class="tbl"><table><tr><th class="l">Agency</th><th class="l">Item</th><th>Season</th><th>Latest</th><th class="l">Released</th><th>Previous</th><th class="l">Released</th><th>Change</th><th class="l">Source</th></tr>
           ${R.map(r => `<tr><td class="l"><b>${esc(r.agency)}</b></td><td class="l">${esc(r.item)}</td><td>${r.season}</td><td class="n">${f2(+r.value)} ${r.unit}</td><td class="l">${r.release_date}${age(r.release_date)}</td><td class="n">${r.prev_value !== '' ? f2(+r.prev_value) : '–'}</td><td class="l">${r.prev_release}</td><td class="n">${r.prev_value !== '' ? sgn(r.value - r.prev_value, 2) : '–'}</td><td class="l">${link(r.source, r.url)}${r.note ? `<div class="note">${esc(r.note)}</div>` : ''}</td></tr>`).join('')}</table></div>
           <p class="note">Shown as changes because each agency's level differs. USDA's country-by-country revisions appear on the World balance tab after each PSD update (May and November).</p></div></div>${foot()}`;
@@ -281,7 +308,7 @@ const SugarWorld = (() => {
 
   async function mount(el, k) {
     await load();
-    ({ cane, india, europe, deliveries })[k](el);
+    return ({ cane, india, europe, deliveries })[k](el);
   }
   return { mount };
 })();

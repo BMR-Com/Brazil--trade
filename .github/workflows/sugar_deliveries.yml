@@ -1,0 +1,73 @@
+name: Sugar — No. 11 expiry deliveries
+
+# Captures each Sugar No. 11 expiry tender (total lots/tonnes, named deliverers and receivers) from free news mirrors
+# (pipelines/sugar_deliveries.py) and rebuilds data/sugar/deliveries/sb_history.json (models/sugar_deliveries.py).
+# The capture only does anything from the last trading day to six ICE business days after it (Mar, May, Jul, Oct
+# expiries); on every other day the first step exits in seconds and nothing else runs.
+# A push that edits the hand-entered history (sb_sources.csv / sb_firms.csv) rebuilds the JSON.
+on:
+  schedule:
+    - cron: "25 21 * * 1-5"   # after the close: preliminary trader figures (expiry day / day after)
+    - cron: "40 13 * * 1-5"   # morning: the exchange's official total (day 1-2 after expiry)
+  push:
+    branches: [main]
+    paths:
+      - "data/sugar/deliveries/sb_sources.csv"
+      - "data/sugar/deliveries/sb_firms.csv"
+      - "models/sugar_deliveries.py"
+  workflow_dispatch:
+    inputs:
+      contract:
+        description: "Force a capture for one contract, e.g. SBH27 (blank = normal window check)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sugar-deliveries
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            pipelines/sugar_deliveries.py
+            models/sugar_deliveries.py
+            data/sugar/deliveries
+            data/release_calendar.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: In a capture window?
+        id: due
+        run: |
+          if [ -n "${{ github.event.inputs.contract }}" ] || [ "${{ github.event_name }}" = "push" ]; then echo "due=yes" >> "$GITHUB_OUTPUT"; exit 0; fi
+          out=$(python pipelines/sugar_deliveries.py --due); echo "$out"
+          case "$out" in due=yes*) echo "due=yes" >> "$GITHUB_OUTPUT";; *) echo "due=no" >> "$GITHUB_OUTPUT";; esac
+      - name: Capture from news
+        if: steps.due.outputs.due == 'yes' && github.event_name != 'push'
+        run: |
+          python pipelines/sugar_deliveries.py --selftest
+          if [ -n "${{ github.event.inputs.contract }}" ]; then
+            timeout 600 python -u pipelines/sugar_deliveries.py --contract "${{ github.event.inputs.contract }}" --force
+          else
+            timeout 600 python -u pipelines/sugar_deliveries.py
+          fi
+      - name: Build history
+        if: steps.due.outputs.due == 'yes'
+        run: python -u models/sugar_deliveries.py
+      - name: Commit
+        if: steps.due.outputs.due == 'yes'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/sugar/deliveries
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "sugar: No. 11 expiry deliveries $(date -u +%F) [bot]"
+          for i in 1 2 3; do git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; sleep 10; done
