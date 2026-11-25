@@ -280,7 +280,7 @@ def era5_hist(ccs=("IN", "TH")):
 
 
 def fx_series(sid, col, fn):
-    r = get(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", timeout=60)
+    r = get(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", timeout=150)
     if r is None:
         return False
     d = pd.read_csv(io.StringIO(r.text))

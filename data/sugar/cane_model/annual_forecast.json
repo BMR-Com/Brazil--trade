@@ -1,0 +1,62 @@
+{
+ "built": "2026-11-25 02:35 UTC",
+ "target": "year-on-year % change in sugar production (apply to any forecaster's previous-year figure)",
+ "countries": {
+  "IN": {
+   "country": "India",
+   "rain_source": "CHIRPS",
+   "usda": {
+    "2025": 30.0,
+    "2026": 29.5,
+    "current_pct": -1.7
+   },
+   "partial_weather": {},
+   "2026/27": {
+    "pct_change": 4.0,
+    "basis": "cane sugar before ethanol diversion",
+    "implied_usda_mt": {
+     "no sugar diverted to ethanol": 34.42,
+     "diversion as in 2025/26": 31.32
+    },
+    "implied_pct_vs_usda_prev": {
+     "no sugar diverted to ethanol": 14.7,
+     "diversion as in 2025/26": 4.4
+    }
+   },
+   "2027/28": {
+    "pct_change": 4.2,
+    "basis": "cane sugar before ethanol diversion",
+    "implied_usda_mt_if_no_diversion": 35.87
+   }
+  },
+  "TH": {
+   "country": "Thailand",
+   "rain_source": "CHIRPS",
+   "usda": {
+    "2025": 11.53,
+    "2026": 9.5,
+    "current_pct": -17.6
+   },
+   "partial_weather": {
+    "TH 2026": "5 of 6 months"
+   },
+   "2026/27": {
+    "pct_change": 3.6,
+    "implied_usda_mt": 11.94
+   },
+   "2027/28": {
+    "pct_change": 1.5,
+    "implied_usda_mt": 12.12
+   }
+  }
+ },
+ "variables_used": [
+  "USDA sugar production history",
+  "India cane support price (SMP, then FRP)",
+  "India sugar diverted to ethanol",
+  "monsoon rain in Maharashtra, Karnataka and Uttar Pradesh",
+  "May-Oct rain in Thailand's cane belt",
+  "ICE No.11 raw sugar price (in baht)",
+  "recent production swings"
+ ]
+}
