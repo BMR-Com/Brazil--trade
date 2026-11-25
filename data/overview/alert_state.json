@@ -1,38 +1,37 @@
 {
- "updated": "2026-11-24 20:50 UTC",
+ "updated": "2026-11-25 13:50 UTC",
  "by": "claude",
  "views": {
   "cotton": {
    "view": "bullish",
    "shade": "bull2",
-   "score": 0.21
+   "score": 0.27
   },
   "sugar": {
-   "view": "bearish",
-   "shade": "bear2",
-   "score": -0.25
+   "view": "mildly bearish",
+   "shade": "bear1",
+   "score": -0.2
   },
   "coffee": {
-   "view": "bearish",
-   "shade": "bear2",
-   "score": -0.43
+   "view": "strongly bearish",
+   "shade": "bear3",
+   "score": -0.46
   },
   "cocoa": {
-   "view": "neutral",
-   "shade": "neutral",
-   "score": -0.06
+   "view": "mildly bearish",
+   "shade": "bear1",
+   "score": -0.18
   }
  },
  "alerts": {
   "cotton": [],
   "sugar": [
-   "Broke above R1 17.56"
+   "Broke below S1 17.92"
   ],
   "coffee": [],
   "cocoa": []
  },
  "news": [
-  "2026-11-12 Oil sinks on Iran/Ukraine peace optimism",
   "2026-11-12 Arabica Dec up ~4% intraday to ~280, through old resistance 276.5/278.15",
   "2026-11-12 Brent briefly hits $94 after Trump says US has no need for Iran deal; peace trade unwinds",
   "2026-11-13 Sugar Mar back above 18.35/18.38 resistance at ~18.41 (TradingView)",
@@ -69,6 +68,9 @@
   "2026-11-24 Views: cotton to bullish, cocoa to neutral; sugar Mar above R1 17.56",
   "2026-11-24 BRL firms ~1% to 5.89 as Lula fiscal plan clears Congress; sugar Mar ~17.64 holds above R1 17.56",
   "2026-11-24 USDA cuts Colombia coffee export forecast 760k bags; coffee Dec ~271",
-  "2026-11-24 Metals rout: silver -5.8%, copper -5.2%, platinum -5%; Nasdaq -1.8%"
+  "2026-11-24 Metals rout: silver -5.8%, copper -5.2%, platinum -5%; Nasdaq -1.8%",
+  "2026-11-25 Sugar Mar ~18.13 (+2.7%) back above 18c / R1 18.11 on softer dollar, firmer crude and real",
+  "2026-11-25 Views: coffee to strongly bearish (Brazil arabica heading to ICE warehouses), cocoa to mildly bearish, sugar to mildly bearish",
+  "2026-11-25 Cocoa: Ivory Coast port arrivals slow again (Barchart)"
  ]
 }
