@@ -1,6 +1,6 @@
 {
- "built": "2026-11-24 12:29 UTC",
- "asof": "2026-11-23",
+ "built": "2026-11-25 00:57 UTC",
+ "asof": "2026-11-24",
  "coffee": [
   {
    "group": "Settlements: ICE arabica",
@@ -9,9 +9,9 @@
     "KCH2027"
    ],
    "unit": "c/lb",
-   "value": 267.75,
-   "chg": -0.75,
-   "date": "2026-11-23"
+   "value": 264.3,
+   "chg": -3.45,
+   "date": "2026-11-24"
   },
   {
    "group": "Settlements: ICE arabica",
@@ -20,9 +20,9 @@
     "KCK2027"
    ],
    "unit": "c/lb",
-   "value": 261.15,
-   "chg": -0.95,
-   "date": "2026-11-23"
+   "value": 258.3,
+   "chg": -2.85,
+   "date": "2026-11-24"
   },
   {
    "group": "Settlements: ICE robusta",
@@ -31,9 +31,9 @@
     "RCF2027"
    ],
    "unit": "$/t",
-   "value": 2854.0,
-   "chg": -27.0,
-   "date": "2026-11-23"
+   "value": 2837.0,
+   "chg": -17.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Settlements: ICE robusta",
@@ -42,9 +42,9 @@
     "RCH2027"
    ],
    "unit": "$/t",
-   "value": 2828.0,
-   "chg": -37.0,
-   "date": "2026-11-23"
+   "value": 2808.0,
+   "chg": -20.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Arabica switches",
@@ -55,11 +55,11 @@
    ],
    "position": "1/2",
    "unit": "c/lb",
-   "value": 6.6,
-   "pct_of_deferred": 2.53,
-   "chg": 0.2,
-   "pctile_1y": 27.0,
-   "date": "2026-11-23"
+   "value": 6.0,
+   "pct_of_deferred": 2.32,
+   "chg": -0.6,
+   "pctile_1y": 22.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Arabica switches",
@@ -70,11 +70,11 @@
    ],
    "position": "2/3",
    "unit": "c/lb",
-   "value": 5.1,
-   "pct_of_deferred": 1.99,
-   "chg": 0.15,
-   "pctile_1y": 34.0,
-   "date": "2026-11-23"
+   "value": 4.4,
+   "pct_of_deferred": 1.73,
+   "chg": -0.7,
+   "pctile_1y": 24.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Arabica switches",
@@ -85,11 +85,11 @@
    ],
    "position": "3/4",
    "unit": "c/lb",
-   "value": 3.9,
-   "pct_of_deferred": 1.55,
-   "chg": 0.1,
-   "pctile_1y": 57.0,
-   "date": "2026-11-23"
+   "value": 4.35,
+   "pct_of_deferred": 1.74,
+   "chg": 0.45,
+   "pctile_1y": 61.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Arabica switches",
@@ -100,11 +100,11 @@
    ],
    "position": "4/5",
    "unit": "c/lb",
-   "value": 4.5,
-   "pct_of_deferred": 1.82,
-   "chg": 0.15,
-   "pctile_1y": 78.0,
-   "date": "2026-11-23"
+   "value": 4.0,
+   "pct_of_deferred": 1.63,
+   "chg": -0.5,
+   "pctile_1y": 73.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Arabica switches",
@@ -115,11 +115,11 @@
    ],
    "position": "5/6",
    "unit": "c/lb",
-   "value": 3.9,
-   "pct_of_deferred": 1.6,
-   "chg": 0.1,
-   "pctile_1y": 91.0,
-   "date": "2026-11-23"
+   "value": 3.5,
+   "pct_of_deferred": 1.45,
+   "chg": -0.4,
+   "pctile_1y": 81.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Robusta switches",
@@ -130,11 +130,11 @@
    ],
    "position": "1/2",
    "unit": "$/t",
-   "value": 26.0,
-   "pct_of_deferred": 0.92,
-   "chg": 10.0,
-   "pctile_1y": 30.0,
-   "date": "2026-11-23"
+   "value": 29.0,
+   "pct_of_deferred": 1.03,
+   "chg": 3.0,
+   "pctile_1y": 33.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Robusta switches",
@@ -145,11 +145,11 @@
    ],
    "position": "2/3",
    "unit": "$/t",
-   "value": 12.0,
-   "pct_of_deferred": 0.43,
-   "chg": 0.0,
-   "pctile_1y": 5.0,
-   "date": "2026-11-23"
+   "value": 11.0,
+   "pct_of_deferred": 0.39,
+   "chg": -1.0,
+   "pctile_1y": 4.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Robusta switches",
@@ -160,11 +160,11 @@
    ],
    "position": "3/4",
    "unit": "$/t",
-   "value": 10.0,
-   "pct_of_deferred": 0.36,
-   "chg": -2.0,
-   "pctile_1y": 6.0,
-   "date": "2026-11-23"
+   "value": 11.0,
+   "pct_of_deferred": 0.39,
+   "chg": 1.0,
+   "pctile_1y": 9.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Robusta switches",
@@ -175,11 +175,11 @@
    ],
    "position": "4/5",
    "unit": "$/t",
-   "value": 13.0,
-   "pct_of_deferred": 0.47,
-   "chg": -3.0,
-   "pctile_1y": 9.0,
-   "date": "2026-11-23"
+   "value": 11.0,
+   "pct_of_deferred": 0.4,
+   "chg": -2.0,
+   "pctile_1y": 7.0,
+   "date": "2026-11-24"
   },
   {
    "group": "Arabica / robusta arb",
@@ -189,12 +189,12 @@
     "RCH2027"
    ],
    "unit": "c/lb",
-   "value": 139.47,
-   "chg": 0.93,
-   "pctile_1y": 54.0,
-   "date": "2026-11-23",
-   "ratio": 2.087,
-   "ratio_pctile_1y": 98.0
+   "value": 136.93,
+   "chg": -2.54,
+   "pctile_1y": 51.0,
+   "date": "2026-11-24",
+   "ratio": 2.075,
+   "ratio_pctile_1y": 97.0
   },
   {
    "group": "Arabica / robusta arb",
@@ -204,12 +204,12 @@
     "RCK2027"
    ],
    "unit": "c/lb",
-   "value": 133.42,
-   "chg": 0.73,
-   "pctile_1y": 59.0,
-   "date": "2026-11-23",
-   "ratio": 2.045,
-   "ratio_pctile_1y": 100.0
+   "value": 131.43,
+   "chg": -1.99,
+   "pctile_1y": 52.0,
+   "date": "2026-11-24",
+   "ratio": 2.036,
+   "ratio_pctile_1y": 99.0
   },
   {
    "group": "Brazil arb",
@@ -219,9 +219,9 @@
     "KCH2027"
    ],
    "unit": "c/lb",
-   "value": -17.14,
-   "chg": 6.8,
-   "pctile_1y": 88.0,
+   "value": -19.33,
+   "chg": 4.61,
+   "pctile_1y": 84.0,
    "date": "2026-11-23",
    "note": "B3 US$/bag converted at 132.277 lb/bag; B3 front month may differ from the KC month"
   }
@@ -234,9 +234,9 @@
     "SBH2027"
    ],
    "unit": "c/lb",
-   "value": 17.61,
-   "chg": 0.58,
-   "date": "2026-11-23"
+   "value": 17.63,
+   "chg": 0.02,
+   "date": "2026-11-24"
   },
   {
    "group": "Settlements: ICE No. 11",
@@ -245,9 +245,9 @@
     "SBK2027"
    ],
    "unit": "c/lb",
-   "value": 16.99,
-   "chg": 0.62,
-   "date": "2026-11-23"
+   "value": 17.06,
+   "chg": 0.07,
+   "date": "2026-11-24"
   },
   {
    "group": "Settlements: ICE No. 5",
@@ -280,11 +280,11 @@
    ],
    "position": "1/2",
    "unit": "c/lb",
-   "value": 0.62,
-   "pct_of_deferred": 3.65,
-   "chg": -0.04,
-   "pctile_1y": 94.0,
-   "date": "2026-11-23"
+   "value": 0.57,
+   "pct_of_deferred": 3.34,
+   "chg": -0.05,
+   "pctile_1y": 91.0,
+   "date": "2026-11-24"
   },
   {
    "group": "No. 11 switches",
@@ -295,11 +295,11 @@
    ],
    "position": "2/3",
    "unit": "c/lb",
-   "value": 0.37,
-   "pct_of_deferred": 2.23,
-   "chg": 0.04,
-   "pctile_1y": 79.0,
-   "date": "2026-11-23"
+   "value": 0.34,
+   "pct_of_deferred": 2.03,
+   "chg": -0.03,
+   "pctile_1y": 76.0,
+   "date": "2026-11-24"
   },
   {
    "group": "No. 11 switches",
@@ -310,11 +310,11 @@
    ],
    "position": "3/4",
    "unit": "c/lb",
-   "value": -0.03,
-   "pct_of_deferred": -0.18,
-   "chg": 0.05,
-   "pctile_1y": 45.0,
-   "date": "2026-11-23"
+   "value": -0.05,
+   "pct_of_deferred": -0.3,
+   "chg": -0.02,
+   "pctile_1y": 44.0,
+   "date": "2026-11-24"
   },
   {
    "group": "No. 11 switches",
@@ -326,10 +326,10 @@
    "position": "4/5",
    "unit": "c/lb",
    "value": -0.44,
-   "pct_of_deferred": -2.57,
-   "chg": 0.05,
+   "pct_of_deferred": -2.56,
+   "chg": 0.0,
    "pctile_1y": 27.0,
-   "date": "2026-11-23"
+   "date": "2026-11-24"
   },
   {
    "group": "No. 5 switches",
