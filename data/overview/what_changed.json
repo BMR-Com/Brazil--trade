@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 02:41 UTC",
+ "generated": "2026-11-25 03:49 UTC",
  "asof": "2026-11-24",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
@@ -61,13 +61,13 @@
      "unit": "pts",
      "dp": 0,
      "now": -328.0,
-     "d1": -14.0,
+     "d1": 0.0,
      "d5": -7.0,
      "norm1": 0.0,
      "norm5": 11.0,
-     "flag1": true,
+     "flag1": false,
      "flag5": false,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "USDA spot 41-4-34 minus Mar-27 futures, points",
      "kind": "daily"
     },
@@ -118,9 +118,7 @@
      "kind": "weekly"
     }
    ],
-   "flags": [
-    "Spot basis (US average) −14 pts on the day (normal within ±0)"
-   ],
+   "flags": [],
    "errors": [],
    "weather": [
     {
@@ -184,7 +182,7 @@
      "window": "2026-11-25 to 2026-12-08"
     }
    ],
-   "summary": "Spot basis (US average) −14 pts on the day (normal within ±0)"
+   "summary": "No notable change."
   },
   {
    "sym": "SB",
