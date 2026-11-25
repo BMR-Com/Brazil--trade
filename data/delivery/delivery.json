@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 04:38 UTC",
+ "generated": "2026-11-25 05:27 UTC",
  "asof": "2026-11-24",
  "markets": [
   {
@@ -38,11 +38,11 @@
    },
    "spread": {
     "pair": "Dec 26/Mar 27",
-    "now": -2.7,
+    "now": -2.93,
     "date": "2026-11-24",
-    "chg_1w": 1.38,
-    "front": 78.68,
-    "next": 81.38,
+    "chg_1w": 1.15,
+    "front": 79.12,
+    "next": 82.05,
     "unit": "¢/lb",
     "sign": "front minus next; negative = carry",
     "carry": {
@@ -293,11 +293,11 @@
    },
    "spread": {
     "pair": "Dec 26/Mar 27",
-    "now": 10.05,
+    "now": 5.95,
     "date": "2026-11-24",
-    "chg_1w": 4.85,
-    "front": 274.35,
-    "next": 264.3,
+    "chg_1w": 0.75,
+    "front": 268.55,
+    "next": 262.6,
     "unit": "¢/lb",
     "sign": "front minus next; negative = carry"
    },
@@ -396,11 +396,11 @@
     "src": "ICE daily open interest by contract (exchange report, previous business day)"
    },
    "certs": {
-    "now": 268614,
-    "date": "2026-11-23",
+    "now": 272868,
+    "date": "2026-11-24",
     "unit": "bags",
-    "chg_1w": 82200,
-    "pending": 246331,
+    "chg_1w": 78345,
+    "pending": 236731,
     "src": "ICE daily certified arabica report"
    },
    "oncall": null,
@@ -485,7 +485,7 @@
    "index_roll_past": true,
    "read": [
     "Dec 26 is in its delivery period (first notice was 2026-11-19); last trading day 2026-12-18 (17 business days).",
-    "Dec 26/Mar 27 +10.05¢ (inverted) on 2026-11-24; certified stock 268,614 bags on 2026-11-23, +82,200 on the week.",
+    "Dec 26/Mar 27 +5.95¢ (inverted) on 2026-11-24; certified stock 272,868 bags on 2026-11-24, +78,345 on the week.",
     "Read: front premium with certs not falling: the inversion depends on who holds the certs, not on stock size alone."
    ]
   },
@@ -493,47 +493,140 @@
    "sym": "CC",
    "name": "Cocoa",
    "errors": [],
-   "contract": "CCH2027",
-   "next": "CCK2027",
-   "label": "Mar 27",
+   "contract": "CCZ2026",
+   "next": "CCH2027",
+   "label": "Dec 26",
    "calendar": [
     {
      "event": "First notice",
-     "date": "2027-02-12",
-     "bd": 54
+     "date": "2026-11-16",
+     "bd": -6
     },
     {
      "event": "Last trading day",
-     "date": "2027-03-15",
-     "bd": 74
+     "date": "2026-12-15",
+     "bd": 14
     },
     {
      "event": "Last notice",
-     "date": "2027-03-16",
-     "bd": 75
+     "date": "2026-12-16",
+     "bd": 15
     }
    ],
    "index_roll": {
     "gsci": [
-     "2027-02-05",
-     "2027-02-11"
+     "2026-11-06",
+     "2026-11-12"
     ],
     "bcom": [
-     "2027-02-08",
-     "2027-02-12"
+     "2026-11-09",
+     "2026-11-13"
     ]
    },
    "spread": {
-    "pair": "Mar 27/May 27",
-    "now": -62.0,
+    "pair": "Dec 26/Mar 27",
+    "now": -132.0,
     "date": "2026-11-24",
-    "chg_1w": -3.0,
-    "front": 5419.0,
-    "next": 5481.0,
+    "chg_1w": 15.0,
+    "front": 5281.0,
+    "next": 5413.0,
     "unit": "$/t",
     "sign": "front minus next; negative = carry"
    },
-   "oi": null,
+   "oi": {
+    "asof": "2026-11-19",
+    "oi": 3970,
+    "pct_left": 6.5,
+    "band": {
+     "lo": null,
+     "mid": null,
+     "hi": null
+    },
+    "lots_band": {
+     "lo": null,
+     "mid": null,
+     "hi": null
+    },
+    "share_of_all_oi": 2.4,
+    "state": "normal",
+    "k": -3,
+    "K0": 20,
+    "T0": "2026-11-16",
+    "T0_kind": "first notice",
+    "pace_lots_per_day": 4739.0,
+    "typical_at_notice": {
+     "p10": 324.9,
+     "p50": 2356.5,
+     "p90": 19681.6
+    },
+    "path": [
+     {
+      "date": "2026-11-10",
+      "bd_to_notice": 4,
+      "oi": 34972,
+      "chg": -3659,
+      "pct_left": 57.6,
+      "spread": -129.0
+     },
+     {
+      "date": "2026-11-11",
+      "bd_to_notice": 3,
+      "oi": 30619,
+      "chg": -4353,
+      "pct_left": 50.4,
+      "spread": -139.0
+     },
+     {
+      "date": "2026-11-12",
+      "bd_to_notice": 2,
+      "oi": 27666,
+      "chg": -2953,
+      "pct_left": 45.5,
+      "spread": -138.0
+     },
+     {
+      "date": "2026-11-13",
+      "bd_to_notice": 1,
+      "oi": 21366,
+      "chg": -6300,
+      "pct_left": 35.2,
+      "spread": -141.0
+     },
+     {
+      "date": "2026-11-16",
+      "bd_to_notice": 0,
+      "oi": 17268,
+      "chg": -4098,
+      "pct_left": 28.4,
+      "spread": -142.0
+     },
+     {
+      "date": "2026-11-17",
+      "bd_to_notice": -1,
+      "oi": 12222,
+      "chg": -5046,
+      "pct_left": 20.1,
+      "spread": -147.0
+     },
+     {
+      "date": "2026-11-18",
+      "bd_to_notice": -2,
+      "oi": 7063,
+      "chg": -5159,
+      "pct_left": 11.6,
+      "spread": -155.0
+     },
+     {
+      "date": "2026-11-19",
+      "bd_to_notice": -3,
+      "oi": 3970,
+      "chg": -3093,
+      "pct_left": 6.5,
+      "spread": -138.0
+     }
+    ],
+    "src": "ICE daily open interest by contract (exchange report, previous business day)"
+   },
    "certs": null,
    "oncall": null,
    "mm": {
@@ -614,9 +707,10 @@
     "expired": [],
     "src": "ICE option settlement files, last good session 2026-11-19"
    },
-   "index_roll_past": false,
+   "index_roll_past": true,
    "read": [
-    "Mar 27/May 27 -62 $/t on 2026-11-24 (carry). Certified stocks are not on the desk, so delivery economics cannot be read here."
+    "Dec 26 is in its delivery period (first notice was 2026-11-16); last trading day 2026-12-15 (14 business days).",
+    "Dec 26/Mar 27 -132 $/t on 2026-11-24 (carry). Certified stocks are not on the desk, so delivery economics cannot be read here."
    ]
   },
   {
@@ -645,11 +739,11 @@
    },
    "spread": {
     "pair": "Mar 27/May 27",
-    "now": 0.57,
+    "now": 0.58,
     "date": "2026-11-24",
-    "chg_1w": 0.0,
-    "front": 17.63,
-    "next": 17.06,
+    "chg_1w": 0.01,
+    "front": 17.66,
+    "next": 17.08,
     "unit": "¢/lb",
     "sign": "front minus next; negative = carry"
    },
@@ -736,7 +830,7 @@
    },
    "index_roll_past": false,
    "read": [
-    "Mar 27 expires 2027-02-26 (63 business days); No. 11 has no notice period and delivers FOB origin. Mar 27/May 27 +0.57¢ on 2026-11-24 (front premium). Index roll out of Mar 27: GSCI 2027-02-05 to 2027-02-11."
+    "Mar 27 expires 2027-02-26 (63 business days); No. 11 has no notice period and delivers FOB origin. Mar 27/May 27 +0.58¢ on 2026-11-24 (front premium). Index roll out of Mar 27: GSCI 2027-02-05 to 2027-02-11."
    ]
   }
  ]

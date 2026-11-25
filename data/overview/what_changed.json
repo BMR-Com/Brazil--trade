@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-25 04:38 UTC",
+ "generated": "2026-11-25 05:27 UTC",
  "asof": "2026-11-24",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
-  "generated": "2026-11-24 20:19 UTC",
+  "generated": "2026-11-25 05:02 UTC",
   "prev_generated": null
  },
  "markets": [
@@ -15,9 +15,9 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 81.38,
-     "d1": 0.02,
-     "d5": -0.02,
+     "now": 82.05,
+     "d1": 0.69,
+     "d5": 0.65,
      "norm1": 1.14,
      "norm5": 3.21,
      "flag1": false,
@@ -30,9 +30,9 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": -1.38,
-     "d1": -0.01,
-     "d5": 0.13,
+     "now": -1.49,
+     "d1": -0.12,
+     "d5": 0.02,
      "norm1": 0.16,
      "norm5": 0.34,
      "flag1": false,
@@ -127,23 +127,23 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 4.5,
-     "rain_normal": 10.7,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 3.8,
+     "rain_normal": 9.7,
      "frost": 1.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-08"
     },
     {
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 124.2,
-     "rain_normal": 89.6,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 144.8,
+     "rain_normal": 90.8,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "br_ba",
@@ -151,11 +151,11 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 56.3,
-     "rain_normal": 85.8,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 47.4,
+     "rain_normal": 86.7,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "in_gj",
@@ -163,11 +163,11 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
+     "src": "ECMWF ENS + AIFS",
      "rain_p50": 0.0,
      "rain_normal": 2.3,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "au_nsw",
@@ -175,11 +175,11 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 38.3,
-     "rain_normal": 27.7,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 38.2,
+     "rain_normal": 28.6,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     }
    ],
    "summary": "No notable change."
@@ -192,9 +192,9 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 17.63,
-     "d1": 0.02,
-     "d5": -0.54,
+     "now": 17.66,
+     "d1": 0.05,
+     "d5": -0.51,
      "norm1": 0.34,
      "norm5": 0.79,
      "flag1": false,
@@ -207,12 +207,12 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 0.57,
-     "d1": -0.05,
-     "d5": 0.0,
+     "now": 0.58,
+     "d1": -0.04,
+     "d5": 0.01,
      "norm1": 0.05,
      "norm5": 0.09,
-     "flag1": true,
+     "flag1": false,
      "flag5": false,
      "date": "2026-11-24",
      "note": "Mar 27 minus May 27; negative = carry",
@@ -265,9 +265,7 @@
      "kind": "daily"
     }
    ],
-   "flags": [
-    "Front spread (Mar 27/May 27) −0.05 ¢/lb on the day (normal within ±0.05)"
-   ],
+   "flags": [],
    "errors": [],
    "weather": [
     {
@@ -276,11 +274,11 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 197.7,
-     "rain_normal": 98.7,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 207.4,
+     "rain_normal": 95.2,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "br_spw",
@@ -288,11 +286,11 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 162.0,
-     "rain_normal": 75.0,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 156.2,
+     "rain_normal": 73.6,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "br_gos",
@@ -300,11 +298,11 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 173.1,
-     "rain_normal": 97.7,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 175.0,
+     "rain_normal": 94.6,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "br_mgc",
@@ -312,38 +310,38 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 220.4,
-     "rain_normal": 115.3,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 219.3,
+     "rain_normal": 115.4,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "in_sl",
      "name": "Solapur, Maharashtra",
-     "read": null,
+     "read": "wet",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 2.5,
+     "rain_normal": 7.7,
+     "frost": 0.0,
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "th_kk",
      "name": "Khon Kaen, upper Northeast Thailand",
-     "read": null,
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 5.9,
+     "rain_normal": 4.8,
+     "frost": 0.0,
+     "window": "2026-11-25 to 2026-12-09"
     }
    ],
-   "summary": "Front spread (Mar 27/May 27) −0.05 ¢/lb on the day (normal within ±0.05)"
+   "summary": "No notable change."
   },
   {
    "sym": "KC",
@@ -353,13 +351,13 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 264.3,
-     "d1": -3.45,
-     "d5": -17.1,
+     "now": 262.6,
+     "d1": -5.15,
+     "d5": -18.8,
      "norm1": 8.2,
-     "norm5": 18.5,
+     "norm5": 18.6,
      "flag1": false,
-     "flag5": false,
+     "flag5": true,
      "date": "2026-11-24",
      "note": "",
      "kind": "daily"
@@ -368,9 +366,9 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 6.0,
-     "d1": -0.6,
-     "d5": -0.05,
+     "now": 5.2,
+     "d1": -1.4,
+     "d5": -0.85,
      "norm1": 1.4,
      "norm5": 3.7,
      "flag1": false,
@@ -383,14 +381,14 @@
      "item": "ICE certified arabica",
      "unit": "bags",
      "dp": 0,
-     "now": 268614.0,
-     "d1": 43395.0,
-     "d5": 82200.0,
-     "norm1": 7939.0,
-     "norm5": 42750.0,
-     "flag1": true,
+     "now": 272868.0,
+     "d1": 4254.0,
+     "d5": 78345.0,
+     "norm1": 7855.0,
+     "norm5": 46845.0,
+     "flag1": false,
      "flag5": true,
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "note": "ICE daily certified-stock report",
      "kind": "daily"
     },
@@ -427,8 +425,8 @@
     }
    ],
    "flags": [
-    "ICE certified arabica +43,395 bags on the day (normal within ±7,939)",
-    "ICE certified arabica +82,200 bags on the week (normal within ±42,750)"
+    "Flat price (Mar 27) −18.80 ¢/lb on the week (normal within ±18.60)",
+    "ICE certified arabica +78,345 bags on the week (normal within ±46,845)"
    ],
    "errors": [],
    "weather": [
@@ -438,11 +436,11 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 219.0,
-     "rain_normal": 97.2,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 226.4,
+     "rain_normal": 98.1,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "br_cer",
@@ -450,11 +448,11 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 186.2,
-     "rain_normal": 111.9,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 169.0,
+     "rain_normal": 110.0,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "br_zm",
@@ -462,11 +460,11 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 215.2,
-     "rain_normal": 102.8,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 204.4,
+     "rain_normal": 99.5,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "br_es",
@@ -474,26 +472,26 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 106.4,
-     "rain_normal": 105.6,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 61.3,
+     "rain_normal": 101.2,
      "frost": 0.0,
-     "window": "2026-11-24 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "vn_dl",
      "name": "Buon Ma Thuot, Dak Lak",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 49.5,
-     "rain_normal": 24.0,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 45.6,
+     "rain_normal": 24.6,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-08"
+     "window": "2026-11-25 to 2026-12-09"
     }
    ],
-   "summary": "ICE certified arabica +43,395 bags on the day (normal within ±7,939); ICE certified arabica +82,200 bags on the week (normal within ±42,750)"
+   "summary": "Flat price (Mar 27) −18.80 ¢/lb on the week (normal within ±18.60); ICE certified arabica +78,345 bags on the week (normal within ±46,845)"
   },
   {
    "sym": "CC",
@@ -503,9 +501,9 @@
      "item": "Flat price (Mar 27)",
      "unit": "$/t",
      "dp": 0,
-     "now": 5419.0,
-     "d1": 120.0,
-     "d5": 242.0,
+     "now": 5413.0,
+     "d1": 114.0,
+     "d5": 236.0,
      "norm1": 204.0,
      "norm5": 549.0,
      "flag1": false,
@@ -518,9 +516,9 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "$/t",
      "dp": 0,
-     "now": -62.0,
-     "d1": 3.0,
-     "d5": -3.0,
+     "now": -64.0,
+     "d1": 1.0,
+     "d5": -5.0,
      "norm1": 9.0,
      "norm5": 18.0,
      "flag1": false,
@@ -582,38 +580,38 @@
     {
      "region": "ci_sb",
      "name": "Soubré, Nawa (Côte d'Ivoire)",
-     "read": null,
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 22.9,
+     "rain_normal": 24.9,
+     "frost": 0.0,
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "ci_dl",
      "name": "Daloa, Haut-Sassandra (Côte d'Ivoire)",
-     "read": null,
+     "read": "dry",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 7.3,
+     "rain_normal": 15.4,
+     "frost": 0.0,
+     "window": "2026-11-25 to 2026-12-09"
     },
     {
      "region": "gh_ku",
      "name": "Kumasi, Ashanti (Ghana)",
-     "read": null,
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 5.7,
+     "rain_normal": 22.1,
+     "frost": 0.0,
+     "window": "2026-11-25 to 2026-12-09"
     }
    ],
    "summary": "No notable change."
