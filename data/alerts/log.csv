@@ -51,3 +51,6 @@ date,id,market,event,text
 2026-11-24,data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat,Data,cleared,"WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)"
 2026-11-25,wx_br_mt_wet,Cotton,cleared,"Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-24 to 2026-12-08; ECMWF ENS only)"
 2026-11-25,wx_vn_dl_wet,Coffee C,cleared,"Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-25 to 2026-12-08; ECMWF ENS only)"
+2026-11-25,data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_,Data,triggered,"Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-19, limit 3 business days)"
+2026-11-25,data_Options_terminal__cotton__BMR_Com_softs__options__,Data,triggered,"Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)"
+2026-11-25,data_Options_terminal__coffee__BMR_Com_softs__options__,Data,triggered,"Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)"

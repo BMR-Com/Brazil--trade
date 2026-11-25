@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 05:45 UTC",
+ "generated": "2026-11-25 11:17 UTC",
  "asof": "2026-11-24",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
