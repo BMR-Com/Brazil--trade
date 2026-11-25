@@ -376,6 +376,9 @@ def current_season(F, m, rain, stops, par, co_crush, qco):
     for r in out:
         r["cane_mt"], r["sugar_mt"] = rd(r["cane_mt"], 2), rd(r["sugar_mt"], 3)
     ly = F[F.safra == F.safra[F.safra != cur].max()]
+    for v in scen.values():   # % change vs last season: apply to any forecaster's prior-year figure
+        v["cane_yoy_pct"] = rd(100 * (v["cane_mt"] * 1e6 / ly.cane.sum() - 1), 1)
+        v["sugar_yoy_pct"] = rd(100 * (v["sugar_mt"] * 1e6 / ly.sugar.sum() - 1), 1)
     return {"season": cur, "mapa_last": str(last.end.date()), "weather_to": str(asof.date()),
             "to_date": {k: rd(v, 2) for k, v in to_date.items()},
             "to_date_last_year_same_date": {"cane_mt": rd(ly[ly.fn <= last.fn].cane.sum() / 1e6, 2),

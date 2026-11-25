@@ -1,5 +1,5 @@
 {
- "built": "2026-11-25 01:08 UTC",
+ "built": "2026-11-25 01:11 UTC",
  "region": "Brazil Centre-South",
  "unica_last_position": "2026-09-01",
  "current_season": {
@@ -145,15 +145,21 @@
   "season_total": {
    "catchup_30": {
     "cane_mt": 593.0,
-    "sugar_mt": 35.43
+    "sugar_mt": 35.43,
+    "cane_yoy_pct": -2.5,
+    "sugar_yoy_pct": -12.1
    },
    "catchup_50": {
     "cane_mt": 597.2,
-    "sugar_mt": 35.63
+    "sugar_mt": 35.63,
+    "cane_yoy_pct": -1.8,
+    "sugar_yoy_pct": -11.6
    },
    "catchup_70": {
     "cane_mt": 601.3,
-    "sugar_mt": 35.84
+    "sugar_mt": 35.84,
+    "cane_yoy_pct": -1.1,
+    "sugar_yoy_pct": -11.1
    }
   }
  },
