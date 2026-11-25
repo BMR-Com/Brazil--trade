@@ -90,7 +90,7 @@ const SugarWorld = (() => {
           <tr><td class="l">ICE No. 11 Mar 27</td><td class="n">${f2(inp.sb_mar27_c_lb)}¢/lb</td><td class="l">${inp.sb_date}</td></tr>
           <tr><td class="l">ICE No. 5 Mar 27</td><td class="n">$${f1(inp.w_mar27_usd_t)}/t</td><td class="l">${inp.w_date}</td></tr>
           <tr><td class="l">USD/INR (Yahoo)</td><td class="n">${f2(inp.usd_inr)}</td><td class="l">${inp.inr_date}</td></tr>
-          <tr><td class="l">Duty on raws inside the TRQ</td><td class="n">0%</td><td class="l">to 31 Dec 2026</td></tr>
+          <tr><td class="l">Duty on raws inside the TRQ</td><td class="n">0%</td><td class="l">to 31 Mar 2027</td></tr>
           <tr><td class="l">Basic duty outside the TRQ</td><td class="n">${f0(inp.duty_full_pct)}%</td><td class="l">see policy table</td></tr>
           <tr><td class="l">Freight, port, refining</td><td class="n">not included</td><td class="l">no public series</td></tr></table></div>
           ${dom ? `<p>Raw sugar landed under the TRQ before freight and refining is Rs ${f0(P.raw_trq_rs_qtl)}/qtl against a domestic ex-mill quote of Rs ${f0(dom.value)}/qtl (${dom.date}). The gap, Rs ${f0(dom.value - P.raw_trq_rs_qtl)}/qtl, is what freight, refining and the mill margin must fit inside. Outside the TRQ, the 100% duty keeps white imports far above domestic prices.</p>` : ''}
