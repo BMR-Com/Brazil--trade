@@ -111,12 +111,13 @@ def frame(m, rain, stops, par):
                 a = g.end.iloc[i - 1] + pd.Timedelta(days=1)
             days = (b - a).days + 1
             sd, rn = wx_window(rain, stops, w, a, b)
+            rn60 = wx_window(rain, stops, w, a - pd.Timedelta(days=60), a - pd.Timedelta(days=1))[1]
             cane, sug, anh, hyd = inc[i]
             corn = CORN_BNL.get(sf, np.nan) * 1e6 * days / 365
             s_atr = sug * ATR["sugar"]
             e_atr = anh * ATR["anh"] + hyd * ATR["hyd"] - corn * ATR["eth_avg"]
             rows.append(dict(safra=sf, fn=fn_of(e), end=e, days=days, cane=cane, sugar=sug, sd=sd, rain=rn,
-                             sfrac=sd / days, prem=par.prem.loc[a:b].mean(),
+                             sfrac=sd / days, rain_p60=rn60, prem=par.prem.loc[a:b].mean(),
                              prem_l=par.prem.loc[a - pd.Timedelta(days=30):a - pd.Timedelta(days=1)].mean(),
                              kgt=1000 * sug / cane if cane > 0 else np.nan,
                              mix=100 * s_atr / (s_atr + e_atr) if cane > 0 else np.nan,
@@ -163,7 +164,9 @@ def backtest_crush(F):
 
 
 # ---------------------------------------------------------------- quality models (mix, kg/t, ATR)
-QFEATS = {"mix": ["prem_l", "rain"], "kgt": ["prem_l", "rain"], "atr": ["rain"]}
+# ATR: rain in the fortnight (dilution, impurities) and in the 60 days before it (ripening needs a dry spell).
+QFEATS = {"mix": ["prem_l", "rain"], "kgt": ["prem_l", "rain"], "atr": ["rain", "rain_p60"]}
+SUGAR_ATR = ATR["sugar"]        # kg TRS per kg sugar: sugar = cane x ATR x mix / 1.0495
 
 
 def q_fit(tr, tgt, feats):
@@ -202,6 +205,36 @@ def backtest_quality(F, tgt, feats):
     co = q_fit(Q, tgt, feats)
     return {"n": len(Y), "r2": rd(r2(Y, P), 3), "r2_without_weather_price": rd(r2(Y, P0), 3),
             "mae": rd(np.mean(np.abs(np.array(Y) - np.array(P))), 2), "coef": {c: rd(co[c], 3) for c in feats}}, co
+
+
+def q_preds(F, tgt, feats):
+    """Leave-one-season-out real-time predictions keyed by (season, fortnight)."""
+    Q = F[(F.fn >= Q_FN[0]) & (F.fn <= Q_FN[1])].dropna(subset=[tgt] + feats)
+    out = {}
+    for s in sorted(Q.safra.unique()):
+        tr, te = Q[Q.safra != s], Q[Q.safra == s].sort_values("fn")
+        co, res = q_fit(tr, tgt, feats), []
+        for _, r in te.iterrows():
+            b = q_base(co, int(r.fn), r, feats)
+            out[(s, int(r.fn))] = b + q_level(co, res)
+            res.append(r[tgt] - b)
+    return out
+
+
+def backtest_sugar(F, bt_crush):
+    """Half-monthly sugar = predicted crush x predicted ATR x predicted mix / 1.0495 (all out of sample)."""
+    A, M = q_preds(F, "atr", QFEATS["atr"]), q_preds(F, "mix", QFEATS["mix"])
+    act = {(r.safra, int(r.fn)): (r.sugar, r.cane) for r in F.itertuples()}
+    Y, P, P_cane = [], [], []
+    for s, fn, _, _, cp, _ in bt_crush["rows"]:
+        k = (s, fn)
+        if fn < 5 or fn > Q_FN[1] or k not in A or k not in M:
+            continue
+        sug, cane = act[k]
+        Y.append(sug / 1e6); P.append(cp * A[k] * M[k] / 100 / SUGAR_ATR / 1000)
+        P_cane.append(cane / 1e6 * A[k] * M[k] / 100 / SUGAR_ATR / 1000)
+    return {"n": len(Y), "r2": rd(r2(Y, P), 3), "mae_mt": rd(np.mean(np.abs(np.array(Y) - np.array(P))), 3),
+            "r2_given_actual_crush": rd(r2(Y, P_cane), 3)}
 
 
 # ---------------------------------------------------------------- current season
@@ -284,7 +317,7 @@ def current_season(F, m, rain, stops, par, co_crush, qco):
             if np.isfinite(r[t]):
                 resid[t].append(r[t] - q_base(co, int(r.fn), r, feats))
     prem_now = float(par.prem.loc[par.index.max() - pd.Timedelta(days=29):].mean())
-    out = []
+    out, est_rain = [], []          # est_rain: (start, end, rain) of fortnights not fully observed
     for a, b in next_fortnights(last.end):
         fn, days = fn_of(b), (b - a).days + 1
         obs_end = min(asof, b)
@@ -309,6 +342,14 @@ def current_season(F, m, rain, stops, par, co_crush, qco):
         if not np.isfinite(prem_l):
             prem_l = prem_now
         x = {"prem_l": prem_l, "rain": rn_obs if src == "observed" else rn_obs + 3.0 * sd_rest}
+        p0, p1 = a - pd.Timedelta(days=60), a - pd.Timedelta(days=1)
+        x["rain_p60"] = wx_window(rain, stops, w, p0, min(p1, asof))[1] if min(p1, asof) >= p0 else 0.0
+        for e0, e1, er in est_rain:       # days before this fortnight that are not observed yet
+            o0, o1 = max(e0, asof + pd.Timedelta(days=1), p0), min(e1, p1)
+            if o1 >= o0:
+                x["rain_p60"] += er * ((o1 - o0).days + 1) / ((e1 - e0).days + 1)
+        if src != "observed":
+            est_rain.append((a, b, x["rain"]))
         for t, (co, feats) in qco.items():
             if fn <= Q_FN[1]:
                 row[t] = rd(q_base(co, fn, x, feats) + q_level(co, resid[t]), 1)
@@ -318,6 +359,8 @@ def current_season(F, m, rain, stops, par, co_crush, qco):
                 h = pool[pool.safra.isin(last3) & (pool.cane > 1e5)]
                 h = h[np.isfinite(h[t]) & (h[t] > 0) & (h[t] < 200)]
                 row[t] = rd(np.average(h[t], weights=h.cane), 1) if len(h) else None
+        if fn <= Q_FN[1] and row.get("atr") and row.get("mix"):   # sugar = cane x ATR x mix / 1.0495
+            row["kgt"] = rd(row["atr"] * row["mix"] / 100 / SUGAR_ATR, 1)
         row["sugar_mt"] = row["cane_mt"] * (row["kgt"] or 0) / 1000
         out.append(row)
     # Nov-Mar total: model fortnights + catch-up of cane left standing by the wet Sep-Oct
@@ -403,6 +446,7 @@ def main():
     for t, feats in QFEATS.items():
         qstats[t], co = backtest_quality(F, t, feats)
         qco[t] = (co, feats)
+    bt_sugar = backtest_sugar(F, bt_crush)
     cur = current_season(F, m, rain, stops, par, co_crush, qco)
     pub_next, lab_next = outlook_next(F)
     unica = pd.read_csv(ROOT / "sugar/data/unica_reports.csv") if (ROOT / "sugar/data/unica_reports.csv").exists() else None
@@ -419,7 +463,7 @@ def main():
                            "ONI (NOAA)", "USDA PSD sugar history", "NASA POWER rain 1981 on"],
     }
     OUT.write_text(json.dumps(out, indent=1, ensure_ascii=False))
-    print("crush R2", bt_crush["r2_crush"], "| mix", qstats["mix"]["r2"], "| kg/t", qstats["kgt"]["r2"], "| ATR", qstats["atr"]["r2"])
+    print("crush R2", bt_crush["r2_crush"], "| mix", qstats["mix"]["r2"], "| kg/t", qstats["kgt"]["r2"], "| ATR", qstats["atr"]["r2"], "| sugar", bt_sugar["r2"])
     for r in cur["fortnights"][:4]:
         print(r)
     print(cur["season_total"])
@@ -427,11 +471,12 @@ def main():
         lab = {"built": out["built"],
                "skill": {"crush_fortnight_r2": bt_crush["r2_crush"], "mix_fortnight_r2": qstats["mix"]["r2"],
                          "kgt_fortnight_r2": qstats["kgt"]["r2"], "atr_fortnight_r2": qstats["atr"]["r2"],
+                         "sugar_fortnight_r2": bt_sugar["r2"], "sugar_fortnight_r2_given_actual_crush": bt_sugar["r2_given_actual_crush"],
                          "seasons_tested": len(bt_crush["seasons"])},
                "crush": {k: v for k, v in bt_crush.items()},
                "crush_coef": {"stoppage_fraction": rd(co_crush["sfrac"], 3),
                               "profile_log_rate": {k: rd(v, 3) for k, v in co_crush.items() if k.startswith("f_")}},
-               "quality": qstats, "corn_bnl_assumed": CORN_BNL, "next_season": lab_next,
+               "quality": qstats, "sugar": bt_sugar, "corn_bnl_assumed": CORN_BNL, "next_season": lab_next,
                "frame": F.assign(end=F.end.astype(str)).round(3).to_dict(orient="records")}
         Path(a.lab).write_text(json.dumps(lab, indent=1, default=float))
         print("lab ->", a.lab)
