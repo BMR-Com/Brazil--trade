@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-25 14:12 UTC",
- "asof": "2026-11-24",
+ "generated": "2026-11-25 20:39 UTC",
+ "asof": "2026-11-25",
  "today": "2026-11-25",
  "active": [
   {
@@ -26,10 +26,10 @@
   {
    "id": "KC_55lo",
    "market": "Coffee C",
-   "text": "Mar 27 settled 262.60 ¢/lb, a new 55-day low (below 264.65)",
+   "text": "Mar 27 settled 261.55 ¢/lb, a new 55-day low (below 262.60)",
    "on": true,
-   "level": "264.65",
-   "date": "2026-11-24",
+   "level": "262.60",
+   "date": "2026-11-25",
    "new": false,
    "since": "2026-11-24"
   },
@@ -237,7 +237,7 @@
  "watch": [
   {
    "market": "Cotton",
-   "text": "Dec 26/Mar 27 80% of full carry at 4.38¢ Mar 27 over Dec 26 (now +3.35¢, 2026-11-24)"
+   "text": "Dec 26/Mar 27 80% of full carry at 4.40¢ Mar 27 over Dec 26 (now +3.86¢, 2026-11-25)"
   },
   {
    "market": "Cotton",
@@ -249,19 +249,19 @@
   },
   {
    "market": "Cotton",
-   "text": "Mar 27: 55-day high 90.66, 55-day low 78.88 ¢/lb (settle 82.05 on 2026-11-24)"
+   "text": "Mar 27: 55-day high 90.66, 55-day low 78.88 ¢/lb (settle 81.47 on 2026-11-25)"
   },
   {
    "market": "Sugar No. 11",
-   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 17.66 on 2026-11-24)"
+   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 18.08 on 2026-11-25)"
   },
   {
    "market": "Coffee C",
-   "text": "Mar 27: 55-day high 302.25, 55-day low 262.60 ¢/lb (settle 262.60 on 2026-11-24)"
+   "text": "Mar 27: 55-day high 302.25, 55-day low 261.55 ¢/lb (settle 261.55 on 2026-11-25)"
   },
   {
    "market": "Cocoa",
-   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,413 on 2026-11-24)"
+   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,302 on 2026-11-25)"
   },
   {
    "market": "Cotton",
@@ -285,10 +285,10 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.06¢/lb: No. 11 Mar 27 now 17.66¢ (2026-11-24)"
+   "text": "Ethanol parity 15.06¢/lb: No. 11 Mar 27 now 18.08¢ (2026-11-25)"
   }
  ],
- "rules_checked": 163,
+ "rules_checked": 164,
  "pending_email": [
   {
    "id": "KC_certs_week",
