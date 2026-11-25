@@ -4,6 +4,9 @@
 - NASA POWER daily point weather 1981->present for cane regions (rain, tmax, tmin, root-zone wetness)
   -> data/sugar/cane_model/wx/<id>.csv.gz   (Open-Meteo ERA5 archive as fallback)
 - ONI (NOAA CPC) -> data/sugar/cane_model/oni.csv
+- ERA5 daily rain/temperature 1981->present for the India and Thailand points -> data/sugar/cane_model/era5/<id>.csv.gz
+  (second weather source for the India/Thailand annual models; fetched in 10-year pieces, then incrementally)
+- USD/THB daily (FRED DEXTHUS) -> data/sugar/cane_model/fx_thb.csv
 Re-runs fetch only what is missing or stale (weather: last 120 days refreshed).
 """
 import argparse, gzip, io, json, os, sys, time, zipfile
@@ -66,6 +69,8 @@ def get(url, tries=4, timeout=180, **kw):
             if r.ok:
                 return r
             log("http", r.status_code, url[:120])
+            if r.status_code == 429:   # Open-Meteo rate limit: wait out the minute
+                time.sleep(65)
         except Exception as e:
             log("err", type(e).__name__, url[:120])
         time.sleep(5 * (k + 1))
@@ -153,13 +158,56 @@ def weather(only=None):
     return sum(v != "fail" for v in status.values())
 
 
+def era5_hist(ccs=("IN", "TH")):
+    """ERA5 (Open-Meteo archive) for the India and Thailand points, 1981 on."""
+    d5 = os.path.join(OUT, "era5"); os.makedirs(d5, exist_ok=True)
+    end = date.today() - timedelta(days=7)
+    n = 0
+    for pid, (cc, lab, lat, lon, w) in POINTS.items():
+        if cc not in ccs:
+            continue
+        fn = os.path.join(d5, pid + ".csv.gz")
+        old = pd.read_csv(fn, index_col=0, parse_dates=True) if os.path.exists(fn) else None
+        if old is not None and not old.empty and old.index.min() <= pd.Timestamp("1981-01-05"):
+            pieces = [((old.index.max() - pd.Timedelta(days=120)).date(), end)]
+        else:
+            old, pieces = None, [(date(y, 1, 1), min(date(y + 9, 12, 31), end)) for y in range(1981, end.year + 1, 10)]
+        got = []
+        for d0, d1 in pieces:
+            x = openmeteo(lat, lon, d0, d1)
+            if x is None or x.empty:
+                log("era5 fail", pid, d0); got = None; break
+            got.append(x); time.sleep(8)
+        if not got:
+            continue
+        new = pd.concat(got)
+        d = new if old is None else pd.concat([old[old.index < new.index.min()], new])
+        d = d[~d.index.duplicated(keep="last")].sort_index()
+        with gzip.open(fn, "wt") as f:
+            d.round(3).to_csv(f)
+        log("era5", pid, d.index.min().date(), d.index.max().date()); n += 1
+        time.sleep(20)
+    return n
+
+
+def fx_thb():
+    r = get("https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXTHUS", timeout=60)
+    if r is None:
+        return False
+    d = pd.read_csv(io.StringIO(r.text))
+    d.columns = ["date", "thb_per_usd"]
+    d = d[pd.to_numeric(d.thb_per_usd, errors="coerce").notna()]
+    d.to_csv(os.path.join(OUT, "fx_thb.csv"), index=False)
+    log("fx THB", d.date.iloc[0], d.date.iloc[-1]); return True
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--only", default=""); ap.add_argument("--points", default="")
     a = ap.parse_args()
     os.makedirs(WX, exist_ok=True)
-    steps = a.only.split(",") if a.only else ["psd", "oni", "wx"]
+    steps = a.only.split(",") if a.only else ["psd", "oni", "wx", "era5", "fx"]
     ok = True
-    for k, f in (("psd", psd), ("oni", oni)):
+    for k, f in (("psd", psd), ("oni", oni), ("era5", era5_hist), ("fx", fx_thb)):
         if k in steps:
             try:
                 ok &= bool(f())
