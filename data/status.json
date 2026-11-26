@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 03:54 UTC",
+ "generated": "2026-11-26 04:05 UTC",
  "today": "2026-11-25",
  "sources": [
   {
@@ -1061,12 +1061,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": null,
+   "latest": "2026-11-26",
    "cadence": "monthly",
-   "age": null,
+   "age": 0,
    "age_unit": "days",
    "limit": 40,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1095,9 +1095,9 @@
    "used_in": "options terminal"
   }
  ],
- "late": 16,
+ "late": 15,
  "inbox": {
-  "updated": "2026-11-25 22:44 UTC",
+  "updated": "2026-11-26 04:04 UTC",
   "last": [
    {
     "type": "CT_options",

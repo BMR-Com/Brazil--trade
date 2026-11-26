@@ -1,24 +1,6 @@
 {
- "updated": "2026-11-25 22:44 UTC",
+ "updated": "2026-11-26 04:04 UTC",
  "files": [
-  {
-   "file": "CC_2026_11_11-2.pdf",
-   "path": "data/ice_staging/pdfs/CC_2026_11_11-2.pdf",
-   "sym": "CC",
-   "kind": "futures",
-   "date": "2026-11-11",
-   "bytes": 11296,
-   "sha256": "83f4894a495968148b9e0be55bb80fc56d8311f2cac04cc0462c73aa7a1285b3"
-  },
-  {
-   "file": "CC_2026_11_11.pdf",
-   "path": "data/ice_staging/pdfs/CC_2026_11_11.pdf",
-   "sym": "CC",
-   "kind": "options",
-   "date": "2026-11-11",
-   "bytes": 378158,
-   "sha256": "b286aac02761e8d9be1be62247f7417ce2fc5afac409c1c1a4bc8e0adfe8699c"
-  },
   {
    "file": "CC_2026_11_12-2.pdf",
    "path": "data/ice_staging/pdfs/CC_2026_11_12-2.pdf",
@@ -126,24 +108,6 @@
    "date": "2026-11-19",
    "bytes": 284141,
    "sha256": "60bbbacfee6f6ac2c04e2fc1f1ae589fdd20c03481ce39ba721826ff49715665"
-  },
-  {
-   "file": "CT_2026_11_11-2.pdf",
-   "path": "data/ice_staging/pdfs/CT_2026_11_11-2.pdf",
-   "sym": "CT",
-   "kind": "futures",
-   "date": "2026-11-11",
-   "bytes": 13929,
-   "sha256": "b889784cc9289e89e465465ff6d110270bd714a04aebef483cd6a84796519716"
-  },
-  {
-   "file": "CT_2026_11_11.pdf",
-   "path": "data/ice_staging/pdfs/CT_2026_11_11.pdf",
-   "sym": "CT",
-   "kind": "options",
-   "date": "2026-11-11",
-   "bytes": 360578,
-   "sha256": "ee17b6fa1b53b6f9d6c345050eb92a0c7525256051fd5d61dfc50310af9a3fc2"
   },
   {
    "file": "CT_2026_11_12-2.pdf",
@@ -254,24 +218,6 @@
    "sha256": "27d2cce02b09be48ff738027d1c213c1e0bff784ceb7406861bf1cefe64677a4"
   },
   {
-   "file": "KC_2026_11_11-2.pdf",
-   "path": "data/ice_staging/pdfs/KC_2026_11_11-2.pdf",
-   "sym": "KC",
-   "kind": "futures",
-   "date": "2026-11-11",
-   "bytes": 9618,
-   "sha256": "6675c9ba9684491c720b6e32274e4c28ace5ecd8b29540bd9a76f6533c266b86"
-  },
-  {
-   "file": "KC_2026_11_11.pdf",
-   "path": "data/ice_staging/pdfs/KC_2026_11_11.pdf",
-   "sym": "KC",
-   "kind": "options",
-   "date": "2026-11-11",
-   "bytes": 463991,
-   "sha256": "a901826710787a37199cccf33cf799446f49a68c0a63b0f6a1d5125ae3dac2be"
-  },
-  {
    "file": "KC_2026_11_12-2.pdf",
    "path": "data/ice_staging/pdfs/KC_2026_11_12-2.pdf",
    "sym": "KC",
@@ -378,24 +324,6 @@
    "date": "2026-11-19",
    "bytes": 371459,
    "sha256": "35f9d02734ef478a49b23f268d2bca434f25f510a423720ddbefd02cd7e0e549"
-  },
-  {
-   "file": "SB_2026_11_11-2.pdf",
-   "path": "data/ice_staging/pdfs/SB_2026_11_11-2.pdf",
-   "sym": "SB",
-   "kind": "futures",
-   "date": "2026-11-11",
-   "bytes": 12521,
-   "sha256": "c4fe06c5cd0f805756967fb882591aecd02a11613577825ee4893c76e1647de4"
-  },
-  {
-   "file": "SB_2026_11_11.pdf",
-   "path": "data/ice_staging/pdfs/SB_2026_11_11.pdf",
-   "sym": "SB",
-   "kind": "options",
-   "date": "2026-11-11",
-   "bytes": 496667,
-   "sha256": "5b0fc1bb4816ffd215471a11957a031256fd7cc7bf42de8758b6491061feda6a"
   },
   {
    "file": "SB_2026_11_12-2.pdf",
