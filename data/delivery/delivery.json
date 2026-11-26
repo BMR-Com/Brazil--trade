@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 12:47 UTC",
+ "generated": "2026-11-26 15:34 UTC",
  "asof": "2026-11-25",
  "markets": [
   {
@@ -533,100 +533,7 @@
     "unit": "$/t",
     "sign": "front minus next; negative = carry"
    },
-   "oi": {
-    "asof": "2026-11-19",
-    "oi": 3970,
-    "pct_left": 6.5,
-    "band": {
-     "lo": null,
-     "mid": null,
-     "hi": null
-    },
-    "lots_band": {
-     "lo": null,
-     "mid": null,
-     "hi": null
-    },
-    "share_of_all_oi": 2.4,
-    "state": "normal",
-    "k": -3,
-    "K0": 20,
-    "T0": "2026-11-16",
-    "T0_kind": "first notice",
-    "pace_lots_per_day": 4739.0,
-    "typical_at_notice": {
-     "p10": 324.9,
-     "p50": 2356.5,
-     "p90": 19681.6
-    },
-    "path": [
-     {
-      "date": "2026-11-10",
-      "bd_to_notice": 4,
-      "oi": 34972,
-      "chg": -3659,
-      "pct_left": 57.6,
-      "spread": -129.0
-     },
-     {
-      "date": "2026-11-11",
-      "bd_to_notice": 3,
-      "oi": 30619,
-      "chg": -4353,
-      "pct_left": 50.4,
-      "spread": -139.0
-     },
-     {
-      "date": "2026-11-12",
-      "bd_to_notice": 2,
-      "oi": 27666,
-      "chg": -2953,
-      "pct_left": 45.5,
-      "spread": -138.0
-     },
-     {
-      "date": "2026-11-13",
-      "bd_to_notice": 1,
-      "oi": 21366,
-      "chg": -6300,
-      "pct_left": 35.2,
-      "spread": -141.0
-     },
-     {
-      "date": "2026-11-16",
-      "bd_to_notice": 0,
-      "oi": 17268,
-      "chg": -4098,
-      "pct_left": 28.4,
-      "spread": -142.0
-     },
-     {
-      "date": "2026-11-17",
-      "bd_to_notice": -1,
-      "oi": 12222,
-      "chg": -5046,
-      "pct_left": 20.1,
-      "spread": -147.0
-     },
-     {
-      "date": "2026-11-18",
-      "bd_to_notice": -2,
-      "oi": 7063,
-      "chg": -5159,
-      "pct_left": 11.6,
-      "spread": -155.0
-     },
-     {
-      "date": "2026-11-19",
-      "bd_to_notice": -3,
-      "oi": 3970,
-      "chg": -3093,
-      "pct_left": 6.5,
-      "spread": -138.0
-     }
-    ],
-    "src": "ICE daily open interest by contract (exchange report, previous business day)"
-   },
+   "oi": null,
    "certs": null,
    "oncall": null,
    "mm": {
