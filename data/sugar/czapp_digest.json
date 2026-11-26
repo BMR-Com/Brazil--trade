@@ -1,12 +1,24 @@
 {
-  "week_ending": "2026-11-24",
+  "week_ending": "2026-11-26",
   "themes": [
-    "The break below the 18c floor turned into a two-session slide, and Monday's bounce was short covering met by Brazilian mill and grower hedging on a weak real: the real channel is capping rallies while funds still hold a large net long.",
-    "Positioning is the main risk in both directions: specs only trimmed their long into the break, so further liquidation is still the downside path, while producers covering shorts and end-users adding longs show who buys the dips.",
-    "Whites are holding up better than raws, keeping the whites premium firm enough to keep refiners bidding for Brazilian raws on the March and May horizontals.",
-    "The US domestic market stays tight after USDA's November cuts, but it is walled off from No. 11 and its demand looks softer than deliveries suggest; little read-across to world prices."
+    "Raws recovered most of last week's break into the US holiday on renewed speculative buying, which says the fund long was not flushed out and is still the swing factor in both directions.",
+    "Brazilian mill and grower hedging on the weak real keeps meeting rallies, so producer selling remains the cap while sugar still pays clearly over hydrous ethanol in the Centre-South.",
+    "Whites keep outperforming raws, holding the whites premium firm and supporting refinery demand for Brazilian raws on the March and May horizons.",
+    "The US domestic market stays firm after USDA's November production cuts but is walled off from No. 11, with softening user demand the risk later in the season."
   ],
   "items": [
+    {
+      "date": "2026-11-25",
+      "title": "Daily Market Price Updates and Commentary 25th November 2026",
+      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-25th-november-2026/",
+      "takeaway": "Speculative buying lifted raws back to their best level since before last week's break, with some Brazilian mill selling only briefly capping it; whites gained even more and both closed near the highs going into the US holiday."
+    },
+    {
+      "date": "2026-11-24",
+      "title": "Daily Market Price Updates and Commentary 24th November 2026",
+      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-24th-november-2026/",
+      "takeaway": "An inconclusive session: raws edged up as longs tried to steady the market, a late pop was sold into, the March/May inversion eased slightly and whites slipped; little change to the picture after the break."
+    },
     {
       "date": "2026-11-24",
       "title": "US Sugar Prices Hold Firm as Demand Signals Soften",
@@ -24,54 +36,6 @@
       "title": "Daily Market Price Updates and Commentary 23rd November 2026",
       "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-23rd-november-2026/",
       "takeaway": "Raws bounced on short covering and fresh buying after Friday's slide, but mills and growers priced into the strength with the real near 6.0 per dollar, capping the rally; whites outperformed and the March whites premium widened."
-    },
-    {
-      "date": "2026-11-19",
-      "title": "Daily Market Price Updates and Commentary 19th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-19th-november-2026/",
-      "takeaway": "The 18c floor gave way: an early run at the prior low tripped fund sell stops, trade and consumer buying could not absorb it, and long liquidation carried raws and whites sharply lower with little chart support until much lower levels; the whites Mar/May slipped further into discount."
-    },
-    {
-      "date": "2026-11-19",
-      "title": "Late Dry Spell Puts Queensland Cane Harvest Back on Track",
-      "url": "https://www.czapp.com/analyst-insights/late-dry-spell-puts-queensland-cane-harvest-back-on-track/",
-      "takeaway": "A grower's view from far north Queensland: dry weather let mills close out a badly delayed crush, but regrowth in the last cane cut its sugar content sharply, so Australian output and quality end the season on the soft side rather than with a late recovery."
-    },
-    {
-      "date": "2026-11-18",
-      "title": "Daily Market Price Updates and Commentary 18th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-18th-november-2026/",
-      "takeaway": "Raws dipped into the lows on long liquidation and fresh selling, then short covering trimmed the loss; whites eased on thin late volume. Funds did not press the sell side, and spread/premium interest was light."
-    },
-    {
-      "date": "2026-11-18",
-      "title": "Brazil Weather Widens the Near-Term Deficit",
-      "url": "https://www.czapp.com/analyst-insights/brazil-weather-widens-the-near-term-deficit/",
-      "takeaway": "Czarnikow cut its Centre-South and US crops and widened its 2026/27 world deficit, but frames the Brazil change as timing: rain-stopped cane stays in the field and lifts next season's start, so the 2027/28 crop was raised and the old-crop drawdown is cushioned by earlier surpluses."
-    },
-    {
-      "date": "2026-11-17",
-      "title": "Daily Market Price Updates and Commentary 17th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/daily-market-price-updates-and-commentary-17th-november-2026/",
-      "takeaway": "Raws edged up but stayed in the 18c area; consumers would not chase strength and Brazilian growers priced only lightly with the real weak, so trade flow on both sides was thin."
-    },
-    {
-      "date": "2026-11-17",
-      "title": "US Sugar Production Cuts Keep Domestic Prices Supported",
-      "url": "https://www.czapp.com/analyst-insights/us-sugar-production-cuts-keep-domestic-prices-supported/",
-      "takeaway": "USDA's November cuts to both US beet and cane output (pests hit Louisiana and Florida cane) tighten the US domestic balance despite higher imports; users are holding off at high domestic prices, but sellers are not under pressure."
-    },
-    {
-      "date": "2026-11-17",
-      "title": "Futures and Market Data: 17th November 2026",
-      "url": "https://www.czapp.com/analyst-insights/futures-and-market-data-17th-november-2026/",
-      "takeaway": "Speculators trimmed their net long mostly by selling longs while producers lifted hedges; raws stayed in a narrow range near 18c and the March/May roll is under way, with no strong directional call."
-    },
-    {
-      "date": "2026-11-17",
-      "title": "Understanding Sugar Production",
-      "url": "https://www.czapp.com/explainers/understanding-sugar-production/",
-      "takeaway": "Explainer on cane versus beet: cane is tropical, ratooned and milled to raws with bagasse as fuel; beet is temperate, harvested in autumn and processed straight to whites."
     }
   ]
 }
