@@ -10,6 +10,7 @@
   heavy on the Open-Meteo quota, so it runs as its own step and keeps whatever points it finished)
 - USD/THB and USD/INR daily (FRED DEXTHUS, DEXINUS) -> data/sugar/cane_model/fx_thb.csv, fx_inr.csv;
   India CPI (FRED INDCPIALLMINMEI) -> cpi_in.csv
+- FAOSTAT sugar cane area, yield and production by origin -> data/sugar/cane_model/faostat_cane.csv (monthly at most)
 Re-runs fetch only what is missing or stale (weather: last 120 days refreshed).
 """
 import argparse, gzip, io, json, os, sys, time, zipfile
@@ -297,13 +298,67 @@ def fx_thb():
     return ok
 
 
+FAO_AREAS = {"India": "IN", "Thailand": "TH", "Brazil": "BR", "Pakistan": "PK", "Mexico": "MX", "China, mainland": "CN",
+             "Australia": "AU", "Philippines": "PH", "Indonesia": "ID", "Egypt": "EG", "United States of America": "US"}
+
+
+def _fao_tidy(df):
+    """FAOSTAT rows (API or bulk) -> cc, year, area_ha, yield_t_ha, prod_t for sugar cane."""
+    cols = {c.lower(): c for c in df.columns}
+    A, I, E, Y, U, V = (cols.get(k) for k in ("area", "item", "element", "year", "unit", "value"))
+    df = df[df[A].isin(FAO_AREAS) & df[I].astype(str).str.lower().str.startswith("sugar cane")]
+    df = df[df[E].isin(["Area harvested", "Yield", "Production"])].copy()
+    df["v"] = pd.to_numeric(df[V], errors="coerce")
+    unit = df[U].astype(str).str.lower()
+    df.loc[(df[E] == "Yield") & unit.str.startswith("100 g"), "v"] /= 10000.0     # 100 g/ha -> t/ha
+    df.loc[(df[E] == "Yield") & unit.str.startswith("kg"), "v"] /= 1000.0         # kg/ha -> t/ha
+    w = df.pivot_table(index=[A, Y], columns=E, values="v", aggfunc="first").reset_index()
+    w = w.rename(columns={A: "country", Y: "year", "Area harvested": "area_ha", "Yield": "yield_t_ha", "Production": "prod_t"})
+    w["cc"] = w.country.map(FAO_AREAS)
+    return w[["cc", "country", "year", "area_ha", "yield_t_ha", "prod_t"]].sort_values(["cc", "year"])
+
+
+def faostat():
+    """FAOSTAT sugar cane area harvested, yield and production (QCL), main origins, 1961->latest
+    -> data/sugar/cane_model/faostat_cane.csv. FAO updates once a year, so it refetches at most monthly."""
+    fn = os.path.join(OUT, "faostat_cane.csv")
+    if os.path.exists(fn) and time.time() - os.path.getmtime(fn) < 30 * 86400 and os.path.getsize(fn) > 1000:
+        log("faostat: fresh"); return True
+    w = None
+    yrs = ",".join(str(y) for y in range(1961, date.today().year + 1))
+    r = get("https://fenixservices.fao.org/faostat/api/v1/en/data/QCL?item=156&year=" + yrs +
+            "&output_type=csv&show_flags=false&null_values=false", timeout=300, tries=3)
+    if r is not None and len(r.text) > 1000:
+        try:
+            w = _fao_tidy(pd.read_csv(io.StringIO(r.text)))
+        except Exception as e:
+            log("faostat api parse", e)
+    if w is None or w.empty:
+        r = get("https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip",
+                timeout=900, tries=2)
+        if r is None:
+            return False
+        z = zipfile.ZipFile(io.BytesIO(r.content))
+        name = [n for n in z.namelist() if n.lower().endswith(".csv") and "all_data" in n.lower()][0]
+        parts = []
+        for ch in pd.read_csv(z.open(name), encoding="latin-1", chunksize=500000, low_memory=False):
+            ic = [c for c in ch.columns if c.lower() == "item"][0]
+            parts.append(ch[ch[ic].astype(str).str.lower().str.startswith("sugar cane")])
+        w = _fao_tidy(pd.concat(parts))
+    if w is None or w.empty:
+        return False
+    w.to_csv(fn, index=False)
+    log("faostat", w.shape, w.year.min(), w.year.max(), sorted(w.cc.dropna().unique()))
+    return True
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--only", default=""); ap.add_argument("--points", default="")
     a = ap.parse_args()
     os.makedirs(WX, exist_ok=True)
-    steps = a.only.split(",") if a.only else ["psd", "oni", "wx", "chirps", "fx"]
+    steps = a.only.split(",") if a.only else ["psd", "oni", "wx", "chirps", "fx", "fao"]
     ok = True
-    for k, f in (("psd", psd), ("oni", oni), ("chirps", chirps_hist), ("era5", era5_hist), ("fx", fx_thb)):
+    for k, f in (("psd", psd), ("oni", oni), ("chirps", chirps_hist), ("era5", era5_hist), ("fx", fx_thb), ("fao", faostat)):
         if k in steps:
             try:
                 ok &= bool(f())
