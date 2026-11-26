@@ -3,8 +3,13 @@
 pages during each delivery window. Standard library only; runs in .github/workflows/softs_deliveries.yml.
 
 ICE publishes no free per-firm delivery file for these contracts. What reaches the public:
+  CT, KC  The PRICE Futures Group's daily Softs Report (blog.pricegroup.com, robots.txt allows all): in its Cotton and
+      Coffee sections, "ICE said that N notices were posted for delivery against <Month> futures and that total
+      deliveries for the month are now N contracts". Posts are found from the blog's date archive pages
+      (/YYYY/MM/DD/), because a post's slug can carry the previous day's date. Counts only, no firm names.
   CT  Fibre2Fashion's daily ICE cotton report: notices issued per day, running totals, sometimes the issuing firm.
   KC  StoneX's Daily Coffee Report: notices per day and running totals, counts of issuers/stoppers (no names).
+      (Both refuse the job's requests from GitHub's runners as of Nov 2026: 405 and 403. Kept in case that changes.)
   WS  Reuters tender stories mirrored by NovaCana / ChiniMandi / Business Recorder: total tonnes, origins, and the
       deliverers and receivers named by traders (preliminary) or in the exchange data (clearing members).
 The spot-month open interest that brackets each delivery comes from the desk's own daily ICE data and is added by
@@ -18,6 +23,7 @@ Writes <dir>/auto/<p>_auto_sources.csv and <p>_auto_firms.csv (entry=auto; hand-
   python pipelines/softs_deliveries.py              # due check, then capture every market in its window
   python pipelines/softs_deliveries.py --due        # print window state only
   python pipelines/softs_deliveries.py --contract CTH27 --force
+  python pipelines/softs_deliveries.py --contract CTZ26,KCZ26,CTN26 --force   # several, e.g. a backfill
   python pipelines/softs_deliveries.py --selftest
 """
 import html
@@ -173,6 +179,80 @@ def parse_ws(t, month):
     return {"figs": figs, "firms": firms, "official": official} if figs or firms else None
 
 
+# ---------------------------------------------------------------- PRICE Futures Group Softs Report (CT and KC)
+PG = "https://blog.pricegroup.com"
+PG_SEC = {"CT": "COTTON", "KC": "COFFEE"}
+_pg_cache = {}
+
+
+def _pg_get(u):
+    if u not in _pg_cache:
+        try:
+            _pg_cache[u] = (get(u), None)
+        except Exception as e:
+            _pg_cache[u] = (None, f"{u}: {e}")
+    return _pg_cache[u]
+
+
+def full_text(page):
+    """Every text node of the page, headings included (text_of keeps only <p>, and the section names may not be in one)."""
+    page = re.sub(r"(?is)<(script|style|noscript|svg)[^>]*>.*?</\1>", " ", page)
+    page = re.sub(r"(?is)<(br|/p|/h\d|/div|/li|/strong|/b)\b[^>]*>", " \n ", page)
+    return re.sub(r"[ \t\r\f\v]+", " ", html.unescape(re.sub(r"(?s)<[^>]+>", " ", page))).strip()
+
+
+def pg_sections(t):
+    """Split a Softs Report into {COTTON: text, FCOJ: ..., COFFEE: ..., SUGAR: ..., COCOA: ...}."""
+    pat = r"\b(COTTON|FCOJ|COFFEE|SUGAR|COCOA)\s+General Comments"
+    hits = list(re.finditer(pat, t))
+    if len(hits) < 2:
+        hits = list(re.finditer(r"\b(Cotton|FCOJ|Coffee|Sugar|Cocoa)\W{0,20}General Comments", t, re.I))
+    out = {}
+    for i, h in enumerate(hits):
+        k = h.group(1).upper()
+        out.setdefault(k, t[h.start(): hits[i + 1].start() if i + 1 < len(hits) else len(t)])
+    return out
+
+
+def parse_pg(sec, month):
+    """Daily notices and the running total for the month, from one Softs Report section."""
+    figs = []
+    mon = EN[month]
+    for s in sentences(re.sub(r"\s+", " ", sec)):
+        if re.search(r"London|ICE Europe|Robusta", s, re.I):
+            continue
+        d = re.search(r"(\d[\d,]*) (?:delivery )?notices were (?:posted|tendered|issued) for delivery against (\w+) (?:futures|contracts?)", s, re.I)
+        if not d or d.group(2).lower() != mon:
+            continue
+        r = re.search(r"total deliveries for the month are now (\d[\d,]*)", s, re.I)
+        daily, run = n(d.group(1)), n(r.group(1)) if r else None
+        k = "fnd" if run is not None and daily == run and daily else "daily"
+        figs.append({"kind": k, "lots": daily, "note": s[:240]})
+        if run is not None:
+            figs.append({"kind": "running", "lots": run, "note": s[:240]})
+    return {"figs": figs, "firms": [], "official": False} if figs else None
+
+
+def pg_reports(a, b):
+    """(date, url, page) for each Softs Report posted from a to b, found through the date archive pages."""
+    out, errs, d = [], [], a
+    while d <= b:
+        if d.weekday() < 5:
+            arch, e = _pg_get(f"{PG}/{d:%Y/%m/%d}/")
+            if e:
+                if "404" not in e:
+                    errs.append(e)
+            else:
+                for h in dict.fromkeys(re.findall(rf'href="({re.escape(PG)}/{d:%Y/%m/%d}/softs-report-[\d-]+/?)"', arch)):
+                    page, e = _pg_get(h)
+                    if e:
+                        errs.append(e)
+                    else:
+                        out.append((d, h, page))
+        d += timedelta(days=1)
+    return out, errs
+
+
 PARSE = {"CT": parse_ct, "KC": parse_kc, "WS": parse_ws}
 
 SAMPLES = [
@@ -188,8 +268,28 @@ SAMPLES = [
 ]
 
 
+PG_SAMPLE = ("COTTON General Comments: Cotton was higher again yesterday. Overnight News: ICE said that 24 notices were posted for delivery "
+             "against December futures and that total deliveries for the month are now 262 contracts. Chart Trends: Trends in Cotton are up. "
+             "FCOJ General Comments: FCOJ was lower. Overnight News: ICE said that 0 contracts were posted for delivery against January futures. "
+             "COFFEE General Comments: New York and London were lower. Overnight News: ICE NY said that 0 notices were tendered for delivery against "
+             "December futures and that total deliveries for the month are now 10 contracts. "
+             "SUGAR General Comments: New York and London were higher. COCOA General Comments: Cocoa was lower. Overnight News: ICE NY said that 182 "
+             "notices were posted for delivery against December contracts and that total deliveries for the month are now 567 contracts.")
+
+
 def selftest():
     bad = 0
+    secs = pg_sections(PG_SAMPLE)
+    for sym, want in (("CT", [("daily", 24), ("running", 262)]), ("KC", [("daily", 0), ("running", 10)])):
+        r = parse_pg(secs.get(PG_SEC[sym], ""), 12)
+        got = [(f["kind"], f["lots"]) for f in (r or {}).get("figs", [])]
+        ok = got == want and parse_pg(secs.get(PG_SEC[sym], ""), 3) is None
+        bad += not ok
+        print("ok " if ok else "BAD", sym, "pricegroup", got)
+    r = parse_pg("COTTON General Comments: x. ICE said that 35 notices were posted for delivery against March futures and that total deliveries for the month are now 35 contracts.", 3)
+    ok = r and [(f["kind"], f["lots"]) for f in r["figs"]] == [("fnd", 35), ("running", 35)]
+    bad += not ok
+    print("ok " if ok else "BAD", "CT", "pricegroup first day", r and r["figs"])
     for sym, m, t, (k, lots) in SAMPLES:
         r = PARSE[sym](t, m)
         f = r["figs"][0] if r and r["figs"] else {}
@@ -225,15 +325,43 @@ def candidates(sym):
     return urls[:40], errs
 
 
-def capture(sym, c, l, since):
+def capture(sym, c, l, since, until=None):
     M = MARKETS[sym]
     A = ROOT / M["dir"] / "auto"
     p = M["p"]
     S, F = load(A / f"{p}_auto_sources.csv"), load(A / f"{p}_auto_firms.csv")
     seen = {r["url"] for r in S} | {r["url"] for r in F}
     st = {"contract": c, "ltd": str(l), "checked": [], "found": [], "errors": []}
-    urls, st["errors"] = candidates(sym)
     added = str(date.today())
+
+    def add(r, u, src, sdate, fig):
+        for f in r["figs"]:
+            S.append({"contract": c, "expiry_date": str(l), "figure": fig, "kind": f["kind"], "lots": fmt(f.get("lots")), "tonnes": fmt(f.get("tonnes")),
+                      "lots_derived": "", "origins": "", "ports": "", "expiry_settle_cents": "",
+                      "notes": "parsed by the capture job; check against the article: " + f["note"], "source": src,
+                      "source_date": sdate, "url": u, "entry": "auto", "added": added})
+        for f in r["firms"]:
+            F.append({"contract": c, "expiry_date": str(l), "side": f["side"], "firm": norm(f["firm"], f["type"]), "firm_type": f["type"],
+                      "lots": fmt(f.get("lots")), "tonnes": fmt(f.get("tonnes")), "share_pct": "", "rank_text": f["rank_text"],
+                      "figure": f.get("figure", fig), "source": src, "source_date": sdate, "url": u, "entry": "auto", "added": added})
+        st["found"].append({"url": u, "figs": [(f["kind"], f.get("lots"), f.get("tonnes")) for f in r["figs"]], "firms": [(f["firm"], f["side"]) for f in r["firms"]]})
+
+    if sym in PG_SEC:
+        reps, errs = pg_reports(since, min(until or date.today(), date.today()))
+        st["errors"] += errs
+        for d, u, page in reps:
+            st["checked"].append(u)
+            if u in seen:
+                continue
+            secs = pg_sections(full_text(page))
+            if PG_SEC[sym] not in secs:
+                st["errors"].append(f"{u}: no {PG_SEC[sym].title()} section found")
+                continue
+            r = parse_pg(secs[PG_SEC[sym]], MON[c[-3]])
+            if r:
+                add(r, u, "pricegroup.com Softs Report", str(d), "approximate")
+    urls, e2 = candidates(sym)
+    st["errors"] += e2
     for u in urls:
         if u in seen:
             continue
@@ -251,16 +379,7 @@ def capture(sym, c, l, since):
             continue
         src = urlparse(u).netloc.replace("www.", "")
         fig = "official" if r["official"] else "approximate" if sym != "WS" else "preliminary"
-        for f in r["figs"]:
-            S.append({"contract": c, "expiry_date": str(l), "figure": fig, "kind": f["kind"], "lots": fmt(f.get("lots")), "tonnes": fmt(f.get("tonnes")),
-                      "lots_derived": "", "origins": "", "ports": "", "expiry_settle_cents": "",
-                      "notes": "parsed by the capture job; check against the article: " + f["note"], "source": src,
-                      "source_date": pdte or added, "url": u, "entry": "auto", "added": added})
-        for f in r["firms"]:
-            F.append({"contract": c, "expiry_date": str(l), "side": f["side"], "firm": norm(f["firm"], f["type"]), "firm_type": f["type"],
-                      "lots": fmt(f.get("lots")), "tonnes": fmt(f.get("tonnes")), "share_pct": "", "rank_text": f["rank_text"],
-                      "figure": f.get("figure", fig), "source": src, "source_date": pdte or added, "url": u, "entry": "auto", "added": added})
-        st["found"].append({"url": u, "figs": [(f["kind"], f.get("lots"), f.get("tonnes")) for f in r["figs"]], "firms": [(f["firm"], f["side"]) for f in r["firms"]]})
+        add(r, u, src, pdte or added, fig)
     save(A / f"{p}_auto_sources.csv", S, SRC)
     save(A / f"{p}_auto_firms.csv", F, FIRM_COLS)
     return st
@@ -272,19 +391,21 @@ def main():
         return
     today = date.today()
     if "--contract" in sys.argv:
-        c = sys.argv[sys.argv.index("--contract") + 1].upper()
-        sym = "WS" if c.startswith("W") else c[:2]
-        a, b, l = window(sym, c, today)
-        todo = [(sym, c, l)]
+        todo = []
+        for c in sys.argv[sys.argv.index("--contract") + 1].upper().replace(" ", "").split(","):
+            sym = "WS" if c.startswith("W") else c[:2]
+            todo.append((sym, c, window(sym, c, today)[2]))
     else:
         todo = due(today)
     if "--due" in sys.argv or not todo:
         print("due=" + ("yes " + " ".join(c for _, c, _ in todo) if todo else "no"))
         return
     for sym, c, l in todo:
-        a, _, _ = window(sym, c, today)
+        a, b, _ = window(sym, c, today)
         try:
-            st = capture(sym, c, l, a - timedelta(days=1))
+            # the archive walk runs to the delivery month's last business day, so a forced run after the month gets late notices too
+            end = max(b, _bd.month_bds(2000 + int(c[-2:]), MON[c[-3]])[-1])
+            st = capture(sym, c, l, a - timedelta(days=1), next_bd(end, 1))
         except Exception as e:  # one market's failure must not stop the others
             st = {"contract": c, "errors": [f"capture failed: {e}"]}
         st["run_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
