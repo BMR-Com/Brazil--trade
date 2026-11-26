@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-26 04:58 UTC",
+ "generated": "2026-11-26 05:02 UTC",
  "asof": "2026-11-25",
- "today": "2026-11-25",
+ "today": "2026-11-26",
  "active": [
   {
    "id": "CT_certs_week",
@@ -22,16 +22,6 @@
    "date": "2026-11-25",
    "new": false,
    "since": "2026-11-17"
-  },
-  {
-   "id": "KC_55lo",
-   "market": "Coffee C",
-   "text": "Mar 27 settled 261.55 ¢/lb, a new 55-day low (below 262.60)",
-   "on": true,
-   "level": "262.60",
-   "date": "2026-11-25",
-   "new": false,
-   "since": "2026-11-24"
   },
   {
    "id": "SB_mm_hi",
@@ -259,19 +249,19 @@
   },
   {
    "market": "Cotton",
-   "text": "Mar 27: 55-day high 90.66, 55-day low 78.88 ¢/lb (settle 81.47 on 2026-11-25)"
+   "text": "Mar 27: 55-day high 90.66, 55-day low 78.88 ¢/lb (settle 82.97 on 2026-11-25)"
   },
   {
    "market": "Sugar No. 11",
-   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 18.08 on 2026-11-25)"
+   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 18.34 on 2026-11-25)"
   },
   {
    "market": "Coffee C",
-   "text": "Mar 27: 55-day high 302.25, 55-day low 261.55 ¢/lb (settle 261.55 on 2026-11-25)"
+   "text": "Mar 27: 55-day high 302.25, 55-day low 262.60 ¢/lb (settle 270.00 on 2026-11-25)"
   },
   {
    "market": "Cocoa",
-   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,302 on 2026-11-25)"
+   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,434 on 2026-11-25)"
   },
   {
    "market": "Cotton",
@@ -295,7 +285,7 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.27¢/lb: No. 11 Mar 27 now 18.08¢ (2026-11-25)"
+   "text": "Ethanol parity 15.27¢/lb: No. 11 Mar 27 now 18.34¢ (2026-11-25)"
   }
  ],
  "rules_checked": 164,
@@ -466,16 +456,6 @@
    "text": "Certs profile and delivery economics (built from the ICE files): late (latest 2026-11-19, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "KC_55lo",
-   "market": "Coffee C",
-   "text": "Mar 27 settled 264.30 ¢/lb, a new 55-day low (below 264.65)",
-   "on": true,
-   "level": "264.65",
    "date": "2026-11-24",
    "new": true,
    "since": "2026-11-24"

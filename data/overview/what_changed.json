@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 04:57 UTC",
+ "generated": "2026-11-26 05:01 UTC",
  "asof": "2026-11-25",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
@@ -15,13 +15,13 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 81.47,
-     "d1": -0.58,
-     "d5": 2.59,
+     "now": 82.97,
+     "d1": 0.92,
+     "d5": 4.09,
      "norm1": 1.14,
      "norm5": 3.21,
      "flag1": false,
-     "flag5": false,
+     "flag5": true,
      "date": "2026-11-25",
      "note": "",
      "kind": "daily"
@@ -119,6 +119,7 @@
     }
    ],
    "flags": [
+    "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.21)",
     "Spot basis (US average) −47 pts on the day (normal within ±0)",
     "Spot basis (US average) −54 pts on the week (normal within ±11)"
    ],
@@ -185,7 +186,7 @@
      "window": "2026-11-26 to 2026-12-10"
     }
    ],
-   "summary": "Spot basis (US average) −47 pts on the day (normal within ±0); Spot basis (US average) −54 pts on the week (normal within ±11)"
+   "summary": "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.21); Spot basis (US average) −47 pts on the day (normal within ±0); Spot basis (US average) −54 pts on the week (normal within ±11)"
   },
   {
    "sym": "SB",
@@ -195,9 +196,9 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 18.08,
-     "d1": 0.42,
-     "d5": 0.04,
+     "now": 18.34,
+     "d1": 0.68,
+     "d5": 0.3,
      "norm1": 0.34,
      "norm5": 0.79,
      "flag1": true,
@@ -210,9 +211,9 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 0.63,
-     "d1": 0.05,
-     "d5": 0.07,
+     "now": 0.6,
+     "d1": 0.02,
+     "d5": 0.04,
      "norm1": 0.05,
      "norm5": 0.09,
      "flag1": false,
@@ -269,7 +270,7 @@
     }
    ],
    "flags": [
-    "Flat price (Mar 27) +0.42 ¢/lb on the day (normal within ±0.34)"
+    "Flat price (Mar 27) +0.68 ¢/lb on the day (normal within ±0.34)"
    ],
    "errors": [],
    "weather": [
@@ -346,7 +347,7 @@
      "window": "2026-11-26 to 2026-12-10"
     }
    ],
-   "summary": "Flat price (Mar 27) +0.42 ¢/lb on the day (normal within ±0.34)"
+   "summary": "Flat price (Mar 27) +0.68 ¢/lb on the day (normal within ±0.34)"
   },
   {
    "sym": "KC",
@@ -356,9 +357,9 @@
      "item": "Flat price (Mar 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 261.55,
-     "d1": -1.05,
-     "d5": -13.9,
+     "now": 270.0,
+     "d1": 7.4,
+     "d5": -5.45,
      "norm1": 8.2,
      "norm5": 18.6,
      "flag1": false,
@@ -371,12 +372,12 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "¢/lb",
      "dp": 2,
-     "now": 5.0,
-     "d1": -0.2,
-     "d5": -1.7,
-     "norm1": 1.4,
+     "now": 6.9,
+     "d1": 1.7,
+     "d5": 0.2,
+     "norm1": 1.45,
      "norm5": 3.7,
-     "flag1": false,
+     "flag1": true,
      "flag5": false,
      "date": "2026-11-25",
      "note": "Mar 27 minus May 27; negative = carry",
@@ -430,6 +431,7 @@
     }
    ],
    "flags": [
+    "Front spread (Mar 27/May 27) +1.70 ¢/lb on the day (normal within ±1.45)",
     "ICE certified arabica +10,168 bags on the day (normal within ±8,262)",
     "ICE certified arabica +81,763 bags on the week (normal within ±48,543)"
    ],
@@ -496,7 +498,7 @@
      "window": "2026-11-26 to 2026-12-10"
     }
    ],
-   "summary": "ICE certified arabica +10,168 bags on the day (normal within ±8,262); ICE certified arabica +81,763 bags on the week (normal within ±48,543)"
+   "summary": "Front spread (Mar 27/May 27) +1.70 ¢/lb on the day (normal within ±1.45); ICE certified arabica +10,168 bags on the day (normal within ±8,262); ICE certified arabica +81,763 bags on the week (normal within ±48,543)"
   },
   {
    "sym": "CC",
@@ -506,9 +508,9 @@
      "item": "Flat price (Mar 27)",
      "unit": "$/t",
      "dp": 0,
-     "now": 5302.0,
-     "d1": -111.0,
-     "d5": 300.0,
+     "now": 5434.0,
+     "d1": 21.0,
+     "d5": 432.0,
      "norm1": 204.0,
      "norm5": 549.0,
      "flag1": false,
@@ -521,9 +523,9 @@
      "item": "Front spread (Mar 27/May 27)",
      "unit": "$/t",
      "dp": 0,
-     "now": -64.0,
-     "d1": 0.0,
-     "d5": -10.0,
+     "now": -57.0,
+     "d1": 7.0,
+     "d5": -3.0,
      "norm1": 9.0,
      "norm5": 18.0,
      "flag1": false,
