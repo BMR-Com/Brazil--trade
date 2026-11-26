@@ -1,0 +1,199 @@
+{
+ "sec": {
+  "run": "2026-11-26T07:40Z",
+  "log": [
+   {
+    "step": "sec",
+    "url": "https://www.sec.gov/files/company_tickers.json",
+    "result": 403
+   }
+  ]
+ },
+ "census": {
+  "run": "2026-11-26T07:40Z",
+  "log": [
+   {
+    "step": "census",
+    "url": "https://api.census.gov/data/timeseries/eits/mrts?get=cell_value,data_type_code,time_slot_id,category_code,seasonally_adj,error_data&for=us:*&time=from+1999",
+    "result": 200
+   },
+   {
+    "step": "census",
+    "result": "failed JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+   }
+  ]
+ },
+ "yahoo": {
+  "run": "2026-11-26T07:40Z",
+  "log": [
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ITX.MC?symbol=ITX.MC&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "ITX.MC",
+    "result": "18 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/HM-B.ST?symbol=HM-B.ST&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "HM-B.ST",
+    "result": "18 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/9983.T?symbol=9983.T&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "9983.T",
+    "result": "18 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/NXT.L?symbol=NXT.L&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "NXT.L",
+    "result": "11 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ABF.L?symbol=ABF.L&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "ABF.L",
+    "result": "12 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/2313.HK?symbol=2313.HK&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "2313.HK",
+    "result": "11 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/NESN.SW?symbol=NESN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "NESN.SW",
+    "result": "11 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/JDEP.AS?symbol=JDEP.AS&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "JDEP.AS",
+    "result": "0 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/BARN.SW?symbol=BARN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "BARN.SW",
+    "result": "12 values"
+   },
+   {
+    "step": "yahoo",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/LISN.SW?symbol=LISN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795678816",
+    "result": 200
+   },
+   {
+    "step": "yahoo",
+    "symbol": "LISN.SW",
+    "result": "10 values"
+   }
+  ]
+ },
+ "jca": {
+  "run": "2026-11-26T07:40Z",
+  "log": [
+   {
+    "step": "jca",
+    "url": "https://coffee.ajca.or.jp/data/",
+    "result": 200
+   },
+   {
+    "step": "jca",
+    "url": "https://coffee.ajca.or.jp/english/",
+    "result": 200
+   },
+   {
+    "step": "jca",
+    "url": "https://coffee.ajca.or.jp/wordpress/wp-content/uploads/2026/10/j-zaiko202609.pdf",
+    "result": 200
+   },
+   {
+    "step": "jca",
+    "url": "https://coffee.ajca.or.jp/wordpress/wp-content/uploads/2026/10/j-zaiko202609.pdf",
+    "result": "parsed 9 months to 2026-09"
+   }
+  ]
+ },
+ "ecf": {
+  "run": "2026-11-26T07:40Z",
+  "log": [
+   {
+    "step": "ecf",
+    "url": "https://www.ecf-coffee.org/category/publications/stocks/",
+    "result": 200
+   },
+   {
+    "step": "ecf",
+    "result": "12 PDF links",
+    "links": [
+     "https://www.ecf-coffee.org/wp-content/uploads/2020/09/2016-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2020/09/2017-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2020/09/2018-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2020/09/2019-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2021/03/2020-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2021/11/2021-Stocks-European-Ports_updated.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2023/01/2022-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2024/01/2023-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2025/01/2024-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2026/01/2025-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2026/06/2026-Stocks-European-Ports.pdf",
+     "https://www.ecf-coffee.org/wp-content/uploads/2026/10/2026-Stocks-European-Ports.pdf"
+    ]
+   },
+   {
+    "step": "ecf",
+    "url": "https://www.ecf-coffee.org/wp-content/uploads/2026/01/2025-Stocks-European-Ports.pdf",
+    "result": 200
+   },
+   {
+    "step": "ecf",
+    "url": "https://www.ecf-coffee.org/wp-content/uploads/2026/06/2026-Stocks-European-Ports.pdf",
+    "result": 200
+   },
+   {
+    "step": "ecf",
+    "url": "https://www.ecf-coffee.org/wp-content/uploads/2026/10/2026-Stocks-European-Ports.pdf",
+    "result": 200
+   }
+  ]
+ }
+}

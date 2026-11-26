@@ -1,0 +1,122 @@
+symbol,name,group,type,end,period,currency,value
+2313.HK,Shenzhou International,cotton,annualInventory,2022-12-31,12M,CNY,6260803000.0
+2313.HK,Shenzhou International,cotton,annualInventory,2023-12-31,12M,CNY,6124735000.0
+2313.HK,Shenzhou International,cotton,annualInventory,2024-12-31,12M,CNY,6884954000.0
+2313.HK,Shenzhou International,cotton,annualInventory,2025-12-31,12M,CNY,6709855000.0
+2313.HK,Shenzhou International,cotton,annualTotalRevenue,2022-12-31,12M,CNY,27781412000.0
+2313.HK,Shenzhou International,cotton,annualTotalRevenue,2023-12-31,12M,CNY,24969792000.0
+2313.HK,Shenzhou International,cotton,annualTotalRevenue,2024-12-31,12M,CNY,28662938000.0
+2313.HK,Shenzhou International,cotton,annualTotalRevenue,2025-12-31,12M,CNY,30993732000.0
+2313.HK,Shenzhou International,cotton,quarterlyInventory,2025-06-30,3M,CNY,6989920000.0
+2313.HK,Shenzhou International,cotton,quarterlyInventory,2025-12-31,3M,CNY,6709855000.0
+2313.HK,Shenzhou International,cotton,quarterlyInventory,2026-06-30,3M,CNY,7316693000.0
+9983.T,Fast Retailing,cotton,annualInventory,2022-08-31,12M,JPY,485928000000.0
+9983.T,Fast Retailing,cotton,annualInventory,2023-08-31,12M,JPY,449254000000.0
+9983.T,Fast Retailing,cotton,annualInventory,2024-08-31,12M,JPY,474460000000.0
+9983.T,Fast Retailing,cotton,annualInventory,2025-08-31,12M,JPY,510958000000.0
+9983.T,Fast Retailing,cotton,annualTotalRevenue,2022-08-31,12M,JPY,2301122000000.0
+9983.T,Fast Retailing,cotton,annualTotalRevenue,2023-08-31,12M,JPY,2766557000000.0
+9983.T,Fast Retailing,cotton,annualTotalRevenue,2024-08-31,12M,JPY,3103836000000.0
+9983.T,Fast Retailing,cotton,annualTotalRevenue,2025-08-31,12M,JPY,3400539000000.0
+9983.T,Fast Retailing,cotton,quarterlyInventory,2025-05-31,3M,JPY,448931000000.0
+9983.T,Fast Retailing,cotton,quarterlyInventory,2025-08-31,3M,JPY,510958000000.0
+9983.T,Fast Retailing,cotton,quarterlyInventory,2025-11-30,3M,JPY,546085000000.0
+9983.T,Fast Retailing,cotton,quarterlyInventory,2026-02-28,3M,JPY,501144000000.0
+9983.T,Fast Retailing,cotton,quarterlyInventory,2026-05-31,3M,JPY,497659000000.0
+9983.T,Fast Retailing,cotton,quarterlyTotalRevenue,2025-05-31,3M,JPY,826510000000.0
+9983.T,Fast Retailing,cotton,quarterlyTotalRevenue,2025-08-31,3M,JPY,783831000000.0
+9983.T,Fast Retailing,cotton,quarterlyTotalRevenue,2025-11-30,3M,JPY,1027745000000.0
+9983.T,Fast Retailing,cotton,quarterlyTotalRevenue,2026-02-28,3M,JPY,1027482000000.0
+9983.T,Fast Retailing,cotton,quarterlyTotalRevenue,2026-05-31,3M,JPY,1009955000000.0
+ABF.L,ABF (Primark),cotton,annualInventory,2023-09-30,12M,GBP,3306000000.0
+ABF.L,ABF (Primark),cotton,annualInventory,2024-08-31,12M,GBP,3036000000.0
+ABF.L,ABF (Primark),cotton,annualInventory,2025-08-31,12M,GBP,3289000000.0
+ABF.L,ABF (Primark),cotton,annualInventory,2026-08-31,12M,GBP,3187000000.0
+ABF.L,ABF (Primark),cotton,annualTotalRevenue,2023-09-30,12M,GBP,19750000000.0
+ABF.L,ABF (Primark),cotton,annualTotalRevenue,2024-08-31,12M,GBP,20073000000.0
+ABF.L,ABF (Primark),cotton,annualTotalRevenue,2025-08-31,12M,GBP,19459000000.0
+ABF.L,ABF (Primark),cotton,annualTotalRevenue,2026-08-31,12M,GBP,19582000000.0
+ABF.L,ABF (Primark),cotton,quarterlyInventory,2025-02-28,3M,GBP,3321000000.0
+ABF.L,ABF (Primark),cotton,quarterlyInventory,2025-08-31,3M,GBP,3289000000.0
+ABF.L,ABF (Primark),cotton,quarterlyInventory,2026-02-28,3M,GBP,3420000000.0
+ABF.L,ABF (Primark),cotton,quarterlyInventory,2026-08-31,3M,GBP,3187000000.0
+BARN.SW,Barry Callebaut,cocoa,annualInventory,2023-08-31,12M,CHF,2925732000.0
+BARN.SW,Barry Callebaut,cocoa,annualInventory,2024-08-31,12M,CHF,5622400000.0
+BARN.SW,Barry Callebaut,cocoa,annualInventory,2025-08-31,12M,CHF,4739940000.0
+BARN.SW,Barry Callebaut,cocoa,annualInventory,2026-08-31,12M,CHF,3547878000.0
+BARN.SW,Barry Callebaut,cocoa,annualTotalRevenue,2023-08-31,12M,CHF,8470525000.0
+BARN.SW,Barry Callebaut,cocoa,annualTotalRevenue,2024-08-31,12M,CHF,10386283000.0
+BARN.SW,Barry Callebaut,cocoa,annualTotalRevenue,2025-08-31,12M,CHF,14788581000.0
+BARN.SW,Barry Callebaut,cocoa,annualTotalRevenue,2026-08-31,12M,CHF,12189572000.0
+BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2025-02-28,3M,CHF,7335154000.0
+BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2025-08-31,3M,CHF,4739940000.0
+BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2026-02-28,3M,CHF,2937894000.0
+BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2026-08-31,3M,CHF,3547878000.0
+HM-B.ST,H&M,cotton,annualInventory,2022-11-30,12M,SEK,42495000000.0
+HM-B.ST,H&M,cotton,annualInventory,2023-11-30,12M,SEK,37358000000.0
+HM-B.ST,H&M,cotton,annualInventory,2024-11-30,12M,SEK,40348000000.0
+HM-B.ST,H&M,cotton,annualInventory,2025-11-30,12M,SEK,35427000000.0
+HM-B.ST,H&M,cotton,annualTotalRevenue,2022-11-30,12M,SEK,223553000000.0
+HM-B.ST,H&M,cotton,annualTotalRevenue,2023-11-30,12M,SEK,236035000000.0
+HM-B.ST,H&M,cotton,annualTotalRevenue,2024-11-30,12M,SEK,234478000000.0
+HM-B.ST,H&M,cotton,annualTotalRevenue,2025-11-30,12M,SEK,228285000000.0
+HM-B.ST,H&M,cotton,quarterlyInventory,2025-08-31,3M,SEK,37938000000.0
+HM-B.ST,H&M,cotton,quarterlyInventory,2025-11-30,3M,SEK,35427000000.0
+HM-B.ST,H&M,cotton,quarterlyInventory,2026-02-28,3M,SEK,34608000000.0
+HM-B.ST,H&M,cotton,quarterlyInventory,2026-05-31,3M,SEK,34942000000.0
+HM-B.ST,H&M,cotton,quarterlyInventory,2026-08-31,3M,SEK,39355000000.0
+HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2025-08-31,3M,SEK,57017000000.0
+HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2025-11-30,3M,SEK,59221000000.0
+HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2026-02-28,3M,SEK,49607000000.0
+HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2026-05-31,3M,SEK,54828000000.0
+HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2026-08-31,3M,SEK,57189000000.0
+ITX.MC,Inditex,cotton,annualInventory,2023-01-31,12M,EUR,3191000000.0
+ITX.MC,Inditex,cotton,annualInventory,2024-01-31,12M,EUR,2966000000.0
+ITX.MC,Inditex,cotton,annualInventory,2025-01-31,12M,EUR,3321000000.0
+ITX.MC,Inditex,cotton,annualInventory,2026-01-31,12M,EUR,3249000000.0
+ITX.MC,Inditex,cotton,annualTotalRevenue,2023-01-31,12M,EUR,32569000000.0
+ITX.MC,Inditex,cotton,annualTotalRevenue,2024-01-31,12M,EUR,35947000000.0
+ITX.MC,Inditex,cotton,annualTotalRevenue,2025-01-31,12M,EUR,38632000000.0
+ITX.MC,Inditex,cotton,annualTotalRevenue,2026-01-31,12M,EUR,39864000000.0
+ITX.MC,Inditex,cotton,quarterlyInventory,2025-04-30,3M,EUR,3791000000.0
+ITX.MC,Inditex,cotton,quarterlyInventory,2025-07-31,3M,EUR,3466000000.0
+ITX.MC,Inditex,cotton,quarterlyInventory,2025-10-31,3M,EUR,4499000000.0
+ITX.MC,Inditex,cotton,quarterlyInventory,2026-04-30,3M,EUR,3812000000.0
+ITX.MC,Inditex,cotton,quarterlyInventory,2026-07-31,3M,EUR,3789000000.0
+ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2025-04-30,3M,EUR,8274000000.0
+ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2025-07-31,3M,EUR,10083000000.0
+ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2025-10-31,3M,EUR,9814000000.0
+ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2026-04-30,3M,EUR,8750000000.0
+ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2026-07-31,3M,EUR,11005000000.0
+LISN.SW,Lindt & Sprüngli,cocoa,annualInventory,2022-12-31,12M,CHF,875600000.0
+LISN.SW,Lindt & Sprüngli,cocoa,annualInventory,2023-12-31,12M,CHF,921500000.0
+LISN.SW,Lindt & Sprüngli,cocoa,annualInventory,2024-12-31,12M,CHF,941300000.0
+LISN.SW,Lindt & Sprüngli,cocoa,annualInventory,2025-12-31,12M,CHF,1190100000.0
+LISN.SW,Lindt & Sprüngli,cocoa,annualTotalRevenue,2022-12-31,12M,CHF,4970200000.0
+LISN.SW,Lindt & Sprüngli,cocoa,annualTotalRevenue,2023-12-31,12M,CHF,5201200000.0
+LISN.SW,Lindt & Sprüngli,cocoa,annualTotalRevenue,2024-12-31,12M,CHF,5468500000.0
+LISN.SW,Lindt & Sprüngli,cocoa,annualTotalRevenue,2025-12-31,12M,CHF,5915800000.0
+LISN.SW,Lindt & Sprüngli,cocoa,quarterlyInventory,2025-06-30,3M,CHF,1399900000.0
+LISN.SW,Lindt & Sprüngli,cocoa,quarterlyInventory,2025-12-31,3M,CHF,1190100000.0
+NESN.SW,Nestlé,coffee,annualInventory,2022-12-31,12M,CHF,15019000000.0
+NESN.SW,Nestlé,coffee,annualInventory,2023-12-31,12M,CHF,11896000000.0
+NESN.SW,Nestlé,coffee,annualInventory,2024-12-31,12M,CHF,13260000000.0
+NESN.SW,Nestlé,coffee,annualInventory,2025-12-31,12M,CHF,12813000000.0
+NESN.SW,Nestlé,coffee,annualTotalRevenue,2022-12-31,12M,CHF,94780000000.0
+NESN.SW,Nestlé,coffee,annualTotalRevenue,2023-12-31,12M,CHF,93351000000.0
+NESN.SW,Nestlé,coffee,annualTotalRevenue,2024-12-31,12M,CHF,91720000000.0
+NESN.SW,Nestlé,coffee,annualTotalRevenue,2025-12-31,12M,CHF,89885000000.0
+NESN.SW,Nestlé,coffee,quarterlyInventory,2025-06-30,3M,CHF,14434000000.0
+NESN.SW,Nestlé,coffee,quarterlyInventory,2025-12-31,3M,CHF,12813000000.0
+NESN.SW,Nestlé,coffee,quarterlyInventory,2026-06-30,3M,CHF,13261000000.0
+NXT.L,Next,cotton,annualInventory,2023-01-31,12M,GBP,662200000.0
+NXT.L,Next,cotton,annualInventory,2024-01-31,12M,GBP,769000000.0
+NXT.L,Next,cotton,annualInventory,2025-01-31,12M,GBP,865200000.0
+NXT.L,Next,cotton,annualInventory,2026-01-31,12M,GBP,949500000.0
+NXT.L,Next,cotton,annualTotalRevenue,2023-01-31,12M,GBP,5034000000.0
+NXT.L,Next,cotton,annualTotalRevenue,2024-01-31,12M,GBP,5491000000.0
+NXT.L,Next,cotton,annualTotalRevenue,2025-01-31,12M,GBP,6118100000.0
+NXT.L,Next,cotton,annualTotalRevenue,2026-01-31,12M,GBP,6901300000.0
+NXT.L,Next,cotton,quarterlyInventory,2025-07-31,3M,GBP,1029800000.0
+NXT.L,Next,cotton,quarterlyInventory,2026-01-31,3M,GBP,949500000.0
+NXT.L,Next,cotton,quarterlyInventory,2026-07-31,3M,GBP,1085400000.0
