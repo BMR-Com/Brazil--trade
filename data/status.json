@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 15:33 UTC",
+ "generated": "2026-11-26 15:38 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -1229,12 +1229,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": null,
+   "latest": "2026-11-26",
    "cadence": "monthly",
-   "age": null,
+   "age": 0,
    "age_unit": "days",
    "limit": 40,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1263,9 +1263,9 @@
    "used_in": "options terminal"
   }
  ],
- "late": 21,
+ "late": 20,
  "inbox": {
-  "updated": "2026-11-26 07:13 UTC",
+  "updated": "2026-11-26 15:38 UTC",
   "last": [
    {
     "type": "CT_options",
@@ -1317,11 +1317,11 @@
    },
    {
     "type": "CC_options",
-    "received": "2026-11-26 07:13 UTC",
-    "file": "c3f31fa5-CC_Options_2026-11-06.pdf",
+    "received": "2026-11-26 15:38 UTC",
+    "file": "bd7bd9fb-CC_Options_2026-11-23.pdf",
     "label": "Cocoa options settlement (ICE daily market report)",
-    "report_date": "2026-11-06",
-    "stored": "data/ice_staging/pdfs/CC_2026_11_06.pdf"
+    "report_date": "2026-11-23",
+    "stored": "data/ice_staging/pdfs/CC_2026_11_23.pdf"
    },
    {
     "type": "CC_futures",

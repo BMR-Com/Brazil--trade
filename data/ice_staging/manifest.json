@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26 07:13 UTC",
+ "updated": "2026-11-26 15:38 UTC",
  "files": [
   {
    "file": "CC_2026_11_04-2.pdf",
@@ -212,6 +212,16 @@
    "staged": "2026-11-26"
   },
   {
+   "file": "CC_2026_11_20.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_20.pdf",
+   "sym": "CC",
+   "kind": "options",
+   "date": "2026-11-20",
+   "bytes": 285493,
+   "sha256": "d81ce6924afe3efd9f4f2f3ff558db224b1815aac3fb372934f25dacf33be0b0",
+   "staged": "2026-11-26"
+  },
+  {
    "file": "CC_2026_11_23-2.pdf",
    "path": "data/ice_staging/pdfs/CC_2026_11_23-2.pdf",
    "sym": "CC",
@@ -222,6 +232,16 @@
    "staged": "2026-11-26"
   },
   {
+   "file": "CC_2026_11_23.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_23.pdf",
+   "sym": "CC",
+   "kind": "options",
+   "date": "2026-11-23",
+   "bytes": 288269,
+   "sha256": "1a7e3b900730c43da90b4eaa6ebf1cdd240926ac701fd801ad9f8920368c9bcd",
+   "staged": "2026-11-26"
+  },
+  {
    "file": "CC_2026_11_24-2.pdf",
    "path": "data/ice_staging/pdfs/CC_2026_11_24-2.pdf",
    "sym": "CC",
@@ -229,6 +249,16 @@
    "date": "2026-11-24",
    "bytes": 11280,
    "sha256": "1a4d731e25f9ab67bd64ef429ce4275f3c77b44417c03f106aeb18c3fd392216",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_24.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_24.pdf",
+   "sym": "CC",
+   "kind": "options",
+   "date": "2026-11-24",
+   "bytes": 290552,
+   "sha256": "979ad7a19a350c885a11391b4ba86652eb2a2179db5f0e27935879c23eddbe30",
    "staged": "2026-11-26"
   },
   {
