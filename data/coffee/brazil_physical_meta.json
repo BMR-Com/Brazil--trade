@@ -1,6 +1,6 @@
 {
  "history": {
-  "built": "2026-11-26 04:26 UTC",
+  "built": "2026-11-26 11:35 UTC",
   "rows": 7528,
   "last": "2026-11-25",
   "first": {
@@ -5814,11 +5814,11 @@
     -48.3,
     -48.9,
     -53.4,
-    -39.5
+    -41.5
    ],
-   "now": -39.5,
+   "now": -41.5,
    "now_date": "2026-11-25",
-   "pct5y": 30.0,
+   "pct5y": 25.0,
    "median_all": -28.0,
    "median5y": -32.5
   },
@@ -6551,7 +6551,7 @@
     -50.3,
     -42.7,
     -51.3,
-    -48.1
+    -48.5
    ],
    "bfront": [
     -21.0,
@@ -6916,7 +6916,7 @@
     -73.6,
     -52.7,
     -63.7,
-    -56.8
+    -57.4
    ],
    "markers": [
     {
@@ -6967,10 +6967,7 @@
  "manual_inputs": "CEPEA/ESALQ arabica and robusta indices: manual weekly download by Ma from cepea.org.br, dropped into inbox/ (cepea.org.br disallows automated access)",
  "cepea_download": "not fetched automatically (cepea.org.br disallows automated access); CEPEA files come only from Ma's downloads dropped into inbox/",
  "ptax": {
-  "1996-09-01": "HTTP 200, 2260 days",
-  "2005-08-31": "HTTP 200, 2259 days",
-  "2014-08-30": "HTTP 200, 2258 days",
-  "2023-08-29": "HTTP 200, 813 days",
+  "2026-10-17": "HTTP 200, 26 days",
   "first": "1996-09-02",
   "last": "2026-11-25",
   "n": 7590
@@ -7006,7 +7003,7 @@
   }
  },
  "log": [
-  "PTAX {'1996-09-01': 'HTTP 200, 2260 days', '2005-08-31': 'HTTP 200, 2259 days', '2014-08-30': 'HTTP 200, 2258 days', '2023-08-29': 'HTTP 200, 813 days', 'first': '1996-09-02', 'last': '2026-11-25', 'n': 7590}"
+  "PTAX {'2026-10-17': 'HTTP 200, 26 days', 'first': '1996-09-02', 'last': '2026-11-25', 'n': 7590}"
  ],
  "backfill": {
   "ran": "2026-11-26"
