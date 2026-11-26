@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 23:07 UTC",
+ "generated": "2026-11-26 03:09 UTC",
  "today": "2026-11-25",
  "sources": [
   {
@@ -65,9 +65,9 @@
   {
    "group": "Cotton",
    "source": "ICE quality grid (AMS daily spot quotes)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -197,9 +197,9 @@
   {
    "group": "Cotton",
    "source": "AMS daily classing",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 2,
+   "age": 1,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -221,7 +221,7 @@
   {
    "group": "Cotton",
    "source": "Crop projection (cotton-crop-progress)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "weekly, after crop progress / ginnings / drought",
    "age": 0,
    "age_unit": "days",
@@ -413,9 +413,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ arabica index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -425,9 +425,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ robusta index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -701,7 +701,7 @@
   {
    "group": "Sugar",
    "source": "Brazil sugar export line-up (weekly)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "weekly",
    "age": 0,
    "age_unit": "days",
@@ -845,7 +845,7 @@
   {
    "group": "Cotton",
    "source": "Reports: USDA attach\u00e9 (GAIN), World Markets and Trade, ERS outlook (last full check)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -977,7 +977,7 @@
   {
    "group": "Macro",
    "source": "Contract calendar (notice and roll dates)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1049,9 +1049,9 @@
   {
    "group": "Embedded dashboards",
    "source": "Spot basis dashboard (BMR-Com/cotton-crop-progress)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -1061,7 +1061,7 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "monthly",
    "age": 0,
    "age_unit": "days",
