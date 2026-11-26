@@ -15,46 +15,46 @@
    "stored": "data/ice_staging/pdfs/CC_2026_11_23.pdf"
   },
   "CT_futures": {
-   "received": "2026-11-20 14:50 UTC",
-   "file": "CT_2026_11_19-2.pdf",
+   "received": "2026-11-26 15:40 UTC",
+   "file": "faad5495-CT_Futures_2026-11-18.pdf",
    "label": "Cotton futures settlement (ICE daily market report)",
-   "report_date": "2026-11-19",
-   "stored": "data/ice_staging/pdfs/CT_2026_11_19-2.pdf"
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_18-2.pdf"
   },
   "CT_options": {
-   "received": "2026-11-20 14:50 UTC",
-   "file": "CT_2026_11_19.pdf",
+   "received": "2026-11-26 15:40 UTC",
+   "file": "c0fc1cda-CT_Options_2026-11-20.pdf",
    "label": "Cotton options settlement (ICE daily market report)",
-   "report_date": "2026-11-19",
-   "stored": "data/ice_staging/pdfs/CT_2026_11_19.pdf"
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_20.pdf"
   },
   "KC_futures": {
-   "received": "2026-11-20 14:50 UTC",
-   "file": "KC_2026_11_19-2.pdf",
+   "received": "2026-11-26 15:40 UTC",
+   "file": "f3c0ad64-KC_2026_11_20.pdf",
    "label": "Coffee futures settlement (ICE daily market report)",
-   "report_date": "2026-11-19",
-   "stored": "data/ice_staging/pdfs/KC_2026_11_19-2.pdf"
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_20-2.pdf"
   },
   "KC_options": {
-   "received": "2026-11-20 14:50 UTC",
-   "file": "KC_2026_11_19.pdf",
+   "received": "2026-11-26 15:40 UTC",
+   "file": "df3c0630-KC_Options_2026-11-20.pdf",
    "label": "Coffee options settlement (ICE daily market report)",
-   "report_date": "2026-11-19",
-   "stored": "data/ice_staging/pdfs/KC_2026_11_19.pdf"
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_20.pdf"
   },
   "SB_futures": {
-   "received": "2026-11-20 14:50 UTC",
-   "file": "SB_2026_11_19-2.pdf",
+   "received": "2026-11-26 15:40 UTC",
+   "file": "b3e641b4-SB_Futures_2026-11-18.pdf",
    "label": "Sugar No 11 futures settlement (ICE daily market report)",
-   "report_date": "2026-11-19",
-   "stored": "data/ice_staging/pdfs/SB_2026_11_19-2.pdf"
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_18-2.pdf"
   },
   "SB_options": {
-   "received": "2026-11-20 14:50 UTC",
-   "file": "SB_2026_11_19.pdf",
+   "received": "2026-11-26 15:40 UTC",
+   "file": "c3370054-SB_Options_2026-11-24.pdf",
    "label": "Sugar No 11 options settlement (ICE daily market report)",
-   "report_date": "2026-11-19",
-   "stored": "data/ice_staging/pdfs/SB_2026_11_19.pdf"
+   "report_date": "2026-11-24",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_24.pdf"
   },
   "ct_grade": {
    "received": "2026-11-17 16:34 UTC",
@@ -148,14 +148,366 @@
    "stored": "data/coffee/ice_grading_monthly.csv"
   },
   "ct_stock": {
-   "received": "2026-11-26 07:13 UTC",
-   "file": "a502f674-cotton_cert_stock_2026-11-20.csv",
+   "received": "2026-11-26 15:40 UTC",
+   "file": "cotton_cert_stock_2026-11-23.csv",
    "label": "Cotton certs: stock by delivery point",
-   "report_date": "2026-11-20",
-   "stored": "data/cotton/ice/stock_2026-11-20.csv"
+   "report_date": "2026-11-23",
+   "stored": "data/cotton/ice/stock_2026-11-23.csv"
   }
  },
  "recent": [
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "faad5495-CT_Futures_2026-11-18.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_18-2.pdf",
+   "note": "staged 15 contract rows for the options archive; 11 contracts added to data/cotton/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "f3c0ad64-KC_2026_11_20.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_20-2.pdf",
+   "note": "staged 7 contract rows for the options archive; 7 contracts added to data/coffee/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "ea95747d-CT_2026_11_19.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_19-2.pdf",
+   "note": "staged 15 contract rows for the options archive; 11 contracts added to data/cotton/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "df3c0630-KC_Options_2026-11-20.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_20.pdf",
+   "note": "staged 521 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "db771272-KC_2026_11_19.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_19-2.pdf",
+   "note": "staged 7 contract rows for the options archive; 7 contracts added to data/coffee/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "cotton_cert_stock_2026-11-23.csv",
+   "type": "ct_stock",
+   "label": "Cotton certs: stock by delivery point",
+   "market": "CT",
+   "report_date": "2026-11-23",
+   "stored": "data/cotton/ice/stock_2026-11-23.csv",
+   "note": "5 rows",
+   "original": "data/ice_raw/2026-11-26/cotton_cert_stock_2026-11-23.csv"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "cotton_cert_stock_2026-11-19.csv",
+   "type": "ct_stock",
+   "label": "Cotton certs: stock by delivery point",
+   "market": "CT",
+   "report_date": "2026-11-19",
+   "stored": "data/cotton/ice/stock_2026-11-19.csv",
+   "note": "5 rows",
+   "original": "data/ice_raw/2026-11-26/cotton_cert_stock_2026-11-19.csv"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "cotton_cert_stock_2026-11-18.csv",
+   "type": "ct_stock",
+   "label": "Cotton certs: stock by delivery point",
+   "market": "CT",
+   "report_date": "2026-11-18",
+   "stored": "data/cotton/ice/stock_2026-11-18.csv",
+   "note": "5 rows",
+   "original": "data/ice_raw/2026-11-26/cotton_cert_stock_2026-11-18.csv"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "cd10e4f2-KC_Options_2026-11-24.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-24",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_24.pdf",
+   "note": "staged 529 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "c3370054-SB_Options_2026-11-24.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-24",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_24.pdf",
+   "note": "staged 636 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "c0fc1cda-CT_Options_2026-11-20.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_20.pdf",
+   "note": "staged 400 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "b6ce7c10-SB_Options_2026-11-19.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_19.pdf",
+   "note": "staged 631 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "b3e641b4-SB_Futures_2026-11-18.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_18-2.pdf",
+   "note": "staged 12 contract rows for the options archive; 12 contracts added to data/sugar/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "adcafd5c-KC_Options_2026-11-18.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_18.pdf",
+   "note": "staged 506 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "a909ba13-CT_Options_2026-11-24.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-24",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_24.pdf",
+   "note": "staged 401 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "9c62d7ec-KC_Futures_2026-11-24.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-24",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_24-2.pdf",
+   "note": "staged 7 contract rows for the options archive; 7 contracts added to data/coffee/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "8abb55a5-KC_Options_2026-11-23.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-23",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_23.pdf",
+   "note": "staged 523 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "77158041-SB_2026_11_19.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_19-2.pdf",
+   "note": "staged 12 contract rows for the options archive; 12 contracts added to data/sugar/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "756d3798-SB_Options_2026-11-20.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_20.pdf",
+   "note": "staged 624 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "733fb247-SB_2026_11_23.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-23",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_23-2.pdf",
+   "note": "staged 12 contract rows for the options archive; 12 contracts added to data/sugar/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "6f237104-CT_Options_2026-11-18.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_18.pdf",
+   "note": "staged 396 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "6b38bd0f-SB_Options_2026-11-18.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_18.pdf",
+   "note": "staged 621 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "64ea27b6-CT_Futures_2026-11-24.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-24",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_24-2.pdf",
+   "note": "staged 15 contract rows for the options archive; 11 contracts added to data/cotton/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "5dfab7e9-KC_Options_2026-11-19.pdf",
+   "type": "KC_options",
+   "label": "Coffee options settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_19.pdf",
+   "note": "staged 516 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "5af3f48b-SB_2026_11_20.pdf",
+   "type": "SB_futures",
+   "label": "Sugar No 11 futures settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_20-2.pdf",
+   "note": "staged 12 contract rows for the options archive; 12 contracts added to data/sugar/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "558634a5-CT_2026_11_20.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-20",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_20-2.pdf",
+   "note": "staged 15 contract rows for the options archive; 11 contracts added to data/cotton/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "53d15f95-CT_2026_11_23.pdf",
+   "type": "CT_futures",
+   "label": "Cotton futures settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-23",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_23-2.pdf",
+   "note": "staged 15 contract rows for the options archive; 11 contracts added to data/cotton/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "4b6c528c-CT_Options_2026-11-23.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-23",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_23.pdf",
+   "note": "staged 401 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "43670ffa-KC_2026_11_23.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-23",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_23-2.pdf",
+   "note": "staged 7 contract rows for the options archive; 7 contracts added to data/coffee/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "3ce86d5d-CT_Options_2026-11-19.pdf",
+   "type": "CT_options",
+   "label": "Cotton options settlement (ICE daily market report)",
+   "market": "CT",
+   "report_date": "2026-11-19",
+   "stored": "data/ice_staging/pdfs/CT_2026_11_19.pdf",
+   "note": "staged 400 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "2bcf3663-SB_Options_2026-11-23.pdf",
+   "type": "SB_options",
+   "label": "Sugar No 11 options settlement (ICE daily market report)",
+   "market": "SB",
+   "report_date": "2026-11-23",
+   "stored": "data/ice_staging/pdfs/SB_2026_11_23.pdf",
+   "note": "staged 629 contract rows for the options archive",
+   "original": "removed (the staged copy is the record)"
+  },
+  {
+   "received": "2026-11-26 15:40 UTC",
+   "file": "0d7cce4b-KC_Futures_2026-11-18.pdf",
+   "type": "KC_futures",
+   "label": "Coffee futures settlement (ICE daily market report)",
+   "market": "KC",
+   "report_date": "2026-11-18",
+   "stored": "data/ice_staging/pdfs/KC_2026_11_18-2.pdf",
+   "note": "staged 7 contract rows for the options archive; 7 contracts added to data/coffee/ice_daily_contracts.csv",
+   "original": "removed (the staged copy is the record)"
+  },
   {
    "received": "2026-11-26 15:38 UTC",
    "file": "bd7bd9fb-CC_Options_2026-11-23.pdf",
@@ -2010,360 +2362,8 @@
    "stored": "data/coffee/ice_grading_monthly.csv",
    "note": "2 table(s): 2025-09|month, 2025-09|year_to_date",
    "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_September_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-09",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-09|month, 2024-09|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_October_2026.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2026-10",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2026-10|month, 2026-10|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_October_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-10",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-10|month, 2025-10|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_October_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-10",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-10|month, 2024-10|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_Oct_2022.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2022-10",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2022-10|month, 2022-10|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_November_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-11",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-11|month, 2024-11|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_May_2026.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2026-05",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2026-05|month, 2026-05|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_May_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-05",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-05|month, 2025-05|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_May_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-05",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-05|month, 2024-05|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_May_2023.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2023-05",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "1 table(s): 2023-05|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_March_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-03",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-03|month, 2025-03|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_March_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-03",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-03|month, 2024-03|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_March_2023.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2023-03",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2023-03|month, 2023-03|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_June_2026.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2026-06",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2026-06|month, 2026-06|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_June_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-06",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-06|month, 2024-06|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_July_2026.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2026-07",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2026-07|month, 2026-07|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_July_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-07",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-07|month, 2025-07|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_July_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-07",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-07|month, 2024-07|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_January_2026.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2026-01",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "1 table(s): 2026-01|month",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_January_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-01",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "1 table(s): 2025-01|month",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_January_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-01",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "1 table(s): 2024-01|month",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_February_2026.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2026-02",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2026-02|month, 2026-02|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_February_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-02",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-02|month, 2025-02|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_February_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-02",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-02|month, 2024-02|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_December_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-12",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-12|month, 2025-12|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_December_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-12",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-12|month, 2024-12|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_August_2026.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2026-08",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2026-08|month, 2026-08|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_August_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-08",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-08|month, 2025-08|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_August_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-08",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-08|month, 2024-08|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_April_2026.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2026-04",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2026-04|month, 2026-04|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_April_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-04",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-04|month, 2025-04|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_April_2024.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2024-04",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2024-04|month, 2024-04|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
   }
  ],
  "unrecognised": [],
- "updated": "2026-11-26 15:38 UTC"
+ "updated": "2026-11-26 15:40 UTC"
 }

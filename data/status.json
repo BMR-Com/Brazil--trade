@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 15:38 UTC",
+ "generated": "2026-11-26 15:41 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -125,9 +125,9 @@
   {
    "group": "Cotton",
    "source": "ICE certs: stock by delivery point (upload)",
-   "latest": "2026-11-20",
+   "latest": "2026-11-23",
    "cadence": "daily",
-   "age": 4,
+   "age": 3,
    "age_unit": "business days",
    "limit": 2,
    "state": "late",
@@ -1265,55 +1265,55 @@
  ],
  "late": 20,
  "inbox": {
-  "updated": "2026-11-26 15:38 UTC",
+  "updated": "2026-11-26 15:40 UTC",
   "last": [
    {
     "type": "CT_options",
-    "received": "2026-11-20 14:50 UTC",
-    "file": "CT_2026_11_19.pdf",
+    "received": "2026-11-26 15:40 UTC",
+    "file": "c0fc1cda-CT_Options_2026-11-20.pdf",
     "label": "Cotton options settlement (ICE daily market report)",
-    "report_date": "2026-11-19",
-    "stored": "data/ice_staging/pdfs/CT_2026_11_19.pdf"
+    "report_date": "2026-11-20",
+    "stored": "data/ice_staging/pdfs/CT_2026_11_20.pdf"
    },
    {
     "type": "CT_futures",
-    "received": "2026-11-20 14:50 UTC",
-    "file": "CT_2026_11_19-2.pdf",
+    "received": "2026-11-26 15:40 UTC",
+    "file": "faad5495-CT_Futures_2026-11-18.pdf",
     "label": "Cotton futures settlement (ICE daily market report)",
-    "report_date": "2026-11-19",
-    "stored": "data/ice_staging/pdfs/CT_2026_11_19-2.pdf"
+    "report_date": "2026-11-18",
+    "stored": "data/ice_staging/pdfs/CT_2026_11_18-2.pdf"
    },
    {
     "type": "KC_options",
-    "received": "2026-11-20 14:50 UTC",
-    "file": "KC_2026_11_19.pdf",
+    "received": "2026-11-26 15:40 UTC",
+    "file": "df3c0630-KC_Options_2026-11-20.pdf",
     "label": "Coffee options settlement (ICE daily market report)",
-    "report_date": "2026-11-19",
-    "stored": "data/ice_staging/pdfs/KC_2026_11_19.pdf"
+    "report_date": "2026-11-20",
+    "stored": "data/ice_staging/pdfs/KC_2026_11_20.pdf"
    },
    {
     "type": "KC_futures",
-    "received": "2026-11-20 14:50 UTC",
-    "file": "KC_2026_11_19-2.pdf",
+    "received": "2026-11-26 15:40 UTC",
+    "file": "f3c0ad64-KC_2026_11_20.pdf",
     "label": "Coffee futures settlement (ICE daily market report)",
-    "report_date": "2026-11-19",
-    "stored": "data/ice_staging/pdfs/KC_2026_11_19-2.pdf"
+    "report_date": "2026-11-20",
+    "stored": "data/ice_staging/pdfs/KC_2026_11_20-2.pdf"
    },
    {
     "type": "SB_options",
-    "received": "2026-11-20 14:50 UTC",
-    "file": "SB_2026_11_19.pdf",
+    "received": "2026-11-26 15:40 UTC",
+    "file": "c3370054-SB_Options_2026-11-24.pdf",
     "label": "Sugar No 11 options settlement (ICE daily market report)",
-    "report_date": "2026-11-19",
-    "stored": "data/ice_staging/pdfs/SB_2026_11_19.pdf"
+    "report_date": "2026-11-24",
+    "stored": "data/ice_staging/pdfs/SB_2026_11_24.pdf"
    },
    {
     "type": "SB_futures",
-    "received": "2026-11-20 14:50 UTC",
-    "file": "SB_2026_11_19-2.pdf",
+    "received": "2026-11-26 15:40 UTC",
+    "file": "b3e641b4-SB_Futures_2026-11-18.pdf",
     "label": "Sugar No 11 futures settlement (ICE daily market report)",
-    "report_date": "2026-11-19",
-    "stored": "data/ice_staging/pdfs/SB_2026_11_19-2.pdf"
+    "report_date": "2026-11-18",
+    "stored": "data/ice_staging/pdfs/SB_2026_11_18-2.pdf"
    },
    {
     "type": "CC_options",
@@ -1333,11 +1333,11 @@
    },
    {
     "type": "ct_stock",
-    "received": "2026-11-26 07:13 UTC",
-    "file": "a502f674-cotton_cert_stock_2026-11-20.csv",
+    "received": "2026-11-26 15:40 UTC",
+    "file": "cotton_cert_stock_2026-11-23.csv",
     "label": "Cotton certs: stock by delivery point",
-    "report_date": "2026-11-20",
-    "stored": "data/cotton/ice/stock_2026-11-20.csv"
+    "report_date": "2026-11-23",
+    "stored": "data/cotton/ice/stock_2026-11-23.csv"
    },
    {
     "type": "ct_grade",

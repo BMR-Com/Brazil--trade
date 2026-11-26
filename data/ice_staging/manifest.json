@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26 15:38 UTC",
+ "updated": "2026-11-26 15:40 UTC",
  "files": [
   {
    "file": "CC_2026_11_04-2.pdf",
@@ -382,6 +382,66 @@
    "staged": "2026-11-26"
   },
   {
+   "file": "CT_2026_11_20-2.pdf",
+   "path": "data/ice_staging/pdfs/CT_2026_11_20-2.pdf",
+   "sym": "CT",
+   "kind": "futures",
+   "date": "2026-11-20",
+   "bytes": 13925,
+   "sha256": "121cf9355c0449a83fe113ac828bfb6f1bb4b1f68aeb1abe20598e7fb58c2b65",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CT_2026_11_20.pdf",
+   "path": "data/ice_staging/pdfs/CT_2026_11_20.pdf",
+   "sym": "CT",
+   "kind": "options",
+   "date": "2026-11-20",
+   "bytes": 292341,
+   "sha256": "e7ac1802683470b4a06198ea7f83ab36de0a65a8876cb46f5c1bebb297712695",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CT_2026_11_23-2.pdf",
+   "path": "data/ice_staging/pdfs/CT_2026_11_23-2.pdf",
+   "sym": "CT",
+   "kind": "futures",
+   "date": "2026-11-23",
+   "bytes": 13929,
+   "sha256": "4878b82a4e1b68b41927ad751d5ada6f454646a923b340cf870563cd9522d389",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CT_2026_11_23.pdf",
+   "path": "data/ice_staging/pdfs/CT_2026_11_23.pdf",
+   "sym": "CT",
+   "kind": "options",
+   "date": "2026-11-23",
+   "bytes": 293438,
+   "sha256": "fac65d6813f9247c72acedc3dd395e83dd035e70f9fbb1902e8cf54d0b2c35c1",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CT_2026_11_24-2.pdf",
+   "path": "data/ice_staging/pdfs/CT_2026_11_24-2.pdf",
+   "sym": "CT",
+   "kind": "futures",
+   "date": "2026-11-24",
+   "bytes": 13822,
+   "sha256": "94066ff1048f6d6e07682f353591ac434c576fefbb14c87bde1a541a0a88c218",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CT_2026_11_24.pdf",
+   "path": "data/ice_staging/pdfs/CT_2026_11_24.pdf",
+   "sym": "CT",
+   "kind": "options",
+   "date": "2026-11-24",
+   "bytes": 293607,
+   "sha256": "f41ff1b3a7f1aec39ba6b0755f15030a0bdfe486c873ce37007d1c5368012413",
+   "staged": "2026-11-26"
+  },
+  {
    "file": "KC_2026_11_12-2.pdf",
    "path": "data/ice_staging/pdfs/KC_2026_11_12-2.pdf",
    "sym": "KC",
@@ -502,6 +562,66 @@
    "staged": "2026-11-26"
   },
   {
+   "file": "KC_2026_11_20-2.pdf",
+   "path": "data/ice_staging/pdfs/KC_2026_11_20-2.pdf",
+   "sym": "KC",
+   "kind": "futures",
+   "date": "2026-11-20",
+   "bytes": 9583,
+   "sha256": "dca110e3589b04be7171010c733c49d52dd6b53b14523c7a3e26c0bc71505316",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "KC_2026_11_20.pdf",
+   "path": "data/ice_staging/pdfs/KC_2026_11_20.pdf",
+   "sym": "KC",
+   "kind": "options",
+   "date": "2026-11-20",
+   "bytes": 376564,
+   "sha256": "306f843d24cf7790182c5af2904d7d2aa9a2cfb2f048625a95bd6f1ebb95ecb7",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "KC_2026_11_23-2.pdf",
+   "path": "data/ice_staging/pdfs/KC_2026_11_23-2.pdf",
+   "sym": "KC",
+   "kind": "futures",
+   "date": "2026-11-23",
+   "bytes": 9580,
+   "sha256": "c1cb5773e826f92dc376fdb9802835f29ff9a0dbad03263b9f09e1238eade70b",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "KC_2026_11_23.pdf",
+   "path": "data/ice_staging/pdfs/KC_2026_11_23.pdf",
+   "sym": "KC",
+   "kind": "options",
+   "date": "2026-11-23",
+   "bytes": 376815,
+   "sha256": "295c2f0d401ec10ac99f64d8de15f37ccfff37c501be9a2594768ddaba37df42",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "KC_2026_11_24-2.pdf",
+   "path": "data/ice_staging/pdfs/KC_2026_11_24-2.pdf",
+   "sym": "KC",
+   "kind": "futures",
+   "date": "2026-11-24",
+   "bytes": 9588,
+   "sha256": "ee26853febb5b2feac16cb42e114b523b6e74ce3fd7a75a121d49cce81ad631f",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "KC_2026_11_24.pdf",
+   "path": "data/ice_staging/pdfs/KC_2026_11_24.pdf",
+   "sym": "KC",
+   "kind": "options",
+   "date": "2026-11-24",
+   "bytes": 384041,
+   "sha256": "a537ebf13069bd156eacb1c712048d05e602eeada3ab31388dab5e91e7ac26c1",
+   "staged": "2026-11-26"
+  },
+  {
    "file": "SB_2026_11_12-2.pdf",
    "path": "data/ice_staging/pdfs/SB_2026_11_12-2.pdf",
    "sym": "SB",
@@ -619,6 +739,56 @@
    "date": "2026-11-19",
    "bytes": 452322,
    "sha256": "ad8f345ea6a13b7f11c8b1194e120d1a44a28406dbda7dc52c658e79deb9359a",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "SB_2026_11_20-2.pdf",
+   "path": "data/ice_staging/pdfs/SB_2026_11_20-2.pdf",
+   "sym": "SB",
+   "kind": "futures",
+   "date": "2026-11-20",
+   "bytes": 12528,
+   "sha256": "5399cacfd492159c09303f39ed25b15a3215a35fb26de780e6d7353b1c5a2c86",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "SB_2026_11_20.pdf",
+   "path": "data/ice_staging/pdfs/SB_2026_11_20.pdf",
+   "sym": "SB",
+   "kind": "options",
+   "date": "2026-11-20",
+   "bytes": 448798,
+   "sha256": "aef2f31bed45e48adba7fe78f8f91aeb50e4e76cc44e42e32a9e2137db46e565",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "SB_2026_11_23-2.pdf",
+   "path": "data/ice_staging/pdfs/SB_2026_11_23-2.pdf",
+   "sym": "SB",
+   "kind": "futures",
+   "date": "2026-11-23",
+   "bytes": 12552,
+   "sha256": "e81892f811de31640d92fcedfb7858065252dfbca34ce17b342829ba6a77f5d0",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "SB_2026_11_23.pdf",
+   "path": "data/ice_staging/pdfs/SB_2026_11_23.pdf",
+   "sym": "SB",
+   "kind": "options",
+   "date": "2026-11-23",
+   "bytes": 451263,
+   "sha256": "15cccb2f740105ff0663ef924d48d35fe444e86af03f17998f76fe1611437e1b",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "SB_2026_11_24.pdf",
+   "path": "data/ice_staging/pdfs/SB_2026_11_24.pdf",
+   "sym": "SB",
+   "kind": "options",
+   "date": "2026-11-24",
+   "bytes": 456518,
+   "sha256": "9514dcf3d3cd2e2122e1f776adde67f3992a017af4fbcd70de72ba2135a86373",
    "staged": "2026-11-26"
   }
  ]
