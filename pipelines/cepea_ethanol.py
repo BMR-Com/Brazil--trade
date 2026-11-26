@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """CEPEA/ESALQ hydrous ethanol indicator (public page) -> sugar/data/cepea_hydrous.csv (date, brl_m3, series).
 
-CEPEA often refuses automated requests; when the page cannot be read the file is left as it is, a warning is printed
-and the sugar parity falls back to the B3 hydrous ethanol futures (models/sugar_parity.py says which one it used).
+Fetched under the desk's own agent name (same as pipelines/cepea_fetch.py), only where the host's robots.txt allows it.
+When the page cannot be read the file is left as it is, a warning is printed and the sugar parity falls back to the
+B3 hydrous ethanol futures (models/sugar_parity.py says which one it used).
 """
-import csv, re, sys
+import csv, re, sys, urllib.robotparser
 from datetime import datetime
 from pathlib import Path
 
@@ -13,8 +14,23 @@ import requests
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "sugar" / "data" / "cepea_hydrous.csv"
 URLS = ["https://www.cepea.org.br/br/indicador/etanol.aspx", "https://www.cepea.esalq.usp.br/br/indicador/etanol.aspx"]
-UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
-      "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8"}
+AGENT = "BMR-Com research desk (github.com/BMR-Com)"
+UA = {"User-Agent": AGENT, "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8"}
+
+
+def allowed(url):
+    host = "/".join(url.split("/")[:3])
+    try:
+        r = requests.get(host + "/robots.txt", headers=UA, timeout=30)
+    except Exception as e:
+        print(f"{host}/robots.txt could not be read ({str(e)[:80]}); skipped")
+        return False
+    if r.status_code >= 500 or r.status_code in (401, 403):
+        print(f"{host}/robots.txt HTTP {r.status_code}; skipped")
+        return False
+    rp = urllib.robotparser.RobotFileParser()
+    rp.parse(r.text.splitlines() if r.status_code == 200 else [])
+    return rp.can_fetch(AGENT, url)
 
 
 def parse(html):
@@ -47,6 +63,9 @@ def parse(html):
 def main():
     rows, err = [], []
     for u in URLS:
+        if not allowed(u):
+            err.append(f"{u}: robots.txt does not allow this agent")
+            continue
         try:
             r = requests.get(u, headers=UA, timeout=40)
             if r.status_code != 200:
