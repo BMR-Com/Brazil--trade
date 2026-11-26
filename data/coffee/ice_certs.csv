@@ -4631,3 +4631,56 @@ date,section,origin,port,bags
 2026-11-24,transition,Tanzania,HA/BR,580
 2026-11-24,transition,Uganda,ANT,28917
 2026-11-24,transition,Venezuela,HA/BR,2750
+2026-11-25,certified,Brazil,ANT,165835
+2026-11-25,certified,Brazil,NY,640
+2026-11-25,certified,Burundi,ANT,640
+2026-11-25,certified,Colombia,ANT,25
+2026-11-25,certified,Colombia,NOLA,225
+2026-11-25,certified,Guatemala,HOU,275
+2026-11-25,certified,Honduras,ANT,750
+2026-11-25,certified,Honduras,HOU,29436
+2026-11-25,certified,Honduras,MIAMI,897
+2026-11-25,certified,Honduras,NOLA,1150
+2026-11-25,certified,India,ANT,1944
+2026-11-25,certified,India,HA/BR,284
+2026-11-25,certified,India,MIAMI,285
+2026-11-25,certified,Kenya,ANT,1525
+2026-11-25,certified,Kenya,HA/BR,1299
+2026-11-25,certified,Mexico,ANT,4225
+2026-11-25,certified,Mexico,NOLA,1142
+2026-11-25,certified,Nicaragua,ANT,2155
+2026-11-25,certified,Nicaragua,HOU,25
+2026-11-25,certified,Papua New Guinea,ANT,1528
+2026-11-25,certified,Papua New Guinea,HA/BR,288
+2026-11-25,certified,Peru,ANT,21284
+2026-11-25,certified,Peru,HA/BR,248
+2026-11-25,certified,Peru,MIAMI,1500
+2026-11-25,certified,Rwanda,ANT,5130
+2026-11-25,certified,Tanzania,ANT,3444
+2026-11-25,certified,Tanzania,HA/BR,1155
+2026-11-25,certified,Uganda,ANT,29202
+2026-11-25,certified,Venezuela,HA/BR,2750
+2026-11-25,certified,Venezuela,MIAMI,3500
+2026-11-25,certified,Venezuela,NY,250
+2026-11-25,graded_failed,Brazil,ANT,8573
+2026-11-25,graded_passed,Brazil,ANT,13572
+2026-11-25,pending,Brazil,ANT,222690
+2026-11-25,transition,Brazil,ANT,165835
+2026-11-25,transition,Burundi,ANT,640
+2026-11-25,transition,Colombia,ANT,25
+2026-11-25,transition,Honduras,ANT,500
+2026-11-25,transition,India,ANT,1939
+2026-11-25,transition,India,HA/BR,284
+2026-11-25,transition,Kenya,ANT,1525
+2026-11-25,transition,Kenya,HA/BR,1299
+2026-11-25,transition,Mexico,ANT,3975
+2026-11-25,transition,Nicaragua,ANT,2155
+2026-11-25,transition,Papua New Guinea,ANT,1528
+2026-11-25,transition,Papua New Guinea,HA/BR,288
+2026-11-25,transition,Peru,ANT,21284
+2026-11-25,transition,Peru,HA/BR,248
+2026-11-25,transition,Rwanda,ANT,1721
+2026-11-25,transition,Tanzania,ANT,3444
+2026-11-25,transition,Tanzania,HA/BR,580
+2026-11-25,transition,Uganda,ANT,28917
+2026-11-25,transition,Venezuela,HA/BR,2750
