@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
-      - run: pip install -q requests openpyxl
+      - run: pip install -q requests openpyxl pandas
       - run: python probe_coffee_sources.py

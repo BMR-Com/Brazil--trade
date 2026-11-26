@@ -1,41 +1,23 @@
-"""One-off probe #5 (deleted after): NSO monthly report export table layout and history."""
-import re, html, io, requests, openpyxl
-H = {"User-Agent": "BMR-Com research desk (github.com/BMR-Com)"}
-def get(url, t=120, **kw):
+"""One-off probe #6 (deleted after): dry run of the new coffee pipelines, nothing committed."""
+import subprocess, csv, collections
+for cmd in (["python", "pipelines/safras_quotes.py", "--backfill"], ["python", "pipelines/brazil_stocks.py"], ["python", "pipelines/vietnam_exports.py"]):
+    print("==", " ".join(cmd)); r = subprocess.run(cmd, capture_output=True, text=True, timeout=1500); print(r.stdout[-6000:]); print("ERR", r.stderr[-3000:], "rc", r.returncode)
+def show(p, n=40):
     try:
-        r = requests.get(url, headers=H, timeout=t, **kw); print(f"  GET {url[:160]} -> {r.status_code} {len(r.content)}B"); return r
+        rows = list(csv.DictReader(open(p)))
     except Exception as e:
-        print(f"  GET {url[:160]} -> ERR {str(e)[:150]}"); return None
-def dump(b):
-    wb = openpyxl.load_workbook(io.BytesIO(b), read_only=True, data_only=True)
-    print("   sheets", wb.sheetnames)
-    for ws in wb.worksheets:
-        if not re.search(r"XK|xu[aấ]t", ws.title, re.I): continue
-        rows = list(ws.iter_rows(values_only=True))
-        for i, row in enumerate(rows[:9]): print("    H", i, [c for c in row if c is not None][:14])
-        for row in rows:
-            if any(isinstance(c, str) and re.search(r"c[àa] ph[êe]|T[ổo]ng tr[ịi] gi[áa]|TỔNG", c, re.I) for c in row): print("    R", list(row)[:14])
-seen = []
-for page in range(1, 9):
-    r = get("https://www.nso.gov.vn/wp-json/wp/v2/posts", params={"search": "Báo cáo tình hình kinh tế xã hội tháng", "per_page": 100, "page": page, "_fields": "date,link,title"})
-    if r is None or not r.ok: break
-    J = r.json()
-    if not J: break
-    for p in J:
-        t = html.unescape(p["title"]["rendered"])
-        if re.match(r"B[áa]o c[áa]o t[ìi]nh h[ìi]nh kinh t[ếe]", t): seen.append((p["date"][:10], p["link"], t))
-print("reports found", len(seen), "oldest", seen[-1][:1] if seen else None)
-for d, l, t in seen[:40]: print("   ", d, l[:130], "|", t[:70])
-for d, l, t in [s for s in seen if s[0] >= "2026-10-01"][:1] + [s for s in seen if s[0] < "2021-03-01"][:1]:
-    r = get(l)
-    if r is None or not r.ok: continue
-    files = sorted(set(re.findall(r'href="([^"]+/wp-content/uploads/[^"]+\.(?:xlsx?|docx?|pdf))"', r.text, re.I)))
-    for a in files: print("     file", a)
-    for a in files:
-        if a.lower().endswith((".xlsx", ".xls")):
-            f = get(a)
-            if f is not None and f.ok:
-                try: dump(f.content)
-                except Exception as e: print("   xlsx err", e)
-f = get("https://www.nso.gov.vn/wp-content/uploads/2023/10/02.-Bieu-so-lieu-T10.2023.xlsx")
-if f is not None and f.ok: dump(f.content)
+        print(p, e); return []
+    print("==", p, len(rows))
+    for r in rows[:5] + rows[-n:]: print("  ", {k: v for k, v in r.items() if k != "url"})
+    return rows
+q = show("data/coffee/diffs/safras_quotes.csv", 60)
+c = collections.Counter((r["site"], r["series"], r["unit"]) for r in q); print(c)
+print("ambiguous", [ (r["quote_date"], r["series"], r["low"], r["high"], r["url"][-70:]) for r in q if r.get("ambiguous") == "1"][:40])
+for s in ("good_cup_mtgb", "fine_cup_1718", "semi_washed", "conillon", "rio"):
+    v = [float(r["low"]) for r in q if r["series"] == s and r["unit"] == "c/lb" and r["low"]]
+    if v: print(s, "n", len(v), "min", min(v), "max", max(v), "outliers", [(r["quote_date"], r["low"], r["url"][-60:]) for r in q if r["series"] == s and r["unit"] == "c/lb" and r["low"] and abs(float(r["low"])) > 120])
+for s in set(r["series"] for r in q if r["unit"].startswith("R$")):
+    v = sorted(float(r["low"]) for r in q if r["series"] == s and r["unit"].startswith("R$") and r["low"])
+    print(s, "n", len(v), "min", v[0], "med", v[len(v)//2], "max", v[-1])
+show("data/coffee/diffs/brazil_stocks.csv", 30)
+show("data/coffee/diffs/vietnam_exports.csv", 70)
