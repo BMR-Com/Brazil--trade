@@ -40,6 +40,42 @@ ABF.L,ABF (Primark),cotton,quarterlyInventory,2025-02-28,3M,GBP,3321000000.0
 ABF.L,ABF (Primark),cotton,quarterlyInventory,2025-08-31,3M,GBP,3289000000.0
 ABF.L,ABF (Primark),cotton,quarterlyInventory,2026-02-28,3M,GBP,3420000000.0
 ABF.L,ABF (Primark),cotton,quarterlyInventory,2026-08-31,3M,GBP,3187000000.0
+AEO,American Eagle,cotton,annualInventory,2023-01-31,12M,USD,585083000.0
+AEO,American Eagle,cotton,annualInventory,2024-01-31,12M,USD,640662000.0
+AEO,American Eagle,cotton,annualInventory,2025-01-31,12M,USD,636655000.0
+AEO,American Eagle,cotton,annualInventory,2026-01-31,12M,USD,701966000.0
+AEO,American Eagle,cotton,annualTotalRevenue,2023-01-31,12M,USD,4989833000.0
+AEO,American Eagle,cotton,annualTotalRevenue,2024-01-31,12M,USD,5261770000.0
+AEO,American Eagle,cotton,annualTotalRevenue,2025-01-31,12M,USD,5328652000.0
+AEO,American Eagle,cotton,annualTotalRevenue,2026-01-31,12M,USD,5547236000.0
+AEO,American Eagle,cotton,quarterlyInventory,2025-07-31,3M,USD,718337000.0
+AEO,American Eagle,cotton,quarterlyInventory,2025-10-31,3M,USD,891232000.0
+AEO,American Eagle,cotton,quarterlyInventory,2026-01-31,3M,USD,701966000.0
+AEO,American Eagle,cotton,quarterlyInventory,2026-04-30,3M,USD,816666000.0
+AEO,American Eagle,cotton,quarterlyInventory,2026-07-31,3M,USD,817910000.0
+AEO,American Eagle,cotton,quarterlyTotalRevenue,2025-07-31,3M,USD,1283675000.0
+AEO,American Eagle,cotton,quarterlyTotalRevenue,2025-10-31,3M,USD,1362701000.0
+AEO,American Eagle,cotton,quarterlyTotalRevenue,2026-01-31,3M,USD,1811260000.0
+AEO,American Eagle,cotton,quarterlyTotalRevenue,2026-04-30,3M,USD,1195285000.0
+AEO,American Eagle,cotton,quarterlyTotalRevenue,2026-07-31,3M,USD,1380375000.0
+ANF,Abercrombie & Fitch,cotton,annualInventory,2023-01-31,12M,USD,505621000.0
+ANF,Abercrombie & Fitch,cotton,annualInventory,2024-01-31,12M,USD,469466000.0
+ANF,Abercrombie & Fitch,cotton,annualInventory,2025-01-31,12M,USD,575005000.0
+ANF,Abercrombie & Fitch,cotton,annualInventory,2026-01-31,12M,USD,601218000.0
+ANF,Abercrombie & Fitch,cotton,annualTotalRevenue,2023-01-31,12M,USD,3697751000.0
+ANF,Abercrombie & Fitch,cotton,annualTotalRevenue,2024-01-31,12M,USD,4280677000.0
+ANF,Abercrombie & Fitch,cotton,annualTotalRevenue,2025-01-31,12M,USD,4948587000.0
+ANF,Abercrombie & Fitch,cotton,annualTotalRevenue,2026-01-31,12M,USD,5266292000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyInventory,2025-07-31,3M,USD,592966000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyInventory,2025-10-31,3M,USD,730453000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyInventory,2026-01-31,3M,USD,601218000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyInventory,2026-04-30,3M,USD,532691000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyInventory,2026-07-31,3M,USD,591662000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyTotalRevenue,2025-07-31,3M,USD,1208560000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyTotalRevenue,2025-10-31,3M,USD,1290619000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyTotalRevenue,2026-01-31,3M,USD,1669802000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyTotalRevenue,2026-04-30,3M,USD,1113821000.0
+ANF,Abercrombie & Fitch,cotton,quarterlyTotalRevenue,2026-07-31,3M,USD,1266689000.0
 BARN.SW,Barry Callebaut,cocoa,annualInventory,2023-08-31,12M,CHF,2925732000.0
 BARN.SW,Barry Callebaut,cocoa,annualInventory,2024-08-31,12M,CHF,5622400000.0
 BARN.SW,Barry Callebaut,cocoa,annualInventory,2025-08-31,12M,CHF,4739940000.0
@@ -52,6 +88,78 @@ BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2025-02-28,3M,CHF,7335154000.0
 BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2025-08-31,3M,CHF,4739940000.0
 BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2026-02-28,3M,CHF,2937894000.0
 BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2026-08-31,3M,CHF,3547878000.0
+BROS,Dutch Bros,coffee,annualInventory,2022-12-31,12M,USD,39229000.0
+BROS,Dutch Bros,coffee,annualInventory,2023-12-31,12M,USD,46953000.0
+BROS,Dutch Bros,coffee,annualInventory,2024-12-31,12M,USD,36488000.0
+BROS,Dutch Bros,coffee,annualInventory,2025-12-31,12M,USD,48917000.0
+BROS,Dutch Bros,coffee,annualTotalRevenue,2022-12-31,12M,USD,739012000.0
+BROS,Dutch Bros,coffee,annualTotalRevenue,2023-12-31,12M,USD,965776000.0
+BROS,Dutch Bros,coffee,annualTotalRevenue,2024-12-31,12M,USD,1281015000.0
+BROS,Dutch Bros,coffee,annualTotalRevenue,2025-12-31,12M,USD,1638159000.0
+BROS,Dutch Bros,coffee,quarterlyInventory,2025-09-30,3M,USD,45295000.0
+BROS,Dutch Bros,coffee,quarterlyInventory,2025-12-31,3M,USD,48917000.0
+BROS,Dutch Bros,coffee,quarterlyInventory,2026-03-31,3M,USD,37392000.0
+BROS,Dutch Bros,coffee,quarterlyInventory,2026-06-30,3M,USD,41253000.0
+BROS,Dutch Bros,coffee,quarterlyInventory,2026-09-30,3M,USD,42001000.0
+BROS,Dutch Bros,coffee,quarterlyTotalRevenue,2025-09-30,3M,USD,423584000.0
+BROS,Dutch Bros,coffee,quarterlyTotalRevenue,2025-12-31,3M,USD,443610000.0
+BROS,Dutch Bros,coffee,quarterlyTotalRevenue,2026-03-31,3M,USD,464412000.0
+BROS,Dutch Bros,coffee,quarterlyTotalRevenue,2026-06-30,3M,USD,550851000.0
+BROS,Dutch Bros,coffee,quarterlyTotalRevenue,2026-09-30,3M,USD,549839000.0
+CRI,Carter's,cotton,annualInventory,2022-12-31,12M,USD,744573000.0
+CRI,Carter's,cotton,annualInventory,2023-12-31,12M,USD,537125000.0
+CRI,Carter's,cotton,annualInventory,2024-12-31,12M,USD,502332000.0
+CRI,Carter's,cotton,annualInventory,2025-12-31,12M,USD,544624000.0
+CRI,Carter's,cotton,annualTotalRevenue,2022-12-31,12M,USD,3212733000.0
+CRI,Carter's,cotton,annualTotalRevenue,2023-12-31,12M,USD,2945594000.0
+CRI,Carter's,cotton,annualTotalRevenue,2024-12-31,12M,USD,2844102000.0
+CRI,Carter's,cotton,annualTotalRevenue,2025-12-31,12M,USD,2898426000.0
+CRI,Carter's,cotton,quarterlyInventory,2025-06-30,3M,USD,619074000.0
+CRI,Carter's,cotton,quarterlyInventory,2025-09-30,3M,USD,656149000.0
+CRI,Carter's,cotton,quarterlyInventory,2025-12-31,3M,USD,544624000.0
+CRI,Carter's,cotton,quarterlyInventory,2026-03-31,3M,USD,465876000.0
+CRI,Carter's,cotton,quarterlyInventory,2026-09-30,3M,USD,587035000.0
+CRI,Carter's,cotton,quarterlyTotalRevenue,2025-06-30,3M,USD,585313000.0
+CRI,Carter's,cotton,quarterlyTotalRevenue,2025-09-30,3M,USD,757836000.0
+CRI,Carter's,cotton,quarterlyTotalRevenue,2025-12-31,3M,USD,925451000.0
+CRI,Carter's,cotton,quarterlyTotalRevenue,2026-03-31,3M,USD,681113000.0
+CRI,Carter's,cotton,quarterlyTotalRevenue,2026-09-30,3M,USD,752456000.0
+GAP,Gap,cotton,annualInventory,2023-01-31,12M,USD,2389000000.0
+GAP,Gap,cotton,annualInventory,2024-01-31,12M,USD,1995000000.0
+GAP,Gap,cotton,annualInventory,2025-01-31,12M,USD,2067000000.0
+GAP,Gap,cotton,annualInventory,2026-01-31,12M,USD,2207000000.0
+GAP,Gap,cotton,annualTotalRevenue,2023-01-31,12M,USD,15616000000.0
+GAP,Gap,cotton,annualTotalRevenue,2024-01-31,12M,USD,14889000000.0
+GAP,Gap,cotton,annualTotalRevenue,2025-01-31,12M,USD,15086000000.0
+GAP,Gap,cotton,annualTotalRevenue,2026-01-31,12M,USD,15366000000.0
+GAP,Gap,cotton,quarterlyInventory,2025-07-31,3M,USD,2294000000.0
+GAP,Gap,cotton,quarterlyInventory,2025-10-31,3M,USD,2459000000.0
+GAP,Gap,cotton,quarterlyInventory,2026-01-31,3M,USD,2207000000.0
+GAP,Gap,cotton,quarterlyInventory,2026-04-30,3M,USD,2095000000.0
+GAP,Gap,cotton,quarterlyInventory,2026-07-31,3M,USD,2297000000.0
+GAP,Gap,cotton,quarterlyTotalRevenue,2025-07-31,3M,USD,3725000000.0
+GAP,Gap,cotton,quarterlyTotalRevenue,2025-10-31,3M,USD,3942000000.0
+GAP,Gap,cotton,quarterlyTotalRevenue,2026-01-31,3M,USD,4236000000.0
+GAP,Gap,cotton,quarterlyTotalRevenue,2026-04-30,3M,USD,3497000000.0
+GAP,Gap,cotton,quarterlyTotalRevenue,2026-07-31,3M,USD,3651000000.0
+GIL,Gildan,cotton,annualInventory,2022-12-31,12M,USD,1225940000.0
+GIL,Gildan,cotton,annualInventory,2023-12-31,12M,USD,1089441000.0
+GIL,Gildan,cotton,annualInventory,2024-12-31,12M,USD,1110562000.0
+GIL,Gildan,cotton,annualInventory,2025-12-31,12M,USD,2370165000.0
+GIL,Gildan,cotton,annualTotalRevenue,2022-12-31,12M,USD,3240482000.0
+GIL,Gildan,cotton,annualTotalRevenue,2023-12-31,12M,USD,3195911000.0
+GIL,Gildan,cotton,annualTotalRevenue,2024-12-31,12M,USD,3270590000.0
+GIL,Gildan,cotton,annualTotalRevenue,2025-12-31,12M,USD,3619236000.0
+GIL,Gildan,cotton,quarterlyInventory,2025-09-30,3M,USD,1247958000.0
+GIL,Gildan,cotton,quarterlyInventory,2025-12-31,3M,USD,2370165000.0
+GIL,Gildan,cotton,quarterlyInventory,2026-03-31,3M,USD,2417668000.0
+GIL,Gildan,cotton,quarterlyInventory,2026-06-30,3M,USD,2168338000.0
+GIL,Gildan,cotton,quarterlyInventory,2026-09-30,3M,USD,2068292000.0
+GIL,Gildan,cotton,quarterlyTotalRevenue,2025-09-30,3M,USD,910567000.0
+GIL,Gildan,cotton,quarterlyTotalRevenue,2025-12-31,3M,USD,1078493000.0
+GIL,Gildan,cotton,quarterlyTotalRevenue,2026-03-31,3M,USD,1165944000.0
+GIL,Gildan,cotton,quarterlyTotalRevenue,2026-06-30,3M,USD,1582474000.0
+GIL,Gildan,cotton,quarterlyTotalRevenue,2026-09-30,3M,USD,1466649000.0
 HM-B.ST,H&M,cotton,annualInventory,2022-11-30,12M,SEK,42495000000.0
 HM-B.ST,H&M,cotton,annualInventory,2023-11-30,12M,SEK,37358000000.0
 HM-B.ST,H&M,cotton,annualInventory,2024-11-30,12M,SEK,40348000000.0
@@ -70,6 +178,24 @@ HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2025-11-30,3M,SEK,59221000000.0
 HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2026-02-28,3M,SEK,49607000000.0
 HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2026-05-31,3M,SEK,54828000000.0
 HM-B.ST,H&M,cotton,quarterlyTotalRevenue,2026-08-31,3M,SEK,57189000000.0
+HSY,Hershey,cocoa,annualInventory,2022-12-31,12M,USD,1173119000.0
+HSY,Hershey,cocoa,annualInventory,2023-12-31,12M,USD,1340996000.0
+HSY,Hershey,cocoa,annualInventory,2024-12-31,12M,USD,1254094000.0
+HSY,Hershey,cocoa,annualInventory,2025-12-31,12M,USD,1429254000.0
+HSY,Hershey,cocoa,annualTotalRevenue,2022-12-31,12M,USD,10419294000.0
+HSY,Hershey,cocoa,annualTotalRevenue,2023-12-31,12M,USD,11164992000.0
+HSY,Hershey,cocoa,annualTotalRevenue,2024-12-31,12M,USD,11202263000.0
+HSY,Hershey,cocoa,annualTotalRevenue,2025-12-31,12M,USD,11692576000.0
+HSY,Hershey,cocoa,quarterlyInventory,2025-09-30,3M,USD,1707522000.0
+HSY,Hershey,cocoa,quarterlyInventory,2025-12-31,3M,USD,1429254000.0
+HSY,Hershey,cocoa,quarterlyInventory,2026-03-31,3M,USD,1429124000.0
+HSY,Hershey,cocoa,quarterlyInventory,2026-06-30,3M,USD,1743318000.0
+HSY,Hershey,cocoa,quarterlyInventory,2026-09-30,3M,USD,1608756000.0
+HSY,Hershey,cocoa,quarterlyTotalRevenue,2025-09-30,3M,USD,3181418000.0
+HSY,Hershey,cocoa,quarterlyTotalRevenue,2025-12-31,3M,USD,3091021000.0
+HSY,Hershey,cocoa,quarterlyTotalRevenue,2026-03-31,3M,USD,3104167000.0
+HSY,Hershey,cocoa,quarterlyTotalRevenue,2026-06-30,3M,USD,2787306000.0
+HSY,Hershey,cocoa,quarterlyTotalRevenue,2026-09-30,3M,USD,3275510000.0
 ITX.MC,Inditex,cotton,annualInventory,2023-01-31,12M,EUR,3191000000.0
 ITX.MC,Inditex,cotton,annualInventory,2024-01-31,12M,EUR,2966000000.0
 ITX.MC,Inditex,cotton,annualInventory,2025-01-31,12M,EUR,3321000000.0
@@ -88,6 +214,60 @@ ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2025-07-31,3M,EUR,10083000000.0
 ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2025-10-31,3M,EUR,9814000000.0
 ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2026-04-30,3M,EUR,8750000000.0
 ITX.MC,Inditex,cotton,quarterlyTotalRevenue,2026-07-31,3M,EUR,11005000000.0
+KDP,Keurig Dr Pepper,coffee,annualInventory,2022-12-31,12M,USD,1314000000.0
+KDP,Keurig Dr Pepper,coffee,annualInventory,2023-12-31,12M,USD,1142000000.0
+KDP,Keurig Dr Pepper,coffee,annualInventory,2024-12-31,12M,USD,1299000000.0
+KDP,Keurig Dr Pepper,coffee,annualInventory,2025-12-31,12M,USD,1733000000.0
+KDP,Keurig Dr Pepper,coffee,annualTotalRevenue,2022-12-31,12M,USD,14057000000.0
+KDP,Keurig Dr Pepper,coffee,annualTotalRevenue,2023-12-31,12M,USD,14814000000.0
+KDP,Keurig Dr Pepper,coffee,annualTotalRevenue,2024-12-31,12M,USD,15351000000.0
+KDP,Keurig Dr Pepper,coffee,annualTotalRevenue,2025-12-31,12M,USD,16603000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyInventory,2025-09-30,3M,USD,1840000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyInventory,2025-12-31,3M,USD,1733000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyInventory,2026-03-31,3M,USD,1829000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyInventory,2026-06-30,3M,USD,3857000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyInventory,2026-09-30,3M,USD,3767000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyTotalRevenue,2025-09-30,3M,USD,4306000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyTotalRevenue,2025-12-31,3M,USD,4499000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyTotalRevenue,2026-03-31,3M,USD,3976000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyTotalRevenue,2026-06-30,3M,USD,7309000000.0
+KDP,Keurig Dr Pepper,coffee,quarterlyTotalRevenue,2026-09-30,3M,USD,7344000000.0
+KTB,Kontoor Brands,cotton,annualInventory,2022-12-31,12M,USD,596836000.0
+KTB,Kontoor Brands,cotton,annualInventory,2023-12-31,12M,USD,500353000.0
+KTB,Kontoor Brands,cotton,annualInventory,2024-12-31,12M,USD,390209000.0
+KTB,Kontoor Brands,cotton,annualInventory,2025-12-31,12M,USD,566682000.0
+KTB,Kontoor Brands,cotton,annualTotalRevenue,2022-12-31,12M,USD,2631444000.0
+KTB,Kontoor Brands,cotton,annualTotalRevenue,2023-12-31,12M,USD,2607472000.0
+KTB,Kontoor Brands,cotton,annualTotalRevenue,2024-12-31,12M,USD,2607578000.0
+KTB,Kontoor Brands,cotton,annualTotalRevenue,2025-12-31,12M,USD,3152456000.0
+KTB,Kontoor Brands,cotton,quarterlyInventory,2025-09-30,3M,USD,764988000.0
+KTB,Kontoor Brands,cotton,quarterlyInventory,2025-12-31,3M,USD,566682000.0
+KTB,Kontoor Brands,cotton,quarterlyInventory,2026-03-31,3M,USD,463501000.0
+KTB,Kontoor Brands,cotton,quarterlyInventory,2026-06-30,3M,USD,526121000.0
+KTB,Kontoor Brands,cotton,quarterlyInventory,2026-09-30,3M,USD,569825000.0
+KTB,Kontoor Brands,cotton,quarterlyTotalRevenue,2025-09-30,3M,USD,666472000.0
+KTB,Kontoor Brands,cotton,quarterlyTotalRevenue,2025-12-31,3M,USD,1018081000.0
+KTB,Kontoor Brands,cotton,quarterlyTotalRevenue,2026-03-31,3M,USD,613322000.0
+KTB,Kontoor Brands,cotton,quarterlyTotalRevenue,2026-06-30,3M,USD,584288000.0
+KTB,Kontoor Brands,cotton,quarterlyTotalRevenue,2026-09-30,3M,USD,685346000.0
+LEVI,Levi Strauss,cotton,annualInventory,2022-11-30,12M,USD,1416800000.0
+LEVI,Levi Strauss,cotton,annualInventory,2023-11-30,12M,USD,1290100000.0
+LEVI,Levi Strauss,cotton,annualInventory,2024-11-30,12M,USD,1131300000.0
+LEVI,Levi Strauss,cotton,annualInventory,2025-11-30,12M,USD,1237700000.0
+LEVI,Levi Strauss,cotton,annualTotalRevenue,2022-11-30,12M,USD,6168600000.0
+LEVI,Levi Strauss,cotton,annualTotalRevenue,2023-11-30,12M,USD,5842100000.0
+LEVI,Levi Strauss,cotton,annualTotalRevenue,2024-11-30,12M,USD,6032000000.0
+LEVI,Levi Strauss,cotton,annualTotalRevenue,2025-11-30,12M,USD,6282000000.0
+LEVI,Levi Strauss,cotton,quarterlyInventory,2025-08-31,3M,USD,1286300000.0
+LEVI,Levi Strauss,cotton,quarterlyInventory,2025-11-30,3M,USD,1237700000.0
+LEVI,Levi Strauss,cotton,quarterlyInventory,2026-02-28,3M,USD,1120600000.0
+LEVI,Levi Strauss,cotton,quarterlyInventory,2026-05-31,3M,USD,1157600000.0
+LEVI,Levi Strauss,cotton,quarterlyInventory,2026-08-31,3M,USD,1253600000.0
+LEVI,Levi Strauss,cotton,quarterlyTotalRevenue,2025-08-31,3M,USD,1543400000.0
+LEVI,Levi Strauss,cotton,quarterlyTotalRevenue,2025-11-30,3M,USD,1765800000.0
+LEVI,Levi Strauss,cotton,quarterlyTotalRevenue,2026-02-28,3M,USD,1742500000.0
+LEVI,Levi Strauss,cotton,quarterlyTotalRevenue,2026-05-31,3M,USD,1562000000.0
+LEVI,Levi Strauss,cotton,quarterlyTotalRevenue,2026-08-31,3M,USD,1609700000.0
 LISN.SW,Lindt & Sprüngli,cocoa,annualInventory,2022-12-31,12M,CHF,875600000.0
 LISN.SW,Lindt & Sprüngli,cocoa,annualInventory,2023-12-31,12M,CHF,921500000.0
 LISN.SW,Lindt & Sprüngli,cocoa,annualInventory,2024-12-31,12M,CHF,941300000.0
@@ -98,6 +278,24 @@ LISN.SW,Lindt & Sprüngli,cocoa,annualTotalRevenue,2024-12-31,12M,CHF,5468500000
 LISN.SW,Lindt & Sprüngli,cocoa,annualTotalRevenue,2025-12-31,12M,CHF,5915800000.0
 LISN.SW,Lindt & Sprüngli,cocoa,quarterlyInventory,2025-06-30,3M,CHF,1399900000.0
 LISN.SW,Lindt & Sprüngli,cocoa,quarterlyInventory,2025-12-31,3M,CHF,1190100000.0
+MDLZ,Mondelez,cocoa,annualInventory,2022-12-31,12M,USD,3381000000.0
+MDLZ,Mondelez,cocoa,annualInventory,2023-12-31,12M,USD,3615000000.0
+MDLZ,Mondelez,cocoa,annualInventory,2024-12-31,12M,USD,3827000000.0
+MDLZ,Mondelez,cocoa,annualInventory,2025-12-31,12M,USD,4419000000.0
+MDLZ,Mondelez,cocoa,annualTotalRevenue,2022-12-31,12M,USD,31496000000.0
+MDLZ,Mondelez,cocoa,annualTotalRevenue,2023-12-31,12M,USD,36016000000.0
+MDLZ,Mondelez,cocoa,annualTotalRevenue,2024-12-31,12M,USD,36441000000.0
+MDLZ,Mondelez,cocoa,annualTotalRevenue,2025-12-31,12M,USD,38537000000.0
+MDLZ,Mondelez,cocoa,quarterlyInventory,2025-06-30,3M,USD,4951000000.0
+MDLZ,Mondelez,cocoa,quarterlyInventory,2025-09-30,3M,USD,5098000000.0
+MDLZ,Mondelez,cocoa,quarterlyInventory,2025-12-31,3M,USD,4419000000.0
+MDLZ,Mondelez,cocoa,quarterlyInventory,2026-03-31,3M,USD,4079000000.0
+MDLZ,Mondelez,cocoa,quarterlyInventory,2026-09-30,3M,USD,4441000000.0
+MDLZ,Mondelez,cocoa,quarterlyTotalRevenue,2025-06-30,3M,USD,8984000000.0
+MDLZ,Mondelez,cocoa,quarterlyTotalRevenue,2025-09-30,3M,USD,9744000000.0
+MDLZ,Mondelez,cocoa,quarterlyTotalRevenue,2025-12-31,3M,USD,10496000000.0
+MDLZ,Mondelez,cocoa,quarterlyTotalRevenue,2026-03-31,3M,USD,10080000000.0
+MDLZ,Mondelez,cocoa,quarterlyTotalRevenue,2026-09-30,3M,USD,9967000000.0
 NESN.SW,Nestlé,coffee,annualInventory,2022-12-31,12M,CHF,15019000000.0
 NESN.SW,Nestlé,coffee,annualInventory,2023-12-31,12M,CHF,11896000000.0
 NESN.SW,Nestlé,coffee,annualInventory,2024-12-31,12M,CHF,13260000000.0
@@ -120,3 +318,147 @@ NXT.L,Next,cotton,annualTotalRevenue,2026-01-31,12M,GBP,6901300000.0
 NXT.L,Next,cotton,quarterlyInventory,2025-07-31,3M,GBP,1029800000.0
 NXT.L,Next,cotton,quarterlyInventory,2026-01-31,3M,GBP,949500000.0
 NXT.L,Next,cotton,quarterlyInventory,2026-07-31,3M,GBP,1085400000.0
+PVH,PVH,cotton,annualInventory,2023-01-31,12M,USD,1802600000.0
+PVH,PVH,cotton,annualInventory,2024-01-31,12M,USD,1419700000.0
+PVH,PVH,cotton,annualInventory,2025-01-31,12M,USD,1508700000.0
+PVH,PVH,cotton,annualInventory,2026-01-31,12M,USD,1583500000.0
+PVH,PVH,cotton,annualTotalRevenue,2023-01-31,12M,USD,9024200000.0
+PVH,PVH,cotton,annualTotalRevenue,2024-01-31,12M,USD,9217700000.0
+PVH,PVH,cotton,annualTotalRevenue,2025-01-31,12M,USD,8652900000.0
+PVH,PVH,cotton,annualTotalRevenue,2026-01-31,12M,USD,8950200000.0
+PVH,PVH,cotton,quarterlyInventory,2025-07-31,3M,USD,1791000000.0
+PVH,PVH,cotton,quarterlyInventory,2025-10-31,3M,USD,1664000000.0
+PVH,PVH,cotton,quarterlyInventory,2026-01-31,3M,USD,1583500000.0
+PVH,PVH,cotton,quarterlyInventory,2026-04-30,3M,USD,1510200000.0
+PVH,PVH,cotton,quarterlyInventory,2026-07-31,3M,USD,1738200000.0
+PVH,PVH,cotton,quarterlyTotalRevenue,2025-07-31,3M,USD,2167200000.0
+PVH,PVH,cotton,quarterlyTotalRevenue,2025-10-31,3M,USD,2294300000.0
+PVH,PVH,cotton,quarterlyTotalRevenue,2026-01-31,3M,USD,2505100000.0
+PVH,PVH,cotton,quarterlyTotalRevenue,2026-04-30,3M,USD,2025100000.0
+PVH,PVH,cotton,quarterlyTotalRevenue,2026-07-31,3M,USD,2097000000.0
+RL,Ralph Lauren,cotton,annualInventory,2023-03-31,12M,USD,1071300000.0
+RL,Ralph Lauren,cotton,annualInventory,2024-03-31,12M,USD,902200000.0
+RL,Ralph Lauren,cotton,annualInventory,2025-03-31,12M,USD,949600000.0
+RL,Ralph Lauren,cotton,annualInventory,2026-03-31,12M,USD,1014300000.0
+RL,Ralph Lauren,cotton,annualTotalRevenue,2023-03-31,12M,USD,6443600000.0
+RL,Ralph Lauren,cotton,annualTotalRevenue,2024-03-31,12M,USD,6631400000.0
+RL,Ralph Lauren,cotton,annualTotalRevenue,2025-03-31,12M,USD,7079000000.0
+RL,Ralph Lauren,cotton,annualTotalRevenue,2026-03-31,12M,USD,8114500000.0
+RL,Ralph Lauren,cotton,quarterlyInventory,2025-09-30,3M,USD,1261300000.0
+RL,Ralph Lauren,cotton,quarterlyInventory,2025-12-31,3M,USD,1149400000.0
+RL,Ralph Lauren,cotton,quarterlyInventory,2026-03-31,3M,USD,1014300000.0
+RL,Ralph Lauren,cotton,quarterlyInventory,2026-06-30,3M,USD,1163700000.0
+RL,Ralph Lauren,cotton,quarterlyInventory,2026-09-30,3M,USD,1151200000.0
+RL,Ralph Lauren,cotton,quarterlyTotalRevenue,2025-09-30,3M,USD,2010700000.0
+RL,Ralph Lauren,cotton,quarterlyTotalRevenue,2025-12-31,3M,USD,2406000000.0
+RL,Ralph Lauren,cotton,quarterlyTotalRevenue,2026-03-31,3M,USD,1978700000.0
+RL,Ralph Lauren,cotton,quarterlyTotalRevenue,2026-06-30,3M,USD,1959800000.0
+RL,Ralph Lauren,cotton,quarterlyTotalRevenue,2026-09-30,3M,USD,2193300000.0
+ROST,Ross Stores,cotton,annualInventory,2023-01-31,12M,USD,2023495000.0
+ROST,Ross Stores,cotton,annualInventory,2024-01-31,12M,USD,2192220000.0
+ROST,Ross Stores,cotton,annualInventory,2025-01-31,12M,USD,2444513000.0
+ROST,Ross Stores,cotton,annualInventory,2026-01-31,12M,USD,2630970000.0
+ROST,Ross Stores,cotton,annualTotalRevenue,2023-01-31,12M,USD,18695829000.0
+ROST,Ross Stores,cotton,annualTotalRevenue,2024-01-31,12M,USD,20376941000.0
+ROST,Ross Stores,cotton,annualTotalRevenue,2025-01-31,12M,USD,21129219000.0
+ROST,Ross Stores,cotton,annualTotalRevenue,2026-01-31,12M,USD,22750559000.0
+ROST,Ross Stores,cotton,quarterlyInventory,2025-07-31,3M,USD,2608485000.0
+ROST,Ross Stores,cotton,quarterlyInventory,2025-10-31,3M,USD,3128971000.0
+ROST,Ross Stores,cotton,quarterlyInventory,2026-01-31,3M,USD,2630970000.0
+ROST,Ross Stores,cotton,quarterlyInventory,2026-04-30,3M,USD,2976958000.0
+ROST,Ross Stores,cotton,quarterlyInventory,2026-07-31,3M,USD,3087370000.0
+ROST,Ross Stores,cotton,quarterlyTotalRevenue,2025-07-31,3M,USD,5529152000.0
+ROST,Ross Stores,cotton,quarterlyTotalRevenue,2025-10-31,3M,USD,5600946000.0
+ROST,Ross Stores,cotton,quarterlyTotalRevenue,2026-01-31,3M,USD,6635490000.0
+ROST,Ross Stores,cotton,quarterlyTotalRevenue,2026-04-30,3M,USD,6010476000.0
+ROST,Ross Stores,cotton,quarterlyTotalRevenue,2026-07-31,3M,USD,6264886000.0
+SBUX,Starbucks,coffee,annualInventory,2023-09-30,12M,USD,1806400000.0
+SBUX,Starbucks,coffee,annualInventory,2024-09-30,12M,USD,1777300000.0
+SBUX,Starbucks,coffee,annualInventory,2025-09-30,12M,USD,2185600000.0
+SBUX,Starbucks,coffee,annualInventory,2026-09-30,12M,USD,2243400000.0
+SBUX,Starbucks,coffee,annualTotalRevenue,2023-09-30,12M,USD,35975600000.0
+SBUX,Starbucks,coffee,annualTotalRevenue,2024-09-30,12M,USD,36176200000.0
+SBUX,Starbucks,coffee,annualTotalRevenue,2025-09-30,12M,USD,37184400000.0
+SBUX,Starbucks,coffee,annualTotalRevenue,2026-09-30,12M,USD,37910600000.0
+SBUX,Starbucks,coffee,quarterlyInventory,2025-09-30,3M,USD,2185600000.0
+SBUX,Starbucks,coffee,quarterlyInventory,2025-12-31,3M,USD,2114400000.0
+SBUX,Starbucks,coffee,quarterlyInventory,2026-03-31,3M,USD,2157800000.0
+SBUX,Starbucks,coffee,quarterlyInventory,2026-06-30,3M,USD,2208900000.0
+SBUX,Starbucks,coffee,quarterlyInventory,2026-09-30,3M,USD,2243400000.0
+SBUX,Starbucks,coffee,quarterlyTotalRevenue,2025-09-30,3M,USD,9569000000.0
+SBUX,Starbucks,coffee,quarterlyTotalRevenue,2025-12-31,3M,USD,9915100000.0
+SBUX,Starbucks,coffee,quarterlyTotalRevenue,2026-03-31,3M,USD,9531500000.0
+SBUX,Starbucks,coffee,quarterlyTotalRevenue,2026-06-30,3M,USD,9322700000.0
+SBUX,Starbucks,coffee,quarterlyTotalRevenue,2026-09-30,3M,USD,9141300000.0
+SJM,J.M. Smucker,coffee,annualInventory,2023-04-30,12M,USD,1009800000.0
+SJM,J.M. Smucker,coffee,annualInventory,2024-04-30,12M,USD,1038900000.0
+SJM,J.M. Smucker,coffee,annualInventory,2025-04-30,12M,USD,1209400000.0
+SJM,J.M. Smucker,coffee,annualInventory,2026-04-30,12M,USD,1126500000.0
+SJM,J.M. Smucker,coffee,annualTotalRevenue,2023-04-30,12M,USD,8529200000.0
+SJM,J.M. Smucker,coffee,annualTotalRevenue,2024-04-30,12M,USD,8178700000.0
+SJM,J.M. Smucker,coffee,annualTotalRevenue,2025-04-30,12M,USD,8726100000.0
+SJM,J.M. Smucker,coffee,annualTotalRevenue,2026-04-30,12M,USD,9050900000.0
+SJM,J.M. Smucker,coffee,quarterlyInventory,2025-07-31,3M,USD,1386000000.0
+SJM,J.M. Smucker,coffee,quarterlyInventory,2025-10-31,3M,USD,1354200000.0
+SJM,J.M. Smucker,coffee,quarterlyInventory,2026-01-31,3M,USD,1171100000.0
+SJM,J.M. Smucker,coffee,quarterlyInventory,2026-04-30,3M,USD,1126500000.0
+SJM,J.M. Smucker,coffee,quarterlyInventory,2026-07-31,3M,USD,1186500000.0
+SJM,J.M. Smucker,coffee,quarterlyTotalRevenue,2025-07-31,3M,USD,2113300000.0
+SJM,J.M. Smucker,coffee,quarterlyTotalRevenue,2025-10-31,3M,USD,2330100000.0
+SJM,J.M. Smucker,coffee,quarterlyTotalRevenue,2026-01-31,3M,USD,2339400000.0
+SJM,J.M. Smucker,coffee,quarterlyTotalRevenue,2026-04-30,3M,USD,2268100000.0
+SJM,J.M. Smucker,coffee,quarterlyTotalRevenue,2026-07-31,3M,USD,2219300000.0
+TJX,TJX,cotton,annualInventory,2023-01-31,12M,USD,5819000000.0
+TJX,TJX,cotton,annualInventory,2024-01-31,12M,USD,5965000000.0
+TJX,TJX,cotton,annualInventory,2025-01-31,12M,USD,6421000000.0
+TJX,TJX,cotton,annualInventory,2026-01-31,12M,USD,7297000000.0
+TJX,TJX,cotton,annualTotalRevenue,2023-01-31,12M,USD,49936000000.0
+TJX,TJX,cotton,annualTotalRevenue,2024-01-31,12M,USD,54217000000.0
+TJX,TJX,cotton,annualTotalRevenue,2025-01-31,12M,USD,56360000000.0
+TJX,TJX,cotton,annualTotalRevenue,2026-01-31,12M,USD,60372000000.0
+TJX,TJX,cotton,quarterlyInventory,2025-07-31,3M,USD,7372000000.0
+TJX,TJX,cotton,quarterlyInventory,2025-10-31,3M,USD,9353000000.0
+TJX,TJX,cotton,quarterlyInventory,2026-01-31,3M,USD,7297000000.0
+TJX,TJX,cotton,quarterlyInventory,2026-04-30,3M,USD,7675000000.0
+TJX,TJX,cotton,quarterlyInventory,2026-07-31,3M,USD,7862000000.0
+TJX,TJX,cotton,quarterlyTotalRevenue,2025-07-31,3M,USD,14401000000.0
+TJX,TJX,cotton,quarterlyTotalRevenue,2025-10-31,3M,USD,15117000000.0
+TJX,TJX,cotton,quarterlyTotalRevenue,2026-01-31,3M,USD,17743000000.0
+TJX,TJX,cotton,quarterlyTotalRevenue,2026-04-30,3M,USD,14323000000.0
+TJX,TJX,cotton,quarterlyTotalRevenue,2026-07-31,3M,USD,15180000000.0
+URBN,Urban Outfitters,cotton,annualInventory,2023-01-31,12M,USD,587510000.0
+URBN,Urban Outfitters,cotton,annualInventory,2024-01-31,12M,USD,550242000.0
+URBN,Urban Outfitters,cotton,annualInventory,2025-01-31,12M,USD,621146000.0
+URBN,Urban Outfitters,cotton,annualInventory,2026-01-31,12M,USD,700945000.0
+URBN,Urban Outfitters,cotton,annualTotalRevenue,2023-01-31,12M,USD,4795244000.0
+URBN,Urban Outfitters,cotton,annualTotalRevenue,2024-01-31,12M,USD,5153237000.0
+URBN,Urban Outfitters,cotton,annualTotalRevenue,2025-01-31,12M,USD,5550666000.0
+URBN,Urban Outfitters,cotton,annualTotalRevenue,2026-01-31,12M,USD,6165376000.0
+URBN,Urban Outfitters,cotton,quarterlyInventory,2025-07-31,3M,USD,696199000.0
+URBN,Urban Outfitters,cotton,quarterlyInventory,2025-10-31,3M,USD,839793000.0
+URBN,Urban Outfitters,cotton,quarterlyInventory,2026-01-31,3M,USD,700945000.0
+URBN,Urban Outfitters,cotton,quarterlyInventory,2026-04-30,3M,USD,726858000.0
+URBN,Urban Outfitters,cotton,quarterlyInventory,2026-07-31,3M,USD,778539000.0
+URBN,Urban Outfitters,cotton,quarterlyTotalRevenue,2025-07-31,3M,USD,1504755000.0
+URBN,Urban Outfitters,cotton,quarterlyTotalRevenue,2025-10-31,3M,USD,1529350000.0
+URBN,Urban Outfitters,cotton,quarterlyTotalRevenue,2026-01-31,3M,USD,1801770000.0
+URBN,Urban Outfitters,cotton,quarterlyTotalRevenue,2026-04-30,3M,USD,1481345000.0
+URBN,Urban Outfitters,cotton,quarterlyTotalRevenue,2026-07-31,3M,USD,1661915000.0
+VFC,VF Corp,cotton,annualInventory,2023-03-31,12M,USD,2292790000.0
+VFC,VF Corp,cotton,annualInventory,2024-03-31,12M,USD,1697823000.0
+VFC,VF Corp,cotton,annualInventory,2025-03-31,12M,USD,1627025000.0
+VFC,VF Corp,cotton,annualInventory,2026-03-31,12M,USD,1371274000.0
+VFC,VF Corp,cotton,annualTotalRevenue,2023-03-31,12M,USD,11089359000.0
+VFC,VF Corp,cotton,annualTotalRevenue,2024-03-31,12M,USD,9915678000.0
+VFC,VF Corp,cotton,annualTotalRevenue,2025-03-31,12M,USD,9504691000.0
+VFC,VF Corp,cotton,annualTotalRevenue,2026-03-31,12M,USD,9605207000.0
+VFC,VF Corp,cotton,quarterlyInventory,2025-09-30,3M,USD,1855895000.0
+VFC,VF Corp,cotton,quarterlyInventory,2025-12-31,3M,USD,1658700000.0
+VFC,VF Corp,cotton,quarterlyInventory,2026-03-31,3M,USD,1371274000.0
+VFC,VF Corp,cotton,quarterlyInventory,2026-06-30,3M,USD,1899470000.0
+VFC,VF Corp,cotton,quarterlyInventory,2026-09-30,3M,USD,1984403000.0
+VFC,VF Corp,cotton,quarterlyTotalRevenue,2025-09-30,3M,USD,2802706000.0
+VFC,VF Corp,cotton,quarterlyTotalRevenue,2025-12-31,3M,USD,2875801000.0
+VFC,VF Corp,cotton,quarterlyTotalRevenue,2026-03-31,3M,USD,2166034000.0
+VFC,VF Corp,cotton,quarterlyTotalRevenue,2026-06-30,3M,USD,1669379000.0
+VFC,VF Corp,cotton,quarterlyTotalRevenue,2026-09-30,3M,USD,2695132000.0
