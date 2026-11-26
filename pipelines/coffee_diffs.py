@@ -188,6 +188,16 @@ def brazil(K):
             dom["kc23"] = k23.reindex(dom.quote_date, method="ffill").values
             dom["basis_kc"] = dom.c_lb - dom.kc23
         fob = q[(q.unit == "c/lb") & (q.mid.abs() < 100)].copy()
+        # publish a quality only while it is current: quoted in the last 35 days and at least 3 times in the last 90
+        # (so at least monthly). Older or thinner series stay in safras_quotes.csv but are left off the page.
+        now = pd.Timestamp(datetime.now(timezone.utc).date())
+        def current(d):
+            g = d.groupby("series").quote_date
+            keep = [k for k, x in g if x.max() >= now - pd.Timedelta(days=35) and (x >= now - pd.Timedelta(days=90)).sum() >= 3]
+            return d[d.series.isin(keep)], sorted(set(d.series) - set(keep))
+        fob, fob_off = current(fob)
+        dom, dom_off = current(dom)
+        out["not_current"] = {"fob": [LABEL.get(k, k) for k in fob_off], "domestic": [LABEL.get(k, k) for k in dom_off]}
         mo = lambda d, col: (d.assign(month=d.quote_date.dt.strftime("%Y-%m")).groupby(["series", "month"])[col].mean().round(1)
                              .reset_index().rename(columns={col: "v"}))
         ser = {}
@@ -197,13 +207,6 @@ def brazil(K):
             m = mo(d, col)
             ser[name] = {s: [[r.month, r1(r.v)] for r in g.itertuples()] for s, g in m.groupby("series")}
         out["monthly"] = ser
-        # fine-minus-good: FOB where both are quoted in a month, and domestic (English desk's R$ quotes)
-        sp = {}
-        for name, fk, gk in (("fob", "fine_cup_1718", "good_cup_mtgb"), ("domestic_brl", "fine_cup_domestic", "good_cup_domestic")):
-            m = {s: dict(v) for s, v in ser.get(name, {}).items()}
-            f, g = m.get(fk, {}), m.get(gk, {})
-            sp[name] = [[mth, r1(f[mth] - g[mth])] for mth in sorted(set(f) & set(g))]
-        out["fine_minus_good"] = sp
         last = {}
         for name, d, cols in (("fob", fob, ["mid", "low", "high", "shipment", "basis"]), ("domestic", dom, ["mid", "c_lb", "basis_kc", "usdbrl"])):
             for s, g in d.groupby("series"):
@@ -212,7 +215,9 @@ def brazil(K):
                                        **{c: (r1(r[c], 3 if c == "usdbrl" else 1) if c not in ("shipment", "basis") else (None if pd.isna(r[c]) else r[c])) for c in cols}}
         out["latest"] = sorted(last.values(), key=lambda x: (x["kind"], x["series"]))
         out["labels"] = LABEL
-        out["counts"] = {"quotes": int(len(q)), "first": q.quote_date.min().strftime("%Y-%m-%d"), "last": q.quote_date.max().strftime("%Y-%m-%d"),
+        shown = pd.concat([fob, dom])
+        out["counts"] = {"quotes": int(len(shown)), "first": shown.quote_date.min().strftime("%Y-%m-%d") if len(shown) else None,
+                         "last": shown.quote_date.max().strftime("%Y-%m-%d") if len(shown) else None,
                          "ambiguous": int(q.get("ambiguous", pd.Series(dtype=float)).fillna(0).astype(int).sum())}
         out["notes"] = {"fob": "FOB differential to the ICE contract named in the report (KC for arabica, London for conilon where stated), c/lb, mid of range",
                         "domestic": "spot R$ per 60-kg bag at origin (SAFRAS), converted at BCB PTAX; basis = that price in c/lb minus KC 2nd/3rd-position average",
@@ -220,14 +225,15 @@ def brazil(K):
     s = csv_or_none("brazil_stocks.csv")
     if s is not None and len(s):
         out["stocks"] = {f"{src}:{ser}": [[r.date, r1(r.m_bags, 2)] for r in g.sort_values("date").itertuples()]
-                         for (src, ser), g in s.groupby(["source", "series"])}
+                         for (src, ser), g in s.groupby(["source", "series"]) if src != "CONAB"}  # CONAB: no survey since 2020
     return out or None
 
 
 def vietnam():
     out = {}
     e = csv_or_none("vietnam_exports.csv")
-    if e is not None and len(e):
+    # NSO publishes about the 6th of the next month, so a current series ends no more than about two months back
+    if e is not None and len(e) and pd.Period(e.month.max(), "M") >= pd.Period(datetime.now(timezone.utc).strftime("%Y-%m"), "M") - 2:
         e = e.tail(72)
         out["exports"] = [{"month": r.month, "k_t": r1(r.k_t), "k_bags": r1(r.k_t / 0.06, 0), "usd_m": r1(r.usd_m),
                            "usd_t": r1(r.usd_t, 0), "basis": r.basis} for r in e.itertuples()]
