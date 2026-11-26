@@ -1,6 +1,86 @@
 {
- "updated": "2026-11-26 05:26 UTC",
+ "updated": "2026-11-26 07:13 UTC",
  "files": [
+  {
+   "file": "CC_2026_11_04-2.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_04-2.pdf",
+   "sym": "CC",
+   "kind": "futures",
+   "date": "2026-11-04",
+   "bytes": 11260,
+   "sha256": "cc71f06f6fcaf90ee20ea79b9966b221a802f53c96c863386c330dee25d4b3d6",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_04.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_04.pdf",
+   "sym": "CC",
+   "kind": "options",
+   "date": "2026-11-04",
+   "bytes": 347565,
+   "sha256": "9643495f31a2f4eeb0aef21ae1d01cba9bac6954e535b6d022aba5ed1f534a59",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_05-2.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_05-2.pdf",
+   "sym": "CC",
+   "kind": "futures",
+   "date": "2026-11-05",
+   "bytes": 11268,
+   "sha256": "994ec4cdadcb4b6b7c91ec3aa91f0bbfbebcb625b67e7bf0b6ee1d6a33008868",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_05.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_05.pdf",
+   "sym": "CC",
+   "kind": "options",
+   "date": "2026-11-05",
+   "bytes": 358871,
+   "sha256": "3599cc990c871c354240cb6c86111e8364e8104982afc665685e194567a75873",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_06-2.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_06-2.pdf",
+   "sym": "CC",
+   "kind": "futures",
+   "date": "2026-11-06",
+   "bytes": 11322,
+   "sha256": "9c1dd03adef7d306fc2ca80946407b5b6a85d34f1ca41ad1aba645963f751f76",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_06.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_06.pdf",
+   "sym": "CC",
+   "kind": "options",
+   "date": "2026-11-06",
+   "bytes": 362400,
+   "sha256": "06ebca6f4a756bc73fc186fbcdc88e7968b7b8cd3198be5181dc81c03073a764",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_09-2.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_09-2.pdf",
+   "sym": "CC",
+   "kind": "futures",
+   "date": "2026-11-09",
+   "bytes": 11346,
+   "sha256": "8c9929a300f71ffc39c556f4bf03062eb735cf588a319eb5750c0006d4dd57da",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_10-2.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_10-2.pdf",
+   "sym": "CC",
+   "kind": "futures",
+   "date": "2026-11-10",
+   "bytes": 11337,
+   "sha256": "472b4feb20c85f9b53484a851075c6404417b66fde5b2cb9c420f0378853fcf8",
+   "staged": "2026-11-26"
+  },
   {
    "file": "CC_2026_11_12-2.pdf",
    "path": "data/ice_staging/pdfs/CC_2026_11_12-2.pdf",
@@ -8,7 +88,8 @@
    "kind": "futures",
    "date": "2026-11-12",
    "bytes": 11249,
-   "sha256": "066e84d3dc75b3348bad34b2823c0782a38a971d05952727d0840e787e61cd88"
+   "sha256": "066e84d3dc75b3348bad34b2823c0782a38a971d05952727d0840e787e61cd88",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_12.pdf",
@@ -17,7 +98,8 @@
    "kind": "options",
    "date": "2026-11-12",
    "bytes": 385872,
-   "sha256": "16177406fa4d29f2f46ed1ba802b3b8fe530ec9452e8e550b53840f30381da15"
+   "sha256": "16177406fa4d29f2f46ed1ba802b3b8fe530ec9452e8e550b53840f30381da15",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_13-2.pdf",
@@ -26,7 +108,8 @@
    "kind": "futures",
    "date": "2026-11-13",
    "bytes": 11262,
-   "sha256": "b34abe5683188743b8297114a6adc83147a5803f5bb00388a186a60ff17daf4b"
+   "sha256": "b34abe5683188743b8297114a6adc83147a5803f5bb00388a186a60ff17daf4b",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_13.pdf",
@@ -35,7 +118,8 @@
    "kind": "options",
    "date": "2026-11-13",
    "bytes": 387681,
-   "sha256": "7bf8baa0745d2698dd91665f610c1beabb0756917422d590b5de965e9f63bb18"
+   "sha256": "7bf8baa0745d2698dd91665f610c1beabb0756917422d590b5de965e9f63bb18",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_16-2.pdf",
@@ -44,7 +128,8 @@
    "kind": "futures",
    "date": "2026-11-16",
    "bytes": 11266,
-   "sha256": "ef13c70ccd9774d033b91bf91b604f4ce76ed4d6a2a9d191ad0a913552ee8ee9"
+   "sha256": "ef13c70ccd9774d033b91bf91b604f4ce76ed4d6a2a9d191ad0a913552ee8ee9",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_16.pdf",
@@ -53,7 +138,8 @@
    "kind": "options",
    "date": "2026-11-16",
    "bytes": 270181,
-   "sha256": "fc3d704a01f9e627c496d64e0f5d243ce63df9e388f6cd1b1dec8ad8a056231f"
+   "sha256": "fc3d704a01f9e627c496d64e0f5d243ce63df9e388f6cd1b1dec8ad8a056231f",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_17-2.pdf",
@@ -62,7 +148,8 @@
    "kind": "futures",
    "date": "2026-11-17",
    "bytes": 11303,
-   "sha256": "b94faa2c737369a74e14639bdc705353ea158bb9b698155e8da6d6f99832c41d"
+   "sha256": "b94faa2c737369a74e14639bdc705353ea158bb9b698155e8da6d6f99832c41d",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_17.pdf",
@@ -71,7 +158,8 @@
    "kind": "options",
    "date": "2026-11-17",
    "bytes": 274225,
-   "sha256": "206d488fb9bbcf62d5ede907cbd620bb67e5610f1faf9765cd90e4c7e11cb3e9"
+   "sha256": "206d488fb9bbcf62d5ede907cbd620bb67e5610f1faf9765cd90e4c7e11cb3e9",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_18-2.pdf",
@@ -80,7 +168,8 @@
    "kind": "futures",
    "date": "2026-11-18",
    "bytes": 11326,
-   "sha256": "6cfa9dfde4741b6333c316654212dd5ce879aeea2e110c14d6c83b9e7d9b8d93"
+   "sha256": "6cfa9dfde4741b6333c316654212dd5ce879aeea2e110c14d6c83b9e7d9b8d93",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_18.pdf",
@@ -89,7 +178,8 @@
    "kind": "options",
    "date": "2026-11-18",
    "bytes": 281264,
-   "sha256": "4c40bd868e1c15260ade2b18c0b15d129896b61985c99cc899a109ad80062e84"
+   "sha256": "4c40bd868e1c15260ade2b18c0b15d129896b61985c99cc899a109ad80062e84",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_19-2.pdf",
@@ -98,7 +188,8 @@
    "kind": "futures",
    "date": "2026-11-19",
    "bytes": 11311,
-   "sha256": "0800793ff53dfe12ebbdbc811b14684a6a7a6163ce776d7249750c29703f2e71"
+   "sha256": "0800793ff53dfe12ebbdbc811b14684a6a7a6163ce776d7249750c29703f2e71",
+   "staged": "2026-11-26"
   },
   {
    "file": "CC_2026_11_19.pdf",
@@ -107,7 +198,38 @@
    "kind": "options",
    "date": "2026-11-19",
    "bytes": 284141,
-   "sha256": "60bbbacfee6f6ac2c04e2fc1f1ae589fdd20c03481ce39ba721826ff49715665"
+   "sha256": "60bbbacfee6f6ac2c04e2fc1f1ae589fdd20c03481ce39ba721826ff49715665",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_20-2.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_20-2.pdf",
+   "sym": "CC",
+   "kind": "futures",
+   "date": "2026-11-20",
+   "bytes": 11289,
+   "sha256": "0e01ddcd2b7f55b56a01fb3862b63c49ce55a08c3f77c285c66e95e9bed8f8e6",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_23-2.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_23-2.pdf",
+   "sym": "CC",
+   "kind": "futures",
+   "date": "2026-11-23",
+   "bytes": 11271,
+   "sha256": "84a30da10de7d83d07e4a0d5b0ac6a2387d336b838cd501605ff7c68f33a5bf7",
+   "staged": "2026-11-26"
+  },
+  {
+   "file": "CC_2026_11_24-2.pdf",
+   "path": "data/ice_staging/pdfs/CC_2026_11_24-2.pdf",
+   "sym": "CC",
+   "kind": "futures",
+   "date": "2026-11-24",
+   "bytes": 11280,
+   "sha256": "1a4d731e25f9ab67bd64ef429ce4275f3c77b44417c03f106aeb18c3fd392216",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_12-2.pdf",
@@ -116,7 +238,8 @@
    "kind": "futures",
    "date": "2026-11-12",
    "bytes": 13853,
-   "sha256": "d3cbb94ed76953cf7c677699c7fb7a7805f7240916226a207f67c6d9c59a3d0a"
+   "sha256": "d3cbb94ed76953cf7c677699c7fb7a7805f7240916226a207f67c6d9c59a3d0a",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_12.pdf",
@@ -125,7 +248,8 @@
    "kind": "options",
    "date": "2026-11-12",
    "bytes": 359325,
-   "sha256": "8b042555e98a6747c12b8ff8fb8e196b4b360a546bd3ea60970ccd29ec035e1b"
+   "sha256": "8b042555e98a6747c12b8ff8fb8e196b4b360a546bd3ea60970ccd29ec035e1b",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_13-2.pdf",
@@ -134,7 +258,8 @@
    "kind": "futures",
    "date": "2026-11-13",
    "bytes": 13915,
-   "sha256": "e3d768e46f734edc0ab619a5b5961b8413cd09f3c255b77432521169309797e1"
+   "sha256": "e3d768e46f734edc0ab619a5b5961b8413cd09f3c255b77432521169309797e1",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_13.pdf",
@@ -143,7 +268,8 @@
    "kind": "options",
    "date": "2026-11-13",
    "bytes": 359430,
-   "sha256": "9a1f00234fddab2f1b25285e42c6f81623e7da2978a14fe8a2dda2027fa2ec63"
+   "sha256": "9a1f00234fddab2f1b25285e42c6f81623e7da2978a14fe8a2dda2027fa2ec63",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_16-2.pdf",
@@ -152,7 +278,8 @@
    "kind": "futures",
    "date": "2026-11-16",
    "bytes": 13926,
-   "sha256": "d2c483bd6326471203cb083240f040f182c1a3d48efcacef3af943e59708556d"
+   "sha256": "d2c483bd6326471203cb083240f040f182c1a3d48efcacef3af943e59708556d",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_16.pdf",
@@ -161,7 +288,8 @@
    "kind": "options",
    "date": "2026-11-16",
    "bytes": 286607,
-   "sha256": "c48895a9ea590806454a972b5d4ab5207203857bb461071213d1828dbbe2d467"
+   "sha256": "c48895a9ea590806454a972b5d4ab5207203857bb461071213d1828dbbe2d467",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_17-2.pdf",
@@ -170,7 +298,8 @@
    "kind": "futures",
    "date": "2026-11-17",
    "bytes": 13832,
-   "sha256": "a4392f4a8dbbf29f979752a10911f500be8e86f53972b45dd0eeb93131c2ea79"
+   "sha256": "a4392f4a8dbbf29f979752a10911f500be8e86f53972b45dd0eeb93131c2ea79",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_17.pdf",
@@ -179,7 +308,8 @@
    "kind": "options",
    "date": "2026-11-17",
    "bytes": 287954,
-   "sha256": "85ddcc5adb5a9fd20174509c4c9e3c348c47e43eaa3ebe39a2a8fdb445ba5675"
+   "sha256": "85ddcc5adb5a9fd20174509c4c9e3c348c47e43eaa3ebe39a2a8fdb445ba5675",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_18-2.pdf",
@@ -188,7 +318,8 @@
    "kind": "futures",
    "date": "2026-11-18",
    "bytes": 13985,
-   "sha256": "7047f251b00d67fa1c41da7c7d626b090fbba2d55a9b8ec475763532f23e960e"
+   "sha256": "7047f251b00d67fa1c41da7c7d626b090fbba2d55a9b8ec475763532f23e960e",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_18.pdf",
@@ -197,7 +328,8 @@
    "kind": "options",
    "date": "2026-11-18",
    "bytes": 290703,
-   "sha256": "53b65ee3edd04e95c8eccae30c4df067cc0b56661166544976111cd84e4e1afc"
+   "sha256": "53b65ee3edd04e95c8eccae30c4df067cc0b56661166544976111cd84e4e1afc",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_19-2.pdf",
@@ -206,7 +338,8 @@
    "kind": "futures",
    "date": "2026-11-19",
    "bytes": 13890,
-   "sha256": "96d323a8d6292f6e18b59265e5fed83d265668a09e84b0d4cb28c42399259524"
+   "sha256": "96d323a8d6292f6e18b59265e5fed83d265668a09e84b0d4cb28c42399259524",
+   "staged": "2026-11-26"
   },
   {
    "file": "CT_2026_11_19.pdf",
@@ -215,7 +348,8 @@
    "kind": "options",
    "date": "2026-11-19",
    "bytes": 291945,
-   "sha256": "27d2cce02b09be48ff738027d1c213c1e0bff784ceb7406861bf1cefe64677a4"
+   "sha256": "27d2cce02b09be48ff738027d1c213c1e0bff784ceb7406861bf1cefe64677a4",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_12-2.pdf",
@@ -224,7 +358,8 @@
    "kind": "futures",
    "date": "2026-11-12",
    "bytes": 9644,
-   "sha256": "5408de50e2c66874c45332ec4dda9eafbde725a7697132a472928f9ff9bc0796"
+   "sha256": "5408de50e2c66874c45332ec4dda9eafbde725a7697132a472928f9ff9bc0796",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_12.pdf",
@@ -233,7 +368,8 @@
    "kind": "options",
    "date": "2026-11-12",
    "bytes": 464525,
-   "sha256": "4bf341c45bc3fdcab04c4cf4a1f7845e93704719e034d10c1e5948613410c017"
+   "sha256": "4bf341c45bc3fdcab04c4cf4a1f7845e93704719e034d10c1e5948613410c017",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_13-2.pdf",
@@ -242,7 +378,8 @@
    "kind": "futures",
    "date": "2026-11-13",
    "bytes": 9611,
-   "sha256": "21971c1b8d8c9108e90f01e7be6f65f306af8bad1bfb5892c1f4363bee4e8732"
+   "sha256": "21971c1b8d8c9108e90f01e7be6f65f306af8bad1bfb5892c1f4363bee4e8732",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_13.pdf",
@@ -251,7 +388,8 @@
    "kind": "options",
    "date": "2026-11-13",
    "bytes": 351156,
-   "sha256": "4584316608590d7110f198979fde20a3c55b9d8079b551492a1676c7714a01fd"
+   "sha256": "4584316608590d7110f198979fde20a3c55b9d8079b551492a1676c7714a01fd",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_16-2.pdf",
@@ -260,7 +398,8 @@
    "kind": "futures",
    "date": "2026-11-16",
    "bytes": 9590,
-   "sha256": "7402ba691c2fbea2f029b0f5533dca3b49631b8b00dc3d355b8415e99cfb05d2"
+   "sha256": "7402ba691c2fbea2f029b0f5533dca3b49631b8b00dc3d355b8415e99cfb05d2",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_16.pdf",
@@ -269,7 +408,8 @@
    "kind": "options",
    "date": "2026-11-16",
    "bytes": 353131,
-   "sha256": "c768b2a424cdea36badd341fb67a86c6ba8f766897158eeef037373d70ac6a99"
+   "sha256": "c768b2a424cdea36badd341fb67a86c6ba8f766897158eeef037373d70ac6a99",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_17-2.pdf",
@@ -278,7 +418,8 @@
    "kind": "futures",
    "date": "2026-11-17",
    "bytes": 9604,
-   "sha256": "356ea40cbc1d58adc839fed8195d73606948030e6a661b0929eebfd724eb353f"
+   "sha256": "356ea40cbc1d58adc839fed8195d73606948030e6a661b0929eebfd724eb353f",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_17.pdf",
@@ -287,7 +428,8 @@
    "kind": "options",
    "date": "2026-11-17",
    "bytes": 365433,
-   "sha256": "9cbc74942069283c86a6ce3f787ff3e59f668f0a3a4114ab86acbe55a9060a41"
+   "sha256": "9cbc74942069283c86a6ce3f787ff3e59f668f0a3a4114ab86acbe55a9060a41",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_18-2.pdf",
@@ -296,7 +438,8 @@
    "kind": "futures",
    "date": "2026-11-18",
    "bytes": 9592,
-   "sha256": "b1d02396252144be4b4895ef648b1600d6a05ee18e85167af08990ff02b0886c"
+   "sha256": "b1d02396252144be4b4895ef648b1600d6a05ee18e85167af08990ff02b0886c",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_18.pdf",
@@ -305,7 +448,8 @@
    "kind": "options",
    "date": "2026-11-18",
    "bytes": 366546,
-   "sha256": "b76b8b5885ec299439f4e8b913052b08f509eb6baa490736dc3c002a7f74fc12"
+   "sha256": "b76b8b5885ec299439f4e8b913052b08f509eb6baa490736dc3c002a7f74fc12",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_19-2.pdf",
@@ -314,7 +458,8 @@
    "kind": "futures",
    "date": "2026-11-19",
    "bytes": 9611,
-   "sha256": "55d4d2f7f9b1a1b54a89f9667c80e3da5c805ca913a1d881ce9c24d50032c68b"
+   "sha256": "55d4d2f7f9b1a1b54a89f9667c80e3da5c805ca913a1d881ce9c24d50032c68b",
+   "staged": "2026-11-26"
   },
   {
    "file": "KC_2026_11_19.pdf",
@@ -323,7 +468,8 @@
    "kind": "options",
    "date": "2026-11-19",
    "bytes": 371459,
-   "sha256": "35f9d02734ef478a49b23f268d2bca434f25f510a423720ddbefd02cd7e0e549"
+   "sha256": "35f9d02734ef478a49b23f268d2bca434f25f510a423720ddbefd02cd7e0e549",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_12-2.pdf",
@@ -332,7 +478,8 @@
    "kind": "futures",
    "date": "2026-11-12",
    "bytes": 12401,
-   "sha256": "fe49c6c1767a6118ed741afabfae84759387ccbaabc88c0d321c69334fe034dc"
+   "sha256": "fe49c6c1767a6118ed741afabfae84759387ccbaabc88c0d321c69334fe034dc",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_12.pdf",
@@ -341,7 +488,8 @@
    "kind": "options",
    "date": "2026-11-12",
    "bytes": 497515,
-   "sha256": "7f2c267688bf089eb685365e1ae12a2f45ea44cc8a6e869f1312a1a235f660fc"
+   "sha256": "7f2c267688bf089eb685365e1ae12a2f45ea44cc8a6e869f1312a1a235f660fc",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_13-2.pdf",
@@ -350,7 +498,8 @@
    "kind": "futures",
    "date": "2026-11-13",
    "bytes": 12463,
-   "sha256": "c4cd99027d1da29d3b7a3789ac0ab693bfafa372eb7d8fb19b10c4835c653046"
+   "sha256": "c4cd99027d1da29d3b7a3789ac0ab693bfafa372eb7d8fb19b10c4835c653046",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_13.pdf",
@@ -359,7 +508,8 @@
    "kind": "options",
    "date": "2026-11-13",
    "bytes": 495189,
-   "sha256": "59ea2d906c67c37663141f9126d37807b9b9db5f57a460f85fe47769d4ee7226"
+   "sha256": "59ea2d906c67c37663141f9126d37807b9b9db5f57a460f85fe47769d4ee7226",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_16-2.pdf",
@@ -368,7 +518,8 @@
    "kind": "futures",
    "date": "2026-11-16",
    "bytes": 12513,
-   "sha256": "9a485599bab66720216508f9299ca3b65214d98d32e12ae72f8f6d914fd630d1"
+   "sha256": "9a485599bab66720216508f9299ca3b65214d98d32e12ae72f8f6d914fd630d1",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_16.pdf",
@@ -377,7 +528,8 @@
    "kind": "options",
    "date": "2026-11-16",
    "bytes": 492627,
-   "sha256": "8673d23fe699de3b1bbcbf3d9b5cbb4987cff13c74b69e784cf3d32fd623a13c"
+   "sha256": "8673d23fe699de3b1bbcbf3d9b5cbb4987cff13c74b69e784cf3d32fd623a13c",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_17-2.pdf",
@@ -386,7 +538,8 @@
    "kind": "futures",
    "date": "2026-11-17",
    "bytes": 12452,
-   "sha256": "6eed5961462de35b38544fd6230c8db74122764f5cbb7ef22e94a6e6eef79910"
+   "sha256": "6eed5961462de35b38544fd6230c8db74122764f5cbb7ef22e94a6e6eef79910",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_17.pdf",
@@ -395,7 +548,8 @@
    "kind": "options",
    "date": "2026-11-17",
    "bytes": 443210,
-   "sha256": "1bbdbc8fa18fc85ac66a6fab7019d38b6c38d5f4cddea8d57106a588027b7871"
+   "sha256": "1bbdbc8fa18fc85ac66a6fab7019d38b6c38d5f4cddea8d57106a588027b7871",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_18-2.pdf",
@@ -404,7 +558,8 @@
    "kind": "futures",
    "date": "2026-11-18",
    "bytes": 12533,
-   "sha256": "1fd38f2447f15be6e761c626ada4f2ced7f7e4708530713af4b4d81842355fe3"
+   "sha256": "1fd38f2447f15be6e761c626ada4f2ced7f7e4708530713af4b4d81842355fe3",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_18.pdf",
@@ -413,7 +568,8 @@
    "kind": "options",
    "date": "2026-11-18",
    "bytes": 445763,
-   "sha256": "8980005dd2fccaf389e4836d076d673fd85eef4bd5a8e9bb3b057fc6f99b7d7f"
+   "sha256": "8980005dd2fccaf389e4836d076d673fd85eef4bd5a8e9bb3b057fc6f99b7d7f",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_19-2.pdf",
@@ -422,7 +578,8 @@
    "kind": "futures",
    "date": "2026-11-19",
    "bytes": 12573,
-   "sha256": "dbbb977318f1c29c61e4a22d85f9e260b7062d685696fc1263c2a42b7379f72e"
+   "sha256": "dbbb977318f1c29c61e4a22d85f9e260b7062d685696fc1263c2a42b7379f72e",
+   "staged": "2026-11-26"
   },
   {
    "file": "SB_2026_11_19.pdf",
@@ -431,7 +588,8 @@
    "kind": "options",
    "date": "2026-11-19",
    "bytes": 452322,
-   "sha256": "ad8f345ea6a13b7f11c8b1194e120d1a44a28406dbda7dc52c658e79deb9359a"
+   "sha256": "ad8f345ea6a13b7f11c8b1194e120d1a44a28406dbda7dc52c658e79deb9359a",
+   "staged": "2026-11-26"
   }
  ]
 }

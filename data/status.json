@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 07:01 UTC",
+ "generated": "2026-11-26 07:13 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -125,9 +125,9 @@
   {
    "group": "Cotton",
    "source": "ICE certs: stock by delivery point (upload)",
-   "latest": "2026-11-04",
+   "latest": "2026-11-20",
    "cadence": "daily",
-   "age": 16,
+   "age": 4,
    "age_unit": "business days",
    "limit": 2,
    "state": "late",
@@ -1157,7 +1157,7 @@
  ],
  "late": 20,
  "inbox": {
-  "updated": "2026-11-26 05:26 UTC",
+  "updated": "2026-11-26 07:13 UTC",
   "last": [
    {
     "type": "CT_options",
@@ -1209,19 +1209,27 @@
    },
    {
     "type": "CC_options",
-    "received": "2026-11-20 14:50 UTC",
-    "file": "CC_2026_11_19.pdf",
+    "received": "2026-11-26 07:13 UTC",
+    "file": "c3f31fa5-CC_Options_2026-11-06.pdf",
     "label": "Cocoa options settlement (ICE daily market report)",
-    "report_date": "2026-11-19",
-    "stored": "data/ice_staging/pdfs/CC_2026_11_19.pdf"
+    "report_date": "2026-11-06",
+    "stored": "data/ice_staging/pdfs/CC_2026_11_06.pdf"
    },
    {
     "type": "CC_futures",
-    "received": "2026-11-20 14:50 UTC",
-    "file": "CC_2026_11_19-2.pdf",
+    "received": "2026-11-26 07:13 UTC",
+    "file": "f5c38fca-CC_Futures_2026-11-06.pdf",
     "label": "Cocoa futures settlement (ICE daily market report)",
-    "report_date": "2026-11-19",
-    "stored": "data/ice_staging/pdfs/CC_2026_11_19-2.pdf"
+    "report_date": "2026-11-06",
+    "stored": "data/ice_staging/pdfs/CC_2026_11_06-2.pdf"
+   },
+   {
+    "type": "ct_stock",
+    "received": "2026-11-26 07:13 UTC",
+    "file": "a502f674-cotton_cert_stock_2026-11-20.csv",
+    "label": "Cotton certs: stock by delivery point",
+    "report_date": "2026-11-20",
+    "stored": "data/cotton/ice/stock_2026-11-20.csv"
    },
    {
     "type": "ct_grade",
