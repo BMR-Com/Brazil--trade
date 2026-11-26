@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 04:19 UTC",
+ "generated": "2026-11-26 04:23 UTC",
  "note": "Support tests in tight markets: a selloff down to the active contract's own 200-day average while the market still looks tight. Research only, not investment advice; option prices are model values from settlement vols, check live prices.",
  "markets": {
   "SB": {
@@ -20,8 +20,8 @@
    },
    "confirm_kind": "parity",
    "brazil": {
-    "ethanol_parity": 15.63,
-    "cushion": 2.45
+    "ethanol_parity": 15.75,
+    "cushion": 2.33
    },
    "state": "fired",
    "fired": "2026-11-19",
@@ -63,7 +63,7 @@
     "Mar 27 is 14% off its 60-day high",
     "200-day average 16.91 (+6.9% from price)",
     "Mar 27/May 27 spread +0.63 (93rd percentile of the past year, +0.07 over 5 sessions)",
-    "No. 11 is 2.45 c/lb over Brazil hydrous-ethanol parity (15.63)"
+    "No. 11 is 2.33 c/lb over Brazil hydrous-ethanol parity (15.75)"
    ]
   },
   "CT": {
