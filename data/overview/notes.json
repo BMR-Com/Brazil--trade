@@ -16,36 +16,36 @@
   "sugar": {
    "date": "2026-11-26",
    "by": "claude",
-   "time": "07:55 CT",
-   "fundamental": "ICE US is shut for Thanksgiving, but the real jumped about 2% to ~5.77 per dollar overnight, which makes forward selling less attractive for centre-south mills and should underpin Mar when trade resumes Friday. The new US tariff proposal on Brazil matters for the protected US domestic market rather than for world #11 flows; still no fresh Brazil crush or mix data.",
+   "time": "11:45 CT",
+   "fundamental": "London whites added about 1% in the only open sugar market, and the real firmed again to ~5.74 per dollar, extending the squeeze on centre-south mills' forward selling. Nothing new from Brazil on cane crush or the sugar/ethanol mix, so the Brazil-first picture is unchanged; Mar (last ~18.34) should open Friday with a firmer tone.",
    "events": [
-    "Real strengthens ~2% vs the dollar (Yahoo Finance)",
-    "New US tariffs would likely lift US sugar prices (Reuters)",
-    "ICE US closed for Thanksgiving; Mar last ~18.4 (ICE)"
+    "London white sugar ~522 (+1%) on Thanksgiving (ICE Europe)",
+    "Real firms to ~5.74 per dollar (TradingView)",
+    "Raw sugar near one-month high before the holiday (Reuters)"
    ],
    "fund_score": -0.15
   },
   "coffee": {
    "date": "2026-11-26",
    "by": "claude",
-   "time": "07:55 CT",
-   "fundamental": "No ICE US trade today; the sharp overnight rise in the real helps Mar (~268.6) by slowing Brazilian farmer selling. Whether coffee is caught by the new US tariff proposal is not yet clear (it was exempted in the July round), and that only matters for US-delivered flows; deliverability and the rebuild of ICE certified stocks remain the bearish anchor.",
+   "time": "11:45 CT",
+   "fundamental": "Robusta bounced about 2% in London off its three-year low, though Vietnamese farm-gate prices are still slipping as the harvest moves, so the bounce looks like short-covering rather than tighter supply. The stronger real (~5.74) slows Brazilian selling; nothing new on ICE certified stocks or Brazil deliverability, which remain the anchor for Mar (~270).",
    "events": [
-    "Real up ~2% vs the dollar overnight (Yahoo Finance)",
-    "US proposes new tariffs on Brazilian imports, coverage still unclear (Reuters)",
-    "Brazilian arabica still heading to ICE warehouses (Finimize, CNN Brasil)"
+    "London robusta ~2,863 (+2.3%) off a three-year low (Reuters, ICE Europe)",
+    "Vietnam coffee prices slide on harvest pressure (Reuters)",
+    "Real firms to ~5.74 per dollar (TradingView)"
    ],
    "fund_score": -0.35
   },
   "cocoa": {
    "date": "2026-11-26",
    "by": "claude",
-   "time": "07:55 CT",
-   "fundamental": "New York is closed for Thanksgiving; London trades thinly. No new Ivory Coast arrivals figure or Ghana COCOBOD news since Wednesday, and no November ICCO quarterly bulletin yet, so the slow-arrivals story and rising ICE certified stocks keep pulling in opposite directions.",
+   "time": "11:45 CT",
+   "fundamental": "London cocoa is flat near 4,040 in thin trade with New York shut. No new Ivory Coast arrivals tally, no COCOBOD news and still no November ICCO quarterly bulletin, so slow arrivals versus rising ICE certified stocks keeps the market balanced.",
    "events": [
-    "Ivorian port arrivals still running slow (Maritime Professional, Barchart)",
-    "ICE US closed for Thanksgiving; Mar last ~5,420 (ICE)",
-    "No new ICCO quarterly bulletin found yet (ICCO)"
+    "London cocoa ~4,037, unchanged (ICE Europe)",
+    "Cocoa near one-month high into the holiday on slow Ivorian arrivals (Reuters, Barchart)",
+    "No November ICCO bulletin published yet (ICCO)"
    ],
    "fund_score": -0.05
   }
