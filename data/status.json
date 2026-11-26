@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 22:35 UTC",
+ "generated": "2026-11-26 23:00 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -1205,9 +1205,9 @@
   {
    "group": "Embedded dashboards",
    "source": "US Drought Monitor, cotton area (BMR-Com/cotton-crop-progress)",
-   "latest": "2026-11-17",
+   "latest": "2026-11-24",
    "cadence": "weekly (Thu, as of Tue)",
-   "age": 9,
+   "age": 2,
    "age_unit": "days",
    "limit": 10,
    "state": "ok",
