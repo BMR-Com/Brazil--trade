@@ -1,5 +1,5 @@
 {
- "built": "2026-11-26 15:33 UTC",
+ "built": "2026-11-26 15:46 UTC",
  "asof": "2026-11-26",
  "coffee": [
   {
@@ -31,8 +31,8 @@
     "RCF2027"
    ],
    "unit": "$/t",
-   "value": 2795.0,
-   "chg": -3.0,
+   "value": 2837.0,
+   "chg": 39.0,
    "date": "2026-11-26"
   },
   {
@@ -42,8 +42,8 @@
     "RCH2027"
    ],
    "unit": "$/t",
-   "value": 2772.0,
-   "chg": 5.0,
+   "value": 2811.0,
+   "chg": 44.0,
    "date": "2026-11-26"
   },
   {
@@ -130,10 +130,10 @@
    ],
    "position": "1/2",
    "unit": "$/t",
-   "value": 23.0,
-   "pct_of_deferred": 0.83,
-   "chg": -8.0,
-   "pctile_1y": 26.0,
+   "value": 26.0,
+   "pct_of_deferred": 0.92,
+   "chg": -5.0,
+   "pctile_1y": 31.0,
    "date": "2026-11-26"
   },
   {
@@ -145,10 +145,10 @@
    ],
    "position": "2/3",
    "unit": "$/t",
-   "value": 16.0,
-   "pct_of_deferred": 0.58,
-   "chg": -3.0,
-   "pctile_1y": 14.0,
+   "value": 12.0,
+   "pct_of_deferred": 0.43,
+   "chg": -7.0,
+   "pctile_1y": 6.0,
    "date": "2026-11-26"
   },
   {
@@ -160,10 +160,10 @@
    ],
    "position": "3/4",
    "unit": "$/t",
-   "value": 11.0,
-   "pct_of_deferred": 0.4,
-   "chg": 2.0,
-   "pctile_1y": 10.0,
+   "value": 15.0,
+   "pct_of_deferred": 0.54,
+   "chg": 6.0,
+   "pctile_1y": 20.0,
    "date": "2026-11-26"
   },
   {
@@ -176,7 +176,7 @@
    "position": "4/5",
    "unit": "$/t",
    "value": 4.0,
-   "pct_of_deferred": 0.15,
+   "pct_of_deferred": 0.14,
    "chg": -2.0,
    "pctile_1y": 0.0,
    "date": "2026-11-26"
@@ -219,8 +219,8 @@
     "KCH2027"
    ],
    "unit": "c/lb",
-   "value": -15.23,
-   "chg": -5.93,
+   "value": -15.61,
+   "chg": -6.3,
    "pctile_1y": 90.0,
    "date": "2026-11-25",
    "note": "B3 US$/bag converted at 132.277 lb/bag; B3 front month may differ from the KC month"
