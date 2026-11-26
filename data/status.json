@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 04:27 UTC",
+ "generated": "2026-11-26 04:54 UTC",
  "today": "2026-11-25",
  "sources": [
   {
@@ -317,7 +317,7 @@
   {
    "group": "Cotton",
    "source": "Australia (synced from US desk)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -329,7 +329,7 @@
   {
    "group": "Coffee",
    "source": "Coffee desk (ICE certs, basis, origins)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -437,9 +437,9 @@
   {
    "group": "Coffee",
    "source": "USD/BRL PTAX (Banco Central do Brasil)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -569,9 +569,9 @@
   {
    "group": "Sugar",
    "source": "Cane-belt weather, stoppage days, season range (ERA5)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-24",
    "cadence": "daily",
-   "age": 2,
+   "age": 1,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -581,7 +581,7 @@
   {
    "group": "Sugar",
    "source": "Cane-belt ensemble forecast (ECMWF ENS, GEFS)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -629,9 +629,9 @@
   {
    "group": "Sugar",
    "source": "ICE No. 5 expiry deliveries (manual, from news)",
-   "latest": "2026-10-01",
+   "latest": "2026-09-18",
    "cadence": "per expiry",
-   "age": 55,
+   "age": 68,
    "age_unit": "days",
    "limit": 120,
    "state": "ok",
@@ -689,7 +689,7 @@
   {
    "group": "Sugar",
    "source": "Weekly report input pack",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
