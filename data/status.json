@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 04:58 UTC",
+ "generated": "2026-11-26 05:16 UTC",
  "today": "2026-11-25",
  "sources": [
   {
@@ -533,7 +533,7 @@
   {
    "group": "Coffee",
    "source": "Brazil coffee weather (weighted)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -989,7 +989,7 @@
   {
    "group": "Macro",
    "source": "News",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "every few hours",
    "age": 0,
    "age_unit": "business days",
