@@ -30,6 +30,7 @@ import html
 import json
 import re
 import sys
+import time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -187,6 +188,7 @@ _pg_cache = {}
 
 def _pg_get(u):
     if u not in _pg_cache:
+        time.sleep(0.4)  # a backfill walks hundreds of pages: keep the pace gentle
         try:
             _pg_cache[u] = (get(u), None)
         except Exception as e:
