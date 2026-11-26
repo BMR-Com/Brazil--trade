@@ -1,5 +1,5 @@
 {
- "built": "2026-11-26 15:40 UTC",
+ "built": "2026-11-26 15:42 UTC",
  "target": "year-on-year % change in sugar production (apply to any forecaster's previous-year figure)",
  "countries": {
   "IN": {
@@ -12,25 +12,25 @@
    },
    "partial_weather": {},
    "2026/27": {
-    "pct_change": -3.7,
+    "pct_change": -3.9,
     "basis": "cane sugar before ethanol diversion",
     "cane_area_mha": 5.553,
     "cane_area_basis": "reported",
     "implied_usda_mt": {
-     "no sugar diverted to ethanol": 31.88,
-     "diversion as in 2025/26": 28.78
+     "no sugar diverted to ethanol": 31.95,
+     "diversion as in 2025/26": 28.71
     },
     "implied_pct_vs_usda_prev": {
-     "no sugar diverted to ethanol": 6.3,
-     "diversion as in 2025/26": -4.1
+     "no sugar diverted to ethanol": 6.5,
+     "diversion as in 2025/26": -4.3
     }
    },
    "2027/28": {
-    "pct_change": 7.2,
+    "pct_change": 7.0,
     "basis": "cane sugar before ethanol diversion",
-    "cane_area_mha": 5.551,
+    "cane_area_mha": 5.549,
     "cane_area_basis": "area equation",
-    "implied_usda_mt_if_no_diversion": 34.18
+    "implied_usda_mt_if_no_diversion": 34.2
    }
   },
   "TH": {

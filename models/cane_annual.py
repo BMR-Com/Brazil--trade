@@ -51,10 +51,10 @@ SUPPORT = {1990: (22.00, 8.5), 1991: (26.00, 8.5), 1992: (31.00, 8.5), 1993: (34
            2015: (230.00, 9.5), 2016: (230.00, 9.5), 2017: (255.00, 9.5), 2018: (275.00, 10.0), 2019: (275.00, 10.0),
            2020: (285.00, 10.0), 2021: (290.00, 10.0), 2022: (305.00, 10.25), 2023: (315.00, 10.25),
            2024: (340.00, 10.25), 2025: (355.00, 10.25), 2026: (365.00, 10.25)}
-# Sugar diverted to ethanol, Mt, by season (ISMA as reported; 2018/19-2020/21 approximate).
-DIVERSION = {2018: 0.3, 2019: 0.9, 2020: 2.2, 2021: 3.4, 2022: 4.1, 2023: 2.15, 2024: 3.5, 2025: 3.1}
+# Sugar diverted to ethanol, Mt, by season (ISMA as reported, 2025/26 from its Nov 2026 release; 2018/19-2020/21 approximate).
+DIVERSION = {2018: 0.3, 2019: 0.9, 2020: 2.2, 2021: 3.4, 2022: 4.1, 2023: 2.15, 2024: 3.5, 2025: 3.24}
 # 2026/27: the oil companies' 2026/27 tender reportedly leaves out the sugar route, so 0 is the base case.
-DIV_CASES = {"no sugar diverted to ethanol": 0.0, "diversion as in 2025/26": 3.1}
+DIV_CASES = {"no sugar diverted to ethanol": 0.0, "diversion as in 2025/26": 3.24}
 
 # Cane area, million ha, by sugar season (key = year the season starts): ISMA satellite estimates for seasons FAOSTAT
 # does not cover yet (2024/25 and 2025/26 from ISMA's Nov 2025 release, 2026/27 from its Nov 2026 first estimate).
