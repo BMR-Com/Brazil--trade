@@ -6,6 +6,7 @@
 - Options version: call spread when 1-2 month implied is under 20-day realized, else a put-spread sale under the 200-day average; Black-76 on the latest settlement smile, listed strike steps SB 0.25, KC 2.5, CT 1, CC 50.
 - `overview.py` changes: sugar fundamental now scores the ethanol-parity cushion against 2.5 c/lb (small cushion = support) instead of treating any premium over parity as bearish; while a confirmed support test is live the tile's technical part is floored at +0.25 (momentum sell set aside).
 - History test: `python models/support_test.py --backtest` (console only, nothing written). Results and reasoning are in the private Softs COT Signal Lab, not in the repo.
+- CEPEA Brazil crystal sugar: `pipelines/cepea_sugar_fetch.py` (workflow `cepea_sugar.yml`, weekdays 22:41 and 02:41 UTC, one page request, robots.txt checked, honest agent) writes `sugar/data/cepea_sugar.csv` (sp_cristal from 2003, santos_fob from 2020; R$ and US$ per 50-kg bag, c_lb). Manual run with backfill=true re-downloads CEPEA's series files. support_test.py shows the SP and Santos premiums over No. 11 on the SB card as context, not as a trigger. CEPEA data are CC BY-NC 4.0.
 
 ## Sugar → No. 11 expiry deliveries history and capture job (2026-11-25)
 - ICE publishes no public per-firm deliverer/receiver file for Sugar No. 11 (its notice goes to members; no "issues and stops" report like CME's). Firm names come only from trade reports of each tender (Reuters, preliminary from traders, expiry day) and the exchange total a day or two later.

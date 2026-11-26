@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 04:23 UTC",
+ "generated": "2026-11-26 04:50 UTC",
  "note": "Support tests in tight markets: a selloff down to the active contract's own 200-day average while the market still looks tight. Research only, not investment advice; option prices are model values from settlement vols, check live prices.",
  "markets": {
   "SB": {
@@ -21,7 +21,11 @@
    "confirm_kind": "parity",
    "brazil": {
     "ethanol_parity": 15.75,
-    "cushion": 2.33
+    "cushion": 2.33,
+    "sp_cristal_over_ny": 2.53,
+    "sp_cristal_over_ny_pct_1y": 48.0,
+    "santos_fob_over_ny": 4.06,
+    "santos_fob_over_ny_pct_1y": 26.0
    },
    "state": "fired",
    "fired": "2026-11-19",
@@ -31,7 +35,8 @@
     "spread": 0.61,
     "spread_pct_1y": 95.0,
     "spread_chg_5d": 0.11,
-    "cushion": 1.63
+    "cushion": 1.63,
+    "sp_cristal_over_ny_pct_1y": 64.0
    },
    "idea": {
     "side": "Long",
@@ -59,11 +64,12 @@
    },
    "evidence": "Setup with a confirming filter that has tested better than plain 200-day tests on this desk's history (small sample). Size small; the stop is the 200-day average failing.",
    "why": [
-    "Fired 19 Nov: Mar 27 closed 17.16, +1.8% from its 200-day average 16.85, spread +0.61 (95th pct of the year), 1.63 c/lb over ethanol parity",
+    "Fired 19 Nov: Mar 27 closed 17.16, +1.8% from its 200-day average 16.85, spread +0.61 (95th pct of the year), 1.63 c/lb over ethanol parity, São Paulo crystal premium 64th pct of the year",
     "Mar 27 is 14% off its 60-day high",
     "200-day average 16.91 (+6.9% from price)",
     "Mar 27/May 27 spread +0.63 (93rd percentile of the past year, +0.07 over 5 sessions)",
-    "No. 11 is 2.33 c/lb over Brazil hydrous-ethanol parity (15.75)"
+    "No. 11 is 2.33 c/lb over Brazil hydrous-ethanol parity (15.75)",
+    "CEPEA São Paulo crystal sugar +2.53 c/lb over No. 11 (48th percentile of the year; not rich, which has marked the weaker selloff buys); Santos FOB +4.06 (26th pct)"
    ]
   },
   "CT": {

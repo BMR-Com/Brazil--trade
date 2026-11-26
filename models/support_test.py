@@ -9,7 +9,8 @@ Conditions (all four softs):
   - price above the average on at least 60% of the 120 sessions before (a first test from above, not a downtrend)
 Confirmation that has to hold as well:
   - SB: No. 11 within 2.5 c/lb of Brazil hydrous-ethanol parity (sugar/data/sugar.json), i.e. near the level where
-        Centre-South mills switch cane to ethanol; front spread shown as context
+        Centre-South mills switch cane to ethanol; front spread and CEPEA São Paulo / Santos FOB crystal sugar premiums
+        over No. 11 (sugar/data/cepea_sugar.csv) shown as context
   - CT: front spread (Dec/Mar/May/Jul, October ignored) in the top 30% of its past year and firmer over 5 sessions
   - KC, CC: no confirming input found; the setup is shown as a watch only, not as a trade
 A fired setup stays on the page for 15 business days or until the stop (a close 3% under the 200-day average) is hit.
@@ -82,6 +83,17 @@ def frame(sym, start=None):
         except Exception:
             f["parity"] = np.nan
         f["cushion"] = f.px - f.parity
+        # CEPEA/ESALQ Brazil crystal sugar (pipelines/cepea_sugar_fetch.py), US c/lb: context on the card, not a trigger
+        try:
+            c = pd.read_csv(ROOT / "sugar/data/cepea_sugar.csv", parse_dates=["date"])
+            pct = lambda s: s.rolling(250, min_periods=150).apply(lambda x: (x[:-1] < x[-1]).mean() * 100, raw=True)
+            for k, ser in [("sp", "sp_cristal"), ("fob", "santos_fob")]:
+                v = c[c.series == ser].set_index("date").c_lb.sort_index()
+                f[k + "_prem"] = v.reindex(f.index, method="ffill", limit=5) - f.px
+                f[k + "_prem_p1y"] = pct(f[k + "_prem"])
+        except Exception:
+            for k in ("sp_prem", "sp_prem_p1y", "fob_prem", "fob_prem_p1y"):
+                f[k] = np.nan
     return w, f
 
 
@@ -183,7 +195,9 @@ def live(sym):
            "spread": {"label": f"{label(r.c)}/{label(r.n)}", "now": rd(r.sp, dp), "pct_1y": rd(r.sp_p1y, 0), "chg_5d": rd(r.sp_chg5, dp)},
            "confirm_kind": CONFIRM[sym]}
     if sym == "SB":
-        out["brazil"] = {"ethanol_parity": rd(r.parity, 2), "cushion": rd(r.cushion, 2)}
+        out["brazil"] = {"ethanol_parity": rd(r.parity, 2), "cushion": rd(r.cushion, 2),
+                         "sp_cristal_over_ny": rd(r.sp_prem, 2), "sp_cristal_over_ny_pct_1y": rd(r.sp_prem_p1y, 0),
+                         "santos_fob_over_ny": rd(r.fob_prem, 2), "santos_fob_over_ny_pct_1y": rd(r.fob_prem_p1y, 0)}
     # most recent fire of the full setup within KEEP business days
     idx = f.index
     recent = idx[max(0, len(idx) - KEEP - 1):]
@@ -197,6 +211,10 @@ def live(sym):
         why.append(f"{out['spread']['label']} spread {r.sp:+.{dp}f} ({ordn(r.sp_p1y)} percentile of the past year, {r.sp_chg5:+.{dp}f} over 5 sessions)")
     if sym == "SB" and not math.isnan(r.cushion):
         why.append(f"No. 11 is {r.cushion:.2f} c/lb over Brazil hydrous-ethanol parity ({r.parity:.2f})")
+    if sym == "SB" and not math.isnan(r.sp_prem_p1y):
+        why.append(f"CEPEA São Paulo crystal sugar {r.sp_prem:+.2f} c/lb over No. 11 ({ordn(r.sp_prem_p1y)} percentile of the year; "
+                   + ("rich, which has backed the better selloff buys" if r.sp_prem_p1y >= 60 else "not rich, which has marked the weaker selloff buys") + ")"
+                   + (f"; Santos FOB {r.fob_prem:+.2f} ({ordn(r.fob_prem_p1y)} pct)" if not math.isnan(r.fob_prem_p1y) else ""))
     if fired:
         d0 = fired[0]
         r0 = f.loc[d0]
@@ -210,9 +228,11 @@ def live(sym):
         at = {"px": rd(r0.px, dp), "ma200": rd(r0.ma, dp), "spread": rd(r0.sp, dp), "spread_pct_1y": rd(r0.sp_p1y, 0), "spread_chg_5d": rd(r0.sp_chg5, dp)}
         if sym == "SB":
             at["cushion"] = rd(r0.cushion, 2)
+            at["sp_cristal_over_ny_pct_1y"] = rd(r0.sp_prem_p1y, 0)
         why.insert(0, f"Fired {d0.strftime('%-d %b')}: {label(c)} closed {r0.px:,.{dp}f}, {r0.dist * 100:+.1f}% from its 200-day average {r0.ma:,.{dp}f}"
                    + (f", spread {r0.sp:+.{dp}f} ({ordn(r0.sp_p1y)} pct of the year)" if not math.isnan(r0.sp_p1y) else "")
-                   + (f", {r0.cushion:.2f} c/lb over ethanol parity" if sym == "SB" and not math.isnan(r0.cushion) else ""))
+                   + (f", {r0.cushion:.2f} c/lb over ethanol parity" if sym == "SB" and not math.isnan(r0.cushion) else "")
+                   + (f", São Paulo crystal premium {ordn(r0.sp_prem_p1y)} pct of the year" if sym == "SB" and not math.isnan(r0.sp_prem_p1y) else ""))
         out.update({"state": state, "fired": d0.strftime("%Y-%m-%d"), "at_fire": at,
                     "idea": {"side": "Long", "instrument": f"{label(c)} ({c})", "entry": rd(r0.px, dp), "now": rd(now, dp),
                              "stop": rd(stop, dp), "target": rd(r0.ma + 0.5 * (tgt - r0.ma), dp), "horizon": "4 weeks",
@@ -240,7 +260,12 @@ def backtest():
         w, f = frame(sym)
         f = f[f.index >= ("2012-03-01" if sym == "SB" else "2005-01-01")].dropna(subset=["ma"])
         idx = w.index
-        for lab, m in [("all 200-day tests", base(f)), ("with confirmation", base(f) & confirm(sym, f)), ("without confirmation", base(f) & ~confirm(sym, f))]:
+        extra = []
+        if sym == "SB":
+            sel = (f.dd <= DD_MIN) & confirm(sym, f)
+            extra = [("8% selloff, parity", sel), ("  + SP premium >=60pct", sel & (f.sp_prem_p1y >= 60)), ("  + SP premium <60pct", sel & (f.sp_prem_p1y < 60)),
+                     ("  + FOB premium >=60pct", sel & (f.fob_prem_p1y >= 60)), ("  + FOB premium <60pct", sel & (f.fob_prem_p1y < 60))]
+        for lab, m in [("all 200-day tests", base(f)), ("with confirmation", base(f) & confirm(sym, f)), ("without confirmation", base(f) & ~confirm(sym, f))] + extra:
             res = []
             for d in episodes(m):
                 r = f.loc[d]
