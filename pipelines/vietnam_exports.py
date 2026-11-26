@@ -8,7 +8,7 @@ year-to-date total carries the revision, so the month series here is year-to-dat
 whenever both reports were read, and the first estimate otherwise.
 Reports are found through the site's WordPress search API; each report is read once (vietnam_exports_read.json).
 """
-import csv, html, io, json, re, sys, time
+import argparse, csv, html, io, json, re, sys, time
 from pathlib import Path
 import requests
 
@@ -147,46 +147,7 @@ def build_series(rows):
     return out
 
 
-def main():
-    state = json.loads(STATE.read_text()) if STATE.exists() else {"read": []}
-    old = []
-    if OUT.exists():
-        with open(OUT) as f:
-            old = list(csv.DictReader(f))
-    have = {(int(r["year"]), int(r["month"])) for r in old}
-    reps = reports()
-    print(f"NSO: {len(reps)} reports listed")
-    new = []
-    for rp in sorted(reps, key=lambda x: x["date"]):
-        if rp["link"] in state["read"] or rp["ym"] in have or rp["ym"][0] < 2016:
-            continue  # reports before 2016 carry no coffee row in an Excel annex
-        r = get(rp["link"])
-        if r is None or r.status_code != 200:
-            continue
-        files = [a for a in dict.fromkeys(re.findall(r'href="([^"]+/wp-content/uploads/[^"]+\.xlsx)"', r.text, re.I))]
-        got = None
-        for a in files:
-            f = get(a)
-            if f is None or f.status_code != 200:
-                continue
-            try:
-                got = coffee_row(f.content)
-            except Exception as e:
-                print("  xlsx", a[-60:], str(e)[:100])
-            if got:
-                break
-        state["read"].append(rp["link"])
-        if not got or got[2] is None:
-            print("  no coffee row:", rp["title"][:80]); continue
-        y, m = rp["ym"]
-        if got[0] is not None and got[2] < got[0] * 0.99:
-            print("  year-to-date below month, skipped:", rp["title"][:80], got); continue
-        rd = lambda x: "" if x is None else round(x, 3)
-        new.append({"year": y, "month": m, "kind": "monthly report", "m_kt": rd(got[0]), "m_usd_m": rd(got[1]),
-                    "ytd_kt": rd(got[2]), "ytd_usd_m": rd(got[3]), "published": rp["date"], "file": files[0].rsplit("/", 1)[-1] if files else ""})
-        print(f"  {y}-{m:02d}: month {got[0]} kt, YTD {got[2]:.1f} kt")
-        time.sleep(1)
-    rows = old + new
+def save(rows, state):
     rows.sort(key=lambda r: (int(r["year"]), int(r["month"])))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT, "w", newline="") as f:
@@ -195,6 +156,56 @@ def main():
     with open(SERIES, "w", newline="") as f:
         w = csv.DictWriter(f, ["month", "k_t", "usd_m", "usd_t", "first_est_k_t", "ytd_k_t", "basis"]); w.writeheader(); w.writerows(ser)
     STATE.write_text(json.dumps(state, indent=0))
+    return ser
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--minutes", type=float, default=9, help="time budget; the next run carries on")
+    a = ap.parse_args()
+    t0 = time.time()
+    state = json.loads(STATE.read_text()) if STATE.exists() else {"read": []}
+    rows = []
+    if OUT.exists():
+        with open(OUT) as f:
+            rows = list(csv.DictReader(f))
+    have = {(int(r["year"]), int(r["month"])) for r in rows}
+    reps = reports()
+    print(f"NSO: {len(reps)} reports listed", flush=True)
+    for rp in sorted(reps, key=lambda x: x["date"]):
+        if rp["link"] in state["read"] or rp["ym"] in have or rp["ym"][0] < 2016:
+            continue  # reports before 2016 carry no coffee row in an Excel annex
+        if time.time() - t0 > a.minutes * 60:
+            print("  (time budget reached; the next run carries on)"); break
+        r = get(rp["link"])
+        if r is None or r.status_code != 200:
+            continue
+        files = [x for x in dict.fromkeys(re.findall(r'href="([^"]+/wp-content/uploads/[^"]+\.xlsx)"', r.text, re.I))]
+        got = None
+        for x in files:
+            f = get(x)
+            if f is None or f.status_code != 200:
+                continue
+            try:
+                got = coffee_row(f.content)
+            except Exception as e:
+                print("  xlsx", x[-60:], str(e)[:100])
+            if got:
+                break
+        state["read"].append(rp["link"])
+        y, m = rp["ym"]
+        if not got or (got[0] is None and got[2] is None):
+            print("  no coffee row:", rp["title"][:80]); save(rows, state); continue
+        if got[0] is not None and got[2] is not None and got[2] < got[0] * 0.99:
+            print("  year-to-date below month, skipped:", rp["title"][:80], got); save(rows, state); continue
+        rd = lambda v: "" if v is None else round(v, 3)
+        rows.append({"year": y, "month": m, "kind": "monthly report", "m_kt": rd(got[0]), "m_usd_m": rd(got[1]),
+                     "ytd_kt": rd(got[2]), "ytd_usd_m": rd(got[3]), "published": rp["date"], "file": files[0].rsplit("/", 1)[-1] if files else ""})
+        have.add((y, m))
+        save(rows, state)
+        print(f"  {y}-{m:02d}: month {got[0]} kt, YTD {got[2]} kt", flush=True)
+        time.sleep(1)
+    ser = save(rows, state)
     print(f"Vietnam exports: {len(rows)} reports, {len(ser)} months, latest {ser[-1]['month'] if ser else '-'}")
     if not ser:
         sys.exit(1)
