@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 21:26 UTC",
+ "generated": "2026-11-26 22:35 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -1133,9 +1133,9 @@
   {
    "group": "Macro",
    "source": "Events calendar",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -1265,7 +1265,7 @@
  ],
  "late": 20,
  "inbox": {
-  "updated": "2026-11-26 15:40 UTC",
+  "updated": "2026-11-26 22:34 UTC",
   "last": [
    {
     "type": "CT_options",
