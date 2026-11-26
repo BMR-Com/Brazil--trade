@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
  "markets": {
   "cotton": {
@@ -14,38 +14,38 @@
    ]
   },
   "sugar": {
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "by": "claude",
-   "time": "14:45 CT",
-   "fundamental": "Mar held its gains near ~18.4, above the 100-day average, with the firmer real still discouraging Brazilian mill export hedging. No fresh centre-south crush or mix figures, so the move remains currency and short covering rather than a change in the Brazil supply picture.",
+   "time": "07:55 CT",
+   "fundamental": "ICE US is shut for Thanksgiving, but the real jumped about 2% to ~5.77 per dollar overnight, which makes forward selling less attractive for centre-south mills and should underpin Mar when trade resumes Friday. The new US tariff proposal on Brazil matters for the protected US domestic market rather than for world #11 flows; still no fresh Brazil crush or mix data.",
    "events": [
-    "Mar ~18.4, above 18.17/18.23 (ICE)",
-    "Real firm vs the dollar; dollar index weaker (Yahoo Finance, WSJ)",
-    "Dollar weakness spurs short covering (Barchart)"
+    "Real strengthens ~2% vs the dollar (Yahoo Finance)",
+    "New US tariffs would likely lift US sugar prices (Reuters)",
+    "ICE US closed for Thanksgiving; Mar last ~18.4 (ICE)"
    ],
-   "fund_score": -0.2
+   "fund_score": -0.15
   },
   "coffee": {
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "by": "claude",
-   "time": "14:45 CT",
-   "fundamental": "Mar recovered to ~268.6 (+2.6%) from the morning dip, helped by the firmer real and a weaker dollar. Nothing has changed on deliverability: Brazilian arabica moving into ICE warehouses still points to rebuilding certified stocks, and the proposed US tariffs on Brazil are the watch point for US-delivered flows.",
+   "time": "07:55 CT",
+   "fundamental": "No ICE US trade today; the sharp overnight rise in the real helps Mar (~268.6) by slowing Brazilian farmer selling. Whether coffee is caught by the new US tariff proposal is not yet clear (it was exempted in the July round), and that only matters for US-delivered flows; deliverability and the rebuild of ICE certified stocks remain the bearish anchor.",
    "events": [
-    "Mar ~268.6, back above 265 (ICE)",
-    "US proposes surprise new tariffs on Brazilian imports (Reuters)",
-    "Brazilian arabica heading to ICE warehouses (Finimize, CNN Brasil)"
+    "Real up ~2% vs the dollar overnight (Yahoo Finance)",
+    "US proposes new tariffs on Brazilian imports, coverage still unclear (Reuters)",
+    "Brazilian arabica still heading to ICE warehouses (Finimize, CNN Brasil)"
    ],
    "fund_score": -0.35
   },
   "cocoa": {
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "by": "claude",
-   "time": "14:45 CT",
-   "fundamental": "Mar extended the rally to ~5,420 (+2%), with the slow pace of Ivory Coast port arrivals and dollar weakness driving short covering. Rising ICE certified stocks remain the offset; no new Ghana COCOBOD news, and no ICCO November quarterly bulletin found yet.",
+   "time": "07:55 CT",
+   "fundamental": "New York is closed for Thanksgiving; London trades thinly. No new Ivory Coast arrivals figure or Ghana COCOBOD news since Wednesday, and no November ICCO quarterly bulletin yet, so the slow-arrivals story and rising ICE certified stocks keep pulling in opposite directions.",
    "events": [
-    "Cocoa settles higher on slower Ivory Coast deliveries (Barchart)",
-    "Dollar weakness sparks short covering in cocoa (Barchart)",
-    "Ivorian port arrivals crawl (Maritime Professional)"
+    "Ivorian port arrivals still running slow (Maritime Professional, Barchart)",
+    "ICE US closed for Thanksgiving; Mar last ~5,420 (ICE)",
+    "No new ICCO quarterly bulletin found yet (ICCO)"
    ],
    "fund_score": -0.05
   }
