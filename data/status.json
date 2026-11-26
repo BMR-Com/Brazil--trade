@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 15:51 UTC",
+ "generated": "2026-11-26 21:26 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -341,9 +341,9 @@
   {
    "group": "Cotton",
    "source": "India",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -653,9 +653,9 @@
   {
    "group": "Coffee",
    "source": "Cecaf\u00e9 daily registrations",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -797,9 +797,9 @@
   {
    "group": "Sugar",
    "source": "India ex-mill prices (ChiniMandi daily update)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 4,
    "state": "ok",
@@ -1121,9 +1121,9 @@
   {
    "group": "Macro",
    "source": "US economic data (BLS, BEA, Fed)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
