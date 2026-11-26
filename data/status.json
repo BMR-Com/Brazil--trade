@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 07:17 UTC",
+ "generated": "2026-11-26 07:53 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -292,6 +292,42 @@
   },
   {
    "group": "Cotton",
+   "source": "US clothing stores sales and inventories (Census MRTS)",
+   "latest": null,
+   "cadence": "monthly",
+   "age": null,
+   "age_unit": "days",
+   "limit": 75,
+   "state": "missing",
+   "manual": false,
+   "used_in": "Retail inventory tab"
+  },
+  {
+   "group": "Cotton",
+   "source": "Apparel company fundamentals (quarterly)",
+   "latest": "2026-10-31",
+   "cadence": "quarterly",
+   "age": 26,
+   "age_unit": "days",
+   "limit": 135,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Retail inventory tab"
+  },
+  {
+   "group": "Cotton",
+   "source": "Brazil producers' hedge books (manual, quarterly)",
+   "latest": "2026-11-13",
+   "cadence": "quarterly",
+   "age": 13,
+   "age_unit": "days",
+   "limit": 135,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Retail inventory tab, Sugar hedge tab"
+  },
+  {
+   "group": "Cotton",
    "source": "China",
    "latest": "2026-11-26",
    "cadence": "daily",
@@ -349,6 +385,42 @@
    "state": "late",
    "manual": true,
    "used_in": "Certs profile tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Japan green coffee stocks (JCA monthly)",
+   "latest": "2026-09-28",
+   "cadence": "monthly",
+   "age": 59,
+   "age_unit": "days",
+   "limit": 75,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Consumer stocks tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Europe port stocks (ECF, every two months)",
+   "latest": "2026-08-28",
+   "cadence": "bi-monthly",
+   "age": 90,
+   "age_unit": "days",
+   "limit": 120,
+   "state": "ok",
+   "manual": false,
+   "used_in": "Consumer stocks tab"
+  },
+  {
+   "group": "Coffee",
+   "source": "Roaster filings: inventory and hedging (manual, quarterly)",
+   "latest": "2026-10-31",
+   "cadence": "quarterly",
+   "age": 26,
+   "age_unit": "days",
+   "limit": 135,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Consumer stocks tab"
   },
   {
    "group": "Coffee",
@@ -772,6 +844,30 @@
   },
   {
    "group": "Cocoa",
+   "source": "Regional grinds (ECA, NCA, CAA quarterly; manual)",
+   "latest": "2026-10-15",
+   "cadence": "quarterly",
+   "age": 42,
+   "age_unit": "days",
+   "limit": 110,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Grinds tab"
+  },
+  {
+   "group": "Cocoa",
+   "source": "Chocolate makers' filings (manual, quarterly)",
+   "latest": "2026-09-30",
+   "cadence": "quarterly",
+   "age": 57,
+   "age_unit": "days",
+   "limit": 135,
+   "state": "ok",
+   "manual": true,
+   "used_in": "Grinds tab"
+  },
+  {
+   "group": "Cocoa",
    "source": "ICE cocoa certs and grading (upload)",
    "latest": "2026-11-25",
    "cadence": "daily",
@@ -1155,7 +1251,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 20,
+ "late": 21,
  "inbox": {
   "updated": "2026-11-26 07:13 UTC",
   "last": [
