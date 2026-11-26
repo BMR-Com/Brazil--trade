@@ -1,41 +1,99 @@
 {
- "contract": "CTZ26",
- "ltd": "2026-12-08",
+ "contract": "CTN26",
+ "ltd": "2026-07-09",
  "checked": [
-  "https://blog.pricegroup.com/2026/11/19/softs-report-11-19-2026/",
-  "https://blog.pricegroup.com/2026/11/20/softs-report-11-20-2026/",
-  "https://blog.pricegroup.com/2026/11/23/softs-report-11-23-2026/",
-  "https://blog.pricegroup.com/2026/11/24/softs-report-11-24-2026/",
-  "https://blog.pricegroup.com/2026/11/25/softs-report-11-25-2026/"
+  "https://blog.pricegroup.com/2026/06/22/softs-report-06-22-2026/",
+  "https://blog.pricegroup.com/2026/06/24/softs-report-06-24-2026/",
+  "https://blog.pricegroup.com/2026/06/25/softs-report-06-25-2026/",
+  "https://blog.pricegroup.com/2026/06/26/softs-report-06-26-2026/",
+  "https://blog.pricegroup.com/2026/06/29/softs-report-06-29-2026/",
+  "https://blog.pricegroup.com/2026/06/30/softs-report-06-30-2026/",
+  "https://blog.pricegroup.com/2026/07/01/softs-report-07-01-2026/",
+  "https://blog.pricegroup.com/2026/07/02/softs-report-07-02-2026/",
+  "https://blog.pricegroup.com/2026/07/06/softs-report-07-06-2026/",
+  "https://blog.pricegroup.com/2026/07/08/softs-report-07-07-2026/",
+  "https://blog.pricegroup.com/2026/07/09/softs-report-07-09-2026/",
+  "https://blog.pricegroup.com/2026/07/10/softs-report-07-10-2026/",
+  "https://blog.pricegroup.com/2026/07/13/softs-report-07-13-2026/",
+  "https://blog.pricegroup.com/2026/07/14/softs-report-07-14-2026/",
+  "https://blog.pricegroup.com/2026/07/15/softs-report-07-15-2026/",
+  "https://blog.pricegroup.com/2026/07/17/softs-report-07-17-2026/",
+  "https://blog.pricegroup.com/2026/07/20/softs-report-07-20-2026/",
+  "https://blog.pricegroup.com/2026/07/21/softs-report-07-21-2026/",
+  "https://blog.pricegroup.com/2026/07/23/softs-report-07-23-2026/",
+  "https://blog.pricegroup.com/2026/07/24/softs-report-07-24-2026/",
+  "https://blog.pricegroup.com/2026/07/27/softs-report-07-27-2026/",
+  "https://blog.pricegroup.com/2026/07/28/softs-report-07-28-2026/",
+  "https://blog.pricegroup.com/2026/07/29/softs-report-07-29-2026/",
+  "https://blog.pricegroup.com/2026/07/30/softs-report-07-30-2026/",
+  "https://blog.pricegroup.com/2026/08/03/softs-report-08-03-2026/"
  ],
  "found": [
   {
-   "url": "https://blog.pricegroup.com/2026/11/24/softs-report-11-24-2026/",
+   "url": "https://blog.pricegroup.com/2026/07/01/softs-report-07-01-2026/",
    "figs": [
     [
      "daily",
-     35.0,
-     null
-    ],
-    [
-     "running",
-     238.0,
+     0.0,
      null
     ]
    ],
    "firms": []
   },
   {
-   "url": "https://blog.pricegroup.com/2026/11/25/softs-report-11-25-2026/",
+   "url": "https://blog.pricegroup.com/2026/07/06/softs-report-07-06-2026/",
    "figs": [
     [
      "daily",
-     24.0,
+     0.0,
+     null
+    ]
+   ],
+   "firms": []
+  },
+  {
+   "url": "https://blog.pricegroup.com/2026/07/14/softs-report-07-14-2026/",
+   "figs": [
+    [
+     "daily",
+     9.0,
      null
     ],
     [
      "running",
-     262.0,
+     617.0,
+     null
+    ]
+   ],
+   "firms": []
+  },
+  {
+   "url": "https://blog.pricegroup.com/2026/07/17/softs-report-07-17-2026/",
+   "figs": [
+    [
+     "daily",
+     0.0,
+     null
+    ],
+    [
+     "running",
+     627.0,
+     null
+    ]
+   ],
+   "firms": []
+  },
+  {
+   "url": "https://blog.pricegroup.com/2026/07/20/softs-report-07-20-2026/",
+   "figs": [
+    [
+     "daily",
+     0.0,
+     null
+    ],
+    [
+     "running",
+     627.0,
      null
     ]
    ],
@@ -46,5 +104,5 @@
   "https://www.fibre2fashion.com/news/cotton-news/: HTTP Error 405: Not Allowed",
   "https://www.fibre2fashion.com/news/textile-news: HTTP Error 405: Not Allowed"
  ],
- "run_utc": "2026-11-26 04:02"
+ "run_utc": "2026-11-26 04:12"
 }
