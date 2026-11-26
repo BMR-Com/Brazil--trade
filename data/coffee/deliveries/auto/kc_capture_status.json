@@ -1,11 +1,99 @@
 {
  "contract": "KCZ26",
  "ltd": "2026-12-18",
- "checked": [],
- "found": [],
+ "checked": [
+  "https://blog.pricegroup.com/2026/11/18/softs-report-11-18-2026/",
+  "https://blog.pricegroup.com/2026/11/19/softs-report-11-19-2026/",
+  "https://blog.pricegroup.com/2026/11/20/softs-report-11-20-2026/",
+  "https://blog.pricegroup.com/2026/11/23/softs-report-11-23-2026/",
+  "https://blog.pricegroup.com/2026/11/24/softs-report-11-24-2026/",
+  "https://blog.pricegroup.com/2026/11/25/softs-report-11-25-2026/"
+ ],
+ "found": [
+  {
+   "url": "https://blog.pricegroup.com/2026/11/19/softs-report-11-19-2026/",
+   "figs": [
+    [
+     "daily",
+     0.0,
+     null
+    ],
+    [
+     "running",
+     0.0,
+     null
+    ]
+   ],
+   "firms": []
+  },
+  {
+   "url": "https://blog.pricegroup.com/2026/11/20/softs-report-11-20-2026/",
+   "figs": [
+    [
+     "daily",
+     0.0,
+     null
+    ],
+    [
+     "running",
+     0.0,
+     null
+    ]
+   ],
+   "firms": []
+  },
+  {
+   "url": "https://blog.pricegroup.com/2026/11/23/softs-report-11-23-2026/",
+   "figs": [
+    [
+     "daily",
+     0.0,
+     null
+    ],
+    [
+     "running",
+     0.0,
+     null
+    ]
+   ],
+   "firms": []
+  },
+  {
+   "url": "https://blog.pricegroup.com/2026/11/24/softs-report-11-24-2026/",
+   "figs": [
+    [
+     "fnd",
+     10.0,
+     null
+    ],
+    [
+     "running",
+     10.0,
+     null
+    ]
+   ],
+   "firms": []
+  },
+  {
+   "url": "https://blog.pricegroup.com/2026/11/25/softs-report-11-25-2026/",
+   "figs": [
+    [
+     "daily",
+     0.0,
+     null
+    ],
+    [
+     "running",
+     10.0,
+     null
+    ]
+   ],
+   "firms": []
+  }
+ ],
  "errors": [
   "https://www.stonex.com/en/insights/: HTTP Error 403: Forbidden",
   "https://www.stonex.com/en-us/insights/: HTTP Error 403: Forbidden"
  ],
- "run_utc": "2026-11-26 03:50"
+ "run_utc": "2026-11-26 04:02"
 }
