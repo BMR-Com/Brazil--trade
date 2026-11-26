@@ -1,5 +1,13 @@
 # Softs desk (Brazil--trade) — handoff notes
 
+## Coffee → arabica minus robusta spread in ¢/lb on the "Arabica / robusta" tab (2026-11-26)
+- `models/kc_rc_spread.py` → `data/coffee/kc_rc_spread.json`, rendered by `kcrcBlock()` / `kcrcCharts()` in `assets/coffee.js` at the top of `#kc-arb` (the older $/t arb cards stay below). Step in `coffee.yml` after Build (weekdays 22:35 UTC, after both settlements); no new schedule.
+- Inputs already collected by `coffee/scripts/fetch.py` (TradingView): `coffee/data/prices_cont.csv` KC1!/KC2!/RC1!/RC2! from 1995, `prices_curve.csv` (contracts, ~400 days), plus `data/contracts/KC.csv` to label KC1!. RC $/t ÷ 22.0462 = ¢/lb. Bars dated today are dropped before 19:00 UTC (settlements only).
+- Contract labels: TradingView rolls KC1! about 15 ICE US trading days before the delivery month (learned from KC.csv, which overrides the rule where it matches) and RC1! on first notice (4 London trading days before the delivery month). Checked against the curve file for Oct 2025–Nov 2026: no mismatches.
+- Matched nearby = nearest KC month vs the same RC month (Mar/Mar, May/May, Jul/Jul, Sep/Sep; Dec KC vs Jan RC, or Nov RC for the ~2 weeks in August before Jan is a front-two month). Also front (KC1! − RC1!), ratio, 5-year/all-history percentiles, weekly seasonal by calendar year with the prior 5 years' band, March vs March by contract year and the March spread on the same date in earlier contracts.
+- `data/coffee/rc_contracts.csv` keeps every RC contract close seen in prices_curve.csv (append-only), so March-vs-March lines lengthen every year (before Nov 2025 only late Oct–Feb is available from RC2!/RC1!).
+- Registered in `data_status.py` and `release_calendar.json` (`kc_rc_spread`). Findings and reasoning are in the private Softs COT Signal Lab only.
+
 ## Consumer-side trackers: stocks, roasters, grinds, apparel inventory, Brazil hedge books (2026-11-26)
 - New sub-tabs, all rendered by `assets/consumers.js` (`Consumers.mount(el, kind)`): Coffee `kc-cons` "Consumer stocks & roasters", Cocoa `cc-grind` "Grinds & chocolate makers", Cotton `ct-retail` "Retail & apparel inventory", Sugar `su-hedge` "Mill hedge books".
 - Fetch: `pipelines/consumers_fetch.py` (steps sec, census, yahoo, jca, ecf) → `data/consumers/auto/`, raw PDFs in `data/consumers/raw/`, log in `data/consumers/fetch_status.json`. Build: `pipelines/consumers_build.py` → `data/consumers/{coffee,cocoa,cotton,producers}.json`. Workflow `consumers.yml`: Tue/Fri 16:20 UTC + push on pipeline/manual paths.

@@ -624,10 +624,64 @@ const Coffee = (() => {
     certEcon('KC', $('#kcCE'));
   }
 
+  // Arabica − robusta in ¢/lb (data/coffee/kc_rc_spread.json, models/kc_rc_spread.py)
+  function kcrcBlock(X) {
+    if (!X) return '';
+    const N = X.now, M = X.march, S = N.spread_stats, R = N.ratio_stats, sw = N.seas_avg5;
+    const lowTxt = N.rc_front_low_since ? `lowest since ${N.rc_front_low_since}` : 'lowest in the series';
+    return `<div class="grid g4">
+        ${kpi(M ? `${M.contract} arabica − robusta` : 'Arabica − robusta', f1(M ? M.spread : N.spread) + ' ¢/lb', `${N.pair}, settlements ${X.as_of}; ${sgn(N.chg_1w, 1, '¢')} on the week, ${sgn(N.chg_1m, 1, '¢')} on the month`)}
+        ${kpi('Percentile, matched nearby', ord(S.pct5y), `5-year range ${f1(S.min5y)} to ${f1(S.max5y)} ¢/lb, median ${f1(S.med5y)}; ${ord(S.pct_all)} since 1995`)}
+        ${kpi('Ratio, arabica ÷ robusta', f2(N.ratio) + '×', `${ord(R.pct5y)} of 5 years (range ${f2(R.min5y)} to ${f2(R.max5y)}); 5-yr average for this week ${f2(N.seas_ratio_avg5)}×`)}
+        ${kpi('Robusta (RC) front', f0(N.rc_front_usd_t) + ' $/t', `${f1(N.rc_front_usd_t / 22.0462)} ¢/lb on ${N.rc_front_date}, ${lowTxt}`)}</div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>Arabica minus robusta, ¢/lb</h2>${rngBar('kcRc', ['1Y', '2Y', '5Y', 'All'], '5Y')}${box('kcRc', 290)}
+          <p class="note">KC settlement minus RC settlement ÷ 22.0462, nearest matched delivery months (Mar/Mar, May/May, Jul/Jul, Sep/Sep; Dec arabica against Jan robusta). Ratio on the right axis. Dotted lines: 5-year high, median and low.</p></div>
+        <div class="card"><h2>Seasonality by year</h2><div class="seg" id="kcRsT" style="display:flex;gap:4px;margin:0 0 6px">${['Spread ¢/lb', 'Ratio'].map((o, i) => `<button data-v="${i}" style="padding:2px 9px;font-size:11.5px;border:1px solid #cfd4dc;border-radius:99px;background:${i ? '#fff' : 'var(--acc)'};color:${i ? 'var(--ink)' : '#fff'};cursor:pointer">${o}</button>`).join('')}</div>${box('kcRs', 290)}
+          <p class="note">Weekly average of the matched nearby spread by calendar week. Shaded: range of ${X.seasonal.band_years[0]}–${X.seasonal.band_years.at(-1)}; dashed: their average. This week's 5-year average is ${f1(sw)} ¢/lb (range ${f1(N.seas_min5)} to ${f1(N.seas_max5)}); now ${f1(N.spread)}.</p></div></div>
+      ${M ? `<div class="grid g2" style="margin-top:12px">
+        <div class="card"><h2>March against March, by contract</h2>${box('kcRm', 270)}
+          <p class="note">KC March minus RC March from June to expiry, one line per contract year. Earlier contracts start in late October, when March robusta becomes a front-two month; the current one runs from the contract-level curve.</p></div>
+        <div class="card"><h2>${M.contract} spread against earlier Marches on the same date</h2><div class="tbl"><table><tr><th class="l">Contract</th><th class="l">Date</th><th>¢/lb</th><th>Ratio</th></tr>
+          <tr><td class="l"><b>${M.contract}</b></td><td class="l"><b>${X.as_of}</b></td><td class="n"><b>${f1(M.spread)}</b></td><td class="n"><b>${f2(M.ratio)}</b></td></tr>
+          ${M.same_date.slice().reverse().map(r => `<tr><td class="l">${r.contract}</td><td class="l">${r.date}</td><td class="n">${f1(r.spread)}</td><td class="n">${f2(r.ratio)}</td></tr>`).join('')}</table></div>
+          <p class="note">${M.contract} is ${ord(M.pct_same_date)} against these. In cents the spread grows with the price level, so the ratio is the better guide to how far roasters are pushed toward robusta.</p></div></div>` : ''}`;
+  }
+  function kcrcCharts(X) {
+    if (!X) return;
+    const H = X.history, N = X.now, S = N.spread_stats;
+    const drawH = r => { const i0 = rngFrom(H.dates, r), step = r === 'All' ? 5 : 1, ix = []; for (let i = i0; i < H.dates.length; i += step) ix.push(i); if (ix.at(-1) !== H.dates.length - 1) ix.push(H.dates.length - 1);
+      const flat = v => ix.map(() => v);
+      chart('kcRc', { type: 'line', data: { labels: ix.map(i => H.dates[i]), datasets: [
+        { label: 'Spread, ¢/lb', data: ix.map(i => H.spread[i]), borderColor: '#7d3c98', borderWidth: 1.5, pointRadius: 0, yAxisID: 'y' },
+        { label: 'Ratio', data: ix.map(i => H.ratio[i]), borderColor: '#d68910', borderWidth: 1, pointRadius: 0, yAxisID: 'y1' },
+        { label: '5-yr high', data: flat(S.max5y), borderColor: 'rgba(192,57,43,.6)', borderDash: [2, 3], borderWidth: 1, pointRadius: 0, yAxisID: 'y' },
+        { label: '5-yr median', data: flat(S.med5y), borderColor: 'rgba(127,140,141,.8)', borderDash: [2, 3], borderWidth: 1, pointRadius: 0, yAxisID: 'y' },
+        { label: '5-yr low', data: flat(S.min5y), borderColor: 'rgba(47,107,58,.6)', borderDash: [2, 3], borderWidth: 1, pointRadius: 0, yAxisID: 'y' }] },
+        options: { scales: { y1: { position: 'right', grid: { display: false } } } } }); };
+    drawH('5Y'); rngWire('kcRc', drawH);
+    const Sn = X.seasonal, wk = Sn.weeks.map(w => { const d = new Date(Date.UTC(2001, 0, 1 + (w - 1) * 7)); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); });
+    const drawS = v => { const Y = v ? Sn.ratio_years : Sn.years, B = Sn.band5, yrs = Object.keys(Y).sort(), cy = yrs.at(-1);
+      const ds = [{ label: '5-yr range', data: v ? B.rmax : B.max, borderWidth: 0, backgroundColor: 'rgba(125,60,152,.12)', fill: '+1', pointRadius: 0 },
+        { label: '_min', data: v ? B.rmin : B.min, borderWidth: 0, pointRadius: 0, fill: false },
+        { label: '5-yr average', data: v ? B.ravg : B.avg, borderColor: '#7f8c8d', borderDash: [5, 4], borderWidth: 1.2, pointRadius: 0 }];
+      yrs.forEach(y => ds.push({ label: y, data: Y[y], pointRadius: 0, spanGaps: true, borderColor: y === cy ? '#7d3c98' : y === String(cy - 1) ? '#d68910' : 'rgba(127,140,141,.35)', borderWidth: y === cy ? 2.4 : y === String(cy - 1) ? 1.6 : 1, hidden: +y < cy - 6 }));
+      chart('kcRs', { type: 'line', data: { labels: wk, datasets: ds }, options: { plugins: { legend: { labels: { filter: i => !i.text.startsWith('_') } } } } }); };
+    drawS(0);
+    const tb = $('#kcRsT'); if (tb) tb.onclick = e => { const v = e.target.dataset.v; if (v == null) return; tb.querySelectorAll('button').forEach(b => { const on = b.dataset.v === v; b.style.background = on ? 'var(--acc)' : '#fff'; b.style.color = on ? '#fff' : 'var(--ink)'; }); drawS(+v); };
+    const MY = X.march_by_year; if (!X.march || !MY) return;
+    const yrs = Object.keys(MY).sort(), cy = yrs.at(-1), day = (d, y) => Math.round((Date.parse(d) - Date.UTC(+y - 1, 5, 1)) / 864e5);
+    const n = day(`${cy}-02-28`, cy), lab = Array.from({ length: n + 1 }, (_, i) => { const d = new Date(Date.UTC(2001, 5, 1 + i)); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); });
+    const ds = yrs.map(y => { const a = Array(n + 1).fill(null); MY[y].dates.forEach((d, i) => { const k = day(d, y); if (k >= 0 && k <= n) a[k] = MY[y].spread[i]; });
+      return { label: 'Mar ' + y, data: a, spanGaps: true, pointRadius: 0, borderColor: y === cy ? '#7d3c98' : y === String(+cy - 1) ? '#d68910' : PAL[yrs.indexOf(y) % PAL.length] + '88', borderWidth: y === cy ? 2.4 : 1.2 }; });
+    chart('kcRm', { type: 'line', data: { labels: lab, datasets: ds } });
+  }
+
   async function arb() {
     await load();
+    const X = await getJSON('data/coffee/kc_rc_spread.json').catch(() => null);
     const A = K.arb, V = K.vietnam, Cb = K.brazil.conillon, i0 = since(A.dates, 8), j0 = since(Cb.dates, 4);
-    body().innerHTML = `<div class="grid g4">
+    body().innerHTML = `${kcrcBlock(X)}<div class="grid g4" style="margin-top:12px">
         ${kpi('Arabica − robusta', f0(A.now.arb) + ' $/t', `${A.now.date}; ${ord(A.now.pct5y)} of 5 years`)}
         ${kpi('Arabica / robusta ratio', f2(A.now.ratio) + '×', 'KC front in $/t over RC front')}
         ${kpi('Vietnam robusta, Dak Lak', f0(V.now.usd_t) + ' $/t', `${f0(V.now.vnd)} VND/kg (${V.now.date}); ${sgn(V.now.usd_t - V.now.rc, 0)} vs London`)}
@@ -639,6 +693,7 @@ const Coffee = (() => {
         <div class="card"><h2>Vietnam local price against London</h2>${box('kcVn', 240)}<p class="note">Dak Lak farm-gate robusta converted to US$/t; difference to the RC front.</p></div>
         <div class="card"><h2>Robusta curve</h2><div class="tbl"><table><tr><th class="l">Contract</th><th>$/t</th><th>1 week ago</th><th>Change</th><th>Volume</th></tr>
           ${K.curves.RC.map(r => `<tr><td class="l">${r.label}</td><td class="n">${f0(r.px)}</td><td class="n">${f0(r.px_1w)}</td><td class="n">${sgn(r.px - r.px_1w, 0)}</td><td class="n">${f0(r.vol)}</td></tr>`).join('')}</table></div></div></div>${asof()}`;
+    kcrcCharts(X);
     chart('kcArb', { type: 'line', data: { labels: A.dates.slice(i0), datasets: [{ label: 'Arb, $/t', data: A.arb.slice(i0), borderColor: '#7d3c98', pointRadius: 0, yAxisID: 'y' }, { label: 'Ratio', data: A.ratio.slice(i0), borderColor: '#d68910', pointRadius: 0, yAxisID: 'y1' }] },
       options: { scales: { y1: { position: 'right', grid: { display: false } } } } });
     chart('kcCon', { type: 'line', data: { labels: Cb.dates.slice(j0), datasets: [{ label: 'Conilon, $/t', data: Cb.usd_t.slice(j0), borderColor: '#2f6b3a', pointRadius: 0, yAxisID: 'y' }, { label: 'London RC', data: Cb.rc.slice(j0), borderColor: '#d68910', pointRadius: 0, yAxisID: 'y' },

@@ -5,7 +5,7 @@ on:
     - cron: "35 22 * * 1-5"    # weekdays after the ICE close
   push:
     branches: [main]
-    paths: ['pipelines/coffee_certs.py', 'models/kc_spread_model.py', 'pipelines/brazil_physical.py', 'models/brazil_tender_parity.py', '.github/workflows/coffee.yml']
+    paths: ['pipelines/coffee_certs.py', 'models/kc_spread_model.py', 'pipelines/brazil_physical.py', 'models/brazil_tender_parity.py', 'models/kc_rc_spread.py', '.github/workflows/coffee.yml']
   workflow_dispatch:
     inputs:
       full:
@@ -53,6 +53,10 @@ jobs:
         run: pip install -q xlrd && python pipelines/coffee_certs.py
       - name: Build
         run: if [ -f coffee/scripts/build.py ]; then python coffee/scripts/build.py; fi
+      - name: Arabica minus robusta spread in c/lb (matched months, seasonality, percentiles)
+        id: step4
+        continue-on-error: true
+        run: python -W ignore models/kc_rc_spread.py
       - name: Certs profile and delivery economics (fails the run on error)
         run: python -W ignore models/coffee_certs_profile.py
       - name: KC spread model against certified stocks (fails the run on error)
@@ -64,7 +68,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add coffee/data data/coffee/ice_certs.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json data/derived/cert_economics.json 2>/dev/null || true
+          git add coffee/data data/coffee/ice_certs.csv data/coffee/certs_profile.json data/coffee/ico_groups_history.csv data/coffee/spread_model.json data/derived/cert_economics.json data/coffee/kc_rc_spread.json data/coffee/rc_contracts.csv 2>/dev/null || true
           for f in data/coffee/brazil_physical_raw.csv data/coffee/brazil_physical_history.csv data/coffee/brazil_physical_meta.json data/coffee/cepea_robusta_history.csv data/coffee/usdbrl_ptax.csv data/coffee/cepea_arabica_history.csv data/coffee/tender_parity.json data/coffee/tender_parity_history.csv; do [ -f "$f" ] && git add "$f"; done; true
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "coffee: data refresh $(date -u +%F) [bot]"

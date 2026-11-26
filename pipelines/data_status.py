@@ -196,6 +196,7 @@ SOURCES = [
     ("Cocoa", "Certs profile and delivery value (built from the ICE files)", "daily", 2, B, False, lambda: J("data/cocoa/certs_profile.json")["current"]["date"], "Certs profile tab"),
     ("Cocoa", "CC calendar-spread history (per-contract closes)", "daily", 3, B, False, lambda: max_csv_date("data/cocoa/cc_spreads_history.csv"), "Certs profile tab"),
     ("Coffee", "KC spread model: fair front spread from certified stocks", "daily", 3, B, False, lambda: J("data/coffee/spread_model.json")["asof"], "Certified stocks & structure tab"),
+    ("Coffee", "Arabica − robusta spread, ¢/lb (KC minus RC, seasonality and percentiles)", "daily", 3, B, False, lambda: J("data/coffee/kc_rc_spread.json")["as_of"], "Arabica / robusta tab"),
     ("Coffee", "Spreads & arbs table (KC/RC switches, arabica-robusta arb, B3 arb)", "daily", 3, B, False, lambda: J("data/markets/spread_tables.json")["asof"], "Coffee and sugar Spreads & vol tabs"),
     ("Sugar", "Spreads & arbs table (No. 11 / No. 5 switches, white premium)", "daily", 3, B, False, lambda: J("data/markets/spread_tables.json")["asof"], "Sugar Spreads & vol tab"),
     ("Coffee", "Reports: Sucden coffee outlook (balance sheet and revisions)", "monthly", 200, C, True, lambda: J("data/coffee/reports/sucden.json")["latest"]["date"], "Coffee Reports tab"),

@@ -1355,6 +1355,26 @@
    "season": null
   },
   {
+   "id": "kc_rc_spread",
+   "status_source": "Arabica − robusta spread, ¢/lb (KC minus RC, seasonality and percentiles)",
+   "age_limit": 3,
+   "age_unit": "business days",
+   "tab": "Coffee > Arabica / robusta",
+   "report": "Desk build",
+   "publisher": "BMR-Com",
+   "release_et": "weekdays",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee.yml"
+   },
+   "manual": false,
+   "season": null
+  },
+  {
    "id": "kc_spreads_hist",
    "status_source": "KC calendar-spread history (per-contract closes)",
    "age_limit": 3,
