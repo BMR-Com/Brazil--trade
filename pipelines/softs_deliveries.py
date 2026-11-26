@@ -223,10 +223,10 @@ def parse_pg(sec, month):
     for s in sentences(re.sub(r"\s+", " ", sec)):
         if re.search(r"London|ICE Europe|Robusta", s, re.I):
             continue
-        d = re.search(r"(\d[\d,]*) (?:delivery )?notices were (?:posted|tendered|issued) for delivery against (\w+) (?:futures|contracts?)", s, re.I)
+        d = re.search(r"(\d[\d,]*) (?:delivery )?(?:notices|contracts|lots) (?:were|was) (?:posted|tendered|issued) for delivery against (\w+) (?:futures|contracts?)", s, re.I)
         if not d or d.group(2).lower() != mon:
             continue
-        r = re.search(r"total deliveries for the month are now (\d[\d,]*)", s, re.I)
+        r = re.search(r"deliveries for the month (?:are|is|were) now (\d[\d,]*)", s, re.I)  # "total" is sometimes mistyped
         daily, run = n(d.group(1)), n(r.group(1)) if r else None
         k = "fnd" if run is not None and daily == run and daily else "daily"
         figs.append({"kind": k, "lots": daily, "note": s[:240]})
@@ -292,6 +292,10 @@ def selftest():
     ok = r and [(f["kind"], f["lots"]) for f in r["figs"]] == [("fnd", 35), ("running", 35)]
     bad += not ok
     print("ok " if ok else "BAD", "CT", "pricegroup first day", r and r["figs"])
+    r = parse_pg("ICE said that 10 contracts were posted for delivery against July futures and that tzotal deliveries for the month are now 225 contracts.", 7)
+    ok = r and [(f["kind"], f["lots"]) for f in r["figs"]] == [("daily", 10), ("running", 225)]
+    bad += not ok
+    print("ok " if ok else "BAD", "CT", "pricegroup 2025 wording", r and [(f["kind"], f["lots"]) for f in r["figs"]])
     for sym, m, t, (k, lots) in SAMPLES:
         r = PARSE[sym](t, m)
         f = r["figs"][0] if r and r["figs"] else {}
