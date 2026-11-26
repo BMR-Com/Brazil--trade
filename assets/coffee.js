@@ -4,7 +4,7 @@
 const Coffee = (() => {
   let built = false, tab = 'kc-primer', K = null;
   const TABS = [['kc-primer', 'Primer'], ['kc-geo', "Where it's grown, trade &amp; weather"], ['kc-bal', 'World balance'], ['kc-br', 'Brazil: basis ladder &amp; exports'], ['kc-cecafe', 'Cecafé daily registrations'], ['kc-wx', 'Brazil weather by production'],
-    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-deliv', 'Deliveries'], ['kc-newc', 'KC contract: old vs new'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'], ['kc-col', 'Centrals &amp; Col'],
+    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-deliv', 'Deliveries'], ['kc-newc', 'KC contract: old vs new'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'], ['kc-col', 'Centrals &amp; Col'], ['kc-diffs', 'Differentials'],
     ['kc-flows', 'Futures, options &amp; COT'], ['kc-rv', 'Spreads &amp; vol'], ['kc-outlook', 'Outlook'], ['kc-reports', 'Reports'], ['kc-seas', 'Seasonality &amp; technicals']];
   const body = () => $('#kcBody');
   const f0 = v => fmt(v, 0), f1 = v => fmt(v, 1), f2 = v => fmt(v, 2);
@@ -24,7 +24,7 @@ const Coffee = (() => {
     history.replaceState(null, '', '#' + tab);
     body().innerHTML = '<div class="card"><p class="note">Loading…</p></div>';
     ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs), 'kc-cprof': guard(cprof), 'kc-deliv': guard(() => Deliveries.mount(body(), 'KC')), 'kc-newc': guard(kcnew), 'kc-cecafe': guard(cecafe), 'kc-wx': guard(weather),
-      'kc-arb': guard(arb), 'kc-orig': guard(origins), 'kc-col': guard(centrals), 'kc-flows': guard(flows), 'kc-rv': guard(async () => { body().innerHTML = '<div id="kcSA"></div><div id="kcRV" style="margin-top:12px"></div>'; await SpreadTables.mount($('#kcSA'), 'coffee'); await RVView.mount($('#kcRV'), 'KC'); }), 'kc-reports': guard(() => ReportsView.mount(body(), 'coffee')),
+      'kc-arb': guard(arb), 'kc-orig': guard(origins), 'kc-col': guard(centrals), 'kc-diffs': guard(diffs), 'kc-flows': guard(flows), 'kc-rv': guard(async () => { body().innerHTML = '<div id="kcSA"></div><div id="kcRV" style="margin-top:12px"></div>'; await SpreadTables.mount($('#kcSA'), 'coffee'); await RVView.mount($('#kcRV'), 'KC'); }), 'kc-reports': guard(() => ReportsView.mount(body(), 'coffee')),
       'kc-outlook': guard(outlook), 'kc-seas': () => MktStudy.mount(body(), ['KC']) })[tab]();
   }
   const kpi = (lab, v, sub) => `<div class="kpi card" style="padding:10px"><div class="lbl">${lab}</div><div class="val" style="font-size:19px">${v}</div>${sub ? `<div class="sub">${sub}</div>` : ''}</div>`;
@@ -720,6 +720,47 @@ const Coffee = (() => {
     if (I) { const i0 = since(I.dates, 5);
       chart('coI', { type: 'line', data: { labels: I.dates.slice(i0), datasets: [{ label: 'Internal, ¢/lb', data: I.c_lb.slice(i0), borderColor: PAL[0], pointRadius: 0 }, { label: 'KC front', data: I.kc.slice(i0), borderColor: PAL[4], pointRadius: 0 },
         { label: 'Internal − KC', data: I.diff.slice(i0), borderColor: '#7f8c8d', borderDash: [4, 3], pointRadius: 0, yAxisID: 'y1' }] }, options: { scales: { y1: { position: 'right', grid: { display: false } } } } }); }
+  }
+
+  // Physical differentials by origin and quality: data/coffee/diffs/diffs.json (pipelines/coffee_diffs.py)
+  async function diffs() {
+    const X = await getJSON('data/coffee/diffs/diffs.json'), Hn = X.honduras, Co = X.colombia, Br = X.brazil, Vn = X.vietnam;
+    const fw = v => v == null ? '–' : sgn(v, 1, '¢'), mlab = m => new Date(m + '-15').toLocaleString('en', { month: 'short', year: '2-digit' });
+    const BL = (Br && Br.latest) || [], fob = BL.filter(r => r.kind === 'fob'), dom = BL.filter(r => r.kind === 'domestic');
+    const months = S => [...new Set(Object.values(S || {}).flatMap(a => a.map(x => x[0])))].sort();
+    const pick = (S, k, ms) => { const m = Object.fromEntries((S || {})[k] || []); return ms.map(x => m[x] ?? null); };
+    let h = `<div class="card"><h2>Physical differentials by origin and quality</h2><p class="note">All in US cents per lb unless shown. Each line names its source and how it is measured; figures are as published or converted at the day's exchange rate. Built ${X.built}.</p></div>`;
+    if (Br) h += `<div class="card" style="margin-top:12px"><h2>Brazil by quality <span class="note">SAFRAS &amp; Mercado, ${Br.counts.first} to ${Br.counts.last}</span></h2>
+      <div class="grid g2"><div><div class="tbl"><table><tr><th class="l">FOB differential</th><th>Date</th><th>¢/lb</th><th class="l">Basis</th><th class="l">Shipment</th></tr>
+        ${fob.map(r => `<tr><td class="l">${r.label}</td><td>${r.date}</td><td class="n">${fw(r.mid)}${r.low !== r.high ? ` <span class="note">(${f0(r.low)}/${f0(r.high)})</span>` : ''}</td><td class="l">${r.basis || ''}</td><td class="l">${r.shipment || ''}</td></tr>`).join('') || '<tr><td colspan="5" class="l note">no quotes yet</td></tr>'}</table></div></div>
+      <div><div class="tbl"><table><tr><th class="l">Domestic spot</th><th>Date</th><th>R$/bag</th><th>¢/lb</th><th>vs KC 2nd/3rd</th></tr>
+        ${dom.map(r => `<tr><td class="l">${r.label}</td><td>${r.date}</td><td class="n">${f0(r.mid)}</td><td class="n">${f1(r.c_lb)}</td><td class="n">${fw(r.basis_kc)}</td></tr>`).join('') || '<tr><td colspan="5" class="l note">no quotes yet</td></tr>'}</table></div></div></div>
+      <div class="grid g2" style="margin-top:8px"><div><h3>FOB differential by quality, monthly average</h3>${box('dfBrF', 250)}</div><div><h3>Domestic price minus KC 2nd/3rd, monthly average</h3>${box('dfBrD', 250)}</div></div>
+      <p class="note">${Br.notes.fob}. ${Br.notes.domestic}. ${Br.notes.monthly}. Fine-cup minus good-cup FOB spread, latest month: ${(Br.fine_minus_good.fob || []).length ? fw(Br.fine_minus_good.fob.at(-1)[1]) + ' (' + mlab(Br.fine_minus_good.fob.at(-1)[0]) + ')' : '–'}.</p>
+      ${Br.stocks ? `<h3>Stocks</h3>${box('dfBrS', 240)}<p class="note">Million 60-kg bags. IBGE: green coffee declared in storage on 30 Jun and 31 Dec (arabica and canephora from 2014). CONAB: private stocks survey at 31 Mar (no survey after 2020 found). USDA: PSD ending stocks for the marketing year ending June.</p>` : ''}</div>`;
+    if (Co) { const L = Co.latest; h += `<div class="card" style="margin-top:12px"><h2>Colombia <span class="note">FNC internal price, ${L.date}</span></h2>
+      <div class="grid g4">${kpi('Internal price, ¢/lb green', f1(L.usd_c_lb) + '¢', 'KC front ' + f1(L.kc_front) + '¢')}${kpi('Internal minus KC front', fw(L.net_prem), 'net of internal costs')}
+        ${kpi('FOB-equivalent premium', fw(L.fob_prem), 'scaled to FNC published differential')}${kpi('FNC differential ' + (L.fnc_diff_month ? mlab(L.fnc_diff_month) : ''), fw(L.fnc_diff_last), 'monthly report')}</div>
+      ${box('dfCo', 260)}<p class="note">Internal minus KC: FNC's internal reference price in ¢/lb of green coffee minus the KC front. FOB-equivalent premium: the same on the basis of FNC's published monthly export differential. Weekly points, last five years. Source: FNC.</p></div>`; }
+    if (Hn) { const L = Hn.latest; h += `<div class="card" style="margin-top:12px"><h2>Honduras <span class="note">IHCAFE daily report, ${L.date}, crop ${L.crop}</span></h2>
+      <div class="grid g4">${kpi('Export price, crop to date', f1(L.price_c_lb) + '¢', 'vs KC front average ' + fw(L.prem_ctd))}${kpi('Recent exports', L.marg_c_lb == null ? '–' : f1(L.marg_c_lb) + '¢', 'vs KC ' + fw(L.marg_prem))}
+        ${kpi('Sales by price band, SHG', f1(L.band_shg_c_lb) + '¢', 'HG ' + f1(L.band_hg_c_lb) + '¢')}${kpi('Crop to date', f0(L.exports_k) + 'k exported', f0(L.sales_k) + 'k sold; SHG ' + f0(L.shg_share_sales) + '% of sales')}</div>
+      ${box('dfHn', 260)}<p class="note">Crop-to-date export price: IHCAFE's average price of exports registered this crop, against the KC front average over the crop. Recent exports: the price of exports registered over about the last two weeks. SHG band: the average price of SHG sales across IHCAFE's price bands. Bags of 46 kg converted to ¢/lb. Source: IHCAFE daily report.</p></div>`; }
+    if (Vn) h += `<div class="card" style="margin-top:12px"><h2>Vietnam: exports and stocks</h2>
+      ${Vn.exports ? `${box('dfVnE', 240)}<p class="note">${Vn.exports_note || ''}</p>` : '<p class="note">No monthly export series yet.</p>'}
+      ${Vn.psd ? `<div class="tbl"><table><tr><th class="l">Marketing year (Oct–Sep)</th><th>Production</th><th>Bean exports</th><th>Consumption</th><th>Ending stocks</th></tr>${Vn.psd.slice().reverse().map(r => `<tr><td class="l">${r.year}/${String(r.year + 1).slice(2)}</td><td class="n">${f0(r.Production)}</td><td class="n">${f0(r['Bean Exports'])}</td><td class="n">${f0(r['Domestic Consumption'])}</td><td class="n">${f0(r['Ending Stocks'])}</td></tr>`).join('')}</table></div><p class="note">USDA PSD, thousand 60-kg bags. No public series of coffee held at Vietnam's ports was found; ending stocks are USDA's estimate. Local G2 prices against London are on Colombia, Vietnam &amp; ICO.</p>` : ''}</div>`;
+    body().innerHTML = h;
+    if (Br) { const F = Br.monthly.fob || {}, ms = months(F);
+      chart('dfBrF', { type: 'line', data: { labels: ms.map(mlab), datasets: Object.keys(F).map((k, i) => ({ label: Br.labels[k] || k, data: pick(F, k, ms), borderColor: PAL[i], spanGaps: true, pointRadius: 2 })) } });
+      const D = Br.monthly.domestic_basis || {}, md = months(D);
+      chart('dfBrD', { type: 'line', data: { labels: md.map(mlab), datasets: Object.keys(D).map((k, i) => ({ label: Br.labels[k] || k, data: pick(D, k, md), borderColor: PAL[i], spanGaps: true, pointRadius: 1 })) } });
+      if (Br.stocks) { const S = Br.stocks, ds = [...new Set(Object.values(S).flatMap(a => a.map(x => x[0])))].sort();
+        chart('dfBrS', { type: 'line', data: { labels: ds, datasets: Object.keys(S).map((k, i) => ({ label: k.replace(':', ' '), data: pick(S, k, ds), borderColor: PAL[i], spanGaps: true, pointRadius: 2, showLine: !k.startsWith('CONAB') })) } }); } }
+    if (Co) { const i0 = since(Co.dates, 5);
+      chart('dfCo', { type: 'line', data: { labels: Co.dates.slice(i0), datasets: [{ label: 'Internal − KC front', data: Co.net_prem.slice(i0), borderColor: PAL[0], pointRadius: 0 }, { label: 'FOB-equivalent premium', data: Co.fob_prem.slice(i0), borderColor: PAL[2], pointRadius: 0 }] } }); }
+    if (Hn) chart('dfHn', { type: 'line', data: { labels: Hn.dates, datasets: [{ label: 'Crop-to-date export price − KC', data: Hn.prem_ctd, borderColor: PAL[0], pointRadius: 0 }, { label: 'Recent exports − KC', data: Hn.marg_prem, borderColor: PAL[2], pointRadius: 1, showLine: false },
+      { label: 'Sales price, SHG band (¢/lb, right)', data: Hn.band_shg_c_lb, borderColor: PAL[4], pointRadius: 0, yAxisID: 'y1' }, { label: 'KC front (right)', data: Hn.kc_front, borderColor: '#7f8c8d', borderDash: [4, 3], pointRadius: 0, yAxisID: 'y1' }] }, options: { scales: { y1: { position: 'right', grid: { display: false } } } } });
+    if (Vn && Vn.exports) chart('dfVnE', { type: 'bar', data: { labels: Vn.exports.map(r => r.month), datasets: [{ label: 'Coffee exports, thousand t', data: Vn.exports.map(r => r.k_t), backgroundColor: PAL[0] }, { type: 'line', label: 'Average value, US$/t (right)', data: Vn.exports.map(r => r.usd_t), borderColor: PAL[2], pointRadius: 0, yAxisID: 'y1' }] }, options: { scales: { y1: { position: 'right', grid: { display: false } } } } });
   }
 
   async function flows() {

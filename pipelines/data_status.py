@@ -31,6 +31,16 @@ def max_csv_date(p, col="date"):
         return max((r[col] for r in csv.DictReader(f) if r.get(col)), default=None)
 
 
+def safras_last(site):
+    with open(ROOT / "data/coffee/diffs/safras_quotes.csv") as f:
+        return max((r["quote_date"] for r in csv.DictReader(f) if r.get("site") == site), default=None)
+
+
+def stocks_last(src):
+    with open(ROOT / "data/coffee/diffs/brazil_stocks.csv") as f:
+        return max((r["date"] for r in csv.DictReader(f) if r.get("source") == src), default=None)
+
+
 def tech_last(sym):
     T = J(f"data/technicals/{sym}.json")
     s = next((x for x in T["series"] if x["ticker"] == T.get("default")), T["series"][0])
@@ -143,6 +153,11 @@ SOURCES = [
     ("Coffee", "Colombia exports, FNC (monthly; out mid next month)", "monthly", 60, C, False, lambda: J("data/coffee/colombia/colombia.json")["exports"]["latest"]["month"] + "-28", "Centrals & Col tab"),
     ("Coffee", "Colombia internal reference price, FNC (daily)", "daily", 3, B, False, lambda: J("data/coffee/colombia/colombia.json")["internal"]["now"]["date"], "Centrals & Col tab"),
     ("Coffee", "Honduras crop-year exports and forecast, ADECAFEH (page updated about weekly)", "weekly", 21, C, False, lambda: J("data/coffee/honduras/honduras.json")["latest"]["as_of"], "Centrals & Col tab"),
+    ("Coffee", "Honduras export prices and sales by quality, IHCAFE (daily)", "daily", 4, B, False, lambda: max_csv_date("data/coffee/diffs/honduras_ihcafe_daily.csv"), "Differentials tab"),
+    ("Coffee", "Brazil domestic quotes by quality, SAFRAS (2-3 a week)", "2-3 a week", 7, B, False, lambda: safras_last("pt"), "Differentials tab"),
+    ("Coffee", "Brazil FOB differentials by quality, SAFRAS (about monthly)", "about monthly", 75, C, False, lambda: safras_last("en"), "Differentials tab"),
+    ("Coffee", "Brazil coffee stocks, IBGE (half-yearly, about 4 months after)", "half-yearly", 320, C, False, lambda: stocks_last("IBGE"), "Differentials tab"),
+    ("Coffee", "Vietnam coffee exports, NSO monthly report", "monthly", 45, C, False, lambda: max_csv_date("data/coffee/diffs/vietnam_exports.csv", "month") + "-28", "Differentials tab"),
     ("Coffee", "Cecafé daily registrations", "daily", 2, B, False, lambda: J("data/coffee/cecafe.json")["asof"], "Cecafé tab"),
     ("Coffee", "Brazil coffee weather (weighted)", "daily", 2, B, False, lambda: d10(J("data/coffee/weather_weighted.json")["generated"]), "weather tab"),
     ("Sugar", "Sugar desk", "daily", 2, B, False, lambda: d10(J("sugar/data/sugar.json")["built"]), "sugar tabs"),

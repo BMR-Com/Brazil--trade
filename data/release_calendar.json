@@ -2125,6 +2125,111 @@
    "manual": false,
    "season": null,
    "cadence": "weekly"
+  },
+  {
+   "id": "ihcafe_daily",
+   "status_source": "Honduras export prices and sales by quality, IHCAFE (daily)",
+   "age_limit": 4,
+   "age_unit": "business days",
+   "report": "IHCAFE Cifras Cafeteras daily report (PDF, reposted on GitHub)",
+   "release_et": "each Honduran business day, reposted by morning ET",
+   "tab": "Coffee > Differentials",
+   "publisher": "IHCAFE (via thenexuscoffee/cifrascafeteras)",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee_diffs.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "daily"
+  },
+  {
+   "id": "safras_pt",
+   "status_source": "Brazil domestic quotes by quality, SAFRAS (2-3 a week)",
+   "age_limit": 7,
+   "age_unit": "business days",
+   "report": "SAFRAS & Mercado physical coffee market notes (Portuguese desk)",
+   "release_et": "2-3 times a week, after the São Paulo session",
+   "tab": "Coffee > Differentials",
+   "publisher": "SAFRAS & Mercado",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee_diffs.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "2-3 a week"
+  },
+  {
+   "id": "safras_en",
+   "status_source": "Brazil FOB differentials by quality, SAFRAS (about monthly)",
+   "age_limit": 75,
+   "age_unit": "days",
+   "report": "SAFRAS & Mercado differentials notes (English desk)",
+   "release_et": "about monthly",
+   "tab": "Coffee > Differentials",
+   "publisher": "SAFRAS & Mercado",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee_diffs.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "monthly"
+  },
+  {
+   "id": "ibge_stocks",
+   "status_source": "Brazil coffee stocks, IBGE (half-yearly, about 4 months after)",
+   "age_limit": 320,
+   "age_unit": "days",
+   "report": "IBGE Pesquisa de Estoques, table 254 (coffee in storage, 30 Jun and 31 Dec)",
+   "release_et": "half-yearly, about 4 months after the reference date",
+   "tab": "Coffee > Differentials",
+   "publisher": "IBGE",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee_diffs.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "half-yearly"
+  },
+  {
+   "id": "nso_vn_exports",
+   "status_source": "Vietnam coffee exports, NSO monthly report",
+   "age_limit": 45,
+   "age_unit": "days",
+   "report": "NSO (Cục Thống kê) monthly socio-economic report, export table",
+   "release_et": "about the 6th of the next month",
+   "tab": "Coffee > Differentials",
+   "publisher": "NSO Vietnam",
+   "release": {
+    "type": "age"
+   },
+   "late_after_hours": 0,
+   "workflow": {
+    "repo": "BMR-Com/Brazil--trade",
+    "file": "coffee_diffs.yml"
+   },
+   "manual": false,
+   "season": null,
+   "cadence": "monthly"
   }
  ]
 }

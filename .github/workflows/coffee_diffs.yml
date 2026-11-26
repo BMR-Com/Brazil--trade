@@ -1,0 +1,70 @@
+name: coffee-diffs
+# Coffee > Differentials tab. Honduras: IHCAFE daily figures (public repost repo, new PDFs only). Brazil: SAFRAS & Mercado
+# FOB quotes by quality (WordPress API, new posts only) and stocks (IBGE semiannual survey, SIDRA API; CONAB and USDA
+# kept in the file). Vietnam: coffee exports from the NSO monthly report annex (WordPress API, new reports only).
+# Colombia FNC-implied premium and the view's JSON are built from desk files (pipelines/coffee_diffs.py).
+# Runs after IHCAFE's repost (mid-morning US Central) and after the FNC evening price (colombia_fnc.yml runs 23:07 UTC).
+# Only the evening run reads SAFRAS; NSO is read on days 1-12 of the month (report out about the 3rd-6th) and IBGE on
+# Mondays; a manual run reads everything (backfill re-reads all SAFRAS posts).
+on:
+  workflow_dispatch:
+    inputs:
+      backfill: {description: 'Re-read every SAFRAS post', type: boolean, default: false}
+  push:
+    branches: [main]
+    paths: ['pipelines/honduras_ihcafe.py', 'pipelines/safras_quotes.py', 'pipelines/brazil_stocks.py', 'pipelines/vietnam_exports.py', 'pipelines/coffee_diffs.py', '.github/workflows/coffee_diffs.yml']
+  schedule:
+    - cron: '27 16 * * 1-5'    # IHCAFE repost of the previous day's figures is usually up by mid-morning Central
+    - cron: '47 23 * * 1-5'    # after the FNC internal price (Colombia) and the KC settlement
+permissions: {contents: write}
+concurrency: {group: coffee-diffs, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: install
+        run: |
+          sudo apt-get install -y -qq poppler-utils >/dev/null
+          pip install -q requests pandas numpy openpyxl
+      - name: Honduras (IHCAFE)
+        id: hon
+        continue-on-error: true
+        env: {GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'}
+        run: python pipelines/honduras_ihcafe.py
+      - name: Brazil quotes by quality (SAFRAS)
+        id: saf
+        if: github.event.schedule != '27 16 * * 1-5'
+        continue-on-error: true
+        run: python pipelines/safras_quotes.py ${{ inputs.backfill && '--backfill' || '' }}
+      - name: Brazil stocks (IBGE)
+        id: stk
+        if: github.event.schedule != '27 16 * * 1-5'
+        continue-on-error: true
+        run: |
+          if [ "${{ github.event_name }}" = schedule ] && [ "$(date -u +%u)" != 1 ]; then echo "IBGE is read on Mondays"; exit 0; fi
+          python pipelines/brazil_stocks.py
+      - name: Vietnam exports (NSO)
+        id: vn
+        if: github.event.schedule != '27 16 * * 1-5'
+        continue-on-error: true
+        run: |
+          if [ "${{ github.event_name }}" = schedule ] && [ "$(date -u +%-d)" -gt 12 ]; then echo "NSO is read on days 1-12"; exit 0; fi
+          python pipelines/vietnam_exports.py
+      - name: build the Differentials view
+        run: python pipelines/coffee_diffs.py
+      - name: data status
+        run: python pipelines/data_status.py > /dev/null || echo "::warning::data status refresh failed"
+      - name: commit
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/coffee/diffs data/status.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -q -m "data: coffee differentials $(date -u +%F)"
+          for i in 1 2 3 4 5; do git pull -q --rebase --autostash -X theirs origin main && git push -q origin HEAD:main && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 8; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }
+      - name: fail the run if a source step failed
+        if: steps.hon.outcome == 'failure' || steps.saf.outcome == 'failure' || steps.stk.outcome == 'failure' || steps.vn.outcome == 'failure'
+        run: |
+          echo "::error::IHCAFE: ${{ steps.hon.outcome }}, SAFRAS: ${{ steps.saf.outcome }}, IBGE: ${{ steps.stk.outcome }}, NSO: ${{ steps.vn.outcome }} (see the step logs)"; exit 1
