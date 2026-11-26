@@ -122,28 +122,47 @@ def coffee_row(content):
 
 
 def build_series(rows):
+    """Monthly exports from NSO's reports. A month is the report's year to date less the previous report's, which carries
+    NSO's revision of the earlier month. A year-to-date figure is not trusted when the next report's is barely above it or
+    below it (NSO mislabels a column now and then); such a month is the two-month year to date less the next month's first
+    estimate, and failing that the month's own first estimate. January uses its first estimate: the January report's other
+    column is the previous year's total."""
+    num = lambda v: float(v) if v not in ("", None) else None
     by = {(int(r["year"]), int(r["month"])): r for r in rows}
+    fe = {k: num(r["m_kt"]) for k, r in by.items()}
+    fu = {k: num(r["m_usd_m"]) for k, r in by.items()}
+    yk = {k: (fe[k] if k[1] == 1 else num(r["ytd_kt"])) for k, r in by.items()}
+    yu = {k: (fu[k] if k[1] == 1 else num(r["ytd_usd_m"])) for k, r in by.items()}
+    ok = lambda d, ref: d is not None and d > 0 and (ref is None or 0.33 * ref <= d <= 3 * ref)
+
+    def good(k):
+        y, m = k
+        if yk.get(k) is None:
+            return False
+        nx = (y, m + 1)
+        if yk.get(nx) is None:
+            return True
+        return (yk[nx] - yk[k]) >= (0.33 * fe[nx] if fe.get(nx) else 0.01)
+
     out = []
-    for (y, m), r in sorted(by.items()):
-        prev = by.get((y, m - 1))
-        f = lambda k: float(r[k]) if r[k] not in ("", None) else None
-        kt = None
-        if m == 1:
-            kt, usd, src = (f("ytd_kt"), f("ytd_usd_m"), "year to date") if f("ytd_kt") is not None else (f("m_kt"), f("m_usd_m"), "first estimate")
-        elif prev and f("ytd_kt") is not None and (prev["ytd_kt"] not in ("", None) or (m == 2 and prev["m_kt"] not in ("", None))):
-            pk, pu = ("ytd_kt", "ytd_usd_m") if prev["ytd_kt"] not in ("", None) else ("m_kt", "m_usd_m")
-            kt, src = f("ytd_kt") - float(prev[pk]), "year to date less previous report"
-            usd = f("ytd_usd_m") - float(prev[pu]) if f("ytd_usd_m") is not None and prev[pu] not in ("", None) else None
-            fe = f("m_kt")
-            if kt <= 0 or (fe and not 0.33 * fe <= kt <= 3 * fe):
-                kt = None  # the year-to-date columns don't line up; fall back to the first estimate
+    for (y, m) in sorted(by):
+        k, pv, nx = (y, m), (y, m - 1), (y, m + 1)
+        kt = usd = None
+        src = "first estimate"
+        if m > 1 and good(k) and good(pv) and ok(yk[k] - yk[pv], fe.get(k)):
+            kt, src = yk[k] - yk[pv], "year to date less previous report"
+            usd = yu[k] - yu[pv] if yu.get(k) is not None and yu.get(pv) is not None else None
+        elif m > 1 and not good(k) and good(pv) and good(nx) and fe.get(nx) and ok(yk[nx] - yk[pv] - fe[nx], fe[nx]):
+            kt, src = yk[nx] - yk[pv] - fe[nx], "two-month year to date less next month's first estimate"
+            usd = (yu[nx] - yu[pv] - fu[nx]) if None not in (yu.get(nx), yu.get(pv), fu.get(nx)) else None
         if kt is None:
-            kt, usd, src = f("m_kt"), f("m_usd_m"), "first estimate"
+            kt, usd = fe.get(k), fu.get(k)
         if kt is None:
             continue
         out.append({"month": f"{y}-{m:02d}", "k_t": round(kt, 1), "usd_m": round(usd, 1) if usd is not None else "",
-                    "usd_t": round(usd / kt * 1000) if usd and kt else "", "first_est_k_t": round(f("m_kt"), 1) if f("m_kt") is not None else "",
-                    "ytd_k_t": round(f("ytd_kt"), 1) if f("ytd_kt") is not None else "", "basis": src})
+                    "usd_t": round(usd / kt * 1000) if usd and kt and usd > 0 else "",
+                    "first_est_k_t": round(fe[k], 1) if fe.get(k) is not None else "",
+                    "ytd_k_t": round(yk[k], 1) if yk.get(k) is not None else "", "basis": src})
     return out
 
 
@@ -171,6 +190,10 @@ def main():
             rows = list(csv.DictReader(f))
     have = {(int(r["year"]), int(r["month"])) for r in rows}
     reps = reports()
+    if state.get("parser", 1) < 2:  # read again the reports the first parser found no row in (January, some quarter reports)
+        drop = {rp["link"] for rp in reps if rp["ym"] not in have}
+        state["read"] = [x for x in state["read"] if x not in drop]
+        state["parser"] = 2
     print(f"NSO: {len(reps)} reports listed", flush=True)
     for rp in sorted(reps, key=lambda x: x["date"]):
         if rp["link"] in state["read"] or rp["ym"] in have or rp["ym"][0] < 2016:
