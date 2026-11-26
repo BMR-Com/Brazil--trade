@@ -22,6 +22,7 @@ jobs:
       - run: pip install -q requests pdfplumber
       - name: fetch feeds
         continue-on-error: true
+        env: {SEC_CONTACT: "${{ secrets.SEC_CONTACT }}"}
         run: python pipelines/consumers_fetch.py sec census yahoo jca ecf
       - name: build page data
         continue-on-error: true

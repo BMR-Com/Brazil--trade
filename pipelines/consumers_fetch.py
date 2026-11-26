@@ -94,6 +94,14 @@ def days(a, b):
 
 
 def sec():
+    # SEC fair-access policy asks automated clients to declare a contact in the User-Agent. The contact comes from the
+    # repo secret SEC_CONTACT (set by the owner); without it this step is skipped and US filers fall back to Yahoo.
+    import os
+    contact = os.environ.get("SEC_CONTACT", "").strip()
+    if not contact:
+        LOG.append({"step": "sec", "result": "skipped: no SEC_CONTACT secret (SEC asks for a contact in the User-Agent)"})
+        return
+    UA["User-Agent"] = f"BMR-Com softs desk research {contact}"
     m = get("https://www.sec.gov/files/company_tickers.json", "sec", check_robots=False)
     if not m:
         return
@@ -153,6 +161,7 @@ def sec():
         for e, (v, t, f) in inv.items():
             inv_rows.append({"ticker": tk, "name": name, "group": grp, "end": e, "inventory": v, "tag": t, "filed": f})
         LOG.append({"step": "sec", "ticker": tk, "result": f"inventory {len(inv)} dates, sales {sum(1 for x in rev_rows if x['ticker'] == tk)} quarters"})
+    UA["User-Agent"] = "BMR-Com softs desk research (github.com/BMR-Com/brazil--trade)"
     if inv_rows:
         wcsv(AUTO / "sec_inventory.csv", sorted(inv_rows, key=lambda x: (x["ticker"], x["end"])), list(inv_rows[0]))
     if rev_rows:
@@ -166,7 +175,11 @@ def census():
     r = get(url, "census", check_robots=False)
     if not r:
         return
-    rows = r.json()
+    try:
+        rows = r.json()
+    except Exception:
+        LOG.append({"step": "census", "result": "not JSON", "head": r.text[:400]})
+        return
     h = rows[0]
     out, cats = [], set()
     for v in rows[1:]:
@@ -186,7 +199,7 @@ def census():
 def yahoo():
     out = []
     p2 = int(time.time())
-    for sym, name, grp in NONUS:
+    for sym, name, grp in NONUS + US:
         url = (f"https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{sym}?symbol={sym}"
                f"&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2={p2}")
         r = get(url, "yahoo", check_robots=False)
@@ -282,6 +295,28 @@ def jca():
 
 
 # ---------------------------------------------------------------- ECF Europe port stocks
+MONS = {m: i for i, m in enumerate(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
+
+
+def parse_ecf(text):
+    """'Type of coffee 31-Jan-26 28-Feb-26 ...' header, then Robusta / Natural Arabica / Washed Arabica / Total Europe rows."""
+    out = {}
+    lines = [l.strip() for l in text.splitlines()]
+    for i, l in enumerate(lines):
+        if not l.startswith("Type of coffee"):
+            continue
+        dates = re.findall(r"\d{1,2}-([A-Z][a-z]{2})-(\d{2})", l)
+        if not dates:
+            continue
+        for l2 in lines[i + 1:i + 6]:
+            for lab, key in (("Robusta", "robusta_t"), ("Natural Arabica", "natural_t"), ("Washed Arabica", "washed_t"), ("Total Europe", "total_t")):
+                if l2.startswith(lab):
+                    nums = [int(x.replace(",", "")) for x in re.findall(r"\d{1,3}(?:,\d{3})+|\d{4,7}", l2[len(lab):])]
+                    for (mon, yy), v in zip(dates, nums):   # first table wins (later tables are comparisons)
+                        out.setdefault(f"20{yy}-{MONS[mon]:02d}", {}).setdefault(key, v)
+    return out
+
+
 def ecf():
     page = "https://www.ecf-coffee.org/category/publications/stocks/"
     r = get(page, "ecf")
@@ -289,18 +324,40 @@ def ecf():
         LOG.append({"step": "ecf", "result": "site not reachable with an honest user agent; series stays on the hand-kept file"})
         return
     links = sorted(set(re.findall(r'href="([^"]+Stocks-European-Ports[^"]*\.pdf)"', r.text)))
-    LOG.append({"step": "ecf", "result": f"{len(links)} PDF links", "links": links[:12]})
+    # one file per data year; the newest upload of each year wins
+    by_year = {}
+    for u in links:
+        m = re.search(r"uploads/(\d{4})/(\d{2})/(\d{4})-Stocks", u)
+        if m and (m.group(3) not in by_year or (m.group(1), m.group(2)) > by_year[m.group(3)][0]):
+            by_year[m.group(3)] = ((m.group(1), m.group(2)), u)
+    out = AUTO / "ecf_auto.csv"
+    have = {}
+    if out.exists():
+        for row in csv.DictReader(open(out)):
+            have[row["month"]] = row
     (RAW / "ecf").mkdir(parents=True, exist_ok=True)
-    for u in links[-3:]:
+    import pdfplumber
+    for yr, (_, u) in sorted(by_year.items()):
+        if f"{yr}-12" in have and int(yr) < date.today().year - 1:
+            continue   # closed years already stored
         p = get(u, "ecf")
-        if p:
-            (RAW / "ecf" / Path(urlparse(u).path).name).write_bytes(p.content)
-            try:
-                import pdfplumber
-                with pdfplumber.open(io.BytesIO(p.content)) as pdf:
-                    (RAW / "ecf" / (Path(urlparse(u).path).stem + ".txt")).write_text("\n".join((pg.extract_text() or "") for pg in pdf.pages))
-            except Exception as e:
-                LOG.append({"step": "ecf", "url": u, "result": f"text extract failed {e}"})
+        time.sleep(1)
+        if not p:
+            continue
+        with pdfplumber.open(io.BytesIO(p.content)) as pdf:
+            text = "\n".join((pg.extract_text() or "") for pg in pdf.pages)
+        vals = parse_ecf(text)
+        n = 0
+        for mth, v in vals.items():
+            if "total_t" in v and mth.startswith(yr):
+                parts = [v.get(k) for k in ("robusta_t", "natural_t", "washed_t")]
+                if all(parts) and abs(sum(parts) - v["total_t"]) > 0.005 * v["total_t"]:
+                    LOG.append({"step": "ecf", "month": mth, "result": "types do not add to total; kept total"})
+                have[mth] = {"month": mth, **{k: v.get(k) for k in ("total_t", "robusta_t", "natural_t", "washed_t")}, "source_url": u}
+                n += 1
+        LOG.append({"step": "ecf", "url": u, "result": f"parsed {n} months"})
+    if have:
+        wcsv(out, [have[k] for k in sorted(have)], ["month", "total_t", "robusta_t", "natural_t", "washed_t", "source_url"])
 
 
 def main(steps):
