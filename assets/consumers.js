@@ -226,7 +226,7 @@ const Consumers = (() => {
         ${C.commentary.filter(c => c.inventory_comment || c.demand_comment).sort((a, b) => (b.release_date || '') < (a.release_date || '') ? -1 : 1).map(c => `<tr><td class="l"><b>${esc(c.name)}</b></td><td>${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.period || '')}</a>` : esc(c.period || '')}</td>
           <td class="l">${esc(c.inventory_comment || '')}</td><td class="l">${esc(c.demand_comment || '')}</td><td class="l">${esc(c.cost_comment || '')}</td></tr>`).join('')}</table></div></div>
       ${producerPanel(P, ['cotton', 'soybean', 'corn'], 'ct')}
-      ${appendix([['US Census Bureau, Monthly Retail Trade (sales and inventories)', 'https://www.census.gov/retail/index.html'], ['SEC EDGAR filings and results releases of US retailers and brands', 'https://www.sec.gov/edgar/search/'],
+      ${appendix([['US Census Bureau, Monthly Retail Trade (sales and inventories), series as republished by FRED', 'https://www.census.gov/retail/index.html'], ['SEC EDGAR filings and results releases of US retailers and brands', 'https://www.sec.gov/edgar/search/'],
         ['Inditex, H&M, Fast Retailing, ABF (Primark), Next, Shenzhou, Crystal results releases', 'https://www.inditex.com/itxcomweb/en/investors'], ['Company fundamentals: Yahoo Finance', 'https://finance.yahoo.com/'],
         ['SLC Agrícola and BrasilAgro quarterly results releases', 'https://ri.slcagricola.com.br/']], C.built)}`;
     if (Z && !inv.stale) {
