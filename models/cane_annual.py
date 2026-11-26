@@ -5,13 +5,16 @@ PSD year t starts in calendar year t, so MY 2026 = the 2026/27 crop). For India,
 first (USDA counts sugar after diversion), so the model explains the cane crop, not ethanol policy; the call is then
 netted for an assumed diversion. Apply the % change to any forecaster's previous-year figure.
 
-India (error-correction form):
+India (error-correction form, cane area since 26 Nov 2026):
+  dA      change in cane area this season (FAOSTAT area harvested to the latest FAO year, ISMA's satellite
+          estimates after; known by October, so it is an input, not a forecast, for the current season)
   lP1     log production last year            } together: production is pulled toward a level set by the cane
   lF1     log cane support price last season  } support price (SMP to 2008/09, FRP after, per point of recovery;
                                                  the 2009 switch from SMP to FRP is spliced out)
-  ylag2   change two years back (the cane cycle: big crops -> low prices/arrears -> less planting two seasons on)
-  S_t     Maharashtra + north Karnataka Jun-Sep rain this year, % of normal (rain-fed yield and recovery)
-  U_l1    Uttar Pradesh Jun-Sep rain last year, % of normal (plantings and ratoons for this crop)
+  Sdef    Maharashtra + north Karnataka Jun-Sep rain shortfall this year (below-normal part only), % of normal
+  For a season whose area is not out yet, dA comes from an area equation: gapA (last area against the three
+  before), ylag (last year's production change) and Sdef_l1 (last year's Maharashtra/Karnataka shortfall).
+  The 25 Nov spec without area (lP1, lF1, ylag2, S_t, U_l1) is kept as an alternative.
 Thailand:
   px_l1   change in ICE No.11 (in baht where USD/THB is available, else US cents) averaged Oct(t-2)-Sep(t-1),
           the price known when the MY t cane is planted
@@ -53,11 +56,16 @@ DIVERSION = {2018: 0.3, 2019: 0.9, 2020: 2.2, 2021: 3.4, 2022: 4.1, 2023: 2.15, 
 # 2026/27: the oil companies' 2026/27 tender reportedly leaves out the sugar route, so 0 is the base case.
 DIV_CASES = {"no sugar diverted to ethanol": 0.0, "diversion as in 2025/26": 3.1}
 
+# Cane area, million ha, by sugar season (key = year the season starts): ISMA satellite estimates for seasons FAOSTAT
+# does not cover yet (2024/25 and 2025/26 from ISMA's Nov 2025 release, 2026/27 from its Nov 2026 first estimate).
+AREA_ISMA = {2024: 5.711, 2025: 5.736, 2026: 5.553}
+
 REGIONS = {"S": (["in_mh_w", "in_mh_m", "in_ka_n"], 6, 9), "U": (["in_up_w", "in_up_c"], 6, 9),
            "TH": (["th_kk", "th_ud", "th_ns", "th_kb", "th_cy"], 5, 10)}
-SPECS = {"IN": ["lP1", "lF1", "ylag2", "S_t", "U_l1"], "TH": ["px_l1", "gap", "def_t", "def_l1"]}
-ALT = {"IN": [["ylag2"], ["ylag2", "S_t", "U_l1"], ["lP1", "lF1"], ["lP1", "lF1", "ylag2"],
-              ["ylag2", "S_t", "U_l1", "frp_l1"]],
+SPECS = {"IN": ["dA", "lP1", "lF1", "Sdef"], "TH": ["px_l1", "gap", "def_t", "def_l1"]}
+AREA_SPEC = ["gapA", "ylag", "Sdef_l1"]
+ALT = {"IN": [["lP1", "lF1", "ylag2", "S_t", "U_l1"], ["dA"], ["dA", "lP1", "lF1"], ["dA", "lP1", "lF1", "S_t"],
+              ["dA", "lP1", "lF1", "Sdef", "U_l1"], ["dA", "lP1", "lF1", "Sdef", "ylag2"], ["ylag2", "S_t", "U_l1"]],
        "TH": [["def_t", "def_l1"], ["px_l1"], ["px_l1", "def_t", "def_l1"], ["gap", "def_t", "def_l1"]]}
 NAMES = {"IN": "India", "TH": "Thailand"}
 
@@ -134,6 +142,20 @@ def support_series():
     return l, ch
 
 
+def area_series():
+    """India cane area (million ha) by sugar season: FAOSTAT area harvested (FAO year t = season t-1/t), then ISMA."""
+    a = pd.Series(dtype=float)
+    f = D / "faostat_cane.csv"
+    if f.exists():
+        fa = pd.read_csv(f)
+        fa = fa[fa.cc == "IN"].dropna(subset=["area_ha"])
+        a = pd.Series(fa.area_ha.values / 1e6, index=fa.year.values - 1)
+    for k, v in AREA_ISMA.items():
+        if k not in a.index:
+            a[k] = v
+    return a.sort_index()
+
+
 def price_series():
     sb = pd.read_csv(D / "sb_monthly.csv", index_col=0)
     sb.index = pd.PeriodIndex(sb.index, freq="M")
@@ -174,7 +196,12 @@ def build(cc, src):
                 return None, None, None, None
             F[r + "_t"], F[r + "_l1"] = w.reindex(F.index).values, w.reindex(F.index - 1).values
             part.update({f"{r} {k}": v for k, v in pr.items()})
-        extra = {"support": l, "rain": {r: region_pct(M, r)[0] for r in ("S", "U")}}
+        F["Sdef"], F["Sdef_l1"] = np.minimum(F.S_t - 100, 0), np.minimum(F.S_l1 - 100, 0)
+        ar = area_series()
+        la = np.log(ar)
+        F["dA"] = la.diff().reindex(F.index).values
+        F["gapA"] = (la.shift(1) - pd.concat([la.shift(k) for k in (2, 3, 4)], axis=1).mean(axis=1)).reindex(F.index).values
+        extra = {"support": l, "rain": {r: region_pct(M, r)[0] for r in ("S", "U")}, "area": ar}
     else:
         yr, unit = price_series()
         F["px_l1"] = np.log(yr).diff().reindex(F.index - 1).values
@@ -188,9 +215,9 @@ def build(cc, src):
     return F, usda, part, extra
 
 
-def fit(tr, feats):
+def fit(tr, feats, tgt="y"):
     X = np.column_stack([np.ones(len(tr))] + [tr[f].values for f in feats])
-    co, *_ = np.linalg.lstsq(X, tr.y.values, rcond=None)
+    co, *_ = np.linalg.lstsq(X, tr[tgt].values, rcond=None)
     return co
 
 
@@ -198,26 +225,27 @@ def pred(co, row, feats):
     return float(co[0] + sum(c * row[f] for c, f in zip(co[1:], feats)))
 
 
-def backtest(F, feats, last_year):
-    G = F.loc[:last_year].dropna(subset=["y"] + feats)
+def backtest(F, feats, last_year, tgt="y"):
+    G = F.loc[:last_year].dropna(subset=[tgt] + feats)
     oy, op, ot, ly, lq = [], [], [], [], []
     for t in G.index:
         tr = G[G.index < t]
         if t >= TEST0 and len(tr) >= 10:
-            oy.append(G.y[t]); op.append(pred(fit(tr, feats), G.loc[t], feats)); ot.append(int(t))
-        ly.append(G.y[t]); lq.append(pred(fit(G[G.index != t], feats), G.loc[t], feats))
-    co = fit(G, feats)
+            oy.append(G[tgt][t]); op.append(pred(fit(tr, feats, tgt), G.loc[t], feats)); ot.append(int(t))
+        ly.append(G[tgt][t]); lq.append(pred(fit(G[G.index != t], feats, tgt), G.loc[t], feats))
+    co = fit(G, feats, tgt)
     ins = [pred(co, G.loc[t], feats) for t in G.index]
-    return {"fit_years": f"{G.index.min()}-{G.index.max()}", "n": len(G), "r2_in_sample": rd(r2(G.y, ins)),
+    return {"fit_years": f"{G.index.min()}-{G.index.max()}", "n": len(G), "r2_in_sample": rd(r2(G[tgt], ins)),
             "r2_oos_from_2000": rd(r2(oy, op)) if len(oy) > 5 else None, "n_oos": len(oy),
             "mae_oos_pct": rd(100 * np.mean(np.abs(np.array(oy) - np.array(op))), 1) if oy else None,
             "r2_loo": rd(r2(ly, lq)), "coef": {f: rd(c, 4) for f, c in zip(["const"] + feats, co)},
             "oos_pairs": [[t, rd(a, 4), rd(b, 4)] for t, a, b in zip(ot, oy, op)]}, co
 
 
-def forecast(cc, F, usda, extra, co, feats, cur):
-    """Calls for MY cur (USDA's current year) and cur+1, each from inputs known now."""
+def forecast(cc, F, usda, extra, co, feats, cur, aco=None):
+    """Calls for MY cur (USDA's current year) and cur+1, each from inputs known now. aco: India area equation."""
     calls, prod = {}, {cur - 1: F["prod"][cur - 1]}
+    area = extra["area"].copy() if "area" in extra else None
     for t in (cur, cur + 1):
         r = {}
         prev = prod.get(t - 1)
@@ -235,6 +263,17 @@ def forecast(cc, F, usda, extra, co, feats, cur):
                 w = extra["rain"][k]
                 r[k + "_t"] = w.get(t, 100.0)             # a year not yet seen counts as normal
                 r[k + "_l1"] = w.get(t - 1, 100.0)
+            r["Sdef"], r["Sdef_l1"] = min(r["S_t"] - 100, 0), min(r["S_l1"] - 100, 0)
+            if area is not None:
+                la = np.log(area)
+                r["gapA"] = la.get(t - 1, np.nan) - np.mean([la.get(k, np.nan) for k in (t - 2, t - 3, t - 4)])
+                if t in area.index:
+                    r["dA"], r["area_src"] = float(la[t] - la.get(t - 1, np.nan)), "reported"
+                elif aco is not None and np.isfinite(r["ylag"]):
+                    r["dA"], r["area_src"] = pred(aco, r, AREA_SPEC), "area equation"
+                    area[t] = area[t - 1] * np.exp(r["dA"])
+                else:
+                    r["dA"] = np.nan
         else:
             yr = extra["price"]
             r["px_l1"] = float(np.log(yr[t - 1] / yr[t - 2])) if (t - 1) in yr and (t - 2) in yr else np.nan
@@ -248,6 +287,8 @@ def forecast(cc, F, usda, extra, co, feats, cur):
         prod[t] = prev * np.exp(lc)
         calls[t] = {"log": lc, "pct": rd(100 * (np.exp(lc) - 1), 1), "level": prod[t],
                     "inputs": {f: rd(r[f], 3) for f in feats}}
+        if cc == "IN" and "dA" in feats:
+            calls[t]["area_mha"], calls[t]["area_src"] = rd(area.get(t), 3), r.get("area_src")
     return calls
 
 
@@ -266,14 +307,18 @@ def main():
                 continue
             cur = int(usda.index.max())
             st, co = backtest(F, feats, cur - 1)       # USDA's current year is still a forecast: test on years before
-            runs[src] = (st, co, F, usda, part, extra, cur,
-                         {"+".join(f): {k: v for k, v in backtest(F, f, cur - 1)[0].items() if k != "oos_pairs"}
-                          for f in ALT[cc]})
+            alts = {"+".join(f): {k: v for k, v in backtest(F, f, cur - 1)[0].items() if k != "oos_pairs"}
+                    for f in ALT[cc]}
+            if cc == "IN":
+                ast, aco = backtest(F, AREA_SPEC, int(extra["area"].index.max()), tgt="dA")
+                alts["area equation (target dA): " + "+".join(AREA_SPEC)] = ast
+                extra["aco"] = aco
+            runs[src] = (st, co, F, usda, part, extra, cur, alts)
         if not runs:
             continue
         src = "chirps" if "chirps" in runs else next(iter(runs))
         st, co, F, usda, part, extra, cur, alts = runs[src]
-        calls = forecast(cc, F, usda, extra, co, feats, cur)
+        calls = forecast(cc, F, usda, extra, co, feats, cur, extra.get("aco"))
         o = {"country": NAMES[cc], "rain_source": {"chirps": "CHIRPS", "era5": "ERA5"}.get(src, "NASA POWER"),
              "usda": {str(cur - 1): rd(usda[cur - 1], 2), str(cur): rd(usda[cur], 2),
                       "current_pct": rd(100 * (usda[cur] / usda[cur - 1] - 1), 1)},
@@ -285,6 +330,7 @@ def main():
             e = {"pct_change": c["pct"]}
             if cc == "IN":
                 e["basis"] = "cane sugar before ethanol diversion"
+                e["cane_area_mha"], e["cane_area_basis"] = c.get("area_mha"), c.get("area_src")
                 if t == cur:
                     e["implied_usda_mt"] = {k: rd(c["level"] - v, 2) for k, v in DIV_CASES.items()}
                     e["implied_pct_vs_usda_prev"] = {k: rd(100 * ((c["level"] - v) / usda[t - 1] - 1), 1)
@@ -302,7 +348,8 @@ def main():
     out = {"built": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
            "target": "year-on-year % change in sugar production (apply to any forecaster's previous-year figure)",
            "countries": pub,
-           "variables_used": ["USDA sugar production history", "India cane support price (SMP, then FRP)",
+           "variables_used": ["USDA sugar production history", "India cane area (FAO, ISMA satellite estimates)",
+                              "India cane support price (SMP, then FRP)",
                               "India sugar diverted to ethanol", "monsoon rain in Maharashtra, Karnataka and Uttar Pradesh",
                               "May-Oct rain in Thailand's cane belt", "ICE No.11 raw sugar price (in baht)",
                               "recent production swings"]}

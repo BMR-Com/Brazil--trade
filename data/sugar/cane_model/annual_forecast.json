@@ -1,5 +1,5 @@
 {
- "built": "2026-11-26 15:36 UTC",
+ "built": "2026-11-26 15:40 UTC",
  "target": "year-on-year % change in sugar production (apply to any forecaster's previous-year figure)",
  "countries": {
   "IN": {
@@ -12,21 +12,25 @@
    },
    "partial_weather": {},
    "2026/27": {
-    "pct_change": 4.0,
+    "pct_change": -3.7,
     "basis": "cane sugar before ethanol diversion",
+    "cane_area_mha": 5.553,
+    "cane_area_basis": "reported",
     "implied_usda_mt": {
-     "no sugar diverted to ethanol": 34.42,
-     "diversion as in 2025/26": 31.32
+     "no sugar diverted to ethanol": 31.88,
+     "diversion as in 2025/26": 28.78
     },
     "implied_pct_vs_usda_prev": {
-     "no sugar diverted to ethanol": 14.7,
-     "diversion as in 2025/26": 4.4
+     "no sugar diverted to ethanol": 6.3,
+     "diversion as in 2025/26": -4.1
     }
    },
    "2027/28": {
-    "pct_change": 4.2,
+    "pct_change": 7.2,
     "basis": "cane sugar before ethanol diversion",
-    "implied_usda_mt_if_no_diversion": 35.87
+    "cane_area_mha": 5.551,
+    "cane_area_basis": "area equation",
+    "implied_usda_mt_if_no_diversion": 34.18
    }
   },
   "TH": {
@@ -52,6 +56,7 @@
  },
  "variables_used": [
   "USDA sugar production history",
+  "India cane area (FAO, ISMA satellite estimates)",
   "India cane support price (SMP, then FRP)",
   "India sugar diverted to ethanol",
   "monsoon rain in Maharashtra, Karnataka and Uttar Pradesh",
