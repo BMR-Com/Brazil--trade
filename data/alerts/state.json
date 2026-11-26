@@ -1,18 +1,8 @@
 {
- "generated": "2026-11-26 15:34 UTC",
+ "generated": "2026-11-26 15:47 UTC",
  "asof": "2026-11-25",
  "today": "2026-11-26",
  "active": [
-  {
-   "id": "CT_certs_week",
-   "market": "Cotton",
-   "text": "ICE certificated cotton +18,262 bales in a week to 2026-11-20 (threshold ±10,000 bales)",
-   "on": true,
-   "level": "±10,000 bales",
-   "date": "2026-11-20",
-   "new": false,
-   "since": "2026-11-17"
-  },
   {
    "id": "KC_certs_week",
    "market": "Coffee C",
@@ -156,7 +146,7 @@
   {
    "id": "data_ICE_certs__stock_by_delivery_point__upload_",
    "market": "Data",
-   "text": "ICE certs: stock by delivery point (upload): late (latest 2026-11-20, limit 2 business days)",
+   "text": "ICE certs: stock by delivery point (upload): late (latest 2026-11-23, limit 2 business days)",
    "on": true,
    "level": null,
    "date": "2026-11-26",
@@ -284,16 +274,6 @@
    "since": "2026-11-25"
   },
   {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-26",
-   "new": true,
-   "since": "2026-11-26"
-  },
-  {
    "id": "data_Options_terminal__cotton__BMR_Com_softs__options__",
    "market": "Data",
    "text": "Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
@@ -321,7 +301,7 @@
   },
   {
    "market": "Cotton",
-   "text": "Certs weekly change beyond ±10,000 bales (latest +18,262, 2026-11-20)"
+   "text": "Certs weekly change beyond ±10,000 bales (latest +0, 2026-11-23)"
   },
   {
    "market": "Coffee C",
@@ -427,16 +407,6 @@
    "on": true,
    "level": null,
    "date": "2026-11-17",
-   "new": true,
-   "since": "2026-11-17"
-  },
-  {
-   "id": "CT_certs_week",
-   "market": "Cotton",
-   "text": "ICE certificated cotton +16,883 bales in a week to 2026-11-16 (threshold ±10,000 bales)",
-   "on": true,
-   "level": "±10,000 bales",
-   "date": "2026-11-16",
    "new": true,
    "since": "2026-11-17"
   },
@@ -664,16 +634,6 @@
    "id": "data_Reports__CIC_PNG_weekly_differential_indications",
    "market": "Data",
    "text": "Reports: CIC PNG weekly differential indications: late (latest 2026-11-15, limit 10 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-26",
-   "new": true,
-   "since": "2026-11-26"
-  },
-  {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
    "on": true,
    "level": null,
    "date": "2026-11-26",

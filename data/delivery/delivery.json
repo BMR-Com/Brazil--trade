@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 15:34 UTC",
+ "generated": "2026-11-26 15:47 UTC",
  "asof": "2026-11-25",
  "markets": [
   {
@@ -159,7 +159,7 @@
     "date": "2026-11-16",
     "unit": "bales",
     "chg": -1379,
-    "chg_vs": "2026-11-20",
+    "chg_vs": "2026-11-23",
     "src": "ICE certificated stock (weekly warehouse report, uploaded)"
    },
    "oncall": {
