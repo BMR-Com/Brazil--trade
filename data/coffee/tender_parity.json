@@ -1,5 +1,5 @@
 {
- "built": "2026-11-26 04:26 UTC",
+ "built": "2026-11-26 05:26 UTC",
  "now": {
   "date": "2026-11-11",
   "sw": 236.5,
@@ -874,32 +874,32 @@
   ]
  },
  "reading": [
-  "Live, on CEPEA (2026-11-25, 218.4¢; semi-washed taken at CEPEA + 10¢): a 15-30% semi-washed blend in the Antwerp warehouse costs 241-241¢ against 249¢ from the exchange → tender margin +8 to +9¢ (-14 to +16¢ across cost ranges). The lines below use the last co-op semi-washed quote (2026-11-11).",
+  "Live, on CEPEA (2026-11-25, 218.4¢; semi-washed taken at CEPEA + 10¢): a 15-30% semi-washed blend in the Antwerp warehouse costs 241-241¢ against 256¢ from the exchange → tender margin +14 to +15¢ (-7 to +23¢ across cost ranges). The lines below use the last co-op semi-washed quote (2026-11-11).",
   "Semi-washed trades +19.9¢ over fine/good cup (co-op cereja descascado vs CEPEA tipo 6, 2026-11-11), against a normal of about +10¢ (median since 2018 +11.0¢; 63th percentile of 5 years): wide, so blending a little semi-washed into fine cup and tendering is attractive.",
   "A 15-30% semi-washed blend costs 240-242¢ in the Antwerp warehouse against an exchange value of 257¢ (KCH2027 − 6¢ Brazil − 1.25¢ Antwerp): tender margin +15 to +17¢ (-6 to +25¢ across the cost ranges); tendering pays, so expect more Brazil coffee to be submitted for grading."
  ],
  "live_cepea": {
   "date": "2026-11-25",
   "cepea": 218.4,
-  "kc2": 256.55,
+  "kc2": 263.1,
   "kc2_contract": "KCK2027",
   "sw_proxy_note": "semi-washed taken as CEPEA + 10¢ (Ma's normal premium over fine cup)",
   "stack": {
    "w15": {
     "blend": 219.9,
     "cost_total": 240.6,
-    "exchange_value": 249.3,
-    "margin": 8.7,
-    "margin_low_cost": 16.4,
-    "margin_high_cost": -14.0
+    "exchange_value": 255.9,
+    "margin": 15.2,
+    "margin_low_cost": 23.0,
+    "margin_high_cost": -7.4
    },
    "w30": {
     "blend": 221.4,
     "cost_total": 241.4,
-    "exchange_value": 249.3,
-    "margin": 7.9,
-    "margin_low_cost": 14.9,
-    "margin_high_cost": -12.8
+    "exchange_value": 255.9,
+    "margin": 14.5,
+    "margin_low_cost": 21.5,
+    "margin_high_cost": -6.2
    }
   }
  },
