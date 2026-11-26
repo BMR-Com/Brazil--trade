@@ -1,0 +1,16 @@
+name: probe-coffee-sources
+# One-off probe of new coffee-differential sources (branch only; removed after the build).
+on:
+  push:
+    branches: [probe/coffee-diffs]
+permissions: {contents: read}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests
+      - run: python probe_coffee_sources.py
