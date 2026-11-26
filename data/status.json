@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 07:53 UTC",
+ "generated": "2026-11-26 10:52 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -293,12 +293,12 @@
   {
    "group": "Cotton",
    "source": "US clothing stores sales and inventories (Census MRTS)",
-   "latest": null,
+   "latest": "2026-09-28",
    "cadence": "monthly",
-   "age": null,
+   "age": 59,
    "age_unit": "days",
    "limit": 75,
-   "state": "missing",
+   "state": "ok",
    "manual": false,
    "used_in": "Retail inventory tab"
   },
@@ -1217,12 +1217,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": "2026-11-26",
+   "latest": null,
    "cadence": "monthly",
-   "age": 0,
+   "age": null,
    "age_unit": "days",
    "limit": 40,
-   "state": "ok",
+   "state": "missing",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
