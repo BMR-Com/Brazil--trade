@@ -296,14 +296,11 @@ const SugarWorld = (() => {
         <div class="card"><h2>Most often the largest receiver</h2><div class="tbl"><table><tr><th class="l">Firm</th><th>Expiries named</th><th>Largest</th><th>Sole</th><th class="l">Last named</th></tr>${lead('receiver')}</table></div></div>
         <div class="card"><h2>Most often the largest deliverer</h2><div class="tbl"><table><tr><th class="l">Firm</th><th>Expiries named</th><th>Largest</th><th>Sole</th><th class="l">Last named</th></tr>${lead('deliverer')}</table></div>
           <h2 style="margin-top:12px">Delivery size by contract month</h2><div class="tbl"><table><tr><th class="l">Month</th><th>Expiries</th><th>Average lots</th><th>Smallest</th><th>Largest</th></tr>${bm}</table></div></div></div>`;
-    const n5 = D.filter(r => !/No\. 11/.test(r.contract));
-    el.innerHTML = `${sb}<div class="grid g2" style="margin-top:12px">
-        <div class="card"><h2>London No. 5 expiry deliveries</h2><div class="tbl"><table><tr><th class="l">Contract</th><th class="l">Expiry</th><th>Tonnes</th><th>Lots</th><th class="l">Status</th><th class="l">Deliverers</th><th class="l">Receivers</th><th class="l">Source</th></tr>
-          ${n5.map(r => `<tr><td class="l"><b>${esc(r.contract)}</b></td><td class="l">${r.expiry_date}</td><td class="n">${t(r.tonnes)}</td><td class="n">${r.lots ? f0(+r.lots) : '–'}</td><td class="l">${esc(r.status)}</td><td class="l">${esc(r.deliverers)}</td><td class="l">${esc(r.receivers)}</td><td class="l">${link(r.source + (r.source_date ? ', ' + r.source_date : ''), r.url)}</td></tr>`).join('')}</table></div>
-          <p class="note">Tonnages from news reports of the tender; ICE's own delivery reports confirm them later. History is added expiry by expiry.</p></div>
+    el.innerHTML = `${sb}<div id="swWS" style="margin-top:12px"></div><div class="grid g2" style="margin-top:12px">
         <div class="card"><h2>What the agencies changed at their latest update</h2><div class="tbl"><table><tr><th class="l">Agency</th><th class="l">Item</th><th>Season</th><th>Latest</th><th class="l">Released</th><th>Previous</th><th class="l">Released</th><th>Change</th><th class="l">Source</th></tr>
           ${R.map(r => `<tr><td class="l"><b>${esc(r.agency)}</b></td><td class="l">${esc(r.item)}</td><td>${r.season}</td><td class="n">${f2(+r.value)} ${r.unit}</td><td class="l">${r.release_date}${age(r.release_date)}</td><td class="n">${r.prev_value !== '' ? f2(+r.prev_value) : '–'}</td><td class="l">${r.prev_release}</td><td class="n">${r.prev_value !== '' ? sgn(r.value - r.prev_value, 2) : '–'}</td><td class="l">${link(r.source, r.url)}${r.note ? `<div class="note">${esc(r.note)}</div>` : ''}</td></tr>`).join('')}</table></div>
           <p class="note">Shown as changes because each agency's level differs. USDA's country-by-country revisions appear on the World balance tab after each PSD update (May and November).</p></div></div>${foot()}`;
+    if (typeof Deliveries !== 'undefined') await Deliveries.mount(document.getElementById('swWS'), 'WS');
   }
 
   async function mount(el, k) {

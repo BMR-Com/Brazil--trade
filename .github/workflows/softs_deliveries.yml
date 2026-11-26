@@ -1,0 +1,85 @@
+name: Softs — KC, CT and white sugar expiry deliveries
+
+# Builds the delivery history for Coffee C, Cotton No. 2 and London White Sugar No. 5
+# (models/softs_deliveries.py -> data/coffee|cotton|sugar/deliveries/<kc|ct|ws>_history.json), and during each
+# delivery window captures new notice counts and named firms from free news pages (pipelines/softs_deliveries.py).
+# Windows: cotton first notice day - 1 .. LTD + 3; coffee first notice day .. LTD + 2; white sugar LTD .. LTD + 6
+# (business days). Outside every window the first step exits in seconds and nothing else runs.
+# Spot-month open interest comes from the desk's own daily ICE files (ice_inbox.yml), so the rebuild runs after it.
+on:
+  schedule:
+    - cron: "30 14 * * 1-5"   # after the morning ICE file (13:41 UTC) and the overnight coffee/cotton reports
+    - cron: "10 22 * * 1-5"   # white sugar expiry-day trader figures
+  push:
+    branches: [main]
+    paths:
+      - "data/coffee/deliveries/kc_sources.csv"
+      - "data/coffee/deliveries/kc_firms.csv"
+      - "data/cotton/deliveries/ct_sources.csv"
+      - "data/cotton/deliveries/ct_firms.csv"
+      - "data/sugar/deliveries/ws_sources.csv"
+      - "data/sugar/deliveries/ws_firms.csv"
+      - "models/softs_deliveries.py"
+  workflow_dispatch:
+    inputs:
+      contract:
+        description: "Force a capture for one contract, e.g. CTH27, KCH27 or WH27 (blank = normal window check)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: softs-deliveries
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            pipelines/softs_deliveries.py
+            pipelines/sugar_deliveries.py
+            models/softs_deliveries.py
+            data/coffee/deliveries
+            data/cotton/deliveries
+            data/sugar/deliveries
+            data/coffee/ice_daily_contracts.csv
+            data/cotton/ice_daily_contracts.csv
+            data/coffee/ice_certs.csv
+            data/release_calendar.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: In a delivery window?
+        id: due
+        run: |
+          if [ -n "${{ github.event.inputs.contract }}" ] || [ "${{ github.event_name }}" = "push" ]; then echo "due=yes" >> "$GITHUB_OUTPUT"; exit 0; fi
+          out=$(python pipelines/softs_deliveries.py --due); echo "$out"
+          case "$out" in due=yes*) echo "due=yes" >> "$GITHUB_OUTPUT";; *) echo "due=no" >> "$GITHUB_OUTPUT";; esac
+      - name: Capture from news
+        if: steps.due.outputs.due == 'yes' && github.event_name != 'push'
+        continue-on-error: true
+        run: |
+          python pipelines/softs_deliveries.py --selftest
+          if [ -n "${{ github.event.inputs.contract }}" ]; then
+            timeout 900 python -u pipelines/softs_deliveries.py --contract "${{ github.event.inputs.contract }}" --force
+          else
+            timeout 900 python -u pipelines/softs_deliveries.py
+          fi
+      - name: Build history
+        if: steps.due.outputs.due == 'yes'
+        run: python -u models/softs_deliveries.py
+      - name: Commit
+        if: steps.due.outputs.due == 'yes'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/coffee/deliveries data/cotton/deliveries data/sugar/deliveries/ws_history.json data/sugar/deliveries/auto
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "softs: KC/CT/white sugar expiry deliveries $(date -u +%F) [bot]"
+          for i in 1 2 3; do git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; sleep 10; done

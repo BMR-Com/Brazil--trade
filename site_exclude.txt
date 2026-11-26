@@ -24,3 +24,6 @@ data/cocoa/ref/ICE_Cocoa_Historical_Prices_2026-08-31.xls
 data/sugar/cane_model
 # Sugar No. 11 delivery capture job: parsed news rows and run log (repo only; the page reads sb_history.json; added 2026-11-25)
 data/sugar/deliveries/auto
+# KC and CT delivery capture job: parsed news rows and run logs (repo only; pages read *_history.json; added 2026-11-26). White sugar rows sit in data/sugar/deliveries/auto above.
+data/coffee/deliveries/auto
+data/cotton/deliveries/auto
