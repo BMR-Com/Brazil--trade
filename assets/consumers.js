@@ -215,7 +215,7 @@ const Consumers = (() => {
     el.innerHTML = `
       ${Z && !inv.stale ? `<div class="grid g4">${kpi(`US ${esc(Z.label.toLowerCase())}: sales`, `${pc(sal.yoy.at(-1))} y/y`, `${mlab(sal.latest.month)}, seasonally adjusted`)}
         ${kpi('Inventories', `${pc(inv.yoy.at(-1))} y/y`, `${scale(inv.latest.val, '$m')} at ${mlab(inv.latest.month)}`)}
-        ${kpi('Inventory / sales', f2(rat.latest.val), `${pctChip(rat.latest.pct_all, rat.latest.n_all)} of all months since ${rat.months[0].slice(0, 4)}`)}
+        ${kpi('Inventory / sales', f2(rat.latest.val), `percentile since ${rat.months[0].slice(0, 4)}: ${pctChip(rat.latest.pct_all, rat.latest.n_all)} (months)`)}
         ${kpi('Inventory minus sales growth', pp(inv.yoy.at(-1) - sal.yoy.at(-1)), 'positive = shelves filling faster than sales')}</div>
       <div class="card" style="margin-top:12px"><h2>US ${esc(Z.label.toLowerCase())}: inventory against sales (Census monthly retail trade)</h2>
         <div class="grid g2"><div><h3>Year-on-year change (%)</h3>${box('ct_cen', 250)}</div><div><h3>Inventory-to-sales ratio</h3>${box('ct_ratio', 250)}</div></div>
