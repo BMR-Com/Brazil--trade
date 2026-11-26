@@ -1,0 +1,11 @@
+{
+ "contract": "CTZ26",
+ "ltd": "2026-12-08",
+ "checked": [],
+ "found": [],
+ "errors": [
+  "https://www.fibre2fashion.com/news/cotton-news/: HTTP Error 405: Not Allowed",
+  "https://www.fibre2fashion.com/news/textile-news: HTTP Error 405: Not Allowed"
+ ],
+ "run_utc": "2026-11-26 03:50"
+}

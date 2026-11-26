@@ -1,0 +1,11 @@
+{
+ "contract": "KCZ26",
+ "ltd": "2026-12-18",
+ "checked": [],
+ "found": [],
+ "errors": [
+  "https://www.stonex.com/en/insights/: HTTP Error 403: Forbidden",
+  "https://www.stonex.com/en-us/insights/: HTTP Error 403: Forbidden"
+ ],
+ "run_utc": "2026-11-26 03:50"
+}
