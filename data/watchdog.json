@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-25 11:44 UTC",
+ "checked": "2026-11-26 11:29 UTC",
  "repo": "BMR-Com/Brazil--trade",
  "mode": "wait+recheck",
  "late_or_failed_at_start": [
@@ -57,14 +57,66 @@
    "owner": "Ma (upload / manual entry)"
   },
   {
-   "id": "ct_ice_stock",
-   "report": "ICE certs: stock by delivery point",
+   "id": "ct_ice_warehouse",
+   "report": "ICE certs: stock by warehouse",
    "tab": "Cotton > Certs & quality premiums",
-   "latest": "2026-11-04",
+   "latest": "2026-11-16",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-04 is older than the 2 business days limit",
+   "reason": "data 2026-11-16 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "ct_ice_grade",
+   "report": "ICE certs: grade / staple",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "ct_ice_yog",
+   "report": "ICE certs: year of growth",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "ct_ice_strength",
+   "report": "ICE certs: strength",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "ct_ice_stock",
+   "report": "ICE certs: stock by delivery point",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-20",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-20 is older than the 2 business days limit",
    "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)"
@@ -122,19 +174,6 @@
    "owner": "Ma (upload / manual entry)"
   },
   {
-   "id": "cc_certs",
-   "report": "ICE cocoa certs and grading",
-   "tab": "Coffee/Cocoa > Certs profile",
-   "latest": "2026-11-16",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-16 is older than the 2 business days limit",
-   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
-   "manual": true,
-   "owner": "Ma (upload / manual entry)"
-  },
-  {
    "id": "coffee_certs_profile",
    "report": "Certs profile and delivery economics (built from the ICE files)",
    "tab": "Coffee > Certs profile",
@@ -162,6 +201,33 @@
    "owner": "Ma (upload / manual entry)"
   },
   {
+   "id": "cic_png",
+   "report": "CIC PNG weekly market report",
+   "tab": "Coffee > Reports",
+   "latest": "2026-11-15",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-15 is older than the 10 days limit",
+   "workflow": null,
+   "manual": true,
+   "owner": "Ma (upload / manual entry)"
+  },
+  {
+   "id": "mapa",
+   "report": "MAPA/SAPCANA fortnightly crush",
+   "tab": "Sugar > Crush",
+   "latest": "2026-10-31",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-10-31 is older than the 25 days limit",
+   "workflow": "BMR-Com/Brazil--trade/sugar.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
    "id": "ec_sugar",
    "report": "EC balance sheet and EU price",
    "tab": "Sugar > Europe",
@@ -173,20 +239,6 @@
    "workflow": null,
    "manual": true,
    "owner": "Ma (upload / manual entry)"
-  },
-  {
-   "id": "cc_certs_profile",
-   "report": "Certs profile and delivery value (built from the ICE files)",
-   "tab": "Cocoa > Certs profile",
-   "latest": "2026-11-16",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-16 is older than the 2 business days limit",
-   "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
-   "manual": false,
-   "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
   },
   {
    "id": "ethanol",
@@ -201,6 +253,20 @@
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
    "action": "rerun dispatched"
+  },
+  {
+   "id": "safras_en",
+   "report": "SAFRAS & Mercado differentials notes (English desk)",
+   "tab": "Coffee > Differentials",
+   "latest": "2026-04-24",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-04-24 is older than the 75 days limit",
+   "workflow": "BMR-Com/Brazil--trade/coffee_diffs.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
   }
  ],
  "reruns": [
@@ -208,41 +274,51 @@
    "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
    "file": "cotton_loan.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-25T11:44+00:00",
+   "at": "2026-11-26T11:29+00:00",
    "ok": true,
    "for": "fsa_loan",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45607355649"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811094663"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/coffee.yml",
    "file": "coffee.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-25T11:44+00:00",
+   "at": "2026-11-26T11:29+00:00",
    "ok": true,
    "for": "coffee_certs_profile",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45607359288"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811097742"
   },
   {
-   "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
-   "file": "softs_contracts.yml",
+   "workflow": "BMR-Com/Brazil--trade/sugar.yml",
+   "file": "sugar.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-25T11:44+00:00",
+   "at": "2026-11-26T11:29+00:00",
    "ok": true,
-   "for": "cc_certs_profile",
+   "for": "mapa",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45607362975"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811101186"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
    "file": "desk_watch.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-25T11:44+00:00",
+   "at": "2026-11-26T11:29+00:00",
    "ok": true,
    "for": "ethanol",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45607366433"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811104481"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/coffee_diffs.yml",
+   "file": "coffee_diffs.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-26T11:29+00:00",
+   "ok": true,
+   "for": "safras_en",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811107546"
   }
  ],
  "still_late": [
@@ -275,15 +351,15 @@
    "action": "rerun dispatched"
   },
   {
-   "id": "cc_certs_profile",
-   "report": "Certs profile and delivery value (built from the ICE files)",
-   "tab": "Cocoa > Certs profile",
-   "latest": "2026-11-16",
+   "id": "mapa",
+   "report": "MAPA/SAPCANA fortnightly crush",
+   "tab": "Sugar > Crush",
+   "latest": "2026-10-31",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-16 is older than the 2 business days limit",
-   "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
+   "reason": "data 2026-10-31 is older than the 25 days limit",
+   "workflow": "BMR-Com/Brazil--trade/sugar.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
    "action": "rerun dispatched"
@@ -298,6 +374,20 @@
    "failed": false,
    "reason": "data 2026-11-19 is older than the 3 business days limit",
    "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "manual": false,
+   "owner": "BMR-Com/Brazil--trade",
+   "action": "rerun dispatched"
+  },
+  {
+   "id": "safras_en",
+   "report": "SAFRAS & Mercado differentials notes (English desk)",
+   "tab": "Coffee > Differentials",
+   "latest": "2026-04-24",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-04-24 is older than the 75 days limit",
+   "workflow": "BMR-Com/Brazil--trade/coffee_diffs.yml",
    "manual": false,
    "owner": "BMR-Com/Brazil--trade",
    "action": "rerun dispatched"
@@ -348,14 +438,70 @@
    "action": null
   },
   {
-   "id": "ct_ice_stock",
-   "report": "ICE certs: stock by delivery point",
+   "id": "ct_ice_warehouse",
+   "report": "ICE certs: stock by warehouse",
    "tab": "Cotton > Certs & quality premiums",
-   "latest": "2026-11-04",
+   "latest": "2026-11-16",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-04 is older than the 2 business days limit",
+   "reason": "data 2026-11-16 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)",
+   "action": null
+  },
+  {
+   "id": "ct_ice_grade",
+   "report": "ICE certs: grade / staple",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)",
+   "action": null
+  },
+  {
+   "id": "ct_ice_yog",
+   "report": "ICE certs: year of growth",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)",
+   "action": null
+  },
+  {
+   "id": "ct_ice_strength",
+   "report": "ICE certs: strength",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-16",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-16 is older than the 9 days limit",
+   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)",
+   "action": null
+  },
+  {
+   "id": "ct_ice_stock",
+   "report": "ICE certs: stock by delivery point",
+   "tab": "Cotton > Certs & quality premiums",
+   "latest": "2026-11-20",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-20 is older than the 2 business days limit",
    "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)",
@@ -418,20 +564,6 @@
    "action": null
   },
   {
-   "id": "cc_certs",
-   "report": "ICE cocoa certs and grading",
-   "tab": "Coffee/Cocoa > Certs profile",
-   "latest": "2026-11-16",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-16 is older than the 2 business days limit",
-   "workflow": "BMR-Com/Brazil--trade/ice_inbox.yml",
-   "manual": true,
-   "owner": "Ma (upload / manual entry)",
-   "action": null
-  },
-  {
    "id": "br_export_diffs",
    "report": "Public Brazil export diff quotes",
    "tab": "Coffee > tender parity calibration",
@@ -441,6 +573,20 @@
    "failed": false,
    "reason": "data 2026-04-07 is older than the 120 days limit",
    "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "manual": true,
+   "owner": "Ma (upload / manual entry)",
+   "action": null
+  },
+  {
+   "id": "cic_png",
+   "report": "CIC PNG weekly market report",
+   "tab": "Coffee > Reports",
+   "latest": "2026-11-15",
+   "expected": null,
+   "late": true,
+   "failed": false,
+   "reason": "data 2026-11-15 is older than the 10 days limit",
+   "workflow": null,
    "manual": true,
    "owner": "Ma (upload / manual entry)",
    "action": null
@@ -463,72 +609,6 @@
  "off_season": [],
  "result": "red",
  "dispatch_log": [
-  {
-   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
-   "file": "coffee.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-18T17:40+00:00",
-   "ok": true,
-   "for": "na_coop"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/softs_data.yml",
-   "file": "softs_data.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-18T18:06+00:00",
-   "ok": true,
-   "for": "cftc_cot"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
-   "file": "cotton_loan.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
-   "ok": true,
-   "for": "fsa_loan",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508683350"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
-   "file": "coffee.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
-   "ok": true,
-   "for": "coffee_certs_profile",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508686348"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
-   "file": "softs_contracts.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
-   "ok": true,
-   "for": "cc_certs_profile",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508689230"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
-   "file": "desk_watch.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
-   "ok": true,
-   "for": "ethanol",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508692679"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/usda_reports.yml",
-   "file": "usda_reports.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-19T10:45+00:00",
-   "ok": true,
-   "for": "usda_reports",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44508696380"
-  },
   {
    "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
    "file": "cotton_loan.yml",
@@ -738,6 +818,56 @@
    "for": "ethanol",
    "result": "success",
    "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45607366433"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
+   "file": "cotton_loan.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-26T11:29+00:00",
+   "ok": true,
+   "for": "fsa_loan",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811094663"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "file": "coffee.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-26T11:29+00:00",
+   "ok": true,
+   "for": "coffee_certs_profile",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811097742"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/sugar.yml",
+   "file": "sugar.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-26T11:29+00:00",
+   "ok": true,
+   "for": "mapa",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811101186"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
+   "file": "desk_watch.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-26T11:29+00:00",
+   "ok": true,
+   "for": "ethanol",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811104481"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/coffee_diffs.yml",
+   "file": "coffee_diffs.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-26T11:29+00:00",
+   "ok": true,
+   "for": "safras_en",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45811107546"
   }
  ],
  "last_email": null
