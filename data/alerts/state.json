@@ -1,15 +1,15 @@
 {
- "generated": "2026-11-26 05:32 UTC",
+ "generated": "2026-11-26 10:53 UTC",
  "asof": "2026-11-25",
  "today": "2026-11-26",
  "active": [
   {
    "id": "CT_certs_week",
    "market": "Cotton",
-   "text": "ICE certificated cotton +16,883 bales in a week to 2026-11-16 (threshold ±10,000 bales)",
+   "text": "ICE certificated cotton +18,262 bales in a week to 2026-11-20 (threshold ±10,000 bales)",
    "on": true,
    "level": "±10,000 bales",
-   "date": "2026-11-16",
+   "date": "2026-11-20",
    "new": false,
    "since": "2026-11-17"
   },
@@ -109,17 +109,57 @@
    "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-19, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-24"
   },
   {
-   "id": "data_ICE_certs__stock_by_delivery_point__upload_",
+   "id": "data_ICE_certs__stock_by_warehouse__upload_",
    "market": "Data",
-   "text": "ICE certs: stock by delivery point (upload): late (latest 2026-11-04, limit 2 business days)",
+   "text": "ICE certs: stock by warehouse (upload): late (latest 2026-11-16, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_ICE_certs__grade___staple__upload_",
+   "market": "Data",
+   "text": "ICE certs: grade / staple (upload): late (latest 2026-11-16, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_ICE_certs__year_of_growth__upload_",
+   "market": "Data",
+   "text": "ICE certs: year of growth (upload): late (latest 2026-11-16, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_ICE_certs__strength__upload_",
+   "market": "Data",
+   "text": "ICE certs: strength (upload): late (latest 2026-11-16, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_ICE_certs__stock_by_delivery_point__upload_",
+   "market": "Data",
+   "text": "ICE certs: stock by delivery point (upload): late (latest 2026-11-20, limit 2 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-17"
   },
@@ -129,7 +169,7 @@
    "text": "ICE certs: four months and older (upload): late (latest 2026-11-02, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-17"
   },
@@ -139,7 +179,7 @@
    "text": "EWR receipts (upload): late (latest 2026-11-09, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-24"
   },
@@ -149,7 +189,7 @@
    "text": "CFR Far East quotes (upload): late (latest 2026-11-09, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-24"
   },
@@ -159,7 +199,7 @@
    "text": "Cotton loan (FSA): late (latest 2026-11-09, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-24"
   },
@@ -169,7 +209,7 @@
    "text": "ICE certs detail: pending, transition, passed/failed, rebagging (upload): late (latest 2026-11-19, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-24"
   },
@@ -179,7 +219,7 @@
    "text": "Certs profile and delivery economics (built from the ICE files): late (latest 2026-11-19, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-24"
   },
@@ -189,9 +229,29 @@
    "text": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv): late (latest 2026-04-07, limit 120 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-17"
+  },
+  {
+   "id": "data_Brazil_FOB_differentials_by_quality__SAFRAS__about_monthly_",
+   "market": "Data",
+   "text": "Brazil FOB differentials by quality, SAFRAS (about monthly): late (latest 2026-04-24, limit 75 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_Centre_South_crush__MAPA_fortnightly_",
+   "market": "Data",
+   "text": "Centre-South crush (MAPA fortnightly): late (latest 2026-10-31, limit 25 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
   },
   {
    "id": "data_EC_balance_sheet_and_EU_price__manual_",
@@ -199,9 +259,19 @@
    "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-17"
+  },
+  {
+   "id": "data_Reports__CIC_PNG_weekly_differential_indications",
+   "market": "Data",
+   "text": "Reports: CIC PNG weekly differential indications: late (latest 2026-11-15, limit 10 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
   },
   {
    "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
@@ -209,9 +279,19 @@
    "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-19, limit 3 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-25"
+  },
+  {
+   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
+   "market": "Data",
+   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
   },
   {
    "id": "data_Options_terminal__cotton__BMR_Com_softs__options__",
@@ -219,7 +299,7 @@
    "text": "Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-25"
   },
@@ -229,7 +309,7 @@
    "text": "Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-25"
   }
@@ -241,7 +321,7 @@
   },
   {
    "market": "Cotton",
-   "text": "Certs weekly change beyond ±10,000 bales (latest +16,883, 2026-11-16)"
+   "text": "Certs weekly change beyond ±10,000 bales (latest +18,262, 2026-11-20)"
   },
   {
    "market": "Coffee C",
@@ -288,7 +368,7 @@
    "text": "Ethanol parity 15.27¢/lb: No. 11 Mar 27 now 18.34¢ (2026-11-25)"
   }
  ],
- "rules_checked": 164,
+ "rules_checked": 177,
  "pending_email": [
   {
    "id": "KC_certs_week",
@@ -519,6 +599,86 @@
    "date": "2026-11-26",
    "new": true,
    "since": "2026-11-25"
+  },
+  {
+   "id": "data_ICE_certs__stock_by_warehouse__upload_",
+   "market": "Data",
+   "text": "ICE certs: stock by warehouse (upload): late (latest 2026-11-16, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_ICE_certs__grade___staple__upload_",
+   "market": "Data",
+   "text": "ICE certs: grade / staple (upload): late (latest 2026-11-16, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_ICE_certs__year_of_growth__upload_",
+   "market": "Data",
+   "text": "ICE certs: year of growth (upload): late (latest 2026-11-16, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_ICE_certs__strength__upload_",
+   "market": "Data",
+   "text": "ICE certs: strength (upload): late (latest 2026-11-16, limit 9 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_Brazil_FOB_differentials_by_quality__SAFRAS__about_monthly_",
+   "market": "Data",
+   "text": "Brazil FOB differentials by quality, SAFRAS (about monthly): late (latest 2026-04-24, limit 75 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_Centre_South_crush__MAPA_fortnightly_",
+   "market": "Data",
+   "text": "Centre-South crush (MAPA fortnightly): late (latest 2026-10-31, limit 25 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_Reports__CIC_PNG_weekly_differential_indications",
+   "market": "Data",
+   "text": "Reports: CIC PNG weekly differential indications: late (latest 2026-11-15, limit 10 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
+  },
+  {
+   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
+   "market": "Data",
+   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-26"
   }
  ],
  "last_email": null,

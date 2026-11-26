@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 05:32 UTC",
+ "generated": "2026-11-26 10:52 UTC",
  "asof": "2026-11-25",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
@@ -45,14 +45,14 @@
      "item": "ICE certificated cotton",
      "unit": "bales",
      "dp": 0,
-     "now": 83599.0,
+     "now": 84978.0,
      "d1": null,
-     "d5": 16883.0,
+     "d5": 18262.0,
      "norm1": null,
      "norm5": null,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-16",
+     "date": "2026-11-20",
      "note": "ICE certificated stock, bales; change vs 2026-11-04; history on the desk too short to rank the change",
      "kind": "weekly"
     },
