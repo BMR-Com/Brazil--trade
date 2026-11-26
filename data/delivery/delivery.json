@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 03:55 UTC",
+ "generated": "2026-11-26 04:28 UTC",
  "asof": "2026-11-25",
  "markets": [
   {
@@ -285,11 +285,11 @@
     "src": "ICE daily open interest by contract (exchange report, previous business day)"
    },
    "certs": {
-    "now": 272868,
-    "date": "2026-11-24",
+    "now": 283036,
+    "date": "2026-11-25",
     "unit": "bags",
-    "chg_1w": 78345,
-    "pending": 236731,
+    "chg_1w": 81763,
+    "pending": 222690,
     "src": "ICE daily certified arabica report"
    },
    "oncall": null,
@@ -374,7 +374,7 @@
    "index_roll_past": true,
    "read": [
     "Dec 26 is in its delivery period (first notice was 2026-11-19); last trading day 2026-12-18 (16 business days).",
-    "Dec 26/Mar 27 +7.00¢ (inverted) on 2026-11-25; certified stock 272,868 bags on 2026-11-24, +78,345 on the week.",
+    "Dec 26/Mar 27 +7.00¢ (inverted) on 2026-11-25; certified stock 283,036 bags on 2026-11-25, +81,763 on the week.",
     "Read: front premium with certs not falling: the inversion depends on who holds the certs, not on stock size alone."
    ]
   },

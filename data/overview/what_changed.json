@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-26 03:55 UTC",
+ "generated": "2026-11-26 04:28 UTC",
  "asof": "2026-11-25",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
-  "generated": "2026-11-25 19:52 UTC",
-  "prev_generated": null
+  "generated": "2026-11-26 04:00 UTC",
+  "prev_generated": "2026-11-25 05:02 UTC"
  },
  "markets": [
   {
@@ -120,7 +120,9 @@
    ],
    "flags": [
     "Spot basis (US average) −47 pts on the day (normal within ±0)",
-    "Spot basis (US average) −54 pts on the week (normal within ±11)"
+    "Spot basis (US average) −54 pts on the week (normal within ±11)",
+    "Weather Sorriso, Mato Grosso: next-15-day read turned wet (was near normal)",
+    "Weather LEM, western Bahia: next-15-day read turned dry (was near normal)"
    ],
    "errors": [],
    "weather": [
@@ -128,64 +130,64 @@
      "region": "us_tx",
      "name": "Lubbock, West Texas",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 2.8,
-     "rain_normal": 9.9,
+     "src": "ECMWF ENS only",
+     "rain_p50": 2.5,
+     "rain_normal": 9.1,
      "frost": 1.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-09"
     },
     {
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
      "read": "wet",
-     "prev": null,
-     "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 136.9,
-     "rain_normal": 90.8,
+     "prev": "near normal",
+     "flip": true,
+     "src": "ECMWF ENS only",
+     "rain_p50": 128.5,
+     "rain_normal": 82.2,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-09"
     },
     {
      "region": "br_ba",
      "name": "LEM, western Bahia",
-     "read": "near normal",
-     "prev": null,
-     "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 46.2,
-     "rain_normal": 86.7,
+     "read": "dry",
+     "prev": "near normal",
+     "flip": true,
+     "src": "ECMWF ENS only",
+     "rain_p50": 41.2,
+     "rain_normal": 85.4,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "in_gj",
      "name": "Rajkot, Gujarat",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
+     "src": "ECMWF ENS only",
      "rain_p50": 0.0,
      "rain_normal": 2.3,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "au_nsw",
      "name": "Moree, New South Wales",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 36.4,
-     "rain_normal": 22.9,
+     "src": "ECMWF ENS only",
+     "rain_p50": 40.3,
+     "rain_normal": 25.6,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     }
    ],
-   "summary": "Spot basis (US average) −47 pts on the day (normal within ±0); Spot basis (US average) −54 pts on the week (normal within ±11)"
+   "summary": "Spot basis (US average) −47 pts on the day (normal within ±0); Spot basis (US average) −54 pts on the week (normal within ±11); Weather Sorriso, Mato Grosso: next-15-day read turned wet (was near normal); Weather LEM, western Bahia: next-15-day read turned dry (was near normal)"
   },
   {
    "sym": "SB",
@@ -277,73 +279,73 @@
      "region": "br_sp",
      "name": "Ribeirão Preto, São Paulo",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 216.6,
-     "rain_normal": 95.2,
+     "src": "ECMWF ENS only",
+     "rain_p50": 191.7,
+     "rain_normal": 96.7,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "br_spw",
      "name": "Araçatuba, western São Paulo",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 186.9,
-     "rain_normal": 73.6,
+     "src": "ECMWF ENS only",
+     "rain_p50": 172.5,
+     "rain_normal": 79.0,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "br_gos",
      "name": "Rio Verde, Goiás (cane)",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 162.0,
-     "rain_normal": 94.6,
+     "src": "ECMWF ENS only",
+     "rain_p50": 145.7,
+     "rain_normal": 97.3,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "br_mgc",
      "name": "Uberaba, Triângulo Mineiro",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 216.4,
-     "rain_normal": 115.4,
+     "src": "ECMWF ENS only",
+     "rain_p50": 176.3,
+     "rain_normal": 120.7,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "in_sl",
      "name": "Solapur, Maharashtra",
      "read": "near normal",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 0.8,
+     "src": "ECMWF ENS only",
+     "rain_p50": 1.9,
      "rain_normal": 7.6,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "th_kk",
      "name": "Khon Kaen, upper Northeast Thailand",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 4.0,
-     "rain_normal": 4.2,
+     "src": "ECMWF ENS only",
+     "rain_p50": 4.5,
+     "rain_normal": 4.4,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     }
    ],
    "summary": "Flat price (Mar 27) +0.42 ¢/lb on the day (normal within ±0.34)"
@@ -386,14 +388,14 @@
      "item": "ICE certified arabica",
      "unit": "bags",
      "dp": 0,
-     "now": 272868.0,
-     "d1": 4254.0,
-     "d5": 78345.0,
-     "norm1": 7855.0,
-     "norm5": 46845.0,
-     "flag1": false,
+     "now": 283036.0,
+     "d1": 10168.0,
+     "d5": 81763.0,
+     "norm1": 8262.0,
+     "norm5": 48543.0,
+     "flag1": true,
      "flag5": true,
-     "date": "2026-11-24",
+     "date": "2026-11-25",
      "note": "ICE daily certified-stock report",
      "kind": "daily"
     },
@@ -430,7 +432,9 @@
     }
    ],
    "flags": [
-    "ICE certified arabica +78,345 bags on the week (normal within ±46,845)"
+    "ICE certified arabica +10,168 bags on the day (normal within ±8,262)",
+    "ICE certified arabica +81,763 bags on the week (normal within ±48,543)",
+    "Weather Buon Ma Thuot, Dak Lak: next-15-day read turned wet (was near normal)"
    ],
    "errors": [],
    "weather": [
@@ -438,64 +442,64 @@
      "region": "br_mg",
      "name": "Varginha, Sul de Minas",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 238.4,
-     "rain_normal": 98.1,
+     "src": "ECMWF ENS only",
+     "rain_p50": 191.0,
+     "rain_normal": 98.5,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "br_cer",
      "name": "Patrocínio, Cerrado Mineiro",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 160.5,
-     "rain_normal": 110.0,
+     "src": "ECMWF ENS only",
+     "rain_p50": 136.9,
+     "rain_normal": 113.9,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "br_zm",
      "name": "Manhuaçu, Zona da Mata (MG)",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 211.2,
-     "rain_normal": 99.5,
+     "src": "ECMWF ENS only",
+     "rain_p50": 178.3,
+     "rain_normal": 100.8,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "br_es",
      "name": "Linhares, Espírito Santo",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 80.0,
-     "rain_normal": 101.2,
+     "src": "ECMWF ENS only",
+     "rain_p50": 113.7,
+     "rain_normal": 94.8,
      "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     },
     {
      "region": "vn_dl",
      "name": "Buon Ma Thuot, Dak Lak",
-     "read": "near normal",
-     "prev": null,
-     "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 51.4,
-     "rain_normal": 22.6,
+     "read": "wet",
+     "prev": "near normal",
+     "flip": true,
+     "src": "ECMWF ENS only",
+     "rain_p50": 45.6,
+     "rain_normal": 23.2,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-09"
+     "window": "2026-11-26 to 2026-12-10"
     }
    ],
-   "summary": "ICE certified arabica +78,345 bags on the week (normal within ±46,845)"
+   "summary": "ICE certified arabica +10,168 bags on the day (normal within ±8,262); ICE certified arabica +81,763 bags on the week (normal within ±48,543); Weather Buon Ma Thuot, Dak Lak: next-15-day read turned wet (was near normal)"
   },
   {
    "sym": "CC",
@@ -584,38 +588,38 @@
     {
      "region": "ci_sb",
      "name": "Soubré, Nawa (Côte d'Ivoire)",
-     "read": "near normal",
-     "prev": null,
+     "read": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 22.9,
-     "rain_normal": 24.9,
-     "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     },
     {
      "region": "ci_dl",
      "name": "Daloa, Haut-Sassandra (Côte d'Ivoire)",
-     "read": "near normal",
-     "prev": null,
+     "read": null,
+     "prev": "dry",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 7.3,
-     "rain_normal": 15.4,
-     "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     },
     {
      "region": "gh_ku",
      "name": "Kumasi, Ashanti (Ghana)",
-     "read": "near normal",
-     "prev": null,
+     "read": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS + AIFS",
-     "rain_p50": 7.1,
-     "rain_normal": 22.1,
-     "frost": 0.0,
-     "window": "2026-11-25 to 2026-12-09"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     }
    ],
    "summary": "No notable change."

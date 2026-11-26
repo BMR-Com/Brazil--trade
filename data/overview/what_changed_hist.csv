@@ -187,8 +187,8 @@ asof,sym,item,value,d1,d5,flag
 2026-11-25,CT,Front implied vol (JAN27),20.5,,,0
 2026-11-25,CT,"On-call sales, old crop",68240.0,,12.0,0
 2026-11-25,CT,wx:us_tx,near normal,,,0
-2026-11-25,CT,wx:br_mt,wet,,,0
-2026-11-25,CT,wx:br_ba,near normal,,,0
+2026-11-25,CT,wx:br_mt,wet,,,1
+2026-11-25,CT,wx:br_ba,dry,,,1
 2026-11-25,CT,wx:in_gj,near normal,,,0
 2026-11-25,CT,wx:au_nsw,wet,,,0
 2026-11-25,CT,cot_date,2026-11-17,,,0
@@ -206,21 +206,21 @@ asof,sym,item,value,d1,d5,flag
 2026-11-25,SB,cot_date,2026-11-17,,,0
 2026-11-25,KC,Flat price (Mar 27),261.55,-1.05,-13.9,0
 2026-11-25,KC,Front spread (Mar 27/May 27),5.0,-0.2,-1.7,0
-2026-11-25,KC,ICE certified arabica,272868.0,4254.0,78345.0,1
+2026-11-25,KC,ICE certified arabica,283036.0,10168.0,81763.0,1
 2026-11-25,KC,Managed money net,6767.0,,1795.0,0
 2026-11-25,KC,Front implied vol (MAR27),36.7,,,0
 2026-11-25,KC,wx:br_mg,wet,,,0
 2026-11-25,KC,wx:br_cer,wet,,,0
 2026-11-25,KC,wx:br_zm,wet,,,0
 2026-11-25,KC,wx:br_es,near normal,,,0
-2026-11-25,KC,wx:vn_dl,near normal,,,0
+2026-11-25,KC,wx:vn_dl,wet,,,1
 2026-11-25,KC,cot_date,2026-11-17,,,0
 2026-11-25,CC,Flat price (Mar 27),5302.0,-111.0,300.0,0
 2026-11-25,CC,Front spread (Mar 27/May 27),-64.0,0.0,-10.0,0
 2026-11-25,CC,Certified stocks,,,,0
 2026-11-25,CC,Managed money net,-20268.0,,1562.0,0
 2026-11-25,CC,Front implied vol (JAN27),40.9,,,0
-2026-11-25,CC,wx:ci_sb,near normal,,,0
-2026-11-25,CC,wx:ci_dl,near normal,,,0
-2026-11-25,CC,wx:gh_ku,near normal,,,0
+2026-11-25,CC,wx:ci_sb,,,,0
+2026-11-25,CC,wx:ci_dl,,,,0
+2026-11-25,CC,wx:gh_ku,,,,0
 2026-11-25,CC,cot_date,2026-11-17,,,0

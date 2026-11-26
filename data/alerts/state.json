@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 03:56 UTC",
+ "generated": "2026-11-26 04:28 UTC",
  "asof": "2026-11-25",
  "today": "2026-11-25",
  "active": [
@@ -16,10 +16,10 @@
   {
    "id": "KC_certs_week",
    "market": "Coffee C",
-   "text": "ICE certified arabica +78,345 bags in a week to 2026-11-24 (threshold ±40,000 bags)",
+   "text": "ICE certified arabica +81,763 bags in a week to 2026-11-25 (threshold ±40,000 bags)",
    "on": true,
    "level": "±40,000 bags",
-   "date": "2026-11-24",
+   "date": "2026-11-25",
    "new": false,
    "since": "2026-11-17"
   },
@@ -64,24 +64,54 @@
    "since": "2026-11-17"
   },
   {
-   "id": "wx_br_sp_wet",
-   "market": "Sugar No. 11",
-   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-25 to 2026-12-09; ECMWF ENS + AIFS)",
+   "id": "wx_br_mt_wet",
+   "market": "Cotton",
+   "text": "Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-26 to 2026-12-09; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-25"
+  },
+  {
+   "id": "wx_br_ba_dry",
+   "market": "Cotton",
+   "text": "LEM, western Bahia: next-15-day ensemble read dry (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-25"
+  },
+  {
+   "id": "wx_br_sp_wet",
+   "market": "Sugar No. 11",
+   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "wx_br_gos_wet",
    "market": "Sugar No. 11",
-   "text": "Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-25 to 2026-12-09; ECMWF ENS + AIFS)",
+   "text": "Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-26 to 2026-12-10; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "new": false,
    "since": "2026-11-17"
+  },
+  {
+   "id": "wx_vn_dl_wet",
+   "market": "Coffee C",
+   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-25"
   },
   {
    "id": "data_ICE_options_settlements__uploaded_ICE_files_",
@@ -184,26 +214,6 @@
    "since": "2026-11-17"
   },
   {
-   "id": "data_ICE_cocoa_certs_and_grading__upload_",
-   "market": "Data",
-   "text": "ICE cocoa certs and grading (upload): late (latest 2026-11-16, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-25",
-   "new": false,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Certs_profile_and_delivery_value__built_from_the_ICE_files_",
-   "market": "Data",
-   "text": "Certs profile and delivery value (built from the ICE files): late (latest 2026-11-16, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-25",
-   "new": false,
-   "since": "2026-11-24"
-  },
-  {
    "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
    "market": "Data",
    "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-19, limit 3 business days)",
@@ -211,16 +221,6 @@
    "level": null,
    "date": "2026-11-25",
    "new": false,
-   "since": "2026-11-25"
-  },
-  {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-25",
-   "new": true,
    "since": "2026-11-25"
   },
   {
@@ -255,7 +255,7 @@
   },
   {
    "market": "Coffee C",
-   "text": "Certs weekly change beyond ±40,000 bags (latest +78,345, 2026-11-24)"
+   "text": "Certs weekly change beyond ±40,000 bags (latest +81,763, 2026-11-25)"
   },
   {
    "market": "Cotton",
@@ -295,7 +295,7 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.06¢/lb: No. 11 Mar 27 now 18.08¢ (2026-11-25)"
+   "text": "Ethanol parity 15.27¢/lb: No. 11 Mar 27 now 18.08¢ (2026-11-25)"
   }
  ],
  "rules_checked": 164,
@@ -471,26 +471,6 @@
    "since": "2026-11-24"
   },
   {
-   "id": "data_ICE_cocoa_certs_and_grading__upload_",
-   "market": "Data",
-   "text": "ICE cocoa certs and grading (upload): late (latest 2026-11-16, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
-   "id": "data_Certs_profile_and_delivery_value__built_from_the_ICE_files_",
-   "market": "Data",
-   "text": "Certs profile and delivery value (built from the ICE files): late (latest 2026-11-16, limit 2 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-24",
-   "new": true,
-   "since": "2026-11-24"
-  },
-  {
    "id": "KC_55lo",
    "market": "Coffee C",
    "text": "Mar 27 settled 264.30 ¢/lb, a new 55-day low (below 264.65)",
@@ -531,12 +511,32 @@
    "since": "2026-11-25"
   },
   {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
+   "id": "wx_br_mt_wet",
+   "market": "Cotton",
+   "text": "Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-26 to 2026-12-09; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-25",
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-25"
+  },
+  {
+   "id": "wx_br_ba_dry",
+   "market": "Cotton",
+   "text": "LEM, western Bahia: next-15-day ensemble read dry (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
+   "new": true,
+   "since": "2026-11-25"
+  },
+  {
+   "id": "wx_vn_dl_wet",
+   "market": "Coffee C",
+   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-26",
    "new": true,
    "since": "2026-11-25"
   }
