@@ -1,0 +1,17 @@
+name: Sugar — Brazil price source probe (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -q requests
+      - run: python pipelines/brazil_sugar_probe.py
+      - uses: actions/upload-artifact@v4
+        with: {name: probe_out, path: probe_out, retention-days: 3}
