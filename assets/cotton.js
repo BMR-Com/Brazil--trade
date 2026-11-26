@@ -343,7 +343,7 @@ const Cotton = (() => {
         const R = parseCSV(st), h = R[0], rr = R.slice(1).filter(r => r[0]);
         const iCur = h.findIndex(x => /^Current Stock/i.test(x)), iNew = h.findIndex(x => /^New Certs/i.test(x)), iDec = h.findIndex(x => /^Decerts/i.test(x)), iPrev = h.findIndex(x => /^Stock/i.test(x));
         const tot = i => rr.reduce((a, r) => a + (+r[i] || 0), 0); stTot = tot(iCur);
-        html += `<div class="grid g4">${kp('Certificated stock', fmt(tot(iCur), 0) + ' bales', h[iCur].replace('Current Stock - ', ''))}${kp('New certs', fmt(tot(iNew), 0), h[iNew].replace('New Certs - ', ''))}${kp('Decerts', fmt(tot(iDec), 0), '')}${kp('Change', sg(tot(iCur) - tot(iPrev)) + ' bales', 'vs ' + h[iPrev].replace('Stock - ', ''))}</div>
+        html += `<div class="grid g4">${kp('Certificated stock', fmt(tot(iCur), 0) + ' bales', h[iCur].replace('Current Stock - ', ''))}${kp('New certs', iNew >= 0 ? fmt(tot(iNew), 0) : '–', iNew >= 0 ? h[iNew].replace('New Certs - ', '') : 'not in this file')}${kp('Decerts', iDec >= 0 ? fmt(tot(iDec), 0) : '–', '')}${kp('Change', iPrev >= 0 ? sg(tot(iCur) - tot(iPrev)) + ' bales' : '–', iPrev >= 0 ? 'vs ' + h[iPrev].replace('Stock - ', '') : '')}</div>
           <div class="tbl" style="margin-top:8px"><table><tr>${h.map((x, i) => `<th class="${i ? '' : 'l'}">${x}</th>`).join('')}</tr>${rr.map(r => `<tr>${r.map((x, i) => `<td class="${i ? 'n' : 'l'}">${i ? fmt(+x, 0) : x}</td>`).join('')}</tr>`).join('')}</table></div>`;
       }
       let strAdj = null;

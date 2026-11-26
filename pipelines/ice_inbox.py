@@ -40,6 +40,7 @@ KC_AUTO = ROOT / "data" / "coffee" / "ice_certs.csv"
 KC_INBOX = ROOT / "data" / "coffee" / "ice_certs_inbox.csv"
 KC_CHECK = ROOT / "data" / "coffee" / "ice_certs_check.json"
 KEEP_PDF_DAYS, KEEP_OTHER_DAYS = 14, 90
+KEEP_LATE_DAYS = 4   # a late upload (report date already past KEEP_PDF_DAYS) stays staged this long, so softs--options- can collect it
 SKIP = {"README.md", ".gitkeep"}
 
 MARKETS = {"cotton no 2": "CT", "coffee c": "KC", "sugar no 11": "SB", "cocoa": "CC"}
@@ -166,6 +167,11 @@ def classify_pdf(p):
     n = len(re.findall((ROW_OPT if kind == "options" else ROW_FUT).format(sym), text, flags=re.M))
     if n == 0:
         raise ParseError(f"{sym} {kind} report {d}: no contract rows could be read")
+    t = re.search(rf"Totals for {sym}:\s+([\d,]+)\s+([\d,]+)", text)
+    if t and int(t.group(2).replace(",", "")) == 0:
+        # same-evening copy: ICE leaves open interest blank until the next business day, and the columns then shift
+        raise Unrecognised(f"{sym} {kind} report {d} is the preliminary copy with no open interest yet; "
+                           "download it again from the next business day for the final report")
     return {"kind": kind, "sym": sym, "date": d, "rows": n}
 
 
@@ -234,6 +240,13 @@ def classify_ct(rows, fname):
     if i is not None:
         h = rows[i]; d = iso(next(x for x in h if x.lower().startswith("current stock")))
         return {"kind": "ct_stock", "sym": "CT", "date": d, "i": i}
+    # stock by delivery point, one row per day ("Date Posted", one column per delivery point, Total)
+    i = header_at(rows, lambda h: any(x.startswith("date posted") for x in h) and sum(bool(re.search(r", [a-z]{2}$", x)) for x in h) >= 2)
+    if i is not None:
+        h = rows[i]
+        jd = next(j for j, x in enumerate(h) if x.lower().startswith("date posted"))
+        ds = [iso(r[jd]) for r in rows[i + 1:] if len(r) > jd and iso(r[jd])]
+        return {"kind": "ct_stock", "sym": "CT", "i": i, "wide": True, "date": max(ds) if ds else None}
     i = header_at(rows, lambda h: any(x.startswith("color") for x in h) and any(x.startswith("leaf") for x in h))
     if i is not None:
         return {"kind": "ct_grade", "sym": "CT", "i": i}
@@ -274,7 +287,31 @@ def convert_ct(rows, info, fname):
         raise ParseError(f"{LABEL[k]}: no report date in the file")
     out = []
     try:
-        if k == "ct_stock":
+        if k == "ct_stock" and info.get("wide"):
+            # newest dated row; each delivery-point column becomes a row, with the previous stock file's figures beside it
+            jd, jt = col(h, r"^date posted"), col(h, r"^totals?$")
+            pts = [(j, x) for j, x in enumerate(h) if j not in (jd, jt) and x]
+            dated = [(iso(r[jd]), r) for r in body if iso(r[jd])]
+            if not dated:
+                raise ParseError("cotton stock by delivery point: no dated row")
+            d, r = max(dated)
+            v = [num(r[j]) for j, _ in pts]
+            if jt is not None and r[jt].strip() and num(r[jt]) != sum(v):
+                raise ParseError(f"cotton stock {d}: total {r[jt]} is not the sum of its delivery points {sum(v)}")
+            lbl = lambda x: date.fromisoformat(x).strftime("%d-%b-%Y")
+            prev = sorted(f for f in CT_ICE.glob("stock_*.csv") if re.fullmatch(r"stock_\d{4}-\d{2}-\d{2}\.csv", f.name) and f.stem[6:] < d)
+            pv = {}
+            if prev:
+                with open(prev[-1]) as fh:
+                    pr = list(csv.reader(fh))
+                jc = next((j for j, x in enumerate(pr[0]) if x.startswith("Current Stock")), None)
+                if jc is not None:
+                    pv = {q[0]: num(q[jc]) for q in pr[1:] if q and q[0]}
+            pd_ = prev[-1].stem[6:] if pv else None
+            hdr = ["Delivery Point"] + ([f"Stock - {lbl(pd_)}"] if pd_ else []) + [f"Current Stock - {lbl(d)}"]
+            out = [[x] + ([pv.get(x, 0)] if pd_ else []) + [n] for (_, x), n in zip(pts, v)]
+            name = f"stock_{d}.csv"
+        elif k == "ct_stock":
             j0 = col(h, r"delivery")
             hdr = [h[j0]] + [x for j, x in enumerate(h) if j != j0 and x]
             idx = [j0] + [j for j, x in enumerate(h) if j != j0 and x]
@@ -493,11 +530,24 @@ def to_unrecognised(p, reason, log, now):
     log["unrecognised"] = [u for u in log.get("unrecognised", []) if u["file"] != dst.name] + [{"file": dst.name, "reason": reason, "received": now}]
 
 
-def prune(today):
+def staged_on():
+    """file -> UTC day it was first staged, from the manifest (files staged before this was kept count as old)."""
+    try:
+        old = json.loads(MANIFEST.read_text())["files"]
+    except Exception:
+        return {}
+    return {f["file"]: (f.get("staged"), f.get("sha256")) for f in old}
+
+
+def prune(today, fresh=()):
     cut_pdf, cut_other = (today - timedelta(days=KEEP_PDF_DAYS)).isoformat(), (today - timedelta(days=KEEP_OTHER_DAYS)).isoformat()
+    cut_late, was = (today - timedelta(days=KEEP_LATE_DAYS)).isoformat(), staged_on()
     for f in STAGE.glob("*.pdf") if STAGE.exists() else []:
         d = file_date(f.name)
         if d and d.replace("_", "-") < cut_pdf:
+            st = today.isoformat() if f.name in fresh else (was.get(f.name) or (None,))[0]
+            if st and st >= cut_late:
+                continue
             f.unlink(); print("removed old staged", f.name)
     for day in sorted(RAW.glob("*")) if RAW.exists() else []:
         for f in day.iterdir():
@@ -507,13 +557,15 @@ def prune(today):
             day.rmdir()
 
 
-def manifest():
-    out = []
+def manifest(fresh=()):
+    out, was, today = [], staged_on(), datetime.now(timezone.utc).date().isoformat()
     for f in sorted(STAGE.glob("*.pdf")) if STAGE.exists() else []:
         m = re.match(r"([A-Z]{2})_(\d{4})_(\d{2})_(\d{2})(-2)?\.pdf$", f.name)
         if m:
             out.append({"file": f.name, "path": f"data/ice_staging/pdfs/{f.name}", "sym": m.group(1), "kind": "futures" if m.group(5) else "options",
                         "date": f"{m.group(2)}-{m.group(3)}-{m.group(4)}", "bytes": f.stat().st_size, "sha256": hashlib.sha256(f.read_bytes()).hexdigest()})
+            st, sh = was.get(f.name, (None, None))
+            out[-1]["staged"] = today if f.name in fresh or sh != out[-1]["sha256"] or not st else st
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     MANIFEST.write_text(json.dumps({"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "files": out}, indent=1))
 
@@ -567,8 +619,9 @@ def main(argv):
     log["unrecognised"] = [u for u in log.get("unrecognised", []) if u["file"] in present] + \
         [{"file": n, "reason": "unknown", "received": None} for n in sorted(present - {u["file"] for u in log.get("unrecognised", [])} - SKIP)]
     log["updated"] = now
-    prune(today)
-    manifest()
+    fresh = {Path(e["stored"]).name for e in log.get("recent", []) if e.get("received") == now and str(e.get("stored", "")).startswith("data/ice_staging/")}
+    prune(today, fresh)
+    manifest(fresh)
     LOG.parent.mkdir(parents=True, exist_ok=True)
     LOG.write_text(json.dumps(log, indent=1))
     print(f"inbox: {len(files)} file(s) handled, {len(unknown)} not recognised, {len(failed)} could not be read; "
