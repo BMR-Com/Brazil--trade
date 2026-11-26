@@ -187,8 +187,8 @@ asof,sym,item,value,d1,d5,flag
 2026-11-25,CT,Front implied vol (JAN27),20.5,,,0
 2026-11-25,CT,"On-call sales, old crop",68240.0,,12.0,0
 2026-11-25,CT,wx:us_tx,near normal,,,0
-2026-11-25,CT,wx:br_mt,wet,,,1
-2026-11-25,CT,wx:br_ba,dry,,,1
+2026-11-25,CT,wx:br_mt,wet,,,0
+2026-11-25,CT,wx:br_ba,dry,,,0
 2026-11-25,CT,wx:in_gj,near normal,,,0
 2026-11-25,CT,wx:au_nsw,wet,,,0
 2026-11-25,CT,cot_date,2026-11-17,,,0
@@ -213,7 +213,7 @@ asof,sym,item,value,d1,d5,flag
 2026-11-25,KC,wx:br_cer,wet,,,0
 2026-11-25,KC,wx:br_zm,wet,,,0
 2026-11-25,KC,wx:br_es,near normal,,,0
-2026-11-25,KC,wx:vn_dl,wet,,,1
+2026-11-25,KC,wx:vn_dl,wet,,,0
 2026-11-25,KC,cot_date,2026-11-17,,,0
 2026-11-25,CC,Flat price (Mar 27),5302.0,-111.0,300.0,0
 2026-11-25,CC,Front spread (Mar 27/May 27),-64.0,0.0,-10.0,0
