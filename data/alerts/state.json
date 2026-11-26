@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 11:30 UTC",
+ "generated": "2026-11-26 12:47 UTC",
  "asof": "2026-11-25",
  "today": "2026-11-26",
  "active": [
@@ -284,16 +284,6 @@
    "since": "2026-11-25"
   },
   {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-26",
-   "new": false,
-   "since": "2026-11-26"
-  },
-  {
    "id": "data_Options_terminal__cotton__BMR_Com_softs__options__",
    "market": "Data",
    "text": "Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
@@ -365,7 +355,7 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.27¢/lb: No. 11 Mar 27 now 18.34¢ (2026-11-25)"
+   "text": "Ethanol parity 15.26¢/lb: No. 11 Mar 27 now 18.34¢ (2026-11-25)"
   }
  ],
  "rules_checked": 177,
@@ -664,16 +654,6 @@
    "id": "data_Reports__CIC_PNG_weekly_differential_indications",
    "market": "Data",
    "text": "Reports: CIC PNG weekly differential indications: late (latest 2026-11-15, limit 10 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-26",
-   "new": true,
-   "since": "2026-11-26"
-  },
-  {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
    "on": true,
    "level": null,
    "date": "2026-11-26",

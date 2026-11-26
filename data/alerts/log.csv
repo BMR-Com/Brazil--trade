@@ -70,3 +70,4 @@ date,id,market,event,text
 2026-11-26,data_Centre_South_crush__MAPA_fortnightly_,Data,triggered,"Centre-South crush (MAPA fortnightly): late (latest 2026-10-31, limit 25 days)"
 2026-11-26,data_Reports__CIC_PNG_weekly_differential_indications,Data,triggered,"Reports: CIC PNG weekly differential indications: late (latest 2026-11-15, limit 10 days)"
 2026-11-26,data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat,Data,triggered,"WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)"
+2026-11-26,data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat,Data,cleared,"WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)"
