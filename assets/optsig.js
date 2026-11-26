@@ -1,5 +1,5 @@
 // Options & open-interest read: current vol and skew vs history, active tested signals and a trade idea per market.
-// Data: data/optsig/optsig.json (refreshed weekly). OptSig.card(el, syms) for a commodity tab; OptSig.show() for the Trade ideas tab.
+// Data: data/optsig/optsig.json (refreshed weekly) and data/optsig/support_ideas.json (support tests, hourly with the overview). OptSig.card(el, syms) for a commodity tab; OptSig.show() for the Trade ideas tab.
 const OptSig = (() => {
   let D = null;
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -33,6 +33,23 @@ const OptSig = (() => {
         <td>${sg(r.s13)} <span class="note">${ord(r.s13_pct)}</span></td><td>${sg(r.s36)} <span class="note">${ord(r.s36_pct)}</span></td><td>${sg(r.rr25)} <span class="note">${ord(r.rr_pct)}</span></td><td>${r.spr == null ? '–' : sg(r.spr) + '%'}</td></tr>`; }).join('')}</table></div>
       <p class="note">Percentiles (small figures) rank today against every day since 2005. ${esc(V.note)} Updated ${esc(V.generated)}.</p></div>`;
   }
+  // Support tests in tight markets (data/optsig/support_ideas.json, models/support_test.py)
+  let SU = null;
+  const loadSU = () => SU ? Promise.resolve(SU) : fetch('data/optsig/support_ideas.json?v=' + Date.now().toString().slice(0, 8)).then(r => r.json()).then(d => (SU = d)).catch(() => null);
+  const SUST = { fired: ['#d7efd5', '#2e8b3e', 'long setup live'], watch: ['#fff7d1', '#d4ac0d', 'watch only'], unconfirmed: ['#eeeeea', '#8a8984', 'tested, not confirmed'],
+    approaching: ['#fff7d1', '#d4ac0d', 'approaching the 200-day average'], stopped: ['#fbe1dc', '#c0392b', 'stopped out'] };
+  function supportCard(S, syms) {
+    if (!S) return '';
+    const ks = Object.keys(S.markets).filter(k => (!syms || syms.includes(k)) && S.markets[k].state && S.markets[k].state !== 'none');
+    const body = ks.length ? ks.map(k => { const m = S.markets[k], [bg, bd, word] = SUST[m.state] || SUST.unconfirmed, I = m.idea, O = I && I.options;
+      return `<div style="border:1px solid var(--line);border-left:6px solid ${bd};background:${bg};border-radius:8px;padding:8px 12px;margin:6px 0">
+        <b>${esc(m.name)} ${esc(m.contract)}: ${esc(word)}</b>${m.fired ? ` <span class="note">(since ${esc(m.fired)}; data to ${esc(m.asof)})</span>` : ''}
+        ${I && m.state !== 'stopped' ? `<p style="margin:4px 0 0"><b>${esc(I.side)} ${esc(I.instrument)}</b>: entry ${n(I.entry, 2)}, now ${n(I.now, 2)}, stop ${n(I.stop, 2)} (close under the 200-day average less 3%), target ${n(I.target, 2)}, ${esc(I.horizon)}.</p>` : ''}
+        ${O && m.state !== 'stopped' ? `<p style="margin:4px 0 0"><b>Options:</b> ${esc(O.structure)}: ${O.debit != null ? `about ${n(O.debit, 2)} debit ($${Number(O.usd_debit_per_lot).toLocaleString()}/lot), up to ${n(O.max_gain, 2)} gain` : `about ${n(O.credit, 2)} credit ($${Number(O.usd_credit_per_lot).toLocaleString()}/lot), up to ${n(O.max_loss, 2)} loss`}; ${esc(O.why)}. <span class="note">Model values from ${esc(O.vol_date)} settlement vols; check live prices.</span></p>` : ''}
+        <ul style="margin:4px 0 0 18px;padding:0">${(m.why || []).map(w => `<li>${esc(w)}</li>`).join('')}</ul>
+        ${m.evidence ? `<p class="note" style="margin:4px 0 0">${esc(m.evidence)}</p>` : ''}</div>`; }).join('') : '<p class="note">No market is testing its 200-day average after a selloff right now.</p>';
+    return `<div class="card" style="margin-top:12px"><h2>Support tests in tight markets <span class="note">selloff to the 200-day average with the market still tight</span></h2>${body}<p class="note">${esc(S.note)} Updated ${esc(S.generated)}.</p></div>`;
+  }
   const LEAN = { bullish: ['#d7efd5', '#2e8b3e'], bearish: ['#fbe1dc', '#c0392b'], neutral: ['#fff7d1', '#d4ac0d'] };
 
   function block(sym, m) {
@@ -60,7 +77,8 @@ const OptSig = (() => {
     const d = await load(); if (!d) return;
     const ms = syms.filter(s => d.markets[s]); if (!ms.length) return;
     const V = await loadVI(); await loadRO();
-    el.innerHTML = `<div class="card"><h2>Options &amp; open interest: weekly read and trade idea</h2>${ms.map(s => block(s, d.markets[s])).join('')}<p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${volCard(V, ms)}`;
+    const SUd = await loadSU();
+    el.innerHTML = `${supportCard(SUd, ms)}<div class="card"><h2>Options &amp; open interest: weekly read and trade idea</h2>${ms.map(s => block(s, d.markets[s])).join('')}<p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${volCard(V, ms)}`;
   }
   async function show() {
     const el = document.getElementById('optsig'); history.replaceState(null, '', '#ideas');
@@ -71,7 +89,7 @@ const OptSig = (() => {
     el.innerHTML = `<div style="max-width:1200px;margin:0 auto;padding:12px 16px"><div class="card"><h2>Trade ideas from options and open interest</h2>
       <div class="tbl"><table><tr><th class="l">Market</th><th class="l">Lean</th><th class="l">Idea</th><th class="l">Active signals</th><th>Data to</th></tr>
       ${ks.map(s => { const m = d.markets[s]; return `<tr><td class="l"><b>${esc(m.name)}</b></td><td class="l ${m.idea.lean === 'bullish' ? 'up' : m.idea.lean === 'bearish' ? 'dn' : ''}">${m.idea.lean}</td><td class="l">${esc(m.idea.structure)}</td><td class="l note">${m.active.map(a => esc(a.text.split(':')[0])).join('; ') || '–'}</td><td>${m.asof}</td></tr>`; }).join('')}</table></div>
-      <p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${(await loadRO(), volCard(await loadVI(), null))}${ks.map(s => block(s, d.markets[s])).join('')}</div>`;
+      <p class="note">${esc(d.note)} Updated ${esc(d.generated)}.</p></div>${supportCard(await loadSU(), null)}${(await loadRO(), volCard(await loadVI(), null))}${ks.map(s => block(s, d.markets[s])).join('')}</div>`;
   }
   return { card, show, load };
 })();

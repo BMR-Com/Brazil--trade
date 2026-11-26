@@ -1,0 +1,244 @@
+{
+ "generated": "2026-11-26 04:19 UTC",
+ "note": "Support tests in tight markets: a selloff down to the active contract's own 200-day average while the market still looks tight. Research only, not investment advice; option prices are model values from settlement vols, check live prices.",
+ "markets": {
+  "SB": {
+   "name": "Sugar No. 11",
+   "unit": "¢/lb",
+   "asof": "2026-11-25",
+   "contract": "Mar 27",
+   "ticker": "SBH2027",
+   "px": 18.08,
+   "ma200": 16.91,
+   "dist_pct": 6.9,
+   "off_60d_high_pct": -14.4,
+   "spread": {
+    "label": "Mar 27/May 27",
+    "now": 0.63,
+    "pct_1y": 93.0,
+    "chg_5d": 0.07
+   },
+   "confirm_kind": "parity",
+   "brazil": {
+    "ethanol_parity": 15.63,
+    "cushion": 2.45
+   },
+   "state": "fired",
+   "fired": "2026-11-19",
+   "at_fire": {
+    "px": 17.16,
+    "ma200": 16.85,
+    "spread": 0.61,
+    "spread_pct_1y": 95.0,
+    "spread_chg_5d": 0.11,
+    "cushion": 1.63
+   },
+   "idea": {
+    "side": "Long",
+    "instrument": "Mar 27 (SBH2027)",
+    "entry": 17.16,
+    "now": 18.08,
+    "stop": 16.35,
+    "target": 18.99,
+    "horizon": "4 weeks",
+    "rr": 2.3,
+    "options": {
+     "structure": "Buy the Mar 27 18/20.25 call spread",
+     "option_month": "Mar 27",
+     "strikes": [
+      18.0,
+      20.25
+     ],
+     "debit": 0.631,
+     "max_gain": 1.619,
+     "usd_debit_per_lot": 706,
+     "why": "implied vol 26.9% is below 20-day realized 34.0%, so buying options is the cheaper side",
+     "vol_date": "2026-11-19",
+     "dte": 89
+    }
+   },
+   "evidence": "Setup with a confirming filter that has tested better than plain 200-day tests on this desk's history (small sample). Size small; the stop is the 200-day average failing.",
+   "why": [
+    "Fired 19 Nov: Mar 27 closed 17.16, +1.8% from its 200-day average 16.85, spread +0.61 (95th pct of the year), 1.63 c/lb over ethanol parity",
+    "Mar 27 is 14% off its 60-day high",
+    "200-day average 16.91 (+6.9% from price)",
+    "Mar 27/May 27 spread +0.63 (93rd percentile of the past year, +0.07 over 5 sessions)",
+    "No. 11 is 2.45 c/lb over Brazil hydrous-ethanol parity (15.63)"
+   ]
+  },
+  "CT": {
+   "name": "Cotton",
+   "unit": "¢/lb",
+   "asof": "2026-11-25",
+   "contract": "Mar 27",
+   "ticker": "CTH2027",
+   "px": 81.47,
+   "ma200": 81.04,
+   "dist_pct": 0.5,
+   "off_60d_high_pct": -10.8,
+   "spread": {
+    "label": "Mar 27/May 27",
+    "now": -1.52,
+    "pct_1y": 65.0,
+    "chg_5d": -0.06
+   },
+   "confirm_kind": "spread",
+   "state": "fired",
+   "fired": "2026-11-19",
+   "at_fire": {
+    "px": 79.51,
+    "ma200": 80.8,
+    "spread": -1.34,
+    "spread_pct_1y": 84.0,
+    "spread_chg_5d": 0.36
+   },
+   "idea": {
+    "side": "Long",
+    "instrument": "Mar 27 (CTH2027)",
+    "entry": 79.51,
+    "now": 81.47,
+    "stop": 78.37,
+    "target": 87.97,
+    "horizon": "4 weeks",
+    "rr": 7.5,
+    "options": {
+     "structure": "Sell the Mar 27 79/74 put spread",
+     "option_month": "Mar 27",
+     "strikes": [
+      79.0,
+      74.0
+     ],
+     "credit": 1.488,
+     "max_loss": 3.512,
+     "usd_credit_per_lot": 744,
+     "why": "implied vol 21.4% is at or above 20-day realized 19.0%, so selling the downside under support collects the premium",
+     "vol_date": "2026-11-19",
+     "dte": 78
+    }
+   },
+   "evidence": "Setup with a confirming filter that has tested better than plain 200-day tests on this desk's history (small sample). Size small; the stop is the 200-day average failing.",
+   "why": [
+    "Fired 19 Nov: Mar 27 closed 79.51, -1.6% from its 200-day average 80.80, spread -1.34 (84th pct of the year)",
+    "Mar 27 is 11% off its 60-day high",
+    "200-day average 81.04 (+0.5% from price)",
+    "Mar 27/May 27 spread -1.52 (65th percentile of the past year, -0.06 over 5 sessions)"
+   ]
+  },
+  "KC": {
+   "name": "Coffee C",
+   "unit": "¢/lb",
+   "asof": "2026-11-25",
+   "contract": "Mar 27",
+   "ticker": "KCH2027",
+   "px": 261.55,
+   "ma200": 276.42,
+   "dist_pct": -5.4,
+   "off_60d_high_pct": -13.5,
+   "spread": {
+    "label": "Mar 27/May 27",
+    "now": 5.0,
+    "pct_1y": 16.0,
+    "chg_5d": -1.7
+   },
+   "confirm_kind": null,
+   "state": "stopped",
+   "fired": "2026-11-12",
+   "at_fire": {
+    "px": 274.55,
+    "ma200": 277.01,
+    "spread": 4.4,
+    "spread_pct_1y": 6.0,
+    "spread_chg_5d": 0.8
+   },
+   "idea": {
+    "side": "Long",
+    "instrument": "Mar 27 (KCH2027)",
+    "entry": 274.55,
+    "now": 261.55,
+    "stop": 268.7,
+    "target": 301.93,
+    "horizon": "4 weeks",
+    "rr": 4.7,
+    "options": {
+     "structure": "Sell the Mar 27 247.5/220 put spread",
+     "option_month": "Mar 27",
+     "strikes": [
+      247.5,
+      220.0
+     ],
+     "credit": 7.705,
+     "max_loss": 19.795,
+     "usd_credit_per_lot": 2889,
+     "why": "implied vol 36.7% is at or above 20-day realized 26.4%, so selling the downside under support collects the premium",
+     "vol_date": "2026-11-19",
+     "dte": 83
+    }
+   },
+   "evidence": "Watch only: no confirming input has separated good and bad 200-day tests in this market, so this is not a tested trade.",
+   "why": [
+    "Fired 12 Nov: Mar 27 closed 274.55, -0.9% from its 200-day average 277.01, spread +4.40 (6th pct of the year)",
+    "Mar 27 is 13% off its 60-day high",
+    "200-day average 276.42 (-5.4% from price)",
+    "Mar 27/May 27 spread +5.00 (16th percentile of the past year, -1.70 over 5 sessions)"
+   ]
+  },
+  "CC": {
+   "name": "Cocoa",
+   "unit": "$/t",
+   "asof": "2026-11-25",
+   "contract": "Mar 27",
+   "ticker": "CCH2027",
+   "px": 5302.0,
+   "ma200": 4874.0,
+   "dist_pct": 8.8,
+   "off_60d_high_pct": -16.9,
+   "spread": {
+    "label": "Mar 27/May 27",
+    "now": -64.0,
+    "pct_1y": 79.0,
+    "chg_5d": -10.0
+   },
+   "confirm_kind": null,
+   "state": "watch",
+   "fired": "2026-11-10",
+   "at_fire": {
+    "px": 4871.0,
+    "ma200": 4830.0,
+    "spread": -46.0,
+    "spread_pct_1y": 84.0,
+    "spread_chg_5d": 9.0
+   },
+   "idea": {
+    "side": "Long",
+    "instrument": "Mar 27 (CCH2027)",
+    "entry": 4871.0,
+    "now": 5302.0,
+    "stop": 4685.0,
+    "target": 5867.0,
+    "horizon": "4 weeks",
+    "rr": 5.3,
+    "options": {
+     "structure": "Sell the Mar 27 4850/4200 put spread",
+     "option_month": "Mar 27",
+     "strikes": [
+      4850,
+      4200
+     ],
+     "credit": 166.9,
+     "max_loss": 483.1,
+     "usd_credit_per_lot": 1669,
+     "why": "implied vol 42.9% is at or above 20-day realized 39.4%, so selling the downside under support collects the premium",
+     "vol_date": "2026-11-19",
+     "dte": 85
+    }
+   },
+   "evidence": "Watch only: no confirming input has separated good and bad 200-day tests in this market, so this is not a tested trade.",
+   "why": [
+    "Fired 10 Nov: Mar 27 closed 4,871, +0.9% from its 200-day average 4,830, spread -46 (84th pct of the year)",
+    "Mar 27 is 17% off its 60-day high",
+    "200-day average 4,874 (+8.8% from price)",
+    "Mar 27/May 27 spread -64 (79th percentile of the past year, -10 over 5 sessions)"
+   ]
+  }
+ }
+}

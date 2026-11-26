@@ -88,6 +88,7 @@ SUMMARY = {m["key"]: m for m in (J("summary/summary.json") or {}).get("markets",
 NOTES = (J("overview/notes.json") or {}).get("markets", {})
 NEWS = (J("news/news.json") or {}).get("items", [])
 OPTSIG = (J("optsig/optsig.json") or {}).get("markets", {})
+SUPPORT = (J("optsig/support_ideas.json") or {}).get("markets", {}) if SOFTS else {}  # models/support_test.py
 
 
 # ───────── technicals + key levels ─────────
@@ -386,8 +387,12 @@ def sugar_fund():
     bits, sc = [], 0.0
     if n.get("parity_premium") is not None:
         p = n["parity_premium"]
-        bits.append(f"Raw sugar is {abs(p):.2f}¢/lb {'above' if p > 0 else 'below'} hydrous-ethanol parity in Brazil, so mills {'favour sugar in the mix (more supply)' if p > 0 else 'lean to ethanol (less sugar)'}.")
-        sc += clip(-p / 4) * 0.6
+        if 0 < p <= 2.5:  # close to the ethanol floor: mills can swing cane to ethanol if No. 11 falls further
+            bits.append(f"Raw sugar is only {p:.2f}¢/lb above hydrous-ethanol parity in Brazil: mills still favour sugar, but No. 11 is near the level where Centre-South cane swings to ethanol, which has tended to act as a floor.")
+        else:
+            bits.append(f"Raw sugar is {abs(p):.2f}¢/lb {'above' if p > 0 else 'below'} hydrous-ethanol parity in Brazil, so mills {'favour sugar in the mix (more supply)' if p > 0 else 'lean to ethanol (less sugar)'}.")
+        # scored against a 2.5 c/lb cushion (a small cushion supports price; a wide one invites more sugar), not the sign alone
+        sc += clip((2.5 - p) / 3) * 0.6
     if n.get("brl_t") is not None:
         bits.append(f"Sugar in BRL at R${n['brl_t']:,.0f}/t ({ordn(n['brl_t_pctile_5y'])} pct of 5 yrs).")
     th = z.get("themes") or []
@@ -461,6 +466,16 @@ def build(key, sym, name, group):
     C = cot(sym, group)
     S = seasonal(sym)
     V = vol(sym)
+    SP = SUPPORT.get(sym) or {}
+    sup = None
+    if SP.get("state") in ("fired", "watch", "unconfirmed", "approaching", "stopped"):
+        I = SP.get("idea") or {}
+        sup = {"state": SP["state"], "fired": SP.get("fired"), "why": SP.get("why", [])[:4], "evidence": SP.get("evidence"),
+               "idea": I and {k: I.get(k) for k in ("side", "instrument", "entry", "now", "stop", "target", "horizon")},
+               "options": (I.get("options") or {}).get("structure") if I else None, "ma200": SP.get("ma200")}
+    if T and SP.get("state") == "fired" and (T.get("score") or 0) < 0.25:
+        # a momentum sell rating into a confirmed support test is the case that misled the tile in Nov 2026
+        T = dict(T, score=0.25, text=T["text"] + f" Sell rating set aside: confirmed support test at the 200-day average ({SP.get('ma200')}) since {SP.get('fired')}.")
     parts = {"fundamental": F.get("score"), "technical": (T or {}).get("score"), "cot": (C or {}).get("score"), "seasonal": (S or {}).get("score")}
     have = {k: v for k, v in parts.items() if v is not None}
     total = sum(W[k] * v for k, v in have.items()) / sum(W[k] for k in have) if have else None
@@ -478,6 +493,7 @@ def build(key, sym, name, group):
             "fundamental": F, "fair": fair, "events": ev, "headlines": events(key), "notes_date": n.get("date"), "notes_by": n.get("by") or "claude",
             "technical": T and {"text": T["text"], "score": T["score"]}, "levels": T and T["levels"],
             "vol": V, "seasonal": S, "cot": C, "live": live, "alerts": alerts,
+            "support": sup,
             "optsig": (lambda o: o and {"lean": o["idea"]["lean"], "structure": o["idea"]["structure"], "asof": o["asof"], "signals": [a["text"].split(":")[0] for a in o["active"]]})(OPTSIG.get(sym))}
 
 
