@@ -6,7 +6,7 @@ data/cocoa/ice_certs_daily.csv.
 Stale rule: a monthly series whose last point is more than 75 days older than its expected release is left off the page;
 quarterly series (grinds, company filings) carry their period-end dates.
 """
-import csv, json, math
+import csv, json, math, re
 from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -295,9 +295,15 @@ def producers():
             "fx_hedged_pct", "fx_rate", "source_url"]
     out = []
     for r in rows:
+        note = (r.get("note") or "").upper()
+        if "LOW CONFIDENCE" in note or "AS PRINTED" in (r.get("season") or "").upper():
+            continue  # season or figure not readable with confidence: kept in the manual file, not published
         o = {k: r.get(k) for k in keep}
+        o["approx"] = any(str(o.get(k) or "").strip()[:1] in "~><" and str(o.get(k) or "").strip() for k in ("hedged_pct", "hedged_price"))
         for k in ("hedged_pct", "hedged_price", "fx_hedged_pct", "fx_rate"):
-            o[k] = num(o[k])
+            m = re.search(r"-?\d[\d,]*\.?\d*", str(o[k] or ""))
+            o[k] = num(m.group(0)) if m else None
+        o["crop"] = {"cotton lint": "cotton"}.get(o["crop"], o["crop"])
         o["secondary"] = "SECONDARY" in (r.get("note") or "").upper()
         if "volume_t" in r:
             o["volume_t"] = num(r["volume_t"])

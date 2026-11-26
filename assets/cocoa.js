@@ -2,7 +2,7 @@
 // seasonality & technicals, news flow and the outlook tile. Uses the desk modules with symbol CC.
 const Cocoa = (() => {
   let built = false, tab = 'cc-primer', I = null;
-  const TABS = [['cc-primer', 'Primer'], ['cc-bal', 'World balance (ICCO)'], ['cc-wx', 'West Africa &amp; Ecuador weather'],
+  const TABS = [['cc-primer', 'Primer'], ['cc-bal', 'World balance (ICCO)'], ['cc-grind', 'Grinds &amp; chocolate makers'], ['cc-wx', 'West Africa &amp; Ecuador weather'],
     ['cc-certs', 'Certs profile &amp; delivery value'], ['cc-flows', 'Futures, options &amp; COT'], ['cc-seas', 'Seasonality &amp; technicals'], ['cc-news', 'News'], ['cc-outlook', 'Outlook']];
   const body = () => $('#ccBody');
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -24,7 +24,7 @@ const Cocoa = (() => {
     history.replaceState(null, '', '#' + tab);
     body().innerHTML = '<div class="card"><p class="note">Loading…</p></div>';
     ({ 'cc-primer': guard(primer), 'cc-bal': guard(balance), 'cc-wx': guard(weather), 'cc-certs': guard(certs), 'cc-flows': guard(flows),
-      'cc-seas': () => MktStudy.mount(body(), ['CC']), 'cc-news': guard(news), 'cc-outlook': guard(outlook) })[tab]();
+      'cc-seas': () => MktStudy.mount(body(), ['CC']), 'cc-news': guard(news), 'cc-grind': () => Consumers.mount(body(), 'cocoa'), 'cc-outlook': guard(outlook) })[tab]();
   }
 
   async function primer() {

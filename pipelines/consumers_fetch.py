@@ -178,8 +178,8 @@ def census():
     try:
         rows = r.json()
     except Exception:
-        LOG.append({"step": "census", "result": "not JSON", "head": r.text[:400]})
-        return
+        LOG.append({"step": "census", "result": "not JSON (the API now asks for a key); using the same Census series as republished by FRED"})
+        return census_fred()
     h = rows[0]
     out, cats = [], set()
     for v in rows[1:]:
@@ -193,6 +193,27 @@ def census():
     LOG.append({"step": "census", "result": f"{len(out)} rows kept; clothing-type categories seen: {sorted(c for c in cats if c.startswith(('448', '458', '44')))}"})
     if out:
         wcsv(AUTO / "census_mrts.csv", sorted(out, key=lambda x: (x["category"], x["type"], x["sa"], x["month"])), list(out[0]))
+
+
+def census_fred():
+    """Census MRTS clothing-store sales, inventories and ratio, seasonally adjusted, via FRED's public CSV download (no key)."""
+    out = []
+    for cat in ("4481", "448", "4581", "458"):
+        for typ in ("SM", "IM", "IR"):
+            sid = f"MRTS{typ}{cat}USS"
+            r = get(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}", "census")
+            time.sleep(1)
+            if not r or not r.text.lstrip().lower().startswith(("observation_date", "date")):
+                continue
+            n = 0
+            for line in r.text.splitlines()[1:]:
+                d, _, v = line.partition(",")
+                if v and v.strip() not in (".", ""):
+                    out.append({"month": d[:7], "category": cat, "type": typ, "sa": "yes", "value": v.strip()})
+                    n += 1
+            LOG.append({"step": "census", "series": sid, "result": f"{n} months"})
+    if out:
+        wcsv(AUTO / "census_mrts.csv", out, list(out[0]))
 
 
 # ---------------------------------------------------------------- Yahoo fundamentals

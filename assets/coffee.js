@@ -4,7 +4,7 @@
 const Coffee = (() => {
   let built = false, tab = 'kc-primer', K = null;
   const TABS = [['kc-primer', 'Primer'], ['kc-geo', "Where it's grown, trade &amp; weather"], ['kc-bal', 'World balance'], ['kc-br', 'Brazil: basis ladder &amp; exports'], ['kc-cecafe', 'Cecafé daily registrations'], ['kc-wx', 'Brazil weather by production'],
-    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-deliv', 'Deliveries'], ['kc-newc', 'KC contract: old vs new'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'], ['kc-col', 'Centrals &amp; Col'], ['kc-diffs', 'Differentials'],
+    ['kc-certs', 'Certified stocks &amp; structure'], ['kc-cprof', 'Certs profile &amp; delivery economics'], ['kc-deliv', 'Deliveries'], ['kc-newc', 'KC contract: old vs new'], ['kc-arb', 'Arabica / robusta'], ['kc-orig', 'Colombia, Vietnam &amp; ICO'], ['kc-cons', 'Consumer stocks &amp; roasters'], ['kc-col', 'Centrals &amp; Col'], ['kc-diffs', 'Differentials'],
     ['kc-flows', 'Futures, options &amp; COT'], ['kc-rv', 'Spreads &amp; vol'], ['kc-outlook', 'Outlook'], ['kc-reports', 'Reports'], ['kc-seas', 'Seasonality &amp; technicals']];
   const body = () => $('#kcBody');
   const f0 = v => fmt(v, 0), f1 = v => fmt(v, 1), f2 = v => fmt(v, 2);
@@ -25,7 +25,7 @@ const Coffee = (() => {
     body().innerHTML = '<div class="card"><p class="note">Loading…</p></div>';
     ({ 'kc-primer': primer, 'kc-geo': () => Geo.mount(body(), 'coffee'), 'kc-bal': guard(balance), 'kc-br': guard(brazil), 'kc-certs': guard(certs), 'kc-cprof': guard(cprof), 'kc-deliv': guard(() => Deliveries.mount(body(), 'KC')), 'kc-newc': guard(kcnew), 'kc-cecafe': guard(cecafe), 'kc-wx': guard(weather),
       'kc-arb': guard(arb), 'kc-orig': guard(origins), 'kc-col': guard(centrals), 'kc-diffs': guard(diffs), 'kc-flows': guard(flows), 'kc-rv': guard(async () => { body().innerHTML = '<div id="kcSA"></div><div id="kcRV" style="margin-top:12px"></div>'; await SpreadTables.mount($('#kcSA'), 'coffee'); await RVView.mount($('#kcRV'), 'KC'); }), 'kc-reports': guard(() => ReportsView.mount(body(), 'coffee')),
-      'kc-outlook': guard(outlook), 'kc-seas': () => MktStudy.mount(body(), ['KC']) })[tab]();
+      'kc-outlook': guard(outlook), 'kc-cons': () => Consumers.mount(body(), 'coffee'), 'kc-seas': () => MktStudy.mount(body(), ['KC']) })[tab]();
   }
   const kpi = (lab, v, sub) => `<div class="kpi card" style="padding:10px"><div class="lbl">${lab}</div><div class="val" style="font-size:19px">${v}</div>${sub ? `<div class="sub">${sub}</div>` : ''}</div>`;
   const box = (id, h = 280) => `<div style="position:relative;height:${h}px"><canvas id="${id}"></canvas></div>`;

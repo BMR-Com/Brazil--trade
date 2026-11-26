@@ -31,6 +31,15 @@ def max_csv_date(p, col="date"):
         return max((r[col] for r in csv.DictReader(f) if r.get(col)), default=None)
 
 
+def cons_month(kind, key):
+    b = next((x for x in J(f"data/consumers/{kind}.json")["stocks"] if x["key"] == key), None)
+    return b and b["latest"]["month"] + "-28"
+
+
+def cons_filing(kind, field):
+    return max((p.get("period_end") or "" for c in J(f"data/consumers/{kind}.json")[field] for p in c.get("periods", [])), default=None)
+
+
 def safras_last(site):
     with open(ROOT / "data/coffee/diffs/safras_quotes.csv") as f:
         return max((r["quote_date"] for r in csv.DictReader(f) if r.get("site") == site), default=None)
@@ -134,11 +143,17 @@ SOURCES = [
     ("Cotton", "WASDE (latest report)", "monthly", 40, C, False, wasde_release, "WASDE tab, balance sheets"),
     ("Cotton", "WASDE brief, latest-data section", "daily", 2, B, False, lambda: d10(J("data/grains/derived/wasde_brief/index.json")["generated"]), "WASDE tab"),
     ("Cotton", "Cotton loan (FSA)", "weekly", 9, C, False, lambda: J("data/cotton_loan/loan.json")["state"]["as_of"], "loan tab"),
+    ("Cotton", "US clothing stores sales and inventories (Census MRTS)", "monthly", 75, C, False, lambda: (J("data/consumers/cotton.json").get("census") or {}).get("inventory", {}).get("latest", {}).get("month", "") + "-28", "Retail inventory tab"),
+    ("Cotton", "Apparel company fundamentals (quarterly)", "quarterly", 135, C, False, lambda: max((c["latest"]["end"] for c in J("data/consumers/cotton.json")["companies"] if c.get("latest")), default=None), "Retail inventory tab"),
+    ("Cotton", "Brazil producers' hedge books (manual, quarterly)", "quarterly", 135, C, True, lambda: max_csv_date("data/consumers/manual/brazil_hedges.csv", "release_date"), "Retail inventory tab, Sugar hedge tab"),
     ("Cotton", "China", "daily", 2, B, False, lambda: d10(J("data/china/cotton.json")["generated"]), "China tab"),
     ("Cotton", "India", "daily", 2, B, False, lambda: d10(J("data/india/india.json")["built"]), "India tab"),
     ("Cotton", "Australia (synced from US desk)", "daily", 2, B, False, lambda: d10(J("data/australia/australia.json")["built"]), "Australia tab"),
     ("Coffee", "Coffee desk (ICE certs, basis, origins)", "daily", 2, B, False, lambda: d10(J("coffee/data/coffee.json")["built"]), "coffee tabs"),
     ("Coffee", "ICE certs detail: pending, transition, passed/failed, rebagging (upload)", "daily", 2, B, True, lambda: max_csv_date("data/coffee/ice_certs_daily_detail.csv"), "Certs profile tab"),
+    ("Coffee", "Japan green coffee stocks (JCA monthly)", "monthly", 75, C, False, lambda: cons_month("coffee", "jca"), "Consumer stocks tab"),
+    ("Coffee", "Europe port stocks (ECF, every two months)", "bi-monthly", 120, C, False, lambda: cons_month("coffee", "ecf"), "Consumer stocks tab"),
+    ("Coffee", "Roaster filings: inventory and hedging (manual, quarterly)", "quarterly", 135, C, True, lambda: cons_filing("coffee", "hedging"), "Consumer stocks tab"),
     ("Coffee", "ICE certs aging by port (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/coffee/ice_aging_history.csv"), "Certs profile tab"),
     ("Coffee", "ICE end-of-month certs by port since 1996 (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/coffee/ice_certs_eom_by_port.csv"), "Certs profile tab"),
     ("Coffee", "ICE grading summary by origin (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/coffee/ice_grading_monthly.csv", "period_end"), "Certs profile tab"),
@@ -174,6 +189,8 @@ SOURCES = [
     ("Sugar", "UNICA Centre-South report (last published)", "irregular", 120, C, False, lambda: J("data/sugar/unica_check.json")["latest_position"] or J("sugar/data/sugar.json")["unica"]["position"], "crush tab ATR; MAPA is the main series"),
     ("Sugar", "Weekly report input pack", "daily", 3, B, False, lambda: J("data/sugar/weekly_inputs.json")["built"], "weekly sugar research"),
     ("Sugar", "Brazil sugar export line-up (weekly)", "weekly", 9, C, False, lambda: J("data/sugar/flows.json")["weekly"]["asof"], "exports tab"),
+    ("Cocoa", "Regional grinds (ECA, NCA, CAA quarterly; manual)", "quarterly", 110, C, True, lambda: max_csv_date("data/consumers/manual/cocoa_grinds.csv", "release_date"), "Grinds tab"),
+    ("Cocoa", "Chocolate makers' filings (manual, quarterly)", "quarterly", 135, C, True, lambda: cons_filing("cocoa", "makers"), "Grinds tab"),
     ("Cocoa", "ICE cocoa certs and grading (upload)", "daily", 2, B, True, lambda: max_csv_date("data/cocoa/ice_certs_daily.csv"), "Certs profile tab"),
     ("Cocoa", "ICE cocoa grading results with discounts (upload)", "monthly", 40, C, True, lambda: max_csv_date("data/cocoa/ice_grading_monthly.csv", "period_end"), "Certs profile tab"),
     ("Cocoa", "Certs profile and delivery value (built from the ICE files)", "daily", 2, B, False, lambda: J("data/cocoa/certs_profile.json")["current"]["date"], "Certs profile tab"),

@@ -1,5 +1,14 @@
 # Softs desk (Brazil--trade) — handoff notes
 
+## Consumer-side trackers: stocks, roasters, grinds, apparel inventory, Brazil hedge books (2026-11-26)
+- New sub-tabs, all rendered by `assets/consumers.js` (`Consumers.mount(el, kind)`): Coffee `kc-cons` "Consumer stocks & roasters", Cocoa `cc-grind` "Grinds & chocolate makers", Cotton `ct-retail` "Retail & apparel inventory", Sugar `su-hedge` "Mill hedge books".
+- Fetch: `pipelines/consumers_fetch.py` (steps sec, census, yahoo, jca, ecf) → `data/consumers/auto/`, raw PDFs in `data/consumers/raw/`, log in `data/consumers/fetch_status.json`. Build: `pipelines/consumers_build.py` → `data/consumers/{coffee,cocoa,cotton,producers}.json`. Workflow `consumers.yml`: Tue/Fri 16:20 UTC + push on pipeline/manual paths.
+- Automated: JCA monthly PDF (j-zaiko, current year; Dec year-ends 1996–2023 hand-kept), ECF yearly port-stock PDFs 2021→ (first "Type of coffee" table only), Yahoo fundamentals-timeseries (≈5 quarters + annual) for US and non-US apparel/coffee/cocoa names, Census MRTS clothing stores via FRED fredgraph.csv (the Census API now returns "Missing Key"; a free key would need an account).
+- SEC XBRL needs a contact in the User-Agent: step reads repo secret `SEC_CONTACT` and skips without it (Yahoo is the fallback).
+- Hand-kept (refresh after each results season): `data/consumers/manual/` roasters.json, chocolate_makers.json, cocoa_grinds.csv (+notes), brazil_hedges.csv, apparel_nonus.csv, apparel_commentary.json, jca_history.csv. Rows whose note says LOW CONFIDENCE or season "(as printed)" are not published; SECONDARY rows show with an asterisk.
+- ICE arabica month-end = desk `data/coffee/ice_certs.csv` from 2024-06, ICO before (ICO report 2026-09/stock 2025-10 row skipped: wrong). GCA US stocks discontinued May 2023, not shown.
+- Status rows added in `pipelines/data_status.py` (JCA, ECF, roaster filings, Census, apparel fundamentals, Brazil hedges, grinds, chocolate makers).
+
 ## Trade ideas → support tests in tight markets (2026-11-26)
 - `models/support_test.py` writes `data/optsig/support_ideas.json`; run hourly in `overview.yml` before `overview.py` (pure local computation from `data/contracts/*.csv`, `sugar/data/sugar.json` parity and `data/options/<SYM>.json` vols). Shown on the Trade ideas tab (top card), on each commodity tab's options card (`OptSig.card`) and as a "Support test" line on each Overview tile.
 - Setup: active contract (front unless notice/expiry within 15 business days) at least 8% off its 60-day high, close within -3%/+4% of that contract's own 200-day average, above the average on 60%+ of the prior 120 sessions. Confirmation: sugar = No. 11 within 2.5 c/lb of Brazil hydrous-ethanol parity; cotton = front spread in the top 30% of its year and firmer over 5 sessions; coffee and cocoa = watch only (no confirming input found). A fired setup stays for 15 business days or until a close 3% under the 200-day average.
