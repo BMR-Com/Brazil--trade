@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 10:53 UTC",
+ "generated": "2026-11-26 11:30 UTC",
  "asof": "2026-11-25",
  "today": "2026-11-26",
  "active": [
@@ -120,7 +120,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-26",
-   "new": true,
+   "new": false,
    "since": "2026-11-26"
   },
   {
@@ -130,7 +130,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-26",
-   "new": true,
+   "new": false,
    "since": "2026-11-26"
   },
   {
@@ -140,7 +140,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-26",
-   "new": true,
+   "new": false,
    "since": "2026-11-26"
   },
   {
@@ -150,7 +150,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-26",
-   "new": true,
+   "new": false,
    "since": "2026-11-26"
   },
   {
@@ -240,7 +240,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-26",
-   "new": true,
+   "new": false,
    "since": "2026-11-26"
   },
   {
@@ -250,7 +250,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-26",
-   "new": true,
+   "new": false,
    "since": "2026-11-26"
   },
   {
@@ -270,7 +270,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-26",
-   "new": true,
+   "new": false,
    "since": "2026-11-26"
   },
   {
@@ -290,7 +290,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-26",
-   "new": true,
+   "new": false,
    "since": "2026-11-26"
   },
   {
