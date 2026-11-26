@@ -1,6 +1,6 @@
 {
  "sec": {
-  "run": "2026-11-26T07:44Z",
+  "run": "2026-11-26T07:54Z",
   "log": [
    {
     "step": "sec",
@@ -9,7 +9,7 @@
   ]
  },
  "census": {
-  "run": "2026-11-26T07:44Z",
+  "run": "2026-11-26T07:54Z",
   "log": [
    {
     "step": "census",
@@ -18,17 +18,96 @@
    },
    {
     "step": "census",
-    "result": "not JSON",
-    "head": "<html style=\"font-size: 14px;\">\n\n<head>\n    <title>Missing Key</title>\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/styles.css\">\n    <script type=\"text/javascript\" src=\"assets/jquery-1.4.4.min.js\"></script>\n    <script type=\"text/javascript\">\n        $(document).ready(function () {\n            function getCookie(name) {\n      "
+    "result": "not JSON (the API now asks for a key); using the same Census series as republished by FRED"
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSSM4481USS",
+    "result": 200
+   },
+   {
+    "step": "census",
+    "series": "MRTSSM4481USS",
+    "result": "417 months"
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSIM4481USS",
+    "result": 404
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSIR4481USS",
+    "result": 404
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSSM448USS",
+    "result": 200
+   },
+   {
+    "step": "census",
+    "series": "MRTSSM448USS",
+    "result": "417 months"
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSIM448USS",
+    "result": 200
+   },
+   {
+    "step": "census",
+    "series": "MRTSIM448USS",
+    "result": "417 months"
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSIR448USS",
+    "result": 200
+   },
+   {
+    "step": "census",
+    "series": "MRTSIR448USS",
+    "result": "417 months"
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSSM4581USS",
+    "result": 404
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSIM4581USS",
+    "result": 404
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSIR4581USS",
+    "result": 404
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSSM458USS",
+    "result": 404
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSIM458USS",
+    "result": 404
+   },
+   {
+    "step": "census",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MRTSIR458USS",
+    "result": 404
    }
   ]
  },
  "yahoo": {
-  "run": "2026-11-26T07:44Z",
+  "run": "2026-11-26T07:54Z",
   "log": [
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ITX.MC?symbol=ITX.MC&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ITX.MC?symbol=ITX.MC&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -38,7 +117,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/HM-B.ST?symbol=HM-B.ST&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/HM-B.ST?symbol=HM-B.ST&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -48,7 +127,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/9983.T?symbol=9983.T&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/9983.T?symbol=9983.T&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -58,7 +137,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/NXT.L?symbol=NXT.L&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/NXT.L?symbol=NXT.L&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -68,7 +147,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ABF.L?symbol=ABF.L&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ABF.L?symbol=ABF.L&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -78,7 +157,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/2313.HK?symbol=2313.HK&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/2313.HK?symbol=2313.HK&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -88,7 +167,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/NESN.SW?symbol=NESN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/NESN.SW?symbol=NESN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -98,7 +177,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/JDEP.AS?symbol=JDEP.AS&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/JDEP.AS?symbol=JDEP.AS&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -108,7 +187,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/BARN.SW?symbol=BARN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/BARN.SW?symbol=BARN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -118,7 +197,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/LISN.SW?symbol=LISN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/LISN.SW?symbol=LISN.SW&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -128,7 +207,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/SBUX?symbol=SBUX&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/SBUX?symbol=SBUX&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -138,7 +217,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/SJM?symbol=SJM&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/SJM?symbol=SJM&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -148,7 +227,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/KDP?symbol=KDP&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/KDP?symbol=KDP&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -158,7 +237,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/BROS?symbol=BROS&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/BROS?symbol=BROS&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -168,7 +247,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/HSY?symbol=HSY&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/HSY?symbol=HSY&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -178,7 +257,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/MDLZ?symbol=MDLZ&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/MDLZ?symbol=MDLZ&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -188,7 +267,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/GAP?symbol=GAP&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/GAP?symbol=GAP&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -198,7 +277,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AEO?symbol=AEO&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AEO?symbol=AEO&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -208,7 +287,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ANF?symbol=ANF&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ANF?symbol=ANF&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -218,7 +297,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/LEVI?symbol=LEVI&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/LEVI?symbol=LEVI&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -228,7 +307,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/PVH?symbol=PVH&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/PVH?symbol=PVH&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -238,7 +317,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/VFC?symbol=VFC&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/VFC?symbol=VFC&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -248,7 +327,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/RL?symbol=RL&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/RL?symbol=RL&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -258,7 +337,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/KTB?symbol=KTB&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/KTB?symbol=KTB&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -268,7 +347,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/CRI?symbol=CRI&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/CRI?symbol=CRI&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -278,7 +357,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/URBN?symbol=URBN&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/URBN?symbol=URBN&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -288,7 +367,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/HBI?symbol=HBI&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/HBI?symbol=HBI&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -298,7 +377,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/GIL?symbol=GIL&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/GIL?symbol=GIL&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -308,7 +387,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/TJX?symbol=TJX&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/TJX?symbol=TJX&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -318,7 +397,7 @@
    },
    {
     "step": "yahoo",
-    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ROST?symbol=ROST&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679003",
+    "url": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ROST?symbol=ROST&type=quarterlyInventory,quarterlyTotalRevenue,annualInventory,annualTotalRevenue&period1=1262304000&period2=1795679610",
     "result": 200
    },
    {
@@ -329,7 +408,7 @@
   ]
  },
  "jca": {
-  "run": "2026-11-26T07:44Z",
+  "run": "2026-11-26T07:54Z",
   "log": [
    {
     "step": "jca",
@@ -354,7 +433,7 @@
   ]
  },
  "ecf": {
-  "run": "2026-11-26T07:44Z",
+  "run": "2026-11-26T07:54Z",
   "log": [
    {
     "step": "ecf",
@@ -410,46 +489,6 @@
     "step": "ecf",
     "url": "https://www.ecf-coffee.org/wp-content/uploads/2021/03/2020-Stocks-European-Ports.pdf",
     "result": "parsed 0 months"
-   },
-   {
-    "step": "ecf",
-    "url": "https://www.ecf-coffee.org/wp-content/uploads/2021/11/2021-Stocks-European-Ports_updated.pdf",
-    "result": 200
-   },
-   {
-    "step": "ecf",
-    "url": "https://www.ecf-coffee.org/wp-content/uploads/2021/11/2021-Stocks-European-Ports_updated.pdf",
-    "result": "parsed 12 months"
-   },
-   {
-    "step": "ecf",
-    "url": "https://www.ecf-coffee.org/wp-content/uploads/2023/01/2022-Stocks-European-Ports.pdf",
-    "result": 200
-   },
-   {
-    "step": "ecf",
-    "url": "https://www.ecf-coffee.org/wp-content/uploads/2023/01/2022-Stocks-European-Ports.pdf",
-    "result": "parsed 12 months"
-   },
-   {
-    "step": "ecf",
-    "url": "https://www.ecf-coffee.org/wp-content/uploads/2024/01/2023-Stocks-European-Ports.pdf",
-    "result": 200
-   },
-   {
-    "step": "ecf",
-    "url": "https://www.ecf-coffee.org/wp-content/uploads/2024/01/2023-Stocks-European-Ports.pdf",
-    "result": "parsed 12 months"
-   },
-   {
-    "step": "ecf",
-    "url": "https://www.ecf-coffee.org/wp-content/uploads/2025/01/2024-Stocks-European-Ports.pdf",
-    "result": 200
-   },
-   {
-    "step": "ecf",
-    "url": "https://www.ecf-coffee.org/wp-content/uploads/2025/01/2024-Stocks-European-Ports.pdf",
-    "result": "parsed 12 months"
    },
    {
     "step": "ecf",
