@@ -1,0 +1,1067 @@
+{
+ "as_of": "2026-11-26",
+ "units_note": "Values as reported; null = not disclosed or not found",
+ "companies": [
+  {
+   "name": "Starbucks",
+   "ticker": "SBUX",
+   "fiscal_year_end": "Sunday nearest 30 Sep",
+   "periods": [
+    {
+     "period_end": "2023-10-01",
+     "filing": "10-K FY23 (comparative in FY24 10-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922424000057/R13.htm",
+     "total_inventory": {
+      "value": 1806.4,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 747.7,
+      "roasted": 280.3,
+      "total_coffee": 1028.0,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 364.6,
+      "packaging_supplies": 413.8,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 266,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2024-09-29",
+     "filing": "10-K FY24",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922424000057/R59.htm",
+     "total_inventory": {
+      "value": 1777.3,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 665.1,
+      "roasted": 251.9,
+      "total_coffee": 917.0,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 384.6,
+      "packaging_supplies": 475.7,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 180.0,
+      "price_to_be_fixed": 929.0,
+      "total": 1109.0,
+      "unit": "USD m"
+     },
+     "months_covered": null,
+     "fixed_price_share": 0.162,
+     "derivative_notional": {
+      "value": 154,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Coffee derivative notional fell from $266m (Oct 2023) to $154m."
+    },
+    {
+     "period_end": "2024-12-29",
+     "filing": "10-Q Q1 FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922425000014/R46.htm",
+     "total_inventory": {
+      "value": 1731.6,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 748.1,
+      "roasted": 226.2,
+      "total_coffee": 974.3,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 338.2,
+      "packaging_supplies": 419.1,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 311.0,
+      "price_to_be_fixed": 845.0,
+      "total": 1156.0,
+      "unit": "USD m"
+     },
+     "months_covered": null,
+     "fixed_price_share": 0.269,
+     "derivative_notional": {
+      "value": 28,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Coffee derivative notional cut to $28m; price-to-be-fixed book $845m."
+    },
+    {
+     "period_end": "2025-03-30",
+     "filing": "10-Q Q2 FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922425000034/R47.htm",
+     "total_inventory": {
+      "value": 2047.3,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 950.4,
+      "roasted": 274.0,
+      "total_coffee": 1224.4,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 322.4,
+      "packaging_supplies": 500.5,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 213.0,
+      "price_to_be_fixed": 951.0,
+      "total": 1164.0,
+      "unit": "USD m"
+     },
+     "months_covered": null,
+     "fixed_price_share": 0.183,
+     "derivative_notional": {
+      "value": 200,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-06-29",
+     "filing": "10-Q Q3 FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922425000058/R47.htm",
+     "total_inventory": {
+      "value": 2259.2,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 1063.9,
+      "roasted": 304.5,
+      "total_coffee": 1368.4,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 344.2,
+      "packaging_supplies": 546.6,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 250.0,
+      "price_to_be_fixed": 626.0,
+      "total": 876.0,
+      "unit": "USD m"
+     },
+     "months_covered": null,
+     "fixed_price_share": 0.285,
+     "derivative_notional": {
+      "value": 509,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Unroasted coffee inventory peaked at $1,063.9m; coffee derivative notional $509m (high of the series)."
+    },
+    {
+     "period_end": "2025-09-28",
+     "filing": "10-K FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922425000114/R57.htm",
+     "total_inventory": {
+      "value": 2185.6,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 911.2,
+      "roasted": 342.0,
+      "total_coffee": 1253.2,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 399.7,
+      "packaging_supplies": 532.7,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 129.0,
+      "price_to_be_fixed": 1100.0,
+      "total": 1229.0,
+      "unit": "USD m"
+     },
+     "months_covered": "~12 (through FY26)",
+     "fixed_price_share": 0.105,
+     "derivative_notional": {
+      "value": 387,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": "Purchase commitments plus existing inventory expected to provide adequate green coffee supply through fiscal 2026 (10-K Item 1)",
+     "commentary": "10-K: coffee price 'has steadily increased over the past five years'; tariffs on coffee imports cited as raising procurement cost; uses forwards, futures and collars to hedge C price. Q4 FY25 margin pressure from elevated coffee prices and tariffs."
+    },
+    {
+     "period_end": "2025-12-28",
+     "filing": "10-Q Q1 FY26",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000011/R49.htm",
+     "total_inventory": {
+      "value": 2114.4,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 990.6,
+      "roasted": 350.5,
+      "total_coffee": 1341.1,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 335.4,
+      "packaging_supplies": 437.9,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 382.0,
+      "price_to_be_fixed": 879.0,
+      "total": 1261.0,
+      "unit": "USD m"
+     },
+     "months_covered": null,
+     "fixed_price_share": 0.303,
+     "derivative_notional": {
+      "value": 205,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Fixed-price commitments rose to $382m from $129m as prices eased."
+    },
+    {
+     "period_end": "2026-03-29",
+     "filing": "10-Q Q2 FY26",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000080/R12.htm",
+     "total_inventory": {
+      "value": 2157.8,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 992.5,
+      "roasted": 425.8,
+      "total_coffee": 1418.3,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 307.0,
+      "packaging_supplies": 432.5,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 467.0,
+      "price_to_be_fixed": 497.0,
+      "total": 964.0,
+      "unit": "USD m"
+     },
+     "months_covered": null,
+     "fixed_price_share": 0.484,
+     "derivative_notional": {
+      "value": 193,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Balances exclude China retail ops held for sale."
+    },
+    {
+     "period_end": "2026-06-28",
+     "filing": "10-Q Q3 FY26",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000130/R12.htm",
+     "total_inventory": {
+      "value": 2208.9,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 954.1,
+      "roasted": 351.4,
+      "total_coffee": 1305.5,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 350.6,
+      "packaging_supplies": 552.8,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 383.0,
+      "price_to_be_fixed": 440.0,
+      "total": 823.0,
+      "unit": "USD m"
+     },
+     "months_covered": null,
+     "fixed_price_share": 0.465,
+     "derivative_notional": {
+      "value": 291,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Excludes China retail ops divested in Q3 FY26. 10-Q: 'A portion of our price-to-be-fixed contracts are effectively fixed through the use of futures.'"
+    },
+    {
+     "period_end": "2026-09-27",
+     "filing": "10-K FY26",
+     "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922426000162/R55.htm",
+     "total_inventory": {
+      "value": 2243.4,
+      "unit": "USD m"
+     },
+     "coffee_inventory": {
+      "unroasted": 897.8,
+      "roasted": 370.2,
+      "total_coffee": 1268.0,
+      "unit": "USD m"
+     },
+     "other_inventory": {
+      "other_merchandise": 418.1,
+      "packaging_supplies": 557.3,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": {
+      "fixed_price": 279.6,
+      "price_to_be_fixed": 533.9,
+      "total": 813.5,
+      "unit": "USD m"
+     },
+     "months_covered": "~12 (through FY27)",
+     "fixed_price_share": 0.344,
+     "derivative_notional": {
+      "value": 147,
+      "unit": "USD m (coffee contracts)"
+     },
+     "hedge_horizon": "Purchase commitments, together with existing inventory and anticipated future contracts, expected to provide adequate green coffee supply through fiscal 2027 (10-K Item 1)",
+     "commentary": "10-K: prices 'generally trended downward during fiscal 2026' but stay elevated vs five years ago; tariff refunds mentioned. FY27 guide: non-GAAP op margin 13.5%-14.0%; release does not quantify coffee cost."
+    }
+   ],
+   "notes": "All figures from SEC XBRL R pages of each filing (Inventories note and Derivatives notional table). Commitments = green coffee purchase commitments; price-to-be-fixed amounts are company estimates. Coverage-horizon sentence is only given in the 10-K. FY26 wording adds 'anticipated future contracts' versus FY25 (taken from a tool summary of Item 1; check exact wording before quoting). Q2-Q4 FY26 balances exclude China retail."
+  },
+  {
+   "name": "J.M. Smucker (Folgers, Dunkin' retail, Cafe Bustelo)",
+   "ticker": "SJM",
+   "fiscal_year_end": "30 Apr",
+   "periods": [
+    {
+     "period_end": "2024-04-30",
+     "filing": "10-K FY24 (comparative in FY25 10-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141925000056/R5.htm",
+     "total_inventory": {
+      "value": 1038.9,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 639.4,
+      "raw_materials": 399.5,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 787.7,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-01-31",
+     "filing": "10-Q Q3 FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141925000011/R64.htm",
+     "total_inventory": {
+      "value": 1086.3,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 575.6,
+      "raw_materials": 510.7,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 1534.4,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-04-30",
+     "filing": "10-K FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141925000056/R78.htm",
+     "total_inventory": {
+      "value": 1209.4,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 680.0,
+      "raw_materials": 529.4,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 1698.1,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-07-31",
+     "filing": "10-Q Q1 FY26",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141925000071/R49.htm",
+     "total_inventory": {
+      "value": 1386.0,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 779.8,
+      "raw_materials": 606.2,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 1866.4,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-10-31",
+     "filing": "10-Q Q2 FY26",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141925000106/R50.htm",
+     "total_inventory": {
+      "value": 1354.2,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 796.8,
+      "raw_materials": 557.4,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 1281.4,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Q2 FY26: US Retail Coffee net sales $848.9m, segment profit -24% to $154.3m; price increases drove sales, volume down; green coffee and tariffs pressured margin."
+    },
+    {
+     "period_end": "2026-01-31",
+     "filing": "10-Q Q3 FY26",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000016/R55.htm",
+     "total_inventory": {
+      "value": 1171.1,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 647.1,
+      "raw_materials": 524.0,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 403.1,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Q3 FY26 US Retail Coffee net sales $908.2m vs $740.6m a year earlier (9M $2,474.3m vs $2,068.0m). Commodity derivative notional collapsed to $403.1m."
+    },
+    {
+     "period_end": "2026-04-30",
+     "filing": "10-K FY26 (comparative in Q1 FY27 10-Q)",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000080/R43.htm",
+     "total_inventory": {
+      "value": 1126.5,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 584.1,
+      "raw_materials": 542.4,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 606.2,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": null,
+     "commentary": "June 2026 FY27 outlook (Bloomberg via Transport Topics, 9 Jun 2026): green coffee costs to fall mid-single-digit in FY27; coffee price cuts planned; net sales -3% to -4%; adj EPS $9.75-10.25; tariff refund scope 'remains uncertain'."
+    },
+    {
+     "period_end": "2026-07-31",
+     "filing": "10-Q Q1 FY27",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000080/R43.htm",
+     "total_inventory": {
+      "value": 1186.5,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 650.2,
+      "raw_materials": 536.3,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 562.0,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2026-10-31",
+     "filing": "10-Q Q2 FY27",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000111/R43.htm",
+     "total_inventory": {
+      "value": 1201.8,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "finished_products": 666.4,
+      "raw_materials": 535.4,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 1012.3,
+      "unit": "USD m (all commodity contracts, gross; coffee is the largest exposure but not split out)"
+     },
+     "hedge_horizon": "Commodity contracts mature within 1 year (Q2 FY27 10-Q)",
+     "commentary": "Q2 FY27 (8-K 24 Nov 2026): US Retail Coffee net sales $807.9m (-5%; price -3pp, vol/mix -2pp); segment profit $302.9m (+96%), margin 37.5%, 'primarily reflecting lower costs, including tariff refunds, and lower marketing spend'. Tariff refunds in gross profit $30.5m Q2, ~$147.0m YTD. Commodity notional nearly doubled q/q to $1,012.3m; collateral pledged $49.6m."
+    }
+   ],
+   "notes": "Inventory is company-wide (coffee, pet, spreads, Hostess); raw materials include green coffee but are not split. Commodity derivative notional covers all commodities (green coffee, wheat, oils etc.) and is not split by commodity. URLs point to the derivative-notional R page; inventory from the balance sheet R page (R4/R5) of the same filing. Oct-2024 10-Q not read."
+  },
+  {
+   "name": "Dutch Bros",
+   "ticker": "BROS",
+   "fiscal_year_end": "31 Dec",
+   "periods": [
+    {
+     "period_end": "2024-12-31",
+     "filing": "10-K FY24 (comparative in FY25 10-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1866581/000186658126000006/R61.htm",
+     "total_inventory": {
+      "value": 36.5,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "raw_materials": 14.6,
+      "finished_goods": 21.9,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-03-31",
+     "filing": "10-Q Q1 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1866581/000186658125000130/R2.htm",
+     "total_inventory": {
+      "value": 38.2,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-06-30",
+     "filing": "10-Q Q2 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1866581/000186658125000186/R2.htm",
+     "total_inventory": {
+      "value": 42.4,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-09-30",
+     "filing": "10-Q Q3 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1866581/000186658125000227/R2.htm",
+     "total_inventory": {
+      "value": 45.3,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": "Q3 2025: beverage, food and packaging 25.9% of company-operated shop revenue, +60bp y/y mainly from higher coffee; coffee expected to stay elevated into 2026."
+    },
+    {
+     "period_end": "2025-12-31",
+     "filing": "10-K FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1866581/000186658126000006/R61.htm",
+     "total_inventory": {
+      "value": 48.9,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "raw_materials": 25.5,
+      "finished_goods": 23.4,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": "~3 months of green coffee inventory on hand (stated policy)",
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": "10-K: 'On average, we typically have approximately three months of green coffee bean inventory stored'; roasts in Grants Pass OR and Melissa TX; buys under fixed-price and price-to-be-fixed green coffee commitments (no amount given); no coffee derivatives (only an interest-rate swap)."
+    },
+    {
+     "period_end": "2026-03-31",
+     "filing": "10-Q Q1 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/1866581/000186658126000078/R5.htm",
+     "total_inventory": {
+      "value": 37.4,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": "Q1 2026 call: 'Coffee remains in the $2.80 to $3.00 range'; ~60bp total COGS pressure in FY26 guide; ~1.5pt price in Q1-Q2, ~1pt rolls off at start of Q3."
+    },
+    {
+     "period_end": "2026-06-30",
+     "filing": "10-Q Q2 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/1866581/000186658126000133/R5.htm",
+     "total_inventory": {
+      "value": 41.3,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": "Q2 2026 call: higher coffee costs to keep weighing on H2; ~60bp FY COGS pressure incl. food program."
+    },
+    {
+     "period_end": "2026-09-30",
+     "filing": "10-Q Q3 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/1866581/000186658126000180/R51.htm",
+     "total_inventory": {
+      "value": 42.0,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "raw_materials": 15.8,
+      "finished_goods": 26.2,
+      "unit": "USD m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": "Q3 2026 call (4 Nov 2026): BF&P 25.6% of co-op shop revenue, guided ~27.5% for Q4; 'over 1 point of coffee pressure'; 'it takes 2 to 3 quarters for that to flow through our P&L'; ~$4m tariff refunds in Q3; may take more price."
+    }
+   ],
+   "notes": "Dutch Bros does not quantify its green coffee purchase commitments in XBRL and uses no coffee derivatives; disclosure is qualitative (fixed-price and price-to-be-fixed physical contracts, ~3 months green inventory). Raw materials include green coffee, dairy and other inputs. Coffee cost lag of 2-3 quarters means 2026 C-price declines reach the P&L in 2027."
+  },
+  {
+   "name": "Keurig Dr Pepper (incl. JDE Peet's from Apr 2026)",
+   "ticker": "KDP",
+   "fiscal_year_end": "31 Dec",
+   "periods": [
+    {
+     "period_end": "2024-12-31",
+     "filing": "10-K FY24 (comparative in FY25 10-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813526000016/R67.htm",
+     "total_inventory": {
+      "value": 1299,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 515,
+      "unit": "USD m (commodity contracts not designated as hedges, gross = expected volume x strike; all commodities)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-03-31",
+     "filing": "10-Q Q1 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813525000061/R53.htm",
+     "total_inventory": {
+      "value": 1539,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 503,
+      "unit": "USD m (commodity contracts not designated as hedges, gross = expected volume x strike; all commodities)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-06-30",
+     "filing": "10-Q Q2 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813525000103/R53.htm",
+     "total_inventory": {
+      "value": 1741,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 578,
+      "unit": "USD m (commodity contracts not designated as hedges, gross = expected volume x strike; all commodities)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-09-30",
+     "filing": "10-Q Q3 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813525000125/R53.htm",
+     "total_inventory": {
+      "value": 1840,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 607,
+      "unit": "USD m (commodity contracts not designated as hedges, gross = expected volume x strike; all commodities)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-12-31",
+     "filing": "10-K FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813526000016/R67.htm",
+     "total_inventory": {
+      "value": 1733,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 595,
+      "unit": "USD m (commodity contracts not designated as hedges, gross = expected volume x strike; all commodities)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2026-03-31",
+     "filing": "10-Q Q1 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813526000026/R57.htm",
+     "total_inventory": {
+      "value": 1829,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 700,
+      "unit": "USD m (commodity contracts not designated as hedges, gross = expected volume x strike; all commodities)"
+     },
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2026-06-30",
+     "filing": "10-Q Q2 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813526000051/R63.htm",
+     "total_inventory": {
+      "value": 3857,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 1102,
+      "unit": "USD m (commodity contracts not designated as hedges, gross = expected volume x strike; all commodities)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Includes JDE Peet's from 1 Apr 2026 (96.22% acquired; consideration $17,430m). JDE Peet's inventory at acquisition $2,574m incl. $361m fair-value step-up, ~$314m expensed through cost of sales in Q2 2026."
+    },
+    {
+     "period_end": "2026-09-30",
+     "filing": "10-Q Q3 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813526000066/R65.htm",
+     "total_inventory": {
+      "value": 3767,
+      "unit": "USD m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": {
+      "value": 884,
+      "unit": "USD m (commodity contracts not designated as hedges, gross = expected volume x strike; all commodities)"
+     },
+     "hedge_horizon": null,
+     "commentary": "Q3 2026 (3 Nov 2026): U.S. Coffee net sales +2.7% to ~$1.0bn, volume/mix +6.9%, net price -4.2%; segment op income +34.6% to $319m. JDE Peet's segment net sales $2.6bn, op income $289m. Mgmt: 'we reduced prices in certain regions and products to reflect lower coffee costs'; reinvesting 'moderating green coffee costs' into trade/promotions; tariff refunds a one-time tailwind weighted to U.S. Coffee; JDE Peet's price-cost benefit 'should moderate from Q3 levels'. Separation into two companies (Global Coffee Co.) planned by early 2027."
+    }
+   ],
+   "notes": "Inventory and commodity notional are company-wide (beverages + coffee). The Q2 2026 step change is the JDE Peet's consolidation, not a coverage decision. Commodity hedges are economic (not hedge-accounted). No coffee-specific split or coverage horizon disclosed. Inventory URL = balance sheet R4/R5 of the same filing."
+  },
+  {
+   "name": "JDE Peet's",
+   "ticker": "JDEP (delisted; KDP subsidiary since 1 Apr 2026)",
+   "fiscal_year_end": "31 Dec",
+   "periods": [
+    {
+     "period_end": "2023-12-31",
+     "filing": "H1 2024 report (comparative)",
+     "url": "https://www.jdepeets.com/siteassets/documents/jde-peets-half-year-results-2024-report.pdf",
+     "total_inventory": {
+      "value": 1248,
+      "unit": "EUR m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "commodity_derivative_fair_value": null,
+     "hedge_horizon": null,
+     "commentary": "FY23 base."
+    },
+    {
+     "period_end": "2024-06-30",
+     "filing": "H1 2024 report",
+     "url": "https://www.jdepeets.com/siteassets/documents/jde-peets-half-year-results-2024-report.pdf",
+     "total_inventory": {
+      "value": 1430,
+      "unit": "EUR m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "commodity_derivative_fair_value": {
+      "assets": 7,
+      "liabilities": 5,
+      "unit": "EUR m fair value, Level 1"
+     },
+     "hedge_horizon": null,
+     "commentary": "H1 2024: group price +2.4%; outlook cites 'continued inflation and volatility in green coffee prices' requiring more pricing in H2; APAC helped by lower-priced green coffee from inventories."
+    },
+    {
+     "period_end": "2024-12-31",
+     "filing": "FY 2024 results",
+     "url": "https://www.jdepeets.com/news-container/jde-peets-reports-full-year-results-2024-3032553/",
+     "total_inventory": {
+      "value": 1675,
+      "unit": "EUR m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "commodity_derivative_fair_value": null,
+     "hedge_horizon": null,
+     "commentary": "FY 2024: green coffee prices 'more than doubled, compared to a year ago', 'not expected to decline in the near term'; price +4.5%, vol/mix +0.7%; 2025 guide: organic adj. EBIT LSD decline."
+    },
+    {
+     "period_end": "2025-06-30",
+     "filing": "H1 2025 report",
+     "url": "https://www.jdepeets.com/siteassets/home/investors/financial-reports/jde-peets-half-year-results-2025-report.pdf",
+     "total_inventory": {
+      "value": 2139,
+      "unit": "EUR m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "commodity_derivative_fair_value": {
+      "assets": 1,
+      "liabilities": 38,
+      "unit": "EUR m fair value, Level 1"
+     },
+     "hedge_horizon": null,
+     "commentary": "H1 2025: green coffee on average >60% higher y/y; price +21.5% (Europe +15.4%, LARMEA +55.0%, Peet's +3.5%, APAC +7.7%); passing on 'only what is unavoidable'."
+    },
+    {
+     "period_end": "2025-12-31",
+     "filing": "FY 2025 results report",
+     "url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/02/24/cpr01_notified_jde-peets-full-year-results-2025-report.pdf",
+     "total_inventory": {
+      "value": 1982,
+      "unit": "EUR m"
+     },
+     "coffee_inventory": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "commodity_derivative_fair_value": {
+      "assets": 8,
+      "liabilities": 15,
+      "unit": "EUR m fair value, Level 1"
+     },
+     "hedge_horizon": null,
+     "commentary": "FY 2025: 'total cost inflation of EUR 1.6 billion' (green coffee plus other); price +19.5%, vol/mix -4.3%; inventories cash outflow EUR 349m (2024: 363m). Last standalone report before KDP took control on 1 Apr 2026."
+    }
+   ],
+   "notes": "Releases give total inventories and commodity contract fair values only (small, Level 1); no notional, coverage months or hedge horizon. The 2024 annual report PDF could not be read here, so its financial-risk note was not checked. From Q2 2026 its numbers sit inside KDP."
+  },
+  {
+   "name": "Nestle",
+   "ticker": "NESN",
+   "fiscal_year_end": "31 Dec",
+   "periods": [
+    {
+     "period_end": "2024-12-31",
+     "filing": "Financial Statements 2025 (comparative)",
+     "url": "https://www.nestle.com/sites/default/files/2026-02/financial-statements-2025-en.pdf",
+     "total_inventory": {
+      "value": 13260,
+      "unit": "CHF m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "raw_wip_supplies": 6557,
+      "finished_goods": 7103,
+      "allowance": -400,
+      "unit": "CHF m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": null
+    },
+    {
+     "period_end": "2025-12-31",
+     "filing": "Financial Statements 2025",
+     "url": "https://www.nestle.com/sites/default/files/2026-02/financial-statements-2025-en.pdf",
+     "total_inventory": {
+      "value": 12813,
+      "unit": "CHF m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": {
+      "raw_wip_supplies": 6453,
+      "finished_goods": 6752,
+      "allowance": -392,
+      "unit": "CHF m"
+     },
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": "FY 2025: pricing +2.8% with targeted increases in coffee and cocoa categories; gross margin -110bp on higher coffee and cocoa costs, tariffs and FX."
+    },
+    {
+     "period_end": "2026-06-30",
+     "filing": "Half-Year Report 2026",
+     "url": "https://www.nestle.com/sites/default/files/2026-07/half-year-report-2026-en.pdf",
+     "total_inventory": {
+      "value": 13261,
+      "unit": "CHF m"
+     },
+     "coffee_inventory": null,
+     "inventory_split": null,
+     "green_purchase_commitments": null,
+     "months_covered": null,
+     "fixed_price_share": null,
+     "derivative_notional": null,
+     "hedge_horizon": null,
+     "commentary": "H1 2026: coffee OG 7.5% (RIG 2.9%, price 4.7%; Q2 price 3.6% and easing); coffee UTOP margin 19.0% (-100bp); gross margin -20bp to 46.4% on 'higher coffee and cocoa prices flowing through the P&L'; Nespresso margin -120bp on coffee inflation and tariffs; H2 to benefit from 'lower coffee and cocoa costs impacting the P&L'. Group derivative assets current CHF 690m (Dec 2025: 295m), not split by commodity."
+    }
+   ],
+   "notes": "Group-level only; coffee is ~CHF 24bn of sales but inventory and hedges are not split by commodity. Note 12 (financial instruments, commodity hedge notional) of the 2025 statements could not be read (document text cut off), so no commodity notional is recorded. Q3 2026 sales update not checked."
+  }
+ ],
+ "not_covered": [
+  "Lavazza and Tchibo: not researched (private, no quarterly hedge data expected)",
+  "Other SEC coffee filers with green-coffee disclosures that could be added: Farmer Bros (FARM), Westrock Coffee (WEST), BRC (BRCC), Black Rock Coffee Bar (BRCB)"
+ ]
+}

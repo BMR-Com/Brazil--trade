@@ -1,0 +1,36 @@
+name: consumers
+# Consumer-side trackers (coffee, cocoa, cotton tabs): SEC XBRL filings, Census retail trade, Yahoo fundamentals for
+# non-US filers, Japan (JCA) coffee stocks, ECF port-stock reachability. Builds data/consumers/*.json for the pages.
+# Runs sparingly around releases: Census MRTS mid-month (~15th), JCA PDFs at month end, filings through results seasons.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['pipelines/consumers_fetch.py', 'pipelines/consumers_build.py', 'data/consumers/manual/**', '.github/workflows/consumers.yml']
+  schedule:
+    - cron: '20 16 * * 2,5'      # Tue and Fri: filings (results season), Census, JCA, Yahoo
+permissions: {contents: write}
+concurrency: {group: consumers, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -q requests pdfplumber
+      - name: fetch feeds
+        continue-on-error: true
+        run: python pipelines/consumers_fetch.py sec census yahoo jca ecf
+      - name: build page data
+        continue-on-error: true
+        run: '[ -f pipelines/consumers_build.py ] && python pipelines/consumers_build.py || true'
+      - name: commit
+        if: always()
+        run: |
+          git config user.name "bmr-data-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/consumers
+          git diff --cached --quiet && exit 0
+          git commit -q -m "data: consumers trackers $(date -u +%F)"
+          for i in 1 2 3; do git pull -q --rebase --autostash -X theirs origin main && git push -q && ok=1 && break; git rebase --abort 2>/dev/null || true; sleep 5; done; [ -n "$ok" ] || { echo "::error::push failed"; exit 1; }

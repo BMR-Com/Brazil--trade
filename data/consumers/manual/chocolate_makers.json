@@ -1,0 +1,525 @@
+{
+ "as_of": "2026-11-26",
+ "notes": "Values copied from filings or reporting as cited; 'secondary' marks aggregator/news sources. Hershey inventory series from SEC XBRL InventoryNet; Hershey notionals are open commodity derivative contracts (not hedge-accounted). Mondelez notional = commodity contracts. Barry Callebaut FY ends 31 Aug; cocoa_inventory = readily marketable cocoa bean inventories (RMI) where disclosed. No company discloses a numeric % hedge coverage.",
+ "companies": [
+  {
+   "name": "The Hershey Company",
+   "ticker": "HSY",
+   "periods": [
+    {
+     "period_end": "2023-12-31",
+     "filing": "10-K FY2023",
+     "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000047111/us-gaap/InventoryNet.json",
+     "total_inventory": {
+      "value": 1340996,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 94917,
+      "unit": "USD thousands (open commodity derivative notional, as comparative in Q3 2024 10-Q)"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2024-09-29",
+     "filing": "10-Q Q3 2024",
+     "url": "https://www.sec.gov/Archives/edgar/data/47111/000004711124000055/hsy-20240929.htm",
+     "total_inventory": {
+      "value": 1301956,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 149616,
+      "unit": "USD thousands"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2024-12-31",
+     "filing": "10-K FY2024",
+     "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000047111/us-gaap/InventoryNet.json",
+     "total_inventory": {
+      "value": 1254094,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 667421,
+      "unit": "USD thousands (comparative in 2025 10-Qs)"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2025-03-30",
+     "filing": "10-Q Q1 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/47111/000004711125000044/hsy-20250330.htm",
+     "total_inventory": {
+      "value": 1467333,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 274738,
+      "unit": "USD thousands"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2025-06-29",
+     "filing": "10-Q Q2 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/47111/000004711125000112/hsy-20250629.htm",
+     "total_inventory": {
+      "value": 1842295,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 211978,
+      "unit": "USD thousands"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": "Inventory peak of series (record-cost cocoa flowing through)."
+    },
+    {
+     "period_end": "2025-09-28",
+     "filing": "10-Q Q3 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/47111/000162828025047471/hsy-20250928.htm",
+     "total_inventory": {
+      "value": 1707522,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 591789,
+      "unit": "USD thousands"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2025-12-31",
+     "filing": "10-K FY2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/47111/000162828026008586/hsy-20251231.htm",
+     "total_inventory": {
+      "value": 1429254,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 973083,
+      "unit": "USD thousands"
+     },
+     "hedge_coverage": "Not quantified; hedges generally 3- to 24-month horizon; commodity derivatives not hedge-accounted (MTM through cost of sales).",
+     "volume_change_pct": -1,
+     "price_change_pct": 6,
+     "commentary": "FY2025: price realization ~+6%, volume ~-1% (elasticity in NA Confectionery and International). Gross margin 33.5% vs 47.3% in 2024; $736.6m higher commodity costs; $491.0m unfavorable MTM on commodity derivatives hedging future years. 10-K: cocoa down from record highs but remains structurally elevated."
+    },
+    {
+     "period_end": "2026-03-29",
+     "filing": "10-Q Q1 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000047111/000162828026028682/hsy-20260329.htm",
+     "total_inventory": {
+      "value": 1429124,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 925182,
+      "unit": "USD thousands"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2026-06-28",
+     "filing": "10-Q Q2 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000047111/000162828026050900/hsy-20260628.htm",
+     "total_inventory": {
+      "value": 1743318,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 504114,
+      "unit": "USD thousands (unit inferred from filing convention)"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2026-09-27",
+     "filing": "10-Q / 8-K Q3 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000047111/000162828026068136/hsy-20260927.htm",
+     "total_inventory": {
+      "value": 1608756,
+      "unit": "USD thousands"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 646026,
+      "unit": "USD thousands"
+     },
+     "hedge_coverage": "Not quantified. Q3 2026 prepared remarks: hedging portfolio gives price protection while preserving the opportunity to benefit from further downside; strong visibility into cocoa cost deflation in 2027.",
+     "volume_change_pct": -10,
+     "price_change_pct": 11,
+     "commentary": "Q3 2026 net sales +3.0% ($3,275.5m); price ~+11 pts, volume/mix ~-10 pts (NA Confectionery +13/-11). Reported GM 46.1% (adj 42.7%, +1,090bp). $113.4m commodity derivative MTM gains in Q3; net gains on commodity futures/options $81.9m vs $32.7m. Beat helped by timing of cocoa hedges and ~$57m tariff refunds. Retailer inventory replenishment helped Q3; healthier retailer inventories into Q4. Management expects low double-digit EPS recovery in 2027; cites record 2025/26 surplus of 500-600k t. Sources: 8-K Ex 99.1 https://www.sec.gov/Archives/edgar/data/0000047111/000162828026068046/exhibit991_2026xq3.htm ; prepared remarks https://hershey.gcs-web.com/static-files/b5403215-3c95-49ed-93d0-b27226148ec5"
+    }
+   ]
+  },
+  {
+   "name": "Mondelez International",
+   "ticker": "MDLZ",
+   "periods": [
+    {
+     "period_end": "2024-12-31",
+     "filing": "10-K FY2024 (comparative in Q3 2025 10-Q)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1103982/000162828025046773/mdlz-20250930.htm",
+     "total_inventory": {
+      "value": 3827,
+      "unit": "USD millions (net; raw 1,058, finished 2,940, reserves -171)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2025-03-31",
+     "filing": "10-Q Q1 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398225000127/mdlz-20250331.htm",
+     "total_inventory": {
+      "value": 4428,
+      "unit": "USD millions (gross: raw 1,159 + finished 3,269; net of reserves not captured)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2025-06-30",
+     "filing": "10-Q Q2 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398225000188/mdlz-20250630.htm",
+     "total_inventory": {
+      "value": 4951,
+      "unit": "USD millions (net; raw 1,208, finished 3,926, reserves -183)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2025-09-30",
+     "filing": "10-Q Q3 2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/1103982/000162828025046773/mdlz-20250930.htm",
+     "total_inventory": {
+      "value": 5098,
+      "unit": "USD millions (net; raw 1,211, finished 4,069, reserves -182)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": -4.6,
+     "price_change_pct": 8.0,
+     "commentary": "Q3 2025 organic +3.4% (pricing +8.0 pts, vol/mix -4.6 pts); MTM loss $348m."
+    },
+    {
+     "period_end": "2025-12-31",
+     "filing": "10-K FY2025",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001103982/000162828026068256/mdlz-20260930.htm",
+     "total_inventory": {
+      "value": 4419,
+      "unit": "USD millions (raw 1,015, finished 3,404)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 14463,
+      "unit": "USD millions (commodity contracts notional)"
+     },
+     "hedge_coverage": "Not quantified. CFO (Feb 2026, per secondary summary): 2026 cocoa costs locked in above spot.",
+     "volume_change_pct": -4.8,
+     "price_change_pct": 9.9,
+     "commentary": "Q4 2025 organic +5.1% (pricing +9.9, vol/mix -4.8). FY2025 organic +4.3% (pricing +8.0, vol/mix -3.7); chocolate revenue $12.70bn +12.9%; adj GM 32.0% (-580bp); FY2025 MTM loss $1.34bn; commodity VaR $32m (2025 high $104m). Source for KPIs: https://sec-api.io/insights/mondelez-mdlz-q3-2026-earnings-sec-filing-analysis"
+    },
+    {
+     "period_end": "2026-03-31",
+     "filing": "10-Q Q1 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001103982/000162828026027937/mdlz-20260331.htm",
+     "total_inventory": {
+      "value": 4079,
+      "unit": "USD millions (raw 981, finished 3,098)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 9820,
+      "unit": "USD millions (commodity contracts notional)"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": -0.5,
+     "price_change_pct": 3.5,
+     "commentary": "Q1 2026 organic +3.0% (pricing +3.5, vol/mix -0.5). Chocolate pricing guided roughly flat for 2026 (CFO Feb 2026, secondary)."
+    },
+    {
+     "period_end": "2026-06-30",
+     "filing": "10-Q Q2 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001103982/000162828026050179/mdlz-20260630.htm",
+     "total_inventory": {
+      "value": 4405,
+      "unit": "USD millions (raw 1,032, finished 3,373; from search snippet, verify)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 10897,
+      "unit": "USD millions (commodity contracts notional)"
+     },
+     "hedge_coverage": null,
+     "volume_change_pct": 0.7,
+     "price_change_pct": 1.5,
+     "commentary": "Q2 2026 organic +2.2% (pricing +1.5, vol/mix +0.7). FY2026 organic outlook raised to ~+2% in July."
+    },
+    {
+     "period_end": "2026-09-30",
+     "filing": "10-Q Q3 2026",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001103982/000162828026068256/mdlz-20260930.htm",
+     "total_inventory": {
+      "value": 4441,
+      "unit": "USD millions (raw 1,032, finished 3,409)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": {
+      "value": 12156,
+      "unit": "USD millions (commodity contracts notional)"
+     },
+     "hedge_coverage": "Not quantified. CEO on Q3 call (secondary summary): industry cocoa cover about nine months.",
+     "volume_change_pct": 1.8,
+     "price_change_pct": 0.3,
+     "commentary": "Q3 2026 net revenue $9,967m (+2.3%); organic +2.1% (pricing +0.3, vol/mix +1.8). Lower cocoa, dairy, sugar costs drove gross margin (adj GM 34.2%, +380bp); input-cost benefit $329m to adj OI (cc). Chocolate revenue $3.09bn +0.1%; Europe chocolate $1.70bn -5.7%. MTM gain $543m (Q3 2025: -$348m); 9M 2026 MTM +$1.10bn. Commodity derivative gross FV assets $1,306m / liabilities $778m (Dec 2025: $422m / $924m). CEO view (secondary): 2025/26 surplus ~500k t, 2026/27 deficit ~190k t; lower cocoa costs to help Q4."
+    }
+   ]
+  },
+  {
+   "name": "Barry Callebaut",
+   "ticker": "BARN.SW",
+   "periods": [
+    {
+     "period_end": "2024-08-31",
+     "filing": "FY2023/24 (comparatives in FY2024/25 release)",
+     "url": "https://www.barry-callebaut.com/system/files/2025-11/Full-Year-Results-Fiscal-Year%202024-25-EN-Barry-Callebaut-Group.pdf",
+     "total_inventory": null,
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": "Volume 2,279,811 t. Net working capital CHF 3,808.0m; net debt CHF 3,818.0m; free cash flow CHF -2,330.7m."
+    },
+    {
+     "period_end": "2025-02-28",
+     "filing": "H1 2024/25 (comparatives in H1 2025/26 release)",
+     "url": "https://www.barry-callebaut.com/system/files/2026-04/Barry-Callebaut-Group-Half-Year-Results-Fiscal-Year%202025-26-PR-EN.pdf",
+     "total_inventory": null,
+     "cocoa_inventory": {
+      "value": 3192.5,
+      "unit": "CHF millions (readily marketable cocoa bean inventories, RMI)"
+     },
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": "Net working capital CHF 5,900.8m; net debt CHF 6,111.6m; FCF CHF -2,114.0m; net debt/EBITDA 6.5x. Peak of cocoa-price-driven balance sheet strain."
+    },
+    {
+     "period_end": "2025-08-31",
+     "filing": "FY2024/25 results",
+     "url": "https://www.barry-callebaut.com/system/files/2025-11/Full-Year-Results-Fiscal-Year%202024-25-EN-Barry-Callebaut-Group.pdf",
+     "total_inventory": {
+      "value": 4739.9,
+      "unit": "CHF millions (total inventories, comparative in FY2025/26 report)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": "Back-to-back hedging of exposures; letter-of-credit facility set up to replace futures margin calls.",
+     "volume_change_pct": -6.8,
+     "price_change_pct": null,
+     "commentary": "Volume 2,125,420 t (-6.8%; Chocolate -5.3%, Cocoa -12.8%; Q4 -8.2%). Revenue CHF 14,788.6m (+49.0% LC). Recurring EBIT CHF 703.4m. NWC CHF 3,997.8m; net debt CHF 4,301.3m (4.5x); FCF CHF -312.0m; net finance cost CHF -376.9m. Cocoa avg +27.1%, closed GBP 5,302. Guided FY25/26 volume mid-single-digit decline. Nielsen chocolate market -3.5%."
+    },
+    {
+     "period_end": "2026-02-28",
+     "filing": "H1 2025/26 results",
+     "url": "https://www.barry-callebaut.com/system/files/2026-04/Barry-Callebaut-Group-Half-Year-Results-Fiscal-Year%202025-26-PR-EN.pdf",
+     "total_inventory": null,
+     "cocoa_inventory": {
+      "value": 1077.6,
+      "unit": "CHF millions (RMI)"
+     },
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": -6.9,
+     "price_change_pct": null,
+     "commentary": "Volume 1,010,247 t (-6.9%; Q2 -3.6%; Chocolate -5.1%, Cocoa -14.3%; North America -12.6%). Revenue CHF 6,752.2m. Recurring EBIT CHF 310.9m. NWC CHF 3,198.9m; net debt CHF 3,604.3m (3.9x; 2.7x RMI-adjusted); FCF CHF +801.8m. Cocoa avg -42%, closed GBP 2,057. EUR 2.0bn borrowing base facility (Apr 2026). Guidance cut to volume -1% to -3%. Nielsen chocolate market -6.5%."
+    },
+    {
+     "period_end": "2026-08-31",
+     "filing": "FY2025/26 results (4 Nov 2026)",
+     "url": "https://www.barry-callebaut.com/system/files/2026-11/Barry-Callebaut-Group-Full-Year-Results-Fiscal-Year%202025-26_Report.pdf",
+     "total_inventory": {
+      "value": 3547.9,
+      "unit": "CHF millions (total inventories)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": "States all risk exposures hedged back-to-back; Food Manufacturers on cost-plus; Gourmet price-list model with hedged forecast sales.",
+     "volume_change_pct": -0.7,
+     "price_change_pct": null,
+     "commentary": "Volume 2,109,866 t (-0.7%; Q4 +5.7%; Chocolate -0.5%, Cocoa -1.8% with H2 +12.2%; North America -6.1%, AMEA +9.8%). Revenue CHF 12,189.6m (-17.6% CHF). Recurring EBIT CHF 594.0m (-14.1% cc); Chocolate hurt by temporary Gourmet long position. Cash flow shows CHF 938.1m decrease in cocoa bean inventories. NWC CHF 2,326.8m; net debt CHF 2,474.2m (-42.5%, 2.9x); FCF CHF 2,009.8m; BBF and RCF undrawn. Cocoa avg -44% y/y; report says period closed at GBP 4,859 (verify; implies large rebound from GBP 2,057 in Feb 2026). FY26/27 outlook: volume +1% to +3%, recurring EBIT +3-5% cc. Nielsen chocolate market -4.3%."
+    }
+   ]
+  },
+  {
+   "name": "Lindt & Spruengli",
+   "ticker": "LISN.SW",
+   "periods": [
+    {
+     "period_end": "2024-12-31",
+     "filing": "FY2024 (balance sheet via aggregator)",
+     "url": "https://stockanalysis.com/quote/swx/LISN/financials/balance-sheet/",
+     "total_inventory": {
+      "value": 941.3,
+      "unit": "CHF millions (secondary source)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": ""
+    },
+    {
+     "period_end": "2025-06-30",
+     "filing": "H1 2025",
+     "url": "https://styles.finanzen.ch/nachrichten/aktien/lindt-&-spruengli-grows-strongly-in-the-first-half-of-2025-and-raises-full-year-guidance-for-organic-sales-growth-1034921316",
+     "total_inventory": null,
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": "Operating cash flow CHF -150.5m mainly from higher inventories (cocoa valuation); FCF CHF -79.7m; net debt ~CHF 1.4bn."
+    },
+    {
+     "period_end": "2025-12-31",
+     "filing": "FY2025 results (10 Mar 2026)",
+     "url": "https://www.rttnews.com/3609831/lindt-spr-ngli-2025-organic-sales-growth-at-12-4.aspx",
+     "total_inventory": {
+      "value": 1190,
+      "unit": "CHF millions (secondary source: stockanalysis.com)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": -6.6,
+     "price_change_pct": 19.0,
+     "commentary": "Organic +12.4% to CHF 5.92bn; group price +19.0%, volume/mix -6.6%. EBIT CHF 971m, margin 16.4%. Inventory value +CHF 320m from cocoa prices. 2026 guidance cut to 4-6% organic (from 6-8%)."
+    },
+    {
+     "period_end": "2026-06-30",
+     "filing": "H1 2026 results (21 Jul 2026)",
+     "url": "https://www.confectionerynews.com/Article/2026/07/21/lindt-growth-slows-as-cocoa-costs-continue-to-weigh-on-volumes/",
+     "total_inventory": {
+      "value": 1480,
+      "unit": "CHF millions (secondary source: stockanalysis.com)"
+     },
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": -7.5,
+     "price_change_pct": 11.8,
+     "commentary": "Organic +4.3% to CHF 2.33bn (CHF -0.9%); price +11.8%, volume/mix -7.5% (Europe weak; North America +12.7% organic). EBIT CHF 260.2m (11.2%). Expected volume stabilisation in H2 2026, volume growth in 2027."
+    },
+    {
+     "period_end": "2026-09-29",
+     "filing": "Ad hoc guidance update",
+     "url": "https://live.deutsche-boerse.com/nachrichten/Lindt---Spruengli-adjusts-sales-growth-guidance-for-2026-1b0b088c-f35f-46e1-8469-e413ba62a818",
+     "total_inventory": null,
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": "2026 organic growth guidance cut to 0-2% (from 4-6%); EBIT margin +20-40bp kept. Price-sensitive consumers, weak seasonal orders in Germany/Switzerland/Austria, European heatwave; NA and Asia robust. Expects cocoa cost pressure to ease gradually; confident of positive volume growth in 2027. Next: 2026 sales 19 Jan 2027."
+    }
+   ]
+  },
+  {
+   "name": "Nestle (confectionery)",
+   "ticker": "NESN.SW",
+   "periods": [
+    {
+     "period_end": "2025-09-30",
+     "filing": "9M 2025 sales",
+     "url": "https://www.finanzen.net/nachricht/aktien/press-release-nestle-nine-month-sales-2025-3-15074078",
+     "total_inventory": null,
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": "Group organic +3.3% (RIG +0.6, pricing +2.8). Confectionery organic +8.0%, pricing-led (KitKat), negative RIG from elasticity."
+    },
+    {
+     "period_end": "2026-03-31",
+     "filing": "Q1 2026 sales",
+     "url": "https://www.newsghana.com.gh/nestle-chocolate-volumes-rebound-as-cocoa-cost-cycle-shifts/",
+     "total_inventory": null,
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": "Secondary source: group organic +3.5% (RIG +1.2, pricing +2.3); chocolate high single-digit organic; pricing moderating as cocoa pass-through fades, volumes recovering."
+    },
+    {
+     "period_end": "2026-09-30",
+     "filing": "9M 2026 sales (Oct 2026)",
+     "url": "https://www.revistabiz.ro/grupul-nestle-crestere-organica-de-3-7-a-vanzarilor-in-primele-9-luni/",
+     "total_inventory": null,
+     "cocoa_inventory": null,
+     "derivative_notional": null,
+     "hedge_coverage": null,
+     "volume_change_pct": null,
+     "price_change_pct": null,
+     "commentary": "Secondary/conflicting sources: group organic +3.7% (RIG +1.9, pricing +1.8); Q3 organic +4.0% with RIG +2.8. No confectionery breakdown found; verify against Nestle release."
+    }
+   ]
+  }
+ ]
+}

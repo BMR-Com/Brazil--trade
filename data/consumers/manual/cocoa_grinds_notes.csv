@@ -1,0 +1,137 @@
+region,quarter,note
+Europe,2015-Q1,yoy computed from ECA tonnes; ECA notes 2013/2014 comparisons affected by Cemoi/Stollwerck reporting change
+Europe,2015-Q2,yoy computed from ECA tonnes; ECA notes 2013/2014 comparisons affected by Cemoi/Stollwerck reporting change
+Europe,2015-Q3,yoy computed from ECA tonnes; ECA notes 2013/2014 comparisons affected by Cemoi/Stollwerck reporting change
+Europe,2015-Q4,yoy computed from ECA tonnes; ECA notes 2013/2014 comparisons affected by Cemoi/Stollwerck reporting change
+Europe,2016-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2016-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2016-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2016-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2017-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2017-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2017-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2017-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2018-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2018-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2018-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2018-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2019-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2019-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2019-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2019-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2020-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2020-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2020-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2020-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2021-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2021-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2021-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2021-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2022-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2022-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2022-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2022-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2023-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2023-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2023-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2023-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2024-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2024-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2024-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2024-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2025-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2025-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2025-Q3,yoy from ECA published index (current table; may reflect revisions)
+Europe,2025-Q4,yoy from ECA published index (current table; may reflect revisions)
+Europe,2026-Q1,yoy from ECA published index (current table; may reflect revisions)
+Europe,2026-Q2,yoy from ECA published index (current table; may reflect revisions)
+Europe,2026-Q3,Q3 2026 ECA PDF not retrievable; tonnes/yoy (+3.2%) from Barchart/ADMIS/McKeany reporting of ECA release; yoy computed matches
+North America,2015-Q1,yoy reported as about 6%
+North America,2015-Q2,tonnes from Q2 2016 comparison; yoy not found
+North America,2015-Q3,ADM Cocoa stopped reporting
+North America,2015-Q4,"CY2015 total 484,992 t"
+North America,2016-Q1,Reuters 14 Apr 2016 via search; URL attribution uncertain
+North America,2016-Q2,
+North America,2016-Q3,via ICCO review
+North America,2016-Q4,
+North America,2017-Q1,"DERIVED from Q1 2018 118,778 t at -1.14% y/y; yoy computed"
+North America,2017-Q2,"DERIVED from Q2 2018 119,301 t at -3.11%; yoy computed"
+North America,2017-Q3,"DERIVED from Q3 2018 128,494 t at +2.53%; yoy computed"
+North America,2017-Q4,"DERIVED from Q4 2018 117,526 t at +1.25%; -1.3% yoy consistent with report"
+North America,2018-Q1,
+North America,2018-Q2,
+North America,2018-Q3,
+North America,2018-Q4,
+North America,2019-Q1,
+North America,2019-Q2,"tonnes from Q2 2020 comparison; yoy computed vs 119,301"
+North America,2019-Q3,"ROUNDED (~119,000 t as reported); Q3 2020 release implies revised base ~123,2xx"
+North America,2019-Q4,"ICCO figure; original release reported 110,321 t (-5.9%); yoy computed"
+North America,2020-Q1,"DERIVED from Q1 2021 117,956 t at +2.05% (also fits 2019/20 season total 455,002 t); yoy computed"
+North America,2020-Q2,
+North America,2020-Q3,"later cited as 118,264 t"
+North America,2020-Q4,17 reporting plants
+North America,2021-Q1,source URL attribution uncertain
+North America,2021-Q2,tonnes from Q2 2022 comparison; yoy computed
+North America,2021-Q3,
+North America,2021-Q4,16 plants vs 17
+North America,2022-Q1,tonnes from Q1 2023 comparison; yoy computed
+North America,2022-Q2,
+North America,2022-Q3,
+North America,2022-Q4,15 plants vs 16
+North America,2023-Q1,
+North America,2023-Q2,yoy computed
+North America,2023-Q3,"DERIVED tonnes from Q3 2024 109,264 t at +11.6%; -17.9% yoy as reported"
+North America,2023-Q4,
+North America,2024-Q1,"tonnes via ICCO citing NCA; later revised to 113,053 t in Q1 2025 release"
+North America,2024-Q2,
+North America,2024-Q3,14 plants vs 15
+North America,2024-Q4,secondary aggregator
+North America,2025-Q1,15 facilities; NCA page shows Q1 2025 report revised 22 Jun 2026
+North America,2025-Q2,
+North America,2025-Q3,16 plants vs 14 a year earlier (inflates yoy)
+North America,2025-Q4,
+North America,2026-Q1,15 facilities vs 14
+North America,2026-Q2,
+North America,2026-Q3,facility-count change cited; NCA PDF blocked to automated fetch
+Asia,2016-Q1,"DERIVED residual of CY2016 651,494 t minus derived Q2-Q4; low confidence"
+Asia,2016-Q2,"DERIVED from Q2 2017 160,878 t at +9.9%"
+Asia,2016-Q3,"DERIVED from Q3 2017 189,407 t at +13%"
+Asia,2016-Q4,source attribution uncertain
+Asia,2017-Q1,"DERIVED residual of CY2017 724,211 t"
+Asia,2017-Q2,
+Asia,2017-Q3,
+Asia,2017-Q4,
+Asia,2018-Q1,
+Asia,2018-Q2,
+Asia,2018-Q3,"DERIVED from Q3 2019 ~225,000 t at +14.7%; low confidence"
+Asia,2019-Q1,
+Asia,2019-Q2,"DERIVED approx from Q2 2020 202,674 t at almost -6%; low confidence"
+Asia,2019-Q3,"tonnes DERIVED from Q3 2020 202,665 t at -10.07% (reported ~225,000 t record)"
+Asia,2019-Q4,as prior-year base in ICCO
+Asia,2020-Q1,"DERIVED residual of CY2020 830,241 t; yoy computed"
+Asia,2020-Q2,reported as almost 6% decline
+Asia,2020-Q3,
+Asia,2020-Q4,"CY2020 830,241 t (-5.3%)"
+Asia,2021-Q1,tonnes as prior-year base in ICCO; yoy computed
+Asia,2021-Q2,tonnes as prior-year base; yoy computed
+Asia,2021-Q3,
+Asia,2021-Q4,
+Asia,2022-Q1,reported as virtually flat; yoy computed
+Asia,2022-Q2,
+Asia,2022-Q3,
+Asia,2022-Q4,
+Asia,2023-Q1,
+Asia,2023-Q2,"DERIVED from 2022/23 three-quarter total 666,811 t; yoy computed"
+Asia,2023-Q3,year inferred from article context
+Asia,2023-Q4,
+Asia,2024-Q1,
+Asia,2024-Q2,secondary summary
+Asia,2024-Q3,
+Asia,2024-Q4,
+Asia,2025-Q1,
+Asia,2025-Q2,
+Asia,2025-Q3,
+Asia,2025-Q4,reported yoy implies revised Q4 2024 base
+Asia,2026-Q1,"Barchart-reported figure; consistent with ADMIS YTD 681,900 t"
+Asia,2026-Q2,"yoy implies revised Q2 2025 base ~179,600 t"
+Asia,2026-Q3,record quarter; Malaysia Q3 +47% y/y

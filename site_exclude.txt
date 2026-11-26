@@ -27,3 +27,7 @@ data/sugar/deliveries/auto
 # KC and CT delivery capture job: parsed news rows and run logs (repo only; pages read *_history.json; added 2026-11-26). White sugar rows sit in data/sugar/deliveries/auto above.
 data/coffee/deliveries/auto
 data/cotton/deliveries/auto
+# Consumer trackers: raw PDFs, hand-kept filing extracts and fetched feeds (repo only; pages read data/consumers/*.json; added 2026-11-26)
+data/consumers/raw
+data/consumers/manual
+data/consumers/auto
