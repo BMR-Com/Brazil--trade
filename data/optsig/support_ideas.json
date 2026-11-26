@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 04:50 UTC",
+ "generated": "2026-11-26 04:51 UTC",
  "note": "Support tests in tight markets: a selloff down to the active contract's own 200-day average while the market still looks tight. Research only, not investment advice; option prices are model values from settlement vols, check live prices.",
  "markets": {
   "SB": {
