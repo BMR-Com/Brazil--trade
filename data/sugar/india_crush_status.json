@@ -1,14 +1,14 @@
 {
- "run": "2026-11-25 13:43 UTC",
- "last_run_date": "2026-11-25",
+ "run": "2026-11-26 04:26 UTC",
+ "last_run_date": "2026-11-26",
  "direct_sources": {
   "ISMA": 200,
   "Maharashtra Sugar Commissionerate": 200
  },
  "news_via": "wp-json",
- "news_posts_checked": 33,
- "rows_parsed": 4,
- "rows_added": 4,
+ "news_posts_checked": 34,
+ "rows_parsed": 0,
+ "rows_added": 0,
  "rows_total": 4,
  "http": {
   "200": 4
@@ -34,6 +34,7 @@
   "https://www.chinimandi.com/maharashtra-may-see-sharp-decline-in-sugarcane-pulses-and-oilseeds-output-in-2026-27/",
   "https://www.chinimandi.com/maharashtra-panel-to-explore-zero-waste-bio-refinery-model-for-sugar-mills-with-201070-funding/",
   "https://www.chinimandi.com/maharashtra-sugar-production-reaches-28-25-lakh-tonnes-as-of-november-24/",
+  "https://www.chinimandi.com/no-sugar-diversion-for-ethanol-in-2026-27-against-32-42-lakh-tonnes-last-season-isma/",
   "https://www.chinimandi.com/odisha-amit-shah-assures-steps-to-revive-defunct-baragada-cooperative-sugar-mill-in-odisha/",
   "https://www.chinimandi.com/pralhad-joshi-urges-karnataka-to-announce-additional-support-for-sugarcane-farmers/",
   "https://www.chinimandi.com/sugar-first-fuel-next-getting-the-2026-27-balance-right/",
