@@ -182,7 +182,7 @@ asof,sym,item,value,d1,d5,flag
 2026-11-25,CT,Flat price (Mar 27),81.47,-0.58,2.59,0
 2026-11-25,CT,Front spread (Mar 27/May 27),-1.52,-0.03,-0.06,0
 2026-11-25,CT,ICE certificated cotton,83599.0,,16883.0,0
-2026-11-25,CT,Spot basis (US average),-328.0,0.0,-7.0,0
+2026-11-25,CT,Spot basis (US average),-375.0,-47.0,-54.0,1
 2026-11-25,CT,Managed money net,48998.0,,-6384.0,0
 2026-11-25,CT,Front implied vol (JAN27),20.5,,,0
 2026-11-25,CT,"On-call sales, old crop",68240.0,,12.0,0
