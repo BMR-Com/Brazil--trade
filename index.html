@@ -25,6 +25,7 @@
   <button data-c="cocoa">Cocoa</button>
   <button data-c="markets">Markets &amp; macro</button>
   <button data-c="options">Options pricer</button>
+  <button data-c="primer" title="Options on commodity futures in plain terms: Black-76, the greeks and how they connect, skew, strategies, hedging, with worked cotton examples">Options primer</button>
   <button data-c="seasonal" title="Seasonal trades, heat maps, spreads and seasonal charts">Seasonality</button>
   <button data-c="cotfull" title="CFTC Commitments of Traders desk">COT (full)</button>
   <button data-c="brexp" title="Brazil agricultural exports (MDIC/SECEX)">Brazil exports</button>
@@ -41,6 +42,7 @@
 <section id="cocoa" style="display:none"></section>
 <section id="markets" style="display:none"></section>
 <section id="options" style="display:none"></section>
+<section id="primer" style="display:none;padding:0"><iframe id="primer-frame" title="Options primer" style="display:block;width:100%;height:calc(100vh - 92px);min-height:640px;border:0;background:#f5f5f3"></iframe></section>
 <section id="seasonal" style="display:none"></section>
 <section id="cotfull" style="display:none;padding:0"><iframe id="cot-frame" title="COT positioning desk" style="display:block;width:100%;height:calc(100vh - 92px);min-height:640px;border:0;background:#1e3c72"></iframe></section>
 <section id="delivery" style="display:none;padding:0"></section>
@@ -82,7 +84,20 @@
 <script src="assets/status.js?v=20261118b"></script>
 <script src="assets/desk_watch.js?v=20261117b"></script>
 <script>
-const SECTIONS = ['overview', 'optsig', 'cotton', 'sugar', 'coffee', 'cocoa', 'markets', 'options', 'seasonal', 'cotfull', 'brexp', 'delivery', 'status'];
+const SECTIONS = ['overview', 'optsig', 'cotton', 'sugar', 'coffee', 'cocoa', 'markets', 'options', 'primer', 'seasonal', 'cotfull', 'brexp', 'delivery', 'status'];
+// Options primer: standalone page primer/options.html in a frame; #primer/<tab> deep-links
+const Primer = {
+  show() {
+    const f = $('#primer-frame'), t = (location.hash.match(/^#primer\/(\w+)/) || [])[1];
+    if (!f.src) f.src = 'primer/options.html?v=20261126a' + (t ? '#' + t : '');
+    if (!location.hash.startsWith('#primer')) history.replaceState(null, '', '#primer');
+    window.scrollTo(0, 0);
+  }
+};
+window.addEventListener('message', e => {
+  const pf = document.getElementById('primer-frame');
+  if (pf && e.source === pf.contentWindow && e.data && e.data.primerTab) history.replaceState(null, '', '#primer/' + e.data.primerTab);
+});
 const CotFull = {
   show() {
     const f = $('#cot-frame'), t = (location.hash.match(/^#cot\/(\w+)/) || [])[1];
@@ -106,6 +121,7 @@ $$('nav.comm button[data-c]').forEach(b => b.onclick = () => {
     else if (c === 'options') Options.show();
     else if (c === 'seasonal') Seasonal.show();
     else if (c === 'cotfull') CotFull.show();
+    else if (c === 'primer') Primer.show();
     else if (c === 'status') Status.show();
     else if (c === 'delivery') DeskWatch.showDelivery();
     else if (c === 'brexp') { const f = $('#brexp-frame'); if (!f.src) f.src = 'brazil_exports.html'; history.replaceState(null, '', '#brexp'); }
@@ -113,7 +129,7 @@ $$('nav.comm button[data-c]').forEach(b => b.onclick = () => {
 });
 const h = location.hash;
 const pick = h === '#overview' ? 'overview' : h.startsWith('#delivery') ? 'delivery' : h === '#ideas' ? 'optsig' : h.startsWith('#su') ? 'sugar' : h.startsWith('#kc') ? 'coffee' : h.startsWith('#cc-') ? 'cocoa' : h.startsWith('#cot') ? 'cotfull' : h === '#markets' ? 'markets'
-  : h.startsWith('#options') ? 'options' : h.startsWith('#seasonal') ? 'seasonal' : h === '#brexp' ? 'brexp' : h === '#status' ? 'status' : 'cotton';
+  : h.startsWith('#primer') ? 'primer' : h.startsWith('#options') ? 'options' : h.startsWith('#seasonal') ? 'seasonal' : h === '#brexp' ? 'brexp' : h === '#status' ? 'status' : 'cotton';
 $('nav.comm button[data-c="' + pick + '"]').click();
 Status.strip($('#statusStrip'));
 </script>
