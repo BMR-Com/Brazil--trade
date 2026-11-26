@@ -134,10 +134,10 @@
    "stored": "data/cocoa/ice_grading_monthly.csv"
   },
   "cc_certs": {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261116.xls",
+   "received": "2026-11-26 04:09 UTC",
+   "file": "cocoa_cert_stock_20261125.xls",
    "label": "Cocoa certs: certified stock and grading (daily)",
-   "report_date": "2026-11-16",
+   "report_date": "2026-11-25",
    "stored": "data/cocoa/ice_certs_daily.csv"
   },
   "kc_grading": {
@@ -149,6 +149,90 @@
   }
  },
  "recent": [
+  {
+   "received": "2026-11-26 04:09 UTC",
+   "file": "cocoa_cert_stock_20261125.xls",
+   "type": "cc_certs",
+   "label": "Cocoa certs: certified stock and grading (daily)",
+   "market": "CC",
+   "report_date": "2026-11-25",
+   "stored": "data/cocoa/ice_certs_daily.csv",
+   "note": "970,491 bags certified; 57,481 pending grading",
+   "kept_copy": "data/ice_raw/latest/cc_certs.xls",
+   "original": "data/ice_raw/latest/cc_certs.xls"
+  },
+  {
+   "received": "2026-11-26 04:09 UTC",
+   "file": "cocoa_cert_stock_20261124.xls",
+   "type": "cc_certs",
+   "label": "Cocoa certs: certified stock and grading (daily)",
+   "market": "CC",
+   "report_date": "2026-11-24",
+   "stored": "data/cocoa/ice_certs_daily.csv",
+   "note": "962,536 bags certified; 63,986 pending grading",
+   "kept_copy": "data/ice_raw/latest/cc_certs.xls",
+   "original": "data/ice_raw/latest/cc_certs.xls"
+  },
+  {
+   "received": "2026-11-26 04:09 UTC",
+   "file": "cocoa_cert_stock_20261123.xls",
+   "type": "cc_certs",
+   "label": "Cocoa certs: certified stock and grading (daily)",
+   "market": "CC",
+   "report_date": "2026-11-23",
+   "stored": "data/cocoa/ice_certs_daily.csv",
+   "note": "933,351 bags certified; 58,202 pending grading",
+   "kept_copy": "data/ice_raw/latest/cc_certs.xls",
+   "original": "data/ice_raw/latest/cc_certs.xls"
+  },
+  {
+   "received": "2026-11-26 04:09 UTC",
+   "file": "cocoa_cert_stock_20261120.xls",
+   "type": "cc_certs",
+   "label": "Cocoa certs: certified stock and grading (daily)",
+   "market": "CC",
+   "report_date": "2026-11-20",
+   "stored": "data/cocoa/ice_certs_daily.csv",
+   "note": "905,581 bags certified; 66,189 pending grading",
+   "kept_copy": "data/ice_raw/latest/cc_certs.xls",
+   "original": "data/ice_raw/latest/cc_certs.xls"
+  },
+  {
+   "received": "2026-11-26 04:09 UTC",
+   "file": "cocoa_cert_stock_20261119.xls",
+   "type": "cc_certs",
+   "label": "Cocoa certs: certified stock and grading (daily)",
+   "market": "CC",
+   "report_date": "2026-11-19",
+   "stored": "data/cocoa/ice_certs_daily.csv",
+   "note": "878,909 bags certified; 88,131 pending grading",
+   "kept_copy": "data/ice_raw/latest/cc_certs.xls",
+   "original": "data/ice_raw/latest/cc_certs.xls"
+  },
+  {
+   "received": "2026-11-26 04:09 UTC",
+   "file": "cocoa_cert_stock_20261118.xls",
+   "type": "cc_certs",
+   "label": "Cocoa certs: certified stock and grading (daily)",
+   "market": "CC",
+   "report_date": "2026-11-18",
+   "stored": "data/cocoa/ice_certs_daily.csv",
+   "note": "851,133 bags certified; 111,013 pending grading",
+   "kept_copy": "data/ice_raw/latest/cc_certs.xls",
+   "original": "data/ice_raw/latest/cc_certs.xls"
+  },
+  {
+   "received": "2026-11-26 04:09 UTC",
+   "file": "cocoa_cert_stock_20261117.xls",
+   "type": "cc_certs",
+   "label": "Cocoa certs: certified stock and grading (daily)",
+   "market": "CC",
+   "report_date": "2026-11-17",
+   "stored": "data/cocoa/ice_certs_daily.csv",
+   "note": "823,274 bags certified; 131,683 pending grading",
+   "kept_copy": "data/ice_raw/latest/cc_certs.xls",
+   "original": "data/ice_raw/latest/cc_certs.xls"
+  },
   {
    "received": "2026-11-20 14:50 UTC",
    "file": "coffee_cert_stock_20261119.xls",
@@ -2271,85 +2355,8 @@
    "stored": "data/cocoa/ice_certs_daily.csv",
    "note": "607,122 bags certified; 29,620 pending grading",
    "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261023.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-23",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "603,298 bags certified; 35,523 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261022.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-22",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "595,614 bags certified; 16,641 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261021.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-21",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "595,614 bags certified; 13,587 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261020.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-20",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "572,522 bags certified; 38,233 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261019.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-19",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "553,860 bags certified; 66,337 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261016.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-16",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "533,175 bags certified; 76,703 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "cocoa_cert_stock_20261015.xls",
-   "type": "cc_certs",
-   "label": "Cocoa certs: certified stock and grading (daily)",
-   "market": "CC",
-   "report_date": "2026-10-15",
-   "stored": "data/cocoa/ice_certs_daily.csv",
-   "note": "515,240 bags certified; 93,493 pending grading",
-   "kept_copy": "data/ice_raw/latest/cc_certs.xls"
   }
  ],
  "unrecognised": [],
- "updated": "2026-11-26 04:04 UTC"
+ "updated": "2026-11-26 04:09 UTC"
 }
