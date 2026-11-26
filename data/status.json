@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 06:49 UTC",
+ "generated": "2026-11-26 06:55 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -569,12 +569,12 @@
   {
    "group": "Coffee",
    "source": "Vietnam coffee exports, NSO monthly report",
-   "latest": "2026-04-28",
+   "latest": "2026-10-28",
    "cadence": "monthly",
-   "age": 212,
+   "age": 29,
    "age_unit": "days",
    "limit": 45,
-   "state": "late",
+   "state": "ok",
    "manual": false,
    "used_in": "Differentials tab"
   },
@@ -1155,7 +1155,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 21,
+ "late": 20,
  "inbox": {
   "updated": "2026-11-26 05:26 UTC",
   "last": [
