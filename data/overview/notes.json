@@ -1,53 +1,59 @@
 {
- "updated": "2026-11-26",
- "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
- "markets": {
-  "cotton": {
-   "date": "2026-11-25",
-   "by": "claude",
-   "time": "14:45 CT",
-   "fundamental": "Mar rallied into the close to ~82.9, clearing Tuesday's highs and the 82.7 resistance as a weaker dollar and firmer crude helped outside money back in. No new supply or demand data; old-crop Mar/May keeps leaning on Texas Plains losses, but high-grade certs stay a two-sided risk for longs.",
-   "events": [
-    "Mar ~82.9, through 82.7 resistance (ICE)",
-    "Dollar index slips, firmer crude (WSJ, Pro Farmer)",
-    "Tuesday gains on outside factors (Barchart)"
-   ]
+  "updated": "2026-11-26",
+  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+  "markets": {
+    "cotton": {
+      "date": "2026-11-26",
+      "by": "bot",
+      "time": "22:32 CT",
+      "claude_date": "2026-11-25",
+      "fundamental": "No new headlines for this market in the last 30 hours.",
+      "events": [
+        "Mar ~82.9, through 82.7 resistance (ICE)",
+        "Dollar index slips, firmer crude (WSJ, Pro Farmer)",
+        "Tuesday gains on outside factors (Barchart)"
+      ]
+    },
+    "sugar": {
+      "date": "2026-11-26",
+      "by": "bot",
+      "time": "22:32 CT",
+      "claude_date": "2026-11-26",
+      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, price reports mixed (0 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
+      "events": [
+        "New Trump tariffs would likely increase sugar prices in the US (Reuters, 2026-11-25)"
+      ],
+      "claude_fund_score": -0.15,
+      "fund_score": -0.15
+    },
+    "coffee": {
+      "date": "2026-11-26",
+      "by": "bot",
+      "time": "22:32 CT",
+      "claude_date": "2026-11-26",
+      "fundamental": "No new headlines for this market in the last 30 hours.",
+      "events": [
+        "London robusta ~2,863 (+2.3%) off a three-year low (Reuters, ICE Europe)",
+        "Vietnam coffee prices slide on harvest pressure (Reuters)",
+        "Real firms to ~5.74 per dollar (TradingView)"
+      ],
+      "claude_fund_score": -0.35,
+      "fund_score": -0.35
+    },
+    "cocoa": {
+      "date": "2026-11-26",
+      "by": "bot",
+      "time": "22:32 CT",
+      "claude_date": "2026-11-26",
+      "fundamental": "No new headlines for this market in the last 30 hours.",
+      "events": [
+        "London cocoa ~4,037, unchanged (ICE Europe)",
+        "Cocoa near one-month high into the holiday on slow Ivorian arrivals (Reuters, Barchart)",
+        "No November ICCO bulletin published yet (ICCO)"
+      ],
+      "claude_fund_score": -0.05,
+      "fund_score": -0.05
+    }
   },
-  "sugar": {
-   "date": "2026-11-26",
-   "by": "claude",
-   "time": "11:45 CT",
-   "fundamental": "London whites added about 1% in the only open sugar market, and the real firmed again to ~5.74 per dollar, extending the squeeze on centre-south mills' forward selling. Nothing new from Brazil on cane crush or the sugar/ethanol mix, so the Brazil-first picture is unchanged; Mar (last ~18.34) should open Friday with a firmer tone.",
-   "events": [
-    "London white sugar ~522 (+1%) on Thanksgiving (ICE Europe)",
-    "Real firms to ~5.74 per dollar (TradingView)",
-    "Raw sugar near one-month high before the holiday (Reuters)"
-   ],
-   "fund_score": -0.15
-  },
-  "coffee": {
-   "date": "2026-11-26",
-   "by": "claude",
-   "time": "11:45 CT",
-   "fundamental": "Robusta bounced about 2% in London off its three-year low, though Vietnamese farm-gate prices are still slipping as the harvest moves, so the bounce looks like short-covering rather than tighter supply. The stronger real (~5.74) slows Brazilian selling; nothing new on ICE certified stocks or Brazil deliverability, which remain the anchor for Mar (~270).",
-   "events": [
-    "London robusta ~2,863 (+2.3%) off a three-year low (Reuters, ICE Europe)",
-    "Vietnam coffee prices slide on harvest pressure (Reuters)",
-    "Real firms to ~5.74 per dollar (TradingView)"
-   ],
-   "fund_score": -0.35
-  },
-  "cocoa": {
-   "date": "2026-11-26",
-   "by": "claude",
-   "time": "11:45 CT",
-   "fundamental": "London cocoa is flat near 4,040 in thin trade with New York shut. No new Ivory Coast arrivals tally, no COCOBOD news and still no November ICCO quarterly bulletin, so slow arrivals versus rising ICE certified stocks keeps the market balanced.",
-   "events": [
-    "London cocoa ~4,037, unchanged (ICE Europe)",
-    "Cocoa near one-month high into the holiday on slow Ivorian arrivals (Reuters, Barchart)",
-    "No November ICCO bulletin published yet (ICCO)"
-   ],
-   "fund_score": -0.05
-  }
- }
+  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-26 22:32 CT: Claude's desk read had not run for 5+ hours."
 }
