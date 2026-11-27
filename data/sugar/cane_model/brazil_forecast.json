@@ -1,11 +1,11 @@
 {
- "built": "2026-11-26 15:36 UTC",
+ "built": "2026-11-27 04:59 UTC",
  "region": "Brazil Centre-South",
  "unica_last_position": "2026-09-01",
  "current_season": {
   "season": "2026/2027",
   "mapa_last": "2026-10-31",
-  "weather_to": "2026-11-24",
+  "weather_to": "2026-11-25",
   "to_date": {
    "cane_mt": 541.99,
    "sugar_mt": 32.88
@@ -19,7 +19,7 @@
    "sugar_mt": 40.31
   },
   "sepoct_crush_lost_to_rain_mt": 19.3,
-  "sugar_premium_30d_c_lb": 2.11,
+  "sugar_premium_30d_c_lb": 2.05,
   "fortnights": [
    {
     "start": "2026-11-01",
@@ -38,12 +38,12 @@
     "end": "2026-11-30",
     "fn": 16,
     "weather": "observed + forecast",
-    "stop_days": 9.2,
-    "cane_mt": 11.15,
-    "mix": 43.6,
-    "kgt": 53.7,
-    "atr": 129.3,
-    "sugar_mt": 0.599
+    "stop_days": 10.2,
+    "cane_mt": 10.76,
+    "mix": 42.9,
+    "kgt": 52.5,
+    "atr": 128.5,
+    "sugar_mt": 0.565
    },
    {
     "start": "2026-12-01",
@@ -144,22 +144,22 @@
   ],
   "season_total": {
    "catchup_30": {
-    "cane_mt": 592.0,
-    "sugar_mt": 35.38,
+    "cane_mt": 591.6,
+    "sugar_mt": 35.34,
     "cane_yoy_pct": -2.7,
-    "sugar_yoy_pct": -12.2
+    "sugar_yoy_pct": -12.3
    },
    "catchup_50": {
-    "cane_mt": 595.8,
-    "sugar_mt": 35.57,
-    "cane_yoy_pct": -2.0,
+    "cane_mt": 595.5,
+    "sugar_mt": 35.54,
+    "cane_yoy_pct": -2.1,
     "sugar_yoy_pct": -11.8
    },
    "catchup_70": {
-    "cane_mt": 599.7,
-    "sugar_mt": 35.77,
-    "cane_yoy_pct": -1.4,
-    "sugar_yoy_pct": -11.3
+    "cane_mt": 599.3,
+    "sugar_mt": 35.73,
+    "cane_yoy_pct": -1.5,
+    "sugar_yoy_pct": -11.4
    }
   }
  },
