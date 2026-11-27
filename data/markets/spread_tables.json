@@ -1,5 +1,5 @@
 {
- "built": "2026-11-27 04:48 UTC",
+ "built": "2026-11-27 06:06 UTC",
  "asof": "2026-11-26",
  "coffee": [
   {
@@ -31,8 +31,8 @@
     "RCF2027"
    ],
    "unit": "$/t",
-   "value": 2837.0,
-   "chg": 39.0,
+   "value": 2857.0,
+   "chg": 59.0,
    "date": "2026-11-26"
   },
   {
@@ -42,8 +42,8 @@
     "RCH2027"
    ],
    "unit": "$/t",
-   "value": 2811.0,
-   "chg": 44.0,
+   "value": 2832.0,
+   "chg": 65.0,
    "date": "2026-11-26"
   },
   {
@@ -130,10 +130,10 @@
    ],
    "position": "1/2",
    "unit": "$/t",
-   "value": 26.0,
-   "pct_of_deferred": 0.92,
-   "chg": -5.0,
-   "pctile_1y": 31.0,
+   "value": 25.0,
+   "pct_of_deferred": 0.88,
+   "chg": -6.0,
+   "pctile_1y": 29.0,
    "date": "2026-11-26"
   },
   {
@@ -145,10 +145,10 @@
    ],
    "position": "2/3",
    "unit": "$/t",
-   "value": 12.0,
-   "pct_of_deferred": 0.43,
-   "chg": -7.0,
-   "pctile_1y": 6.0,
+   "value": 16.0,
+   "pct_of_deferred": 0.57,
+   "chg": -3.0,
+   "pctile_1y": 14.0,
    "date": "2026-11-26"
   },
   {
@@ -160,10 +160,10 @@
    ],
    "position": "3/4",
    "unit": "$/t",
-   "value": 15.0,
-   "pct_of_deferred": 0.54,
-   "chg": 6.0,
-   "pctile_1y": 20.0,
+   "value": 9.0,
+   "pct_of_deferred": 0.32,
+   "chg": 0.0,
+   "pctile_1y": 4.0,
    "date": "2026-11-26"
   },
   {
@@ -175,10 +175,10 @@
    ],
    "position": "4/5",
    "unit": "$/t",
-   "value": 4.0,
-   "pct_of_deferred": 0.14,
-   "chg": -2.0,
-   "pctile_1y": 0.0,
+   "value": 6.0,
+   "pct_of_deferred": 0.21,
+   "chg": 0.0,
+   "pctile_1y": 2.0,
    "date": "2026-11-26"
   },
   {
@@ -219,8 +219,8 @@
     "KCH2027"
    ],
    "unit": "c/lb",
-   "value": -15.61,
-   "chg": -6.3,
+   "value": -14.82,
+   "chg": -5.51,
    "pctile_1y": 90.0,
    "date": "2026-11-25",
    "note": "B3 US$/bag converted at 132.277 lb/bag; B3 front month may differ from the KC month"
@@ -256,8 +256,8 @@
     "WH2027"
    ],
    "unit": "$/t",
-   "value": 519.0,
-   "chg": 2.0,
+   "value": 522.4,
+   "chg": 5.4,
    "date": "2026-11-26"
   },
   {
@@ -267,8 +267,8 @@
     "WK2027"
    ],
    "unit": "$/t",
-   "value": 522.6,
-   "chg": 1.9,
+   "value": 526.6,
+   "chg": 5.9,
    "date": "2026-11-26"
   },
   {
@@ -340,10 +340,10 @@
    ],
    "position": "1/2",
    "unit": "$/t",
-   "value": -3.6,
-   "pct_of_deferred": -0.69,
-   "chg": 0.1,
-   "pctile_1y": 29.0,
+   "value": -4.2,
+   "pct_of_deferred": -0.8,
+   "chg": -0.5,
+   "pctile_1y": 26.0,
    "date": "2026-11-26"
   },
   {
@@ -355,10 +355,10 @@
    ],
    "position": "2/3",
    "unit": "$/t",
-   "value": 2.6,
-   "pct_of_deferred": 0.5,
-   "chg": -0.3,
-   "pctile_1y": 71.0,
+   "value": 2.4,
+   "pct_of_deferred": 0.46,
+   "chg": -0.5,
+   "pctile_1y": 70.0,
    "date": "2026-11-26"
   },
   {
@@ -370,10 +370,10 @@
    ],
    "position": "3/4",
    "unit": "$/t",
-   "value": 3.2,
-   "pct_of_deferred": 0.62,
-   "chg": -1.4,
-   "pctile_1y": 80.0,
+   "value": 4.2,
+   "pct_of_deferred": 0.81,
+   "chg": -0.4,
+   "pctile_1y": 89.0,
    "date": "2026-11-26"
   },
   {
