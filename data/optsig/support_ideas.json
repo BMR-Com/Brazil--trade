@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 03:00 UTC",
+ "generated": "2026-11-27 04:19 UTC",
  "note": "Support tests in tight markets: a selloff down to the active contract's own 200-day average while the market still looks tight. Research only, not investment advice; option prices are model values from settlement vols, check live prices.",
  "markets": {
   "SB": {
@@ -20,8 +20,8 @@
    },
    "confirm_kind": "parity",
    "brazil": {
-    "ethanol_parity": 15.74,
-    "cushion": 2.6,
+    "ethanol_parity": 16.18,
+    "cushion": 2.16,
     "sp_cristal_over_ny": 2.27,
     "sp_cristal_over_ny_pct_1y": 41.0,
     "santos_fob_over_ny": 3.8,
@@ -68,7 +68,7 @@
     "Mar 27 is 13% off its 60-day high",
     "200-day average 16.91 (+8.5% from price)",
     "Mar 27/May 27 spread +0.60 (92nd percentile of the past year, +0.04 over 5 sessions)",
-    "No. 11 is 2.60 c/lb over Brazil hydrous-ethanol parity (15.74)",
+    "No. 11 is 2.16 c/lb over Brazil hydrous-ethanol parity (16.18)",
     "CEPEA São Paulo crystal sugar +2.27 c/lb over No. 11 (41st percentile of the year; not rich, which has marked the weaker selloff buys); Santos FOB +3.80 (11th pct)"
    ]
   },
