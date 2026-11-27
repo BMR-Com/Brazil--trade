@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 04:18 UTC",
+ "generated": "2026-11-27 20:08 UTC",
  "beet": {
   "eu_fr_b": "Picardie / Hauts-de-France (Amiens)",
   "su_fr_ce": "Centre-Val de Loire / Beauce (Pithiviers)",
@@ -16,8 +16,19 @@
  "log": [
   [
    "archive-api.open-meteo.com",
-   429,
-   "{\"error\":true,\"reason\":\"Daily API request limit exceeded. Please try again tomorrow.\"}"
+   "HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read timeout=120)"
+  ],
+  [
+   "archive-api.open-meteo.com",
+   "HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read timeout=120)"
+  ],
+  [
+   "archive-api.open-meteo.com",
+   "HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read timeout=120)"
+  ],
+  [
+   "ensemble-api.open-meteo.com",
+   "HTTPSConnectionPool(host='ensemble-api.open-meteo.com', port=443): Read timed out. (read timeout=90)"
   ]
  ]
 }
