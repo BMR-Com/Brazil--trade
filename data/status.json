@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 21:56 UTC",
+ "generated": "2026-11-27 22:20 UTC",
  "today": "2026-11-27",
  "sources": [
   {
@@ -869,9 +869,9 @@
   {
    "group": "Cocoa",
    "source": "ICE cocoa certs and grading (upload)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -893,9 +893,9 @@
   {
    "group": "Cocoa",
    "source": "Certs profile and delivery value (built from the ICE files)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -1265,7 +1265,7 @@
  ],
  "late": 19,
  "inbox": {
-  "updated": "2026-11-27 05:20 UTC",
+  "updated": "2026-11-27 22:19 UTC",
   "last": [
    {
     "type": "CT_options",
@@ -1413,10 +1413,10 @@
    },
    {
     "type": "cc_certs",
-    "received": "2026-11-26 04:09 UTC",
-    "file": "cocoa_cert_stock_20261125.xls",
+    "received": "2026-11-27 22:19 UTC",
+    "file": "cocoa_cert_stock_20261127.xls",
     "label": "Cocoa certs: certified stock and grading (daily)",
-    "report_date": "2026-11-25",
+    "report_date": "2026-11-27",
     "stored": "data/cocoa/ice_certs_daily.csv"
    },
    {

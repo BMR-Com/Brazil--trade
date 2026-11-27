@@ -1052,3 +1052,38 @@ date,section,origin,growth_group,port,bags,lots
 2026-11-25,pending_grading,Venezuela,,,10002,59
 2026-11-25,warehouse_total,,,DR,3662389,
 2026-11-25,warehouse_total,,,NY,227533,
+2026-11-27,certified,Arriba (Ecuador),B,DR,726,5
+2026-11-27,certified,Colombia,B,DR,62932,428
+2026-11-27,certified,Colombia,B,NY,39105,267
+2026-11-27,certified,Ecuador,B,DR,639559,4352
+2026-11-27,certified,Ecuador,B,NY,28104,194
+2026-11-27,certified,Ivory Coast,A,DR,1232,8
+2026-11-27,certified,Mexico,B,NY,6306,41
+2026-11-27,certified,Nicaragua,B,DR,5881,40
+2026-11-27,certified,Nicaragua,B,NY,7817,53
+2026-11-27,certified,Nigeria,A,DR,17387,110
+2026-11-27,certified,Nigeria,B,DR,624,4
+2026-11-27,certified,Peru,B,DR,58056,370
+2026-11-27,certified,Sanchez,B,DR,31498,220
+2026-11-27,certified,Uganda,B,DR,795,5
+2026-11-27,certified,Venezuela,B,DR,61579,363
+2026-11-27,certified,Venezuela,B,NY,7210,43
+2026-11-27,passed_grading,Arriba (Ecuador),,,726,5
+2026-11-27,passed_grading,Colombia,,,50153,343
+2026-11-27,passed_grading,Ecuador,,,402647,2730
+2026-11-27,passed_grading,Ivory Coast,,,1232,8
+2026-11-27,passed_grading,Mexico,,,6306,41
+2026-11-27,passed_grading,Nicaragua,,,11235,77
+2026-11-27,passed_grading,Nigeria,,,14219,90
+2026-11-27,passed_grading,Peru,,,18944,121
+2026-11-27,passed_grading,Sanchez,,,9256,65
+2026-11-27,passed_grading,Uganda,,,795,5
+2026-11-27,passed_grading,Venezuela,,,46969,278
+2026-11-27,pending_grading,Colombia,,,12351,75
+2026-11-27,pending_grading,Ecuador,,,4350,30
+2026-11-27,pending_grading,Nicaragua,,,1447,10
+2026-11-27,pending_grading,Nigeria,,,8154,51
+2026-11-27,pending_grading,Peru,,,21177,137
+2026-11-27,pending_grading,Venezuela,,,10002,59
+2026-11-27,warehouse_total,,,DR,3661768,
+2026-11-27,warehouse_total,,,NY,227533,

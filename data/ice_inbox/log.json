@@ -134,10 +134,10 @@
    "stored": "data/cocoa/ice_grading_monthly.csv"
   },
   "cc_certs": {
-   "received": "2026-11-26 04:09 UTC",
-   "file": "cocoa_cert_stock_20261125.xls",
+   "received": "2026-11-27 22:19 UTC",
+   "file": "cocoa_cert_stock_20261127.xls",
    "label": "Cocoa certs: certified stock and grading (daily)",
-   "report_date": "2026-11-25",
+   "report_date": "2026-11-27",
    "stored": "data/cocoa/ice_certs_daily.csv"
   },
   "kc_grading": {
@@ -156,6 +156,18 @@
   }
  },
  "recent": [
+  {
+   "received": "2026-11-27 22:19 UTC",
+   "file": "cocoa_cert_stock_20261127.xls",
+   "type": "cc_certs",
+   "label": "Cocoa certs: certified stock and grading (daily)",
+   "market": "CC",
+   "report_date": "2026-11-27",
+   "stored": "data/cocoa/ice_certs_daily.csv",
+   "note": "968,811 bags certified; 57,481 pending grading",
+   "kept_copy": "data/ice_raw/latest/cc_certs.xls",
+   "original": "data/ice_raw/latest/cc_certs.xls"
+  },
   {
    "received": "2026-11-26 15:40 UTC",
    "file": "faad5495-CT_Futures_2026-11-18.pdf",
@@ -2351,19 +2363,8 @@
    "stored": "data/coffee/ice_grading_monthly.csv",
    "note": "2 table(s): 2026-09|month, 2026-09|year_to_date",
    "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
-  },
-  {
-   "received": "2026-11-17 16:36 UTC",
-   "file": "Coffee_Grading_Analysis_September_2025.pdf",
-   "type": "kc_grading",
-   "label": "Coffee grading summary (monthly)",
-   "market": "KC",
-   "report_date": "2025-09",
-   "stored": "data/coffee/ice_grading_monthly.csv",
-   "note": "2 table(s): 2025-09|month, 2025-09|year_to_date",
-   "kept_copy": "data/ice_raw/latest/kc_grading.pdf"
   }
  ],
  "unrecognised": [],
- "updated": "2026-11-27 05:20 UTC"
+ "updated": "2026-11-27 22:19 UTC"
 }
