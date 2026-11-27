@@ -1,6 +1,426 @@
 {
-"generated": "2026-11-27 05:07 UTC",
+"generated": "2026-11-27 21:23 UTC",
 "items": [
+{
+"title": "Cattle Rally Out of Thanksgiving with Friday Gains",
+"link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPQXZpRHdjSzBSUDJDUmROUTV1bVEwMkdMUl8yZlNHNnVrNTRPdGtuZzdkMGRNRVlNWFNqd0xyNkJZNlQ1OWV4QlFSeEsyNzN1QWZqS2ZkR042VFBxRW55Yk1TcjVVOE01SmRCZm0zeThQQ0xUWWdKS2hHT0xyc2Z3WlI4WUNoS3otdjc2bng5blE4eTdpdXA2eWV3?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T21:14Z",
+"topic": "outlet:farmprogress.com",
+"tags": [
+"cattle"
+],
+"tier": 3
+},
+{
+"title": "Hogs Close with Gains on Short Friday Session",
+"link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMGFQWjFTY1c0QmQ4UVRaM0t4NkxRb0huMlVmb0E2TnVlN0Jjd1g5QzNrcGwxNWJBQUtoYW5KYklkd1NiV3hZRVJoVFZlVVlHZ2J1V1EwMGdyamhmUDZOWlBfZGdZc2NrVDJ0czhfZ2wxRnNiMjdqUFZKenV3c0ZPU0xkQThHNk5FSE1VVm0xbURKY2M?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T21:14Z",
+"topic": "outlet:nationalhogfarmer.com",
+"tags": [
+"hogs"
+],
+"tier": 3
+},
+{
+"title": "Wheat Round Out Post-Thanksgiving Trade with Gains",
+"link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcUo4Ynd0ODBVbDZxelNGN1FEZkxTQ3VpakRPNzcyZW5GcTNMZGVqRTB2N0U2cHc3THY2NFhwVTBuaEVJMEdDRlhzeE5pVFhDeC1SY29PdTFJM3VEZzNoTXJGVVloYXE1NW1McUoyVy1ha3IwWENzV21WYXI3REg4bi02LVNGNGFSZ0tjUS1ickFyQ21CYVdnamd3?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T21:14Z",
+"topic": "outlet:reuters.com",
+"tags": [
+"wheat"
+],
+"tier": 3
+},
+{
+"title": "Corn Bulls Rally on the Post-Thanksgiving Session",
+"link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTklUWDFFa0wxYTdNb1l2M0M4aTlvTEJBNDBOVXh5ZFZiUWlTY2hzeDhsYl9XM0dseVZRUjZBd0gxR1lFSTZuM2dBYjlrUVhnRjdiMkhLZVgzcUowSDBqTlp1V251aWlwNUd3aTIybGVzQjk1clNBX1VRTE1hNTNfSWJjV1NNSkZROGRQSlBCY2dramFranBNMQ?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T21:14Z",
+"topic": "outlet:drovers.com",
+"tags": [
+"corn"
+],
+"tier": 3
+},
+{
+"title": "Cattle, hog futures higher to finish the week",
+"link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdHh0X1N2YjBaZVFaQURFVUJIUWdjTlR3UmNPNFhOVC1FNUQ4TnJQU1ZDZGNydTNHa3IxdVA5LUtPTTRFTEllQzhCczNHcmtxM2dyVllFLVU5dFVfenRxbjdCUHlHZnd5N0UwcVZHODhMcUp0Rmh1aXphSlV1dWhscm5ZemN0U1Vi?oc=5",
+"source": "Brownfield Ag News",
+"time": "2026-11-27T21:01Z",
+"topic": "outlet:hoards.com",
+"tags": [
+"hogs",
+"cattle"
+],
+"tier": 3
+},
+{
+"title": "Did Corn and Soybean Futures Break Out to End the Week?",
+"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQ1dkNk04SWprOWI5aUFlY3pORVdjZFJjTTcyR3UyeXpXcWhPaV9idXJObUd3elNCQWh1WE5mYjY1bzRfZDNGZXI2V0VRbmVFMDV5Zm9RcGczOTVVYkJkazFfOWNFUUp4ZWNfVDVERDVhMzh3c2ZwYlJvNmZuTW4yVnUwUWdCLTA3Q3JZWUVSYTB2Q0dCZDRZSnFsQ3FVOGs?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T20:11Z",
+"topic": "outlet:brownfieldagnews.com",
+"tags": [
+"corn",
+"soybeans"
+],
+"tier": 3
+},
+{
+"title": "Corn and Soybeans Gap Higher, Livestock Post Solid Gains | Friday, Nov. 27, 2026",
+"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQdlFqclhFWlc4X1diQmVCb0JkWHF4ekR4WGpQVXhUU29qeDhPNm45aFJ6c2MwTklwRFpod0ZuejUwU1pnRjUyZTAxUUJmYmhyTDVydVhJcG1hY3dWU2JNNlNzd2dfSVc5bEN0MFpTYVlScUxUbzgzanVWaXVYSUx3SHM3M1duVDdPWWJBSUNBY1BObml5S1dFRXVkY19ZUmZObWdINXZfTi1zX0dkQ2VrYU5YbGw?oc=5",
+"source": "Successful Farming",
+"time": "2026-11-27T20:05Z",
+"topic": "outlet:nationalhogfarmer.com",
+"tags": [
+"corn",
+"soybeans"
+],
+"tier": 3
+},
+{
+"title": "Ag Market View for Nov 27.2026",
+"link": "https://www.admis.com/ag-market-view-for-nov-27-2026/",
+"source": "ADMIS",
+"time": "2026-11-27T19:11Z",
+"topic": "admis:grains",
+"tags": [
+"corn"
+],
+"tier": 2,
+"teaser": "CORN Prices jumped $.05-$.06 closing a couple cents off session highs. Spreads recovered closing mixed…"
+},
+{
+"title": "Sugar Prices Settle Higher on Supply Conccerns and Brazilian Real Strength",
+"link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNGJzX1FvbHdxV2lmRmhkZ2staVZPdkc0cEU2N0hsaFl1SER2WFIwR0owUUhrMGNNNHl5cVFXM01CUVNlYlFTLUF6MUsyS19oR1htSVYwaEFyczdfamozSHFjQUZtQUNxTEJUOXJhWkZXLTZ2b3dEY1JYZFFxbU5kbUgycFBpcmlGTEE0aTdKM3BDU2xqMVFqaDludWJlenZiVnY3ZTZyUVM4dWhDNHVBODQ2b2NqU0YxMWc?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T19:08Z",
+"topic": "outlet:bloomberg.com",
+"tags": [
+"sugar",
+"south_america"
+],
+"tier": 3
+},
+{
+"title": "Supply Woes Push Cocoa Prices to 3-Week Highs",
+"link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZFdQVnFQUTF2YTdWMkRRVk81UlRETE5IY3VyWnN2UDRfMGdQWnF6cUNWVmNJdENJRjZOS0VSbHl3ZnY3X2YzamVQOVA4NjVMZmZWaXBhVkUxOXFLa1p3eXNYUzAwdmJRbl9FRFFVZFowOVZ6cXlNWVhDaF9famJyMXg2Vk5INndybkpfeGJ3T01rb2M?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T19:07Z",
+"topic": "outlet:reuters.com",
+"tags": [
+"cocoa"
+],
+"tier": 3
+},
+{
+"title": "Brazilian Real Strength Lifts Coffee Prices",
+"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRHZKXzduYi1uaXd4OElBM0RBREFSTUFaVHlETGdfVXd2WVNkNEg2enlwN2RTTVM0MF9WczE3Yy14SkNRYnJvcXdXc2t1ZUhCSkFVZXJ2WEZlUUI5RnVsMk42em0wTzBoYlg3QXFJR05zRFM5UFRtdmJ5X2xlR3Q2TzFkblhFSk43amdfWXRRMGw?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T19:06Z",
+"topic": "outlet:brownfieldagnews.com",
+"tags": [
+"coffee",
+"south_america"
+],
+"tier": 3
+},
+{
+"title": "Grain Spreads: Impressive Meal Demand",
+"link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQN2xlZkUwWlJCRl9LN3RKUnZHRU0zYnlvQnVSNFdQVlpOT1U5S2NiRnZaRkFhSmJ0TVJ1ckJCdVdWLWZwOWk5NWhyR1lYeTMxWlBwSEVJc1c2LUxaS0tqZjQ5b1JWX2ZERll0MTVTVWczeXpaTUtSbWt1QjhFc2JDaElEOW5ROEE?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T18:14Z",
+"topic": "outlet:brownfieldagnews.com",
+"tags": [
+"meal"
+],
+"tier": 3
+},
+{
+"title": "OPEC Faces Growing Pressure As Iraq Pushes for Higher Quota",
+"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSU9hekxJRTJMT0h2SWFYdW5VNXhsOXY3c2I2R251YnJ4akhzMFNQWldkM3ZrV2pqOXNmOUV3eXN4SkJvMG52dVphdkhodGRUWmdMUXJIeUhzRzlOTXZzbmNUS2w0ZWlXckZ3S1JTVVJldXdlTVZBMmxILVE3THUzZnN0LVVyMURza0RieEpqMkZUN1pTb1dDSmhzNmYycHM1cVZWSnJyZXVBRm9razdMTUhxRUJGd9IBuwFBVV95cUxNb0QxM1BfUlBfWVVkeUxZZTUtZ1BUR1lobVBoV0Z0VGR5LVNxV2k4MURwdmZ3RlM0M09xdERpWV9CUkFadkR2LUp0QmtzeGo4R0V2OWZFXzVjVU13MWlmTXBtRTJCVHUwYUgwSmx0OUpRcW1xdGNaVGhfUVVyZ25zUlpraGJYcE51MFZnLXgxN2xOTDFFSGhBTHAyeVhveUxKN3NGclZqZUlNc1FhZ0RNVUxKVXNVNWpOZ3d3?oc=5",
+"source": "Crude Oil Prices Today | OilPrice.com",
+"time": "2026-11-27T17:30Z",
+"topic": "crude",
+"tags": [
+"crude"
+],
+"tier": 3
+},
+{
+"title": "Supply Fears and Brazilian Real Strength Boost Sugar Prices",
+"link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQ0J1cnpRNXduSnl1T19DNVFjODlhcjJpdVdLemd4T0dqc1pUcjNEaXhjTHlzbUllWThXV0Rnb245X1VMLTkzNmhiVzBPMl9SSmhpc1hOakJMSldEbkhxeVpvMlp3NEJYZVVzVnZ3TFF1THNWSDZ3Y0thZTBfQUFCUjAwSklWVjBiVTBnX0dtZ2tJaFkySnY0OWltTkNaNnR4RE84RzNB?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T17:16Z",
+"topic": "outlet:agriculture.com",
+"tags": [
+"sugar",
+"south_america"
+],
+"tier": 3
+},
+{
+"title": "Soybeans Rallying on Short Friday Session",
+"link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZkZaODhieURKOU1TMlJIUmJRVlcyS0JmUndMeGc3cXVncC1EZkVGdDdzNkFwam5FdnRfb1JyODA5cU55VHdJLUVHM3FRLU9pSGdMbnVxb2pGV1hUX0N0MTdvdV9UMTVjVXlGaGMzQkRmb0t1SFhUYVhqTVFVcGRjMnltOGdlOGVFNXIyc09n?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T17:06Z",
+"topic": "outlet:farmprogress.com",
+"tags": [
+"soybeans"
+],
+"tier": 3
+},
+{
+"title": "Hogs Rallying on Short Friday Session",
+"link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNS1KbWVjUVB0RTJGZnU1ODZQMi1NenMzWG9yYml2OXB4VHNkejNvRjBWT1Y1eUZiSURMb0RpWF8zcmppZFlwM2RCcUYzdXNOYURia08wajFuZ2RySkdZWUxJSWxlQzdBMDVNTkZQczdyZU45aEhaU2lZWXhtQ29JS1ZDZjlpbWZX?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T17:06Z",
+"topic": "outlet:farmprogress.com",
+"tags": [
+"hogs"
+],
+"tier": 3
+},
+{
+"title": "Cotton Rallying on Friday",
+"link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9JaTFUaFhkbnczSU9WbGdZRGt4bmhNNVZrMGtzSXNxeTgya0NVYmNzamJ3a2xQRjF0blo3NzdSZE5BYzN0UW54REVyU2xYMHo0M3NqN3FMSnpSVThKSDZRYzNqd2hSSk9DWW5ldWEzbVpvSGFnZmJNUA?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T17:06Z",
+"topic": "outlet:dairyherd.com",
+"tags": [
+"cotton"
+],
+"tier": 3
+},
+{
+"title": "Cattle Printing Post-Thanksgiving Gains",
+"link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeVJ1aGJ3dVByVW1FaVNxTENGUzVuVWFFejRQRkR6aEVoT2xrbGVENF9tOTNGOE9uNHZYWUpKaXdBMGZKMlNxN3RpWTlkalhqWk93Mk1YWWZJQ2Z5NWI2MjUxVzZmLU1yV0ZncjNTWHlvSjUtLTJoeC01THJvZkt6ajNUQVJGNTBJLWY0?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T17:06Z",
+"topic": "outlet:nationalhogfarmer.com",
+"tags": [
+"cattle"
+],
+"tier": 3
+},
+{
+"title": "Rains Ease El Niño Crop Fears in Brazil’s Top Soybean Region",
+"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdERJa2dmYXNla0lwc3dBV2lZRHhMQ2dZN01fOW82TkEtQlJXZGs0VklQQU1iUDhfa0N4RWFJeHJXR1pvWVVnZF9UMVRKNlNIa1NLY29jTlpqbFJsNng1LXpzQlZwOXFZUFpna2FMdjR4dGtmc0F5NnlzMlNjS2ZCQUZBcHVYZ1lvSmtwNENrZjBqcUVUdGxzNmEzSy16QXNib1FLaWVPN1Y1elp1VklvZg?oc=5",
+"source": "Bloomberg",
+"time": "2026-11-27T16:59Z",
+"topic": "soybeans",
+"tags": [
+"soybeans",
+"south_america"
+],
+"tier": 1
+},
+{
+"title": "Coffee Prices Strengthen with the Brazilian Real",
+"link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWEcwd3pyNWxwTTc0T3ZXalZjV3Jkc2VDQWRUNHUxRV9nczRhaU5IMVpKUERpbHNkYUlRenVyelQxaGF0bGNGMTNRWkMyN1Nxa25Ub0p3UUNITFhNUThnQ2oyLUcyamNma0E4YVZiODB6RFBGZG8taEdlN2pMSFN4MkwwNXVUU09wQXlYUFZPX0d5WGU4bHNJ?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T16:42Z",
+"topic": "outlet:nationalhogfarmer.com",
+"tags": [
+"coffee",
+"south_america"
+],
+"tier": 3
+},
+{
+"title": "Fortiva: Feed efficiency impacts milk production",
+"link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUU5QSkdzUjBoZTNmZHNNZmVpLUgxSHV3eUVocFFqbkF1NmNUdUQ1NU10dUxhUlk5S25oUS1HdE1mWFJaVjdSNjRQVmttdGJMOU5RRW5nLUx3dkZGaW85bFJTaGhpOUptSEJGdlE3a0JXd09YRmtKbEN3R2p1TVJqMzZOVy1GSmIwZ2c?oc=5",
+"source": "Brownfield Ag News",
+"time": "2026-11-27T15:54Z",
+"topic": "outlet:agriculture.com",
+"tags": [
+"dairy"
+],
+"tier": 3
+},
+{
+"title": "Cocoa Climbs on Supply Concerns",
+"link": "https://www.admis.com/cocoa-climbs-on-supply-concerns/",
+"source": "ADMIS",
+"time": "2026-11-27T15:02Z",
+"topic": "admis:softs",
+"tags": [
+"cocoa"
+],
+"tier": 2,
+"teaser": "COCOA March Cocoa was higher early Friday and traded right through the 50-day moving average…."
+},
+{
+"title": "Lean Hogs Moving Into Oversold",
+"link": "https://www.admis.com/lean-hogs-moving-into-oversold/",
+"source": "ADMIS",
+"time": "2026-11-27T14:46Z",
+"topic": "admis:livestock",
+"tags": [
+"hogs"
+],
+"tier": 2,
+"teaser": "MORNING LIVESTOCK FUTURES OUTLOOK LEAN HOG COMPLEX Lean hogs and lean hog spreads are moving…"
+},
+{
+"title": "U.S. Encouraged Iraq and Venezuela to Leave OPEC, Sources Say",
+"link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNajhfVmttRkZVVS02V00zX1JYOG9CQUo4azVvMGxYYll6dmdNb0pnaVZJTTVLNE5xeGlQRXZYdDJjSGVZZF9Fc2JnNGpyUnh4Vjh2UWY3NHFHaGcwY3d2X0NSRWZIVXRyQnlFb1ZiaEp3eV9fZ1poOUJnS2RGQVdzX2loVk1xcjBkOG5SUzQ2ZVlBNkIwSnFPRFZpdEI0RGFzVnhHVjV4eVNneXNFZUZqTFVQUjc5cVIyOGlrSjVfWdIBxAFBVV95cUxOU2Y3UHFuNndTczdKUXhIRWxyTW5kTXZiSFhZdWU5bXZVOFFsa1NSdFlqNDBUTWRfaGJRWjB5OGFBVjV5ZG9ETkRWeEhxQy1oY18yZnlRRVQ3SFZ6SXRUMHgzNXZYZmp3M0dCRUpXZFp6S21JVW1nQlJfNUY5TlZWTE9aNnBGaF8tSElNTDI2azU3REZMT1ZGYkFyNUZiYkdReDEycXlScTNVamVRSVR0NHJtY2ZER3E0aldpVzVxTnlXUE5o?oc=5",
+"source": "Crude Oil Prices Today | OilPrice.com",
+"time": "2026-11-27T14:30Z",
+"topic": "crude",
+"tags": [
+"crude"
+],
+"tier": 3
+},
+{
+"title": "USDA Crop Data Under Scrutiny as Farm Survey Participation Drops More Than 34%",
+"link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPa25KdjZpRGdGWWZiaWRrNDhOQlpSLU9RTXdoQVF2d3VrcG4yd0pyU3F0S0hoeXFwYUoySVlGZlQwREFRNEZlTE9CbC0ybnJIOFd2aXhTZUxtYmgxNVNkSFozZG1FRkhYbEh0TVVlSm1pcWFUQkZmdE9wODV2QTlxdnN3cnJOamttZGFWRVAxNEhMOHRjRGt4VzhTWmt6dXFEa0ctV1d5bnVPRkRrV3Y2QzRsNA?oc=5",
+"source": "AgroLatam",
+"time": "2026-11-27T14:15Z",
+"topic": "outlet:agweb.com",
+"tags": [
+"usda"
+],
+"tier": 3
+},
+{
+"title": "Hogs Look to Friday Trade",
+"link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5iendwUmttcDVSOTBGdHp3Vm96V0N0dnVqQUxZQXdFMU9ZQ0dRU2hZcE1obHNKUVNwWkt0OU02akFxbWRYc1FxOVE4eGgxR1U5YnZHVDJYT1N6Ui03RzJJNEhlUFp5R3ZQRk5LNXNiTHpKbVNvOWNPbQ?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T13:32Z",
+"topic": "outlet:marketwatch.com",
+"tags": [
+"hogs"
+],
+"tier": 3
+},
+{
+"title": "Corn Traders Look to Come Back from Thanksgiving Break",
+"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOOVd6dEd6d0V6d0JjUlpObWdjbDY2SzNCdS14am1jRk5NRDdvX3dEZFhCMXBtd0tVSGRGQXhTQlVJLXNlcTlxSWFiWTFmc1I0SHpnZk5yVGpjTWZ3Uk5ERlNiVXcwNkJTM2I3blh6ejdkMVYyODMzN0RSd1dsc28yWllhdDJKYy1Id0IxRXZ0ZThVd2hyUHM1amxlcVUtZzA?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T13:32Z",
+"topic": "outlet:agriculture.com",
+"tags": [
+"corn"
+],
+"tier": 3
+},
+{
+"title": "Wheat Looks to Shortened Friday Trade",
+"link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUDVDaXcxa29QTE0tWkpkTU5XOXFRRHkwZ3ZDZ0RjWXdWX25ZS3BfdzVUQzdDVXNWMG50ajhTdEFzMlUwY3VpY0t4SjE2N1ZvcWs5TzQ2TVVlNjc5SkduNUJaV252TTN1WWJOaGFsZjRzQVllSEZFWVI5X3cwdVZPZ2VNcUd4djFu?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T13:32Z",
+"topic": "outlet:marketwatch.com",
+"tags": [
+"wheat"
+],
+"tier": 3
+},
+{
+"title": "Cattle Traders Look to Closer Out the Week",
+"link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPbExSMktTekJfMG1KV2txZm9yUmJLZUtUNHVWRURVSTFKU1pKN1drQkVLNkVtY1JrSzRVa21xRExuRUV2NGlCSmIxclZPcWQtMXVkVXRxRGhmajdudG9fZEczQXRvcXd0R0xubkpvWVVycU1rbFE1aDNVZHY4Rzc0RWFpNGo4UjJITWxNZDRTcw?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-27T13:32Z",
+"topic": "outlet:marketwatch.com",
+"tags": [
+"cattle"
+],
+"tier": 3
+},
+{
+"title": "Stockpiling Will Support Oil Prices in 2027, Energy Aspects Says",
+"link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRDM5MUpycUo5dEdkS3RYZ09KMGRVbGJ2YzRQOW1BMHF3OUUxR0h1eTRKODA0ZmJ1Y2xfcUk3MTJkZDVGSE00WGI3WW45MkNrWkYzRVBTd0RqYlVfTFdKQmtZOXZaekttczRseGJmMlUxdTZuNTRfY3lkYkwtc1ROcld3eFEtRnJSMEIxMlR6X1ByeDJPdWFUdXd6cG1vajgwTDBJN1dPN3h0VDFTaTVvd19xQkhGcnFqd2lR0gHAAUFVX3lxTE5fa1g1NUxDRGxMNDM5QlVOWFJnd0I4WmlsSjJlVjFmTGxfU3ZBLUh5ay1uZG15UHNlQ1BDMWtQOFR5LXA4eEtubDM0ekNrTHVOSl9Td2hmVnRIc0Fwa2J4Y3JJQjZoS1JQMzJNN1gzOC1nenZQbTBJZWFrSUJDR2RHLVk2ZmdEWldVQm9ueTdHWVdaaG5vMThvbmxhOXBLQlhFejh5djAtQkVkQ2g3bU1PaGlNVlVIZWtLNS1sOTZtcg?oc=5",
+"source": "Crude Oil Prices Today | OilPrice.com",
+"time": "2026-11-27T12:30Z",
+"topic": "crude",
+"tags": [
+"crude"
+],
+"tier": 3
+},
+{
+"title": "Global diesel market to run into deficit in second quarter of 2027",
+"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNLUh5OURIMC1MRmNIM3pMa2ZMUnBhZjl4TjRVUWl6QTg4Mk9FdXluQWVubzNSOUNMUmROMGdnWGp2Wlp3Y1NxdFdaQ0tubFFoZTVlS3hydlBkcDJUWURvLVZKamppQTlvSm8yYkV0NE5rRlp6TVUtSzNsOUtGYUJtR1pWMl94TjA5UFRta3lPVldBaGtxQm95Wng2UVlwckszVVhaTHFYQ044cjNPQUE?oc=5",
+"source": "Reuters",
+"time": "2026-11-27T12:25Z",
+"topic": "natgas",
+"tags": [
+"products"
+],
+"tier": 1
+},
+{
+"title": "Russian domestic natural gas price may complicate talks with China, analyst says",
+"link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQNHJSUDNXTTVWWEpBdmZJMEhFc2V2THkwZm5aYm1WLXhKRG9kYkl0V1g4V0oxeHNTZkVIQnZiX0sxOWM5ME85Q2RMUDlHSDZMQVM3dTB4MFZQa1VPbkEyOUI5b2VnV0EyXzRlUldCYl9MV2JiUzJPcHc1cnF4OXBPZHBIVjVxdU5TUnByaGdidjZwUGFPdFZJNUJjUkZUcTNHT0otNlVDZklOTmRxc3NHM2w2aHIyTnJPeTgxaGRJamI4X0tkcV93c0ZFUQ?oc=5",
+"source": "Reuters",
+"time": "2026-11-27T12:21Z",
+"topic": "natgas",
+"tags": [
+"natgas"
+],
+"tier": 1
+},
+{
+"title": "USDA cyberattack knocks out farm loan systems for a week",
+"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMHFDRlZGT2NWdS1RV2xEUHdyZld2Q3V4NVd3UmstMV9QcTAxa1BiQWZiZVM3NXRqcGFVeFJBWXEydkxUcG1hejFUREVnNjJUNk5PU3IzWVpQUXFWNE5IS2FZUEZFNWo2bmVBQ0tEbS1hVlA0Ujdzb2NuV2FJNmoyZFdoaHpKY3VodGNMSW14ak9VblczTzR0YUtmOWFxbzA?oc=5",
+"source": "Farm Progress",
+"time": "2026-11-27T12:02Z",
+"topic": "outlet:reuters.com",
+"tags": [
+"usda"
+],
+"tier": 3
+},
+{
+"title": "Farmer Trust in USDA Crop Data Is Low — Can These Changes Help?",
+"link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQc1c3ZHJFX1RrSk54T2JZaXJvSllZeXl3RjBGTjdramxlZnRlTlpOcVFXampqY0pWQnhjTUJmckFjbkpaZzdVZF9KZ1BSc1plUzBKQkpmV3R5eU53ZDVpRFN6ODhvbDBmYkVwbTJYSnRjN1BjVm5SSnljZHBTUWdlWmRWdFd1V0d5dV9hQnhULXp2ZFZPSUhvR280LXNXUQ?oc=5",
+"source": "Successful Farming",
+"time": "2026-11-27T12:00Z",
+"topic": "outlet:brownfieldagnews.com",
+"tags": [
+"usda"
+],
+"tier": 3
+},
+{
+"title": "Iraq Boosts Oil Exports to 3.6 Million Barrels per Day",
+"link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNYlRTS2plSlM4bl9XWVJTcGx0QkpyYTJWT2w0cF8tWkx5NlhrSU02eEFHdmw1Z2J1OWRHWVEtY05HanFhZlhDeXJmdEw1UDN3UG9EVUtNRXp5eVhST2J2SVh4Y2hFMmFITVNhZm5haXZnMV9Ba3ZISm5UY0pKTWtKTjR4OEdYZzJDVk11MmNPV1d1U0RVY09KcmtnQjJ4NXZYdllCZDhkSzRqZUN5c0HSAbMBQVVfeXFMT2Y4TlVfVmxReWEwOWp6UGpRd2czZGJtaDZYQVcydDZwQTVyNWxrZDFGQlQ1WnlvbEZfVWdDWDRDYTU3THRKQ016NVA2MGxvZGlLVldjTGlMamRVV1A5MDdTQ0RZbzVaM0lHSmJTSEU5NUtpZWx0Y1cxdjFZWWlwdkplWDQzcEhPMDJXS3F5YUlFT2FsY09Ed3REWGozWThXUjRkVXhoMGota0FJb3NjaTlaYk0?oc=5",
+"source": "Crude Oil Prices Today | OilPrice.com",
+"time": "2026-11-27T11:30Z",
+"topic": "crude",
+"tags": [
+"crude"
+],
+"tier": 3
+},
+{
+"title": "Iraq Delays Up to 30 Million Barrels of Crude Oil Shipments",
+"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZmx4Rnp6emJjRGMzSGdrN3pQY3hyTExsbmx3bVFuNXBTeC1QczdTYlFtOUtsTFl4aEFVT3o3cFI1dnJqVzNfUkt3YnVYTUhKY3p2V1pVcVljMzliNTNKS0xWT3AyNE1HcDBtNGJ5aTBUbzlQNmhrWmFJbzdEUVQ1QWNTcHB0cWJTczIzZWtpYXpsYlZXcmRvcVZnWnprTW1yTnBTcmsybHpTQW96V056Q3lZc0VTUdIBuwFBVV95cUxQYzUydy0tczFPbFRvZlpxTkNiZFZTWXdVODlTQ2Z0N25ZaTlXRmthTnFOQVIzLUxnc0IyZFFCSHlOZ2ZtbHBzTkJHY2lFVGdBTHBQZndpcnZPcGdwLS00Qm52Nkl0dHYxXzMwbEhYSnFGNHlZT3dFSS11a2RtRjVDZEdaN3NwNEk5MldlRmoxeW9va2M5V1JsY3lnTDZCc21ISy1IeEFLSUtQT3pha1l0U3ljTnRHOF9RUWJZ?oc=5",
+"source": "Crude Oil Prices Today | OilPrice.com",
+"time": "2026-11-27T08:30Z",
+"topic": "crude",
+"tags": [
+"crude"
+],
+"tier": 3
+},
+{
+"title": "DTN Fundamentally Speaking: Soybean Oil's Percent of Soybean Crush Value Continues to Recede",
+"link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZVdQUHN3SE5zeldKZ3pGTDFrNFlhV214Q0dhWnVpd25XdHg5VmZEWXJocUVTTG1ULUJ6VHAxbDhkcHU5YlI5ekQ5dGNYU1NjYWtVQUJjeFJ5ZjB5Z3hoZTFqNXJMcHAzRDJVeWY2VGV5c2R3ZmNNRnZFT01ta2ZLb2l4ZG1UYXNFNGJTbTZuY1VHZVY4NUh4bUtTWWN0c2c2?oc=5",
+"source": "DTN Progressive Farmer",
+"time": "2026-11-27T07:19Z",
+"topic": "outlet:dairyherd.com",
+"tags": [
+"soybeans",
+"meal",
+"oil"
+],
+"tier": 3
+},
 {
 "title": "Australia clears law requiring LNG exporters to keep 20% for domestic use",
 "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOdDhMYThjNnMyOVpseWdXOW5xMmdHczk5dWRzdkYzVnM0eUJ2cGZMZEdBTGdpeHJUN3lfRHRNM1R2dk5YUkhHQUI0cDdMMEh4Mk9pTmNzMVpaLXBoTFF5b3JVNUVIZlZ4V2xYTkE3dTl6MWtnX2FPNlZRUTk0Z0NKc29TSDJoN1R5VUtXNURZcG9zdlJFd0IzN01HbzBkeHJMLWFGalNBb2JjcUN4Nk13emZ6X0VyYm1SVVJ6ejMtNDhhZXRjUmc?oc=5",
@@ -80,17 +500,6 @@
 "tier": 3
 },
 {
-"title": "Oil Prices Rebound as Middle East Supply Fears Return",
-"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdXhQWm1iclNBSEpwX1lUZW0xUEd3bkxwdXROQlFhNElIeUVmU2FtWUZ2T0QwRVVxV3dhR0NxQjFneTZ0WnJzQkxwWDR0NzkzUi1Ccl9FYTMzY3liWDJZUGFSRlJYcEdVUzZaWVhNMmt5N0JqRlFqbk5TZjlGcnFJcE4zTWo4N01kMVlGcU9Ia2hZZm1zaDZyT2NIOGY1MlgyM2ZF0gGoAUFVX3lxTE9VejBUQXZxWFN6LWcxQng1bHhkeVM2cy04QnV0Z1dBR29LWEF4Z0FQbURFbUtrcm5IWHdRTnd4QTNYT3ZUZTV1b1dsSmw4dXVzZ1FfWU0tdTMyY041THAzOTB4NVIzUVUyOVAtVUZ4ZUZaemFnT3UzRVNja3MwYVpkeHZJanMtdFNjMkRHQ2MtU0pRdFc1eDFONjdrMXZLMm1uWFg1MFhoaA?oc=5",
-"source": "Crude Oil Prices Today | OilPrice.com",
-"time": "2026-11-26T12:30Z",
-"topic": "natgas",
-"tags": [
-"crude"
-],
-"tier": 3
-},
-{
 "title": "Iran Says LNG Carrier Exploded After Hitting a Mine in Hormuz",
 "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVUJmUEhLYXFuUlRZRUw5QWNUcXAtUEp3Y1l3V3FiNUI0TDBoS0ZDUnJzdzBta3QtQzhiU2NRaW1uc1NLdG1haUtSc3dZQnVLOFV2ZEJUNkNOUXJMaHhsQlQyQWRZQUt0Q3RhOWszc1cwdTNGZUlXXzB2djUzcFhFcXVQd1RtYThTRnFYWHVuM1hpbnltRS1Sak50QkJieWZxRHpMZEZJNVFTMHdKNG9GSDZlUEFxZ21J0gG-AUFVX3lxTFBBZ0c1b3hkV1ZxZko0bkZnRFFhX2xITV8xc2RBLWhvT2FJMHBKeU5fcnNqTlgzNUpyOEIyX2hkUkctZWxOczBBRGJUNk9MaFp3Mm9Wb0NrbU9CaGxGVXVCa2s4OHpJaWpKNjgyeEg4d3k5VzRRSUlkRlJzTm40SjFFOWw4NnRGcHJaTXlUQVB4XzZYM2MxLWYwR0hPVDJQdkxaUm1NNXBXRFE0Z2ZJRWQzaHBFOGJNNTNmRlFxZXc?oc=5",
 "source": "Crude Oil Prices Today | OilPrice.com",
@@ -98,6 +507,17 @@
 "topic": "crude",
 "tags": [
 "natgas"
+],
+"tier": 3
+},
+{
+"title": "Oil Prices Rebound as Middle East Supply Fears Return",
+"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdXhQWm1iclNBSEpwX1lUZW0xUEd3bkxwdXROQlFhNElIeUVmU2FtWUZ2T0QwRVVxV3dhR0NxQjFneTZ0WnJzQkxwWDR0NzkzUi1Ccl9FYTMzY3liWDJZUGFSRlJYcEdVUzZaWVhNMmt5N0JqRlFqbk5TZjlGcnFJcE4zTWo4N01kMVlGcU9Ia2hZZm1zaDZyT2NIOGY1MlgyM2ZF0gGoAUFVX3lxTE9VejBUQXZxWFN6LWcxQng1bHhkeVM2cy04QnV0Z1dBR29LWEF4Z0FQbURFbUtrcm5IWHdRTnd4QTNYT3ZUZTV1b1dsSmw4dXVzZ1FfWU0tdTMyY041THAzOTB4NVIzUVUyOVAtVUZ4ZUZaemFnT3UzRVNja3MwYVpkeHZJanMtdFNjMkRHQ2MtU0pRdFc1eDFONjdrMXZLMm1uWFg1MFhoaA?oc=5",
+"source": "Crude Oil Prices Today | OilPrice.com",
+"time": "2026-11-26T12:30Z",
+"topic": "natgas",
+"tags": [
+"crude"
 ],
 "tier": 3
 },
@@ -172,6 +592,17 @@
 "tier": 1
 },
 {
+"title": "Cotton Post Gains in Pre-Thanksgiving Trade",
+"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQcFdaTHF0Tm5yTUdOQ2Y0XzJWQTBINFhBZTFQYi1nV2NQU3hDOWVLeERsRVRxeEFsU1BGWHVqejZMcHpPWXl0OGFXLTlNTEppQjRub2xOTEJUU1NodHZxenY0U01HZ3BtVVlDTGxBZzNSc0p1X3RobzQ3WU40TUVJSVdya1BWdWZNWEdqMkQ5cVU?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-25T22:26Z",
+"topic": "outlet:drovers.com",
+"tags": [
+"cotton"
+],
+"tier": 3
+},
+{
 "title": "Soybeans Rally into the Holiday",
 "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWmFLN280TlI2Ti1MZlowZ2htN295MVFmaGJiNWpQU1k2NTFSN1N5eUthRVZyM2lHMHZyY21waEtnRDhnOWtvV3hHMklOclBLS2R6X3ZxZG1Kc2dfcGhja05NLXZYOW1kTFJWV2wtMlc5OHJDWmtkdnVoQk8weHVEbA?oc=5",
 "source": "Barchart.com",
@@ -183,13 +614,13 @@
 "tier": 3
 },
 {
-"title": "Cotton Post Gains in Pre-Thanksgiving Trade",
-"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQcFdaTHF0Tm5yTUdOQ2Y0XzJWQTBINFhBZTFQYi1nV2NQU3hDOWVLeERsRVRxeEFsU1BGWHVqejZMcHpPWXl0OGFXLTlNTEppQjRub2xOTEJUU1NodHZxenY0U01HZ3BtVVlDTGxBZzNSc0p1X3RobzQ3WU40TUVJSVdya1BWdWZNWEdqMkQ5cVU?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-25T22:26Z",
-"topic": "outlet:drovers.com",
+"title": "Mild Thanksgiving Outlook Carves Up Northeast Natural Gas Cash Premiums",
+"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPU1VKU0JmaGhBWmo0eHYwZHM2ODhFOFNzcjdmSllsckEydFluclRramJCREIyRHcxNkZEYzdpTXlTQnFMcUd2RG5rcW56U3VNdlFTVzdXbk5FUzd0U0RXd2JxVHFqZkdUVFRESGhnaG9sOElWdzJZUXFjZFhlMkFSOVhxSFdnR0hRVmRFbWc3UzdhRkNfd0NNMU90UF9GNVlpdlMteURLTVE?oc=5",
+"source": "Natural Gas Intelligence",
+"time": "2026-11-25T22:16Z",
+"topic": "natgas",
 "tags": [
-"cotton"
+"natgas"
 ],
 "tier": 3
 },
@@ -343,6 +774,17 @@
 "tier": 3
 },
 {
+"title": "Hoeven says new tariff on sugar will create fair playing field for local producers",
+"link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1SOXU1RVlMNmNrYWpCOE9qeDl0WW9UYWM5d2YzRXJtMDVRQTk5WnVFaG1oeUFjT3p6TDd1YWdkN0dyUkJTc09IZnlzZG8?oc=5",
+"source": "The Mighty 790 KFGO",
+"time": "2026-11-25T19:25Z",
+"topic": "outlet:barrons.com",
+"tags": [
+"sugar"
+],
+"tier": 3
+},
+{
 "title": "Arabica Coffee Recovers as Heavy Brazil Rains Spark Short Covering",
 "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSGFXMFRDN2VzNHo2LVh0dVB2eVhuUl9jdDdvZlZlVlc4aGVBYy15XzZ5cDhkcU1oSm91cTFGRGpMNnhlT0k5MGlZNGxZQ0RLcHhDQm1kamVfXzJSTWE1NTBfYW5uSGVXWjRHTDgwczdIQS1UZWFHNDhpRWFSM1d6REg5UlJEYXZuMnVtLTNRODNvQjMtcmNYWnczNTdtcUZaY1I3TU1HNzlyeC1lYXc4?oc=5",
 "source": "Barchart.com",
@@ -351,17 +793,6 @@
 "tags": [
 "coffee",
 "south_america"
-],
-"tier": 3
-},
-{
-"title": "Hoeven says new tariff on sugar will create fair playing field for local producers",
-"link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1SOXU1RVlMNmNrYWpCOE9qeDl0WW9UYWM5d2YzRXJtMDVRQTk5WnVFaG1oeUFjT3p6TDd1YWdkN0dyUkJTc09IZnlzZG8?oc=5",
-"source": "The Mighty 790 KFGO",
-"time": "2026-11-25T19:25Z",
-"topic": "outlet:barrons.com",
-"tags": [
-"sugar"
 ],
 "tier": 3
 },
@@ -451,6 +882,17 @@
 "topic": "outlet:farmprogress.com",
 "tags": [
 "corn"
+],
+"tier": 3
+},
+{
+"title": "Natural Gas Market Serves Up First Storage Withdrawal of Season Before Thanksgiving Break",
+"link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOaEZ5dF9FN3FEcURJb2V1a01aY0xweWpEbFNJdFlqdU5QZG9XaG44YnNkZ1ZpdlFjRUM1TFppNVZacHBQRW9BNHRVMGUzRGlsQXgtR1h5QnVVQ2JDVGhkNkpZWlZCd0xhVWEzQzR3SnRnSjRVV0x2UlpSNnVGOGtUU3NNUHN2Q1ZGV0FfX3pNcmlPOUhwU3hBYURpWFJMbXV0ZThWbUcwUzA1aU5MdTVmNWNiWHlXWkJ2dVN6azc2Zko?oc=5",
+"source": "Natural Gas Intelligence",
+"time": "2026-11-25T17:41Z",
+"topic": "natgas",
+"tags": [
+"natgas"
 ],
 "tier": 3
 },
@@ -584,7 +1026,7 @@
 "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUmZkWG52MVRvamtENGF3YmViWno3ckhhV1JIeFBzcnVTeG5ueG55S0M1amhYa1c3U1NVUldNV3c3UTRzTG9lcnVsUmJoYzV2ckJsY2c2cmtFdFlLckpLRk91NTdnSEtJQ3lDSVlYNzEwdklnUkFvb1R6dUpZLWV2TnM5d0dldC00NnBCWkZ1RVRjQ0NqMFA2OEp2SThlVlQ5OXZNbDVHN2tLVjFjbmJhSHlPUGZCSXR0aUxLZGQ3RjZIdWlwOElBWmZPUQ?oc=5",
 "source": "Reuters",
 "time": "2026-11-25T14:18Z",
-"topic": "crude",
+"topic": "natgas",
 "tags": [
 "crude"
 ],
@@ -684,7 +1126,7 @@
 "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQcDNZTWstZUt5UVloTmdaQ214dU8tM19uVUdtNk1wV1RjVlJnWkYwOEFQTUZKUC00QlhkN0dkX2Z6clJ0TTNYSkpRZnRQaGx4cm92Mm15STB3RW5FSnBOYVJCWHpLSklocVhPUFc2MGRFVWtxMUFYZUxRYTlQZXo2VnRXbnZnNG9CMG9JVUU0bkN0b2VxVmxpZVVPZjRxSmRtSlR3dFp1emllZUZUTW5tNGM0RTBmUzlMMGtjZTVoX3PSAcYBQVVfeXFMUFFqZkRZTm1qeXpNWndVclc5VXFFcFh1aUIzY3FicndfT3NKS0F5V2xxbzJSZE03a1dESTdSamZSZnZzc3NERU1pT1UzZDNWalZnWU1FQjA0UFBpbWYtOGxUVklobXYwX0Jua2JPQ1RZMlhOM1hnT3FwS3poTlZSN2NSUllNZm9GaGtPZXVRQVgwLVNIX1gtWHpnSGFOSlpubzN4SUFpam5ISHl6ekdIUUlyQWR5cGdUY0lYZ25LNldsOERKd2Nn?oc=5",
 "source": "Crude Oil Prices Today | OilPrice.com",
 "time": "2026-11-25T11:00Z",
-"topic": "natgas",
+"topic": "crude",
 "tags": [
 "products"
 ],
@@ -709,6 +1151,18 @@
 "topic": "crude",
 "tags": [
 "natgas"
+],
+"tier": 3
+},
+{
+"title": "USDA Exports: China buys soybeans",
+"link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAybEVQWEtsVGJTNGlHYlFzWC0wRUNNb0cwWGVzN1RHUmpFaVIzVjBJekV1cjJxVklzNUV6UzZnWmk4NW5CdVBYVGE1V0lnZGx6S2V2Yk9hR2U3VmRSS01v?oc=5",
+"source": "Farm Progress",
+"time": "2026-11-25T08:00Z",
+"topic": "outlet:agriculture.com",
+"tags": [
+"soybeans",
+"usda"
 ],
 "tier": 3
 },
@@ -794,6 +1248,17 @@
 "tier": 3
 },
 {
+"title": "Corn Closes Tuesday with Slight Gains",
+"link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNQVlFVFVNSzNyd1NNOEhheTRYOHc5QnNwYUJZbUk5REJJdzlsdWN2c3BhR1dpdWdMY0lBb0FTQ3FlLTVsQ0tuMEVnUU9CWk9yMDNYaWJPMUI2WmVkM1JRTGRMdFY0ZGxNNnFJUEYwOHZJdEM5elJpUzdvNkJMZVA3VnhvdS15MnJ3?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-24T23:16Z",
+"topic": "outlet:dairyherd.com",
+"tags": [
+"corn"
+],
+"tier": 3
+},
+{
 "title": "Hogs Close Lower on Tuesday as Cutout Goes on Pre-Thanksgiving Sale",
 "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMnBiWlpFREFfQlFIdnU2NDdoSk1raUVpNDA0VkZYZXA5NmExVkJwZGR5bjk1MjNzeXpldHFUVkFpWldjb1REZC1jT0JaX1FUcDNGdW9lMk9iczdmSWVia1d2VkwtdnlUZGpTaWRCQzNUN3AxaDdXLUhLbExwS0lVNk9jMmhqWFNoY2VsT2JFbXoyZ0JHNXBKN0k1enJTSFFxQUYwOENlOE42RDFXdWhfdQ?oc=5",
 "source": "Barchart.com",
@@ -812,17 +1277,6 @@
 "topic": "outlet:drovers.com",
 "tags": [
 "cotton"
-],
-"tier": 3
-},
-{
-"title": "Corn Closes Tuesday with Slight Gains",
-"link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNQVlFVFVNSzNyd1NNOEhheTRYOHc5QnNwYUJZbUk5REJJdzlsdWN2c3BhR1dpdWdMY0lBb0FTQ3FlLTVsQ0tuMEVnUU9CWk9yMDNYaWJPMUI2WmVkM1JRTGRMdFY0ZGxNNnFJUEYwOHZJdEM5elJpUzdvNkJMZVA3VnhvdS15MnJ3?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-24T23:16Z",
-"topic": "outlet:dairyherd.com",
-"tags": [
-"corn"
 ],
 "tier": 3
 },
@@ -1099,17 +1553,6 @@
 "tier": 3
 },
 {
-"title": "Hogs Falling on Tuesday",
-"link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Qa0Nud1k2ZEJfY0dURHVCY19MQURveUM5LV9QaVdGTm5SMjlZV0hQMlVIZTB0ZFlwVFJuOHhlTFBhMm1wZ1JISUV0MS1vbTRwazFwYUxNSUFJT0VOX2lVQ3lFWXVlNzZHcEtCenRGUFFhQnNhOUE?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-24T18:18Z",
-"topic": "outlet:bloomberg.com",
-"tags": [
-"hogs"
-],
-"tier": 3
-},
-{
 "title": "Soybeans Rallying on Tuesday, as Meal Leads the Charge",
 "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQY2pPS0ZObjhoTHc3NEh1a3VWOHNNN25JQXRPX2xiTWE0X0UwaDhGVGZBNFRnY0RzQkYtVUVqTlF2NzNaTmc3Z1ZzVEVhR2VOSEdwSlZNdHk0akFvRUZQZVN2UEtLY1dzQkdBMldXaEM5ZEdyVDBva3N5NURlVHFZRWdxd3dTVVpnQTZmV095ZEVNRzJYTTIzbnJaMHRpUQ?oc=5",
 "source": "Barchart.com",
@@ -1127,6 +1570,17 @@
 "source": "National Hog Farmer",
 "time": "2026-11-24T18:18Z",
 "topic": "outlet:brownfieldagnews.com",
+"tags": [
+"hogs"
+],
+"tier": 3
+},
+{
+"title": "Hogs Falling on Tuesday",
+"link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Qa0Nud1k2ZEJfY0dURHVCY19MQURveUM5LV9QaVdGTm5SMjlZV0hQMlVIZTB0ZFlwVFJuOHhlTFBhMm1wZ1JISUV0MS1vbTRwazFwYUxNSUFJT0VOX2lVQ3lFWXVlNzZHcEtCenRGUFFhQnNhOUE?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-24T18:18Z",
+"topic": "outlet:bloomberg.com",
 "tags": [
 "hogs"
 ],
@@ -1305,7 +1759,7 @@
 "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNaUNSQWRkZmZPZUQ5UVlzZXlYQ3l0RmJjN256VUlnRHp1RWlFT3dxdUZseVVfQURrUlo4cTFuUFpNUnNMOE1NZUJyVWQxaXUtNlVGVmt2MFRiQUN2R3lQOHRudFFUWjlKV3liQkdENzVTb0lUSFJqMkJMbnpSNTYyb3NWV3otS2pBNkhLdWJkaldsVjhHNnBfT2ZYVzNnTngwU2JQdkpUSnlKNmlsZ3pzUFd2eGNTb2habHfSAb8BQVVfeXFMUGh1OFpZUm1LN1RoUTlUZ3FUbUYzSFNEd25zYTRMaVpZLWtGQk5zT1o4VGNfVkJHZzFDYnhnUmhmU2VHUVRycnhVdmNscUJERkZCbG5NeEl0dWhSTlZlQUR4bUs3ajVXNDNVZ1lQWXZxNm1xMnZsbnppWFZ3eWQyUEFaV0pMMXR6a0pZeW1ZTXhUNlFxOGRVeHdlNkJLYjZXUTdtMmM2REhYMEsxR0pNdjNOall1VHk0bUFXcGdOblE?oc=5",
 "source": "Crude Oil Prices Today | OilPrice.com",
 "time": "2026-11-24T13:00Z",
-"topic": "crude",
+"topic": "natgas",
 "tags": [
 "crude"
 ],
@@ -1327,7 +1781,7 @@
 "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNUzc2WGdFNVZjSHFEWUM2M2ZGYmhIZ0lpd2FiMzlYSVU3eUNQUEl0bHBpNjI3Z1JwOEo3djV1UHJiV3ptREJVRE5jbVNxZTZ3QjZpcFZReWZJTGVBSUhIYlh3aXRjeFo1Ml9DREUyQUEzZ2dheU5COTB5dFNidHNoSkdiQjNtWm1rQnVTeWFpa1RBZ0FnRHJlZw?oc=5",
 "source": "USDA (.gov)",
 "time": "2026-11-24T08:00Z",
-"topic": "outlet:agweb.com",
+"topic": "outlet:reuters.com",
 "tags": [
 "cattle"
 ],
@@ -1372,7 +1826,7 @@
 "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ0NOTXBQcWJNSlFyb25CT0p0Mlg5eU1nLTNyRm5XZTRlZzQxVV9vNlJhQ1BaWldjLXZpWUc1R1JNZHFOWEZOalJHM2J3aVZDY2hXaWhtWjNhUExEWGlUelp5VmZNeTFEMXRObGFfclN3WHNaaHdNTWN0cy1WbHVoQkVDVGd1aEFkYm02Y1RCQl9EZTFSLTRWbk55b1_SAaIBQVVfeXFMTjlpMWFXUTU4QWxMWXJYeV94ZGJHTWZ0aXRsTkowRldFTEliejlLejRmTGdkR1p5MlNUV05fV2x6TFVob3d4Z2NSVXY2YXZiUmI3XzhHTzVLZ2lWNktzYkE5VTFnR0xxSk1HNzhBci1IWVZOZ0JfN25UVTloaWMwVFN0Rnd3c0YxQm1zdFd3bFl6bVdKb1RGbTRUbC05cFRvdVB3?oc=5",
 "source": "Crude Oil Prices Today | OilPrice.com",
 "time": "2026-11-24T01:00Z",
-"topic": "crude",
+"topic": "products",
 "tags": [
 "products"
 ],
@@ -1529,6 +1983,17 @@
 "tier": 3
 },
 {
+"title": "TotalEnergies Expands US Natural Gas Production to Bolster LNG Export Portfolio",
+"link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQelN0c3hUSk81R0hIblljX2s0RmVHZnRTRk1XdktENVBiVGhYQkotUkVFYTJsX2NYRXdDV0tqdmtxXzVaNmV4OUxUVHg5SkNpQnBfaVhtQmtfWHAwMEVSczdtYjRraUxHclZxNWwzc0pjMi1JRXhLTXpvZ2oySUR2dUVyWkZNdDlQMFQzWkk2SlhPT2gyMTBYYVlqcFZWa2Zld2Nkd3UzRWJ2SDdKSEVQNlczRQ?oc=5",
+"source": "Natural Gas Intelligence",
+"time": "2026-11-23T19:42Z",
+"topic": "natgas",
+"tags": [
+"natgas"
+],
+"tier": 3
+},
+{
 "title": "USDA announces more tools, options for beef industry",
 "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQMFR5VkVxODNsT1dKYlEwUUg3dVVZVndDLXV3Wk9kUTVSem9Zd0c3VjlkaUZaMUZnV2U4bHd3UFczSzZxdkZjeHdzczVJdjFxR3NCME9sX0s2SFRaWi01TFA2blh2c0lqa0pxME9McUppU2dteGhtc29SbEVmZ3pYaGFnbjdtZ2RvZ18ySHR0Rk00NTZIMGFySGNSQ09nZw?oc=5",
 "source": "Michigan Farm News",
@@ -1642,17 +2107,6 @@
 "tier": 3
 },
 {
-"title": "Wheat Fading Back From Early Gains on Monday",
-"link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONE83TTl6ZDRvNDN5eFN1VlRLaFpjNGxZUHV4b0EwYzRneW1YRmxGcGpxNWdCTWFObmRJV1lQWXJZRGZGRllybEdRLTdvcUlTZnJPSUhlTGtnUHZscDR0OHptZXFnV3hnWUI5NG5qdVEyamF2OE5xZFlnQldhTHhuUnZzNGRubHRjQklaMmNjTXlrZw?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-23T17:23Z",
-"topic": "outlet:marketwatch.com",
-"tags": [
-"wheat"
-],
-"tier": 3
-},
-{
 "title": "Hogs Feeling Weaker Even as Cash and the Cutout Bounce",
 "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNYkQ1ZF9tQkdjaWRBNDh5di1VUkZCSlQ5RUxvd1IxUTctYmMteVRtLXJqX0ZRVDlyQlpER25yZFdqQjVoYmx0M3pRVXJoV1BPZU84b2dMZlFNZG5VUmhuQ1BHbnJ2YlBGQ2xhd2E0MVR5dTRUbmR1SURvMVZvdTE4bHBCNXNwWkhOdzhqaG95b3pyXzFqLVczdGwxVUZfUEE?oc=5",
 "source": "Barchart.com",
@@ -1671,6 +2125,17 @@
 "topic": "outlet:barrons.com",
 "tags": [
 "soybeans"
+],
+"tier": 3
+},
+{
+"title": "Wheat Fading Back From Early Gains on Monday",
+"link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONE83TTl6ZDRvNDN5eFN1VlRLaFpjNGxZUHV4b0EwYzRneW1YRmxGcGpxNWdCTWFObmRJV1lQWXJZRGZGRllybEdRLTdvcUlTZnJPSUhlTGtnUHZscDR0OHptZXFnV3hnWUI5NG5qdVEyamF2OE5xZFlnQldhTHhuUnZzNGRubHRjQklaMmNjTXlrZw?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-23T17:23Z",
+"topic": "outlet:marketwatch.com",
+"tags": [
+"wheat"
 ],
 "tier": 3
 },
@@ -1913,17 +2378,6 @@
 "tier": 3
 },
 {
-"title": "Hogs Falls Lower on Friday as Pork Hits 6+ Year Low",
-"link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbmdySHVBbVdaQ1N3M1NVcHUwTFlfY00wamhncS1DLXRaVFVrRktQNWdYTW0zdmJlN1RXZUp1NjNvZnVuQlpxaTdEeklJclFKbmhyVkpmTzJ1OWxZeU5yakg3RHVlM19QSmNHRGkwNlRLeU1kQmdjTmZMVXhiX0hjMFcyM2ExdklESkxhUW4yX01jZnlxb2kwSUN3?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-20T22:52Z",
-"topic": "outlet:barrons.com",
-"tags": [
-"hogs"
-],
-"tier": 3
-},
-{
 "title": "Cattle Post Mixed Trade Heading into Another Bullish Cattle on Feed Report",
 "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZ3JJMHBwc0JCTmd0WXFQbmJJa0hSM1drTi1uLVNiWnRQV1Y1NUJLbmMwT1VPUktMMW9MYk41REZ1RzhsWHNXTFBob1dUeTlyNnVXenp5ZUFlNlFUX1ZabllBNnkzd2VacDd2cTBCTjVOSGRVM1lDSjZndHM1VkVGZlBRNWFEMnhJT2xSbjZwZXFRbkVkeFNPanl3blZXZENVaWtqSmhWYnk1M3JmajNVQ0ZtaFRCVFVaTWc?oc=5",
 "source": "Barchart.com",
@@ -1931,6 +2385,17 @@
 "topic": "outlet:bloomberg.com",
 "tags": [
 "cattle"
+],
+"tier": 3
+},
+{
+"title": "Hogs Falls Lower on Friday as Pork Hits 6+ Year Low",
+"link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbmdySHVBbVdaQ1N3M1NVcHUwTFlfY00wamhncS1DLXRaVFVrRktQNWdYTW0zdmJlN1RXZUp1NjNvZnVuQlpxaTdEeklJclFKbmhyVkpmTzJ1OWxZeU5yakg3RHVlM19QSmNHRGkwNlRLeU1kQmdjTmZMVXhiX0hjMFcyM2ExdklESkxhUW4yX01jZnlxb2kwSUN3?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-20T22:52Z",
+"topic": "outlet:barrons.com",
+"tags": [
+"hogs"
 ],
 "tier": 3
 },
@@ -2041,7 +2506,7 @@
 "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPUW5oaG5JRDlYLXExRVNlUDB6QkQ5UWlpc09PQ3NJVGl1UjlvNnhuZjlvV3pUNGRVcVZ0U0l6bFlEaFRHRXBDWW1ubHVhbl85eXI0THNfcFh3TUQ5NjgxczE2VHljOUN5RVQ5Vkk4cG85UUNRc1A3RVc1RlUtN1pyWVRmRWtudGhvU1M2TkpoYml1TW9Zck9kSHlxenZ0aFZUZ19KaW9zVXc5REhEQlFVZlM1UGtpUEFwVkltLU9DUEwwVkF3bl85T096VHBkS2VINVRQekJmUQ?oc=5",
 "source": "USDA (.gov)",
 "time": "2026-11-20T20:00Z",
-"topic": "outlet:drovers.com",
+"topic": "boards",
 "tags": [
 "cattle",
 "usda"
@@ -2071,17 +2536,6 @@
 "tier": 3
 },
 {
-"title": "Canadian Natural Gas Storage Near Record Highs as Mild November Curbs Heating Demand",
-"link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQTkzX2xfMXBjbUcydDVOTTE4Q2dQNTlPZ0ZwRERQY1VYRVJEbHZCb3JDOEJlbTNqR0Y3eUxYUDlmb29MclVUZGFVVEVjMGhpQlI4eE5iT1N3RzFLQnhfZFJrTmsyWThUYzVqcDBsN0dSaDFySVlyVEhsdkx4U0ZVd05ZSTMyTm1KV19JT250Y3hRVHVxMmxTQ2dSQVVCMGFhMjBWYjNXZ0RxQi1Uclp0RkhWb085QVN3T3c?oc=5",
-"source": "Natural Gas Intelligence",
-"time": "2026-11-20T19:18Z",
-"topic": "natgas",
-"tags": [
-"natgas"
-],
-"tier": 3
-},
-{
 "title": "Coffee Prices Fall on Expectations of Abundant Supplies",
 "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYWIwUDRoaFQwdFhVNjVoUVlzZUhmNndtanlDbFlXRm1CSHhCUEFTLThMMFRNYlNnUThVb0RFajZScGRHNUpDMG8yUDQtNDQ4ckdKbXFNVVlJaFYzR2M4dkt3X01VOWUycTA4MFROVldMZmQzWEg0WWxPTGNSUC0yVjdlT0ZxNlVXVk82eWVRV3MzczdCWlAzbG84Z2VVcjBk?oc=5",
 "source": "Barchart.com",
@@ -2089,6 +2543,17 @@
 "topic": "outlet:barrons.com",
 "tags": [
 "coffee"
+],
+"tier": 3
+},
+{
+"title": "Canadian Natural Gas Storage Near Record Highs as Mild November Curbs Heating Demand",
+"link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQTkzX2xfMXBjbUcydDVOTTE4Q2dQNTlPZ0ZwRERQY1VYRVJEbHZCb3JDOEJlbTNqR0Y3eUxYUDlmb29MclVUZGFVVEVjMGhpQlI4eE5iT1N3RzFLQnhfZFJrTmsyWThUYzVqcDBsN0dSaDFySVlyVEhsdkx4U0ZVd05ZSTMyTm1KV19JT250Y3hRVHVxMmxTQ2dSQVVCMGFhMjBWYjNXZ0RxQi1Uclp0RkhWb085QVN3T3c?oc=5",
+"source": "Natural Gas Intelligence",
+"time": "2026-11-20T19:18Z",
+"topic": "natgas",
+"tags": [
+"natgas"
 ],
 "tier": 3
 },
@@ -2126,17 +2591,6 @@
 "tier": 3
 },
 {
-"title": "Hogs Falling Back on Friday",
-"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8zcmd5cE1nb2RXMXVNMzNwazVjQzNyRnZDV09QNUM4dkN4X3owbEtRb090cXl4eDEzRXNSSjQ5c01UVFFfS2QySm45akpuZFlZeWJNWUd5WkdWOHo0SWlTY0tBYkkwRXRuR1ZEamJFbW1BTGtPd3Z0VVRZVQ?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-20T18:23Z",
-"topic": "outlet:drovers.com",
-"tags": [
-"hogs"
-],
-"tier": 3
-},
-{
 "title": "Wheat Posting Mixed Friday Trade",
 "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMGp2bGQyeVpkWU1Vdk53VlAxekdhUWlWbDV2Q1pTUU5wUDVMdm1MQnNWNGJubXpLcE9WTnEyNktiYlJaZ1pON0FJd3UxaVRSY1pOVTNSVFJRNUVYWV9uaWRJM0Z0UHJDNC1SelJxeUpGUFZnVlA0dFl3LW5ZTHlUUUJB?oc=5",
 "source": "Barchart.com",
@@ -2144,6 +2598,17 @@
 "topic": "outlet:feedstuffs.com",
 "tags": [
 "wheat"
+],
+"tier": 3
+},
+{
+"title": "Hogs Falling Back on Friday",
+"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8zcmd5cE1nb2RXMXVNMzNwazVjQzNyRnZDV09QNUM4dkN4X3owbEtRb090cXl4eDEzRXNSSjQ5c01UVFFfS2QySm45akpuZFlZeWJNWUd5WkdWOHo0SWlTY0tBYkkwRXRuR1ZEamJFbW1BTGtPd3Z0VVRZVQ?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-20T18:23Z",
+"topic": "outlet:drovers.com",
+"tags": [
+"hogs"
 ],
 "tier": 3
 },
@@ -2319,17 +2784,6 @@
 "teaser": "MORNING AG OUTLOOK DAILY SOY COMPLEX COMMENTARY China demand optimism fades, forecast for Brazil rain…"
 },
 {
-"title": "Wheat Posting Modest Friday Gains",
-"link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPMWxhQVRMWFFRdE5ZeEtsbFg4MnNrMkZwdnJXQ1VONFFza2dGSDh3V2ZEc0xhRVZ4bWI1N2FLWUN6UnBjZHZDVjFKblJrdTlYRmhrLXZJaUo4WG5HX0lMbm9pZ09RWExwYVRmcWNZbWp6RGxxeFJabWhpWlE1NlhUbGtaUQ?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-20T13:28Z",
-"topic": "outlet:agweb.com",
-"tags": [
-"wheat"
-],
-"tier": 3
-},
-{
 "title": "Cattle Look to Position Ahead of USDA Report",
 "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNT2g4YjVTTUF0a2dOenJRYko0alYzSXJNU2FldkJNSmxQLXNhTWE3X3hDSUF0Nk1vaDY0NC02N2o4dy1vb1phZlR1bnV0Z1F3OGk5em5kemdWRHZTQ3pzaUFwRnEzOUQ4VEQwUmc5SG00WVlaMk9vRVNUemFKcEJNQ3Bld1lmVFU2X0ZsVlhtZEJqQQ?oc=5",
 "source": "Barchart.com",
@@ -2338,6 +2792,17 @@
 "tags": [
 "cattle",
 "usda"
+],
+"tier": 3
+},
+{
+"title": "Wheat Posting Modest Friday Gains",
+"link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPMWxhQVRMWFFRdE5ZeEtsbFg4MnNrMkZwdnJXQ1VONFFza2dGSDh3V2ZEc0xhRVZ4bWI1N2FLWUN6UnBjZHZDVjFKblJrdTlYRmhrLXZJaUo4WG5HX0lMbm9pZ09RWExwYVRmcWNZbWp6RGxxeFJabWhpWlE1NlhUbGtaUQ?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-20T13:28Z",
+"topic": "outlet:agweb.com",
+"tags": [
+"wheat"
 ],
 "tier": 3
 },
@@ -2386,6 +2851,17 @@
 "tier": 3
 },
 {
+"title": "Weather extremes bring mixed cotton yields",
+"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZFdaOXBOcXhpSXdHeG1BajB0WUJ0Zk9IY3U3SU1sRjN3S045REhHMmFENHRfZGhQT3NnLVFPWXBscExWc0JCZnZzdnJoc2w5emVPYVowc2RSc2JzV3RyaWtCQXpMNmU5VmEySnBpN3Jzai0taFk2aVJydmxQREJ3VkJ5NHI?oc=5",
+"source": "Farm Progress",
+"time": "2026-11-20T08:00Z",
+"topic": "outlet:bloomberg.com",
+"tags": [
+"cotton"
+],
+"tier": 3
+},
+{
 "title": "USDA Exports: Spain buys soymeal",
 "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAybEVQWEtsVGJTNGlHYlFzWC0wRUNNb0cwWGVzN1RHUmpFaVIzVjBJekV1cjJxVklzNUV6UzZnWmk4NW5CdVBYVGE1V0lnZGx6S2V2Yk9hR2U3VmRSS01v?oc=5",
 "source": "Farm Progress",
@@ -2405,17 +2881,6 @@
 "topic": "outlet:farmprogress.com",
 "tags": [
 "corn"
-],
-"tier": 3
-},
-{
-"title": "Weather extremes bring mixed cotton yields",
-"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZFdaOXBOcXhpSXdHeG1BajB0WUJ0Zk9IY3U3SU1sRjN3S045REhHMmFENHRfZGhQT3NnLVFPWXBscExWc0JCZnZzdnJoc2w5emVPYVowc2RSc2JzV3RyaWtCQXpMNmU5VmEySnBpN3Jzai0taFk2aVJydmxQREJ3VkJ5NHI?oc=5",
-"source": "Farm Progress",
-"time": "2026-11-20T08:00Z",
-"topic": "outlet:bloomberg.com",
-"tags": [
-"cotton"
 ],
 "tier": 3
 },
@@ -2512,17 +2977,6 @@
 "tier": 3
 },
 {
-"title": "Corn Holds on to Thursday Gains",
-"link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQS0dMZmtkUDZGV2R0amNHS1hjZ0hHMWpWd0J3Q0ZxVWZ5TlBrU1BzbVFzSmZTV044ay1TRVJfUmRkN2hxdm41cDBSalZWWmtzRWlXbktNalhDT3poblZWQWYzdGxhUVE1OW1OWHZsemZiMmxBZnVYLWZJSGd1dzNWWQ?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-19T22:52Z",
-"topic": "outlet:feedstuffs.com",
-"tags": [
-"corn"
-],
-"tier": 3
-},
-{
 "title": "Wheat Rally Back on Thursday",
 "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5SdDU2MWo0T0Q1S25FT0ltaURQNWkweVNXVUVyc0V4SmVYOFByUlYyS1VxUkVOeElBSzBncDhtc3RnaWdqS0xBdW5LQ3pTV1otblhPMmJvSkZtMHNZdm81NkthMS1IczRRMFNFQzlCdHJEQjdLY2RkeGdhX1M?oc=5",
 "source": "Barchart.com",
@@ -2530,6 +2984,17 @@
 "topic": "outlet:drovers.com",
 "tags": [
 "wheat"
+],
+"tier": 3
+},
+{
+"title": "Corn Holds on to Thursday Gains",
+"link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQS0dMZmtkUDZGV2R0amNHS1hjZ0hHMWpWd0J3Q0ZxVWZ5TlBrU1BzbVFzSmZTV044ay1TRVJfUmRkN2hxdm41cDBSalZWWmtzRWlXbktNalhDT3poblZWQWYzdGxhUVE1OW1OWHZsemZiMmxBZnVYLWZJSGd1dzNWWQ?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-19T22:52Z",
+"topic": "outlet:feedstuffs.com",
+"tags": [
+"corn"
 ],
 "tier": 3
 },
@@ -2703,24 +3168,13 @@
 "tier": 3
 },
 {
-"title": "Corn Posting Midday Thursday Gains",
-"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeUxSS1FFbXZ0OG5mdzZmMEwzTzVfeW5yVmljQUdKYTBQdS1ITTRrNFNHUWJJdzZKVVZwekttZF9CLWdhSzhGNEVmQmVfNXVPQzZhZDFodXhLRFZpcF9VWXlNN2xFR2E4Nmd4ekE0bTlEa2QzLVZsX2Y2VEUxWEk5RS0zc3Y?oc=5",
+"title": "Cotton Posting Midday Gains",
+"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBBbThOR1VUR1FKSlo5ODBsNkpMSGdENk5QcmV5ZUd1cWZ0Tm9nUTJ2RlRTWklHU2NQMmo0TVJ6UEwza3dhZndXUmVHeTB0eFVRRjE0WFlINTdnYjRwZkRxWXJoT2tUS2w3MTN2ZjhzSG8yUWVUWW5kOE50Yw?oc=5",
 "source": "Barchart.com",
 "time": "2026-11-19T18:08Z",
-"topic": "outlet:drovers.com",
+"topic": "outlet:brownfieldagnews.com",
 "tags": [
-"corn"
-],
-"tier": 3
-},
-{
-"title": "Cattle Rallying on Thursday",
-"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE42c1F2X29UNXRXZ3BiMEhPd3Nlb3pBY0IxSmhMelluenloeUFoaXVURTl3REx5WmVMMDRVN2pLMGJvd2RQSFJXTHl3WFdSd01YSGsyTHVfR2FXM1JfRldueE5qbzd2Q1VjcGw4SnJPSkQ2UHF3cmZVcXFaYw?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-19T18:08Z",
-"topic": "outlet:drovers.com",
-"tags": [
-"cattle"
+"cotton"
 ],
 "tier": 3
 },
@@ -2736,13 +3190,13 @@
 "tier": 3
 },
 {
-"title": "Cotton Posting Midday Gains",
-"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBBbThOR1VUR1FKSlo5ODBsNkpMSGdENk5QcmV5ZUd1cWZ0Tm9nUTJ2RlRTWklHU2NQMmo0TVJ6UEwza3dhZndXUmVHeTB0eFVRRjE0WFlINTdnYjRwZkRxWXJoT2tUS2w3MTN2ZjhzSG8yUWVUWW5kOE50Yw?oc=5",
+"title": "Corn Posting Midday Thursday Gains",
+"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeUxSS1FFbXZ0OG5mdzZmMEwzTzVfeW5yVmljQUdKYTBQdS1ITTRrNFNHUWJJdzZKVVZwekttZF9CLWdhSzhGNEVmQmVfNXVPQzZhZDFodXhLRFZpcF9VWXlNN2xFR2E4Nmd4ekE0bTlEa2QzLVZsX2Y2VEUxWEk5RS0zc3Y?oc=5",
 "source": "Barchart.com",
 "time": "2026-11-19T18:08Z",
-"topic": "outlet:brownfieldagnews.com",
+"topic": "outlet:drovers.com",
 "tags": [
-"cotton"
+"corn"
 ],
 "tier": 3
 },
@@ -2754,6 +3208,17 @@
 "topic": "outlet:nationalhogfarmer.com",
 "tags": [
 "wheat"
+],
+"tier": 3
+},
+{
+"title": "Cattle Rallying on Thursday",
+"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE42c1F2X29UNXRXZ3BiMEhPd3Nlb3pBY0IxSmhMelluenloeUFoaXVURTl3REx5WmVMMDRVN2pLMGJvd2RQSFJXTHl3WFdSd01YSGsyTHVfR2FXM1JfRldueE5qbzd2Q1VjcGw4SnJPSkQ2UHF3cmZVcXFaYw?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-19T18:08Z",
+"topic": "outlet:drovers.com",
+"tags": [
+"cattle"
 ],
 "tier": 3
 },
@@ -3256,7 +3721,7 @@
 "tier": 3
 },
 {
-"title": "Soybean Futures - Quotes",
+"title": "Soybean Futures Quotes - CME Group",
 "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4tcDV3UHo0bk1iSWFyX1Z6Q2JhQkw5MFRVelh5OXpfT1pFaXZGMjh4V2o1b0pPMlZxVHR3OGZnSF9WRGdvTk16Ni1rVU1XcjV6U0FteGxkYnRnZzJES2NPUFB0alg4TGhJWXRvRHJYNTZtVE50bXhB?oc=5",
 "source": "CME Group",
 "time": "2026-11-18T19:14Z",
@@ -3267,7 +3732,7 @@
 "tier": 2
 },
 {
-"title": "Soybean Futures Quotes - CME Group",
+"title": "Soybean Futures - Quotes",
 "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4tcDV3UHo0bk1iSWFyX1Z6Q2JhQkw5MFRVelh5OXpfT1pFaXZGMjh4V2o1b0pPMlZxVHR3OGZnSF9WRGdvTk16Ni1rVU1XcjV6U0FteGxkYnRnZzJES2NPUFB0alg4TGhJWXRvRHJYNTZtVE50bXhB?oc=5",
 "source": "CME Group",
 "time": "2026-11-18T19:14Z",
@@ -4316,18 +4781,6 @@
 "tier": 3
 },
 {
-"title": "Jan Crude Oil Higher Early in The Session",
-"link": "https://www.admis.com/jan-crude-oil-higher-early-in-the-session/",
-"source": "ADMIS",
-"time": "2026-11-17T15:14Z",
-"topic": "admis:energies",
-"tags": [
-"crude"
-],
-"tier": 2,
-"teaser": "CRUDE OIL January Crude Oil was higher early Tuesday after falling to its lowest level…"
-},
-{
 "title": "Arabica Stocks Hit 1999 Low",
 "link": "https://www.admis.com/arabica-stocks-hit-1999-low/",
 "source": "ADMIS",
@@ -4338,6 +4791,18 @@
 ],
 "tier": 2,
 "teaser": "COFFEE March Coffee was higher early Tuesday and reached its highest level in two weeks…."
+},
+{
+"title": "Jan Crude Oil Higher Early in The Session",
+"link": "https://www.admis.com/jan-crude-oil-higher-early-in-the-session/",
+"source": "ADMIS",
+"time": "2026-11-17T15:14Z",
+"topic": "admis:energies",
+"tags": [
+"crude"
+],
+"tier": 2,
+"teaser": "CRUDE OIL January Crude Oil was higher early Tuesday after falling to its lowest level…"
 },
 {
 "title": "EIA Sees USA Oil Output Averaging 13.99MM Bpd in Q4",
@@ -4456,7 +4921,7 @@
 "link": "https://www.admis.com/admisi-london-wheat-report-ice-feed-wheat-16-november-2026/",
 "source": "ADMIS",
 "time": "2026-11-17T09:49Z",
-"topic": "admis:grains",
+"topic": "admis:softs",
 "tags": [
 "wheat"
 ],
@@ -4751,17 +5216,6 @@
 "tier": 3
 },
 {
-"title": "HPAI Returns to Oklahoma Dairy Herds After More Than Two Years",
-"link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcC1DSk1Gb09xTUpRcVlKaFdnNWJ2VHlZX1V2NXhwb0l3LWVmc2l0VHBSMURfc3N6Wm1uRzcxbjEwSVBIM1lOSFpKLVdHLWx6bVkzcEVOck1JcGMtT29tNUNrNXpSOVRFY0NxOUpudHFNQzFwSHI4em9WanNQZ2JvdTQ5NG45UmxYblZ0Q193?oc=5",
-"source": "Dairy Herd",
-"time": "2026-11-16T19:51Z",
-"topic": "outlet:hoards.com",
-"tags": [
-"dairy"
-],
-"tier": 3
-},
-{
 "title": "Senate Democrats Urge USDA to Rescind Proposed Food Aid Limits",
 "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPVDcyeWRGYUNCbGZCOWxqRjZ5Z1NuLWVpM18ySHYzRmpxdTZJbDUzTWMxU1VyUjRiLXJkd1NSRFhwbzBVSXg4aVNBTHRlRjlfWDF3SVh4VTA3YXZPVk5jajlFV1l1SWFpZ0JadHFSOUVTMGstZE1uUnMxQTRzYWpEZWYxYl9CYkZNNGI5TGM3RUZETXRSVlR5bDd5aW9KZms3VmhXZ2pQejJlZEVXaHVKZ3FNQ1I3QlE?oc=5",
 "source": "Bloomberg Law News",
@@ -4771,6 +5225,17 @@
 "usda"
 ],
 "tier": 1
+},
+{
+"title": "HPAI Returns to Oklahoma Dairy Herds After More Than Two Years",
+"link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcC1DSk1Gb09xTUpRcVlKaFdnNWJ2VHlZX1V2NXhwb0l3LWVmc2l0VHBSMURfc3N6Wm1uRzcxbjEwSVBIM1lOSFpKLVdHLWx6bVkzcEVOck1JcGMtT29tNUNrNXpSOVRFY0NxOUpudHFNQzFwSHI4em9WanNQZ2JvdTQ5NG45UmxYblZ0Q193?oc=5",
+"source": "Dairy Herd",
+"time": "2026-11-16T19:51Z",
+"topic": "outlet:hoards.com",
+"tags": [
+"dairy"
+],
+"tier": 3
 },
 {
 "title": "Natural Gas Traders Pricing in Steep Northeast Winter Premium Despite El Niño",
@@ -4842,18 +5307,6 @@
 "tier": 3
 },
 {
-"title": "Soybeans Posting Midday Losses, Despite Record NOPA Crush",
-"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQkZKcmhUVzVUMlh6M2tjNFlSVkFxYktmNHpYTGwxODI5OHl6TUxrS3ZoYVR6d0g1b0RiTFJRUlU2R3M4a1RMTGkzcF96Qk8tVHVsZlVwNVhDMzVrakJfSWlQM2pFNXl6SERrb2FaQzBCa055b21KNmZPdEhDM3hrajNIckxkRUxsVERRYWVfZ0RGUTJIekZYRXpES3FvdVNacWc?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-16T18:17Z",
-"topic": "outlet:hoards.com",
-"tags": [
-"soybeans",
-"meal"
-],
-"tier": 3
-},
-{
 "title": "Wheat Falling Back on Monday",
 "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBqSldLdjdoNFhTN3hRa3JtU0tPVm5VRWNLU28zd0hBcVBodXh0bUtJWXhpV25LQ1BEem1qTEpGQzFEbFo3WDFwVV9MdVlhLWZGOWtyMG9wdlVQN1RMRVhsUTNwaFE1LVFPWk43UWo5VEJlV3kwdDFNWEVWZkM?oc=5",
 "source": "Barchart.com",
@@ -4883,6 +5336,18 @@
 "topic": "outlet:agweb.com",
 "tags": [
 "hogs"
+],
+"tier": 3
+},
+{
+"title": "Soybeans Posting Midday Losses, Despite Record NOPA Crush",
+"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQkZKcmhUVzVUMlh6M2tjNFlSVkFxYktmNHpYTGwxODI5OHl6TUxrS3ZoYVR6d0g1b0RiTFJRUlU2R3M4a1RMTGkzcF96Qk8tVHVsZlVwNVhDMzVrakJfSWlQM2pFNXl6SERrb2FaQzBCa055b21KNmZPdEhDM3hrajNIckxkRUxsVERRYWVfZ0RGUTJIekZYRXpES3FvdVNacWc?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-16T18:17Z",
+"topic": "outlet:hoards.com",
+"tags": [
+"soybeans",
+"meal"
 ],
 "tier": 3
 },
@@ -5191,17 +5656,6 @@
 "tier": 3
 },
 {
-"title": "Wheat Falls on Optimism Trilateral Talks Will Free Up Black Sea",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPelFYbGZob1hJMXFjS2pkSk5namd5YW5WX3ZxcXk0MWJGZFd3WmJOVWRVM1FDMGdFZ29obzhuQm9QYXViaVM3Z1JSak45aE5Fd21fZ2RmXzJyVmNPNmpCbTEzV0x1Q0dCS1J3cEpyNkdkcmplczZjd2J2NS1Xbll3Y3lGNDVuVk9CVjFBU3dVZnJoRkRwd0M3cFMzeVYteEozcmlscjVtSV9iMmF6cjh1aUZ5dDU?oc=5",
-"source": "Bloomberg.com",
-"time": "2026-11-16T13:00Z",
-"topic": "wheat",
-"tags": [
-"wheat"
-],
-"tier": 1
-},
-{
 "title": "Wheat Falls on Optimism About Black Sea Talks, Argentine Supply",
 "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPelFYbGZob1hJMXFjS2pkSk5namd5YW5WX3ZxcXk0MWJGZFd3WmJOVWRVM1FDMGdFZ29obzhuQm9QYXViaVM3Z1JSak45aE5Fd21fZ2RmXzJyVmNPNmpCbTEzV0x1Q0dCS1J3cEpyNkdkcmplczZjd2J2NS1Xbll3Y3lGNDVuVk9CVjFBU3dVZnJoRkRwd0M3cFMzeVYteEozcmlscjVtSV9iMmF6cjh1aUZ5dDU?oc=5",
 "source": "Bloomberg.com",
@@ -5210,6 +5664,17 @@
 "tags": [
 "wheat",
 "south_america"
+],
+"tier": 1
+},
+{
+"title": "Wheat Falls on Optimism Trilateral Talks Will Free Up Black Sea",
+"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPelFYbGZob1hJMXFjS2pkSk5namd5YW5WX3ZxcXk0MWJGZFd3WmJOVWRVM1FDMGdFZ29obzhuQm9QYXViaVM3Z1JSak45aE5Fd21fZ2RmXzJyVmNPNmpCbTEzV0x1Q0dCS1J3cEpyNkdkcmplczZjd2J2NS1Xbll3Y3lGNDVuVk9CVjFBU3dVZnJoRkRwd0M3cFMzeVYteEozcmlscjVtSV9iMmF6cjh1aUZ5dDU?oc=5",
+"source": "Bloomberg.com",
+"time": "2026-11-16T13:00Z",
+"topic": "wheat",
+"tags": [
+"wheat"
 ],
 "tier": 1
 },
@@ -5236,17 +5701,6 @@
 "tier": 3
 },
 {
-"title": "Lean hogs edge up from contract lows as pork margins improve - CME",
-"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPMDJubXV4Um0tclQyYWhoMzg1dko0RnZrY1lMSHFGa0U0TTBXR1U3bThWeE1XZUtfQzMwbnh0SnRLMC04bVVQNC0zU1NQRFBCbWl0SUpJTnJEV2twU2x2WlpwUmcwTlZMNm5rbl9HQ0t6NXpmR19mNFBQX1ozNWdtMGRhZ3dVZ1BHRmdmQS1nSmxfcTlxR0duSTJHSjZVR21lemc?oc=5",
-"source": "The Pig Site",
-"time": "2026-11-16T12:22Z",
-"topic": "outlet:drovers.com",
-"tags": [
-"hogs"
-],
-"tier": 3
-},
-{
 "title": "Stronger Demand Offsets Record Soybean Production in November",
 "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWnBJODR1WGp3ampGN05vZ0ZlTUd0eHlsSklfeGpMZEZRaW1IU0Z0ekpIcndMY0RvckV2VGFNcVRTYXlsYkIwWElsenJIOWI4YmotZ2ZQdWNYSnVTaVJfeUl6SWNPdUstbGVHSWt2dHktUFdCZk1vTzlkMFVhaGRvVVFsdlM1OWFKZkdZ?oc=5",
 "source": "RFD-TV",
@@ -5254,6 +5708,17 @@
 "topic": "outlet:drovers.com",
 "tags": [
 "soybeans"
+],
+"tier": 3
+},
+{
+"title": "Lean hogs edge up from contract lows as pork margins improve - CME",
+"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPMDJubXV4Um0tclQyYWhoMzg1dko0RnZrY1lMSHFGa0U0TTBXR1U3bThWeE1XZUtfQzMwbnh0SnRLMC04bVVQNC0zU1NQRFBCbWl0SUpJTnJEV2twU2x2WlpwUmcwTlZMNm5rbl9HQ0t6NXpmR19mNFBQX1ozNWdtMGRhZ3dVZ1BHRmdmQS1nSmxfcTlxR0duSTJHSjZVR21lemc?oc=5",
+"source": "The Pig Site",
+"time": "2026-11-16T12:22Z",
+"topic": "outlet:drovers.com",
+"tags": [
+"hogs"
 ],
 "tier": 3
 },
@@ -5283,17 +5748,6 @@
 "tier": 3
 },
 {
-"title": "USDA Designates One Tennessee County as Natural Disaster Areas",
-"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORWkxd1BWZmo4b3ViLURlNGt0OXFWb2o2MTVDUFVmSzZjU3JnSUZvcnUzY0NzS3h6UGZEaVk2WEw3dkhOdHIwSGhkY1l6dVJjWEx5dHE4d1ZpMGgwVUZNQTc3bU9OeWM3WXk5ZXdXTU5nVTQxQ1IxTHlIQ09Kb2VXSVNuZWVGa0xtMVByX1oxU0lyaU9YLWJ4MGtvWWNLa2Vuck9vbFRrbkVuZlFmMnJrTmxR?oc=5",
-"source": "USDA FSA (.gov)",
-"time": "2026-11-16T08:00Z",
-"topic": "boards",
-"tags": [
-"usda"
-],
-"tier": 2
-},
-{
 "title": "National Daily Pork Report FOB Plant - Negotiated Sales - Morning",
 "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Sa1dkWFg0aEFSOGV0RkZ2N1BGekFSVHp4REZ0TXV2aTBUNnloMmNuczhtQmU0MWx4ZklOWVl4dEdjVk95LU5fMmdUQ1JwV2hIS185c2Rsdkt0Q2s?oc=5",
 "source": "USDA Agricultural Marketing Service (.gov)",
@@ -5301,6 +5755,17 @@
 "topic": "boards",
 "tags": [
 "hogs"
+],
+"tier": 2
+},
+{
+"title": "USDA Designates One Tennessee County as Natural Disaster Areas",
+"link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORWkxd1BWZmo4b3ViLURlNGt0OXFWb2o2MTVDUFVmSzZjU3JnSUZvcnUzY0NzS3h6UGZEaVk2WEw3dkhOdHIwSGhkY1l6dVJjWEx5dHE4d1ZpMGgwVUZNQTc3bU9OeWM3WXk5ZXdXTU5nVTQxQ1IxTHlIQ09Kb2VXSVNuZWVGa0xtMVByX1oxU0lyaU9YLWJ4MGtvWWNLa2Vuck9vbFRrbkVuZlFmMnJrTmxR?oc=5",
+"source": "USDA FSA (.gov)",
+"time": "2026-11-16T08:00Z",
+"topic": "boards",
+"tags": [
+"usda"
 ],
 "tier": 2
 },
@@ -5516,6 +5981,17 @@
 "tier": 3
 },
 {
+"title": "Corn Firm into the Weekend as Export Business Picks Up",
+"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdmZ1dkMxWGZtS0RXdjRrM1F6cEtka2FnUmVDMURGVDc4WDd4a1U5SGpVTXRKaUJRQVJWcFg5RlY5Z0Z4dFMyaG5VX3pMVU4xQlB4azMwMExfcktpWWFaUnozbG55T25HaEJtdU5RNlpwZ0tFbkJGR3ZfWjlRdkZGTzhjajRKTlR2Q09NTV82WU50UTNBSTlDVEgtczRKaEk?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-13T22:58Z",
+"topic": "outlet:agweb.com",
+"tags": [
+"corn"
+],
+"tier": 3
+},
+{
 "title": "Wheat Posts Friday Gains",
 "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9tcm9VYjJLSUQzU0J2bks0b0JfS25hZFdxT1h5bDk5SldqNzU4M3VRU2ZkN2hBRXd5a3BaRlA1RHhLSG1YMFk3TE5sQWMyMFRYaXVlSnBwZEhibWgwVUpvc2dmb3FjTXFXMTRHMEh6RXBvOTYxRThN?oc=5",
 "source": "Barchart.com",
@@ -5556,17 +6032,6 @@
 "topic": "outlet:hoards.com",
 "tags": [
 "soybeans"
-],
-"tier": 3
-},
-{
-"title": "Corn Firm into the Weekend as Export Business Picks Up",
-"link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdmZ1dkMxWGZtS0RXdjRrM1F6cEtka2FnUmVDMURGVDc4WDd4a1U5SGpVTXRKaUJRQVJWcFg5RlY5Z0Z4dFMyaG5VX3pMVU4xQlB4azMwMExfcktpWWFaUnozbG55T25HaEJtdU5RNlpwZ0tFbkJGR3ZfWjlRdkZGTzhjajRKTlR2Q09NTV82WU50UTNBSTlDVEgtczRKaEk?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-13T22:58Z",
-"topic": "outlet:agweb.com",
-"tags": [
-"corn"
 ],
 "tier": 3
 },
@@ -5752,17 +6217,6 @@
 "tier": 3
 },
 {
-"title": "Soybeans Popping Higher on Friday Following Export Announcements",
-"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQMEo4WmpQdEdVOXNLVktYN2l5MkFvbHpXSVgtbkVhWWdrYkFOSUpSUzExeDkweWhYdExPTzBGU1hfY056NzNpWXA1dTIxM3hZUzVCay1nOGdYV1RsalpUZjFzZlhtMHpabnNQb3ZaYXduVjg1NTE0U1Jnb1lrdnFlZjlTN3hmdGJZUkwtZnZBYWZLNzJnakdMam80X0czUWdRYS1fZW1kTXlZczkx?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-13T17:57Z",
-"topic": "outlet:hoards.com",
-"tags": [
-"soybeans"
-],
-"tier": 3
-},
-{
 "title": "Cattle Rounding Out the Week with Gains",
 "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVk9JS1FURWd3azI5cFFpRy1nem9RRi0xLWRqYjVVVnFhMVo0aXZJbGFhRXBlMHpyd2t5dDJvdERQZDBsZGQ0LS02eTZUSVItV3RPVG5LengxWW5ST0xwYnUzRjE2ZG5pcTQtM19yNWhGUUlDdUZfU1FXTE51cmJpMi1RSmI0cUx4VU5Z?oc=5",
 "source": "Barchart.com",
@@ -5792,6 +6246,17 @@
 "topic": "outlet:agweb.com",
 "tags": [
 "cotton"
+],
+"tier": 3
+},
+{
+"title": "Soybeans Popping Higher on Friday Following Export Announcements",
+"link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQMEo4WmpQdEdVOXNLVktYN2l5MkFvbHpXSVgtbkVhWWdrYkFOSUpSUzExeDkweWhYdExPTzBGU1hfY056NzNpWXA1dTIxM3hZUzVCay1nOGdYV1RsalpUZjFzZlhtMHpabnNQb3ZaYXduVjg1NTE0U1Jnb1lrdnFlZjlTN3hmdGJZUkwtZnZBYWZLNzJnakdMam80X0czUWdRYS1fZW1kTXlZczkx?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-13T17:57Z",
+"topic": "outlet:hoards.com",
+"tags": [
+"soybeans"
 ],
 "tier": 3
 },
@@ -5852,22 +6317,22 @@
 "tier": 3
 },
 {
-"title": "Cattle Futures Work on a Higher Week, Confirming Lows: Grains Explode Higher",
+"title": "Cattle Futures Correct But a Higher Week Confirms the Lows: Grains Explode Higher",
 "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQm4xVWM1Sjg5bmJ0S28wRWhBblc1NVlXZjV2bDhYTHIyZUUyMkZncndHX3N6UXQ4alI2bTlCMEVfQXVkcmdaNkxrd3lTcE8wdnFmeGpyZnp5aE1FVmpxZUdfampMV3JnMVFJMlEyTlhQRGU2MXpPUk9zeVRqam1ZSkdzOHZJWTQ5U3hKRDk5ZVkwbFg5UFNCbGxXWVhyd240YWFodkktOXVNN3ZVTWV2Q3FhZUdVNUU?oc=5",
 "source": "AgWeb",
 "time": "2026-11-13T16:35Z",
-"topic": "outlet:brownfieldagnews.com",
+"topic": "outlet:farmprogress.com",
 "tags": [
 "cattle"
 ],
 "tier": 3
 },
 {
-"title": "Cattle Futures Correct But a Higher Week Confirms the Lows: Grains Explode Higher",
+"title": "Cattle Futures Work on a Higher Week, Confirming Lows: Grains Explode Higher",
 "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQm4xVWM1Sjg5bmJ0S28wRWhBblc1NVlXZjV2bDhYTHIyZUUyMkZncndHX3N6UXQ4alI2bTlCMEVfQXVkcmdaNkxrd3lTcE8wdnFmeGpyZnp5aE1FVmpxZUdfampMV3JnMVFJMlEyTlhQRGU2MXpPUk9zeVRqam1ZSkdzOHZJWTQ5U3hKRDk5ZVkwbFg5UFNCbGxXWVhyd240YWFodkktOXVNN3ZVTWV2Q3FhZUdVNUU?oc=5",
 "source": "AgWeb",
 "time": "2026-11-13T16:35Z",
-"topic": "outlet:farmprogress.com",
+"topic": "outlet:brownfieldagnews.com",
 "tags": [
 "cattle"
 ],
@@ -6290,6 +6755,17 @@
 "tier": 3
 },
 {
+"title": "Wheat Falls to New Lows on Thursday",
+"link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNanZPTm5iSkNoNUNVdUFSTDVfYjM2RW9qYkU0MU9tdVJFbzlBckwzVlhtWWJwbnlwMXdlUEUwVlBMSFFiTEVtUGo0eGtYOVlkQlZaUmZCa19zQVI4cGJFc2xfOXNMb3ktX25UUk02dVBpYTRXUnRWTWRZV19fNC1JVW1WY1RNdw?oc=5",
+"source": "Barchart.com",
+"time": "2026-11-12T23:02Z",
+"topic": "outlet:agriculture.com",
+"tags": [
+"wheat"
+],
+"tier": 3
+},
+{
 "title": "Hogs Post Mixed Thursday Trade",
 "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5zOVZ5SWo0QWFhOE9uVTJpOTlVYzM4UG9ZX0ZKc2xXdU94S1JkUGQ0Y2FjWFZTRTlBNV9CQ1ZlbVlQOW9XNzNTYlVnYXBsS3JicmtPSzZGeFNsZmwwTEJzSWNUZUMtbzJKSDNpWVhxajZDYmk3N3YzYmlVcDhGSEk?oc=5",
 "source": "Barchart.com",
@@ -6308,17 +6784,6 @@
 "topic": "outlet:agweb.com",
 "tags": [
 "cattle"
-],
-"tier": 3
-},
-{
-"title": "Wheat Falls to New Lows on Thursday",
-"link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNanZPTm5iSkNoNUNVdUFSTDVfYjM2RW9qYkU0MU9tdVJFbzlBckwzVlhtWWJwbnlwMXdlUEUwVlBMSFFiTEVtUGo0eGtYOVlkQlZaUmZCa19zQVI4cGJFc2xfOXNMb3ktX25UUk02dVBpYTRXUnRWTWRZV19fNC1JVW1WY1RNdw?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-12T23:02Z",
-"topic": "outlet:agriculture.com",
-"tags": [
-"wheat"
 ],
 "tier": 3
 },
@@ -6559,17 +7024,6 @@
 "tier": 3
 },
 {
-"title": "Iowa Corn Harvest Falls Behind as Heavy Rains Leave Fields Saturated",
-"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUk5QOENJVm91YVlnUDdSbnVseWxFS3J4aGR6UjQtNTNTby1NWHEySWZGQ1hQajktaktFMWVHTm9pVEZ1ZlhaMzA4VkZnVG1CSVFOTGRUWUItWGtYemtEbmF1TnpwMGE3YkhNczUwM1BodGVUN1pRaHhwaFlsZklmd1NlczVibnIzM2x3VE1MUlhHWHk1dGZzdG9xZF9RNTFTX2ZvaGdjSmU3cDQ?oc=5",
-"source": "AgroLatam",
-"time": "2026-11-12T18:20Z",
-"topic": "outlet:hoards.com",
-"tags": [
-"corn"
-],
-"tier": 3
-},
-{
 "title": "CME Cattle Futures Rebound as Beef Demand Raises Concerns",
 "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZVcteGQ0WXZKQXBBVjVLZUFIM0N4VnhkalY5aV9NUUhRZmRENHg5WjZLdzlOVHRvQ1IxeWVzV3RMNF9Bb25OQ1RiYmhmUWlZSUtYTkE3NmlaXzA4SHZHTGE2bVFmR0RxSHp4TmZUMnF4cnN2QjE2QnF5Qm4zdUNyajMxRnVGd1pmYlRJbEg3RVk?oc=5",
 "source": "AgroLatam",
@@ -6577,6 +7031,17 @@
 "topic": "outlet:barrons.com",
 "tags": [
 "cattle"
+],
+"tier": 3
+},
+{
+"title": "Iowa Corn Harvest Falls Behind as Heavy Rains Leave Fields Saturated",
+"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUk5QOENJVm91YVlnUDdSbnVseWxFS3J4aGR6UjQtNTNTby1NWHEySWZGQ1hQajktaktFMWVHTm9pVEZ1ZlhaMzA4VkZnVG1CSVFOTGRUWUItWGtYemtEbmF1TnpwMGE3YkhNczUwM1BodGVUN1pRaHhwaFlsZklmd1NlczVibnIzM2x3VE1MUlhHWHk1dGZzdG9xZF9RNTFTX2ZvaGdjSmU3cDQ?oc=5",
+"source": "AgroLatam",
+"time": "2026-11-12T18:20Z",
+"topic": "outlet:hoards.com",
+"tags": [
+"corn"
 ],
 "tier": 3
 },
@@ -6885,131 +7350,6 @@
 "tier": 1
 },
 {
-"title": "Palm Oil Climbs as El Niño Threatens Indonesia’s 2027 Supplies",
-"link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNX1huR0FLNlV5eGpFM0c3azZPZE9yOVlKODZhRWJRSXp2MWtqRnpEdGwyU1BaUG83SFBpLXJPWEdVZFd0VDF1bWlNazNyYllqMXl2ZlhBeGhuZ3JxWEpXWlNsb1VxNEVRb2d4d3NyMDBWTjBLMUhnLWZLeGJNX1BHbmpYUEYtWnRfV2ZhUG5pMFRoZVBCQXNNZ0NCenplQWlXX0w2VzUxTzJiT2tOSjI0c2piUQ?oc=5",
-"source": "Bloomberg",
-"time": "2026-11-12T04:07Z",
-"topic": "soybeans",
-"tags": [
-"oil"
-],
-"tier": 1
-},
-{
-"title": "USDA proposes SNAP eligibility reform",
-"link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8xMEU0LVNucVFXUWlnM2dtRlFoQ3NzVVpRNXo1RnhGWHdLVjBXb1IweHNKRXFXc05ReGwwNWFYelJUN1hPMS00RHBVQ0pyelJrd082NFFib0R5cHFQakJxYXItQkVBSG00S0Y3RzNrRF9NRVp3YV9rV2FGTQ?oc=5",
-"source": "Feedstuffs",
-"time": "2026-11-12T02:28Z",
-"topic": "outlet:feedstuffs.com",
-"tags": [
-"usda"
-],
-"tier": 3
-},
-{
-"title": "Who Will Buy Sable's Oil if California Keeps Closing Refineries",
-"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQaUltQ2tsSDRaRGl5NWtnS1ZWN0hRYk9Za1JxWXBEWS0zX3RiN0N6UExnT0MwVlU1MjlRdnV3U0I3RGtUMXlhM19hTTdEdEllMWczNkhrMnZtWEU0bUpJWXRZTjhRVGJ6MHFaN245SXNIcTNWbHdhb0E2eUtfV0RRc3ZnRF9CUk5fSC13SkJreFlUZ09zSTJKbEtXektFWnk1eFgxTWNLOFfSAa4BQVVfeXFMTTAyZndsMEdZM2Nfa2p3eVFTcnVNd2Jzc3hkTmVjOEtaM1pEeDBnQnk5QTlGcWdYRUhiSWwzQjd1cHVRUnQ5Z09QS1ZtUEd2eTdFX0pNcVlNOVNEX2h5TzZ4dVM1cm91c1JQRE1PajQzcFpWazBDaU1yM0hiSkZSSWUzaHlGZ3hvSEZtX21DdlIzQWRZQnRfa2x1QXdjaWtqcm5sbnNQeTI5TnRtMUdB?oc=5",
-"source": "Crude Oil Prices Today | OilPrice.com",
-"time": "2026-11-12T01:00Z",
-"topic": "crude",
-"tags": [
-"products"
-],
-"tier": 3
-},
-{
-"title": "Qatar’s Loss of Polish LNG Deal Is a Serious Blow to Expansion Plans",
-"link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPSnMySjNRUDhjWG90R1F3U2pjSEdnUWpMeXFhSnJLeGRfdl9CeWszRmIzOGdiZEprUVhhLWo5Yno3REw2Q191UTBINWI1MmtpTVpzckd4cTNialRiaHhCRVNDd0c3MWJOc21tTkJkRElROEhHdkhwVmlrUVdocE9OTFpxVmhxcmV1QVhCX3oxbkdaYmxCb3BKLW5FRTgxVVBSNTB4bzBQc2kyWUJlS0hYTWpCNm1KQXdyY3VHTUFxQQ?oc=5",
-"source": "Bloomberg.com",
-"time": "2026-11-12T00:47Z",
-"topic": "wheat",
-"tags": [
-"natgas"
-],
-"tier": 1
-},
-{
-"title": "Soybeans Extend Gains to Wednesday",
-"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOczVlUmItYkpNWmc5N2ZxTEVvMTNvVXRRcnpjVDA4VndPYnExOGxpY2lzd0JoS0pqMnl5NW1ZSUR5V1F2VlJzOXp2T05BTmZ2a1Byc0JiM3g1V2pwYk44ZFV0OUdVS3FvN1B5RUdMdkpwUDRqT21fanM2a3pjdmNWTkl1Nm8?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-11T23:08Z",
-"topic": "outlet:reuters.com",
-"tags": [
-"soybeans"
-],
-"tier": 3
-},
-{
-"title": "Wheat Posts Midweek Gains",
-"link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1MR1M3a1gzQmlrUVRRREc0Vk02WTR6Y1VhdnZHVzlSb0hwOS15SjU2dFpCak5KQ1VSQlFJa0xsVUhGbWNNWkRNekg1LVRHdW4yclVGZ29sTXJyZDVlTFcwZGZMRl9ISHppbzVoc3lhVWtrbW1OUDhSTg?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-11T23:08Z",
-"topic": "outlet:brownfieldagnews.com",
-"tags": [
-"wheat"
-],
-"tier": 3
-},
-{
-"title": "Cattle Extend Rally to Confirm Low: Will it Pull Up Cash? Have Grains Bottomed?",
-"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOWkxUjNxcE56Qi1kVHJmbUxVWXF3VEs3R3FEYW5UTkF6b3U0ZFBka0FVZjBfajlKRHFwcDZWT3I1M3gzNUd6NUlMa0pBQU5RTEhsdGNnOElZVVpnWkgySG13eDV1LWVsLXd2QU95X1V0RTVNM3lpbndWMVdPRE5oSWU2Zzc0ektaOFE1bEQ5d09LcmhSYXRPS09JTjVOUU91ZmhnUEJrSUcwckQwTmdaTnlzQlBEVGVqTlkwRw?oc=5",
-"source": "AgWeb",
-"time": "2026-11-11T23:06Z",
-"topic": "outlet:reuters.com",
-"tags": [
-"cattle"
-],
-"tier": 3
-},
-{
-"title": "Cattle Extend Rally and Confirm Low But Will it Pull Up Cash? Have Grains Bottomed?",
-"link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOWkxUjNxcE56Qi1kVHJmbUxVWXF3VEs3R3FEYW5UTkF6b3U0ZFBka0FVZjBfajlKRHFwcDZWT3I1M3gzNUd6NUlMa0pBQU5RTEhsdGNnOElZVVpnWkgySG13eDV1LWVsLXd2QU95X1V0RTVNM3lpbndWMVdPRE5oSWU2Zzc0ektaOFE1bEQ5d09LcmhSYXRPS09JTjVOUU91ZmhnUEJrSUcwckQwTmdaTnlzQlBEVGVqTlkwRw?oc=5",
-"source": "AgWeb",
-"time": "2026-11-11T23:06Z",
-"topic": "outlet:brownfieldagnews.com",
-"tags": [
-"cattle"
-],
-"tier": 3
-},
-{
-"title": "Wheat and Soybean Futures Rebound as Corn Slips After USDA Report",
-"link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNSGl5d3BKVUZPQkY0RVllaHE4bWFlT1pKTnlwRE9PV2k4aHhOMDZacE1NLWF2V2MxejZYdnJ6WnlzS0RqbVpDMnZNQUZ2V1V4VDlrTGZFMlF1M1BXalc0LXN3WEYyeGNEWlQzVGlWaWpibDhvdjFDaDYydGV4U1ZBMDlxYXhDbEZwVjZPaU9iZk9oN3hiVEtwMnZLcWlmTF9FTG5R?oc=5",
-"source": "AgroLatam",
-"time": "2026-11-11T22:18Z",
-"topic": "outlet:drovers.com",
-"tags": [
-"corn",
-"soybeans",
-"wheat",
-"usda"
-],
-"tier": 3
-},
-{
-"title": "Cattle futures mostly higher ahead of direct trade",
-"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNeFY5ZFhCRzFRdjNxTzBkQjA4WWtJdi1qVWVwRVdsakxyTmdHTGFtOWNiUFdyMnRjSS16NTY0SVNNNkVYc0dkX1phNEJCWWpyX3RrQXdTVVE0bXdMeWVaZUtjS294UU1SeGtFTkdpazJCV0lYb242WFFiWkJSdml4MnR1ZTA2S0pzMTRnQWU1X1c?oc=5",
-"source": "Brownfield Ag News",
-"time": "2026-11-11T21:55Z",
-"topic": "outlet:reuters.com",
-"tags": [
-"cattle"
-],
-"tier": 3
-},
-{
-"title": "Grains Pause After WASDE as Analysts Eye South America, Cattle Momentum",
-"link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSzdhNVdnRWhPc2ZfN2Qwa1hNZ2pqenFRMDFPUko0WGNQbDdPcmIycEFhUXdZWVRlVUJXWHp1dDZMSDcxVkViME8zRDlZV1lMZm55LW4zZ1EtdlB5N0J2T1p6aWxLd0VKNGJfX2lXRk10ZERranJSWTk1dlpob21DT2x1YmlfZ3B2WTljT2Y2LTdiV1M0eUYwRFhySzRqcUxDYXdtZkdUUkMybEtCMXJTdWNHMVdlU3M?oc=5",
-"source": "American Ag Network",
-"time": "2026-11-11T21:47Z",
-"topic": "outlet:dairyherd.com",
-"tags": [
-"cattle",
-"usda"
-],
-"tier": 3
-},
-{
 "title": "Ag Market View for Nov 11.2026",
 "link": "https://www.admis.com/ag-market-view-for-nov-11-2026/",
 "source": "ADMIS",
@@ -7033,234 +7373,6 @@
 "tier": 2
 },
 {
-"title": "Oregon reports first case of HPAI in dairy herd",
-"link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPdlFILUJLeTBZTUdxdUNwUW5BLUdZakdSN3gzb0RpQWt0QmJhX09EaGpPZ09Ncl9YMkJnWDM2ZDhYS1dnbXkxVU56T1BlbV9KWkhLR29tRVVPQ0dacTR2MTVpV0xPTk5ZVXc2YTlBaENPeGxfY1Nqc1lLUkptS2s0Wm5RMUNPT2M?oc=5",
-"source": "Feedstuffs",
-"time": "2026-11-11T20:53Z",
-"topic": "outlet:hoards.com",
-"tags": [
-"dairy"
-],
-"tier": 3
-},
-{
-"title": "The quiet record in Brazilian corn",
-"link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAxQTQ4Rk1ocFVTZlpXZzVzeHd6QXUyTy1aWWtBZVdNTFpIcUpxc1o5QU5hT3l2RmFGMmZUaXV4ZHdFM3dhcW9VcHEtR0ZfNG1zZWMtZGhEY3FsLWNrbjJ5em9ZTm5qSkkxOEFR?oc=5",
-"source": "Ohio's Country Journal",
-"time": "2026-11-11T20:30Z",
-"topic": "outlet:barrons.com",
-"tags": [
-"corn",
-"south_america"
-],
-"tier": 3
-},
-{
-"title": "Cattle were mixed Wednesday | Closing Market Minute",
-"link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPZXJUeHpKdllYVVlTMDBzdDM5bzMyMXRkOFlUZXNleW13enpVUjUzUGhoWGZVaXJ2akFPckh5aEJaOUUwVGdxdzhQWTVNMUpwc2NOVnBQbVVzQW1aQWtGNGtNWVFyanpvM0xVZ2JuUDBvVVozLWVxS3pJMWpZUkJTUmVDMmRlYXdveFZTbg?oc=5",
-"source": "Brownfield Ag News",
-"time": "2026-11-11T20:06Z",
-"topic": "outlet:marketwatch.com",
-"tags": [
-"cattle"
-],
-"tier": 3
-},
-{
-"title": "USDA focused on expanding export opportunities, agency says",
-"link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMU82TldvNW1iREh4LTlrMzN3MGRMaG1oUkpIa0NQblJPRF8wWmJ5eld3RTdaNHdTc2Z5aVVCanVla2cyZXp5VDYyNmxpWmp1UUstMDZGNVVvSXE1V2J5a2hKNE1rWWNrZjVxa3hGZUpVLUNKb1ltWjlLOS04UXVTOGYwREU0MzM2eTV6Q05TVkxrNWNVVzFNVA?oc=5",
-"source": "Brownfield Ag News",
-"time": "2026-11-11T19:55Z",
-"topic": "outlet:hoards.com",
-"tags": [
-"usda"
-],
-"tier": 3
-},
-{
-"title": "Why High Beef Prices Are Here to Stay",
-"link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9tUzIzUERkS0lwWFEzNGhOckpaYUJ1YVMxemVLQzM5cnFLOVp6d2x0R1p3LUtqc3hSQWstOVZWbnJEN0taOVZJTFhOeEVNYW80bVpOZF85Ri1wRWZhT1pyeG5qeDk1Nk53a2w4U1U0Z3cySHlzbWc?oc=5",
-"source": "WSJ",
-"time": "2026-11-11T19:31Z",
-"topic": "hogs",
-"tags": [
-"cattle"
-],
-"tier": 1
-},
-{
-"title": "Sugar Prices Rise as Strength in Crude Oil Spurs Short Covering",
-"link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdlVKSjVmUjZ1RWRSVnFrNk1sY3l6dXpLRzNyT3pCb2tTWHpDa25kWTVXeUFYZVhXQjBGNkFnNFNwd3pfVUNIYUFqbnYyMjRnSGl3eDhxUjNHbk9sYU9vemg4RGZicTZsSl9yRko4VjZGN2g1Y0hBalByN0hJazRaMVZycmE5MVFyWjQ0OTJYTEpGZU1CR1FkbHpsbGN5cFlxNmZXclhUN0Qyd3M?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-11T19:22Z",
-"topic": "outlet:drovers.com",
-"tags": [
-"sugar",
-"crude"
-],
-"tier": 3
-},
-{
-"title": "Cocoa Prices Push Higher on Short Covering",
-"link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUTlkc3V3b1lJOU9VeGpfZ29XYnEtOWhRMUg3Y0Q4MU5QY0dESl91aC1WWEFVTzFaYlRZbmN4QXJkOTlfT2VHY2JtSnYxVHB2Sk5hR3FnalJXMTZqQm56YlE5VHkxank0VE9uZ0xaaDB0SFlOdWx4M0J0UkRpRWJEQ3J0dXBSQkdyZ0g1dmZraw?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-11T19:21Z",
-"topic": "outlet:agriculture.com",
-"tags": [
-"cocoa"
-],
-"tier": 3
-},
-{
-"title": "Rising Global Supplies Weigh on Coffee Prices",
-"link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNY01pTGdwdDNvZEM2dmRGUXg1bmFleDRjTExFSlhlZVVPODJmT0dQNzlfazN1OFhsOEREVGZIYzRadUdXRlhBRmFZbmx2ZHVtMkpvSHRXX3lwNVFxRDFIeVpWeG5nSV90dl83aWx2YlJESHBDTVFWcjdOU3p5eEc3bHNla1ZBSHF0aEJFTUtFZUczbjg?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-11T19:20Z",
-"topic": "outlet:agriculture.com",
-"tags": [
-"coffee"
-],
-"tier": 3
-},
-{
-"title": "Corn, Soybean Rally Pauses Post WASDE, Wheat Bounces: Closes Key to Confirming Low",
-"link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPNFRfU1FQcWNtZDE0d2lrbGdWUndOMlREMFdrLXVfcWNTNzVoUWR0WllPNmtwczBUUjJDdElQbVRoaG9HUDRJM3VGZFdCam82dHBHZmhqR2x4eEw4YXdBQVo1bXJ0b0otam50SVhqRGtIMTJuMWVYRHBtM1dQOGdYaktwdmxhTmFMUXpKbVhEUzJtTzNhYkRtUHBRd0tKMDFvNVJFOGtralBSNXZ2Zl9CdDlxY0RyU0R6ZkFZ?oc=5",
-"source": "AgWeb",
-"time": "2026-11-11T18:43Z",
-"topic": "outlet:drovers.com",
-"tags": [
-"corn",
-"soybeans",
-"wheat",
-"usda"
-],
-"tier": 3
-},
-{
-"title": "Cattle Showing Mixed Midweek Trade",
-"link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSVBFRkdyVDVjNDA5V3lBT1F5cXFtaWhGZkRSbkJ0VXo5RDhBazdnbHdibFdBQjVuajMwZTl6dTlXX1NzbnE4ME82YUJCRGRiSk1OSVBVLVFkZFY5cklFNXhRLURncDA0dkpaWGd2cF9zaDlla3Z2RFFPMG83dVVRTXdCekk?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-11T18:14Z",
-"topic": "outlet:marketwatch.com",
-"tags": [
-"cattle"
-],
-"tier": 3
-},
-{
-"title": "Wheat Posting Gains at Midday",
-"link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBvSG9IMUFqRjRQa0duUmRmQVBmTElOdWQwSFhMc2VoZndxcDhZTXpQXzRNeFpiQ21uR3hrRDBUV3hLaWFvWjVJbFJ6T3BHS2c5eC1HTWZPdTgwUHZuZGNpZDgtS3B0SlN2a0RHcUhtcHlJYU0xU2xJN1dPUThaZw?oc=5",
-"source": "Barchart.com",
-"time": "2026-11-11T18:14Z",
-"topic": "outlet:marketwatch.com",
-"tags": [
-"wheat"
-],
-"tier": 3
-},
-{
-"title": "Corn, soybean prices rise after November’s USDA report, but demand questions remain",
-"link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZGV1MWlETGgybElvS0lUWlRxYTFCYTZBXzNtVWFxWHNfZlp6SzNXUkhFcy1VdjRrLXF6YjNjc295RkEtOHFxRzhqRVNBMlZNRzY4dVJsREoxSmI5M1pVMjhGaXN6TEtPY0s5LU9jczJacjk2bDM1MEp5OXIzRGlfQi1NYnNIdGZpUWVhSUx6SDd5c1Zkczh1eDkyVS1ZNXZyeTlnSUNkbWx6YlFNS09UMWMzbUkwZw?oc=5",
-"source": "Brownfield Ag News",
-"time": "2026-11-11T18:08Z",
-"topic": "outlet:dairyherd.com",
-"tags": [
-"corn",
-"soybeans",
-"usda"
-],
-"tier": 3
-},
-{
-"title": "Dairy industry report: Higher fuel costs extend far beyond Title I crop production",
-"link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNNGxQLTlSaEtMSXQ5cnlfUTQwQUtoRy13Qzh1TDdnMnZGaVRqbHB3a2hBZk5BWWhySUl0bTlhejhNT0FRbm1yZEZEUjVtSWc4RWtWS1dUenpieU5POG9JR0t2eVMzZ0hUMDJUdkVndE1kTXZsR0lJWDYtSm0wSWJLeXJoMzdiVXRlODZxRWdYTU9xaXhseVhraldzYl9JRk5Yc19LQmpRdzR3X1UwSkZiMHFXeEhpbHVLLTdLb2xDMnM3ZVJzRjVMcnhBUQ?oc=5",
-"source": "Michigan Farm News",
-"time": "2026-11-11T17:57Z",
-"topic": "outlet:agweb.com",
-"tags": [
-"dairy"
-],
-"tier": 3
-},
-{
-"title": "USDA trade nominee pledges aggressive market development approach",
-"link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNFE2U0xNYkQ5QzREeE5VR3ljcW9vUFdlVG1OcTR2Ym9BV2sybFpGTXpicTNwZUNmblhPWFVRYkR1UHFfWGRCSjdScTdKN01xMXZUZ2h4RmluUnFGNW51UHpzVUtLM0IwekM0Tnl4bnlKM2VqcG9rTHpXVUh1NjFfRUFCOTlITFhHQ0FOVHBxUzFlMXRycmw3VHRLTGZnTWxxQVE?oc=5",
-"source": "Brownfield Ag News",
-"time": "2026-11-11T17:46Z",
-"topic": "outlet:reuters.com",
-"tags": [
-"usda"
-],
-"tier": 3
-},
-{
-"title": "Ethanol Group Calls Governors’ RFS Waiver Request “Absurd,” Urges EPA to Deny It",
-"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbWxHZmt1a3VEOTdJdzhpNmhKNXNyZDFjbVJXUGFqOXh4M2dBWHZrXzRQeVc3Q0QwM3QxVHd5MVdqVm9PelBXbndtdVFSZ1poQ2JfM1VQUG5YcWF2Tk91Qkl3el8xSlFmZEJwaXd5UG9GclhwaWM2Y0J6bGxYYzhLMUh2eXhHWGhyczJfYVlfUVVjUll5WlAyRVphaHNZYmNSM1NHcUswTDJyT0VRaWVqMw?oc=5",
-"source": "AgWeb",
-"time": "2026-11-11T17:18Z",
-"topic": "outlet:agweb.com",
-"tags": [
-"corn"
-],
-"tier": 3
-},
-{
-"title": "GAO reports a lack of transparency in USDA reorganization plan",
-"link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOd1p6SUtMSldOd3hodVhCdkM2ckNmb1NQN0NmTmh2cXlWd0JDTDMyWmxfY1lqWnVFazVhZG0yYlhEaUNHZDNKdlhCWWs2SDRaYWhoWUhnT25Ib3lZR0lXZDl5S2NPU2FrWXhSZWd3bFoyZTJZX0FjZ2hHdGd4VzZFY1BkOHRkMjJjTkZWVWV0VmoxSDVtYWNrUjB1MVpRZ2J3?oc=5",
-"source": "Feedstuffs",
-"time": "2026-11-11T17:08Z",
-"topic": "outlet:brownfieldagnews.com",
-"tags": [
-"usda"
-],
-"tier": 3
-},
-{
-"title": "USDA Honors Veterans on Veterans Day with New Support Initiatives",
-"link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOM1ZPdmJKYWNsbks0ZlY0M2ZNZHFSLVlhcVRETTliTXJkcDZDRmx3REh3Y093cTVuVVhid1lnU29JcFRWN2VtUjBDcGQ4RWJDVWo5YkI1emlQanFTZ2Nad2lmZFBFcm82cU9HNXYxX0IzcVhMTkt1Yk8xakhJb3JIMmk1TER4Zy1maGZ6Vm1RQWs?oc=5",
-"source": "RFD-TV",
-"time": "2026-11-11T16:57Z",
-"topic": "outlet:brownfieldagnews.com",
-"tags": [
-"usda"
-],
-"tier": 3
-},
-{
-"title": "China Books 120,000 Tons of French Wheat as Global Prices Slump",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMlNzRTBVZ2ZfQmpwWmM3Q1hNTWthUlVUOUp6SG5rSDZ4VE5BaWVDaXIwZjlEcmk3TmQ5T3lGSDROZm9WRS1jeHNGUGlkelFLNXFoeFRLTVd4M1pCOHkwZlg0V2FJVkU1UHlCVzRUQXk0LVNZcThXV2g5bk5mWEdjRklLZDd1YmdLUjVOQTZJRXprN0hYclJPNGhHVnZFVkUxZW5ZcDNtNXpzck55eWZPOVFsWjg?oc=5",
-"source": "Bloomberg.com",
-"time": "2026-11-11T16:36Z",
-"topic": "wheat",
-"tags": [
-"wheat"
-],
-"tier": 1
-},
-{
-"title": "China Books French, Argentine Wheat as Global Prices Slump",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMlNzRTBVZ2ZfQmpwWmM3Q1hNTWthUlVUOUp6SG5rSDZ4VE5BaWVDaXIwZjlEcmk3TmQ5T3lGSDROZm9WRS1jeHNGUGlkelFLNXFoeFRLTVd4M1pCOHkwZlg0V2FJVkU1UHlCVzRUQXk0LVNZcThXV2g5bk5mWEdjRklLZDd1YmdLUjVOQTZJRXprN0hYclJPNGhHVnZFVkUxZW5ZcDNtNXpzck55eWZPOVFsWjg?oc=5",
-"source": "Bloomberg.com",
-"time": "2026-11-11T16:36Z",
-"topic": "wheat",
-"tags": [
-"wheat",
-"south_america"
-],
-"tier": 1
-},
-{
-"title": "USDA Moves to Simplify Grazing Rules for Ranchers",
-"link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVlpsM3RtdG9GeGk4WTE5cUdSSU5FaDFnY2lHVDJneFdBeXp5ZUhGWjNJOUk1dnhfWUh3QUs1bklrMURYbDF5NlNOeWlyd0hXTjMwMDBGdEtMSS1yYmF4MXd5RzZaUFc0YjVOQUVXbkN1WlJHNVhYUnY0NEIwa2dFQ3F1MmtSbE42eGlNMmI4c1dxY1lVMWFSd0lLWkNnZw?oc=5",
-"source": "Farms.com",
-"time": "2026-11-11T16:08Z",
-"topic": "outlet:nationalhogfarmer.com",
-"tags": [
-"usda"
-],
-"tier": 3
-},
-{
 "title": "ICE Stocks Weigh on Coffee",
 "link": "https://www.admis.com/ice-stocks-weigh-on-coffee/",
 "source": "ADMIS",
@@ -7273,17 +7385,6 @@
 "teaser": "COFFEE March Coffee was under pressure early Wednesday and was approaching the September low. A…"
 },
 {
-"title": "Aspen Pharmacare wins approval for generic semaglutide in Brazil, South Africa",
-"link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOSERteFdSRTU0czdqY3gya0xLaUJ2elg0UDNULWFFNnBQc2l0V1dXQU5jYlZrOFBXN3A3NHlNcklLSVR4eklVMjNhdXNKTTZydV9RWlhsTEc3SHF6MFFvbDRFZFh5dUxqNWNyWms4TUctd1FtekU0aTItX1dBT1QzQ2dsU2xOVjB1eTRibjJvRkFlSG1OR0hIZ0E2QzMxRlhGMWRyV09UMkpKWERvaXhFR2dzTDBOdURaRkJ4ZWlzOXg3TkVPWmZMOVZWSGJpT05MTURJa2w1cW5PUQ?oc=5",
-"source": "Reuters",
-"time": "2026-11-11T15:34Z",
-"topic": "products",
-"tags": [
-"south_america"
-],
-"tier": 1
-},
-{
 "title": "Live Cattle Traders Eye Cash Rebound",
 "link": "https://www.admis.com/live-cattle-traders-eye-cash-rebound/",
 "source": "ADMIS",
@@ -7294,72 +7395,6 @@
 ],
 "tier": 2,
 "teaser": "MORNING LIVESTOCK FUTURES OUTLOOK LIVE CATTLE COMPLEX Tuesday live cattle trade volume was moderately active…."
-},
-{
-"title": "Saudi Crude Output Jumps 26% as Riyadh Reports Near Pre-War Production",
-"link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVjNqNThxNGNNamFfZTdXTnhWc1hSUlc5R05IbmJ1Ni1DeVUxblpNUTJCT3RwVXo5NC1EVzFDLXdKYUFsdmM1OUtCbmRqakMtanVZTW1wYTlTbEtHQ3pZd2s4VlRnMFQ2WVVDSmNSYnFrOWMtM25BNExMY3FhQzh5bXRMdTRWTkRsQVNYQnItMnhCZGJPeTNSbHFhMWN4b080Q3pyNU5sZG55WjNYZFpYR2ptbDVoaFZJdnhoSFdIczZQUUHSAcgBQVVfeXFMUHVOUXV0a3hCcVVKeDl4SDNONmlHU1hTMGxQX3pseVVYLWNqU0kwbE1pTFpOeVBBN3NiZUtPbjJlVGg5T2R6cGRqTWVYM1lkYldhb0ZyeVRTbEtTOGhJWnA1czlXWnVTR0dhWEdodmFjV1RKSzhLMU15TzdPako4UDR4MTlzQjlSVk1GblFlYl8wZURhTE9JenVKVmJSdl9nQ1J6R1ZmRFVsMnJkTzV6bHFLZEhOSWowZi1rbS1YV0dzSGoxb1B0MDA?oc=5",
-"source": "Crude Oil Prices Today | OilPrice.com",
-"time": "2026-11-11T15:30Z",
-"topic": "crude",
-"tags": [
-"crude"
-],
-"tier": 3
-},
-{
-"title": "Deadly Screwworm Spreads Fast With Milder Weather Fueling Resurgence",
-"link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOYTdPeHFFX2RUUnlnU3JwdlBFdjJJbHpNSllxRlV0TERoTE1RZmt1UzVRQWVLYnRVbWhhejRvbHJWQlJVTVBBYUNDNHhxZzdiWnFia1E0NFBYaE9BeEpnalZtVmM1SzFteUtQU1Y5NlZDZjI1UU9tQmFJTkNyanozT2FpNDJ0SEpQOUdUTHJiV3pRc1VUcHA3LVpzbG1wbWd4WHU4Y3NwMWZMdFZmYlVqb2VYbFk?oc=5",
-"source": "Bloomberg",
-"time": "2026-11-11T15:13Z",
-"topic": "corn",
-"tags": [
-"cattle"
-],
-"tier": 1
-},
-{
-"title": "OPEC’s Oil Production Nears Prewar Levels on Saudi Rebound",
-"link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbkZ3Y3c3WE51TWt2RUVhZUdxbk5PM3FCdjNERW94S3NEckxuUVBidkxiRHdHUnl6RGxLZnIwZjh1UTlmak1tOW50MmZWemFEQlY5UUs3Z2pISzVodWhiRjFZSHN0T2xLTkVIV3A0Y0xUbnJOVy1ZRDJYWlNPbGJ6M1VHa2VLN2xMRDlJdkpESnZLZzFoWHc2WFg0eE43dzZsTGlEU1JVQjBkUQ?oc=5",
-"source": "WSJ",
-"time": "2026-11-11T14:43Z",
-"topic": "outlet:wsj.com",
-"tags": [
-"crude"
-],
-"tier": 1
-},
-{
-"title": "Crude Futures Pick Up After Heavy Selling",
-"link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNVWlUN29aYldzSEZmOWV5Yi1pNEIxY2F1d1Y2TFU1S2dGZGo3V1Y1bE9NR0VJT2ZiU2RQUDl2S1l1Y2Zid05VT2p5VUJFS3d3UjhuVzR2NkUza3MtUmdyd1NsVVBWeHJrWVB0cUNFNENTYmczdTJRNmdLOHJqeExOUF9acTE0NXYxQzRnNzEyUmh1NlZSc19wRzRR?oc=5",
-"source": "WSJ",
-"time": "2026-11-11T14:28Z",
-"topic": "outlet:wsj.com",
-"tags": [
-"crude"
-],
-"tier": 1
-},
-{
-"title": "OPEC+ oil output in October nears pre-Iran war rate, led by Saudi Arabia",
-"link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSDZlTWwtdThPTnp0UjFXeXowU3I2SzZTbDA1Zk9BZUJER0dMV1o3S2oza0sxUmxlT2xhb2k4Ykx1TDlORm5zNVdJSk8wVzZBM2VRV2xFUlpJQTdiTTJJY1ZULXJNbjIyaWVudGx5UUNjZWlMaGRJcXZHVjBmUkUxVmVxZC1FUWk0SUFmZkFQZGhaeFVPdWtkV2xIQ0hRT1ZDWGYySlk3RHdRTDloMDlLdQ?oc=5",
-"source": "Reuters",
-"time": "2026-11-11T14:14Z",
-"topic": "crude",
-"tags": [
-"crude"
-],
-"tier": 1
-},
-{
-"title": "JBS posts $22.7B sales as U.S. beef business turns profitable",
-"link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQkU5TTM1N1d4MElzaFZsWWJwcVBRRXVJSGJMV25YY2FRREUxNTFNUnkzSUtPbVdFNGNmR2FJWlNLRzM2Rlo2dm1iczRuQmJZODk5UXhWZE1IYUJKSTNpV2RBU29xYzFBWVFSN21yWFpVMUVOYUJrZWhGVGRxSWk2cHIyQ25vRnJzTFNYdFlOdU1xekU4YmtvVVdNV19EeWJ2SXVHSThNVEk?oc=5",
-"source": "National Hog Farmer",
-"time": "2026-11-11T14:00Z",
-"topic": "outlet:hoards.com",
-"tags": [
-"cattle"
-],
-"tier": 3
 },
 {
 "title": "ADMISI London Wheat Report: ICE Feed Wheat 10 November 2026",
@@ -7487,7 +7522,7 @@
 "link": "https://www.admis.com/wkly-futures-market-summary-for-11-9-26/",
 "source": "ADMIS",
 "time": "2026-11-09T17:33Z",
-"topic": "admis:livestock",
+"topic": "admis:energies",
 "tags": [
 "soybeans"
 ],
