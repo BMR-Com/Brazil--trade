@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 15:52 UTC",
+ "generated": "2026-11-27 04:03 UTC",
  "asof": "2026-11-25",
  "today": "2026-11-26",
  "active": [
@@ -46,50 +46,50 @@
   {
    "id": "wx_br_mt_wet",
    "market": "Cotton",
-   "text": "Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-26 to 2026-12-09; ECMWF ENS only)",
+   "text": "Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-27 to 2026-12-10; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-25"
   },
   {
    "id": "wx_br_ba_dry",
    "market": "Cotton",
-   "text": "LEM, western Bahia: next-15-day ensemble read dry (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "text": "LEM, western Bahia: next-15-day ensemble read dry (2026-11-27 to 2026-12-11; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-25"
   },
   {
    "id": "wx_br_sp_wet",
    "market": "Sugar No. 11",
-   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "wx_br_gos_wet",
    "market": "Sugar No. 11",
-   "text": "Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "text": "Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "wx_vn_dl_wet",
    "market": "Coffee C",
-   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-26 to 2026-12-10; ECMWF ENS only)",
+   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS only)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-25"
   },

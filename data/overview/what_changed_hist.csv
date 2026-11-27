@@ -201,8 +201,8 @@ asof,sym,item,value,d1,d5,flag
 2026-11-25,SB,wx:br_spw,wet,,,0
 2026-11-25,SB,wx:br_gos,wet,,,0
 2026-11-25,SB,wx:br_mgc,wet,,,0
-2026-11-25,SB,wx:in_sl,near normal,,,0
-2026-11-25,SB,wx:th_kk,near normal,,,0
+2026-11-25,SB,wx:in_sl,,,,0
+2026-11-25,SB,wx:th_kk,,,,0
 2026-11-25,SB,cot_date,2026-11-17,,,0
 2026-11-25,KC,Flat price (Mar 27),270.0,7.4,-5.45,0
 2026-11-25,KC,Front spread (Mar 27/May 27),6.9,1.7,0.2,1

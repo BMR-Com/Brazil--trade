@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-26 15:52 UTC",
+ "generated": "2026-11-27 04:02 UTC",
  "asof": "2026-11-25",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
-  "generated": "2026-11-26 04:00 UTC",
-  "prev_generated": null
+  "generated": "2026-11-27 03:57 UTC",
+  "prev_generated": "2026-11-26 04:00 UTC"
  },
  "markets": [
   {
@@ -129,61 +129,61 @@
      "region": "us_tx",
      "name": "Lubbock, West Texas",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 2.5,
-     "rain_normal": 9.1,
+     "rain_p50": 8.6,
+     "rain_normal": 8.1,
      "frost": 1.0,
-     "window": "2026-11-26 to 2026-12-09"
+     "window": "2026-11-27 to 2026-12-10"
     },
     {
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 128.5,
-     "rain_normal": 82.2,
+     "rain_p50": 116.8,
+     "rain_normal": 84.8,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-09"
+     "window": "2026-11-27 to 2026-12-10"
     },
     {
      "region": "br_ba",
      "name": "LEM, western Bahia",
      "read": "dry",
-     "prev": null,
+     "prev": "dry",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 41.2,
-     "rain_normal": 85.4,
+     "rain_p50": 49.8,
+     "rain_normal": 82.7,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "in_gj",
      "name": "Rajkot, Gujarat",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
      "src": "ECMWF ENS only",
      "rain_p50": 0.0,
-     "rain_normal": 2.3,
+     "rain_normal": 0.5,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "au_nsw",
      "name": "Moree, New South Wales",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 40.3,
-     "rain_normal": 25.6,
+     "rain_p50": 41.6,
+     "rain_normal": 25.1,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     }
    ],
    "summary": "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.21); Spot basis (US average) −47 pts on the day (normal within ±0); Spot basis (US average) −54 pts on the week (normal within ±11)"
@@ -278,73 +278,73 @@
      "region": "br_sp",
      "name": "Ribeirão Preto, São Paulo",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 191.7,
-     "rain_normal": 96.7,
+     "rain_p50": 182.1,
+     "rain_normal": 94.6,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "br_spw",
      "name": "Araçatuba, western São Paulo",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 172.5,
-     "rain_normal": 79.0,
+     "rain_p50": 159.8,
+     "rain_normal": 83.8,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "br_gos",
      "name": "Rio Verde, Goiás (cane)",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 145.7,
-     "rain_normal": 97.3,
+     "rain_p50": 121.6,
+     "rain_normal": 97.8,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "br_mgc",
      "name": "Uberaba, Triângulo Mineiro",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 176.3,
-     "rain_normal": 120.7,
+     "rain_p50": 176.5,
+     "rain_normal": 125.5,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "in_sl",
      "name": "Solapur, Maharashtra",
-     "read": "near normal",
-     "prev": null,
+     "read": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 1.9,
-     "rain_normal": 7.6,
-     "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     },
     {
      "region": "th_kk",
      "name": "Khon Kaen, upper Northeast Thailand",
-     "read": "near normal",
-     "prev": null,
+     "read": null,
+     "prev": "near normal",
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 4.5,
-     "rain_normal": 4.4,
-     "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "src": null,
+     "rain_p50": null,
+     "rain_normal": null,
+     "frost": null,
+     "window": null
     }
    ],
    "summary": "Flat price (Mar 27) +0.68 ¢/lb on the day (normal within ±0.34)"
@@ -441,61 +441,61 @@
      "region": "br_mg",
      "name": "Varginha, Sul de Minas",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 191.0,
-     "rain_normal": 98.5,
+     "rain_p50": 188.4,
+     "rain_normal": 98.6,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "br_cer",
      "name": "Patrocínio, Cerrado Mineiro",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 136.9,
-     "rain_normal": 113.9,
+     "rain_p50": 130.9,
+     "rain_normal": 116.9,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "br_zm",
      "name": "Manhuaçu, Zona da Mata (MG)",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 178.3,
-     "rain_normal": 100.8,
+     "rain_p50": 190.2,
+     "rain_normal": 103.7,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "br_es",
      "name": "Linhares, Espírito Santo",
      "read": "near normal",
-     "prev": null,
+     "prev": "near normal",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 113.7,
-     "rain_normal": 94.8,
+     "rain_p50": 96.4,
+     "rain_normal": 92.6,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "vn_dl",
      "name": "Buon Ma Thuot, Dak Lak",
      "read": "wet",
-     "prev": null,
+     "prev": "wet",
      "flip": false,
      "src": "ECMWF ENS only",
-     "rain_p50": 45.6,
-     "rain_normal": 23.2,
+     "rain_p50": 66.9,
+     "rain_normal": 23.9,
      "frost": 0.0,
-     "window": "2026-11-26 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     }
    ],
    "summary": "Front spread (Mar 27/May 27) +1.70 ¢/lb on the day (normal within ±1.45); ICE certified arabica +10,168 bags on the day (normal within ±8,262); ICE certified arabica +81,763 bags on the week (normal within ±48,543)"
