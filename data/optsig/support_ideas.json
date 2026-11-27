@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 04:19 UTC",
+ "generated": "2026-11-27 13:46 UTC",
  "note": "Support tests in tight markets: a selloff down to the active contract's own 200-day average while the market still looks tight. Research only, not investment advice; option prices are model values from settlement vols, check live prices.",
  "markets": {
   "SB": {
@@ -56,10 +56,10 @@
      ],
      "debit": 0.637,
      "max_gain": 1.613,
-     "usd_debit_per_lot": 714,
-     "why": "implied vol 26.9% is below 20-day realized 33.3%, so buying options is the cheaper side",
-     "vol_date": "2026-11-19",
-     "dte": 89
+     "usd_debit_per_lot": 713,
+     "why": "implied vol 28.4% is below 20-day realized 34.4%, so buying options is the cheaper side",
+     "vol_date": "2026-11-23",
+     "dte": 85
     }
    },
    "evidence": "Setup with a confirming filter that has tested better than plain 200-day tests on this desk's history (small sample). Size small; the stop is the 200-day average failing.",
@@ -108,18 +108,18 @@
     "horizon": "4 weeks",
     "rr": 7.5,
     "options": {
-     "structure": "Sell the Mar 27 80/75 put spread",
+     "structure": "Sell the Mar 27 80/74 put spread",
      "option_month": "Mar 27",
      "strikes": [
       80.0,
-      75.0
+      74.0
      ],
-     "credit": 1.423,
-     "max_loss": 3.577,
-     "usd_credit_per_lot": 711,
-     "why": "implied vol 21.4% is at or above 20-day realized 19.1%, so selling the downside under support collects the premium",
-     "vol_date": "2026-11-19",
-     "dte": 78
+     "credit": 1.568,
+     "max_loss": 4.432,
+     "usd_credit_per_lot": 784,
+     "why": "implied vol 23.6% is at or above 20-day realized 19.1%, so selling the downside under support collects the premium",
+     "vol_date": "2026-11-24",
+     "dte": 73
     }
    },
    "evidence": "Setup with a confirming filter that has tested better than plain 200-day tests on this desk's history (small sample). Size small; the stop is the 200-day average failing.",
@@ -172,12 +172,12 @@
       255.0,
       227.5
      ],
-     "credit": 7.804,
-     "max_loss": 19.696,
-     "usd_credit_per_lot": 2926,
-     "why": "implied vol 36.7% is at or above 20-day realized 27.1%, so selling the downside under support collects the premium",
-     "vol_date": "2026-11-19",
-     "dte": 83
+     "credit": 7.658,
+     "max_loss": 19.842,
+     "usd_credit_per_lot": 2872,
+     "why": "implied vol 36.4% is at or above 20-day realized 28.1%, so selling the downside under support collects the premium",
+     "vol_date": "2026-11-24",
+     "dte": 78
     }
    },
    "evidence": "Watch only: no confirming input has separated good and bad 200-day tests in this market, so this is not a tested trade.",
@@ -230,12 +230,12 @@
       4900,
       4250
      ],
-     "credit": 155.7,
-     "max_loss": 494.3,
-     "usd_credit_per_lot": 1557,
-     "why": "implied vol 42.9% is at or above 20-day realized 39.4%, so selling the downside under support collects the premium",
-     "vol_date": "2026-11-19",
-     "dte": 85
+     "credit": 142.4,
+     "max_loss": 507.6,
+     "usd_credit_per_lot": 1424,
+     "why": "implied vol 42.7% is at or above 20-day realized 39.4%, so selling the downside under support collects the premium",
+     "vol_date": "2026-11-24",
+     "dte": 80
     }
    },
    "evidence": "Watch only: no confirming input has separated good and bad 200-day tests in this market, so this is not a tested trade.",
