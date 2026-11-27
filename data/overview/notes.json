@@ -1,59 +1,60 @@
 {
-  "updated": "2026-11-26",
-  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
-  "markets": {
-    "cotton": {
-      "date": "2026-11-26",
-      "by": "bot",
-      "time": "22:32 CT",
-      "claude_date": "2026-11-25",
-      "fundamental": "No new headlines for this market in the last 30 hours.",
-      "events": [
-        "Mar ~82.9, through 82.7 resistance (ICE)",
-        "Dollar index slips, firmer crude (WSJ, Pro Farmer)",
-        "Tuesday gains on outside factors (Barchart)"
-      ]
-    },
-    "sugar": {
-      "date": "2026-11-26",
-      "by": "bot",
-      "time": "22:32 CT",
-      "claude_date": "2026-11-26",
-      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, price reports mixed (0 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
-      "events": [
-        "New Trump tariffs would likely increase sugar prices in the US (Reuters, 2026-11-25)"
-      ],
-      "claude_fund_score": -0.15,
-      "fund_score": -0.15
-    },
-    "coffee": {
-      "date": "2026-11-26",
-      "by": "bot",
-      "time": "22:32 CT",
-      "claude_date": "2026-11-26",
-      "fundamental": "No new headlines for this market in the last 30 hours.",
-      "events": [
-        "London robusta ~2,863 (+2.3%) off a three-year low (Reuters, ICE Europe)",
-        "Vietnam coffee prices slide on harvest pressure (Reuters)",
-        "Real firms to ~5.74 per dollar (TradingView)"
-      ],
-      "claude_fund_score": -0.35,
-      "fund_score": -0.35
-    },
-    "cocoa": {
-      "date": "2026-11-26",
-      "by": "bot",
-      "time": "22:32 CT",
-      "claude_date": "2026-11-26",
-      "fundamental": "No new headlines for this market in the last 30 hours.",
-      "events": [
-        "London cocoa ~4,037, unchanged (ICE Europe)",
-        "Cocoa near one-month high into the holiday on slow Ivorian arrivals (Reuters, Barchart)",
-        "No November ICCO bulletin published yet (ICCO)"
-      ],
-      "claude_fund_score": -0.05,
-      "fund_score": -0.05
-    }
+ "updated": "2026-11-27",
+ "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+ "markets": {
+  "cotton": {
+   "date": "2026-11-27",
+   "by": "claude",
+   "time": "07:45 CT",
+   "claude_date": "2026-11-27",
+   "fundamental": "Nothing new on supply or demand over the Thanksgiving break; the holiday-delayed export sales are already in the desk model. Friday's short session leaves old-crop Mar to trade outside markets, which lean supportive with crude firmer and a broad commodity bid.",
+   "events": [
+    "Mar last ~82.0 after Tuesday's push through 82.7 resistance (ICE)",
+    "Crude up ~1.7% on Gulf supply disruptions (Reuters, OilPrice)",
+    "Broad metals and equity-index bid into Friday (Bloomberg, WSJ)"
+   ]
   },
-  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-26 22:32 CT: Claude's desk read had not run for 5+ hours."
+  "sugar": {
+   "date": "2026-11-27",
+   "by": "claude",
+   "time": "07:45 CT",
+   "claude_date": "2026-11-27",
+   "fundamental": "The real's ~5% jump after Bradesco chairman Trabuco agreed to become finance minister lifts the dollar cost of Brazilian sugar and should slow mill forward pricing, which trims the near-term supply pressure from the Centre-South. Mar is through the 18.35/18.38 resistance; the fund long that was not flushed out remains the swing factor.",
+   "events": [
+    "Trabuco agrees to take Brazil finance ministry; USD/BRL ~5.50 (-5.5%) and Bovespa +6% (Reuters, Yahoo Finance)",
+    "Raw sugar Mar ~18.82 (+2.6%), above 18.35/18.38 resistance (ICE)",
+    "Brazil inflation below every forecast (Bloomberg)"
+   ],
+   "claude_fund_score": -0.05,
+   "fund_score": -0.05
+  },
+  "coffee": {
+   "date": "2026-11-27",
+   "by": "claude",
+   "time": "07:45 CT",
+   "claude_date": "2026-11-27",
+   "fundamental": "A sharply stronger real reduces the incentive for Brazilian growers to sell, a modest prop for arabica; it does not change the deliverability picture, and ICE certified stocks/Antwerp flows remain the deciding input, with no new cert data over the holiday.",
+   "events": [
+    "Real rallies ~5.5% on Trabuco finance-minister pick (Reuters, Yahoo Finance)",
+    "London robusta bounce off a three-year low earlier in the week (ICE Europe)",
+    "Vietnam harvest selling still weighs on robusta (Reuters)"
+   ],
+   "claude_fund_score": -0.25,
+   "fund_score": -0.25
+  },
+  "cocoa": {
+   "date": "2026-11-27",
+   "by": "claude",
+   "time": "07:45 CT",
+   "claude_date": "2026-11-27",
+   "fundamental": "No new Ivorian arrival or grind data over the US holiday, and ICCO has not yet published its November quarterly bulletin, so the balance read is unchanged: slow arrivals offer short-term support against rising ICE certified stocks.",
+   "events": [
+    "ICCO November bulletin still pending (ICCO)",
+    "Slow Ivorian arrivals kept NY near a one-month high into the holiday (Reuters, Barchart)",
+    "London cocoa flat around 4,040 (ICE Europe)"
+   ],
+   "claude_fund_score": -0.05,
+   "fund_score": -0.05
+  }
+ }
 }
