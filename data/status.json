@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 00:42 UTC",
+ "generated": "2026-11-27 04:01 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -221,7 +221,7 @@
   {
    "group": "Cotton",
    "source": "Crop projection (cotton-crop-progress)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "weekly, after crop progress / ginnings / drought",
    "age": 0,
    "age_unit": "days",
@@ -485,9 +485,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ arabica index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -497,9 +497,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ robusta index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -833,7 +833,7 @@
   {
    "group": "Sugar",
    "source": "Brazil sugar export line-up (weekly)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "weekly",
    "age": 0,
    "age_unit": "days",
@@ -1013,7 +1013,7 @@
   {
    "group": "Cotton",
    "source": "Reports: USDA attach\u00e9 (GAIN), World Markets and Trade, ERS outlook (last full check)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1109,7 +1109,7 @@
   {
    "group": "Macro",
    "source": "Markets snapshot",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "hourly in trading hours",
    "age": 0,
    "age_unit": "business days",
@@ -1145,7 +1145,7 @@
   {
    "group": "Macro",
    "source": "Contract calendar (notice and roll dates)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1229,7 +1229,7 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "monthly",
    "age": 0,
    "age_unit": "days",
