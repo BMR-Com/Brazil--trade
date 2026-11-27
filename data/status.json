@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 23:00 UTC",
+ "generated": "2026-11-27 00:42 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -593,9 +593,9 @@
   {
    "group": "Coffee",
    "source": "Honduras export prices and sales by quality, IHCAFE (daily)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 2,
+   "age": 1,
    "age_unit": "business days",
    "limit": 4,
    "state": "ok",
