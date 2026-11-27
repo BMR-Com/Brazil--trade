@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 04:48 UTC",
+ "generated": "2026-11-27 04:55 UTC",
  "today": "2026-11-26",
  "sources": [
   {
@@ -329,7 +329,7 @@
   {
    "group": "Cotton",
    "source": "China",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -353,7 +353,7 @@
   {
    "group": "Cotton",
    "source": "Australia (synced from US desk)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -365,7 +365,7 @@
   {
    "group": "Coffee",
    "source": "Coffee desk (ICE certs, basis, origins)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -509,9 +509,9 @@
   {
    "group": "Coffee",
    "source": "USD/BRL PTAX (Banco Central do Brasil)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -677,7 +677,7 @@
   {
    "group": "Sugar",
    "source": "Sugar desk",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -701,9 +701,9 @@
   {
    "group": "Sugar",
    "source": "Cane-belt weather, stoppage days, season range (ERA5)",
-   "latest": "2026-11-24",
+   "latest": "2026-11-25",
    "cadence": "daily",
-   "age": 2,
+   "age": 1,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -821,7 +821,7 @@
   {
    "group": "Sugar",
    "source": "Weekly report input pack",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1073,7 +1073,7 @@
   {
    "group": "Desk watch",
    "source": "Alerts check",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1229,12 +1229,12 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": "2026-11-27",
+   "latest": null,
    "cadence": "monthly",
-   "age": 0,
+   "age": null,
    "age_unit": "days",
    "limit": 40,
-   "state": "ok",
+   "state": "missing",
    "manual": false,
    "used_in": "Cotton: WASDE tab (full dashboard)"
   },
@@ -1263,7 +1263,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 20,
+ "late": 21,
  "inbox": {
   "updated": "2026-11-26 22:34 UTC",
   "last": [
