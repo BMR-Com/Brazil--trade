@@ -74,3 +74,5 @@ date,id,market,event,text
 2026-11-26,data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat,Data,triggered,"WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)"
 2026-11-26,CT_certs_week,Cotton,cleared,"ICE certificated cotton +18,262 bales in a week to 2026-11-20 (threshold ±10,000 bales)"
 2026-11-26,data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat,Data,cleared,"WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)"
+2026-11-27,data_CFTC_cotton_on_call__as_of_Fri__out_next_Thu_,Data,triggered,"CFTC cotton on-call (as of Fri, out next Thu): late (latest 2026-11-13, limit 13 days)"
+2026-11-27,data_Reports__Sucafina___StoneX___Rabobank_key_points__weekly_rea,Data,triggered,"Reports: Sucafina / StoneX / Rabobank key points (weekly read): late (latest 2026-11-16, limit 10 days)"

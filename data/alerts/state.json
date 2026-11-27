@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 05:27 UTC",
+ "generated": "2026-11-27 06:07 UTC",
  "asof": "2026-11-25",
  "today": "2026-11-27",
  "active": [
@@ -99,9 +99,19 @@
    "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-19, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-24"
+  },
+  {
+   "id": "data_CFTC_cotton_on_call__as_of_Fri__out_next_Thu_",
+   "market": "Data",
+   "text": "CFTC cotton on-call (as of Fri, out next Thu): late (latest 2026-11-13, limit 13 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-27",
+   "new": true,
+   "since": "2026-11-27"
   },
   {
    "id": "data_ICE_certs__stock_by_warehouse__upload_",
@@ -109,7 +119,7 @@
    "text": "ICE certs: stock by warehouse (upload): late (latest 2026-11-16, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-26"
   },
@@ -119,7 +129,7 @@
    "text": "ICE certs: grade / staple (upload): late (latest 2026-11-16, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-26"
   },
@@ -129,7 +139,7 @@
    "text": "ICE certs: year of growth (upload): late (latest 2026-11-16, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-26"
   },
@@ -139,7 +149,7 @@
    "text": "ICE certs: strength (upload): late (latest 2026-11-16, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-26"
   },
@@ -149,7 +159,7 @@
    "text": "ICE certs: stock by delivery point (upload): late (latest 2026-11-23, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-17"
   },
@@ -159,7 +169,7 @@
    "text": "ICE certs: four months and older (upload): late (latest 2026-11-02, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-17"
   },
@@ -169,7 +179,7 @@
    "text": "EWR receipts (upload): late (latest 2026-11-09, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-24"
   },
@@ -179,7 +189,7 @@
    "text": "CFR Far East quotes (upload): late (latest 2026-11-09, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-24"
   },
@@ -189,7 +199,7 @@
    "text": "Cotton loan (FSA): late (latest 2026-11-09, limit 9 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-24"
   },
@@ -199,7 +209,7 @@
    "text": "ICE certs detail: pending, transition, passed/failed, rebagging (upload): late (latest 2026-11-19, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-24"
   },
@@ -209,7 +219,7 @@
    "text": "Certs profile and delivery economics (built from the ICE files): late (latest 2026-11-19, limit 2 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-24"
   },
@@ -219,7 +229,7 @@
    "text": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv): late (latest 2026-04-07, limit 120 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-17"
   },
@@ -229,7 +239,7 @@
    "text": "Brazil FOB differentials by quality, SAFRAS (about monthly): late (latest 2026-04-24, limit 75 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-26"
   },
@@ -239,7 +249,7 @@
    "text": "Centre-South crush (MAPA fortnightly): late (latest 2026-10-31, limit 25 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-26"
   },
@@ -249,7 +259,7 @@
    "text": "EC balance sheet and EU price (manual): late (latest 2026-08-27, limit 45 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-17"
   },
@@ -259,9 +269,19 @@
    "text": "Reports: CIC PNG weekly differential indications: late (latest 2026-11-15, limit 10 days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-26"
+  },
+  {
+   "id": "data_Reports__Sucafina___StoneX___Rabobank_key_points__weekly_rea",
+   "market": "Data",
+   "text": "Reports: Sucafina / StoneX / Rabobank key points (weekly read): late (latest 2026-11-16, limit 10 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-27",
+   "new": true,
+   "since": "2026-11-27"
   },
   {
    "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
@@ -269,7 +289,7 @@
    "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-19, limit 3 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-25"
   },
@@ -279,7 +299,7 @@
    "text": "Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-25"
   },
@@ -289,7 +309,7 @@
    "text": "Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
    "on": true,
    "level": null,
-   "date": "2026-11-26",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-25"
   }
@@ -639,6 +659,26 @@
    "date": "2026-11-26",
    "new": true,
    "since": "2026-11-26"
+  },
+  {
+   "id": "data_CFTC_cotton_on_call__as_of_Fri__out_next_Thu_",
+   "market": "Data",
+   "text": "CFTC cotton on-call (as of Fri, out next Thu): late (latest 2026-11-13, limit 13 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-27",
+   "new": true,
+   "since": "2026-11-27"
+  },
+  {
+   "id": "data_Reports__Sucafina___StoneX___Rabobank_key_points__weekly_rea",
+   "market": "Data",
+   "text": "Reports: Sucafina / StoneX / Rabobank key points (weekly read): late (latest 2026-11-16, limit 10 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-27",
+   "new": true,
+   "since": "2026-11-27"
   }
  ],
  "last_email": null,
