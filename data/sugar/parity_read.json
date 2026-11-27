@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 11:27 UTC",
+ "generated": "2026-11-27 11:33 UTC",
  "now": {
   "date": "2026-11-25",
   "contract": "SBH2027",
@@ -8,13 +8,13 @@
   "eth": 2980.6,
   "eth_date": "2026-11-19",
   "eth_src": "CEPEA/ESALQ: Indicador Semanal Do Etanol Hidratado Combustível Cepea/Esalq - São Paulo (R$/m³; week ending on the date shown)",
-  "fx": 5.6513,
+  "fx": 5.6525,
   "fx_date": "2026-11-26",
   "parity": 15.73,
   "gap": 2.61,
   "sugar_pays": true,
   "sb_level_ethanol_equal": 15.73,
-  "eth_level_sugar_equal": 3525.0,
+  "eth_level_sugar_equal": 3526.0,
   "eth_age_bd": 4,
   "b3_eth": 3074.0,
   "b3_date": "2026-11-25",
