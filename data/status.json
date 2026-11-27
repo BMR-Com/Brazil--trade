@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 21:10 UTC",
+ "generated": "2026-11-27 21:56 UTC",
  "today": "2026-11-27",
  "sources": [
   {
@@ -53,12 +53,12 @@
   {
    "group": "Positions",
    "source": "CFTC cotton on-call (as of Fri, out next Thu)",
-   "latest": "2026-11-13",
+   "latest": "2026-11-20",
    "cadence": "weekly",
-   "age": 14,
+   "age": 7,
    "age_unit": "days",
    "limit": 13,
-   "state": "late",
+   "state": "ok",
    "manual": false,
    "used_in": "on-call tab, WASDE brief"
   },
@@ -1133,9 +1133,9 @@
   {
    "group": "Macro",
    "source": "Events calendar",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -1181,9 +1181,9 @@
   {
    "group": "Embedded dashboards",
    "source": "Export sales dashboard (BMR-Com/usd-export-sales-email), week ending",
-   "latest": "2026-11-12",
+   "latest": "2026-11-19",
    "cadence": "weekly (Thu)",
-   "age": 15,
+   "age": 8,
    "age_unit": "days",
    "limit": 15,
    "state": "ok",
@@ -1263,7 +1263,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 20,
+ "late": 19,
  "inbox": {
   "updated": "2026-11-27 05:20 UTC",
   "last": [
