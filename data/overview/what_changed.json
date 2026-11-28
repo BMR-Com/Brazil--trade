@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-27 12:40 UTC",
- "asof": "2026-11-25",
+ "generated": "2026-11-28 02:11 UTC",
+ "asof": "2026-11-27",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
-  "generated": "2026-11-27 03:57 UTC",
+  "generated": "2026-11-27 19:23 UTC",
   "prev_generated": null
  },
  "markets": [
@@ -19,7 +19,7 @@
      "d1": 0.92,
      "d5": 4.09,
      "norm1": 1.14,
-     "norm5": 3.21,
+     "norm5": 3.22,
      "flag1": false,
      "flag5": true,
      "date": "2026-11-25",
@@ -91,37 +91,38 @@
      "item": "Front implied vol (JAN27)",
      "unit": "vol pts",
      "dp": 1,
-     "now": 20.5,
+     "now": 24.6,
      "d1": null,
      "d5": null,
      "norm1": 1.4,
-     "norm5": 3.6,
+     "norm5": 4.0,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-19",
-     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 4 business days old",
+     "date": "2026-11-24",
+     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-24; normal range from 66 sessions only; option data 2 business days old",
      "kind": "daily"
     },
     {
      "item": "On-call sales, old crop",
      "unit": "lots",
      "dp": 0,
-     "now": 68240.0,
+     "now": 63451.0,
      "d1": null,
-     "d5": 12.0,
+     "d5": -4789.0,
      "norm1": null,
-     "norm5": 3219.0,
+     "norm5": 3423.0,
      "flag1": false,
-     "flag5": false,
-     "date": "2026-11-13",
-     "note": "CFTC unfixed call sales, Dec/Mar/May/Jul old crop (October ignored); purchases 27,070 lots (-1,259)",
+     "flag5": true,
+     "date": "2026-11-20",
+     "note": "CFTC unfixed call sales, Dec/Mar/May/Jul old crop (October ignored); purchases 20,527 lots (-6,543)",
      "kind": "weekly"
     }
    ],
    "flags": [
-    "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.21)",
+    "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.22)",
     "Spot basis (US average) −47 pts on the day (normal within ±0)",
-    "Spot basis (US average) −54 pts on the week (normal within ±11)"
+    "Spot basis (US average) −54 pts on the week (normal within ±11)",
+    "On-call sales, old crop −4,789 lots in the week to 2026-11-20 (normal within ±3,423)"
    ],
    "errors": [],
    "weather": [
@@ -131,23 +132,23 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 8.6,
-     "rain_normal": 8.1,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 13.3,
+     "rain_normal": 8.2,
      "frost": 1.0,
-     "window": "2026-11-27 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "br_mt",
      "name": "Sorriso, Mato Grosso",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 116.8,
-     "rain_normal": 84.8,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 108.9,
+     "rain_normal": 90.6,
      "frost": 0.0,
-     "window": "2026-11-27 to 2026-12-10"
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "br_ba",
@@ -155,8 +156,8 @@
      "read": "dry",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 49.8,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 51.8,
      "rain_normal": 82.7,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -167,26 +168,26 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
+     "src": "ECMWF ENS + AIFS",
      "rain_p50": 0.0,
      "rain_normal": 0.5,
      "frost": 0.0,
-     "window": "2026-11-27 to 2026-12-11"
+     "window": "2026-11-28 to 2026-12-11"
     },
     {
      "region": "au_nsw",
      "name": "Moree, New South Wales",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 41.6,
-     "rain_normal": 25.1,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 28.9,
+     "rain_normal": 24.5,
      "frost": 0.0,
-     "window": "2026-11-27 to 2026-12-11"
+     "window": "2026-11-28 to 2026-12-11"
     }
    ],
-   "summary": "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.21); Spot basis (US average) −47 pts on the day (normal within ±0); Spot basis (US average) −54 pts on the week (normal within ±11)"
+   "summary": "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.22); Spot basis (US average) −47 pts on the day (normal within ±0); Spot basis (US average) −54 pts on the week (normal within ±11); On-call sales, old crop −4,789 lots in the week to 2026-11-20 (normal within ±3,423)"
   },
   {
    "sym": "SB",
@@ -257,15 +258,15 @@
      "item": "Front implied vol (JAN27)",
      "unit": "vol pts",
      "dp": 1,
-     "now": 25.9,
+     "now": 27.6,
      "d1": null,
      "d5": null,
      "norm1": 1.2,
-     "norm5": 2.5,
+     "norm5": 2.6,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-19",
-     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 4 business days old",
+     "date": "2026-11-23",
+     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-23; normal range from 65 sessions only; option data 3 business days old",
      "kind": "daily"
     }
    ],
@@ -280,8 +281,8 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 182.1,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 200.8,
      "rain_normal": 94.6,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -292,8 +293,8 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 159.8,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 167.1,
      "rain_normal": 83.8,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -301,11 +302,11 @@
     {
      "region": "br_gos",
      "name": "Rio Verde, Goiás (cane)",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 121.6,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 143.2,
      "rain_normal": 97.8,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -313,11 +314,11 @@
     {
      "region": "br_mgc",
      "name": "Uberaba, Triângulo Mineiro",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 176.5,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 185.6,
      "rain_normal": 125.5,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -325,26 +326,26 @@
     {
      "region": "in_sl",
      "name": "Solapur, Maharashtra",
-     "read": null,
+     "read": "dry",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 0.1,
+     "rain_normal": 7.6,
+     "frost": 0.0,
+     "window": "2026-11-28 to 2026-12-11"
     },
     {
      "region": "th_kk",
      "name": "Khon Kaen, upper Northeast Thailand",
-     "read": null,
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 4.0,
+     "rain_normal": 2.9,
+     "frost": 0.0,
+     "window": "2026-11-28 to 2026-12-11"
     }
    ],
    "summary": "Flat price (Mar 27) +0.68 ¢/lb on the day (normal within ±0.34)"
@@ -360,8 +361,8 @@
      "now": 270.0,
      "d1": 7.4,
      "d5": -5.45,
-     "norm1": 8.2,
-     "norm5": 18.6,
+     "norm1": 8.24,
+     "norm5": 18.61,
      "flag1": false,
      "flag5": false,
      "date": "2026-11-25",
@@ -376,7 +377,7 @@
      "d1": 1.7,
      "d5": 0.2,
      "norm1": 1.45,
-     "norm5": 3.7,
+     "norm5": 3.73,
      "flag1": true,
      "flag5": false,
      "date": "2026-11-25",
@@ -418,15 +419,15 @@
      "item": "Front implied vol (MAR27)",
      "unit": "vol pts",
      "dp": 1,
-     "now": 36.7,
+     "now": 36.4,
      "d1": null,
      "d5": null,
-     "norm1": 1.5,
+     "norm1": 1.4,
      "norm5": 3.4,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-19",
-     "note": "ATM vol of the first option series with at least 15 days to expiry (MAR27); ICE settlement files to 2026-11-19; normal range from 63 sessions only; option data 4 business days old",
+     "date": "2026-11-24",
+     "note": "ATM vol of the first option series with at least 15 days to expiry (MAR27); ICE settlement files to 2026-11-24; normal range from 66 sessions only; option data 2 business days old",
      "kind": "daily"
     }
    ],
@@ -443,8 +444,8 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 188.4,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 196.3,
      "rain_normal": 98.6,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -452,11 +453,11 @@
     {
      "region": "br_cer",
      "name": "Patrocínio, Cerrado Mineiro",
-     "read": "wet",
+     "read": "split",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 130.9,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 133.6,
      "rain_normal": 116.9,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -464,11 +465,11 @@
     {
      "region": "br_zm",
      "name": "Manhuaçu, Zona da Mata (MG)",
-     "read": "wet",
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 190.2,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 163.0,
      "rain_normal": 103.7,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -479,8 +480,8 @@
      "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 96.4,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 107.5,
      "rain_normal": 92.6,
      "frost": 0.0,
      "window": "2026-11-27 to 2026-12-11"
@@ -491,11 +492,11 @@
      "read": "wet",
      "prev": null,
      "flip": false,
-     "src": "ECMWF ENS only",
-     "rain_p50": 66.9,
-     "rain_normal": 23.9,
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 52.5,
+     "rain_normal": 22.6,
      "frost": 0.0,
-     "window": "2026-11-27 to 2026-12-11"
+     "window": "2026-11-28 to 2026-12-11"
     }
    ],
    "summary": "Front spread (Mar 27/May 27) +1.70 ¢/lb on the day (normal within ±1.45); ICE certified arabica +10,168 bags on the day (normal within ±8,262); ICE certified arabica +81,763 bags on the week (normal within ±48,543)"
@@ -512,7 +513,7 @@
      "d1": 21.0,
      "d5": 432.0,
      "norm1": 204.0,
-     "norm5": 549.0,
+     "norm5": 550.0,
      "flag1": false,
      "flag5": false,
      "date": "2026-11-25",
@@ -569,15 +570,15 @@
      "item": "Front implied vol (JAN27)",
      "unit": "vol pts",
      "dp": 1,
-     "now": 40.9,
+     "now": 40.6,
      "d1": null,
      "d5": null,
      "norm1": null,
      "norm5": null,
      "flag1": false,
      "flag5": false,
-     "date": "2026-11-19",
-     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-19; normal range from 12 sessions only; option data 4 business days old",
+     "date": "2026-11-24",
+     "note": "ATM vol of the first option series with at least 15 days to expiry (JAN27); ICE settlement files to 2026-11-24; normal range from 15 sessions only; option data 2 business days old",
      "kind": "daily"
     }
    ],
@@ -587,38 +588,38 @@
     {
      "region": "ci_sb",
      "name": "Soubré, Nawa (Côte d'Ivoire)",
-     "read": null,
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 29.2,
+     "rain_normal": 22.0,
+     "frost": 0.0,
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "ci_dl",
      "name": "Daloa, Haut-Sassandra (Côte d'Ivoire)",
-     "read": null,
+     "read": "dry",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 6.4,
+     "rain_normal": 14.5,
+     "frost": 0.0,
+     "window": "2026-11-27 to 2026-12-11"
     },
     {
      "region": "gh_ku",
      "name": "Kumasi, Ashanti (Ghana)",
-     "read": null,
+     "read": "near normal",
      "prev": null,
      "flip": false,
-     "src": null,
-     "rain_p50": null,
-     "rain_normal": null,
-     "frost": null,
-     "window": null
+     "src": "ECMWF ENS + AIFS",
+     "rain_p50": 8.0,
+     "rain_normal": 17.2,
+     "frost": 0.0,
+     "window": "2026-11-27 to 2026-12-11"
     }
    ],
    "summary": "No notable change."

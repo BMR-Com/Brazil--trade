@@ -224,3 +224,48 @@ asof,sym,item,value,d1,d5,flag
 2026-11-25,CC,wx:ci_dl,,,,0
 2026-11-25,CC,wx:gh_ku,,,,0
 2026-11-25,CC,cot_date,2026-11-17,,,0
+2026-11-27,CT,Flat price (Mar 27),82.97,0.92,4.09,1
+2026-11-27,CT,Front spread (Mar 27/May 27),-1.52,-0.03,-0.06,0
+2026-11-27,CT,ICE certificated cotton,84978.0,,0.0,0
+2026-11-27,CT,Spot basis (US average),-375.0,-47.0,-54.0,1
+2026-11-27,CT,Managed money net,48998.0,,-6384.0,0
+2026-11-27,CT,Front implied vol (JAN27),24.6,,,0
+2026-11-27,CT,"On-call sales, old crop",63451.0,,-4789.0,1
+2026-11-27,CT,wx:us_tx,near normal,,,0
+2026-11-27,CT,wx:br_mt,near normal,,,0
+2026-11-27,CT,wx:br_ba,dry,,,0
+2026-11-27,CT,wx:in_gj,near normal,,,0
+2026-11-27,CT,wx:au_nsw,near normal,,,0
+2026-11-27,CT,cot_date,2026-11-17,,,0
+2026-11-27,SB,Flat price (Mar 27),18.34,0.68,0.3,1
+2026-11-27,SB,Front spread (Mar 27/May 27),0.6,0.02,0.04,0
+2026-11-27,SB,Certified stocks,,,,0
+2026-11-27,SB,Managed money net,181463.0,,-11733.0,0
+2026-11-27,SB,Front implied vol (JAN27),27.6,,,0
+2026-11-27,SB,wx:br_sp,wet,,,0
+2026-11-27,SB,wx:br_spw,wet,,,0
+2026-11-27,SB,wx:br_gos,near normal,,,0
+2026-11-27,SB,wx:br_mgc,near normal,,,0
+2026-11-27,SB,wx:in_sl,dry,,,0
+2026-11-27,SB,wx:th_kk,near normal,,,0
+2026-11-27,SB,cot_date,2026-11-17,,,0
+2026-11-27,KC,Flat price (Mar 27),270.0,7.4,-5.45,0
+2026-11-27,KC,Front spread (Mar 27/May 27),6.9,1.7,0.2,1
+2026-11-27,KC,ICE certified arabica,283036.0,10168.0,81763.0,1
+2026-11-27,KC,Managed money net,6767.0,,1795.0,0
+2026-11-27,KC,Front implied vol (MAR27),36.4,,,0
+2026-11-27,KC,wx:br_mg,wet,,,0
+2026-11-27,KC,wx:br_cer,split,,,0
+2026-11-27,KC,wx:br_zm,near normal,,,0
+2026-11-27,KC,wx:br_es,near normal,,,0
+2026-11-27,KC,wx:vn_dl,wet,,,0
+2026-11-27,KC,cot_date,2026-11-17,,,0
+2026-11-27,CC,Flat price (Mar 27),5434.0,21.0,432.0,0
+2026-11-27,CC,Front spread (Mar 27/May 27),-57.0,7.0,-3.0,0
+2026-11-27,CC,Certified stocks,,,,0
+2026-11-27,CC,Managed money net,-20268.0,,1562.0,0
+2026-11-27,CC,Front implied vol (JAN27),40.6,,,0
+2026-11-27,CC,wx:ci_sb,near normal,,,0
+2026-11-27,CC,wx:ci_dl,dry,,,0
+2026-11-27,CC,wx:gh_ku,near normal,,,0
+2026-11-27,CC,cot_date,2026-11-17,,,0

@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27 12:40 UTC",
- "asof": "2026-11-25",
+ "generated": "2026-11-28 02:12 UTC",
+ "asof": "2026-11-27",
  "today": "2026-11-27",
  "active": [
   {
@@ -44,19 +44,9 @@
    "since": "2026-11-17"
   },
   {
-   "id": "wx_br_mt_wet",
-   "market": "Cotton",
-   "text": "Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-27 to 2026-12-10; ECMWF ENS only)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": false,
-   "since": "2026-11-25"
-  },
-  {
    "id": "wx_br_ba_dry",
    "market": "Cotton",
-   "text": "LEM, western Bahia: next-15-day ensemble read dry (2026-11-27 to 2026-12-11; ECMWF ENS only)",
+   "text": "LEM, western Bahia: next-15-day ensemble read dry (2026-11-27 to 2026-12-11; ECMWF ENS + AIFS)",
    "on": true,
    "level": null,
    "date": "2026-11-27",
@@ -66,17 +56,7 @@
   {
    "id": "wx_br_sp_wet",
    "market": "Sugar No. 11",
-   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS only)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": false,
-   "since": "2026-11-17"
-  },
-  {
-   "id": "wx_br_gos_wet",
-   "market": "Sugar No. 11",
-   "text": "Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS only)",
+   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS + AIFS)",
    "on": true,
    "level": null,
    "date": "2026-11-27",
@@ -86,7 +66,7 @@
   {
    "id": "wx_vn_dl_wet",
    "market": "Coffee C",
-   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS only)",
+   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-28 to 2026-12-11; ECMWF ENS + AIFS)",
    "on": true,
    "level": null,
    "date": "2026-11-27",
@@ -96,22 +76,12 @@
   {
    "id": "data_ICE_options_settlements__uploaded_ICE_files_",
    "market": "Data",
-   "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-19, limit 2 business days)",
+   "text": "ICE options settlements (uploaded ICE files): late (latest 2026-11-24, limit 2 business days)",
    "on": true,
    "level": null,
    "date": "2026-11-27",
    "new": false,
    "since": "2026-11-24"
-  },
-  {
-   "id": "data_CFTC_cotton_on_call__as_of_Fri__out_next_Thu_",
-   "market": "Data",
-   "text": "CFTC cotton on-call (as of Fri, out next Thu): late (latest 2026-11-13, limit 13 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": false,
-   "since": "2026-11-27"
   },
   {
    "id": "data_ICE_certs__stock_by_warehouse__upload_",
@@ -292,32 +262,12 @@
    "date": "2026-11-27",
    "new": false,
    "since": "2026-11-25"
-  },
-  {
-   "id": "data_Options_terminal__cotton__BMR_Com_softs__options__",
-   "market": "Data",
-   "text": "Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": false,
-   "since": "2026-11-25"
-  },
-  {
-   "id": "data_Options_terminal__coffee__BMR_Com_softs__options__",
-   "market": "Data",
-   "text": "Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": false,
-   "since": "2026-11-25"
   }
  ],
  "watch": [
   {
    "market": "Cotton",
-   "text": "Dec 26/Mar 27 80% of full carry at 4.40¢ Mar 27 over Dec 26 (now +3.32¢, 2026-11-25)"
+   "text": "Dec 26/Mar 27 80% of full carry at 4.43¢ Mar 27 over Dec 26 (now +3.17¢, 2026-11-27)"
   },
   {
    "market": "Cotton",
@@ -365,7 +315,7 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.73¢/lb: No. 11 Mar 27 now 18.34¢ (2026-11-25)"
+   "text": "Ethanol parity 15.70¢/lb: No. 11 Mar 27 now 18.34¢ (2026-11-25)"
   }
  ],
  "rules_checked": 178,
@@ -451,16 +401,6 @@
    "since": "2026-11-17"
   },
   {
-   "id": "wx_br_gos_wet",
-   "market": "Sugar No. 11",
-   "text": "Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-18 to 2026-12-02; ECMWF ENS only)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-18",
-   "new": true,
-   "since": "2026-11-17"
-  },
-  {
    "id": "data_Brazil_export_differentials__public_quotes__manual__data_cof",
    "market": "Data",
    "text": "Brazil export differentials, public quotes (manual: data/coffee/manual/brazil_export_diffs.csv): late (latest 2026-04-07, limit 120 days)",
@@ -537,36 +477,6 @@
    "on": true,
    "level": null,
    "date": "2026-11-25",
-   "new": true,
-   "since": "2026-11-25"
-  },
-  {
-   "id": "data_Options_terminal__cotton__BMR_Com_softs__options__",
-   "market": "Data",
-   "text": "Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-25",
-   "new": true,
-   "since": "2026-11-25"
-  },
-  {
-   "id": "data_Options_terminal__coffee__BMR_Com_softs__options__",
-   "market": "Data",
-   "text": "Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-25",
-   "new": true,
-   "since": "2026-11-25"
-  },
-  {
-   "id": "wx_br_mt_wet",
-   "market": "Cotton",
-   "text": "Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-26 to 2026-12-09; ECMWF ENS only)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-26",
    "new": true,
    "since": "2026-11-25"
   },
@@ -659,16 +569,6 @@
    "date": "2026-11-26",
    "new": true,
    "since": "2026-11-26"
-  },
-  {
-   "id": "data_CFTC_cotton_on_call__as_of_Fri__out_next_Thu_",
-   "market": "Data",
-   "text": "CFTC cotton on-call (as of Fri, out next Thu): late (latest 2026-11-13, limit 13 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": true,
-   "since": "2026-11-27"
   },
   {
    "id": "data_Reports__Sucafina___StoneX___Rabobank_key_points__weekly_rea",

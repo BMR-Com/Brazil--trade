@@ -76,3 +76,8 @@ date,id,market,event,text
 2026-11-26,data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat,Data,cleared,"WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)"
 2026-11-27,data_CFTC_cotton_on_call__as_of_Fri__out_next_Thu_,Data,triggered,"CFTC cotton on-call (as of Fri, out next Thu): late (latest 2026-11-13, limit 13 days)"
 2026-11-27,data_Reports__Sucafina___StoneX___Rabobank_key_points__weekly_rea,Data,triggered,"Reports: Sucafina / StoneX / Rabobank key points (weekly read): late (latest 2026-11-16, limit 10 days)"
+2026-11-27,wx_br_mt_wet,Cotton,cleared,"Sorriso, Mato Grosso: next-15-day ensemble read wet (2026-11-27 to 2026-12-10; ECMWF ENS only)"
+2026-11-27,wx_br_gos_wet,Sugar No. 11,cleared,"Rio Verde, Goiás (cane): next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS only)"
+2026-11-27,data_CFTC_cotton_on_call__as_of_Fri__out_next_Thu_,Data,cleared,"CFTC cotton on-call (as of Fri, out next Thu): late (latest 2026-11-13, limit 13 days)"
+2026-11-27,data_Options_terminal__cotton__BMR_Com_softs__options__,Data,cleared,"Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)"
+2026-11-27,data_Options_terminal__coffee__BMR_Com_softs__options__,Data,cleared,"Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)"
