@@ -1,6 +1,6 @@
 {
  "history": {
-  "built": "2026-11-28 02:09 UTC",
+  "built": "2026-11-28 04:15 UTC",
   "rows": 7530,
   "last": "2026-11-27",
   "first": {
@@ -2647,11 +2647,11 @@
     -272.0,
     -330.0,
     -314.0,
-    -287.0
+    -283.0
    ],
-   "now": -287.0,
+   "now": -283.0,
    "now_date": "2026-11-27",
-   "pct5y": 38.0,
+   "pct5y": 39.0,
    "median_all": -53.0,
    "median5y": -243.0
   },
@@ -6967,10 +6967,10 @@
  "manual_inputs": "CEPEA/ESALQ arabica and robusta indices: manual weekly download by Ma from cepea.org.br, dropped into inbox/ (cepea.org.br disallows automated access)",
  "cepea_download": "not fetched automatically (cepea.org.br disallows automated access); CEPEA files come only from Ma's downloads dropped into inbox/",
  "ptax": {
-  "2026-10-18": "HTTP 200, 27 days",
+  "2026-10-19": "HTTP 200, 28 days",
   "first": "1996-09-02",
-  "last": "2026-11-26",
-  "n": 7591
+  "last": "2026-11-27",
+  "n": 7592
  },
  "noticias_agricolas": {
   "robots": {
@@ -7003,7 +7003,7 @@
   }
  },
  "log": [
-  "PTAX {'2026-10-18': 'HTTP 200, 27 days', 'first': '1996-09-02', 'last': '2026-11-26', 'n': 7591}"
+  "PTAX {'2026-10-19': 'HTTP 200, 28 days', 'first': '1996-09-02', 'last': '2026-11-27', 'n': 7592}"
  ],
  "backfill": {
   "ran": "2026-11-26"
