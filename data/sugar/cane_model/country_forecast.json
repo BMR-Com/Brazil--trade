@@ -1,7 +1,7 @@
 {
- "built": "2026-11-27 04:59 UTC",
+ "built": "2026-11-28 04:37 UTC",
  "units": "1000 MT raw value, cane sugar",
- "as_of": "2026-11-23",
+ "as_of": "2026-11-24",
  "countries": {
   "BR": {
    "name": "Brazil",
@@ -19,7 +19,7 @@
     "rainfall, Apr-Sep previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "IN": {
    "name": "India",
@@ -37,7 +37,7 @@
     "rainfall, Jun-Sep previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "TH": {
    "name": "Thailand",
@@ -55,7 +55,7 @@
     "rainfall, May-Oct previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "CH": {
    "name": "China",
@@ -73,7 +73,7 @@
     "frost days, Dec previous year-Feb",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "MX": {
    "name": "Mexico",
@@ -91,7 +91,7 @@
     "rainfall, Jun-Oct previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "AS": {
    "name": "Australia",
@@ -109,7 +109,7 @@
     "rainfall, Jun-Nov previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "PK": {
    "name": "Pakistan",
@@ -127,7 +127,7 @@
     "heat days (>35°C), May-Jun",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "GT": {
    "name": "Guatemala",
@@ -145,7 +145,7 @@
     "rainfall, May-Oct previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "CO": {
    "name": "Colombia",
@@ -163,7 +163,7 @@
     "ENSO (ONI), Oct previous year-Sep",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "SF": {
    "name": "South Africa",
@@ -181,7 +181,7 @@
     "rainfall, Oct two years before-Mar previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "RP": {
    "name": "Philippines",
@@ -199,7 +199,7 @@
     "rainfall, Jun-Nov previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "ID": {
    "name": "Indonesia",
@@ -217,7 +217,7 @@
     "rainfall, Nov two years before-Apr previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "AR": {
    "name": "Argentina",
@@ -235,7 +235,7 @@
     "frost days, Jun-Aug previous year",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "US": {
    "name": "United States (cane)",
@@ -253,7 +253,7 @@
     "frost days, Dec previous year-Feb",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   },
   "EG": {
    "name": "Egypt (cane)",
@@ -270,7 +270,7 @@
     "heat days (>35°C), Apr-Sep",
     "previous season's crop change (ratoon / area persistence)"
    ],
-   "as_of": "2026-11-23"
+   "as_of": "2026-11-24"
   }
  },
  "total_modelled": {
