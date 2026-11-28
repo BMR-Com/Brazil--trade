@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 20:07 UTC",
+ "generated": "2026-11-28 02:51 UTC",
  "note": "Support tests in tight markets: a selloff down to the active contract's own 200-day average while the market still looks tight. Research only, not investment advice; option prices are model values from settlement vols, check live prices.",
  "markets": {
   "SB": {
@@ -117,7 +117,7 @@
      "credit": 1.568,
      "max_loss": 4.432,
      "usd_credit_per_lot": 784,
-     "why": "implied vol 23.6% is at or above 20-day realized 19.1%, so selling the downside under support collects the premium",
+     "why": "implied vol 23.6% is at or above 20-day realized 19.8%, so selling the downside under support collects the premium",
      "vol_date": "2026-11-24",
      "dte": 73
     }
@@ -175,7 +175,7 @@
      "credit": 7.658,
      "max_loss": 19.842,
      "usd_credit_per_lot": 2872,
-     "why": "implied vol 36.4% is at or above 20-day realized 28.1%, so selling the downside under support collects the premium",
+     "why": "implied vol 36.4% is at or above 20-day realized 28.2%, so selling the downside under support collects the premium",
      "vol_date": "2026-11-24",
      "dte": 78
     }
@@ -233,7 +233,7 @@
      "credit": 142.4,
      "max_loss": 507.6,
      "usd_credit_per_lot": 1424,
-     "why": "implied vol 42.7% is at or above 20-day realized 39.4%, so selling the downside under support collects the premium",
+     "why": "implied vol 42.7% is at or above 20-day realized 39.7%, so selling the downside under support collects the premium",
      "vol_date": "2026-11-24",
      "dte": 80
     }
