@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28 02:11 UTC",
+ "generated": "2026-11-28 03:02 UTC",
  "today": "2026-11-27",
  "sources": [
   {
@@ -65,9 +65,9 @@
   {
    "group": "Cotton",
    "source": "ICE quality grid (AMS daily spot quotes)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -485,9 +485,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ arabica index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -497,9 +497,9 @@
   {
    "group": "Coffee",
    "source": "CEPEA/ESALQ robusta index (scheduled fetch weekdays; Ma's inbox download as backup)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "days",
    "limit": 4,
    "state": "ok",
@@ -1013,7 +1013,7 @@
   {
    "group": "Cotton",
    "source": "Reports: USDA attach\u00e9 (GAIN), World Markets and Trade, ERS outlook (last full check)",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1049,9 +1049,9 @@
   {
    "group": "Desk watch",
    "source": "What changed strip (settlement date)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -1061,9 +1061,9 @@
   {
    "group": "Desk watch",
    "source": "Delivery-period dashboard (settlement date)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -1073,7 +1073,7 @@
   {
    "group": "Desk watch",
    "source": "Alerts check",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1085,9 +1085,9 @@
   {
    "group": "Desk watch",
    "source": "Desk call log / track record",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -1097,19 +1097,19 @@
   {
    "group": "Sugar",
    "source": "Ethanol price used for parity (CEPEA, else B3 futures)",
-   "latest": "2026-11-19",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 6,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
-   "state": "late",
+   "state": "ok",
    "manual": false,
    "used_in": "ethanol parity tab"
   },
   {
    "group": "Macro",
    "source": "Markets snapshot",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "hourly in trading hours",
    "age": 0,
    "age_unit": "business days",
@@ -1263,7 +1263,7 @@
    "used_in": "options terminal"
   }
  ],
- "late": 19,
+ "late": 18,
  "inbox": {
   "updated": "2026-11-27 22:19 UTC",
   "last": [
