@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28 03:34 UTC",
+ "generated": "2026-11-28 04:41 UTC",
  "today": "2026-11-27",
  "sources": [
   {
@@ -329,7 +329,7 @@
   {
    "group": "Cotton",
    "source": "China",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -353,7 +353,7 @@
   {
    "group": "Cotton",
    "source": "Australia (synced from US desk)",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -365,7 +365,7 @@
   {
    "group": "Coffee",
    "source": "Coffee desk (ICE certs, basis, origins)",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -509,9 +509,9 @@
   {
    "group": "Coffee",
    "source": "USD/BRL PTAX (Banco Central do Brasil)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -677,7 +677,7 @@
   {
    "group": "Sugar",
    "source": "Sugar desk",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -701,9 +701,9 @@
   {
    "group": "Sugar",
    "source": "Cane-belt weather, stoppage days, season range (ERA5)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 2,
+   "age": 1,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -713,7 +713,7 @@
   {
    "group": "Sugar",
    "source": "Cane-belt ensemble forecast (ECMWF ENS, GEFS)",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -821,7 +821,7 @@
   {
    "group": "Sugar",
    "source": "Weekly report input pack",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -929,9 +929,9 @@
   {
    "group": "Coffee",
    "source": "Arabica \u2212 robusta spread, \u00a2/lb (KC minus RC, seasonality and percentiles)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
