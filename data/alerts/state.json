@@ -1,15 +1,15 @@
 {
- "generated": "2026-11-28 03:35 UTC",
+ "generated": "2026-11-28 04:46 UTC",
  "asof": "2026-11-27",
  "today": "2026-11-27",
  "active": [
   {
    "id": "KC_certs_week",
    "market": "Coffee C",
-   "text": "ICE certified arabica +81,763 bags in a week to 2026-11-25 (threshold ±40,000 bags)",
+   "text": "ICE certified arabica +60,050 bags in a week to 2026-11-27 (threshold ±40,000 bags)",
    "on": true,
    "level": "±40,000 bags",
-   "date": "2026-11-25",
+   "date": "2026-11-27",
    "new": false,
    "since": "2026-11-17"
   },
@@ -46,30 +46,30 @@
   {
    "id": "wx_br_ba_dry",
    "market": "Cotton",
-   "text": "LEM, western Bahia: next-15-day ensemble read dry (2026-11-27 to 2026-12-11; ECMWF ENS + AIFS)",
+   "text": "LEM, western Bahia: next-15-day ensemble read dry (2026-11-28 to 2026-12-12; ECMWF ENS + AIFS)",
    "on": true,
    "level": null,
-   "date": "2026-11-27",
+   "date": "2026-11-28",
    "new": false,
    "since": "2026-11-25"
   },
   {
    "id": "wx_br_sp_wet",
    "market": "Sugar No. 11",
-   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-27 to 2026-12-11; ECMWF ENS + AIFS)",
+   "text": "Ribeirão Preto, São Paulo: next-15-day ensemble read wet (2026-11-28 to 2026-12-12; ECMWF ENS + AIFS)",
    "on": true,
    "level": null,
-   "date": "2026-11-27",
+   "date": "2026-11-28",
    "new": false,
    "since": "2026-11-17"
   },
   {
    "id": "wx_vn_dl_wet",
    "market": "Coffee C",
-   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-28 to 2026-12-11; ECMWF ENS + AIFS)",
+   "text": "Buon Ma Thuot, Dak Lak: next-15-day ensemble read wet (2026-11-28 to 2026-12-12; ECMWF ENS + AIFS)",
    "on": true,
    "level": null,
-   "date": "2026-11-27",
+   "date": "2026-11-28",
    "new": false,
    "since": "2026-11-25"
   },
@@ -265,23 +265,23 @@
   },
   {
    "market": "Coffee C",
-   "text": "Certs weekly change beyond ±40,000 bags (latest +81,763, 2026-11-25)"
+   "text": "Certs weekly change beyond ±40,000 bags (latest +60,050, 2026-11-27)"
   },
   {
    "market": "Cotton",
-   "text": "Mar 27: 55-day high 90.66, 55-day low 78.88 ¢/lb (settle 82.97 on 2026-11-25)"
+   "text": "Mar 27: 55-day high 88.56, 55-day low 78.88 ¢/lb (settle 84.24 on 2026-11-27)"
   },
   {
    "market": "Sugar No. 11",
-   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 18.34 on 2026-11-25)"
+   "text": "Mar 27: 55-day high 21.13, 55-day low 17.03 ¢/lb (settle 18.77 on 2026-11-27)"
   },
   {
    "market": "Coffee C",
-   "text": "Mar 27: 55-day high 302.25, 55-day low 262.60 ¢/lb (settle 270.00 on 2026-11-25)"
+   "text": "Mar 27: 55-day high 302.25, 55-day low 262.60 ¢/lb (settle 275.55 on 2026-11-27)"
   },
   {
    "market": "Cocoa",
-   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,434 on 2026-11-25)"
+   "text": "Mar 27: 55-day high 6,146, 55-day low 4,871 $/t (settle 5,499 on 2026-11-27)"
   },
   {
    "market": "Cotton",
@@ -305,7 +305,7 @@
   },
   {
    "market": "Sugar No. 11",
-   "text": "Ethanol parity 15.70¢/lb: No. 11 Mar 27 now 18.34¢ (2026-11-25)"
+   "text": "Ethanol parity 15.97¢/lb: No. 11 Mar 27 now 18.77¢ (2026-11-27)"
   }
  ],
  "rules_checked": 178,
