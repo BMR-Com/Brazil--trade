@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28 03:26 UTC",
+ "generated": "2026-11-28 03:35 UTC",
  "asof": "2026-11-27",
  "today": "2026-11-27",
  "active": [
@@ -251,16 +251,6 @@
    "level": null,
    "date": "2026-11-27",
    "new": false,
-   "since": "2026-11-27"
-  },
-  {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": true,
    "since": "2026-11-27"
   }
  ],
@@ -564,16 +554,6 @@
    "id": "data_Reports__Sucafina___StoneX___Rabobank_key_points__weekly_rea",
    "market": "Data",
    "text": "Reports: Sucafina / StoneX / Rabobank key points (weekly read): late (latest 2026-11-16, limit 10 days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": true,
-   "since": "2026-11-27"
-  },
-  {
-   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
-   "market": "Data",
-   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
    "on": true,
    "level": null,
    "date": "2026-11-27",
