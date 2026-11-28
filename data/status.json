@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28 04:58 UTC",
+ "generated": "2026-11-28 04:59 UTC",
  "today": "2026-11-27",
  "sources": [
   {
@@ -605,9 +605,9 @@
   {
    "group": "Coffee",
    "source": "Brazil domestic quotes by quality, SAFRAS (2-3 a week)",
-   "latest": "2026-11-23",
+   "latest": "2026-11-27",
    "cadence": "2-3 a week",
-   "age": 4,
+   "age": 0,
    "age_unit": "business days",
    "limit": 7,
    "state": "ok",
