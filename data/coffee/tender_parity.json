@@ -1,5 +1,5 @@
 {
- "built": "2026-11-27 22:19 UTC",
+ "built": "2026-11-28 02:09 UTC",
  "now": {
   "date": "2026-11-11",
   "sw": 236.5,
@@ -874,32 +874,32 @@
   ]
  },
  "reading": [
-  "Live, on CEPEA (2026-11-26, 218.9¢; semi-washed taken at CEPEA + 10¢): a 15-30% semi-washed blend in the Antwerp warehouse costs 241-242¢ against 256¢ from the exchange → tender margin +14 to +15¢ (-8 to +22¢ across cost ranges). The lines below use the last co-op semi-washed quote (2026-11-11).",
+  "Live, on CEPEA (2026-11-27, 228.3¢; semi-washed taken at CEPEA + 10¢): a 15-30% semi-washed blend in the Antwerp warehouse costs 251-251¢ against 256¢ from the exchange → tender margin +4 to +5¢ (-18 to +13¢ across cost ranges). The lines below use the last co-op semi-washed quote (2026-11-11).",
   "Semi-washed trades +19.9¢ over fine/good cup (co-op cereja descascado vs CEPEA tipo 6, 2026-11-11), against a normal of about +10¢ (median since 2018 +11.0¢; 63th percentile of 5 years): wide, so blending a little semi-washed into fine cup and tendering is attractive.",
   "A 15-30% semi-washed blend costs 240-242¢ in the Antwerp warehouse against an exchange value of 257¢ (KCH2027 − 6¢ Brazil − 1.25¢ Antwerp): tender margin +15 to +17¢ (-6 to +25¢ across the cost ranges); tendering pays, so expect more Brazil coffee to be submitted for grading."
  ],
  "live_cepea": {
-  "date": "2026-11-26",
-  "cepea": 218.9,
+  "date": "2026-11-27",
+  "cepea": 228.3,
   "kc2": 263.1,
   "kc2_contract": "KCK2027",
   "sw_proxy_note": "semi-washed taken as CEPEA + 10¢ (Ma's normal premium over fine cup)",
   "stack": {
    "w15": {
-    "blend": 220.4,
-    "cost_total": 241.2,
+    "blend": 229.8,
+    "cost_total": 250.7,
     "exchange_value": 255.9,
-    "margin": 14.7,
-    "margin_low_cost": 22.4,
-    "margin_high_cost": -8.0
+    "margin": 5.2,
+    "margin_low_cost": 13.0,
+    "margin_high_cost": -17.5
    },
    "w30": {
-    "blend": 221.9,
-    "cost_total": 242.0,
+    "blend": 231.3,
+    "cost_total": 251.4,
     "exchange_value": 255.9,
-    "margin": 13.9,
-    "margin_low_cost": 20.9,
-    "margin_high_cost": -6.8
+    "margin": 4.4,
+    "margin_low_cost": 11.4,
+    "margin_high_cost": -16.3
    }
   }
  },
