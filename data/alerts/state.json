@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28 10:24 UTC",
+ "generated": "2026-11-28 11:57 UTC",
  "asof": "2026-11-27",
  "today": "2026-11-28",
  "active": [
@@ -90,7 +90,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-28",
-   "new": true,
+   "new": false,
    "since": "2026-11-28"
   },
   {
@@ -270,6 +270,16 @@
    "on": true,
    "level": null,
    "date": "2026-11-28",
+   "new": false,
+   "since": "2026-11-28"
+  },
+  {
+   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
+   "market": "Data",
+   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-28",
    "new": true,
    "since": "2026-11-28"
   },
@@ -280,7 +290,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-28",
-   "new": true,
+   "new": false,
    "since": "2026-11-28"
   },
   {
@@ -290,7 +300,7 @@
    "on": true,
    "level": null,
    "date": "2026-11-28",
-   "new": true,
+   "new": false,
    "since": "2026-11-28"
   }
  ],
@@ -634,6 +644,16 @@
    "id": "data_Options_terminal__coffee__BMR_Com_softs__options__",
    "market": "Data",
    "text": "Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-24, limit 3 business days)",
+   "on": true,
+   "level": null,
+   "date": "2026-11-28",
+   "new": true,
+   "since": "2026-11-28"
+  },
+  {
+   "id": "data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat",
+   "market": "Data",
+   "text": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)",
    "on": true,
    "level": null,
    "date": "2026-11-28",

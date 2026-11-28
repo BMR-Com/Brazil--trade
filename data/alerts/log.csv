@@ -88,3 +88,4 @@ date,id,market,event,text
 2026-11-28,data_COT_positioning_dashboard__BMR_Com_cftc_cot_full___positions,Data,triggered,"COT positioning dashboard (BMR-Com/cftc-cot-full), positions date: late (latest 2026-11-17, limit 10 days)"
 2026-11-28,data_Options_terminal__cotton__BMR_Com_softs__options__,Data,triggered,"Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-24, limit 3 business days)"
 2026-11-28,data_Options_terminal__coffee__BMR_Com_softs__options__,Data,triggered,"Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-24, limit 3 business days)"
+2026-11-28,data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat,Data,triggered,"WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)"
