@@ -1,5 +1,5 @@
 {
- "built": "2026-11-28 04:37 UTC",
+ "built": "2026-11-28 05:26 UTC",
  "region": "Brazil Centre-South",
  "unica_last_position": "2026-09-01",
  "current_season": {
@@ -38,24 +38,24 @@
     "end": "2026-11-30",
     "fn": 16,
     "weather": "observed + forecast",
-    "stop_days": 10.0,
-    "cane_mt": 10.82,
-    "mix": 42.8,
-    "kgt": 52.4,
-    "atr": 128.4,
-    "sugar_mt": 0.567
+    "stop_days": 9.0,
+    "cane_mt": 11.21,
+    "mix": 43.0,
+    "kgt": 52.6,
+    "atr": 128.5,
+    "sugar_mt": 0.589
    },
    {
     "start": "2026-12-01",
     "end": "2026-12-15",
     "fn": 17,
     "weather": "forecast",
-    "stop_days": 11.1,
-    "cane_mt": 5.16,
+    "stop_days": 11.6,
+    "cane_mt": 5.08,
     "mix": 37.3,
     "kgt": 43.9,
     "atr": 124.6,
-    "sugar_mt": 0.227
+    "sugar_mt": 0.223
    },
    {
     "start": "2026-12-16",
@@ -144,29 +144,29 @@
   ],
   "season_total": {
    "catchup_30": {
-    "cane_mt": 591.8,
-    "sugar_mt": 35.35,
-    "cane_yoy_pct": -2.7,
-    "sugar_yoy_pct": -12.3
+    "cane_mt": 592.1,
+    "sugar_mt": 35.37,
+    "cane_yoy_pct": -2.6,
+    "sugar_yoy_pct": -12.2
    },
    "catchup_50": {
-    "cane_mt": 595.6,
-    "sugar_mt": 35.54,
-    "cane_yoy_pct": -2.1,
+    "cane_mt": 595.9,
+    "sugar_mt": 35.56,
+    "cane_yoy_pct": -2.0,
     "sugar_yoy_pct": -11.8
    },
    "catchup_70": {
-    "cane_mt": 599.5,
-    "sugar_mt": 35.73,
+    "cane_mt": 599.8,
+    "sugar_mt": 35.75,
     "cane_yoy_pct": -1.4,
-    "sugar_yoy_pct": -11.4
+    "sugar_yoy_pct": -11.3
    }
   }
  },
  "next_season_signals": {
   "oni_latest": 2.46,
   "el_nino_analogs": 5,
-  "cs_rain_since_1_oct_pct_normal": 102.0
+  "cs_rain_since_1_oct_pct_normal": 103.0
  },
  "variables_used": [
   "MAPA fortnightly cane, sugar and ethanol by state",
