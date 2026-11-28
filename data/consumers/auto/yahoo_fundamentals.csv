@@ -36,7 +36,6 @@ ABF.L,ABF (Primark),cotton,annualTotalRevenue,2023-09-30,12M,GBP,19750000000.0
 ABF.L,ABF (Primark),cotton,annualTotalRevenue,2024-08-31,12M,GBP,20073000000.0
 ABF.L,ABF (Primark),cotton,annualTotalRevenue,2025-08-31,12M,GBP,19459000000.0
 ABF.L,ABF (Primark),cotton,annualTotalRevenue,2026-08-31,12M,GBP,19582000000.0
-ABF.L,ABF (Primark),cotton,quarterlyInventory,2025-02-28,3M,GBP,3321000000.0
 ABF.L,ABF (Primark),cotton,quarterlyInventory,2025-08-31,3M,GBP,3289000000.0
 ABF.L,ABF (Primark),cotton,quarterlyInventory,2026-02-28,3M,GBP,3420000000.0
 ABF.L,ABF (Primark),cotton,quarterlyInventory,2026-08-31,3M,GBP,3187000000.0
@@ -84,7 +83,6 @@ BARN.SW,Barry Callebaut,cocoa,annualTotalRevenue,2023-08-31,12M,CHF,8470525000.0
 BARN.SW,Barry Callebaut,cocoa,annualTotalRevenue,2024-08-31,12M,CHF,10386283000.0
 BARN.SW,Barry Callebaut,cocoa,annualTotalRevenue,2025-08-31,12M,CHF,14788581000.0
 BARN.SW,Barry Callebaut,cocoa,annualTotalRevenue,2026-08-31,12M,CHF,12189572000.0
-BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2025-02-28,3M,CHF,7335154000.0
 BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2025-08-31,3M,CHF,4739940000.0
 BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2026-02-28,3M,CHF,2937894000.0
 BARN.SW,Barry Callebaut,cocoa,quarterlyInventory,2026-08-31,3M,CHF,3547878000.0
