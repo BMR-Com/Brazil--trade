@@ -1,4 +1,758 @@
 date,state,grade,lo,hi,url
+2025-03-13,Gujarat,M/30,3961,3991,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Gujarat,S/30,3861,3891,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Madhya Pradesh,M/30,4060,4075,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Madhya Pradesh,S/30,4020,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Maharashtra,M/30,3830,3875,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Maharashtra,S/30,3770,3780,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Punjab,M/30,4050,4101,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,South Karnataka,M/30,4025,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,South Karnataka,S/30,3975,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Tamil Nadu,M/30,4080,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Tamil Nadu,S/30,4020,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-13,Uttar Pradesh,M/30,4040,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-03-2025/
+2025-03-14,Gujarat,M/30,3961,3991,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Gujarat,S/30,3861,3891,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Madhya Pradesh,M/30,4060,4075,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Madhya Pradesh,S/30,4020,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Maharashtra,M/30,3830,3875,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Maharashtra,S/30,3770,3780,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Punjab,M/30,4050,4101,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,South Karnataka,M/30,4025,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,South Karnataka,S/30,3975,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Tamil Nadu,M/30,4080,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Tamil Nadu,S/30,4020,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-14,Uttar Pradesh,M/30,4040,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-03-2025/
+2025-03-15,Gujarat,M/30,3961,3991,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Gujarat,S/30,3861,3891,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Madhya Pradesh,M/30,4060,4075,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Madhya Pradesh,S/30,4020,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Maharashtra,M/30,3820,3865,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Maharashtra,S/30,3760,3770,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Punjab,M/30,4040,4091,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,South Karnataka,M/30,4025,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,South Karnataka,S/30,3975,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Tamil Nadu,M/30,4080,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Tamil Nadu,S/30,4020,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-15,Uttar Pradesh,M/30,4020,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-03-2025/
+2025-03-17,Gujarat,M/30,3971,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Gujarat,S/30,3871,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Madhya Pradesh,M/30,4070,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Madhya Pradesh,S/30,4020,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Maharashtra,M/30,3820,3865,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Maharashtra,S/30,3760,3770,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Punjab,M/30,4040,4091,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,South Karnataka,M/30,4000,4045,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,South Karnataka,S/30,3950,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Tamil Nadu,M/30,4060,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Tamil Nadu,S/30,4000,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-17,Uttar Pradesh,M/30,4020,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-03-2025/
+2025-03-18,Gujarat,M/30,3971,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Gujarat,S/30,3871,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Madhya Pradesh,M/30,4070,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Madhya Pradesh,S/30,4020,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Maharashtra,M/30,3820,3865,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Maharashtra,S/30,3760,3770,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Punjab,M/30,4080,4121,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,South Karnataka,M/30,4000,4045,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,South Karnataka,S/30,3950,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Tamil Nadu,M/30,4175,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Tamil Nadu,S/30,4000,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-18,Uttar Pradesh,M/30,4020,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-03-2025/
+2025-03-19,Gujarat,M/30,3961,3961,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Gujarat,S/30,3861,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Madhya Pradesh,M/30,4070,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Madhya Pradesh,S/30,4020,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Maharashtra,M/30,3820,3865,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Maharashtra,S/30,3760,3770,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Punjab,M/30,4080,4121,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,South Karnataka,M/30,3975,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,South Karnataka,S/30,3925,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Tamil Nadu,M/30,4040,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Tamil Nadu,S/30,3980,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-19,Uttar Pradesh,M/30,4020,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-03-2025/
+2025-03-20,Gujarat,M/30,3961,3961,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Gujarat,S/30,3861,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Madhya Pradesh,M/30,4070,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Madhya Pradesh,S/30,4020,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Maharashtra,M/30,3840,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Maharashtra,S/30,3760,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Punjab,M/30,4090,4131,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,South Karnataka,M/30,3975,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,South Karnataka,S/30,3925,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Tamil Nadu,M/30,4040,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Tamil Nadu,S/30,3980,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-20,Uttar Pradesh,M/30,4020,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-03-2025/
+2025-03-21,Gujarat,M/30,3961,3961,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Gujarat,S/30,3861,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Madhya Pradesh,M/30,4070,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Madhya Pradesh,S/30,4020,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Maharashtra,M/30,3840,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Maharashtra,S/30,3760,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Punjab,M/30,4090,4131,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,South Karnataka,M/30,3975,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,South Karnataka,S/30,3925,3950,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Tamil Nadu,M/30,4040,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Tamil Nadu,S/30,3980,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-21,Uttar Pradesh,M/30,4010,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-03-2025/
+2025-03-22,Gujarat,M/30,3961,3961,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Gujarat,S/30,3861,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Madhya Pradesh,M/30,4070,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Madhya Pradesh,S/30,4020,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Maharashtra,S/30,3770,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Punjab,M/30,4090,4131,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,South Karnataka,M/30,4025,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,South Karnataka,S/30,3975,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Tamil Nadu,M/30,4150,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Tamil Nadu,S/30,4000,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-22,Uttar Pradesh,M/30,4010,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-03-2025/
+2025-03-24,Gujarat,M/30,3941,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Gujarat,S/30,3841,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Madhya Pradesh,M/30,4090,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Madhya Pradesh,S/30,4020,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Maharashtra,S/30,3770,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Punjab,M/30,4090,4121,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,South Karnataka,M/30,4000,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,South Karnataka,S/30,3950,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Tamil Nadu,M/30,4150,4160,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Tamil Nadu,S/30,4000,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-24,Uttar Pradesh,M/30,3980,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-03-2025/
+2025-03-25,Gujarat,M/30,3941,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Gujarat,S/30,3841,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Madhya Pradesh,M/30,4090,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Madhya Pradesh,S/30,4020,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Maharashtra,S/30,3770,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Punjab,M/30,4090,4121,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,South Karnataka,M/30,4025,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,South Karnataka,S/30,3975,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Tamil Nadu,M/30,4060,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Tamil Nadu,S/30,4000,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-25,Uttar Pradesh,M/30,3980,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-03-2025/
+2025-03-26,Gujarat,M/30,3941,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Gujarat,S/30,3841,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Madhya Pradesh,M/30,4090,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Madhya Pradesh,S/30,4020,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Maharashtra,S/30,3770,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Punjab,M/30,4060,4131,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,South Karnataka,M/30,4000,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,South Karnataka,S/30,3950,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Tamil Nadu,M/30,4150,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Tamil Nadu,S/30,4000,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-26,Uttar Pradesh,M/30,3980,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-03-2025/
+2025-03-27,Gujarat,M/30,3941,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Gujarat,S/30,3841,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Madhya Pradesh,M/30,4080,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Madhya Pradesh,S/30,4010,4020,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Maharashtra,S/30,3770,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Punjab,M/30,4060,4121,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,South Karnataka,M/30,4000,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,South Karnataka,S/30,3950,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Tamil Nadu,M/30,4150,4150,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Tamil Nadu,S/30,4010,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-27,Uttar Pradesh,M/30,3980,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-03-2025/
+2025-03-28,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Gujarat,S/30,3851,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Madhya Pradesh,M/30,4060,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Madhya Pradesh,S/30,3990,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Maharashtra,M/30,3860,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Maharashtra,S/30,3790,3820,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Punjab,M/30,4100,4151,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,South Karnataka,S/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Tamil Nadu,M/30,4110,4150,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Tamil Nadu,S/30,4000,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-28,Uttar Pradesh,M/30,4000,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-03-2025/
+2025-03-29,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Gujarat,S/30,3851,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Madhya Pradesh,M/30,4060,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Madhya Pradesh,S/30,3990,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Maharashtra,M/30,3860,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Maharashtra,S/30,3790,3820,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Punjab,M/30,4121,4151,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,South Karnataka,S/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Tamil Nadu,M/30,4110,4150,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Tamil Nadu,S/30,4000,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-29,Uttar Pradesh,M/30,4000,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-03-2025/
+2025-03-31,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Gujarat,S/30,3851,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Madhya Pradesh,M/30,4075,4095,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Madhya Pradesh,S/30,4005,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Maharashtra,M/30,3860,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Maharashtra,S/30,3790,3820,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Punjab,M/30,4121,4151,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,South Karnataka,S/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Tamil Nadu,M/30,4150,4150,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Tamil Nadu,S/30,4020,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-03-31,Uttar Pradesh,M/30,4000,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-31-03-2025/
+2025-04-01,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Gujarat,S/30,3851,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Madhya Pradesh,M/30,4075,4095,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Madhya Pradesh,S/30,4005,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Maharashtra,M/30,3860,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Maharashtra,S/30,3790,3820,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Punjab,M/30,4120,4151,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,South Karnataka,S/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Tamil Nadu,M/30,4110,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Tamil Nadu,S/30,4030,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-01,Uttar Pradesh,M/30,4000,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-01-04-2025/
+2025-04-02,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Gujarat,S/30,3851,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Madhya Pradesh,M/30,4075,4095,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Madhya Pradesh,S/30,4005,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Maharashtra,M/30,3860,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Maharashtra,S/30,3790,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Punjab,M/30,4100,4171,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Tamil Nadu,M/30,4110,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Tamil Nadu,S/30,4030,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-02,Uttar Pradesh,M/30,4020,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-04-2025/
+2025-04-03,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Gujarat,S/30,3851,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Madhya Pradesh,M/30,4070,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Madhya Pradesh,S/30,4000,4020,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Maharashtra,M/30,3850,3870,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Maharashtra,S/30,3780,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Punjab,M/30,4100,4171,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Tamil Nadu,M/30,4150,4150,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Tamil Nadu,S/30,4040,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-03,Uttar Pradesh,M/30,4020,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-04-2025/
+2025-04-04,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Gujarat,S/30,3851,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Madhya Pradesh,M/30,4070,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Madhya Pradesh,S/30,4020,4020,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Maharashtra,M/30,3845,3865,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Maharashtra,S/30,3775,3795,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Punjab,M/30,4080,4151,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Tamil Nadu,M/30,4110,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Tamil Nadu,S/30,4040,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-04,Uttar Pradesh,M/30,4030,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-04-04-2025/
+2025-04-05,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Gujarat,S/30,3851,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Madhya Pradesh,M/30,4070,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Madhya Pradesh,S/30,4020,4020,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Maharashtra,M/30,3845,3865,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Maharashtra,S/30,3775,3795,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Punjab,M/30,4080,4151,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Tamil Nadu,M/30,4110,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Tamil Nadu,S/30,4040,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-05,Uttar Pradesh,M/30,4010,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-04-2025/
+2025-04-07,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Gujarat,S/30,3831,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Madhya Pradesh,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Madhya Pradesh,S/30,4010,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Maharashtra,M/30,3835,3855,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Maharashtra,S/30,3765,3785,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Punjab,M/30,4070,4141,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,South Karnataka,M/30,4025,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,South Karnataka,S/30,3970,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Tamil Nadu,M/30,4080,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Tamil Nadu,S/30,4020,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-07,Uttar Pradesh,M/30,3990,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-04-2025/
+2025-04-08,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Gujarat,S/30,3831,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Madhya Pradesh,M/30,4050,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Madhya Pradesh,S/30,3980,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Maharashtra,M/30,3825,3845,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Maharashtra,S/30,3755,3775,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Punjab,M/30,4080,4141,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,South Karnataka,M/30,4025,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,South Karnataka,S/30,3970,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Tamil Nadu,M/30,4080,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Tamil Nadu,S/30,4020,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-08,Uttar Pradesh,M/30,3980,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-04-2025/
+2025-04-09,Gujarat,M/30,3941,3961,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Gujarat,S/30,3841,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Madhya Pradesh,M/30,4040,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Madhya Pradesh,S/30,3980,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Maharashtra,M/30,3825,3845,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Maharashtra,S/30,3755,3775,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Punjab,M/30,4060,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,South Karnataka,M/30,4025,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,South Karnataka,S/30,3970,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Tamil Nadu,M/30,4150,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Tamil Nadu,S/30,4020,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-09,Uttar Pradesh,M/30,3980,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-04-2025/
+2025-04-10,Gujarat,M/30,3941,3961,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Gujarat,S/30,3841,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Madhya Pradesh,M/30,4050,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Madhya Pradesh,S/30,3980,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Maharashtra,M/30,3825,3845,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Maharashtra,S/30,3755,3775,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Punjab,M/30,4060,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,South Karnataka,M/30,4025,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,South Karnataka,S/30,3970,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Tamil Nadu,M/30,4150,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Tamil Nadu,S/30,4030,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-10,Uttar Pradesh,M/30,3980,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-04-2025/
+2025-04-11,Gujarat,M/30,3921,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Gujarat,S/30,3821,3841,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Madhya Pradesh,M/30,4040,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Madhya Pradesh,S/30,3980,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Maharashtra,M/30,3825,3845,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Maharashtra,S/30,3755,3775,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Punjab,M/30,4060,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,South Karnataka,M/30,4035,4035,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,South Karnataka,S/30,3970,3985,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Tamil Nadu,M/30,4090,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Tamil Nadu,S/30,4030,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-11,Uttar Pradesh,M/30,3980,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-11-04-2025/
+2025-04-12,Gujarat,M/30,3921,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Gujarat,S/30,3821,3841,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Madhya Pradesh,M/30,4040,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Madhya Pradesh,S/30,3980,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Maharashtra,M/30,3825,3845,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Maharashtra,S/30,3755,3775,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Punjab,M/30,4060,4121,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,South Karnataka,M/30,4035,4035,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,South Karnataka,S/30,3970,3985,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Tamil Nadu,M/30,4150,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Tamil Nadu,S/30,4050,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-12,Uttar Pradesh,M/30,3990,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-04-2025/
+2025-04-14,Gujarat,M/30,3921,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Gujarat,S/30,3821,3841,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Madhya Pradesh,M/30,4040,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Madhya Pradesh,S/30,3980,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Punjab,M/30,4060,4121,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,South Karnataka,S/30,3970,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Tamil Nadu,M/30,4150,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Tamil Nadu,S/30,4050,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-14,Uttar Pradesh,M/30,4000,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-04-2025/
+2025-04-15,Gujarat,M/30,4021,4041,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Gujarat,S/30,3845,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Madhya Pradesh,M/30,4020,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Madhya Pradesh,S/30,3970,3980,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Punjab,M/30,4080,4141,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,South Karnataka,M/30,4040,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,South Karnataka,S/30,3985,3990,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Tamil Nadu,M/30,4120,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Tamil Nadu,S/30,4050,4175,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-15,Uttar Pradesh,M/30,4010,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-04-2025/
+2025-04-16,Gujarat,M/30,4021,4041,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Gujarat,S/30,3845,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Madhya Pradesh,M/30,4020,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Madhya Pradesh,S/30,3970,3980,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Punjab,M/30,4100,4160,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,South Karnataka,S/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Tamil Nadu,M/30,4150,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Tamil Nadu,S/30,4070,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-16,Uttar Pradesh,M/30,4010,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-04-2025/
+2025-04-17,Gujarat,M/30,4021,4041,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Gujarat,S/30,3845,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Madhya Pradesh,M/30,4030,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Madhya Pradesh,S/30,3980,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Punjab,M/30,4100,4160,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,South Karnataka,S/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Tamil Nadu,M/30,4175,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Tamil Nadu,S/30,4075,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-17,Uttar Pradesh,M/30,4010,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-04-2025/
+2025-04-18,Gujarat,M/30,4021,4041,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Gujarat,S/30,3845,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Madhya Pradesh,M/30,4030,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Madhya Pradesh,S/30,3970,3990,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Punjab,M/30,4050,4131,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,South Karnataka,S/30,3990,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Tamil Nadu,M/30,4185,4185,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Tamil Nadu,S/30,4090,4135,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-18,Uttar Pradesh,M/30,4010,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-18-04-2025/
+2025-04-19,Gujarat,M/30,4021,4041,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Gujarat,S/30,3845,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Madhya Pradesh,M/30,4030,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Madhya Pradesh,S/30,3970,3990,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Punjab,M/30,4050,4131,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Tamil Nadu,M/30,4185,4185,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Tamil Nadu,S/30,4090,4150,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-19,Uttar Pradesh,M/30,4010,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-04-2025/
+2025-04-21,Gujarat,M/30,4021,4041,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Gujarat,S/30,3845,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Madhya Pradesh,M/30,4030,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Madhya Pradesh,S/30,3960,3980,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Punjab,M/30,4050,4131,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Tamil Nadu,M/30,4135,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Tamil Nadu,S/30,4075,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-21,Uttar Pradesh,M/30,4010,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-04-2025/
+2025-04-22,Gujarat,M/30,3921,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Gujarat,S/30,3831,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Madhya Pradesh,M/30,4030,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Madhya Pradesh,S/30,3960,3980,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Punjab,M/30,4050,4131,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Tamil Nadu,M/30,4135,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Tamil Nadu,S/30,4075,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-22,Uttar Pradesh,M/30,4000,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-04-2025/
+2025-04-23,Gujarat,M/30,3921,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Gujarat,S/30,3831,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Madhya Pradesh,M/30,4020,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Madhya Pradesh,S/30,3950,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Punjab,M/30,4050,4161,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Tamil Nadu,M/30,4135,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Tamil Nadu,S/30,4075,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-23,Uttar Pradesh,M/30,4000,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-04-2025/
+2025-04-24,Gujarat,M/30,3921,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Gujarat,S/30,3831,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Madhya Pradesh,M/30,4010,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Madhya Pradesh,S/30,3940,3960,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Punjab,M/30,4065,4171,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Tamil Nadu,M/30,4135,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Tamil Nadu,S/30,4075,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-24,Uttar Pradesh,M/30,3990,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-04-2025/
+2025-04-25,Gujarat,M/30,3921,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Gujarat,S/30,3831,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Madhya Pradesh,M/30,4010,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Madhya Pradesh,S/30,3940,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Punjab,M/30,4060,4171,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Tamil Nadu,M/30,4135,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Tamil Nadu,S/30,4075,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-25,Uttar Pradesh,M/30,3990,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-25-04-2025/
+2025-04-26,Gujarat,M/30,3921,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,Gujarat,S/30,3831,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,Madhya Pradesh,M/30,4010,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,Madhya Pradesh,S/30,3940,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,Maharashtra,M/30,3840,3860,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,Maharashtra,S/30,3770,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,Punjab,M/30,4060,4171,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,Tamil Nadu,S/30,4075,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-26,Uttar Pradesh,M/30,3970,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-04-2025/
+2025-04-28,Gujarat,M/30,3921,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Gujarat,S/30,3831,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Madhya Pradesh,M/30,4010,4030,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Madhya Pradesh,S/30,3940,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Maharashtra,M/30,3860,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Maharashtra,S/30,3790,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Punjab,M/30,4060,4191,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,South Karnataka,M/30,4060,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,South Karnataka,S/30,4000,4010,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Tamil Nadu,M/30,4135,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Tamil Nadu,S/30,4075,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-28,Uttar Pradesh,M/30,3990,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-28-04-2025/
+2025-04-29,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Gujarat,S/30,3861,3891,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Madhya Pradesh,M/30,4020,4040,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Madhya Pradesh,S/30,3950,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Maharashtra,M/30,3860,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Maharashtra,S/30,3790,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Punjab,M/30,4090,4251,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,South Karnataka,M/30,4100,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,South Karnataka,S/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Tamil Nadu,M/30,4200,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Tamil Nadu,S/30,4150,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-29,Uttar Pradesh,M/30,3990,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-29-04-2025/
+2025-04-30,Gujarat,M/30,3951,3981,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Gujarat,S/30,3861,3891,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Madhya Pradesh,M/30,4020,4020,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Madhya Pradesh,S/30,3970,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Maharashtra,M/30,3870,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Maharashtra,S/30,3780,3820,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Punjab,M/30,4090,4251,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,South Karnataka,M/30,4100,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,South Karnataka,S/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Tamil Nadu,M/30,4185,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Tamil Nadu,S/30,4125,4225,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-04-30,Uttar Pradesh,M/30,4000,4120,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-30-04-2025/
+2025-05-02,Gujarat,M/30,3911,3961,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Gujarat,S/30,3831,3871,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Madhya Pradesh,M/30,4035,4055,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Madhya Pradesh,S/30,3965,3980,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Maharashtra,M/30,3890,3910,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Maharashtra,S/30,3800,3840,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Punjab,M/30,4130,4245,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,South Karnataka,M/30,4125,4125,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,South Karnataka,S/30,4050,4075,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Tamil Nadu,M/30,4210,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Tamil Nadu,S/30,4150,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-02,Uttar Pradesh,M/30,4020,4150,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-02-05-2025/
+2025-05-03,Gujarat,M/30,3911,3961,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Gujarat,S/30,3831,3871,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Madhya Pradesh,M/30,4035,4055,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Madhya Pradesh,S/30,3965,3985,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Maharashtra,M/30,3890,3910,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Maharashtra,S/30,3800,3840,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Punjab,M/30,4130,4245,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,South Karnataka,M/30,4125,4125,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,South Karnataka,S/30,4075,4075,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Tamil Nadu,M/30,4210,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Tamil Nadu,S/30,4150,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-03,Uttar Pradesh,M/30,4020,4150,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-03-05-2025/
+2025-05-05,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Madhya Pradesh,M/30,4030,4035,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Madhya Pradesh,S/30,3980,3985,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Maharashtra,M/30,3890,3910,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Maharashtra,S/30,3800,3840,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Punjab,M/30,4130,4245,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,South Karnataka,M/30,4125,4125,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,South Karnataka,S/30,4060,4075,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Tamil Nadu,M/30,4210,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Tamil Nadu,S/30,4150,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-05,Uttar Pradesh,M/30,4000,4140,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-05-05-2025/
+2025-05-06,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Madhya Pradesh,M/30,4020,4045,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Madhya Pradesh,S/30,3955,3980,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Maharashtra,M/30,3885,3905,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Maharashtra,S/30,3795,3835,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Punjab,M/30,4100,4211,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,South Karnataka,M/30,4125,4125,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,South Karnataka,S/30,4060,4075,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Tamil Nadu,M/30,4210,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Tamil Nadu,S/30,4150,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-06,Uttar Pradesh,M/30,4000,4140,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-06-05-2025/
+2025-05-07,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Madhya Pradesh,M/30,4020,4035,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Madhya Pradesh,S/30,3955,3980,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Maharashtra,M/30,3885,3905,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Maharashtra,S/30,3795,3835,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Punjab,M/30,4090,4231,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,South Karnataka,M/30,4075,4075,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,South Karnataka,S/30,4000,4060,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Tamil Nadu,M/30,4110,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Tamil Nadu,S/30,4050,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-07,Uttar Pradesh,M/30,4000,4140,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-07-05-2025/
+2025-05-08,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Madhya Pradesh,M/30,4005,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Madhya Pradesh,S/30,3935,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Maharashtra,M/30,3870,3900,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Maharashtra,S/30,3790,3820,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Punjab,M/30,4090,4231,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,South Karnataka,M/30,4095,4095,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,South Karnataka,S/30,4020,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Tamil Nadu,M/30,4135,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-08,Uttar Pradesh,M/30,3990,4120,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-08-05-2025/
+2025-05-09,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Madhya Pradesh,M/30,4005,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Madhya Pradesh,S/30,3935,3970,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Maharashtra,M/30,3860,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Maharashtra,S/30,3780,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Punjab,M/30,4100,4251,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,South Karnataka,M/30,4095,4095,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,South Karnataka,S/30,4020,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Tamil Nadu,M/30,4135,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-09,Uttar Pradesh,M/30,3990,4120,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-09-05-2025/
+2025-05-10,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Madhya Pradesh,M/30,4005,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Madhya Pradesh,S/30,3935,3955,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Maharashtra,M/30,3860,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Maharashtra,S/30,3780,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Punjab,M/30,4100,4251,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,South Karnataka,M/30,4095,4095,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,South Karnataka,S/30,4020,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Tamil Nadu,M/30,4135,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-10,Uttar Pradesh,M/30,3970,4100,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-10-05-2025/
+2025-05-12,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Madhya Pradesh,M/30,4005,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Madhya Pradesh,S/30,3935,3955,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Maharashtra,M/30,3860,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Maharashtra,S/30,3780,3820,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Punjab,M/30,4120,4251,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,South Karnataka,S/30,3950,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Tamil Nadu,M/30,4250,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-12,Uttar Pradesh,M/30,3970,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-12-05-2025/
+2025-05-13,Gujarat,M/30,3901,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Gujarat,S/30,3821,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Madhya Pradesh,M/30,3990,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Madhya Pradesh,S/30,3935,3955,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Maharashtra,M/30,3865,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Maharashtra,S/30,3785,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Punjab,M/30,4120,4251,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,South Karnataka,S/30,3950,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Tamil Nadu,M/30,4250,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-13,Uttar Pradesh,M/30,3970,4090,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-13-05-2025/
+2025-05-14,Gujarat,M/30,3901,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Gujarat,S/30,3821,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Madhya Pradesh,M/30,3990,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Madhya Pradesh,S/30,3935,3955,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Maharashtra,M/30,3865,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Maharashtra,S/30,3785,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Punjab,M/30,4110,4251,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,South Karnataka,S/30,3950,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Tamil Nadu,M/30,4250,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-14,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-14-05-2025/
+2025-05-15,Gujarat,M/30,3901,3951,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Gujarat,S/30,3821,3861,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Madhya Pradesh,M/30,3990,4025,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Madhya Pradesh,S/30,3935,3955,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Maharashtra,M/30,3865,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Maharashtra,S/30,3785,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Punjab,M/30,4120,4251,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,South Karnataka,S/30,3940,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Tamil Nadu,M/30,4250,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-15,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-15-05-2025/
+2025-05-16,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Madhya Pradesh,M/30,3990,4015,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Madhya Pradesh,S/30,3925,3950,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Maharashtra,M/30,3865,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Maharashtra,S/30,3785,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Punjab,M/30,4100,4221,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,South Karnataka,S/30,3940,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Tamil Nadu,M/30,4250,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-16,Uttar Pradesh,M/30,3970,4080,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-16-05-2025/
+2025-05-17,Gujarat,M/30,3891,3941,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Gujarat,S/30,3811,3851,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Madhya Pradesh,M/30,3990,4015,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Madhya Pradesh,S/30,3925,3950,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Maharashtra,M/30,3865,3890,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Maharashtra,S/30,3785,3810,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Punjab,M/30,4100,4230,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,South Karnataka,M/30,4050,4050,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,South Karnataka,S/30,3940,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Tamil Nadu,M/30,4250,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Tamil Nadu,S/30,4075,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-17,Uttar Pradesh,M/30,3960,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-17-05-2025/
+2025-05-19,Gujarat,M/30,3881,3931,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Gujarat,S/30,3801,3841,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Madhya Pradesh,M/30,3990,4015,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Madhya Pradesh,S/30,3925,3950,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Maharashtra,M/30,3855,3880,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Maharashtra,S/30,3775,3800,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Punjab,M/30,4100,4210,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,South Karnataka,M/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,South Karnataka,S/30,3950,3950,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Tamil Nadu,M/30,4200,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Tamil Nadu,S/30,4010,4200,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-19,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-19-05-2025/
+2025-05-20,Gujarat,M/30,3881,3931,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Gujarat,S/30,3801,3841,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Madhya Pradesh,M/30,3985,4005,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Madhya Pradesh,S/30,3915,3935,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Maharashtra,M/30,3850,3875,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Maharashtra,S/30,3770,3795,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Punjab,M/30,4070,4201,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,South Karnataka,M/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,South Karnataka,S/30,3950,3950,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Tamil Nadu,M/30,4200,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Tamil Nadu,S/30,4025,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-20,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-20-05-2025/
+2025-05-21,Gujarat,M/30,3881,3931,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Gujarat,S/30,3801,3841,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Madhya Pradesh,M/30,3960,4005,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Madhya Pradesh,S/30,3915,3935,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Maharashtra,M/30,3845,3870,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Maharashtra,S/30,3765,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Punjab,M/30,4070,4201,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,South Karnataka,M/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,South Karnataka,S/30,3940,3940,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Tamil Nadu,M/30,4200,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Tamil Nadu,S/30,4025,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-21,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-21-05-2025/
+2025-05-22,Gujarat,M/30,3885,3901,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Gujarat,S/30,3810,3831,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Madhya Pradesh,M/30,3960,3995,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Madhya Pradesh,S/30,3910,3935,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Maharashtra,M/30,3845,3870,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Maharashtra,S/30,3765,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Punjab,M/30,4060,4181,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,South Karnataka,M/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,South Karnataka,S/30,3940,3940,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Tamil Nadu,M/30,4200,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Tamil Nadu,S/30,4025,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-22,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-22-05-2025/
+2025-05-23,Gujarat,M/30,3885,3901,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Gujarat,S/30,3810,3831,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Madhya Pradesh,M/30,3985,4005,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Madhya Pradesh,S/30,3915,3940,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Maharashtra,M/30,3845,3870,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Maharashtra,S/30,3765,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Punjab,M/30,4060,4181,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,South Karnataka,M/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,South Karnataka,S/30,3940,3940,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Tamil Nadu,M/30,4200,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Tamil Nadu,S/30,4025,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-23,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-23-05-2025/
+2025-05-24,Gujarat,M/30,3885,3901,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Gujarat,S/30,3810,3831,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Madhya Pradesh,M/30,3985,4005,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Madhya Pradesh,S/30,3915,3935,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Maharashtra,M/30,3845,3870,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Maharashtra,S/30,3765,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Punjab,M/30,4040,4171,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,South Karnataka,M/30,4000,4000,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,South Karnataka,S/30,3950,3950,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Tamil Nadu,M/30,4200,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Tamil Nadu,S/30,4010,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-24,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-24-05-2025/
+2025-05-26,Gujarat,M/30,3875,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Gujarat,S/30,3800,3811,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Madhya Pradesh,M/30,3970,3990,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Madhya Pradesh,S/30,3900,3920,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Maharashtra,M/30,3845,3870,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Maharashtra,S/30,3765,3790,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Punjab,M/30,4050,4151,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,South Karnataka,M/30,3975,3975,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,South Karnataka,S/30,3925,3925,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Tamil Nadu,M/30,4150,4300,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Tamil Nadu,S/30,4000,4250,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
+2025-05-26,Uttar Pradesh,M/30,3950,4070,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-26-05-2025/
 2025-05-27,Gujarat,M/30,3875,3881,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-05-2025/
 2025-05-27,Gujarat,S/30,3800,3811,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-05-2025/
 2025-05-27,Madhya Pradesh,M/30,3970,3980,https://www.chinimandi.com/daily-sugar-market-update-by-vizzie-27-05-2025/
