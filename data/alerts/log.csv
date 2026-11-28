@@ -82,3 +82,4 @@ date,id,market,event,text
 2026-11-27,data_Options_terminal__cotton__BMR_Com_softs__options__,Data,cleared,"Options terminal, cotton (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)"
 2026-11-27,data_Options_terminal__coffee__BMR_Com_softs__options__,Data,cleared,"Options terminal, coffee (BMR-Com/softs--options-): late (latest 2026-11-19, limit 3 business days)"
 2026-11-27,data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_,Data,cleared,"Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-19, limit 3 business days)"
+2026-11-27,data_WASDE_dashboard__BMR_Com_wasde_analytics___last_cotton_updat,Data,triggered,"WASDE dashboard (BMR-Com/wasde-analytics), last cotton update: missing (latest –, limit 40 days)"
