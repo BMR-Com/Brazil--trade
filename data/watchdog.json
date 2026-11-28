@@ -1,22 +1,8 @@
 {
- "checked": "2026-11-27 11:26 UTC",
+ "checked": "2026-11-28 10:54 UTC",
  "repo": "BMR-Com/Brazil--trade",
  "mode": "wait+recheck",
  "late_or_failed_at_start": [
-  {
-   "id": "usda_esr",
-   "report": "USDA FAS weekly export sales (week ending Thursday)",
-   "tab": "Cotton > Export sales; briefs",
-   "latest": "2026-11-12",
-   "expected": "2026-11-12",
-   "late": false,
-   "failed": true,
-   "reason": "last run of softs_trade.yml failure (https://github.com/BMR-Com/Brazil--trade/actions/runs/45920444303)",
-   "workflow": "BMR-Com/Brazil--trade/softs_trade.yml",
-   "manual": false,
-   "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
-  },
   {
    "id": "fsa_loan",
    "report": "USDA FSA cotton loan reports (weekly, as of Monday)",
@@ -35,11 +21,11 @@
    "id": "ice_options",
    "report": "ICE daily market report PDFs (Ma uploads)",
    "tab": "Options pricer, vol, trade ideas",
-   "latest": "2026-11-19",
+   "latest": "2026-11-24",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-19 is older than the 2 business days limit",
+   "reason": "data 2026-11-24 is older than the 2 business days limit",
    "workflow": "BMR-Com/Brazil--trade/softs_options.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)"
@@ -48,11 +34,11 @@
    "id": "options_terminal_ct",
    "report": "ICE cotton options (from uploaded ICE reports)",
    "tab": "Options terminal",
-   "latest": "2026-11-19",
+   "latest": "2026-11-24",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-19 is older than the 3 business days limit",
+   "reason": "data 2026-11-24 is older than the 3 business days limit",
    "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)"
@@ -61,11 +47,11 @@
    "id": "options_terminal_kc",
    "report": "ICE coffee options (from uploaded ICE reports)",
    "tab": "Options terminal",
-   "latest": "2026-11-19",
+   "latest": "2026-11-24",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-19 is older than the 3 business days limit",
+   "reason": "data 2026-11-24 is older than the 3 business days limit",
    "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)"
@@ -268,20 +254,6 @@
    "owner": "Ma (upload / manual entry)"
   },
   {
-   "id": "ethanol",
-   "report": "CEPEA hydrous ethanol / B3",
-   "tab": "Sugar > Ethanol parity",
-   "latest": "2026-11-19",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-19 is older than the 3 business days limit",
-   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
-   "manual": false,
-   "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
-  },
-  {
    "id": "safras_en",
    "report": "SAFRAS & Mercado differentials notes (English desk)",
    "tab": "Coffee > Differentials",
@@ -298,67 +270,61 @@
  ],
  "reruns": [
   {
-   "workflow": "BMR-Com/Brazil--trade/softs_trade.yml",
-   "file": "softs_trade.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-27T11:26+00:00",
-   "ok": true,
-   "for": "usda_esr",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45990480579"
-  },
-  {
    "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
    "file": "cotton_loan.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-27T11:26+00:00",
+   "at": "2026-11-28T10:54+00:00",
    "ok": true,
    "for": "fsa_loan",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45990483717"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/46137348460"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/coffee.yml",
    "file": "coffee.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-27T11:26+00:00",
+   "at": "2026-11-28T10:54+00:00",
    "ok": true,
    "for": "coffee_certs_profile",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45990487103"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/46137349764"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/sugar.yml",
    "file": "sugar.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-27T11:26+00:00",
+   "at": "2026-11-28T10:54+00:00",
    "ok": true,
    "for": "mapa",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45990490326"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
-   "file": "desk_watch.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-27T11:26+00:00",
-   "ok": true,
-   "for": "ethanol",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45990492956"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/46137350954"
   },
   {
    "workflow": "BMR-Com/Brazil--trade/coffee_diffs.yml",
    "file": "coffee_diffs.yml",
    "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-27T11:26+00:00",
+   "at": "2026-11-28T10:54+00:00",
    "ok": true,
    "for": "safras_en",
    "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45990495753"
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/46137352223"
   }
  ],
  "still_late": [
+  {
+   "id": "wasde_dashboard",
+   "report": "USDA WASDE",
+   "tab": "Cotton > WASDE (full dashboard)",
+   "latest": null,
+   "expected": "2026-11-10",
+   "late": true,
+   "failed": false,
+   "reason": "data missing; release of 2026-11-10 12:00 ET (data 2026-11-10) should be in since 2026-11-10 22:00 ET",
+   "workflow": "BMR-Com/wasde-analytics/update.yml",
+   "manual": false,
+   "owner": "BMR-Com/wasde-analytics",
+   "action": null
+  },
   {
    "id": "fsa_loan",
    "report": "USDA FSA cotton loan reports (weekly, as of Monday)",
@@ -402,20 +368,6 @@
    "action": "rerun dispatched"
   },
   {
-   "id": "ethanol",
-   "report": "CEPEA hydrous ethanol / B3",
-   "tab": "Sugar > Ethanol parity",
-   "latest": "2026-11-19",
-   "expected": null,
-   "late": true,
-   "failed": false,
-   "reason": "data 2026-11-19 is older than the 3 business days limit",
-   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
-   "manual": false,
-   "owner": "BMR-Com/Brazil--trade",
-   "action": "rerun dispatched"
-  },
-  {
    "id": "safras_en",
    "report": "SAFRAS & Mercado differentials notes (English desk)",
    "tab": "Coffee > Differentials",
@@ -436,11 +388,11 @@
    "id": "ice_options",
    "report": "ICE daily market report PDFs (Ma uploads)",
    "tab": "Options pricer, vol, trade ideas",
-   "latest": "2026-11-19",
+   "latest": "2026-11-24",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-19 is older than the 2 business days limit",
+   "reason": "data 2026-11-24 is older than the 2 business days limit",
    "workflow": "BMR-Com/Brazil--trade/softs_options.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)",
@@ -450,11 +402,11 @@
    "id": "options_terminal_ct",
    "report": "ICE cotton options (from uploaded ICE reports)",
    "tab": "Options terminal",
-   "latest": "2026-11-19",
+   "latest": "2026-11-24",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-19 is older than the 3 business days limit",
+   "reason": "data 2026-11-24 is older than the 3 business days limit",
    "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)",
@@ -464,11 +416,11 @@
    "id": "options_terminal_kc",
    "report": "ICE coffee options (from uploaded ICE reports)",
    "tab": "Options terminal",
-   "latest": "2026-11-19",
+   "latest": "2026-11-24",
    "expected": null,
    "late": true,
    "failed": false,
-   "reason": "data 2026-11-19 is older than the 3 business days limit",
+   "reason": "data 2026-11-24 is older than the 3 business days limit",
    "workflow": "BMR-Com/softs--options-/daily_options_archive.yml",
    "manual": true,
    "owner": "Ma (upload / manual entry)",
@@ -660,36 +612,6 @@
  "off_season": [],
  "result": "red",
  "dispatch_log": [
-  {
-   "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
-   "file": "cotton_loan.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-21T10:13+00:00",
-   "ok": true,
-   "for": "fsa_loan",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44893369941"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/softs_contracts.yml",
-   "file": "softs_contracts.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-21T10:13+00:00",
-   "ok": true,
-   "for": "cc_certs_profile",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44893372303"
-  },
-  {
-   "workflow": "BMR-Com/Brazil--trade/desk_watch.yml",
-   "file": "desk_watch.yml",
-   "repo": "BMR-Com/Brazil--trade",
-   "at": "2026-11-21T10:13+00:00",
-   "ok": true,
-   "for": "what_changed",
-   "result": "success",
-   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/44893373958"
-  },
   {
    "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
    "file": "cotton_loan.yml",
@@ -939,6 +861,46 @@
    "for": "safras_en",
    "result": "success",
    "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/45990495753"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/cotton_loan.yml",
+   "file": "cotton_loan.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-28T10:54+00:00",
+   "ok": true,
+   "for": "fsa_loan",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/46137348460"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/coffee.yml",
+   "file": "coffee.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-28T10:54+00:00",
+   "ok": true,
+   "for": "coffee_certs_profile",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/46137349764"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/sugar.yml",
+   "file": "sugar.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-28T10:54+00:00",
+   "ok": true,
+   "for": "mapa",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/46137350954"
+  },
+  {
+   "workflow": "BMR-Com/Brazil--trade/coffee_diffs.yml",
+   "file": "coffee_diffs.yml",
+   "repo": "BMR-Com/Brazil--trade",
+   "at": "2026-11-28T10:54+00:00",
+   "ok": true,
+   "for": "safras_en",
+   "result": "success",
+   "run": "https://github.com/BMR-Com/Brazil--trade/actions/runs/46137352223"
   }
  ],
  "last_email": null
