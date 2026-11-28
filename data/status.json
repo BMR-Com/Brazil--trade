@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28 04:49 UTC",
+ "generated": "2026-11-28 04:58 UTC",
  "today": "2026-11-27",
  "sources": [
   {
@@ -917,9 +917,9 @@
   {
    "group": "Coffee",
    "source": "KC spread model: fair front spread from certified stocks",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -1265,7 +1265,7 @@
  ],
  "late": 18,
  "inbox": {
-  "updated": "2026-11-27 22:19 UTC",
+  "updated": "2026-11-28 04:57 UTC",
   "last": [
    {
     "type": "CT_options",
