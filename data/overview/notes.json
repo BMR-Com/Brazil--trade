@@ -1,60 +1,56 @@
 {
- "updated": "2026-11-27",
- "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
- "markets": {
-  "cotton": {
-   "date": "2026-11-27",
-   "by": "claude",
-   "time": "11:50 CT",
-   "claude_date": "2026-11-27",
-   "fundamental": "Still no fresh supply or demand data in the shortened session; old-crop Mar holds just under its 83.4 resistance while crude turns lower intraday, removing part of the outside support. Certificated stock flows remain the thing to watch for longs.",
-   "events": [
-    "Mar ~83.0, testing 83.38/83.45 resistance (ICE)",
-    "Cotton rallies out of the Thanksgiving break (Barchart)",
-    "WTI reverses to ~82.8 (-1.9%) as Iraq lifts exports (OilPrice)"
-   ]
+  "updated": "2026-11-27",
+  "about": "Own-words reads from the daily research task (ADMIS, Rabobank, Czapp and the news feed). fund_score: -1 bearish to +1 bullish, a judgement on the fundamental news only.",
+  "markets": {
+    "cotton": {
+      "date": "2026-11-27",
+      "by": "bot",
+      "time": "22:14 CT",
+      "claude_date": "2026-11-27",
+      "fundamental": "1 headline in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 1 up, 0 down by keyword).",
+      "events": [
+        "Cotton Rallying on Friday (Barchart.com, 2026-11-27)"
+      ]
+    },
+    "sugar": {
+      "date": "2026-11-27",
+      "by": "bot",
+      "time": "22:14 CT",
+      "claude_date": "2026-11-27",
+      "fundamental": "2 headlines in the last 30 hours; the news flow leans bearish (bigger supplies or weaker demand outnumber supply risks), prices mostly reported higher (0 supply-tight, 1 supply-loose, 1 up, 0 down by keyword).",
+      "events": [
+        "Sugar Prices Settle Higher on Supply Conccerns and Brazilian Real Strength (Barchart.com, 2026-11-27)",
+        "Supply Fears and Brazilian Real Strength Boost Sugar Prices (Barchart.com, 2026-11-27)"
+      ],
+      "claude_fund_score": 0.05,
+      "fund_score": -0.12
+    },
+    "coffee": {
+      "date": "2026-11-27",
+      "by": "bot",
+      "time": "22:14 CT",
+      "claude_date": "2026-11-27",
+      "fundamental": "2 headlines in the last 30 hours; the news flow has no clear supply or demand signal, price reports mixed (0 supply-tight, 0 supply-loose, 0 up, 0 down by keyword).",
+      "events": [
+        "Brazilian Real Strength Lifts Coffee Prices (Barchart.com, 2026-11-27)",
+        "Coffee Prices Strengthen with the Brazilian Real (Barchart.com, 2026-11-27)"
+      ],
+      "claude_fund_score": -0.25,
+      "fund_score": -0.25
+    },
+    "cocoa": {
+      "date": "2026-11-27",
+      "by": "bot",
+      "time": "22:14 CT",
+      "claude_date": "2026-11-27",
+      "fundamental": "2 headlines in the last 30 hours; the news flow has no clear supply or demand signal, prices mostly reported higher (0 supply-tight, 0 supply-loose, 1 up, 0 down by keyword).",
+      "events": [
+        "Cocoa Climbs on Supply Concerns (ADMIS, 2026-11-27)",
+        "Supply Woes Push Cocoa Prices to 3-Week Highs (Barchart.com, 2026-11-27)"
+      ],
+      "claude_fund_score": -0.05,
+      "fund_score": -0.05
+    }
   },
-  "sugar": {
-   "date": "2026-11-27",
-   "by": "claude",
-   "time": "11:50 CT",
-   "claude_date": "2026-11-27",
-   "fundamental": "The real's jump on the Trabuco appointment is the dominant input: a stronger real raises the dollar break-even for Centre-South mills and discourages new forward hedges, a modest prop for prices while the Brazilian intercrop season starts. Crude's intraday reversal trims the ethanol-parity support a little.",
-   "events": [
-    "Real holds ~5.50/USD after Trabuco agrees to run the finance ministry (Reuters)",
-    "Raw sugar Mar ~18.8, above 18.35/18.38 (ICE)",
-    "WTI back near 82.8 on higher Iraqi exports (OilPrice)"
-   ],
-   "claude_fund_score": 0.05,
-   "fund_score": 0.05
-  },
-  "coffee": {
-   "date": "2026-11-27",
-   "by": "claude",
-   "time": "11:50 CT",
-   "claude_date": "2026-11-27",
-   "fundamental": "Brazil's record but quality-mixed harvest keeps the flow of new arabica toward ICE warehouses as the key bearish risk, while certified stocks near historic lows still support the nearby; the firmer real slows grower selling at the margin. No new cert or Antwerp figures over the holiday.",
-   "events": [
-    "Record Brazil crop carries quality and stock questions (Daily Coffee News)",
-    "Real ~5.50/USD after finance-minister pick (Reuters)",
-    "Mar ~275, between 270 support and 281 resistance (ICE)"
-   ],
-   "claude_fund_score": -0.25,
-   "fund_score": -0.25
-  },
-  "cocoa": {
-   "date": "2026-11-27",
-   "by": "claude",
-   "time": "11:50 CT",
-   "claude_date": "2026-11-27",
-   "fundamental": "No new Ivorian port-arrival or Ghana COCOBOD figures this week; reports that the delayed Ivorian crop may bunch up at ports before EU deforestation rules apply point to slow near-term flow but heavier supply later. ICCO's November bulletin is not out yet.",
-   "events": [
-    "Delayed Ivorian crop could congest ports ahead of EUDR (Reuters via Nation Africa)",
-    "ICCO November quarterly bulletin pending (ICCO)",
-    "NY Mar ~5,440, below 5,517 resistance (ICE)"
-   ],
-   "claude_fund_score": -0.05,
-   "fund_score": -0.05
-  }
- }
+  "bot_note": "Automatic backup read (GitHub Actions) at 2026-11-27 22:14 CT: Claude's desk read had not run for 5+ hours."
 }
