@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-28 00:08 UTC",
+ "generated": "2026-11-28 02:11 UTC",
  "today": "2026-11-27",
  "sources": [
   {
    "group": "Prices",
    "source": "Futures closes, all softs (Yahoo)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -173,9 +173,9 @@
   {
    "group": "Cotton",
    "source": "Spread vs full carry history",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 2,
    "state": "ok",
@@ -221,7 +221,7 @@
   {
    "group": "Cotton",
    "source": "Crop projection (cotton-crop-progress)",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "weekly, after crop progress / ginnings / drought",
    "age": 0,
    "age_unit": "days",
@@ -833,7 +833,7 @@
   {
    "group": "Sugar",
    "source": "Brazil sugar export line-up (weekly)",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "weekly",
    "age": 0,
    "age_unit": "days",
@@ -941,9 +941,9 @@
   {
    "group": "Coffee",
    "source": "Spreads & arbs table (KC/RC switches, arabica-robusta arb, B3 arb)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -953,9 +953,9 @@
   {
    "group": "Sugar",
    "source": "Spreads & arbs table (No. 11 / No. 5 switches, white premium)",
-   "latest": "2026-11-26",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 1,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -1145,7 +1145,7 @@
   {
    "group": "Macro",
    "source": "Contract calendar (notice and roll dates)",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "daily",
    "age": 0,
    "age_unit": "business days",
@@ -1217,9 +1217,9 @@
   {
    "group": "Embedded dashboards",
    "source": "Spot basis dashboard (BMR-Com/cotton-crop-progress)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-27",
    "cadence": "daily",
-   "age": 2,
+   "age": 0,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -1229,7 +1229,7 @@
   {
    "group": "Embedded dashboards",
    "source": "WASDE dashboard (BMR-Com/wasde-analytics), last cotton update",
-   "latest": "2026-11-27",
+   "latest": "2026-11-28",
    "cadence": "monthly",
    "age": 0,
    "age_unit": "days",
