@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 22:44 UTC",
+ "generated": "2026-11-28 00:08 UTC",
  "today": "2026-11-27",
  "sources": [
   {
@@ -185,9 +185,9 @@
   {
    "group": "Cotton",
    "source": "AMS weekly cotton market review",
-   "latest": "2026-11-20",
+   "latest": "2026-11-27",
    "cadence": "weekly (Fri)",
-   "age": 7,
+   "age": 0,
    "age_unit": "days",
    "limit": 9,
    "state": "ok",
@@ -197,9 +197,9 @@
   {
    "group": "Cotton",
    "source": "AMS daily classing",
-   "latest": "2026-11-24",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 3,
+   "age": 1,
    "age_unit": "business days",
    "limit": 3,
    "state": "ok",
@@ -593,9 +593,9 @@
   {
    "group": "Coffee",
    "source": "Honduras export prices and sales by quality, IHCAFE (daily)",
-   "latest": "2026-11-25",
+   "latest": "2026-11-26",
    "cadence": "daily",
-   "age": 2,
+   "age": 1,
    "age_unit": "business days",
    "limit": 4,
    "state": "ok",
