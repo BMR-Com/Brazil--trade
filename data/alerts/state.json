@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28 02:12 UTC",
+ "generated": "2026-11-28 03:03 UTC",
  "asof": "2026-11-27",
  "today": "2026-11-27",
  "active": [
@@ -252,16 +252,6 @@
    "date": "2026-11-27",
    "new": false,
    "since": "2026-11-27"
-  },
-  {
-   "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
-   "market": "Data",
-   "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-19, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-27",
-   "new": false,
-   "since": "2026-11-25"
   }
  ],
  "watch": [
@@ -469,16 +459,6 @@
    "date": "2026-11-24",
    "new": true,
    "since": "2026-11-24"
-  },
-  {
-   "id": "data_Ethanol_price_used_for_parity__CEPEA__else_B3_futures_",
-   "market": "Data",
-   "text": "Ethanol price used for parity (CEPEA, else B3 futures): late (latest 2026-11-19, limit 3 business days)",
-   "on": true,
-   "level": null,
-   "date": "2026-11-25",
-   "new": true,
-   "since": "2026-11-25"
   },
   {
    "id": "wx_br_ba_dry",

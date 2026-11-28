@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28 02:11 UTC",
+ "generated": "2026-11-28 03:02 UTC",
  "asof": "2026-11-27",
  "rule": "A move is flagged when it is larger than the 80th percentile of the same series' absolute changes over the past year (same horizon: one business day or one week).",
  "weather": {
@@ -61,13 +61,13 @@
      "unit": "pts",
      "dp": 0,
      "now": -375.0,
-     "d1": -47.0,
-     "d5": -54.0,
+     "d1": 0.0,
+     "d5": -61.0,
      "norm1": 0.0,
      "norm5": 11.0,
-     "flag1": true,
+     "flag1": false,
      "flag5": true,
-     "date": "2026-11-25",
+     "date": "2026-11-27",
      "note": "USDA spot 41-4-34 minus Mar-27 futures, points",
      "kind": "daily"
     },
@@ -120,8 +120,7 @@
    ],
    "flags": [
     "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.22)",
-    "Spot basis (US average) −47 pts on the day (normal within ±0)",
-    "Spot basis (US average) −54 pts on the week (normal within ±11)",
+    "Spot basis (US average) −61 pts on the week (normal within ±11)",
     "On-call sales, old crop −4,789 lots in the week to 2026-11-20 (normal within ±3,423)"
    ],
    "errors": [],
@@ -187,7 +186,7 @@
      "window": "2026-11-28 to 2026-12-11"
     }
    ],
-   "summary": "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.22); Spot basis (US average) −47 pts on the day (normal within ±0); Spot basis (US average) −54 pts on the week (normal within ±11); On-call sales, old crop −4,789 lots in the week to 2026-11-20 (normal within ±3,423)"
+   "summary": "Flat price (Mar 27) +4.09 ¢/lb on the week (normal within ±3.22); Spot basis (US average) −61 pts on the week (normal within ±11); On-call sales, old crop −4,789 lots in the week to 2026-11-20 (normal within ±3,423)"
   },
   {
    "sym": "SB",
